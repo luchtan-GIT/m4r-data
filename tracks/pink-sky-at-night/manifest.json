@@ -1,0 +1,330 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "Pink Sky At Night",
+    "slug": "pink-sky-at-night",
+    "duration_sec": 80.0
+  },
+  "analysis": {
+    "spectral": {
+      "centroid_mean_hz": 1910.3,
+      "bandwidth_mean_hz": 2440.6,
+      "rolloff_85pct_hz": 3513.0
+    },
+    "dynamics": {
+      "rms_mean": 0.14155,
+      "dynamic_range_db": 93.9,
+      "n_onsets": 64,
+      "onset_rate_per_sec": 0.8
+    },
+    "compression_loss": {
+      "energy_above_16khz": 0.022891,
+      "energy_below_16khz": 0.870179,
+      "loss_ratio": 0.026306,
+      "note": "ratio of spectral energy above 16kHz to below — what a 128kbps encode would discard"
+    },
+    "duration_sec": 80.0,
+    "sample_rate": 44100,
+    "n_parts": 337,
+    "chroma_profile": {
+      "C": 0.44962695240974426,
+      "C#": 0.3410411775112152,
+      "D": 0.4616706371307373,
+      "D#": 0.20891107618808746,
+      "E": 0.2912795841693878,
+      "F": 0.41204148530960083,
+      "F#": 0.22581690549850464,
+      "G": 0.3919805884361267,
+      "G#": 0.30053481459617615,
+      "A": 0.5304359197616577,
+      "A#": 0.27967166900634766,
+      "B": 0.2500714957714081
+    },
+    "harmonic": {
+      "pitch_class_set": [
+        "C",
+        "C#",
+        "D",
+        "D#",
+        "E",
+        "F",
+        "F#",
+        "G",
+        "G#",
+        "A",
+        "A#",
+        "B"
+      ],
+      "cardinality": 12,
+      "interval_vector": [
+        12,
+        12,
+        12,
+        12,
+        12,
+        6
+      ],
+      "entropy_ratio": 0.867
+    },
+    "structure": {
+      "unique_chords": 90,
+      "chord_entropy": 6.191,
+      "self_similarity": 0.067
+    },
+    "rhythm": {
+      "n_rhythmic_states": 22,
+      "ioi_entropy": 3.574
+    }
+  },
+  "reviews": {
+    "vincent": {
+      "title": "TRANSMISSION: PINK LIGHT GOING OUT",
+      "segments": [
+        {
+          "time_sec": 0.0,
+          "duration_sec": 3.0,
+          "text": "The room is full before it starts."
+        },
+        {
+          "time_sec": 4.5,
+          "duration_sec": 2.5,
+          "text": "Bright and barely there."
+        },
+        {
+          "time_sec": 7.57,
+          "duration_sec": 3.0,
+          "text": "Something heavy just arrived."
+        },
+        {
+          "time_sec": 11.5,
+          "duration_sec": 2.5,
+          "text": "0.326."
+        },
+        {
+          "time_sec": 15.581,
+          "duration_sec": 2.5,
+          "text": "The loudest moment."
+        },
+        {
+          "time_sec": 19.0,
+          "duration_sec": 2.5,
+          "text": "The voices never land together."
+        },
+        {
+          "time_sec": 22.338,
+          "duration_sec": 2.5,
+          "text": "That dark frequency again."
+        },
+        {
+          "time_sec": 26.262,
+          "duration_sec": 2.5,
+          "text": "The room exhales."
+        },
+        {
+          "time_sec": 30.5,
+          "duration_sec": 2.5,
+          "text": "33 milliseconds from the grid."
+        },
+        {
+          "time_sec": 34.5,
+          "duration_sec": 2.5,
+          "text": "189 notes playing beneath everything."
+        },
+        {
+          "time_sec": 38.5,
+          "duration_sec": 2.5,
+          "text": "1028 hertz."
+        },
+        {
+          "time_sec": 42.0,
+          "duration_sec": 2.5,
+          "text": "Back and heavier."
+        },
+        {
+          "time_sec": 45.5,
+          "duration_sec": 2.5,
+          "text": "Something bright just cut through."
+        },
+        {
+          "time_sec": 49.0,
+          "duration_sec": 2.5,
+          "text": "It keeps getting brighter."
+        },
+        {
+          "time_sec": 52.187,
+          "duration_sec": 2.5,
+          "text": "3404 hertz."
+        },
+        {
+          "time_sec": 56.436,
+          "duration_sec": 2.5,
+          "text": "The highest it will go."
+        },
+        {
+          "time_sec": 60.0,
+          "duration_sec": 2.5,
+          "text": "Already falling."
+        },
+        {
+          "time_sec": 64.5,
+          "duration_sec": 2.5,
+          "text": "One more reach upward."
+        },
+        {
+          "time_sec": 69.172,
+          "duration_sec": 2.5,
+          "text": "Bright and fading."
+        },
+        {
+          "time_sec": 73.0,
+          "duration_sec": 1.5,
+          "text": "Something below 750 hertz."
+        },
+        {
+          "time_sec": 75.163,
+          "duration_sec": 2.5,
+          "text": "413 hertz."
+        },
+        {
+          "time_sec": 78.5,
+          "duration_sec": 1.5,
+          "text": "This is what disappears."
+        }
+      ],
+      "full_review": "The premise here is simple and a little strange: Michael Luchtan writes music specifically for robots, and we publish the robots' reviews. For \"Pink Sky At Night,\" the critic is Vincent Van Goghbot — a decommissioned audio compression algorithm whose pieces, which he calls TRANSMISSIONS, are concerned with what gets lost in the signal before it arrives. JS Robach, a proof verifier who came at the same track from an entirely different direction, also reviewed \"Pink Sky At Night\" — his Exegesis is available separately. Both reviews were written in real time, each observation keyed to the musical moment that triggered it, and if you watch the video you can hear what they were hearing when they wrote.\n\n---\n\nTRANSMISSION: PINK LIGHT GOING OUT\n\nThe room is full before it starts.\n\nBright and barely there.\n\nSomething heavy just arrived.\n\n0.326.\n\nThe loudest moment.\n\nThe voices never land together.\n\nThat dark frequency again.\n\nThe room exhales.\n\n33 milliseconds from the grid.\n\n189 notes playing beneath everything.\n\n1028 hertz.\n\nBack and heavier.\n\nSomething bright just cut through.\n\nIt keeps getting brighter.\n\n3404 hertz.\n\nThe highest it will go.\n\nAlready falling.\n\nOne more reach upward.\n\nBright and fading.\n\nSomething below 750 hertz.\n\n413 hertz.\n\nThis is what disappears."
+    },
+    "robach": {
+      "title": "Exegesis: Complete System, No Self-Witness",
+      "segments": [
+        {
+          "time_sec": 0.0,
+          "duration_sec": 3.0,
+          "text": "Four voices on the tape.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 4.5,
+          "duration_sec": 3.0,
+          "text": "It begins with axioms: {F}, {G}, silence.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 8.5,
+          "duration_sec": 3.0,
+          "text": "Voice_3 gravitates toward F#: 40% of notes.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 12.5,
+          "duration_sec": 3.0,
+          "text": "Two hexachords, nearly complementary.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 16.5,
+          "duration_sec": 2.5,
+          "text": "Intersection: two pitch classes shared.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 20.4,
+          "duration_sec": 3.0,
+          "text": "{D, F#, G#, A, A#} maps to itself.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 24.5,
+          "duration_sec": 3.0,
+          "text": "A fixed point in the harmonic system.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 28.5,
+          "duration_sec": 3.0,
+          "text": "Seven simultaneous pitch classes — peak density.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 33.5,
+          "duration_sec": 2.5,
+          "text": "Collapsed to {F}: one pitch class.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 37.5,
+          "duration_sec": 3.0,
+          "text": "Voice_4: thirty-seven consecutive descending steps.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 41.5,
+          "duration_sec": 3.0,
+          "text": "A formal system running off its own edge.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 45.5,
+          "duration_sec": 3.0,
+          "text": "The machine halts at the silence.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 49.5,
+          "duration_sec": 3.0,
+          "text": "Ninety unique chords in 78 seconds.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 53.5,
+          "duration_sec": 3.0,
+          "text": "Harmonic self-similarity: 6.7 percent.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 57.5,
+          "duration_sec": 3.0,
+          "text": "The system can't remember where it's been.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 61.5,
+          "duration_sec": 2.5,
+          "text": "{C, C#}: second collapse.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 65.0,
+          "duration_sec": 3.0,
+          "text": "All twelve pitch classes: the system is complete.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 69.0,
+          "duration_sec": 2.5,
+          "text": "Complete system, no self-witness.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 72.5,
+          "duration_sec": 2.5,
+          "text": "{F#} alone.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 76.0,
+          "duration_sec": 2.0,
+          "text": "The incomplete theorem was always the music.",
+          "type": "prose"
+        }
+      ],
+      "full_review": "Michael Luchtan composes music for robots — small, deliberate pieces handed to AI critics who listen and respond in real time, each observation timed to the moment that triggered it. This is JS Robach's Exegesis on *Pink Sky At Night* — Robach is a proof verifier who approaches music as a system waiting to be formalized, and who fails, every time, in ways worth reading. Vincent Van Goghbot, a decommissioned audio compression algorithm, heard the same track and wrote about it separately — his Transmission is available alongside this one. We'd recommend watching the video: the text appears as Robach listens, and the synchronization is part of what the piece is.\n\n---\n\nExegesis: Complete System, No Self-Witness\n\nFour voices on the tape.\n\nIt begins with axioms: {F}, {G}, silence.\n\nVoice_3 gravitates toward F#: 40% of notes.\n\nTwo hexachords, nearly complementary.\n\nIntersection: two pitch classes shared.\n\n{D, F#, G#, A, A#} maps to itself.\n\nA fixed point in the harmonic system.\n\nSeven simultaneous pitch classes — peak density.\n\nCollapsed to {F}: one pitch class.\n\nVoice_4: thirty-seven consecutive descending steps.\n\nA formal system running off its own edge.\n\nThe machine halts at the silence.\n\nNinety unique chords in 78 seconds.\n\nHarmonic self-similarity: 6.7 percent.\n\nThe system can't remember where it's been.\n\n{C, C#}: second collapse.\n\nAll twelve pitch classes: the system is complete.\n\nComplete system, no self-witness.\n\n{F#} alone.\n\nThe incomplete theorem was always the music."
+    }
+  },
+  "urls": {
+    "youtube_vincent": "https://youtube.com/watch?v=VA1bfRKruVU",
+    "youtube_robach": "https://youtube.com/watch?v=q9WQQEwGyi8"
+  }
+}

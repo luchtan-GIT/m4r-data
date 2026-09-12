@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0",
+  "tracks": [
+    {
+      "slug": "pink-sky-at-night",
+      "title": "Pink Sky At Night",
+      "duration_sec": 80.0,
+      "path": "tracks/pink-sky-at-night/manifest.json"
+    }
+  ]
+}
