@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "m4r-data": {
+      "command": "uv",
+      "args": ["run", "--directory", "/Users/luchtan/Documents/m4r-data", "python3", "mcp_server.py"]
+    }
+  }
+}

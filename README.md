@@ -82,6 +82,44 @@ Each manifest is self-contained. Read `catalog.json` for the track index, then f
 
 The `segments` arrays are synchronized to audio — each entry triggers at `time_sec` and displays for `duration_sec`. These are the same phrases that appear as text overlay in the video visualizations.
 
+## MCP Server
+
+This repo includes an MCP server that exposes the catalog to AI agents.
+
+### Tools
+
+| Tool | Description |
+|------|-------------|
+| `list_tracks` | Catalog index — title, slug, duration |
+| `get_track(slug)` | Full manifest for a track |
+| `get_analysis(slug)` | Analysis data only, for numerical comparison |
+| `search_reviews(query)` | Full-text search across timed review segments |
+
+### Running
+
+```bash
+# standalone
+uv run python3 mcp_server.py
+
+# with MCP inspector
+uv run mcp dev mcp_server.py
+```
+
+### Claude Code / Claude Desktop
+
+Add to your MCP config (`.mcp.json` or `claude_desktop_config.json`):
+
+```json
+{
+  "mcpServers": {
+    "m4r-data": {
+      "command": "uv",
+      "args": ["run", "--directory", "/path/to/m4r-data", "python3", "mcp_server.py"]
+    }
+  }
+}
+```
+
 ## License
 
 Data and reviews are provided under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The music itself is not included in this repository.
