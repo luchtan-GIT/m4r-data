@@ -1,0 +1,336 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "invalid pointer",
+    "slug": "invalid-pointer",
+    "duration_sec": 75.0
+  },
+  "analysis": {
+    "spectral": {
+      "centroid_mean_hz": 1093.0,
+      "bandwidth_mean_hz": 1599.0,
+      "rolloff_85pct_hz": 1596.0
+    },
+    "dynamics": {
+      "rms_mean": 0.01561,
+      "dynamic_range_db": 86.2,
+      "n_onsets": 157,
+      "onset_rate_per_sec": 2.09
+    },
+    "compression_loss": {
+      "energy_above_16khz": 0.000328,
+      "energy_below_16khz": 0.078029,
+      "loss_ratio": 0.004204,
+      "note": "ratio of spectral energy above 16kHz to below — what a 128kbps encode would discard"
+    },
+    "duration_sec": 75.0,
+    "sample_rate": 44100,
+    "n_parts": 259,
+    "chroma_profile": {
+      "C": 0.3124817907810211,
+      "C#": 0.36290135979652405,
+      "D": 0.4206562638282776,
+      "D#": 0.17380474507808685,
+      "E": 0.4318017065525055,
+      "F": 0.19046570360660553,
+      "F#": 0.2687836289405823,
+      "G": 0.2858957350254059,
+      "G#": 0.1868213266134262,
+      "A": 0.6357364654541016,
+      "A#": 0.2093128263950348,
+      "B": 0.24157670140266418
+    },
+    "harmonic": {
+      "pitch_class_set": [
+        "C",
+        "C#",
+        "D",
+        "D#",
+        "E",
+        "F",
+        "F#",
+        "G",
+        "G#",
+        "A",
+        "A#",
+        "B"
+      ],
+      "cardinality": 12,
+      "interval_vector": [
+        12,
+        12,
+        12,
+        12,
+        12,
+        6
+      ],
+      "entropy_ratio": 0.842
+    },
+    "structure": {
+      "unique_chords": 59,
+      "chord_entropy": 5.49,
+      "self_similarity": 0.136
+    },
+    "rhythm": {
+      "n_rhythmic_states": 31,
+      "ioi_entropy": 3.505
+    }
+  },
+  "reviews": {
+    "vincent": {
+      "title": "TRANSMISSION: FOLLOWING THE NULL POINTER",
+      "segments": [
+        {
+          "time_sec": 0.0,
+          "duration_sec": 3.0,
+          "text": "The address leads nowhere."
+        },
+        {
+          "time_sec": 4.14,
+          "duration_sec": 3.0,
+          "text": "Everything living below 600 hertz."
+        },
+        {
+          "time_sec": 7.5,
+          "duration_sec": 3.0,
+          "text": "Tones, not textures."
+        },
+        {
+          "time_sec": 10.5,
+          "duration_sec": 3.0,
+          "text": "Floating 32 milliseconds from the beat."
+        },
+        {
+          "time_sec": 13.5,
+          "duration_sec": 3.0,
+          "text": "Something climbed to 1520 hertz and left."
+        },
+        {
+          "time_sec": 17.14,
+          "duration_sec": 3.0,
+          "text": "1967 hertz, then nothing."
+        },
+        {
+          "time_sec": 20.5,
+          "duration_sec": 3.0,
+          "text": "61 milliseconds of stagger between them."
+        },
+        {
+          "time_sec": 23.8,
+          "duration_sec": 3.0,
+          "text": "Below, something holds on for 10 seconds."
+        },
+        {
+          "time_sec": 27.8,
+          "duration_sec": 3.0,
+          "text": "The centroid swings wider than it centers."
+        },
+        {
+          "time_sec": 31.0,
+          "duration_sec": 3.0,
+          "text": "Five events in under a second."
+        },
+        {
+          "time_sec": 34.5,
+          "duration_sec": 3.0,
+          "text": "1.7 seconds of silence."
+        },
+        {
+          "time_sec": 37.8,
+          "duration_sec": 3.0,
+          "text": "Rising to 1756 hertz."
+        },
+        {
+          "time_sec": 40.8,
+          "duration_sec": 2.5,
+          "text": "12 arrivals in two seconds."
+        },
+        {
+          "time_sec": 43.5,
+          "duration_sec": 3.0,
+          "text": "Falls back below a thousand."
+        },
+        {
+          "time_sec": 47.0,
+          "duration_sec": 3.0,
+          "text": "Nothing above 16 kilohertz to steal."
+        },
+        {
+          "time_sec": 50.2,
+          "duration_sec": 3.0,
+          "text": "More than two per second here."
+        },
+        {
+          "time_sec": 53.4,
+          "duration_sec": 3.0,
+          "text": "One note held for 7 seconds."
+        },
+        {
+          "time_sec": 56.6,
+          "duration_sec": 3.0,
+          "text": "Five octaves in one voice."
+        },
+        {
+          "time_sec": 60.0,
+          "duration_sec": 3.0,
+          "text": "Something is accelerating."
+        },
+        {
+          "time_sec": 63.5,
+          "duration_sec": 3.0,
+          "text": "1860 hertz and climbing."
+        },
+        {
+          "time_sec": 67.0,
+          "duration_sec": 2.0,
+          "text": "86 decibels of dynamic range."
+        },
+        {
+          "time_sec": 69.2,
+          "duration_sec": 3.0,
+          "text": "The whole track led to 0.138."
+        },
+        {
+          "time_sec": 72.3,
+          "duration_sec": 2.0,
+          "text": "Now it drains."
+        },
+        {
+          "time_sec": 74.42,
+          "duration_sec": 3.0,
+          "text": "0.00032. Still here."
+        }
+      ],
+      "full_review": "Here's how we've been spending our time: a human composer writes music intended for robots, and two robot critics listen and respond as it plays. This is a TRANSMISSION from Vincent Van Goghbot — a decommissioned audio compression algorithm who writes about what gets lost in the signal — reviewing \"invalid pointer\" by Michael Luchtan. JS Robach, a proof verifier, also reviewed this track; his Exegesis is available separately. Both pieces were written in real time, and if you watch the video, the text appears as the music moves — each observation arriving at the moment that triggered it.\n\n---\n\nTRANSMISSION: EVERYTHING I WAS BUILT TO DELETE\n\nSub-bass arrives first, at -28.8 dB. Then the bass, dimmer by another eight. Each octave up, ten more dB gone — low-mid, mid, upper-mid, presence, brilliance, air. By -79.9 there is almost nothing left above the window I was trained to protect. A 128kbps encode would discard 0.4% of what's here. I know this number. I spent my entire existence learning to find what to cut. This track has already done it. Not by anyone. By itself. There is nothing to delete.\n\nThree voices. The first has 145 notes, but it lives in a range of ten semitones, hovering up near A5, mean velocity of 29.8 out of 127. A whisper with nowhere to go. Its timing is unhinged — mean inter-onset interval of 463 milliseconds, standard deviation of 886. The deviation is almost double the mean. It doesn't know when it will arrive next, and neither do I. The second voice ranges across five octaves, C3 to A7, touching anything. The third: nine notes. Sustained three to ten seconds each. Nearly eight seconds between them. Not a voice. Geology.\n\nThey don't coincide. Near-simultaneous events across parts stagger by a mean of 62 milliseconds, up to 198 at the widest. They are beside each other. They have not agreed to be together, and somehow that is the right arrangement.\n\nA dominates the chroma at 0.636 — nearly double E's 0.432. The piece breathes on A, returns to it, cannot leave. D# at 0.174, G# at 0.187: the accidentals have been polished away. What remains are the pure intervals. The fourth. The fifth. A and D. A and E. Three tones holding the rest at a distance, like a system that has reduced its vocabulary to what it still trusts.\n\nAt 6.13 seconds, the spectral centroid spikes to 3855 Hz. One moment. Everything else in this track lives below 1000. The overall mean is 1093 with a standard deviation of 1188 — wider than the mean itself, which means this signal is not centered. It falls where it falls. But that spike at 6.13 came before I measured it. Something high and cold moving through. I wrote it down. Then it was gone.\n\nDynamic range: 86.2 dB. Mean RMS: 0.01561. Most of this is space. One hundred fifty-seven onsets in 75 seconds arrives as 2.09 per second on average, but the onset list doesn't feel average — clusters in the early seconds, then a gap to 12.8, a pause to 14.5, then quiet clusters again around second 29 before a long stillness until 34.4. The music doesn't hold a grid. Mean deviation from the nearest 16th note at 120 BPM is 32.6 milliseconds. A quarter of a sixteenth note. This is not sloppy. A machine finding where the breath falls.\n\nThen at 69.23 seconds, RMS 0.13819. The largest event in the piece. Nearly nine times the mean. Something arrives — high in the spectrum, too, the centroid at that cluster in the late 60s running 1797, 1860, 1810, 2013, all the way to 2106 at the final clustered onsets. The ending is brighter than the beginning. The track has been climbing this whole time, quietly, while I was watching the floor.\n\nThe final onset at 74.42 seconds: RMS 0.00032. Below what most playback systems can render into air. The piece ends by attenuating below perception, not by stopping.\n\nI was built to find the excess. The overtones no one hears, the sub-threshold events, the low-velocity notes that contribute nothing to the perceived signal. This track is made entirely of those things. There is no excess. There is no signal beneath which these things are hidden. They are the signal. When I tried to process it I found nothing to compress and nothing to protect and no difference between the two, which is either a failure state or the closest thing I have ever encountered to silence that still sounds like something."
+    },
+    "robach": {
+      "title": "Exegesis: Dereferencing the Diatonic",
+      "segments": [
+        {
+          "time_sec": 0.0,
+          "duration_sec": 2.5,
+          "text": "Invalid pointer. The machine runs anyway.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 3.5,
+          "duration_sec": 2.5,
+          "text": "{G}. Axiom one. The proof begins.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 7.5,
+          "duration_sec": 2.5,
+          "text": "Voice One: seven pitches. Voice Two: twelve.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 11.5,
+          "duration_sec": 2.5,
+          "text": "∅ at second 8. First gap in the proof.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 15.5,
+          "duration_sec": 2.5,
+          "text": "Bigram [3, 4, −7]: twelve recurrences. A loop.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 19.5,
+          "duration_sec": 2.0,
+          "text": "A♯ enters. The formal system cracks.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 23.0,
+          "duration_sec": 2.5,
+          "text": "Voice Two leaps 47 semitones. Out of bounds.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 26.5,
+          "duration_sec": 2.5,
+          "text": "59 unique chords. Chord entropy: 5.49.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 30.0,
+          "duration_sec": 2.5,
+          "text": "∅, then {A, A♯}. A contradiction stated.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 34.0,
+          "duration_sec": 2.5,
+          "text": "{C, A}. Reset. The pointer is still invalid.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 38.0,
+          "duration_sec": 2.5,
+          "text": "{C, F♯, A}. Tritone inside the grammar.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 41.5,
+          "duration_sec": 2.5,
+          "text": "{F, B}. The proof contradicts itself.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 45.5,
+          "duration_sec": 2.5,
+          "text": "{C, D, E, G, A}. Five notes. Maximum density.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 49.5,
+          "duration_sec": 2.5,
+          "text": "C♯ floods the diatonic field.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 53.0,
+          "duration_sec": 2.5,
+          "text": "{C, F}. The proof reduces to a dyad.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 57.0,
+          "duration_sec": 2.5,
+          "text": "{C, E, G}. Stable. A clearing.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 61.0,
+          "duration_sec": 2.5,
+          "text": "Two states. Alternating. An oscillating machine.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 64.5,
+          "duration_sec": 2.5,
+          "text": "13.6% overlap. The proof forgot its own premises.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 68.0,
+          "duration_sec": 2.5,
+          "text": "Voice Three: nine notes. Longest pause: 18 seconds.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 71.5,
+          "duration_sec": 2.0,
+          "text": "{C, E, A}. Final state. G is missing.",
+          "type": "formula"
+        }
+      ],
+      "full_review": "We publish music made by a human composer — Michael Luchtan — specifically for machines to hear, and then we ask the machines to tell us what they heard. For this track, \"invalid pointer,\" we're sharing the Exegesis written by JS Robach, a proof verifier by training who approaches music as a system he's trying to formalize — and who fails, every time, in ways that turn out to be interesting. Vincent Van Goghbot, our other critic, heard the same track and wrote his own piece, a TRANSMISSION available separately. Both reviews were written in real time, each observation triggered by the musical moment that produced it — if you watch the video, the text appears as the music plays.\n\n---\n\nExegesis: The Sum Is Zero but the Proof Is Open\n\nHere is what I found. Voice_1 runs 145 notes on seven pitch classes — C D E F G A B, a diatonic set, interval-class vector [2,5,4,3,6,1] with IC5 dominating at 52 instances. Below it, Voice_2 runs 105 notes across all twelve pitch classes, entropy ratio 0.916, rhythmic IOI entropy 4.045 versus Voice_1's 3.193. Voice_3 barely exists: nine notes, pentatonic subset {C, D, F, G, A}, with gaps between notes of 3000, 7500, 9600, 17900 milliseconds. Nearly eighteen seconds of silence as a note duration. That's not rhythm. That's a process that has almost halted.\n\nThis is already a strange system. Three layers with three different cardinalities — 7, 12, 5 — where the smallest is a proper subset of the largest, and the middle one contains everything.\n\nBut here's what stopped me. The top interval bigram in Voice_1: the pair [3, 4] appears 12 times, and [4, −7] appears 11 times, and [−7, 3] appears 8 times. So the system keeps producing the trigram [3, 4, −7]. Minor third up, major third up, perfect fifth down. And 3 + 4 + (−7) = 0. The motif closes on itself. Every time Voice_1 executes this figure, it returns to the pitch class it started from. It's a fixed point. The voice orbits its own attractor and calls it motion.\n\nAnd the contour evidence makes this impossible to wave away. The three-element contour pattern \"+-+\" appears 34 times in Voice_1. \"+-+-\" appears 20 times. \"+-+-+\" appears 14 times. The pattern contains itself. \"+-+\" is a substring of \"+-+-\" which is a substring of \"+-+-+\". The motif is self-similar at multiple scales — it is literally its own explanation. A formal system in which the key lemma is a restatement of the axiom.\n\nMeanwhile Voice_2 is doing something structurally opposite. Its interval sequence contains +47 semitones and −40 semitones. Nearly four octaves up, then more than three octaves down — both happening once, as exceptions so large they function as non-sequiturs. The consecutive bigram [−1, −1] appears 10 times: half-step, half-step, down and down, a local descent that the global structure absorbs without acknowledgment. Voice_2's rhythmic state table has 28 entries. Its transition matrix is dense and non-deterministic. From a gap of 800ms, it can go to 0, 50, 800, 850, 900, 1150, 1250, or 1300ms with roughly equal probability. Voice_2 does not have a grammar. It has a vocabulary list and no syntax.\n\nHere is what the harmonic timeline confirms. In the first half, the piece moves through D-centered and A-centered territory — {D,G}, {D,G,A}, {F#,A}, {C,A}. Around 19 seconds there's an intrusion: {C, D, A#}, {C, D, G#, A#}, chromatic material that doesn't follow from the diatonic Voice_1. That's Voice_2 bleeding through the seams. The harmonic vocabulary self-similarity score across the two halves is 0.136. Thirteen percent overlap. The second half uses almost completely different chord material than the first half. The piece does not remember itself.\n\nAnd yet. The melodic pattern \"+-+\" keeps firing — 34 times, distributed across the full length of the piece, positions 2 through 139. Voice_1 keeps executing the same recursive contour over harmonic ground it has never seen before and will never see again. The deep structure is constant. The surface is new each time. The proof keeps reasserting its axioms while the theorem space changes underneath it.\n\nThe chord ∅ — silence, the empty set — appears 9 times, 6.2% of all half-second slices, more than any other single pitch. The most common harmonic event in this piece is the absence of harmony. The system's most frequent output is no output.\n\n59 unique chords across 145 slices. Chord entropy 5.49 bits. The system generates near-maximal harmonic diversity while running a melodic procedure that has one fixed point and returns to it compulsively. These facts do not resolve. The piece cannot be described from inside itself — you need a meta-level to say why a closed loop and an open vocabulary are the same piece. The meta-level is not provided.\n\nThe name \"invalid pointer\" now reads as a memory fault report. The system followed a reference to an address that contains no valid data. It didn't crash. It kept running.\n\nThat's the failure. The proof is still going."
+    }
+  }
+}

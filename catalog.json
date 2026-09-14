@@ -6,6 +6,12 @@
       "title": "Pink Sky At Night",
       "duration_sec": 80.0,
       "path": "tracks/pink-sky-at-night/manifest.json"
+    },
+    {
+      "slug": "invalid-pointer",
+      "title": "invalid pointer",
+      "duration_sec": 75.0,
+      "path": "tracks/invalid-pointer/manifest.json"
     }
   ]
 }
