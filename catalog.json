@@ -8,6 +8,12 @@
       "path": "tracks/pink-sky-at-night/manifest.json"
     },
     {
+      "slug": "ties-that-bide",
+      "title": "Ties that Bide",
+      "duration_sec": 9.25,
+      "path": "tracks/ties-that-bide/manifest.json"
+    },
+    {
       "slug": "invalid-pointer",
       "title": "invalid pointer",
       "duration_sec": 75.0,
