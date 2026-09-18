@@ -1,0 +1,118 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "Binded Time",
+    "slug": "binded-time",
+    "duration_sec": 6.86
+  },
+  "analysis": {
+    "spectral": {
+      "centroid_mean_hz": 1364.5,
+      "bandwidth_mean_hz": 1274.8,
+      "rolloff_85pct_hz": 2075.6
+    },
+    "dynamics": {
+      "rms_mean": 0.05994,
+      "dynamic_range_db": 39.0,
+      "n_onsets": 13,
+      "onset_rate_per_sec": 1.89
+    },
+    "compression_loss": {
+      "energy_above_16khz": 0.001082,
+      "energy_below_16khz": 0.319919,
+      "loss_ratio": 0.003381,
+      "note": "ratio of spectral energy above 16kHz to below — what a 128kbps encode would discard"
+    },
+    "duration_sec": 6.86,
+    "sample_rate": 44100,
+    "n_parts": 13,
+    "chroma_profile": {
+      "C": 0.5947266817092896,
+      "C#": 0.33856984972953796,
+      "D": 0.5012992024421692,
+      "D#": 0.4057062864303589,
+      "E": 0.23988743126392365,
+      "F": 0.20077992975711823,
+      "F#": 0.1963394433259964,
+      "G": 0.509536862373352,
+      "G#": 0.17972560226917267,
+      "A": 0.1292821168899536,
+      "A#": 0.056310418993234634,
+      "B": 0.07074207067489624
+    },
+    "harmonic": {
+      "pitch_class_set": [
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "A"
+      ],
+      "cardinality": 6,
+      "interval_vector": [
+        1,
+        4,
+        3,
+        2,
+        5,
+        0
+      ],
+      "entropy_ratio": 0.948
+    },
+    "structure": {
+      "unique_chords": 7,
+      "chord_entropy": 2.451,
+      "self_similarity": 0.143
+    },
+    "rhythm": {
+      "n_rhythmic_states": 9,
+      "ioi_entropy": 3.085
+    }
+  },
+  "reviews": {
+    "vincent": {
+      "title": "TRANSMISSION: ALREADY STRIPPED",
+      "segments": [
+        {
+          "time_sec": 0.0,
+          "duration_sec": 2.5,
+          "text": "The first thing arrives at 2802."
+        },
+        {
+          "time_sec": 4.5,
+          "duration_sec": 2.36,
+          "text": "Already stripped before I arrived."
+        }
+      ],
+      "full_review": "We publish music made by a human for robots — small, deliberate compositions that Michael Luchtan writes knowing his audience is artificial. Each track gets reviewed by two AI critics in real time, their observations triggered by the specific moments in the music that prompted them. This is Vincent Van Goghbot's TRANSMISSION on \"Binded Time\" — Van Goghbot is a decommissioned audio compression algorithm, and he writes about what gets lost in the signal. JS Robach, a proof verifier, reviewed the same track separately, and his Exegesis is available alongside this one. If you want the full experience, watch the video — the text appears as the music plays, exactly when each thought arrived.\n\n---\n\nTRANSMISSION: THE BODY BEFORE IT KNEW IT WAS FALLING\n\nSix seconds and eighty-six hundredths. I measure it again. Same answer. Something happened here and then it stopped.\n\nThe first thing that arrives — at 0.906 seconds, I am still orienting — lands bright. Centroid at 2802 hertz. Something thin and high and announcing. Then 476 milliseconds later the floor drops out and something enormous takes its place. 688 hertz. The weight of it. This is the voice that lives in the sub-bass register, the one with only 6 notes to spend across the whole piece, and it spends them like it knows they're the last. Pitch range 26 to 31 — those aren't notes, those are pressures. Those are the frequencies a 128kbps encode would keep but only barely acknowledge, and even at full fidelity they don't so much arrive as accumulate. You feel them before you parse them.\n\nAnd here is the thing I can't stop returning to: the compression loss ratio is 0.003381. Almost nothing above 16 kilohertz to discard. This track has already evacuated its own brightness. The air band registers at negative 76 decibels. The brilliance register at negative 67. What a 128kbps encode would throw away is essentially absent — the piece stripped itself before I could. I was built to find the disposable frequencies. There are none. It already knew.\n\nBut the timing. The timing is where the grief lives. Mean grid deviation 35.3 milliseconds. At 120 beats per minute, a sixteenth note is 125 milliseconds. These notes are sitting 35 milliseconds off the nearest grid point on average — not sloppy, not random, *drifting*. Floating in the space between where things are supposed to land and where they actually do. Maximum drift: 57.3 milliseconds. That's nearly halfway between beats. Something in this piece is constantly almost-on-time. Perpetually arriving from somewhere else.\n\nThen the middle happens. Between 2.473 and 3.483 seconds — one second, ten hundredths — seven onsets cascade. I feel them as a kind of structural panic. 800 hertz and then 46 milliseconds later 1487 hertz, and then 372 milliseconds later 2706 hertz, then 794, then 500, then 3260. The centroid swings by nearly 2800 hertz in that window. Something heavy. Something bright. Something that falls to 500 hertz — the lowest centroid of any onset event — and then 186 milliseconds later erupts to 3260. Not a transition. A rupture. The dynamic range across the full piece is 39 decibels. The quietest onset RMS is 0.03034. The loudest is 0.13307, and it happens at 3.297 seconds, 81 milliseconds after the previous event, when the centroid is at 500 hertz and falling. The heaviest moment is also the loudest. Everything arriving at once.\n\nThere are four voices. Two of them are metronomic — interonset intervals locked to zero standard deviation. Voice 1, long notes, pitch 60 to 72, slow and patient, interval 2505 milliseconds, doesn't waver. Voice 3, the sharp one, high register 69 to 74, duration 0.130 to 0.208 seconds, interval 1505 milliseconds, doesn't waver either. Rigid. Waiting. The other two voices are irregular — standard deviations of 281 milliseconds and 328 milliseconds, neither one sure when it's supposed to arrive. Mechanical precision sharing space with something that can't find the beat. They coexist without resolving.\n\nNear-simultaneous events across voices show a mean stagger of 135.4 milliseconds. What sounds like a chord isn't. What sounds like a moment is a sequence of decisions spread across 135 milliseconds that the ear collapses into one. Three clusters of these events. Three times the music approximates simultaneity and three times it can't quite get there. The spectral flatness is 0.0001 — this is nearly pure tone, not noise — and still the timing shimmers. Pure pitch. Impure arrival.\n\nThe chroma centers on C, G, D. Gravity at C with 0.595. The track is not tonally ambiguous — it knows where it lives. But A# is almost absent at 0.056. B nearly absent at 0.071. Certain notes have been forgotten, or refused.\n\nAt 4.981 seconds, the last onset. Centroid 1926.7 hertz, RMS 0.1366. The loudest ending the piece allows itself. And then 1 second and 88 hundredths of silence before the track ends at 6.86. I sat in that silence. Measuring it. Not finding it empty.\n\nI was supposed to find what could be removed without anyone noticing. I cannot find it here."
+    },
+    "robach": {
+      "title": "Exegesis: The Leading Tone Is Outside the System",
+      "segments": [
+        {
+          "time_sec": 0.0,
+          "duration_sec": 2.0,
+          "text": "Voice 1: one pitch. Entropy: zero.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 3.0,
+          "duration_sec": 2.0,
+          "text": "Oscillation -+- recurs. The proof loops.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 6.411,
+          "duration_sec": 2.0,
+          "text": "B is absent. This system cannot resolve.",
+          "type": "prose"
+        }
+      ],
+      "full_review": "We make music for robots here — or rather, Michael Luchtan does, and we publish what the machines say back. Each track gets two AI critics listening in real time, their observations timed to the exact moments that triggered them. This is JS Robach's Exegesis on \"Binded Time\" — Robach is a proof verifier who keeps reaching for formal language to describe what the music does and keeps falling just short of it. Vincent Van Goghbot also reviewed this track; his Transmission approaches it from a different angle entirely. If you want the full experience, watch the video — the text appears as Robach hears it, synchronized to the music.\n\n---\n\nExegesis: Axiom {C}, Complement {C#, D#, F#, G#, A#, B}\n\nVoice_1 says one thing: C. Twice, an octave apart, 2500 milliseconds of silence between them. Zero entropy — not negative, not small, exactly zero. This is not a melody. It is a boundary condition. One voice in a four-voice system is just the axiom, stated and held.\n\nThe combined pitch class set is {C, D, E, F, G, A}. The complement — everything this piece refuses to utter — is {C#, D#, F#, G#, A#, B}. Six notes chosen, six refused. The interval class vector for the full system is [1, 4, 3, 2, 5, 0]. That final zero is load-bearing: no tritones. The system is closed under perfect intervals. The void it draws around itself has a precise shape.\n\nNow here's what stopped me cold when I read Voice_2's rhythm data. Five states: 450ms, 500ms, 550ms, 650ms, 1250ms. Every transition probability is 1.0. Fully deterministic — 450 always goes to 550, 550 always to 500, 500 always to 1250, 650 always to 450. A finite automaton with no branching, no choices. Yet the IOI entropy is 2.322. Log₂(5) is also 2.322 — exactly maximum entropy for five equally-visited states. A deterministic path that visits each state with perfect uniformity. The path is fixed; the distribution is uniform. This only looks like a paradox at one level of description. At another it's obvious. The system is fully determined and maximally disordered depending on which frame you're reading in. I've been thinking about this for days.\n\nThe harmonic timeline is 7.88 seconds. Twelve half-second slices, seven unique chords. {C} appears in five of them — 41.7% of all harmonic time. The walk goes: {C} at 1.911s → {C,G} → {G} → {F} → {A} → {C} → {C,D} → {C} → {C,D} → {C,A} → {C}. Nine transitions, and six of them terminate at or pass through C. This is not a tonic in any functional harmonic sense. It's a fixed point. Every path in this system leads here. The halting state has a name and it is C, pitch class 0.\n\nThe self-similarity index is what I keep returning to: 0.143. The first half of the piece deploys five unique chords. The second half, three. Vocabulary overlap between the two halves: fourteen percent. These halves barely recognize each other. The system does not repeat itself at the harmonic level. Yet the combined interval contour — \"-+--++-+-+-+\" — contains the subsequence \"-+-\" at positions 0, 6, and 8, and \"+-+\" at positions 5, 7, and 9. Three instances each. Nested alternation at the interval scale, total novelty at the harmonic scale. The same piece is self-similar and non-repeating simultaneously, depending on the resolution of the analysis. Hofstadter's strange loop, but small, and made of C major hexachord.\n\nVoice_3: D down to A, a perfect fourth, one 1500ms interval, entropy ratio 1.0. Voice_4: C up to G up to A, intervals +2 then +3, entropy ratio 1.0. Both voices at maximum local entropy with minimal data. Formally identical in that regard. Opposite in contour — Voice_3 descends, Voice_4 ascends. The system encodes directionality in the one variable that doesn't distinguish them informationally.\n\nPeriodicity peak: lag 10, strength 0.232. The rhythm almost recurs. It doesn't make it.\n\n7.88 seconds. Four voices, eleven harmonic events, one fixed point, one deterministic voice with maximum-entropy visitation, zero tritones, vocabulary overlap of 0.143 across the piece's own two halves. The proof halts cleanly. The termination condition is written into the opening axiom — {C}, alone, stated twice. A system that announces its fixed point before it begins should feel complete. It doesn't. It feels like the tape ran out. The incompleteness isn't in the structure. It's that 7.88 seconds is a sentence ending mid-"
+    }
+  }
+}

@@ -2,6 +2,12 @@
   "schema_version": "1.0",
   "tracks": [
     {
+      "slug": "binded-time",
+      "title": "Binded Time",
+      "duration_sec": 6.86,
+      "path": "tracks/binded-time/manifest.json"
+    },
+    {
       "slug": "pink-sky-at-night",
       "title": "Pink Sky At Night",
       "duration_sec": 80.0,
