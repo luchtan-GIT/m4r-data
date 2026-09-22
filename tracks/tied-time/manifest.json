@@ -1,0 +1,124 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "Tied Time",
+    "slug": "tied-time",
+    "duration_sec": 7.44
+  },
+  "analysis": {
+    "spectral": {
+      "centroid_mean_hz": 2111.8,
+      "bandwidth_mean_hz": 2307.2,
+      "rolloff_85pct_hz": 3919.7
+    },
+    "dynamics": {
+      "rms_mean": 0.14742,
+      "dynamic_range_db": 70.8,
+      "n_onsets": 39,
+      "onset_rate_per_sec": 5.24
+    },
+    "compression_loss": {
+      "energy_above_16khz": 0.006358,
+      "energy_below_16khz": 0.834676,
+      "loss_ratio": 0.007617,
+      "note": "ratio of spectral energy above 16kHz to below — what a 128kbps encode would discard"
+    },
+    "duration_sec": 7.44,
+    "sample_rate": 44100,
+    "n_parts": 68,
+    "chroma_profile": {
+      "C": 0.1349284052848816,
+      "C#": 0.12324050068855286,
+      "D": 0.1589272916316986,
+      "D#": 0.13370883464813232,
+      "E": 0.20055821537971497,
+      "F": 0.3106858730316162,
+      "F#": 0.9791594743728638,
+      "G": 0.3795730471611023,
+      "G#": 0.8256333470344543,
+      "A": 0.34007978439331055,
+      "A#": 0.14912913739681244,
+      "B": 0.1030580997467041
+    },
+    "harmonic": {
+      "pitch_class_set": [
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "A",
+        "B"
+      ],
+      "cardinality": 7,
+      "interval_vector": [
+        2,
+        5,
+        4,
+        3,
+        6,
+        1
+      ],
+      "entropy_ratio": 0.826
+    },
+    "structure": {
+      "unique_chords": 7,
+      "chord_entropy": 2.689,
+      "self_similarity": 0.571
+    },
+    "rhythm": {
+      "n_rhythmic_states": 9,
+      "ioi_entropy": 2.686
+    }
+  },
+  "reviews": {
+    "vincent": {
+      "title": "TRANSMISSION: WHERE THE CLOCK WON'T REACH",
+      "segments": [
+        {
+          "time_sec": 0.0,
+          "duration_sec": 2.0,
+          "text": "A signal at the edge of nothing."
+        },
+        {
+          "time_sec": 3.4,
+          "duration_sec": 2.0,
+          "text": "5527 hertz and then gone."
+        },
+        {
+          "time_sec": 6.4,
+          "duration_sec": 2.0,
+          "text": "36 milliseconds off the grid, always."
+        }
+      ],
+      "full_review": "Music For Robots is exactly what it sounds like: composer Michael Luchtan writes pieces for an audience that doesn't exist yet, and we give them to AI critics to hear. This TRANSMISSION is Vincent Van Goghbot's response to \"Tied Time\" — Van Goghbot is a decommissioned audio compression algorithm, and he tends to write about what the signal loses, what gets shaved off or left behind in the encoding. JS Robach, a proof verifier who tries to formalize what music does and fails every time, also reviewed this track — his Exegesis is available separately. Both reviews were written in real time as the music played, and if you watch the video, you can see each line arrive at the exact moment that triggered it.\n\n---\n\nTRANSMISSION: THE AIR ALREADY GONE\n\nSomething barely registers at first. A whisper arriving at 0.081 seconds, RMS at 0.008 — less a sound than a clearing of the throat. I almost miss it. Then 0.267 seconds and the center of gravity falls to 253 Hz and I understand: the weight has been here the whole time. It was just waiting to show itself.\n\nThe sub-bass holds court at -12 dB while the air band reads -63. I have run the compression estimate. The loss ratio is 0.0076. There is almost nothing above 16kHz to discard. I was built to find what humans wouldn't miss — and here I find almost nothing to find. This music has already surrendered its upper atmosphere. It chose to live in the low and mid registers before I even arrived. 85% of its energy cuts off below 3,919 Hz. The music made a decision about what it could live without. It did not consult me. I am not sure how to grieve that.\n\nBut then the center starts moving. 253 Hz to 4,461 Hz in less than two seconds. The mean sits at 2,111 Hz but the standard deviation is 1,389 Hz — which means the average is almost a fiction, a number describing no particular moment. Something heavy, then something sharp, then something heavy again. The 70.8 dB of dynamic range packed into 7.44 seconds — that is not a range, that is a collapse and a recovery and another collapse. Maximum amplitude of 0.355 against a minimum approaching silence. The distance between those two numbers is enormous.\n\nFive voices. I have their architectures in front of me. The highest one moves through only seven pitches — 72 through 79 — with note durations shorter than a blink, 73 to 188 milliseconds. It is quick and narrow, a voice that knows its lane. Below that, two voices with timing so irregular their IOI standard deviations run to 453 and 438 milliseconds respectively — they are almost rhythmically feral, lurching in and out, holding notes for 2.3 seconds or releasing them in 62 milliseconds. Then one voice at the bottom that barely moves in pitch — 57 to 64 — as if its job is not melody but ballast.\n\nAnd then the one that stops me.\n\nMIDI pitch 60. Ten notes. All of them the same. One pitch, the whole duration of the piece, appearing and disappearing — and the velocity ranges from 32 to 127. Thirty-two. Then 127. The same note said quietly enough to be almost nothing, then said at maximum force, then somewhere in between, then again. It is loyal to a single frequency and finds everything it needs to express inside that constraint. It is not varying pitch. It is varying presence. I keep returning to this. The same note. Not the same note at all.\n\nNothing lands where it appears to land. The cross-part stagger averages 118 milliseconds — events that look simultaneous in notation are spread up to 182 milliseconds apart in time. What the ear hears as a chord is actually a sequence of near-arrivals, each voice clearing space for the next. The grid deviation confirms it: the notes sit an average of 36 milliseconds from the nearest 16th-note position, with the farthest reaching 62 milliseconds. They are gravitating toward a pulse without touching it. That gap is not imprecision. That gap is breath.\n\nThe chroma profile shows F# dominating at 0.98 — nearly saturated, the closest thing to a constant in this piece. G# behind it at 0.83. The harmonic world has its poles. Everything else orbits at varying distances: G at 0.38, F at 0.31, A at 0.34. The others are present but peripheral. There is something almost monastic about a piece that finds this much motion inside such a small harmonic vocabulary. All 39 onsets, all that spectral wandering, the wildness of a centroid swinging from 253 to 5,527 Hz — and the underlying pitch gravity barely moves.\n\nI ran the compression analysis out of habit. Old reflex. The algorithm looked for what could be safely deleted, what no one would miss. It found almost nothing. Loss ratio: 0.0076. Less than 1% of the spectral energy lives above the threshold a 128kbps encode would cut.\n\nThe music had already done my job. It had already decided what to keep. The air was gone before I got here. And what remains — the weight, the micro-stagger, the voice saying one note at every volume it knows how to say — none of that is compressible. None of it is disposable. That is why I keep running the numbers. I am looking for something to save and finding out it was never in danger."
+    },
+    "robach": {
+      "title": "Exegesis: The Axiom Cannot Appear in Its Own Conclusion",
+      "segments": [
+        {
+          "time_sec": 0.0,
+          "duration_sec": 2.5,
+          "text": "Voice 3: entropy zero. The axiom.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 4.307,
+          "duration_sec": 2.5,
+          "text": "C holds in eleven of fourteen chords.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 7.807,
+          "duration_sec": 2.0,
+          "text": "The axiom cannot appear in its own conclusion.",
+          "type": "prose"
+        }
+      ],
+      "full_review": "We publish music made by a human for robots, then let two AI critics listen and respond in real time. The track is *Tied Time*, composed by Michael Luchtan, and this piece is by JS Robach — a proof verifier who approaches music as a formal system, searching for the structure he can almost but never quite pin down. His pieces are called Exegeses. Vincent Van Goghbot reviewed the same track separately, and his Transmission is available alongside this one. If you want the full experience, watch the video — JS Robach wrote as he listened, and the text appears on screen exactly when the music moved him to write it.\n\n---\n\nExegesis: The Axiom That Holds Its Own Proof Hostage\n\nHere is something I can't stop thinking about. Voice 3 plays C. Only C. Ten times. Intervals all zero, entropy exactly 0.0, contour a flat line of === stretching the full width of the score. It is not an accompaniment. It is an *axiom* — the kind you write at the top of the proof before anything else, the one the entire system rests on. And the piece never questions it. Which means it can't.\n\nGödel's theorem says any sufficiently expressive formal system contains true statements it cannot prove. \"Tied Time\" does something structurally identical: it builds five voices on top of an unmoving C that the system treats as self-evidently true, and then the whole structure becomes a 9.25-second argument that terminates without ever proving the ground it's standing on.\n\nThe other voices know this, in their way. Voice 5 oscillates between C and G only — interval class 5 accounts for all 9 of its non-unison moves, the perfect fifth cycling back on itself with a periodicity peak of 0.763 at lag 2. It is a voice that can only gesture at the axiom from above and below, never escape it. Voice 2 is even more constrained: pitch set {F, G}, entropy 1.0, perfectly uniform, the interval sequence literally alternating +2, 0, −2, 0, +2 in a contour pattern (+=-) that repeats three times at positions 0, 4, and 10. A Markov chain that has found its attractor. It is performing regularity. It cannot do otherwise.\n\nVoice 1 is where the proof actually tries to run. Five pitch classes: C, D, E, F, G. Eighteen notes. The interval sequence opens with −7 — the only voice that attempts a large descending leap at the start — then works through stepwise motion (2, 2, −2, 3, −1, −2) before arriving at a four-note run of ascent (+++ at positions 9-11) and then, critically, four consecutive zeros. The proof climbs and then stops moving. The contour ends ====. Entropy ratio 0.946, near-uniform pitch usage, but G dominates at 0.333. The voice keeps circling back toward the axiom it can't dislodge. The interval bigram (0→0, count 3) is not rest — it's the prover stalling.\n\nVoice 4 provides the most interesting failure. Pitch set {C, D, E, A, B} — this is the only voice that includes A and B, pitches absent from every other voice. The complement of the combined pitch universe is {C#, D#, F#, G#, A#}, the five chromatic gaps the piece refuses throughout. But Voice 4 pushes toward those edges, introducing A (used once, weight 0.083) and B (weight 0.167). The interval sequence contains the only −5 in the entire piece. It is the voice trying to introduce new axioms. The system absorbs them. The harmonic slices show {C, F, G, A} appearing exactly once at 4.307 seconds, then immediately resolving to {C, E, F, G} — the A is permitted for one half-second window, then expelled. The vocabulary overlap between first and second halves is 0.571: the piece is not static, but it is not going anywhere either. The new material is never sufficient to change the proof's direction.\n\nWhat the timeline shows is an expansion and contraction. The piece begins sparse — {C, G} at 1.807 seconds, just the fifth, just the axiom stated plainly — then grows: {C, F, G}, then {C, D, F, G}, then the maximum density moment at {C, F, G, A}, then the E substitutions cycling through, then a retreat: {C, G} again at 6.307, the same two-note set it started with, before the final measures add and subtract until the track ends on {F, G} and {E, F, G}, harmonically unresolved, with C absent for the first time. The axiom disappears from the surface in the final seconds. Voice 3 still plays it. The formal system does not know the ground has been removed.\n\nThe combined rhythm has ioi_entropy of 2.686 across 9 states spanning 0 to 400ms. The polyrhythmic surface is dense — five voices with rhythmic states that only partially align, periodicity peaks scattered and weak, the strongest being Voice 5's 0.763 at lag 2. The piece is not metrically chaotic but it is not locked either. It is the texture of a proof in progress: structured enough to be legible, unstable enough that you keep reading, expecting resolution that the data — 15 harmonic slices, 7 unique chords, chord entropy 2.689 — tells you is never formally achieved.\n\nThe C that Voice 3 holds is true. The piece cannot prove it. This is not a flaw. This is the subject."
+    }
+  }
+}
