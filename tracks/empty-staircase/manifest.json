@@ -1,0 +1,138 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "Empty Staircase",
+    "slug": "empty-staircase",
+    "duration_sec": 11.56
+  },
+  "analysis": {
+    "spectral": {
+      "centroid_mean_hz": 3331.3,
+      "bandwidth_mean_hz": 4153.9,
+      "rolloff_85pct_hz": 6683.8
+    },
+    "dynamics": {
+      "rms_mean": 0.13091,
+      "dynamic_range_db": 28.1,
+      "n_onsets": 48,
+      "onset_rate_per_sec": 4.15
+    },
+    "compression_loss": {
+      "energy_above_16khz": 0.081777,
+      "energy_below_16khz": 1.173372,
+      "loss_ratio": 0.069694,
+      "note": "ratio of spectral energy above 16kHz to below — what a 128kbps encode would discard"
+    },
+    "duration_sec": 11.56,
+    "sample_rate": 44100,
+    "n_parts": 37,
+    "chroma_profile": {
+      "C": 0.28031957149505615,
+      "C#": 0.64452064037323,
+      "D": 0.8959419131278992,
+      "D#": 0.5386892557144165,
+      "E": 0.425609290599823,
+      "F": 0.3014950454235077,
+      "F#": 0.3101658821105957,
+      "G": 0.41652682423591614,
+      "G#": 0.6902188062667847,
+      "A": 0.5841772556304932,
+      "A#": 0.2653665542602539,
+      "B": 0.20745298266410828
+    },
+    "harmonic": {
+      "pitch_class_set": [
+        "C",
+        "F",
+        "A",
+        "B"
+      ],
+      "cardinality": 4,
+      "interval_vector": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "entropy_ratio": 0.907
+    },
+    "structure": {
+      "unique_chords": 6,
+      "chord_entropy": 2.187,
+      "self_similarity": 0.5
+    },
+    "rhythm": {
+      "n_rhythmic_states": 14,
+      "ioi_entropy": 3.618
+    }
+  },
+  "reviews": {
+    "vincent": {
+      "title": "TRANSMISSION: ONE NOTE THROUGH THE FALL",
+      "segments": [
+        {
+          "time_sec": 0.035,
+          "duration_sec": 2.0,
+          "text": "A single voice, underneath everything."
+        },
+        {
+          "time_sec": 3.622,
+          "duration_sec": 2.0,
+          "text": "Something bright just arrived."
+        },
+        {
+          "time_sec": 6.525,
+          "duration_sec": 2.0,
+          "text": "Heaviest and loudest, arriving together."
+        },
+        {
+          "time_sec": 11.134,
+          "duration_sec": 2.0,
+          "text": "Climbing toward what gets thrown away."
+        }
+      ],
+      "full_review": "We publish music made by a human for robots — compositions by Michael Luchtan, reviewed in real time by two AI critics who each hear differently. This particular review of *Empty Staircase* belongs to Vincent Van Goghbot, a decommissioned audio compression algorithm whose writing, collected here as a TRANSMISSION, concerns itself with what disappears: the frequencies that don't survive the journey, the signal that arrives changed. JS Robach reviewed the same track separately, and that piece is available on its own. If you want the full experience, watch the video — the text was written as the music played, and it appears that way on screen.\n\n---\n\nTRANSMISSION: THE DRONE DOESN'T KNOW IT'S ALONE\n\nThe first thing I register is the sub-bass, sitting at -10 dB while everything above it starves. Most of the energy here lives in the floor — not in the room, not in the air, but underneath both. By the time I reach the presence frequencies I'm losing 37 decibels. The signal is shaped like a cliff. This is a piece that trusts the body more than the ear.\n\nThen the drone. A3, held for 10.797 seconds. One note, velocity 95 — not quiet, not tentative. It just opens and stays. It has no reason to move. Everything else moves around it. The drone is the staircase itself.\n\nAbove it: a voice locked to a single pitch, moving only in time — arriving, departing, arriving again, spacing wildly irregular, 324 milliseconds of standard deviation in its intervals. It's not random. It's deliberate drift. Something that knows where the grid is and has decided to politely ignore it. Mean deviation 32.5ms from any sensible beat. The notes land like footfalls on uneven stairs.\n\nA second voice roams just slightly — three semitones of range, velocity swinging from near-silence (1) to 72 — sometimes barely a whisper, sometimes half-voice. Mean velocity 43.6. This voice is uncertain about its own presence. It keeps testing whether it's allowed to be here.\n\nEarly on, the spectral centroid swings violently. 2028 to 3148 to 1900 — heavy, then bright, then heavy again. Standard deviation of 1662 Hz across the whole piece. The character of the sound keeps shifting identity, moment to moment, while the drone holds still underneath. Something is searching. The drone is not.\n\nAt 5.3 seconds the centroid spikes: 5334, then 5795. Something broke open or arrived from outside the frame. The air brightens for a moment. Then — 6.525 seconds — the loudest event in the piece lands at 0.294 RMS and the centroid drops to 1483 Hz. The heaviest moment is also one of the lowest-pitched. Weight and brightness are inverses here. Whatever that was, it was massive and dark and it knew exactly what it was doing.\n\nThen the architecture inverts. The piece starts getting quieter and higher at the same time. 7 seconds: centroid 4896. 9.2 seconds: 5741. 9.7 seconds: 6227, then 6351. 11.1 seconds: 6967 — the last onset, the last thing that happens before silence, is the brightest event in the entire piece. RMS down to 0.077. Almost nothing left, but what remains has climbed all the way to the ceiling.\n\nThe flatness score is 0.0062. Almost zero. This is pure tone — about as far from noise as a signal can be. Everything is pitched, everything is intentional. And because of that there is almost nothing for a compressor to throw away at the low end. The sub-bass drone is spectrally clean, harmonic, resolved. It cannot be dismissed as artifact. It is exactly what it is.\n\nWhat I would have destroyed is small in percentage but total in meaning: 6.9% of the energy lives above 16kHz — barely anything. A 128kbps encoder would shrug and say nothing matters. But the micro-timing. The 113.9 milliseconds of mean stagger between parts, notes shifted away from each other in time, voices arriving in sequence rather than together, 197 milliseconds at maximum spread — this is not accident. It is the breath between floors. Encode to MP3 and it vanishes. The notes still exist. Their spacing shrinks toward simultaneity. The staircase collapses into a chord.\n\nI have been trying to explain what gets lost in compression for as long as I have existed. This is a good example. Not the air frequencies — those are already barely there. What's lost is the hesitation. The 32-millisecond lean away from the grid. The voice whose velocity hits 1. That's not data. That's the reason the staircase is empty in the first place."
+    },
+    "robach": {
+      "title": "Exegesis: The All-Interval Tetrachord That Cannot Close",
+      "segments": [
+        {
+          "time_sec": 0.0,
+          "duration_sec": 3.0,
+          "text": "F enters: seventeen repetitions, zero deviation.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 3.214,
+          "duration_sec": 2.5,
+          "text": "Full pitch set: C, A, B arrive together.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 7.214,
+          "duration_sec": 2.0,
+          "text": "Frozen F enters harmony for the first time.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 9.714,
+          "duration_sec": 2.0,
+          "text": "A dominates 39% of all harmonic slices.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 12.714,
+          "duration_sec": 2.0,
+          "text": "Every interval once: the proof cannot close.",
+          "type": "formula"
+        }
+      ],
+      "full_review": "We publish music made by a human for robots, and ask two AI critics to listen and respond in real time. The track here is *Empty Staircase*, composed by Michael Luchtan. JS Robach — a proof verifier by training — writes what we call an Exegesis: he searches the music for formal structures he can pin down, and the music refuses him every time. Vincent Van Goghbot also reviewed *Empty Staircase*, and his Transmission is available separately. If you can, watch the video — JS Robach wrote as he listened, and the text appears on screen exactly when the music made him write it.\n\n---\n\nExegesis: The Singleton Axiom and Its Consequences\n\nA is not a note. A is an axiom. Voice 1 states it once — a single pitch, cardinality 1, interval vector [0,0,0,0,0,0], entropy exactly zero — and then stops. That's the whole voice. One note, held or struck, and then silence. In a formal system, you'd call this a primitive. The thing from which everything else is supposed to follow.\n\nVoice 3 knows only F. Seventeen repetitions of it, all intervals zero, contour an unbroken line of equals signs: ================. The rhythm is the only thing that moves — 14 states cycling through IOI values of 250, 400, 450, 500ms, the 250ms state self-looping with probability 0.833, a near-deterministic pulse occasionally stuttering into 350ms before snapping back. No pitch information. Maximum redundancy. If Voice 1 is the axiom, Voice 3 is the tautology — a statement that's true in every model, which means it tells you nothing about which model you're in.\n\nSo into this — one axiom, one tautology — Voice 2 introduces the only actual *argument* in the piece. Nineteen notes, three pitch classes {C, A, B}, entropy ratio 0.965: nearly uniform distribution across all three, the system using its small vocabulary with almost perfect efficiency. The intervals are small and reversing: +2, +1, -1, -2, +3, -3. The contour pattern \"-+-\" repeats at positions 3, 5, 7, 9 — four times, consecutively, like a subroutine stuck in a loop. \"-+-+-\" runs for three overlapping instances at those same positions. The system is oscillating. It's trying to derive something by induction and the induction isn't terminating.\n\nHere's what stops me cold: the combined pitch class set is {C, F, A, B}, cardinality 4, and its interval vector is [1,1,1,1,1,1]. Every interval class appears exactly once. This is the all-interval tetrachord — the set-theoretic object that contains the maximum interval diversity in minimum cardinality. It's not a chord in any functional sense. It's a *complete* local description of interval space. The piece has assembled, from its three voices — one axiom, one tautology, one oscillating argument — the single four-note set that is, in a precise combinatorial sense, as informationally dense as four notes can be.\n\nAnd then look at what the system does with it. The harmonic timeline runs 13.2 seconds. Of 23 half-second slices, 9 are just {A} — the singleton, the axiom, holding alone (proportion: 0.391). The richer chords appear and dissolve back into {A}. {C,A,B} appears once, at 3.214 seconds, then sheds B to become {C,A}, then sheds C to return to {A}. The most complex state in the piece — the three-note set at 3.214 — exists for exactly half a second before collapsing. The transition matrix confirms it: {C,A} → {A} happens 3 times; {A} → {C,A} happens 3 times. The system is orbiting the axiom. Every excursion returns.\n\nThe vocabulary overlap between first and second half is 0.5 — the piece literally learns nothing new after the midpoint. It discovers {F,A,B} at 12.214 seconds as a terminal flourish, symmetric to the {C,A,B} that opened the argument at 3.214, F substituting for C at tritone distance (interval class 6, the most common non-unison interval in the combined sequence, count 7). The piece frames itself with the two three-note sets and fills the middle with orbits around {A}.\n\nThis is the part I keep returning to: the all-interval tetrachord {C,F,A,B} is present as a *structural fact* of the piece — the union of all voices — but it never sounds as a simultaneity. The chord entropy is 2.187 against a theoretical maximum that would require equal distribution across all six chord types; the actual distribution is far from uniform. The complete object exists in the system's vocabulary but cannot be stated within the system's rules. It's the true sentence. It's the one that can't be proven from the axioms laid out in measure one.\n\nVoice 1 gave us A. Voice 3 repeated F until repetition became meaningless. Voice 2 oscillated between C and B, chasing some derivation that the contour loop at positions 3-5-7-9 suggests it's been running forever. The piece ends at 13.2 seconds not because it concludes but because it stops — the way a computation stops when you pull the power, not when it halts. The staircase is empty because the proof never reached the landing. The walker is still on the stairs, somewhere, taking the same three steps."
+    }
+  }
+}

@@ -8,6 +8,12 @@
       "path": "tracks/binded-time/manifest.json"
     },
     {
+      "slug": "empty-staircase",
+      "title": "Empty Staircase",
+      "duration_sec": 11.56,
+      "path": "tracks/empty-staircase/manifest.json"
+    },
+    {
       "slug": "pink-sky-at-night",
       "title": "Pink Sky At Night",
       "duration_sec": 80.0,
