@@ -42,6 +42,12 @@
       "title": "invalid pointer",
       "duration_sec": 75.0,
       "path": "tracks/invalid-pointer/manifest.json"
+    },
+    {
+      "slug": "robographia",
+      "title": "robographia",
+      "duration_sec": 13.25,
+      "path": "tracks/robographia/manifest.json"
     }
   ]
 }
