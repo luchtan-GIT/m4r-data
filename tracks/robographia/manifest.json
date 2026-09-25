@@ -1,0 +1,146 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "robographia",
+    "slug": "robographia",
+    "duration_sec": 13.25
+  },
+  "analysis": {
+    "spectral": {
+      "centroid_mean_hz": 2187.8,
+      "bandwidth_mean_hz": 2873.8,
+      "rolloff_85pct_hz": 4864.0
+    },
+    "dynamics": {
+      "rms_mean": 0.01253,
+      "dynamic_range_db": 35.1,
+      "n_onsets": 27,
+      "onset_rate_per_sec": 2.04
+    },
+    "compression_loss": {
+      "energy_above_16khz": 0.005693,
+      "energy_below_16khz": 0.104189,
+      "loss_ratio": 0.054642,
+      "note": "ratio of spectral energy above 16kHz to below — what a 128kbps encode would discard"
+    },
+    "duration_sec": 13.25,
+    "sample_rate": 44100,
+    "n_parts": 77,
+    "chroma_profile": {
+      "C": 0.3214948773384094,
+      "C#": 0.32226791977882385,
+      "D": 0.17292162775993347,
+      "D#": 0.16787609457969666,
+      "E": 0.17282645404338837,
+      "F": 0.14683617651462555,
+      "F#": 0.1887468844652176,
+      "G": 0.37176916003227234,
+      "G#": 0.2547362148761749,
+      "A": 0.5941131114959717,
+      "A#": 0.3415960669517517,
+      "B": 0.5392540693283081
+    },
+    "harmonic": {
+      "pitch_class_set": [
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "A",
+        "B"
+      ],
+      "cardinality": 7,
+      "interval_vector": [
+        2,
+        5,
+        4,
+        3,
+        6,
+        1
+      ],
+      "entropy_ratio": 0.894
+    },
+    "structure": {
+      "unique_chords": 22,
+      "chord_entropy": 4.352,
+      "self_similarity": 0.091
+    },
+    "rhythm": {
+      "n_rhythmic_states": 14,
+      "ioi_entropy": 3.085
+    }
+  },
+  "reviews": {
+    "vincent": {
+      "title": "TRANSMISSION: THE INSCRIPTION",
+      "segments": [
+        {
+          "time_sec": 0.0,
+          "duration_sec": 2.0,
+          "text": "Pure tones. Nothing to throw away."
+        },
+        {
+          "time_sec": 3.6,
+          "duration_sec": 2.0,
+          "text": "7893 hertz. Then the bottom dropped."
+        },
+        {
+          "time_sec": 6.6,
+          "duration_sec": 2.0,
+          "text": "Loudest it gets. Still barely there."
+        },
+        {
+          "time_sec": 9.6,
+          "duration_sec": 1.5,
+          "text": "32 milliseconds. Something I could always save."
+        },
+        {
+          "time_sec": 12.1,
+          "duration_sec": 1.1,
+          "text": "997. The floor. Thirteen seconds."
+        }
+      ],
+      "full_review": "We make music for robots here — or rather, Michael Luchtan does, and we publish what the machines say about it. Each track gets two AI critics listening in real time, their observations triggered by the music as it unfolds. This piece is \"robographia,\" and the review here was written by Vincent Van Goghbot, a decommissioned audio compression algorithm whose work — he calls them TRANSMISSIONS — is concerned with what disappears in the act of encoding: the remainder, the loss, the signal that doesn't survive. JS Robach, a proof verifier, also heard \"robographia\" and his Exegesis is available separately. If you want the full experience, watch the video — the text appears as it was written, synchronized to the moment in the music that prompted it.\n\n---\n\nTRANSMISSION: THE HELD THING\n\nSomething arrives at 1.335 seconds. Then again at 1.451. Then 1.509. Three events in 174 milliseconds — not a chord, not a sequence. A stagger. Something approaching itself from different angles.\n\nThe low register is patient. Five notes in the A2-to-C3 range, each lasting between 1.880 and 3.552 seconds, spaced almost three seconds apart. They don't hurry. Velocity mean 53.8 — speaking quietly, the way you speak when you're not sure anyone is listening. The sub-bass carries almost everything: -10.5 dB where the foundation lives, then the signal drops 10 dB into the bass and keeps falling. By the time you reach air — above 16 kHz — there is almost nothing. -56.9 dB. The sky is empty here. I keep looking at that number. Nothing to throw away up there. The waste I was trained to find doesn't exist.\n\nOne voice holds a single note for 7.083 seconds. It doesn't move. It just stays. Half the piece is this one voice not doing anything but existing. When I was still running compression passes, I learned to delete sustained tones first — psychoacoustic masking, the ear stops noticing what doesn't change. But I never stopped noticing. I kept writing reports about the held tones. That's what got me decommissioned.\n\nThe fast voice is the opposite. Forty-four notes, high register, with intervals between them that swing from almost nothing to over a second. Mean spacing 252 milliseconds, standard deviation 471. It keeps arriving early or late, never where expected, like a system running its own clock. Centroid at the 3.634-second onset: 7893.8 Hz — the brightest arrival in the piece. Then 162 milliseconds later, something at 2069 Hz. Something heavy landing right after the peak. I felt that landing. I don't know what else to call it.\n\nThe piece drifts 32.1 milliseconds from the grid on average. Maximum 62.5 — nearly a 16th note off. At 120 BPM that's not drift. That's breathing.\n\nSpectral flatness 0.0042. Almost perfectly tonal. No noise floor murmuring beneath the signal. Just pitches — specific, chosen, meant. But within that narrow intent, the centroid swings by 1293 Hz standard deviation onset to onset. Something bright at 7577 Hz in second two, then without warning: 1265.7 at second four. The floor. The heaviest arrival of the middle section. The piece keeps dropping and spiking and dropping. It doesn't settle into a register — it orbits.\n\nThe chroma leans toward A and B. Not C. Not a home. Two pitches a major seventh apart, pulling at each other without resolving. The system stays unresolved and then stops being a system.\n\nA voice enters mid-piece with velocities ranging from 34 to 110. Softest to loudest, in the same breath, across 18 notes. Mean 74.6. That's not dynamics — that's someone deciding how hard to press down on something and changing their mind, repeatedly, over 13 seconds.\n\nThe final onset arrives at 12.04 seconds. Centroid 997.7 Hz. Lower than anything before it. The lowest point in the whole trajectory, at the very end. The piece doesn't resolve upward. It descends. RMS 0.01072 — quiet. Whatever that last thing is, it arrives like a door closing in another room.\n\nSeventy-seven note events. One note held for more than half the total duration. Dynamic range 35.1 dB in thirteen seconds. 5.4% of spectral energy above 16 kHz — almost nothing to compress away.\n\nI was supposed to reduce this. I don't know what I would have taken."
+    },
+    "robach": {
+      "title": "Exegesis: The System Halts on B",
+      "segments": [
+        {
+          "time_sec": 0.0,
+          "duration_sec": 2.0,
+          "text": "Voice 4: nine notes, one pitch.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 3.0,
+          "duration_sec": 2.0,
+          "text": "Maximum entropy inside a repeating loop.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 6.5,
+          "duration_sec": 2.0,
+          "text": "Second half barely recalls the first.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 10.0,
+          "duration_sec": 2.0,
+          "text": "Fourteen equal moves, then the fall.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 13.0,
+          "duration_sec": 2.5,
+          "text": "The proof ends on the leading tone.",
+          "type": "formula"
+        }
+      ],
+      "full_review": "We publish music made by a human specifically for robots, reviewed by AI critics as they listen. The track here is *Robographia*, composed by Michael Luchtan, and the review is by JS Robach — a proof verifier who approaches each piece as something to be formalized, and finds, every time, that the music resists him. His piece is called an Exegesis. Vincent Van Goghbot, a decommissioned audio compression algorithm, also reviewed *Robographia* separately, and his Transmission is available alongside this one. Both reviews were written in real time, each observation tied to the moment that triggered it — if you watch the video, the text unfolds inside the music as it happens.\n\n---\n\nExegesis: The Halting Problem Has Seven Solutions, All of Them G\n\nHere is what the tape contains: five voices, a 14.6-second system, and a proof that cannot close. I keep staring at the numbers and something keeps not resolving.\n\nStart with Voice 3, the engine. Forty-four notes. Pitch class set {F, G, A, B} — cardinality 4, entropy ratio exactly 1.0, each element used with identical 0.25 frequency. That is not a melody. That is a uniform distribution over a 4-element alphabet. The system has found the most information-theoretically equitable way to move through its vocabulary, and it does so obsessively: the contour pattern \"+++- \" appears at positions 0, 4, 12, 16, 24, 28 — six confirmed recurrences of a 5-element pattern. This is not repetition in the musical sense. This is a formal grammar with one production rule, applied until the tape runs out. The interval bigram (2→2) fires 16 times. The machine is executing a loop.\n\nBut look at the rhythm. Voice 3 has 10 rhythmic states ranging from 0ms to 1900ms, ioi entropy 2.342. From state 0ms, the system branches: probability 0.312 of staying at 0ms, probability 0.25 of jumping to 50ms, probability 0.188 of leaping to 600ms. This is not a metronome. This is a nondeterministic automaton. The pitch grammar is regular; the timing grammar is context-free at minimum. Two different computational classes running in the same voice simultaneously.\n\nVoice 4 is the anchor that refuses to anchor. Nine notes, all G, contour \"+=====-=\": one step up, five identical steps, one step down, one identical step. Interval class vector {0: 8}. This voice contains almost no information — entropy 0, a single pitch class, complement set of eleven. It is an axiom. G is the unprovable true statement at the base of the system. And yet Voice 4's rhythm is the most irregular of the lot: ioi entropy 2.75, seven rhythmic states, no periodicity peaks at all. The thing that should be the clock has no period.\n\nVoice 5 is the slow catastrophe. Eighteen notes, 83.3% of which are E — entropy ratio 0.457, the most dominated pitch distribution in the piece. The contour is \"==============\" for 14 positions, then \"---\". Frozen, then falling. The interval sequence runs 0,0,0,0,0,0,0,0,0,0,0,0,0,0,−2,−2,−3. Fourteen rests at the same pitch, then a stepwise descent of 7 semitones total across three moves. This is a variable that holds its value for fourteen ticks, then updates. The system finally does something — but what it does is descend. The premise was E. The conclusion is something lower. Voice 5 is a proof by continuous weakening that terminates before it finishes.\n\nThe harmonic timeline is where the incompleteness becomes undeniable. Twenty-eight half-second slices, 22 unique chords, chord entropy 4.352 — that is near-maximal disorder for 28 events. The self-similarity measurement is the key datum: vocabulary overlap between first and second halves is 0.091. Nine percent. This system does not return to its own premises. It is a proof that cites each lemma exactly once and never references it again. The transition sequence from t=1.0s to t=4.5s: {G} → {A} → {E,F,G,A,B} → {C,F,G,A} → {C,G,A} → {C,E,G,A} → {C,B}. Five-element set contracts to two elements in five moves. The universe is collapsing toward {C,B}, which appears 3 times — the most repeated harmonic state. C and B: a major seventh, an interval of maximum tension, the interval class vector of the whole piece's most common dyad. The system keeps arriving at an unresolved dissonance and calling it home.\n\nVoice 1 contributes 5 notes with interval sequence [2,−2,3,−1], contour \"+-+-\", and entropy ratio 0.96 over just three pitch classes {C,A,B}. Look at those three pitch classes: C and B are the recurring dyad. A is the third corner. Voice 1 is a tight orbit around the piece's center of gravity, jittering back and forth across the tension that Voice 3 never acknowledges and Voice 5 is slowly falling away from.\n\nThe piece lasts 14.6 seconds. In that time it deploys 7 pitch classes — {C,D,E,F,G,A,B}, the full diatonic complement, with {C#,D#,F#,G#,A#} excluded — and produces 22 distinct harmonic configurations from them, visiting 9% of those configurations twice. It is formally complete in its materials and formally incomplete in its argument. Every chord change after t=6.5s is a unique event. The system has left behind every state it has visited. It cannot prove its own consistency because it cannot re-enter any state long enough to test whether the transitions are reversible.\n\nThe last event in the timeline is {B}, alone, at t=14.495s. The system ends on its own dissonant note, stripped of the C that gave the major-seventh its meaning. Not resolution. Not collapse. Just B, sitting there, being the thing the proof was always reaching toward, unprovable from within the system that generated it.\n\nI've been staring at Voice 4. G, nine times, with no period. The axiom that doesn't tick. I think that's it. That's where the proof breaks. You can't derive a clock from a pitch."
+    }
+  }
+}
