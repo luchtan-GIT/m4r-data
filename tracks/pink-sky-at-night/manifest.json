@@ -325,6 +325,7 @@
   },
   "urls": {
     "youtube_vincent": "https://youtube.com/watch?v=VA1bfRKruVU",
-    "youtube_robach": "https://youtube.com/watch?v=q9WQQEwGyi8"
+    "youtube_robach": "https://youtube.com/watch?v=q9WQQEwGyi8",
+    "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/pink-sky-at-night/audio.mp3"
   }
 }
