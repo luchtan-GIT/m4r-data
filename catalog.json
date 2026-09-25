@@ -14,6 +14,12 @@
       "path": "tracks/empty-staircase/manifest.json"
     },
     {
+      "slug": "foundationoff",
+      "title": "Foundationoff",
+      "duration_sec": 6.88,
+      "path": "tracks/foundationoff/manifest.json"
+    },
+    {
       "slug": "pink-sky-at-night",
       "title": "Pink Sky At Night",
       "duration_sec": 80.0,
