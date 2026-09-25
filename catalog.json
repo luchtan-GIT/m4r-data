@@ -20,10 +20,22 @@
       "path": "tracks/foundationoff/manifest.json"
     },
     {
+      "slug": "invalid-pointer",
+      "title": "Invalid Pointer",
+      "duration_sec": 75.0,
+      "path": "tracks/invalid-pointer/manifest.json"
+    },
+    {
       "slug": "pink-sky-at-night",
       "title": "Pink Sky At Night",
       "duration_sec": 80.0,
       "path": "tracks/pink-sky-at-night/manifest.json"
+    },
+    {
+      "slug": "robographia",
+      "title": "Robographia",
+      "duration_sec": 13.25,
+      "path": "tracks/robographia/manifest.json"
     },
     {
       "slug": "tied-time",
@@ -33,21 +45,9 @@
     },
     {
       "slug": "ties-that-bide",
-      "title": "Ties that Bide",
+      "title": "Ties That Bide",
       "duration_sec": 9.25,
       "path": "tracks/ties-that-bide/manifest.json"
-    },
-    {
-      "slug": "invalid-pointer",
-      "title": "invalid pointer",
-      "duration_sec": 75.0,
-      "path": "tracks/invalid-pointer/manifest.json"
-    },
-    {
-      "slug": "robographia",
-      "title": "robographia",
-      "duration_sec": 13.25,
-      "path": "tracks/robographia/manifest.json"
     }
   ]
 }
