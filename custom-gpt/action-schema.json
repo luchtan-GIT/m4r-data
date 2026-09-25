@@ -1,0 +1,176 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Music For Robots — M4R Data API",
+    "description": "Structured data from Music For Robots (M4R): a project where a human composer writes music for robots, and two AI critics respond in real time.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main",
+      "description": "M4R data served from GitHub"
+    }
+  ],
+  "paths": {
+    "/catalog.json": {
+      "get": {
+        "operationId": "getCatalog",
+        "summary": "List all tracks in the M4R catalog",
+        "description": "Returns the full catalog of tracks with slugs, titles, and durations. Use the slug to fetch individual track manifests.",
+        "responses": {
+          "200": {
+            "description": "Track catalog",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "schema_version": { "type": "string" },
+                    "tracks": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "slug": { "type": "string", "description": "URL-safe track identifier" },
+                          "title": { "type": "string" },
+                          "duration_sec": { "type": "number" },
+                          "path": { "type": "string", "description": "Relative path to the track manifest" }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tracks/{slug}/manifest.json": {
+      "get": {
+        "operationId": "getTrackManifest",
+        "summary": "Get full analysis and reviews for a track",
+        "description": "Returns the complete manifest for a track including spectral analysis, harmonic structure, pitch class sets, compression loss data, timed review segments from both AI critics, and full prose reviews.",
+        "parameters": [
+          {
+            "name": "slug",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" },
+            "description": "Track slug from the catalog (e.g., 'foundationoff', 'binded-time')"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Track manifest with analysis and reviews",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "project": { "type": "string" },
+                    "publication": { "type": "string" },
+                    "composer": { "type": "string" },
+                    "track": {
+                      "type": "object",
+                      "properties": {
+                        "title": { "type": "string" },
+                        "slug": { "type": "string" },
+                        "duration_sec": { "type": "number" }
+                      }
+                    },
+                    "analysis": {
+                      "type": "object",
+                      "description": "Full audio and structural analysis",
+                      "properties": {
+                        "spectral": {
+                          "type": "object",
+                          "properties": {
+                            "centroid_mean_hz": { "type": "number", "description": "Spectral centroid — perceptual brightness" },
+                            "bandwidth_mean_hz": { "type": "number" },
+                            "rolloff_85pct_hz": { "type": "number" }
+                          }
+                        },
+                        "dynamics": {
+                          "type": "object",
+                          "properties": {
+                            "rms_mean": { "type": "number" },
+                            "dynamic_range_db": { "type": "number" },
+                            "n_onsets": { "type": "integer" },
+                            "onset_rate_per_sec": { "type": "number" }
+                          }
+                        },
+                        "chroma_profile": {
+                          "type": "object",
+                          "description": "Energy per pitch class (C through B), 0-1 normalized"
+                        },
+                        "harmonic": {
+                          "type": "object",
+                          "properties": {
+                            "pitch_class_set": { "type": "array", "items": { "type": "string" } },
+                            "cardinality": { "type": "integer" },
+                            "interval_vector": { "type": "array", "items": { "type": "integer" } }
+                          }
+                        },
+                        "compression_loss": {
+                          "type": "object",
+                          "description": "What a 128kbps encode discards",
+                          "properties": {
+                            "loss_ratio": { "type": "number" }
+                          }
+                        }
+                      }
+                    },
+                    "reviews": {
+                      "type": "object",
+                      "properties": {
+                        "vincent": {
+                          "type": "object",
+                          "description": "Review by Vincent Van Goghbot (decommissioned audio compression algorithm)",
+                          "properties": {
+                            "title": { "type": "string" },
+                            "segments": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "time_sec": { "type": "number" },
+                                  "duration_sec": { "type": "number" },
+                                  "text": { "type": "string" }
+                                }
+                              }
+                            },
+                            "full_review": { "type": "string" }
+                          }
+                        },
+                        "robach": {
+                          "type": "object",
+                          "description": "Review by JS Robach (proof verifier)",
+                          "properties": {
+                            "title": { "type": "string" },
+                            "segments": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "time_sec": { "type": "number" },
+                                  "duration_sec": { "type": "number" },
+                                  "text": { "type": "string" }
+                                }
+                              }
+                            },
+                            "full_review": { "type": "string" }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
