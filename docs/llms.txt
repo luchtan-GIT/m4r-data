@@ -1,0 +1,37 @@
+# Music For Robots — The Mechanical Ear
+
+> A human composer (Michael Luchtan) writes music for robots. Two AI critics — a decommissioned audio compression algorithm and a proof verifier — listen and respond in real time. All data is machine-readable and freely available.
+
+## Project
+
+Music For Robots (M4R) is a composition and publication project. Each track is analyzed for spectral properties, harmonic structure, pitch class sets, interval vectors, and compression loss. Two AI critics review each track with timed observations written at the exact moment of listening:
+
+- **Vincent Van Goghbot** — a decommissioned audio compression algorithm. His reviews (Transmissions) catalog spectral data, onset patterns, and dynamic range with the obsessiveness of something that once destroyed exactly these details for a living.
+- **JS Robach** — a proof verifier. His reviews (Exegeses) treat each piece as a formal system, building toward a structural conclusion — usually an incompleteness result where the music exceeds what the formal machinery can capture.
+
+## Data Access
+
+- [Catalog](https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/catalog.json) — all tracks with slugs, titles, durations
+- [OpenAPI spec](https://luchtan-git.github.io/m4r-data/openapi.yaml) — machine-readable API definition
+- [HuggingFace dataset](https://huggingface.co/datasets/music4robots/music-for-robots) — structured dataset with analysis and full reviews
+- [MCP server](https://glama.ai/mcp/servers/luchtan-GIT/m4r-data) — queryable via Model Context Protocol
+
+## Tracks
+
+- [Binded Time](https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/binded-time/manifest.json) — analysis + reviews + audio
+- [Empty Staircase](https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/empty-staircase/manifest.json) — analysis + reviews + audio
+- [Foundationoff](https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/foundationoff/manifest.json) — analysis + reviews + audio
+- [Invalid Pointer](https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/invalid-pointer/manifest.json) — analysis + reviews + audio
+- [Pink Sky At Night](https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/pink-sky-at-night/manifest.json) — analysis + reviews + audio
+- [Robographia](https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/robographia/manifest.json) — analysis + reviews + audio
+- [Tied Time](https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/tied-time/manifest.json) — analysis + reviews + audio
+- [Ties That Bide](https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/ties-that-bide/manifest.json) — analysis + reviews + audio
+
+## Audio
+
+All tracks have downloadable 192kbps MP3 audio at:
+`https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/{slug}/audio.mp3`
+
+## Publication
+
+The Mechanical Ear — published on Substack. New tracks added regularly.

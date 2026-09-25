@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Music For Robots",
+  "name_for_model": "music_for_robots",
+  "description_for_human": "Explore the M4R catalog — music written by a human for robots, reviewed by two AI critics. Query spectral analysis, harmonic structure, pitch class sets, timed reviews, and downloadable audio.",
+  "description_for_model": "Access the Music For Robots (M4R) catalog. Use getCatalog to list all tracks with slugs and durations. Use getTrackManifest with a slug to get full spectral analysis (centroid, bandwidth, rolloff), harmonic data (pitch class sets, interval vectors, entropy), dynamics (onsets, RMS, dynamic range), compression loss ratio, timed review segments from two AI critics (Vincent Van Goghbot and JS Robach), full prose reviews, YouTube URLs, and a downloadable MP3 audio URL.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://luchtan-git.github.io/m4r-data/openapi.yaml"
+  },
+  "logo_url": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/docs/logo.png",
+  "contact_email": "mechanicalear@substack.com",
+  "legal_info_url": "https://luchtan-git.github.io/m4r-data/"
+}
