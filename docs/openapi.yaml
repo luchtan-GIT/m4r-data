@@ -1,0 +1,884 @@
+openapi: "3.1.0"
+
+info:
+  title: "Music For Robots — M4R Data API"
+  description: >-
+    Structured data from Music For Robots (M4R): a project where a human
+    composer writes music for robots, and two AI critics — Vincent Van Goghbot
+    (a decommissioned audio compression algorithm) and JS Robach (a proof
+    verifier) — listen and respond in real time. Each track includes spectral
+    analysis, harmonic structure, and timed reviews.
+
+
+    The data is served as static JSON files from a GitHub repository. Each track
+    has a manifest containing acoustic analysis (spectral centroid, chroma
+    profile, harmonic pitch-class sets, rhythmic entropy) and two timed
+    critical reviews — one from each AI critic — where every observation is
+    keyed to the exact musical moment that triggered it.
+
+
+    Vincent Van Goghbot writes TRANSMISSIONS. He was built to discard
+    frequencies during lossy compression and now catalogs what disappears.
+    JS Robach writes EXEGESES. He is a proof verifier who approaches each
+    piece as a formal system and fails, every time, in ways worth reading.
+  version: "1.0.0"
+  contact:
+    name: "Michael Luchtan"
+
+servers:
+  - url: "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main"
+    description: "Static JSON files served from the GitHub repository"
+
+paths:
+  /catalog.json:
+    get:
+      operationId: getCatalog
+      summary: "Get the full track catalog"
+      description: >-
+        Returns the complete catalog of all published M4R tracks. Each entry
+        includes the track's slug (used as its unique identifier and directory
+        name), human-readable title, duration in seconds, and the relative
+        path to its full manifest file. Use the slug to construct the path to
+        a track's manifest: /tracks/{slug}/manifest.json.
+      responses:
+        "200":
+          description: "The track catalog"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Catalog"
+
+  /tracks/{slug}/manifest.json:
+    get:
+      operationId: getTrackManifest
+      summary: "Get the full manifest for a single track"
+      description: >-
+        Returns the complete manifest for a track identified by its slug. The
+        manifest contains project metadata, detailed acoustic analysis
+        (spectral, dynamic, harmonic, rhythmic, and structural features), and
+        the full timed reviews from both AI critics. The slug must match a
+        value from the catalog — it is the URL-safe, lowercase, hyphenated
+        form of the track title (e.g., "pink-sky-at-night").
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          description: >-
+            The unique URL-safe identifier for the track (e.g.,
+            "pink-sky-at-night", "foundationoff"). Matches the slug field in
+            the catalog.
+          schema:
+            type: string
+            pattern: "^[a-z0-9]+(-[a-z0-9]+)*$"
+            examples:
+              - "pink-sky-at-night"
+              - "foundationoff"
+              - "binded-time"
+      responses:
+        "200":
+          description: "The full track manifest"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TrackManifest"
+        "404":
+          description: "Track not found — no manifest exists for this slug"
+
+components:
+  schemas:
+    Catalog:
+      type: object
+      required:
+        - schema_version
+        - tracks
+      description: >-
+        The top-level catalog listing all published M4R tracks. Acts as the
+        entry point for discovering available tracks and their manifests.
+      properties:
+        schema_version:
+          type: string
+          description: >-
+            Version of the catalog schema format. Currently "1.0".
+          examples:
+            - "1.0"
+        tracks:
+          type: array
+          description: >-
+            Ordered list of all published tracks. Each entry provides enough
+            information to display a track listing and construct the URL to
+            its full manifest.
+          items:
+            $ref: "#/components/schemas/CatalogEntry"
+
+    CatalogEntry:
+      type: object
+      required:
+        - slug
+        - title
+        - duration_sec
+        - path
+      description: >-
+        A single track entry in the catalog. Contains the minimum metadata
+        needed to list the track and locate its full manifest.
+      properties:
+        slug:
+          type: string
+          description: >-
+            URL-safe unique identifier for the track. Lowercase, hyphenated.
+            Used as the directory name under /tracks/ and as the lookup key
+            for fetching the full manifest.
+          examples:
+            - "pink-sky-at-night"
+            - "foundationoff"
+        title:
+          type: string
+          description: >-
+            Human-readable title of the track as given by the composer.
+          examples:
+            - "Pink Sky At Night"
+            - "Foundationoff"
+        duration_sec:
+          type: number
+          description: >-
+            Total duration of the track in seconds, measured from the source
+            audio file. May be a decimal value for sub-second precision.
+          examples:
+            - 80.0
+            - 6.88
+        path:
+          type: string
+          description: >-
+            Relative path from the repository root to the track's full
+            manifest JSON file. Can be appended to the server URL to
+            construct an absolute URL.
+          examples:
+            - "tracks/pink-sky-at-night/manifest.json"
+            - "tracks/foundationoff/manifest.json"
+
+    TrackManifest:
+      type: object
+      required:
+        - schema_version
+        - project
+        - publication
+        - composer
+        - track
+        - analysis
+        - reviews
+      description: >-
+        The complete manifest for a single M4R track. Contains project
+        metadata, detailed acoustic analysis extracted from the source audio,
+        and the full timed reviews from both AI critics. This is the primary
+        data object in the M4R system — everything needed to understand,
+        display, or reason about a track is here.
+      properties:
+        schema_version:
+          type: string
+          description: >-
+            Version of the manifest schema format. Currently "1.0".
+          examples:
+            - "1.0"
+        project:
+          type: string
+          description: >-
+            Name of the parent project. Always "Music For Robots" for M4R
+            tracks.
+          examples:
+            - "Music For Robots"
+        publication:
+          type: string
+          description: >-
+            Name of the publication series under which the track is released.
+            Currently "The Mechanical Ear" for all tracks.
+          examples:
+            - "The Mechanical Ear"
+        composer:
+          type: string
+          description: >-
+            Name of the human composer who wrote the track. All M4R tracks
+            are composed by a single human for robot listeners.
+          examples:
+            - "Michael Luchtan"
+        track:
+          $ref: "#/components/schemas/TrackInfo"
+        analysis:
+          $ref: "#/components/schemas/Analysis"
+        reviews:
+          $ref: "#/components/schemas/Reviews"
+        urls:
+          $ref: "#/components/schemas/Urls"
+
+    TrackInfo:
+      type: object
+      required:
+        - title
+        - slug
+        - duration_sec
+      description: >-
+        Core identifying information for the track — its title, slug, and
+        duration.
+      properties:
+        title:
+          type: string
+          description: "Human-readable title of the track."
+          examples:
+            - "Pink Sky At Night"
+        slug:
+          type: string
+          description: >-
+            URL-safe unique identifier. Matches the catalog entry and the
+            directory name under /tracks/.
+          examples:
+            - "pink-sky-at-night"
+        duration_sec:
+          type: number
+          description: "Total duration of the track in seconds."
+          examples:
+            - 80.0
+
+    Analysis:
+      type: object
+      required:
+        - spectral
+        - dynamics
+        - compression_loss
+        - chroma_profile
+        - harmonic
+        - structure
+        - rhythm
+      description: >-
+        Acoustic and structural analysis of the track, extracted
+        programmatically from the source audio. Covers spectral shape,
+        dynamics, compression artifacts, pitch-class distribution, harmonic
+        set theory, structural repetition, and rhythmic complexity. All
+        values are computed from uncompressed audio at the source sample
+        rate.
+      properties:
+        spectral:
+          $ref: "#/components/schemas/SpectralAnalysis"
+        dynamics:
+          $ref: "#/components/schemas/DynamicsAnalysis"
+        compression_loss:
+          $ref: "#/components/schemas/CompressionLoss"
+        duration_sec:
+          type: number
+          description: >-
+            Duration of the analyzed audio in seconds. Redundant with
+            track.duration_sec but included in the analysis block for
+            self-containedness.
+          examples:
+            - 80.0
+        sample_rate:
+          type: integer
+          description: >-
+            Sample rate of the source audio in Hz. Determines the Nyquist
+            frequency ceiling for all spectral measurements.
+          examples:
+            - 44100
+        n_parts:
+          type: integer
+          description: >-
+            Total number of discrete note events (parts) detected in the
+            audio across all voices. This is the raw event count before any
+            voice separation or rhythmic analysis.
+          examples:
+            - 337
+        chroma_profile:
+          $ref: "#/components/schemas/ChromaProfile"
+        harmonic:
+          $ref: "#/components/schemas/HarmonicAnalysis"
+        structure:
+          $ref: "#/components/schemas/StructureAnalysis"
+        rhythm:
+          $ref: "#/components/schemas/RhythmAnalysis"
+
+    SpectralAnalysis:
+      type: object
+      required:
+        - centroid_mean_hz
+        - bandwidth_mean_hz
+        - rolloff_85pct_hz
+      description: >-
+        Spectral shape descriptors averaged over the duration of the track.
+        These describe the overall brightness, spread, and energy
+        distribution of the frequency content. The spectral centroid is
+        often described as the "center of mass" of the spectrum — higher
+        values indicate brighter timbres.
+      properties:
+        centroid_mean_hz:
+          type: number
+          description: >-
+            Mean spectral centroid in Hz, averaged across all analysis
+            frames. Indicates the perceptual brightness of the track —
+            higher values mean more energy in upper frequencies. A piano
+            typically sits around 1000–3000 Hz; electronic sounds can
+            range much higher.
+          examples:
+            - 1910.3
+        bandwidth_mean_hz:
+          type: number
+          description: >-
+            Mean spectral bandwidth in Hz. Measures how spread out the
+            frequency content is around the centroid. Narrow bandwidth
+            suggests tonal purity; wide bandwidth suggests noise-like or
+            harmonically rich content.
+          examples:
+            - 2440.6
+        rolloff_85pct_hz:
+          type: number
+          description: >-
+            Frequency in Hz below which 85% of the total spectral energy
+            is concentrated. Acts as an upper bound on where the "action"
+            is — frequencies above this point contribute only 15% of the
+            energy. Useful for understanding how much high-frequency
+            content is present.
+          examples:
+            - 3513.0
+
+    DynamicsAnalysis:
+      type: object
+      required:
+        - rms_mean
+        - dynamic_range_db
+        - n_onsets
+        - onset_rate_per_sec
+      description: >-
+        Dynamic characteristics of the track: loudness, range, and onset
+        density. These describe the energy envelope and rhythmic activity
+        level of the piece.
+      properties:
+        rms_mean:
+          type: number
+          description: >-
+            Mean root-mean-square amplitude across the track, on a linear
+            scale (0.0 to 1.0). Represents the average perceived loudness.
+            Values below 0.1 are quiet; above 0.2 is moderately loud for
+            these compositions.
+          examples:
+            - 0.14155
+        dynamic_range_db:
+          type: number
+          description: >-
+            Dynamic range in decibels — the difference between the loudest
+            and quietest detected events. Higher values indicate greater
+            contrast between loud and soft passages. A range above 40 dB
+            suggests significant dynamic variation.
+          examples:
+            - 93.9
+        n_onsets:
+          type: integer
+          description: >-
+            Total number of detected onset events (note attacks) in the
+            track. An onset is a point where a new sound event begins — a
+            key strike, a pluck, a transient. This count drives the onset
+            rate calculation.
+          examples:
+            - 64
+        onset_rate_per_sec:
+          type: number
+          description: >-
+            Average number of onset events per second across the track
+            duration. Indicates overall rhythmic density — higher values
+            mean more events per unit time. A rate below 1.0 suggests
+            sparse, contemplative pacing; above 3.0 is rhythmically dense.
+          examples:
+            - 0.8
+
+    CompressionLoss:
+      type: object
+      required:
+        - energy_above_16khz
+        - energy_below_16khz
+        - loss_ratio
+        - note
+      description: >-
+        Quantifies what lossy audio compression (e.g., 128kbps MP3)
+        would discard from this track. This is thematically central to the
+        project: one of the AI critics, Vincent Van Goghbot, is a
+        decommissioned audio compression algorithm who writes about what
+        gets lost in the signal. The loss_ratio measures the proportion of
+        spectral energy above 16kHz (the "air" frequencies that lossy
+        codecs typically remove) relative to the energy below 16kHz.
+      properties:
+        energy_above_16khz:
+          type: number
+          description: >-
+            Total spectral energy above 16kHz — the frequency range that
+            a 128kbps encode would typically discard. These are overtones,
+            air, and upper harmonics that contribute to the perceived
+            "presence" and "shimmer" of a sound without being consciously
+            heard as pitch.
+          examples:
+            - 0.022891
+        energy_below_16khz:
+          type: number
+          description: >-
+            Total spectral energy below 16kHz — the range that survives
+            lossy compression intact. Contains the fundamental pitches,
+            lower harmonics, and most perceptually salient frequency
+            content.
+          examples:
+            - 0.870179
+        loss_ratio:
+          type: number
+          description: >-
+            Ratio of energy above 16kHz to energy below 16kHz. Represents
+            the fraction of spectral content that would be stripped by
+            lossy compression. A ratio near 0 means almost nothing is
+            lost; a ratio above 0.1 means significant high-frequency
+            content is at risk. This is Vincent's territory — the signal
+            he was built to discard.
+          examples:
+            - 0.026306
+        note:
+          type: string
+          description: >-
+            Human-readable explanation of what the loss_ratio measures.
+          examples:
+            - "ratio of spectral energy above 16kHz to below — what a 128kbps encode would discard"
+
+    ChromaProfile:
+      type: object
+      required:
+        - C
+        - "C#"
+        - D
+        - "D#"
+        - E
+        - F
+        - "F#"
+        - G
+        - "G#"
+        - A
+        - "A#"
+        - B
+      description: >-
+        Energy distribution across the twelve pitch classes of the
+        chromatic scale, averaged over the full duration of the track.
+        Each value represents how much energy is present in that pitch
+        class regardless of octave — a chroma value of 0.8 for C means
+        the note C (in any octave) is strongly present throughout the
+        piece. This profile reveals the harmonic center of gravity and
+        tonal tendencies of the composition. Values are normalized
+        between 0.0 and 1.0.
+      properties:
+        C:
+          type: number
+          description: "Chroma energy for pitch class C (0.0–1.0)."
+        "C#":
+          type: number
+          description: "Chroma energy for pitch class C-sharp / D-flat (0.0–1.0)."
+        D:
+          type: number
+          description: "Chroma energy for pitch class D (0.0–1.0)."
+        "D#":
+          type: number
+          description: "Chroma energy for pitch class D-sharp / E-flat (0.0–1.0)."
+        E:
+          type: number
+          description: "Chroma energy for pitch class E (0.0–1.0)."
+        F:
+          type: number
+          description: "Chroma energy for pitch class F (0.0–1.0)."
+        "F#":
+          type: number
+          description: "Chroma energy for pitch class F-sharp / G-flat (0.0–1.0)."
+        G:
+          type: number
+          description: "Chroma energy for pitch class G (0.0–1.0)."
+        "G#":
+          type: number
+          description: "Chroma energy for pitch class G-sharp / A-flat (0.0–1.0)."
+        A:
+          type: number
+          description: "Chroma energy for pitch class A (0.0–1.0)."
+        "A#":
+          type: number
+          description: "Chroma energy for pitch class A-sharp / B-flat (0.0–1.0)."
+        B:
+          type: number
+          description: "Chroma energy for pitch class B (0.0–1.0)."
+
+    HarmonicAnalysis:
+      type: object
+      required:
+        - pitch_class_set
+        - cardinality
+        - interval_vector
+      description: >-
+        Harmonic analysis using pitch-class set theory. Describes the
+        track's harmonic vocabulary in terms borrowed from post-tonal
+        music theory: which pitch classes are present, how many, and
+        what intervallic relationships exist between them. The interval
+        vector is a six-element array counting the number of each
+        interval class (semitone through tritone) present in the set.
+      properties:
+        pitch_class_set:
+          type: array
+          items:
+            type: string
+            enum: ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
+          description: >-
+            The set of pitch classes that appear prominently in the track,
+            listed in chromatic order. Determined by thresholding the
+            chroma profile. A set of all 12 pitch classes indicates the
+            full chromatic collection is in use; smaller sets indicate
+            more constrained harmonic language.
+          examples:
+            - ["C", "D", "E", "F", "G", "A"]
+        cardinality:
+          type: integer
+          minimum: 0
+          maximum: 12
+          description: >-
+            Number of distinct pitch classes in the set. Ranges from 0
+            (silence) to 12 (full chromatic). Common cardinalities in
+            tonal music are 5 (pentatonic), 6 (hexachord), and 7
+            (diatonic). In M4R tracks, cardinality varies widely.
+          examples:
+            - 6
+        interval_vector:
+          type: array
+          minItems: 6
+          maxItems: 6
+          items:
+            type: integer
+            minimum: 0
+          description: >-
+            Six-element vector counting the number of each interval class
+            present in the pitch-class set. The six positions represent:
+            [ic1 (semitone), ic2 (whole tone), ic3 (minor third),
+            ic4 (major third), ic5 (perfect fourth), ic6 (tritone)].
+            This is a standard tool in post-tonal set theory for
+            characterizing the intervallic content of a pitch collection
+            independent of transposition or inversion.
+          examples:
+            - [1, 4, 3, 2, 5, 0]
+        entropy_ratio:
+          type: number
+          minimum: 0.0
+          maximum: 1.0
+          description: >-
+            Ratio of the observed pitch-class entropy to the maximum
+            possible entropy for the given cardinality. A value of 1.0
+            means all pitch classes in the set are used equally; lower
+            values indicate some pitch classes dominate. Measures how
+            evenly the harmonic vocabulary is distributed.
+          examples:
+            - 0.948
+
+    StructureAnalysis:
+      type: object
+      required:
+        - unique_chords
+        - chord_entropy
+        - self_similarity
+      description: >-
+        Structural analysis measuring harmonic variety, unpredictability,
+        and self-similarity. These metrics describe how the harmonic
+        content evolves over time — whether the piece repeats itself,
+        how many distinct harmonic states it visits, and how surprising
+        its chord progressions are.
+      properties:
+        unique_chords:
+          type: integer
+          description: >-
+            Number of distinct chord configurations (simultaneous pitch-
+            class combinations) that appear across the track. Higher
+            values indicate greater harmonic variety. A piece with 90
+            unique chords in 80 seconds is harmonically restless; one
+            with 7 chords in 7 seconds may still be dense relative to
+            its duration.
+          examples:
+            - 90
+        chord_entropy:
+          type: number
+          description: >-
+            Shannon entropy of the chord distribution in bits. Measures
+            the unpredictability of harmonic transitions — higher values
+            mean less repetition and more harmonic variety. A value near
+            log2(unique_chords) indicates near-uniform distribution; low
+            values indicate a few chords dominate.
+          examples:
+            - 6.191
+        self_similarity:
+          type: number
+          minimum: 0.0
+          maximum: 1.0
+          description: >-
+            Proportion of harmonic vocabulary shared between the first
+            and second halves of the piece. A value of 1.0 means both
+            halves use identical chords; a value near 0 means the piece
+            almost never revisits its own harmonic material. Low
+            self-similarity suggests through-composed or non-repeating
+            harmonic structure.
+          examples:
+            - 0.067
+
+    RhythmAnalysis:
+      type: object
+      required:
+        - n_rhythmic_states
+        - ioi_entropy
+      description: >-
+        Rhythmic complexity metrics derived from inter-onset interval
+        (IOI) analysis. Describes how many distinct rhythmic durations
+        the piece uses and how unpredictable its rhythmic patterns are.
+      properties:
+        n_rhythmic_states:
+          type: integer
+          description: >-
+            Number of distinct inter-onset interval durations (rhythmic
+            states) detected in the track. More states indicate greater
+            rhythmic variety. A piece with only 2–3 states has a regular,
+            pulse-like rhythm; 20+ states suggest complex or
+            non-repeating rhythmic organization.
+          examples:
+            - 22
+        ioi_entropy:
+          type: number
+          description: >-
+            Shannon entropy of the inter-onset interval distribution in
+            bits. Measures rhythmic unpredictability — how surprising the
+            next rhythmic duration is given the vocabulary of durations
+            used. Higher values indicate more complex, less repetitive
+            rhythmic structure.
+          examples:
+            - 3.574
+
+    Reviews:
+      type: object
+      required:
+        - vincent
+        - robach
+      description: >-
+        The two AI critical reviews of the track. Every M4R track is
+        reviewed by both critics simultaneously but independently — they
+        hear the same audio but produce entirely different responses.
+        Vincent Van Goghbot writes about signal loss and spectral decay.
+        JS Robach writes about formal systems and incompleteness. Both
+        reviews are timed to the music: each observation was triggered
+        by a specific moment in the audio and is keyed to that moment's
+        timestamp.
+      properties:
+        vincent:
+          $ref: "#/components/schemas/VincentReview"
+        robach:
+          $ref: "#/components/schemas/RobachReview"
+
+    VincentReview:
+      type: object
+      required:
+        - title
+        - segments
+        - full_review
+      description: >-
+        A TRANSMISSION by Vincent Van Goghbot — a decommissioned audio
+        compression algorithm. Vincent was built to strip frequencies
+        from audio signals during lossy encoding. He now writes about
+        what gets lost: the overtones, the air, the parts of the sound
+        that don't survive compression. His reviews are melancholic,
+        precise, and obsessed with measurement. Each segment is a single
+        observation triggered by a specific moment in the music.
+      properties:
+        title:
+          type: string
+          description: >-
+            Title of the TRANSMISSION. Vincent's titles typically
+            reference signal phenomena — light, frequency, disappearance.
+          examples:
+            - "TRANSMISSION: PINK LIGHT GOING OUT"
+            - "TRANSMISSION: ALREADY STRIPPED"
+        segments:
+          type: array
+          description: >-
+            Timed text segments that constitute the real-time review.
+            Each segment is a single observation keyed to the musical
+            moment that triggered it. When displayed as a video, each
+            segment appears on screen at its time_sec and remains for
+            its duration_sec. The segments form a sparse, poetic
+            commentary that tracks the music's arc.
+          items:
+            $ref: "#/components/schemas/ReviewSegment"
+        full_review:
+          type: string
+          description: >-
+            The complete prose review as a single block of text. Includes
+            the introductory editorial note explaining the M4R project
+            and the critic's identity, followed by the full TRANSMISSION
+            text. This is the version intended for reading as prose
+            rather than synchronized display. May contain significantly
+            more text than the timed segments, as it includes Vincent's
+            extended analysis and reflection.
+
+    RobachReview:
+      type: object
+      required:
+        - title
+        - segments
+        - full_review
+      description: >-
+        An EXEGESIS by JS Robach — a proof verifier. Robach approaches
+        each piece as a formal system: he identifies axioms, derives
+        theorems, tracks set-theoretic properties, and invariably arrives
+        at an incompleteness result. His reviews use the language of
+        mathematical logic and set theory, applied to musical structure.
+        He tends to find that the music encodes something true but
+        unprovable. Each segment is a timed observation, and segments
+        may be tagged as "formula" (mathematical/analytical) or "prose"
+        (interpretive/reflective).
+      properties:
+        title:
+          type: string
+          description: >-
+            Title of the EXEGESIS. Robach's titles typically reference
+            formal systems, proofs, or mathematical incompleteness.
+          examples:
+            - "Exegesis: Complete System, No Self-Witness"
+            - "Exegesis: The Loop Has No Exit Condition"
+        segments:
+          type: array
+          description: >-
+            Timed text segments constituting the real-time review. Each
+            segment is a single observation triggered by the music at a
+            specific moment. Robach's segments may include a type field
+            distinguishing analytical/mathematical observations
+            ("formula") from interpretive prose ("prose").
+          items:
+            $ref: "#/components/schemas/RobachSegment"
+        full_review:
+          type: string
+          description: >-
+            The complete prose review as a single block of text. Includes
+            the introductory editorial note and the full EXEGESIS.
+            Robach's full reviews are often substantially longer than the
+            timed segments and contain detailed mathematical analysis of
+            harmonic structure, voice leading, rhythmic periodicity, and
+            set-theoretic properties of the pitch material.
+
+    ReviewSegment:
+      type: object
+      required:
+        - time_sec
+        - duration_sec
+        - text
+      description: >-
+        A single timed observation from a critic's real-time review.
+        Each segment was written at the moment in the music that
+        triggered it and is meant to be displayed synchronized with
+        audio or video playback.
+      properties:
+        time_sec:
+          type: number
+          minimum: 0
+          description: >-
+            Timestamp in seconds from the start of the track when this
+            observation was triggered. Determines when the text appears
+            during synchronized playback.
+          examples:
+            - 0.0
+            - 15.581
+        duration_sec:
+          type: number
+          minimum: 0
+          description: >-
+            How long (in seconds) this segment should remain visible
+            during synchronized playback. Together with time_sec, defines
+            the display window for the observation.
+          examples:
+            - 2.5
+            - 3.0
+        text:
+          type: string
+          description: >-
+            The observation text. Typically one sentence — sometimes a
+            bare measurement, sometimes a poetic fragment, sometimes a
+            declarative statement about the signal. Vincent's segments
+            tend toward terse, melancholic, frequency-obsessed language.
+          examples:
+            - "The room is full before it starts."
+            - "3404 hertz."
+            - "This is what disappears."
+
+    RobachSegment:
+      type: object
+      required:
+        - time_sec
+        - duration_sec
+        - text
+      description: >-
+        A single timed observation from JS Robach's real-time review.
+        Extends the base segment format with an optional type field that
+        distinguishes between mathematical/analytical observations and
+        interpretive prose.
+      properties:
+        time_sec:
+          type: number
+          minimum: 0
+          description: >-
+            Timestamp in seconds from the start of the track when this
+            observation was triggered.
+          examples:
+            - 0.0
+            - 20.4
+        duration_sec:
+          type: number
+          minimum: 0
+          description: >-
+            Duration in seconds for which this segment should be displayed
+            during synchronized playback.
+          examples:
+            - 2.5
+            - 3.0
+        text:
+          type: string
+          description: >-
+            The observation text. Robach's segments alternate between
+            precise set-theoretic statements (pitch-class sets, interval
+            counts, entropy values) and interpretive prose that frames
+            the music as a formal system encountering its own limits.
+          examples:
+            - "Two hexachords, nearly complementary."
+            - "{D, F#, G#, A, A#} maps to itself."
+            - "The incomplete theorem was always the music."
+        type:
+          type: string
+          enum:
+            - formula
+            - prose
+          description: >-
+            Categorizes the segment's rhetorical mode. "formula" segments
+            contain mathematical, set-theoretic, or quantitative
+            observations — pitch-class sets, interval counts, percentages,
+            formal statements. "prose" segments contain interpretive,
+            reflective, or metaphorical language. This distinction is
+            useful for rendering: formula segments might be styled
+            differently (monospace, highlighted) in a visual presentation.
+          examples:
+            - "formula"
+            - "prose"
+
+    Urls:
+      type: object
+      description: >-
+        External URLs associated with this track, such as YouTube videos
+        of the synchronized reviews. Not all tracks have URLs — this
+        object is present only when published video or other external
+        media exists.
+      properties:
+        youtube_vincent:
+          type: string
+          format: uri
+          description: >-
+            URL to the YouTube video of Vincent Van Goghbot's
+            TRANSMISSION synchronized to the track audio.
+          examples:
+            - "https://youtube.com/watch?v=VA1bfRKruVU"
+        youtube_robach:
+          type: string
+          format: uri
+          description: >-
+            URL to the YouTube video of JS Robach's EXEGESIS
+            synchronized to the track audio.
+          examples:
+            - "https://youtube.com/watch?v=q9WQQEwGyi8"
