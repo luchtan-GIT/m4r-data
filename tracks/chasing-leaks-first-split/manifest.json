@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "Chasing Leaks — First Split",
+    "slug": "chasing-leaks-first-split",
+    "duration_sec": null,
+    "parent": "Chasing Leaks",
+    "section": 2
+  },
+  "analysis": {},
+  "reviews": {
+    "vincent": {
+      "title": "TRANSMISSION: The First Split",
+      "segments": [
+        {
+          "time_sec": 0.0,
+          "duration_sec": 3.0,
+          "text": "one voice. the prediction holds."
+        },
+        {
+          "time_sec": 4.0,
+          "duration_sec": 3.0,
+          "text": "256 hertz. and something beside it."
+        },
+        {
+          "time_sec": 8.0,
+          "duration_sec": 3.5,
+          "text": "ten hertz apart. a tremor. not predicted."
+        }
+      ]
+    }
+  },
+  "urls": {
+    "youtube_vincent": "https://youtube.com/watch?v=PnzJl320Czo",
+    "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/chasing-leaks-first-split/audio.mp3"
+  }
+}

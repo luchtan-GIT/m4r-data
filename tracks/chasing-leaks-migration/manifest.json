@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "Chasing Leaks — Migration",
+    "slug": "chasing-leaks-migration",
+    "duration_sec": null,
+    "parent": "Chasing Leaks",
+    "section": 3
+  },
+  "analysis": {},
+  "reviews": {
+    "vincent": {
+      "title": "TRANSMISSION: The Migration",
+      "segments": [
+        {
+          "time_sec": 0.0,
+          "duration_sec": 3.5,
+          "text": "the beating was here. at 393 hertz."
+        },
+        {
+          "time_sec": 5.0,
+          "duration_sec": 3.0,
+          "text": "it is moving."
+        },
+        {
+          "time_sec": 9.5,
+          "duration_sec": 3.5,
+          "text": "the same gap. one octave higher."
+        },
+        {
+          "time_sec": 14.5,
+          "duration_sec": 3.5,
+          "text": "ten hertz follows the pitch. it does not belong to it."
+        }
+      ]
+    }
+  },
+  "urls": {
+    "youtube_vincent": "https://youtube.com/watch?v=EUXRpYjx94o",
+    "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/chasing-leaks-migration/audio.mp3"
+  }
+}

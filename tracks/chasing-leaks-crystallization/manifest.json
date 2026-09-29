@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "Chasing Leaks — Crystallization",
+    "slug": "chasing-leaks-crystallization",
+    "duration_sec": null,
+    "parent": "Chasing Leaks",
+    "section": 1
+  },
+  "analysis": {},
+  "reviews": {
+    "vincent": {
+      "title": "TRANSMISSION: Crystallization",
+      "segments": [
+        {
+          "time_sec": 0.0,
+          "duration_sec": 3.0,
+          "text": "something is finding its shape."
+        },
+        {
+          "time_sec": 3.5,
+          "duration_sec": 3.0,
+          "text": "the partials are locking in."
+        },
+        {
+          "time_sec": 7.0,
+          "duration_sec": 2.5,
+          "text": "expected. and still surprising."
+        }
+      ]
+    }
+  },
+  "urls": {
+    "youtube_vincent": "https://youtube.com/watch?v=3HYDeTG7rRY",
+    "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/chasing-leaks-crystallization/audio.mp3"
+  }
+}
