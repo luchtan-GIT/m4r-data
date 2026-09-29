@@ -2,6 +2,30 @@
   "schema_version": "1.0",
   "tracks": [
     {
+      "slug": "chasing-leaks-crystallization",
+      "title": "Chasing Leaks — Crystallization",
+      "duration_sec": null,
+      "path": "tracks/chasing-leaks-crystallization/manifest.json"
+    },
+    {
+      "slug": "chasing-leaks-first-split",
+      "title": "Chasing Leaks — First Split",
+      "duration_sec": null,
+      "path": "tracks/chasing-leaks-first-split/manifest.json"
+    },
+    {
+      "slug": "chasing-leaks-migration",
+      "title": "Chasing Leaks — Migration",
+      "duration_sec": null,
+      "path": "tracks/chasing-leaks-migration/manifest.json"
+    },
+    {
+      "slug": "chasing-leaks-the-leak",
+      "title": "Chasing Leaks — The Leak",
+      "duration_sec": null,
+      "path": "tracks/chasing-leaks-the-leak/manifest.json"
+    },
+    {
       "slug": "binded-time",
       "title": "Binded Time",
       "duration_sec": 6.86,
