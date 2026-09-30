@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "Chasing Leaks — Maximum Density",
+    "slug": "chasing-leaks-maximum-density",
+    "parent": "Chasing Leaks",
+    "section": 5,
+    "duration_sec": null
+  },
+  "analysis": {},
+  "reviews": {
+    "vincent": {
+      "title": "TRANSMISSION: Maximum Density",
+      "segments": [
+        {
+          "time_sec": 0.0,
+          "duration_sec": 3.5,
+          "text": "six partials. all within 30 hertz of each other."
+        },
+        {
+          "time_sec": 5.0,
+          "duration_sec": 3.5,
+          "text": "beating against beating against beating."
+        },
+        {
+          "time_sec": 10.0,
+          "duration_sec": 3.0,
+          "text": "the system is interfering with itself."
+        },
+        {
+          "time_sec": 15.0,
+          "duration_sec": 3.5,
+          "text": "the most complex moment in the piece. noted with surprise."
+        }
+      ]
+    }
+  },
+  "urls": {
+    "youtube_vincent": "https://youtube.com/watch?v=t9zfA2IXO7M",
+    "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/chasing-leaks-maximum-density/audio.mp3"
+  }
+}
