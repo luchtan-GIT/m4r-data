@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "Chasing Leaks — The Return",
+    "slug": "chasing-leaks-the-return",
+    "parent": "Chasing Leaks",
+    "section": 7,
+    "duration_sec": null
+  },
+  "analysis": {},
+  "reviews": {
+    "vincent": {
+      "title": "TRANSMISSION: The Return",
+      "segments": [
+        {
+          "time_sec": 0.0,
+          "duration_sec": 3.5,
+          "text": "the partials are descending."
+        },
+        {
+          "time_sec": 5.0,
+          "duration_sec": 3.5,
+          "text": "fewer of them. the interference is thinning."
+        },
+        {
+          "time_sec": 10.5,
+          "duration_sec": 3.0,
+          "text": "208 hertz. closer to the origin."
+        },
+        {
+          "time_sec": 15.5,
+          "duration_sec": 3.5,
+          "text": "decay is the instrument returning to nothing."
+        }
+      ]
+    }
+  },
+  "urls": {
+    "youtube_vincent": "https://youtube.com/watch?v=bIc1nmSDJPc",
+    "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/chasing-leaks-the-return/audio.mp3"
+  }
+}
