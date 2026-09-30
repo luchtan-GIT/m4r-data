@@ -2,6 +2,18 @@
   "schema_version": "1.0",
   "tracks": [
     {
+      "slug": "chasing-leaks-maximum-density",
+      "title": "Chasing Leaks — Maximum Density",
+      "duration_sec": null,
+      "path": "tracks/chasing-leaks-maximum-density/manifest.json"
+    },
+    {
+      "slug": "binded-time",
+      "title": "Binded Time",
+      "duration_sec": 6.86,
+      "path": "tracks/binded-time/manifest.json"
+    },
+    {
       "slug": "chasing-leaks-crystallization",
       "title": "Chasing Leaks — Crystallization",
       "duration_sec": null,
@@ -24,12 +36,6 @@
       "title": "Chasing Leaks — The Leak",
       "duration_sec": null,
       "path": "tracks/chasing-leaks-the-leak/manifest.json"
-    },
-    {
-      "slug": "binded-time",
-      "title": "Binded Time",
-      "duration_sec": 6.86,
-      "path": "tracks/binded-time/manifest.json"
     },
     {
       "slug": "empty-staircase",
