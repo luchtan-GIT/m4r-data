@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "Chasing Leaks — Climax",
+    "slug": "chasing-leaks-climax",
+    "parent": "Chasing Leaks",
+    "section": 6,
+    "duration_sec": null
+  },
+  "analysis": {},
+  "reviews": {
+    "vincent": {
+      "title": "TRANSMISSION: The Climax",
+      "segments": [
+        {
+          "time_sec": 0.0,
+          "duration_sec": 3.5,
+          "text": "three times the amplitude. without warning."
+        },
+        {
+          "time_sec": 5.0,
+          "duration_sec": 3.0,
+          "text": "the waveforms are no longer converging."
+        },
+        {
+          "time_sec": 9.5,
+          "duration_sec": 3.5,
+          "text": "this is what release sounds like from the inside."
+        }
+      ]
+    }
+  },
+  "urls": {
+    "youtube_vincent": "https://youtube.com/watch?v=pPN59cWgqsA",
+    "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/chasing-leaks-climax/audio.mp3"
+  }
+}

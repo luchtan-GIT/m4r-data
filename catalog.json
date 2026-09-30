@@ -2,10 +2,10 @@
   "schema_version": "1.0",
   "tracks": [
     {
-      "slug": "chasing-leaks-maximum-density",
-      "title": "Chasing Leaks — Maximum Density",
+      "slug": "chasing-leaks-climax",
+      "title": "Chasing Leaks — Climax",
       "duration_sec": null,
-      "path": "tracks/chasing-leaks-maximum-density/manifest.json"
+      "path": "tracks/chasing-leaks-climax/manifest.json"
     },
     {
       "slug": "binded-time",
@@ -24,6 +24,12 @@
       "title": "Chasing Leaks — First Split",
       "duration_sec": null,
       "path": "tracks/chasing-leaks-first-split/manifest.json"
+    },
+    {
+      "slug": "chasing-leaks-maximum-density",
+      "title": "Chasing Leaks — Maximum Density",
+      "duration_sec": null,
+      "path": "tracks/chasing-leaks-maximum-density/manifest.json"
     },
     {
       "slug": "chasing-leaks-migration",
