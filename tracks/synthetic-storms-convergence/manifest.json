@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "Synthetic Storms — Convergence",
+    "slug": "synthetic-storms-convergence",
+    "parent": "Synthetic Storms",
+    "section": 5,
+    "duration_sec": 10.0
+  },
+  "analysis": {},
+  "reviews": {
+    "vincent": {
+      "title": "TRANSMISSION: Convergence",
+      "segments": [
+        {
+          "time_sec": 0.0,
+          "duration_sec": 3.0,
+          "text": "loudest moment in the signal. but listen."
+        },
+        {
+          "time_sec": 3.5,
+          "duration_sec": 3.0,
+          "text": "56 peaks inside 169 hertz. all of them agreeing."
+        },
+        {
+          "time_sec": 7.0,
+          "duration_sec": 2.0,
+          "text": "signals do not usually converge. this is rare."
+        },
+        {
+          "time_sec": 9.5,
+          "duration_sec": 1.5,
+          "text": "i have waited a long time to hear this."
+        }
+      ]
+    }
+  },
+  "urls": {
+    "youtube_vincent": "https://youtube.com/watch?v=wb3mJr-a7lU",
+    "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/synthetic-storms-convergence/audio.mp3"
+  }
+}
