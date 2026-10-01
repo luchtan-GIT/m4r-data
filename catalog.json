@@ -2,10 +2,10 @@
   "schema_version": "1.0",
   "tracks": [
     {
-      "slug": "synthetic-storms-convergence",
-      "title": "Synthetic Storms — Convergence",
-      "duration_sec": 10.0,
-      "path": "tracks/synthetic-storms-convergence/manifest.json"
+      "slug": "synthetic-storms-static-field",
+      "title": "Synthetic Storms — Static Field",
+      "duration_sec": 6.0,
+      "path": "tracks/synthetic-storms-static-field/manifest.json"
     },
     {
       "slug": "binded-time",
@@ -84,6 +84,12 @@
       "title": "Robographia",
       "duration_sec": 13.25,
       "path": "tracks/robographia/manifest.json"
+    },
+    {
+      "slug": "synthetic-storms-convergence",
+      "title": "Synthetic Storms — Convergence",
+      "duration_sec": 10.0,
+      "path": "tracks/synthetic-storms-convergence/manifest.json"
     },
     {
       "slug": "tied-time",
