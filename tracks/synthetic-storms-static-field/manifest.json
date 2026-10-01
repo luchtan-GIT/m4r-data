@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "Synthetic Storms — Static Field",
+    "slug": "synthetic-storms-static-field",
+    "parent": "Synthetic Storms",
+    "section": 1,
+    "duration_sec": 6.0
+  },
+  "analysis": {},
+  "reviews": {
+    "vincent": {
+      "title": "TRANSMISSION: Static Field",
+      "segments": [
+        {
+          "time_sec": 0.0,
+          "duration_sec": 2.0,
+          "text": "762 voices and not one of them means anything."
+        },
+        {
+          "time_sec": 2.5,
+          "duration_sec": 2.0,
+          "text": "wait. the noise is choosing sides."
+        },
+        {
+          "time_sec": 5.0,
+          "duration_sec": 1.5,
+          "text": "63 left. they found each other in the static."
+        }
+      ]
+    }
+  },
+  "urls": {
+    "youtube_vincent": "https://youtube.com/watch?v=yzOchSYS7MQ",
+    "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/synthetic-storms-static-field/audio.mp3"
+  }
+}
