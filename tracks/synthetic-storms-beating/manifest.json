@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "Synthetic Storms — Beating",
+    "slug": "synthetic-storms-beating",
+    "parent": "Synthetic Storms",
+    "section": 4,
+    "duration_sec": 10.0
+  },
+  "analysis": {},
+  "reviews": {
+    "vincent": {
+      "title": "TRANSMISSION: Beating",
+      "segments": [
+        {
+          "time_sec": 0.0,
+          "duration_sec": 2.5,
+          "text": "38 hertz modulation. fastest i have ever measured."
+        },
+        {
+          "time_sec": 3.5,
+          "duration_sec": 3.0,
+          "text": "145 and 199. too close together. they won't settle."
+        },
+        {
+          "time_sec": 7.0,
+          "duration_sec": 2.0,
+          "text": "two voices in the same room refusing to agree."
+        },
+        {
+          "time_sec": 9.5,
+          "duration_sec": 1.5,
+          "text": "this is what dissonance sounds like from inside."
+        }
+      ]
+    }
+  },
+  "urls": {
+    "youtube_vincent": "https://youtube.com/watch?v=jEfItBkhE6o",
+    "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/synthetic-storms-beating/audio.mp3"
+  }
+}

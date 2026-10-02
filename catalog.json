@@ -2,10 +2,10 @@
   "schema_version": "1.0",
   "tracks": [
     {
-      "slug": "synthetic-storms-deep-pulse",
-      "title": "Synthetic Storms — Deep Pulse",
+      "slug": "synthetic-storms-beating",
+      "title": "Synthetic Storms — Beating",
       "duration_sec": 10.0,
-      "path": "tracks/synthetic-storms-deep-pulse/manifest.json"
+      "path": "tracks/synthetic-storms-beating/manifest.json"
     },
     {
       "slug": "binded-time",
@@ -90,6 +90,12 @@
       "title": "Synthetic Storms — Convergence",
       "duration_sec": 10.0,
       "path": "tracks/synthetic-storms-convergence/manifest.json"
+    },
+    {
+      "slug": "synthetic-storms-deep-pulse",
+      "title": "Synthetic Storms — Deep Pulse",
+      "duration_sec": 10.0,
+      "path": "tracks/synthetic-storms-deep-pulse/manifest.json"
     },
     {
       "slug": "synthetic-storms-static-field",
