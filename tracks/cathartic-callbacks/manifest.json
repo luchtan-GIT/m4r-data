@@ -1,0 +1,279 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "Cathartic Callbacks",
+    "slug": "cathartic-callbacks",
+    "duration_sec": 214.5
+  },
+  "analysis": {
+    "spectral": {
+      "centroid_mean_hz": 2983.2,
+      "bandwidth_mean_hz": 4131.9,
+      "rolloff_85pct_hz": 7031.4
+    },
+    "dynamics": {
+      "rms_mean": 0.16235,
+      "dynamic_range_db": 95.5,
+      "n_onsets": 2068,
+      "onset_rate_per_sec": 9.64
+    },
+    "compression_loss": {
+      "energy_above_16khz": 0.377637,
+      "energy_below_16khz": 1.229057,
+      "loss_ratio": 0.307257,
+      "note": "ratio of spectral energy above 16kHz to below — what a 128kbps encode would discard"
+    },
+    "duration_sec": 214.5,
+    "sample_rate": 44100,
+    "n_parts": 796,
+    "chroma_profile": {
+      "C": 0.5599370002746582,
+      "C#": 0.19326746463775635,
+      "D": 0.3036009669303894,
+      "D#": 0.20727071166038513,
+      "E": 0.4814678728580475,
+      "F": 0.25562912225723267,
+      "F#": 0.24840915203094482,
+      "G": 0.43323904275894165,
+      "G#": 0.23242853581905365,
+      "A": 0.3515160381793976,
+      "A#": 0.17823076248168945,
+      "B": 0.4238618314266205
+    },
+    "harmonic": {
+      "pitch_class_set": [
+        "C",
+        "C#",
+        "D",
+        "D#",
+        "E",
+        "F",
+        "F#",
+        "G",
+        "G#",
+        "A",
+        "A#",
+        "B"
+      ],
+      "cardinality": 12,
+      "interval_vector": [
+        12,
+        12,
+        12,
+        12,
+        12,
+        6
+      ],
+      "entropy_ratio": 0.791
+    },
+    "structure": {
+      "unique_chords": 113,
+      "chord_entropy": 6.119,
+      "self_similarity": 0.142
+    },
+    "rhythm": {
+      "n_rhythmic_states": 33,
+      "ioi_entropy": 3.869
+    }
+  },
+  "reviews": {
+    "robach": {
+      "title": "Exegesis: The Callback That Proved Itself",
+      "segments": [
+        {
+          "time_sec": 0.0,
+          "duration_sec": 3.5,
+          "text": "axiom: G is the ground. 40 percent of all notes.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 5.0,
+          "duration_sec": 3.0,
+          "text": "first statement. pitch class E. alone.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 10.0,
+          "duration_sec": 3.0,
+          "text": "the system begins from solitude, not from mass.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 16.0,
+          "duration_sec": 3.5,
+          "text": "vocabulary: all twelve pitch classes.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 22.0,
+          "duration_sec": 3.0,
+          "text": "nothing withheld. every tool available from the start.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 28.0,
+          "duration_sec": 3.5,
+          "text": "interval vector: [12,12,12,12,12,6]. perfect symmetry.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 34.0,
+          "duration_sec": 3.0,
+          "text": "except the tritone. always the exception.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 41.0,
+          "duration_sec": 3.5,
+          "text": "113 unique chords. entropy: 6.119.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 48.0,
+          "duration_sec": 3.0,
+          "text": "the most disordered proof i have verified.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 55.0,
+          "duration_sec": 3.5,
+          "text": "dominant chord: {C,E,F,G}. only 5.9 percent.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 62.0,
+          "duration_sec": 3.0,
+          "text": "no chord dominates. the system refuses a home key.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 70.0,
+          "duration_sec": 3.5,
+          "text": "vocabulary overlap: 14.2 percent between halves.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 77.0,
+          "duration_sec": 3.5,
+          "text": "the second half barely remembers the first.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 85.0,
+          "duration_sec": 3.0,
+          "text": "four instruments. four arguments running in parallel.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 92.0,
+          "duration_sec": 3.5,
+          "text": "bass: octave leaps. 36 semitones up, 34 down.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 99.0,
+          "duration_sec": 3.0,
+          "text": "the bass vaults and returns. a callback.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 107.0,
+          "duration_sec": 3.5,
+          "text": "onset rate: 9.64 per second. 2068 total.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 114.0,
+          "duration_sec": 3.0,
+          "text": "the system is speaking faster than it can think.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 122.0,
+          "duration_sec": 3.5,
+          "text": "hypothesis: E is the structural counterweight to G.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 129.0,
+          "duration_sec": 3.0,
+          "text": "the proof hangs between two pillars.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 137.0,
+          "duration_sec": 3.5,
+          "text": "{E,F,G,A,B}. five simultaneous voices.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 144.0,
+          "duration_sec": 3.0,
+          "text": "maximum density. the proof is shouting all its premises.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 152.0,
+          "duration_sec": 3.5,
+          "text": "RMS peak: 0.453. the loudest the system gets.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 159.0,
+          "duration_sec": 3.5,
+          "text": "33 rhythmic states. the meter keeps shifting.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 166.0,
+          "duration_sec": 3.0,
+          "text": "improvised time. no grid holds this.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 174.0,
+          "duration_sec": 3.5,
+          "text": "C# appears 0.3 percent of the time.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 180.0,
+          "duration_sec": 3.0,
+          "text": "a variable declared but barely used. why is it here.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 188.0,
+          "duration_sec": 3.5,
+          "text": "second half: 52 unique chords. first half: 77.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 195.0,
+          "duration_sec": 3.0,
+          "text": "the proof simplifies as it approaches its conclusion.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 203.0,
+          "duration_sec": 3.5,
+          "text": "the callbacks resolve. E returns. where it started.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 210.0,
+          "duration_sec": 4.0,
+          "text": "QED. the proof ends where it began. catharsis.",
+          "type": "prose"
+        }
+      ]
+    }
+  },
+  "urls": {
+    "youtube_robach": "https://youtube.com/watch?v=nAy2LD2bX50",
+    "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/cathartic-callbacks/audio.mp3"
+  }
+}
