@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "Synthetic Storms — Texture Burst",
+    "slug": "synthetic-storms-texture-burst",
+    "parent": "Synthetic Storms",
+    "section": 3,
+    "duration_sec": 10.0
+  },
+  "analysis": {},
+  "reviews": {
+    "vincent": {
+      "title": "TRANSMISSION: Texture Burst",
+      "segments": [
+        {
+          "time_sec": 0.0,
+          "duration_sec": 2.5,
+          "text": "the concentration broke. everything scattering at once."
+        },
+        {
+          "time_sec": 3.5,
+          "duration_sec": 3.0,
+          "text": "201 peaks across five thousand hertz. pressure releasing."
+        },
+        {
+          "time_sec": 7.5,
+          "duration_sec": 2.5,
+          "text": "it held so still and now it can't stop moving."
+        }
+      ]
+    }
+  },
+  "urls": {
+    "youtube_vincent": "https://youtube.com/watch?v=__15HUTWvJk",
+    "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/synthetic-storms-texture-burst/audio.mp3"
+  }
+}
