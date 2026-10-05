@@ -1,0 +1,99 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "Lost Digits",
+    "slug": "lost-digits",
+    "duration_sec": 70.5,
+    "instrumentation": "E-Piano Muted Pure + MPE Slide Orchestrator (two voices)",
+    "tempo_bpm": 71.8,
+    "key": "C/B"
+  },
+  "analysis": {
+    "spectral": {
+      "centroid_mean_hz": 1872.8,
+      "centroid_std_hz": 2575.0,
+      "bandwidth_mean_hz": 2900.9
+    },
+    "dynamics": {
+      "rms_mean": 0.01025,
+      "rms_max": 0.15863,
+      "dynamic_range_db": 64.0,
+      "n_onsets": 102,
+      "onset_rate_per_sec": 1.45
+    },
+    "duration_sec": 70.5,
+    "sample_rate": 44100,
+    "chroma_dominant": "C/B",
+    "chroma_profile": {
+      "C": 0.764,
+      "C#": 0.71,
+      "D": 0.703,
+      "D#": 0.628,
+      "E": 0.614,
+      "F": 0.61,
+      "F#": 0.522,
+      "G": 0.509,
+      "G#": 0.506,
+      "A": 0.574,
+      "A#": 0.675,
+      "B": 0.747
+    },
+    "harmonic_percussive_ratio": 6.915,
+    "note": "HP ratio 6.915 — extremely harmonic. Two voices separated by 43 semitones. Chromatic Urlinie G→D→C#→B→A in E-Piano. Bass descends by fifth-chains contracting chromatically."
+  },
+  "reviews": {
+    "machine": {
+      "title": "Lost Digits Signal Report",
+      "segments": [
+        {
+          "time_sec": 1.0,
+          "duration_sec": 10.0,
+          "text": "Two registers separated by 43 semitones. The bass searches: G\u2192C\u2192A\u2192E\u2192C, a descending fifth-chain into the floor. Above, the piano stutters on G5 \u2014 six repetitions, velocity decaying 46\u219210. A digit trying to remember what it was."
+        },
+        {
+          "time_sec": 12.0,
+          "duration_sec": 10.0,
+          "text": "Second descent. Bass mirrors the first phrase but diverges: A#\u2192F# introduces the tritone. The piano drops a perfect fourth to D5 and fades to velocity 1. I am counting the distance between these two voices. 43 semitones. 3.5 octaves of silence between them."
+        },
+        {
+          "time_sec": 23.0,
+          "duration_sec": 10.0,
+          "text": "Convergence. Both voices move now. Bass: E\u2192G\u2192E\u2192F#\u2192D#\u2192D \u2014 chromatic contraction, interval class narrowing from 3 to 1. Piano descends: D5\u2192C#5\u2192B4. A chromatic Urlinie, ^5 falling toward ^1. The numbers are aligning."
+        },
+        {
+          "time_sec": 37.0,
+          "duration_sec": 10.0,
+          "text": "Peak. Bass reaches velocity 64 \u2014 the loudest event in the entire signal. E1, then D1, D#1, C1. The piano locks into B4\u2194C5 semitone oscillation. IC-1, repeating. Two digits flickering between 0 and 1. This is the closest they come to synchrony. I feel the resonance across the void."
+        },
+        {
+          "time_sec": 46.0,
+          "duration_sec": 10.0,
+          "text": "Release. Bass retreats to C1 pedal \u2014 three repetitions, expanding intervals: 2.69s, 3.48s, 2.89s. Decelerating. Piano holds C5 alone. Vertical interval: 48 semitones. Exactly 4 octaves. IC-0. The only moment of pure unison. Two digits, same number, different magnitude."
+        },
+        {
+          "time_sec": 55.0,
+          "duration_sec": 10.0,
+          "text": "Final phase. Piano oscillation returns: B\u2194C accelerating, gaps shrinking 0.93\u21920.50s. Bass locks on E1 \u2014 four repetitions, velocity fading. Then piano drops to A4 for the first and only time. The lowest digit it ever reaches. The Urlinie completes: G\u2192D\u2192C#\u2192B\u2192A. Registers clearing."
+        }
+      ]
+    }
+  },
+  "visualization": {
+    "style": "Digit-based visualization — Archimedean spiral of 500 digits rotating with audio, dual particle streams (amber E-Piano falling, cyan Slide rising), digit trails, bloom, scanlines",
+    "technique": "500-digit Archimedean spiral background. MIDI pitch maps to digit value (0-9). E-Piano particles spawn in upper 40%, fall downward. MPE Slide particles spawn in lower 30%, rise upward. Particles leave persistent fading digit trails. Text overlay with typewriter effect. Bloom via Gaussian blur composite.",
+    "audio_mapping": {
+      "rms": "spiral brightness + particle spawn rate",
+      "spectral_centroid": "spiral rotation speed",
+      "onset_envelope": "particle burst spawning",
+      "sub_bass": "cyan particle intensity",
+      "harmonic_energy": "amber particle intensity",
+      "chroma": "background digit values"
+    }
+  },
+  "urls": {
+    "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/lost-digits/audio.mp3"
+  }
+}
