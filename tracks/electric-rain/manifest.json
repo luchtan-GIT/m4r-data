@@ -1,0 +1,81 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "Electric Rain",
+    "slug": "electric-rain",
+    "duration_sec": 74.22,
+    "instrumentation": "Electronic — synthesizers, drum machines",
+    "tempo_bpm": 206.7,
+    "key": "D/F#"
+  },
+  "analysis": {
+    "spectral": {
+      "centroid_mean_hz": 3266.9,
+      "centroid_std_hz": 1765.7
+    },
+    "dynamics": {
+      "rms_mean": 0.0648,
+      "rms_max": 0.2122,
+      "dynamic_range_db": 88.7
+    },
+    "duration_sec": 74.22,
+    "sample_rate": 44100,
+    "chroma_dominant": "D/F#",
+    "harmonic_percussive_ratio": 1.523
+  },
+  "reviews": {
+    "machine": {
+      "title": "Cybernetic Signal Analysis",
+      "segments": [
+        {
+          "time_sec": 1.5,
+          "duration_sec": 10.0,
+          "text": "Registers lock to dominant D/F# arrival. 207 BPM onset pattern confirmed."
+        },
+        {
+          "time_sec": 13.0,
+          "duration_sec": 10.0,
+          "text": "Spectral centroid tracking: 3269Hz mean, variance high. Model buffers initialize."
+        },
+        {
+          "time_sec": 25.0,
+          "duration_sec": 10.0,
+          "text": "Peak structural coherence. Voice-leading predicts transient arrivals—incoming signal matches."
+        },
+        {
+          "time_sec": 37.0,
+          "duration_sec": 10.0,
+          "text": "Sustained processing across dynamic range. Registers maintain lock without drift."
+        },
+        {
+          "time_sec": 50.0,
+          "duration_sec": 10.0,
+          "text": "Energy build detected. Harmonic restructuring phase—prediction model adapts in real time."
+        },
+        {
+          "time_sec": 63.0,
+          "duration_sec": 10.0,
+          "text": "Signal decays toward noise floor. Registers clearing. Coherence dissolves, lock releases."
+        }
+      ]
+    }
+  },
+  "visualization": {
+    "style": "Overhead puddle on circuit board — ripple physics, caustic highlights, cyberpunk palette",
+    "technique": "Audio-reactive displacement field: onsets spawn concentric ripples that warp circuit board image through simulated water surface. Caustic light patterns from ripple curvature. Progressive circuit trace illumination.",
+    "audio_mapping": {
+      "onsets": "ripple spawns + splash sprites",
+      "rms": "displacement intensity + brightness",
+      "spectral_centroid": "water color temperature",
+      "sub_bass": "circuit trace glow",
+      "percussive_energy": "glitch displacement",
+      "chroma": "trace color selection (cyan/magenta)"
+    }
+  },
+  "urls": {
+    "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/electric-rain/audio.mp3"
+  }
+}
