@@ -56,6 +56,12 @@
       "path": "tracks/chasing-leaks-the-return/manifest.json"
     },
     {
+      "slug": "electric-rain",
+      "title": "Electric Rain",
+      "duration_sec": 74.22,
+      "path": "tracks/electric-rain/manifest.json"
+    },
+    {
       "slug": "empty-staircase",
       "title": "Empty Staircase",
       "duration_sec": 11.56,
@@ -66,6 +72,12 @@
       "title": "Foundationoff",
       "duration_sec": 6.88,
       "path": "tracks/foundationoff/manifest.json"
+    },
+    {
+      "slug": "heart-tale-tell",
+      "title": "Heart Tale Tell",
+      "duration_sec": 800.22,
+      "path": "tracks/heart-tale-tell/manifest.json"
     },
     {
       "slug": "invalid-pointer",
