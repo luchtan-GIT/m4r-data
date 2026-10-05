@@ -62,6 +62,12 @@
       "path": "tracks/electric-rain/manifest.json"
     },
     {
+      "slug": "electron-clouds",
+      "title": "Electron Clouds",
+      "duration_sec": 66.0,
+      "path": "tracks/electron-clouds/manifest.json"
+    },
+    {
       "slug": "empty-staircase",
       "title": "Empty Staircase",
       "duration_sec": 11.56,
