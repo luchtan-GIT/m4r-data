@@ -74,6 +74,12 @@
       "path": "tracks/invalid-pointer/manifest.json"
     },
     {
+      "slug": "lost-digits",
+      "title": "Lost Digits",
+      "duration_sec": 70.5,
+      "path": "tracks/lost-digits/manifest.json"
+    },
+    {
       "slug": "pink-sky-at-night",
       "title": "Pink Sky At Night",
       "duration_sec": 80.0,
