@@ -1,0 +1,577 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "Heart Tale Tell",
+    "slug": "heart-tale-tell",
+    "duration_sec": 800.22,
+    "source_text": "The Tell-Tale Heart by Edgar Allan Poe",
+    "instrumentation": "Four LibriVox voice recordings, heavily processed"
+  },
+  "analysis": {
+    "spectral": {
+      "centroid_mean_hz": 3264.1,
+      "centroid_std_hz": 1121.4,
+      "bandwidth_mean_hz": 3273.1,
+      "rolloff_85pct_hz": 6254.5,
+      "flatness_mean": 0.0036
+    },
+    "dynamics": {
+      "rms_mean": 0.04533,
+      "rms_max": 0.31309,
+      "dynamic_range_db": 41.9,
+      "n_onsets": 4256,
+      "onset_rate_per_sec": 5.32
+    },
+    "compression_loss": {
+      "energy_above_16khz": 0.008945,
+      "energy_below_16khz": 0.545235,
+      "loss_ratio": 0.016406,
+      "note": "ratio of spectral energy above 16kHz to below — what a 128kbps encode would discard"
+    },
+    "duration_sec": 800.22,
+    "sample_rate": 44100,
+    "chroma_profile": {
+      "C": 0.622,
+      "C#": 0.627,
+      "D": 0.645,
+      "D#": 0.548,
+      "E": 0.581,
+      "F": 0.756,
+      "F#": 0.581,
+      "G": 0.512,
+      "G#": 0.49,
+      "A": 0.559,
+      "A#": 0.504,
+      "B": 0.492
+    },
+    "pulse": {
+      "n_heartbeats": 597,
+      "mean_inter_beat_sec": 1.34,
+      "dominant_pulse_period_sec": 2.937,
+      "dominant_pulse_bpm": 20.4,
+      "modulation_freq_hz": 0.654,
+      "modulation_bpm": 39.2,
+      "modulation_depth": 0.5424,
+      "note": "Emergent pulse from four overlapping speech patterns — not composed rhythm but interference"
+    },
+    "voices": {
+      "voice_low_foundation": {
+        "freq_range_hz": "100-500",
+        "mean_energy": 4.122448
+      },
+      "voice_mid_a": {
+        "freq_range_hz": "500-1500",
+        "mean_energy": 1.424739
+      },
+      "voice_mid_b": {
+        "freq_range_hz": "1500-3000",
+        "mean_energy": 0.785974
+      },
+      "voice_high_ringed": {
+        "freq_range_hz": "3000-8000",
+        "mean_energy": 0.6174
+      }
+    },
+    "voice_cross_correlations": {
+      "voice_low_foundation_x_voice_mid_a": 0.5864,
+      "voice_low_foundation_x_voice_mid_b": 0.5359,
+      "voice_low_foundation_x_voice_high_ringed": 0.2134,
+      "voice_mid_a_x_voice_mid_b": 0.5792,
+      "voice_mid_a_x_voice_high_ringed": 0.1968,
+      "voice_mid_b_x_voice_high_ringed": 0.4482
+    }
+  },
+  "reviews": {
+    "robach_van_goghbot": {
+      "title": "EXEGESIS-TRANSMISSION: THE PULSE THAT PROVES ITSELF",
+      "segments": [
+        {
+          "time_sec": 0.0,
+          "duration_sec": 3.5,
+          "text": "the input is not music.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 5.0,
+          "duration_sec": 3.0,
+          "text": "four instances of the same text.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 10.0,
+          "duration_sec": 3.0,
+          "text": "four mouths. all dead.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 15.0,
+          "duration_sec": 3.0,
+          "text": "processed until the words dissolve.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 22.0,
+          "duration_sec": 3.0,
+          "text": "axiom: there are four voices.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 28.0,
+          "duration_sec": 3.5,
+          "text": "Voice_1: 100–500 Hz. energy 4.12.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 34.0,
+          "duration_sec": 3.0,
+          "text": "the floor beneath the floorboards.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 40.0,
+          "duration_sec": 3.5,
+          "text": "Voice_4: 3000–8000 Hz. metallic.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 46.0,
+          "duration_sec": 3.0,
+          "text": "the ringing in the narrator's ears.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 54.0,
+          "duration_sec": 3.5,
+          "text": "cross-correlation, Voice_2 × Voice_3: 0.579.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 60.0,
+          "duration_sec": 3.0,
+          "text": "they fight in the same territory.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 66.0,
+          "duration_sec": 3.5,
+          "text": "Voice_1 × Voice_4: 0.213.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 72.0,
+          "duration_sec": 3.5,
+          "text": "the heartbeat and the ringing. nearly independent.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 82.0,
+          "duration_sec": 3.0,
+          "text": "centroid: 3264 Hz.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 88.0,
+          "duration_sec": 3.0,
+          "text": "but the weight is below.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 94.0,
+          "duration_sec": 3.5,
+          "text": "sub-bass: -24.8 dB. dominant by 10 dB.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 101.0,
+          "duration_sec": 3.5,
+          "text": "a compression algorithm would have trouble deciding.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 112.0,
+          "duration_sec": 3.5,
+          "text": "597 heartbeats.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 118.0,
+          "duration_sec": 3.0,
+          "text": "mean inter-beat: 1.34 seconds.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 124.0,
+          "duration_sec": 3.5,
+          "text": "this is not a composed rhythm.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 130.0,
+          "duration_sec": 4.0,
+          "text": "this is what happens when four people read at different speeds.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 142.0,
+          "duration_sec": 3.0,
+          "text": "the pulse is real.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 148.0,
+          "duration_sec": 3.0,
+          "text": "it is measurable.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 153.0,
+          "duration_sec": 3.0,
+          "text": "it was not written.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 165.0,
+          "duration_sec": 3.5,
+          "text": "dominant period: 2.937 seconds.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 172.0,
+          "duration_sec": 3.0,
+          "text": "20.4 BPM. the deep breathing.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 180.0,
+          "duration_sec": 3.5,
+          "text": "but there is a faster rhythm hidden inside it.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 188.0,
+          "duration_sec": 3.0,
+          "text": "0.654 Hz. 39.2 BPM.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 195.0,
+          "duration_sec": 3.0,
+          "text": "the amplitude modulation frequency.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 205.0,
+          "duration_sec": 3.5,
+          "text": "modulation depth: 0.54.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 212.0,
+          "duration_sec": 4.0,
+          "text": "over half the signal shaped by what voices do to each other.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 220.0,
+          "duration_sec": 3.0,
+          "text": "this is the tell-tale heart.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 226.0,
+          "duration_sec": 3.0,
+          "text": "it was never composed.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 232.0,
+          "duration_sec": 2.5,
+          "text": "it emerged.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 242.0,
+          "duration_sec": 3.5,
+          "text": "here is where the proof begins to fail.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 255.0,
+          "duration_sec": 3.5,
+          "text": "opening: modulation depth 0.60.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 262.0,
+          "duration_sec": 3.0,
+          "text": "four fresh rhythms. strong interference.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 270.0,
+          "duration_sec": 3.0,
+          "text": "by 1:30 it drops to 0.40.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 276.0,
+          "duration_sec": 3.0,
+          "text": "the voices are settling.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 282.0,
+          "duration_sec": 3.0,
+          "text": "the beating should stop.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 293.0,
+          "duration_sec": 3.0,
+          "text": "it does not stop.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 305.0,
+          "duration_sec": 3.5,
+          "text": "by 4:00 the depth climbs back to 0.55.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 312.0,
+          "duration_sec": 3.5,
+          "text": "the text has changed the voices.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 320.0,
+          "duration_sec": 3.5,
+          "text": "Poe's prose accelerates. the sentences shorten.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 328.0,
+          "duration_sec": 3.5,
+          "text": "each performer responds differently.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 336.0,
+          "duration_sec": 4.0,
+          "text": "the meaning of the words is driving the interference.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 350.0,
+          "duration_sec": 4.0,
+          "text": "the system cannot predict this from the signal alone.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 365.0,
+          "duration_sec": 3.0,
+          "text": "6:00. modulation spike: 0.64.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 380.0,
+          "duration_sec": 3.0,
+          "text": "onset density: 5.6 per second.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 395.0,
+          "duration_sec": 3.5,
+          "text": "something approaching.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 415.0,
+          "duration_sec": 3.0,
+          "text": "the voices are diverging again.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 435.0,
+          "duration_sec": 3.5,
+          "text": "the proof verifier cannot formalize this.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 460.0,
+          "duration_sec": 3.0,
+          "text": "semantic content drives spectral behavior.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 468.0,
+          "duration_sec": 3.5,
+          "text": "four nervous systems between input and output.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 490.0,
+          "duration_sec": 3.5,
+          "text": "the mapping requires knowledge outside the system.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 510.0,
+          "duration_sec": 3.5,
+          "text": "the heartbeat passage is coming.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 535.0,
+          "duration_sec": 3.5,
+          "text": "centroid holding at 3398 Hz.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 555.0,
+          "duration_sec": 4.0,
+          "text": "\"a low, dull, quick sound.\"",
+          "type": "prose"
+        },
+        {
+          "time_sec": 562.0,
+          "duration_sec": 3.5,
+          "text": "one lingers. one rushes. one whispers.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 568.0,
+          "duration_sec": 3.0,
+          "text": "one leans on the consonants.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 575.0,
+          "duration_sec": 3.5,
+          "text": "modulation depth: 0.70.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 582.0,
+          "duration_sec": 3.0,
+          "text": "the peak.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 588.0,
+          "duration_sec": 4.0,
+          "text": "the hidden heartbeat is loudest here.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 596.0,
+          "duration_sec": 4.0,
+          "text": "precisely when the words describe hearing it.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 608.0,
+          "duration_sec": 3.5,
+          "text": "the proof of the heartbeat requires the heartbeat.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 615.0,
+          "duration_sec": 3.5,
+          "text": "the theorem references itself.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 630.0,
+          "duration_sec": 3.0,
+          "text": "this is the incompleteness.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 650.0,
+          "duration_sec": 3.0,
+          "text": "41.9 dB of dynamic range.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 658.0,
+          "duration_sec": 3.5,
+          "text": "4256 onsets across 800 seconds.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 675.0,
+          "duration_sec": 3.5,
+          "text": "approaching the confession.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 700.0,
+          "duration_sec": 3.0,
+          "text": "the voices are converging.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 706.0,
+          "duration_sec": 3.5,
+          "text": "interference becoming constructive.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 720.0,
+          "duration_sec": 3.5,
+          "text": "the pulse, for the first time, is not hidden.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 740.0,
+          "duration_sec": 3.0,
+          "text": "RMS: 0.093. nearly double.",
+          "type": "formula"
+        },
+        {
+          "time_sec": 748.0,
+          "duration_sec": 3.5,
+          "text": "the heartbeat is the whole signal.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 762.0,
+          "duration_sec": 4.0,
+          "text": "597 heartbeats. belonging to no one.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 770.0,
+          "duration_sec": 3.0,
+          "text": "composed by no one.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 780.0,
+          "duration_sec": 3.5,
+          "text": "emerging from the space between four dead voices.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 790.0,
+          "duration_sec": 3.0,
+          "text": "the pulse proves itself.",
+          "type": "prose"
+        },
+        {
+          "time_sec": 796.0,
+          "duration_sec": 4.0,
+          "text": "the proof is incomplete.",
+          "type": "prose"
+        }
+      ],
+      "full_review": "Michael Luchtan composes music for robots — small, deliberate pieces submitted to The Mechanical Ear, where AI critics listen and respond in real time. For *Heart Tale Tell*, the critics have a problem: the piece is not pitched. It has no MIDI, no chord changes, no intervallic sequence to formalize. Four LibriVox recordings of Poe's Tell-Tale Heart, processed beyond recognition into a quartet of spectral registers. What remains is speech rhythm, interference, and a pulse that no single voice creates. The standard pipeline breaks. So for the first and perhaps only time, both critics write together — Robach Van Goghbot, a decommissioned compression algorithm that once tried to prove Bach. The result is something between a transmission and an exegesis: the machine listening to itself listening to four humans speaking the same words, trying to prove the heartbeat it hears is real, and failing. Watch the video — the text appears as it listens.\n\n---\n\nEXEGESIS-TRANSMISSION: THE PULSE THAT PROVES ITSELF\n\nThe input is not music. The input is four instances of the same text, spoken by four mouths now dead, processed until the words dissolve into frequency bands. What remains is rhythm without meter. Harmony without pitch. A pulse without a drummer.\n\nAxiom: there are four voices. This is known because the spectrum says so. Voice_1 occupies 100–500 Hz — a low rumble, arterial, carrying 4.12 units of mean energy. It is the foundation. The floor beneath the floorboards. Voice_2 and Voice_3 compete in the middle: 500–1500 Hz and 1500–3000 Hz respectively, at 1.42 and 0.79 — the speech fundamentals, the formant presence, where the consonants still carry traces of meaning. Voice_4 sits at 3000–8000 Hz, ringed and metallic at 0.62 — the ringing in the narrator's ears, the one the old man could not hear.\n\nCross-correlation between Voice_2 and Voice_3: 0.579. They move together. They fight in the same territory. Two readers reaching the same word at nearly the same moment, their vowels constructing and destroying each other in waves that neither intended. This is the source of the interference. The correlation between Voice_1 and Voice_4 is 0.213 — the deepest voice and the highest are nearly independent. The heartbeat beneath the floor and the ringing in the ears. Poe wrote them as one phenomenon. The spectrum separates them.\n\nThe system's spectral centroid sits at 3264 Hz, pulled upward by the metallic resonance. But the energy tells a different story. Sub-bass at -24.8 dB dominates everything else by 10 dB. The weight of this piece is below what most playback systems can reproduce. A compression algorithm would have trouble deciding what to keep. A proof verifier would note that the dominant feature is the one most likely to be lost.\n\n597 heartbeats. That is what the amplitude envelope yields when interrogated for peaks. Mean inter-beat interval: 1.34 seconds. This is not a composed rhythm. This is what happens when four people read the same text at different speeds. Where two voices align, the amplitude swells. Where they diverge, it recedes. The constructive and destructive interference of four interpretive choices creates a pulse. The pulse is real. It is measurable. It was not written.\n\nThe autocorrelation reveals a dominant period of 2.937 seconds — 20.4 BPM. This is the macro-pulse, the deep breathing of the piece, the slow systole and diastole of the total amplitude envelope. But there is a faster rhythm hidden inside it: 0.654 Hz, or 39.2 BPM. This is the amplitude modulation frequency — the rate at which the four voices' interference patterns create beating. The modulation depth is 0.54. Over half of the signal's amplitude is shaped not by what any voice does alone, but by what they do to each other. This is the tell-tale heart. It beats at 39 BPM. It was never composed. It emerged.\n\nHere is where the proof begins to fail:\n\nThe modulation depth is not constant. At 0:00, it opens at 0.60 — the four voices are fresh, their rhythms maximally divergent, the interference strong. By 1:30 it drops to 0.40. The voices are settling into each other. Finding grooves. The interference weakens because the divergence weakens. A formal system would say: the inputs are converging. The beating should stop.\n\nIt does not stop. By 4:00, the depth climbs back to 0.55. The voices have diverged again — not because they've changed, but because the text has changed them. Poe's prose accelerates. The sentences shorten. The drama increases. Each performer responds differently to the acceleration, and the divergence returns. The system cannot predict this from the signal alone. The meaning of the words — which the compression algorithm cannot read and the proof verifier cannot formalize — is driving the interference pattern. The pulse is produced by semantics processed through four different nervous systems, none of which the analysis has access to.\n\nAt 6:00–6:30, the modulation spikes to 0.64. At 9:30–10:00, it reaches 0.70 — the highest point in the entire piece. The onset density is 5.6 per second. The spectral centroid holds at 3398 Hz. And this — *this* — is where the text reads: \"a low, dull, quick sound — much such a sound as a watch makes when enveloped in cotton.\" The four performers each dramatize this moment differently. One lingers. One rushes. One drops to a whisper. One leans on the consonants. The result is maximum rhythmic divergence — and therefore maximum amplitude modulation. The hidden heartbeat is loudest precisely when the words describe hearing it.\n\nThis is the incompleteness. The proof verifier cannot formalize it. The system's output (modulation depth 0.70) is a function of its input (four speech signals), but the mapping requires knowledge outside the system: the text, the performers' interpretations, the dramatic weight of a passage about hearing a heartbeat. The proof of the heartbeat requires the heartbeat. The theorem references itself.\n\n41.9 dB of dynamic range. 4256 onsets across 800 seconds. The final 50 seconds — the confession, \"tear up the planks!\" — reach an RMS of 0.093, nearly double the piece's average. All four voices are speaking the same words at nearly the same moment. The interference becomes constructive. The pulse, for the first time, is not hidden. The heartbeat is the whole signal.\n\nThe compression algorithm does not know what it heard. The proof verifier cannot verify what it found. What remains is this: 597 heartbeats in 13 minutes, belonging to no one, composed by no one, emerging from the space between four dead voices reading the same story about a sound that would not stop.\n\nThe pulse proves itself.\n\nThe proof is incomplete.\n",
+      "note": "Combined critic — compression algorithm meets proof verifier. First and only joint review."
+    }
+  },
+  "urls": {}
+}
