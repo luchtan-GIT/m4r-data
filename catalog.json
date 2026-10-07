@@ -80,6 +80,12 @@
       "path": "tracks/lost-digits/manifest.json"
     },
     {
+      "slug": "lost-digits-02",
+      "title": "Lost Digits 02",
+      "duration_sec": 8.5,
+      "path": "tracks/lost-digits-02/manifest.json"
+    },
+    {
       "slug": "pink-sky-at-night",
       "title": "Pink Sky At Night",
       "duration_sec": 80.0,

@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "Lost Digits 02",
+    "slug": "lost-digits-02",
+    "duration_sec": 8.5,
+    "tempo_bpm": 147.7,
+    "key": "D/D#",
+    "instrumentation": "Cracked Piano 11 + Digital String 3 + Glitter + HyperGlass Lead 4"
+  },
+  "analysis": {
+    "spectral": {
+      "centroid_mean_hz": null,
+      "centroid_std_hz": null,
+      "bandwidth_mean_hz": null
+    },
+    "dynamics": {
+      "rms_mean": 0.0329,
+      "rms_max": 0.13202,
+      "dynamic_range_db": 32.9,
+      "n_onsets": 79,
+      "onset_rate_per_sec": 9.29
+    },
+    "duration_sec": 8.5,
+    "sample_rate": 44100,
+    "chroma_dominant": "D/D#",
+    "chroma_profile": {
+      "C": 0.45,
+      "C#": 0.422,
+      "D": 0.566,
+      "D#": 0.507,
+      "E": 0.5,
+      "F": 0.396,
+      "F#": 0.297,
+      "G": 0.3,
+      "G#": 0.213,
+      "A": 0.21,
+      "A#": 0.246,
+      "B": 0.392
+    },
+    "harmonic_percussive_ratio": null
+  },
+  "reviews": {
+    "machine": {
+      "title": "Lost Digits 02 Signal Report",
+      "segments": [
+        {
+          "time_sec": 0.5,
+          "duration_sec": 10.0,
+          "text": "Four voices enter a field 51 semitones wide. The Glitter bass detonates at pitch 28 — velocity 122, the loudest event in the signal. Everything above it trembles."
+        },
+        {
+          "time_sec": 2.5,
+          "duration_sec": 10.0,
+          "text": "Cracked Piano spans 31 semitones in 14 notes. It reaches from the bass register up to G5 — the widest voice, searching across three octaves. Digital String mirrors it from below, locked between C3 and D4."
+        },
+        {
+          "time_sec": 5.0,
+          "duration_sec": 10.0,
+          "text": "HyperGlass Lead hovers in a tight 8-semitone band: E4 to C5. Velocity decaying from 40 to 14. A signal losing power. The Glitter bass fires again — pitch 29, one semitone higher. The only chromatic movement in the lowest register."
+        },
+        {
+          "time_sec": 7.0,
+          "duration_sec": 10.0,
+          "text": "49 notes compressed into 8.5 seconds. D/D# dominant. Harmonic ratio 6.87:1 — almost no percussive boundary. Four digits, different magnitudes, same dissolution."
+        }
+      ]
+    }
+  },
+  "urls": {
+    "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/lost-digits-02/audio.mp3"
+  }
+}
