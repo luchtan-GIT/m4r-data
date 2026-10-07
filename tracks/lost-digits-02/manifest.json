@@ -71,6 +71,7 @@
     }
   },
   "urls": {
+    "youtube": "https://youtube.com/watch?v=cI5w8Yt3zJg",
     "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/lost-digits-02/audio.mp3"
   }
 }
