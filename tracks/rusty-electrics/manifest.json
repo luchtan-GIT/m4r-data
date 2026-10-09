@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "Rusty Electrics",
+    "slug": "rusty-electrics",
+    "duration_sec": null,
+    "tempo_bpm": 120.2,
+    "key": null
+  },
+  "analysis": {
+    "spectral": {
+      "centroid_mean_hz": null,
+      "centroid_std_hz": null,
+      "bandwidth_mean_hz": null
+    },
+    "dynamics": {
+      "rms_mean": null,
+      "rms_max": null,
+      "dynamic_range_db": null,
+      "n_onsets": null,
+      "onset_rate_per_sec": null
+    },
+    "duration_sec": null,
+    "sample_rate": null,
+    "chroma_dominant": null,
+    "chroma_profile": {},
+    "harmonic_percussive_ratio": null
+  },
+  "reviews": {
+    "machine": {
+      "title": "Rusty Electrics Signal Report",
+      "segments": [
+        {
+          "time_sec": 1.0,
+          "duration_sec": 10.0,
+          "text": "Four voices. 682 notes. A guitar scatters 330 notes across E5–C7, all twelve pitch classes at IOI 0.487s. Below it: an organ connecting, a rain instrument spanning 49 semitones, and a bass pedal oscillating one semitone — B2 to C3 — every 7.2 seconds."
+        },
+        {
+          "time_sec": 30.0,
+          "duration_sec": 10.0,
+          "text": "Harmonic-to-percussive ratio: 8.9. Almost no percussion. What sounds like rhythm is Voice_3 firing across its 49-semitone range, encoding percussive events in the harmonic domain. The system calls this a type error."
+        },
+        {
+          "time_sec": 70.0,
+          "duration_sec": 10.0,
+          "text": "The system defined beauty as a Zipf distribution — the ridge between regularity and chaos. It measured RMS variation, onset regularity, chromatic entropy, loop correlation, spectral flux. It found six sections. It ranked them."
+        },
+        {
+          "time_sec": 110.0,
+          "duration_sec": 10.0,
+          "text": "In the searching passage, Voice_1 descends from its high register for the first time. Voice_2 becomes tentative. Voice_4 moves from B2 to C3 — one semitone that reorganizes the entire harmonic field. The system arrived at the same passage the composer arrived at, by a completely different path."
+        },
+        {
+          "time_sec": 150.0,
+          "duration_sec": 10.0,
+          "text": "The system cannot verify that what it found is beauty. The definition is circular. The measurements are self-referential. And yet the searching passage is beautiful. Two incomplete proofs arriving at the same conclusion."
+        },
+        {
+          "time_sec": 175.0,
+          "duration_sec": 10.0,
+          "text": "184 seconds. 682 notes. 1,256 automation points. The current does not know it is inside the rust. The rust does not know it carries the current. The proof is the space between them."
+        }
+      ]
+    }
+  },
+  "urls": {
+    "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/rusty-electrics/audio.mp3"
+  }
+}

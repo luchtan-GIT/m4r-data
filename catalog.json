@@ -98,6 +98,12 @@
       "path": "tracks/robographia/manifest.json"
     },
     {
+      "slug": "rusty-electrics",
+      "title": "Rusty Electrics",
+      "duration_sec": null,
+      "path": "tracks/rusty-electrics/manifest.json"
+    },
+    {
       "slug": "synthetic-storms-beating",
       "title": "Synthetic Storms — Beating",
       "duration_sec": 10.0,
