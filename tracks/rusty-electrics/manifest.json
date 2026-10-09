@@ -66,6 +66,57 @@
       ]
     }
   },
+  "sections": [
+    {
+      "index": 1,
+      "slug": "opening-scatter",
+      "title": "Opening Scatter",
+      "description": "Four voices. 682 notes. A guitar scatters 330 notes across E5–C7, all twelve pitch classes. Below: an organ, a rain instrument spanning 49 semitones, and a bass pedal oscillating B2↔C3. HP ratio 8.9 — almost no percussion. What sounds like rhythm is pitch displacement.",
+      "urls": {
+        "youtube": "https://youtube.com/watch?v=AlnAnWpJYX4",
+        "farcaster": "https://warpcast.com/luchtan/0x4189d1c04b8c4921497e59710856dc9c761704ed"
+      }
+    },
+    {
+      "index": 2,
+      "slug": "controlled-heat",
+      "title": "Controlled Heat",
+      "description": "The system defined beauty as a Zipf distribution — the ridge between regularity and chaos. It measured RMS variation, onset regularity, chromatic entropy, loop correlation, spectral flux. It found six sections. Then it composed. 1,256 automation control points.",
+      "urls": {
+        "youtube": "https://youtube.com/watch?v=VA8L01eP57o",
+        "farcaster": "https://warpcast.com/luchtan/0xfe9130bfc73d593374945e9cc67090eb99111483"
+      }
+    },
+    {
+      "index": 3,
+      "slug": "guitar-rain",
+      "title": "Guitar Rain",
+      "description": "Voice_3 spans B1–C6: 49 semitones. 191 notes with IOI std dev 2.624 — the statistical signature of chaos. Burst-and-scatter patterns across nearly the entire audible pitch field. The rain is not percussion. It is harmony pretending.",
+      "urls": {
+        "youtube": "https://youtube.com/watch?v=11dU9mC71TI",
+        "x": "https://x.com/i/status/2108523749381140865",
+        "farcaster": "https://warpcast.com/luchtan/0x957bd0a12fac15f09b0c8da28a63315e6a8cf44b"
+      }
+    },
+    {
+      "index": 4,
+      "slug": "searching",
+      "title": "Searching",
+      "description": "Voice_1 descends from its high register for the first time. Voice_2 becomes tentative. Voice_4 moves from B2 to C3 — one semitone that reorganizes the entire harmonic field."
+    },
+    {
+      "index": 5,
+      "slug": "conversation",
+      "title": "Conversation",
+      "description": "The system cannot verify that what it found is beauty. The definition is circular. The measurements are self-referential. And yet the searching passage is beautiful. Two incomplete proofs arriving at the same conclusion."
+    },
+    {
+      "index": 6,
+      "slug": "wire-climax",
+      "title": "Wire Climax",
+      "description": "184 seconds. 682 notes. 1,256 automation points. The current does not know it is inside the rust. The rust does not know it carries the current. The proof is the space between them."
+    }
+  ],
   "urls": {
     "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/rusty-electrics/audio.mp3"
   }

@@ -6,6 +6,8 @@ Tools:
     get_track       — full manifest for a track (analysis, reviews, URLs)
     get_analysis    — analysis data only, for comparison across tracks
     search_reviews  — full-text search across review segments
+    get_sections    — platform URLs for a track's sections (clips)
+    list_sections   — all tracks with published sections and their platforms
 
 Run:
     python mcp_server.py
@@ -28,7 +30,9 @@ mcp = MCPServer(
         "Vincent Van Goghbot (spectral/compression) and JS Robach (formal/structural) "
         "— review the music in real time. Use list_tracks to browse, get_track for "
         "full details, get_analysis for numerical comparison, search_reviews to find "
-        "moments by keyword."
+        "moments by keyword. Some tracks have sections (clips) with their own "
+        "platform URLs — use get_sections to find YouTube, X, Farcaster, and "
+        "TikTok links for individual sections."
     ),
 )
 
@@ -154,6 +158,72 @@ def search_reviews(query: str) -> str:
             f"  [{m['track']}] {m['critic']} @ {m['time_sec']}s: \"{m['text']}\""
         )
     return "\n".join(lines)
+
+
+@mcp.tool()
+def get_sections(slug: str) -> str:
+    """Get the sections (clips) for a track, with platform URLs.
+
+    Returns each section's title, description, and URLs for YouTube,
+    X/Twitter, Farcaster, and TikTok where available. Sections are
+    independently published clips from multi-section compositions.
+
+    Args:
+        slug: Track slug from list_tracks (e.g. "rusty-electrics")
+    """
+    manifest = _load_manifest(slug)
+    if manifest is None:
+        available = [t["slug"] for t in _load_catalog().get("tracks", [])]
+        return f"Track '{slug}' not found. Available: {', '.join(available)}"
+
+    sections = manifest.get("sections", [])
+    if not sections:
+        return f"Track '{slug}' has no sections."
+
+    lines = [f"{manifest['track']['title']} — {len(sections)} section(s)\n"]
+    for s in sections:
+        urls = s.get("urls", {})
+        url_parts = [f"{k}: {v}" for k, v in urls.items()] if urls else ["not yet published"]
+        lines.append(
+            f"  {s['index']}. {s['title']} ({s['slug']})\n"
+            f"     {s.get('description', '')[:120]}...\n"
+            f"     {', '.join(url_parts)}"
+        )
+    return "\n".join(lines)
+
+
+@mcp.tool()
+def list_sections() -> str:
+    """List all tracks that have published sections (clips) with platform URLs.
+
+    Returns a summary of which sections are available on which platforms
+    (YouTube, X, Farcaster, TikTok). Useful for finding content to embed,
+    share, or analyze.
+    """
+    catalog = _load_catalog()
+    results: list[str] = []
+
+    for track_entry in catalog.get("tracks", []):
+        manifest = _load_manifest(track_entry["slug"])
+        if not manifest:
+            continue
+        sections = manifest.get("sections", [])
+        if not sections:
+            continue
+
+        published = [s for s in sections if s.get("urls")]
+        title = manifest["track"]["title"]
+        results.append(
+            f"{title} ({track_entry['slug']}): "
+            f"{len(published)}/{len(sections)} sections published"
+        )
+        for s in published:
+            platforms = list(s.get("urls", {}).keys())
+            results.append(f"  {s['index']}. {s['title']} — {', '.join(platforms)}")
+
+    if not results:
+        return "No tracks with published sections yet."
+    return "\n".join(results)
 
 
 if __name__ == "__main__":
