@@ -126,7 +126,12 @@
       "index": 6,
       "slug": "wire-climax",
       "title": "Wire Climax",
-      "description": "184 seconds. 682 notes. 1,256 automation points. The current does not know it is inside the rust. The rust does not know it carries the current. The proof is the space between them."
+      "description": "184 seconds. 682 notes. 1,256 automation points. The current does not know it is inside the rust. The rust does not know it carries the current. The proof is the space between them.",
+      "urls": {
+        "youtube": "https://youtube.com/watch?v=6C4irTlwc74",
+        "x": "https://x.com/i/status/2110320495685984392",
+        "farcaster": "https://warpcast.com/luchtan/0xcaf204b2899c59d672fa0c9735e35ed9ba6a9367"
+      }
     }
   ],
   "urls": {
