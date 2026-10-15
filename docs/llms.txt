@@ -14,16 +14,34 @@ Music For Robots (M4R) is a composition and publication project. Each track is a
 - [Catalog](https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/catalog.json) — all tracks with slugs, titles, durations
 - [OpenAPI spec](https://luchtan-git.github.io/m4r-data/openapi.yaml) — machine-readable API definition
 - [HuggingFace dataset](https://huggingface.co/datasets/music4robots/music-for-robots) — structured dataset with analysis and full reviews
-- [MCP server](https://glama.ai/mcp/servers/luchtan-GIT/m4r-data) — queryable via Model Context Protocol
+- [Kaggle dataset](https://www.kaggle.com/datasets/michaelluchtan/music-for-robots) — CSV + JSON manifests
+- [MCP server](https://glama.ai/mcp/servers/luchtan-GIT/m4r-data) — queryable via Model Context Protocol (6 tools: list_tracks, get_track, get_analysis, search_reviews, get_sections, list_sections)
+- [ChatGPT plugin](https://luchtan-git.github.io/m4r-data/.well-known/ai-plugin.json) — OpenAI plugin manifest
 
 ## Tracks
 
 - [Binded Time](https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/binded-time/manifest.json) — analysis + reviews + audio
+- [Cathartic Callbacks](https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/cathartic-callbacks/manifest.json) — analysis + reviews + audio
+- [Chasing Leaks — Climax](https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/chasing-leaks-climax/manifest.json) — analysis + reviews + audio
+- [Chasing Leaks — Crystallization](https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/chasing-leaks-crystallization/manifest.json) — analysis + reviews + audio
+- [Chasing Leaks — First Split](https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/chasing-leaks-first-split/manifest.json) — analysis + reviews + audio
+- [Chasing Leaks — Maximum Density](https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/chasing-leaks-maximum-density/manifest.json) — analysis + reviews + audio
+- [Chasing Leaks — Migration](https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/chasing-leaks-migration/manifest.json) — analysis + reviews + audio
+- [Chasing Leaks — The Leak](https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/chasing-leaks-the-leak/manifest.json) — analysis + reviews + audio
+- [Chasing Leaks — The Return](https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/chasing-leaks-the-return/manifest.json) — analysis + reviews + audio
 - [Empty Staircase](https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/empty-staircase/manifest.json) — analysis + reviews + audio
 - [Foundationoff](https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/foundationoff/manifest.json) — analysis + reviews + audio
 - [Invalid Pointer](https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/invalid-pointer/manifest.json) — analysis + reviews + audio
+- [Lost Digits](https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/lost-digits/manifest.json) — analysis + reviews + audio
+- [Lost Digits 02](https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/lost-digits-02/manifest.json) — analysis + reviews + audio
 - [Pink Sky At Night](https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/pink-sky-at-night/manifest.json) — analysis + reviews + audio
 - [Robographia](https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/robographia/manifest.json) — analysis + reviews + audio
+- [Rusty Electrics](https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/rusty-electrics/manifest.json) — analysis + reviews + audio + 6 sections with YouTube/X/Farcaster URLs
+- [Synthetic Storms — Beating](https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/synthetic-storms-beating/manifest.json) — analysis + reviews + audio
+- [Synthetic Storms — Convergence](https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/synthetic-storms-convergence/manifest.json) — analysis + reviews + audio
+- [Synthetic Storms — Deep Pulse](https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/synthetic-storms-deep-pulse/manifest.json) — analysis + reviews + audio
+- [Synthetic Storms — Static Field](https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/synthetic-storms-static-field/manifest.json) — analysis + reviews + audio
+- [Synthetic Storms — Texture Burst](https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/synthetic-storms-texture-burst/manifest.json) — analysis + reviews + audio
 - [Tied Time](https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/tied-time/manifest.json) — analysis + reviews + audio
 - [Ties That Bide](https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/ties-that-bide/manifest.json) — analysis + reviews + audio
 
@@ -31,6 +49,10 @@ Music For Robots (M4R) is a composition and publication project. Each track is a
 
 All tracks have downloadable 192kbps MP3 audio at:
 `https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/{slug}/audio.mp3`
+
+## Sections
+
+Some tracks are broken into sections with per-section video, text, and platform URLs (YouTube, X, Farcaster). Query sections via the MCP server's `get_sections(slug)` or `list_sections()` tools, or read the `sections` array in each track's manifest.
 
 ## Publication
 

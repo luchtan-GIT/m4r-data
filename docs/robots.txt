@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Machine-readable project data
+Sitemap: https://luchtan-git.github.io/m4r-data/sitemap.xml
+
+# LLM agent discovery
+# See https://luchtan-git.github.io/m4r-data/llms.txt
+# See https://luchtan-git.github.io/m4r-data/.well-known/ai-plugin.json
+# See https://luchtan-git.github.io/m4r-data/openapi.yaml
