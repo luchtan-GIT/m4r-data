@@ -16,43 +16,43 @@
     {
       "slug": "chasing-leaks-climax",
       "title": "Chasing Leaks — Climax",
-      "duration_sec": null,
+      "duration_sec": 15.0,
       "path": "tracks/chasing-leaks-climax/manifest.json"
     },
     {
       "slug": "chasing-leaks-crystallization",
       "title": "Chasing Leaks — Crystallization",
-      "duration_sec": null,
+      "duration_sec": 9.0,
       "path": "tracks/chasing-leaks-crystallization/manifest.json"
     },
     {
       "slug": "chasing-leaks-first-split",
       "title": "Chasing Leaks — First Split",
-      "duration_sec": null,
+      "duration_sec": 12.0,
       "path": "tracks/chasing-leaks-first-split/manifest.json"
     },
     {
       "slug": "chasing-leaks-maximum-density",
       "title": "Chasing Leaks — Maximum Density",
-      "duration_sec": null,
+      "duration_sec": 20.0,
       "path": "tracks/chasing-leaks-maximum-density/manifest.json"
     },
     {
       "slug": "chasing-leaks-migration",
       "title": "Chasing Leaks — Migration",
-      "duration_sec": null,
+      "duration_sec": 20.0,
       "path": "tracks/chasing-leaks-migration/manifest.json"
     },
     {
       "slug": "chasing-leaks-the-leak",
       "title": "Chasing Leaks — The Leak",
-      "duration_sec": null,
+      "duration_sec": 18.0,
       "path": "tracks/chasing-leaks-the-leak/manifest.json"
     },
     {
       "slug": "chasing-leaks-the-return",
       "title": "Chasing Leaks — The Return",
-      "duration_sec": null,
+      "duration_sec": 20.0,
       "path": "tracks/chasing-leaks-the-return/manifest.json"
     },
     {

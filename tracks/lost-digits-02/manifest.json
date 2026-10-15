@@ -15,7 +15,8 @@
     "spectral": {
       "centroid_mean_hz": null,
       "centroid_std_hz": null,
-      "bandwidth_mean_hz": null
+      "bandwidth_mean_hz": null,
+      "rolloff_85pct_hz": null
     },
     "dynamics": {
       "rms_mean": 0.0329,

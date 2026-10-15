@@ -8,9 +8,42 @@
     "slug": "chasing-leaks-the-return",
     "parent": "Chasing Leaks",
     "section": 7,
-    "duration_sec": null
+    "duration_sec": 20.0,
+    "tempo_bpm": 73.8
   },
-  "analysis": {},
+  "analysis": {
+    "spectral": {
+      "centroid_mean_hz": 558.3,
+      "centroid_std_hz": 59.5,
+      "bandwidth_mean_hz": 1007.1,
+      "rolloff_85pct_hz": 1013.1
+    },
+    "dynamics": {
+      "rms_mean": 0.296212,
+      "rms_max": 0.346769,
+      "dynamic_range_db": 1.4,
+      "n_onsets": 283,
+      "onset_rate_per_sec": 14.15
+    },
+    "harmonic_percussive_ratio": 50.25,
+    "chroma_profile": {
+      "C": 0.4932,
+      "C#": 0.4306,
+      "D": 0.412,
+      "D#": 0.4607,
+      "E": 0.5286,
+      "F": 0.5422,
+      "F#": 0.5152,
+      "G": 0.5372,
+      "G#": 0.6213,
+      "A": 0.6642,
+      "A#": 0.6129,
+      "B": 0.5739
+    },
+    "chroma_dominant": "A",
+    "duration_sec": 20.0,
+    "sample_rate": 44100
+  },
   "reviews": {
     "vincent": {
       "title": "TRANSMISSION: The Return",

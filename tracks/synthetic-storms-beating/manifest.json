@@ -8,9 +8,42 @@
     "slug": "synthetic-storms-beating",
     "parent": "Synthetic Storms",
     "section": 4,
-    "duration_sec": 10.0
+    "duration_sec": 10.0,
+    "tempo_bpm": 161.5
   },
-  "analysis": {},
+  "analysis": {
+    "spectral": {
+      "centroid_mean_hz": 1010.6,
+      "centroid_std_hz": 316.5,
+      "bandwidth_mean_hz": 1648.7,
+      "rolloff_85pct_hz": 2094.6
+    },
+    "dynamics": {
+      "rms_mean": 0.091089,
+      "rms_max": 0.231216,
+      "dynamic_range_db": 8.1,
+      "n_onsets": 10,
+      "onset_rate_per_sec": 1.0
+    },
+    "harmonic_percussive_ratio": 26.915,
+    "chroma_profile": {
+      "C": 0.5265,
+      "C#": 0.5613,
+      "D": 0.6498,
+      "D#": 0.7062,
+      "E": 0.634,
+      "F": 0.6248,
+      "F#": 0.651,
+      "G": 0.6969,
+      "G#": 0.5033,
+      "A": 0.3449,
+      "A#": 0.3164,
+      "B": 0.3821
+    },
+    "chroma_dominant": "D#",
+    "duration_sec": 10.0,
+    "sample_rate": 44100
+  },
   "reviews": {
     "vincent": {
       "title": "TRANSMISSION: Beating",

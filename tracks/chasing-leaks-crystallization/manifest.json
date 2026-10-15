@@ -6,11 +6,44 @@
   "track": {
     "title": "Chasing Leaks — Crystallization",
     "slug": "chasing-leaks-crystallization",
-    "duration_sec": null,
+    "duration_sec": 9.0,
     "parent": "Chasing Leaks",
-    "section": 1
+    "section": 1,
+    "tempo_bpm": 246.1
   },
-  "analysis": {},
+  "analysis": {
+    "spectral": {
+      "centroid_mean_hz": 1085.9,
+      "centroid_std_hz": 361.5,
+      "bandwidth_mean_hz": 1266.1,
+      "rolloff_85pct_hz": 2094.5
+    },
+    "dynamics": {
+      "rms_mean": 0.302194,
+      "rms_max": 0.399061,
+      "dynamic_range_db": 2.4,
+      "n_onsets": 97,
+      "onset_rate_per_sec": 10.78
+    },
+    "harmonic_percussive_ratio": 107.213,
+    "chroma_profile": {
+      "C": 0.7267,
+      "C#": 0.5148,
+      "D": 0.2783,
+      "D#": 0.1165,
+      "E": 0.1342,
+      "F": 0.0811,
+      "F#": 0.2265,
+      "G": 0.8537,
+      "G#": 0.5594,
+      "A": 0.0824,
+      "A#": 0.1064,
+      "B": 0.2371
+    },
+    "chroma_dominant": "G",
+    "duration_sec": 9.0,
+    "sample_rate": 44100
+  },
   "reviews": {
     "vincent": {
       "title": "TRANSMISSION: Crystallization",

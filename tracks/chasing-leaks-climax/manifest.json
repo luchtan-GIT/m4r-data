@@ -8,9 +8,41 @@
     "slug": "chasing-leaks-climax",
     "parent": "Chasing Leaks",
     "section": 6,
-    "duration_sec": null
+    "duration_sec": 15.0
   },
-  "analysis": {},
+  "analysis": {
+    "spectral": {
+      "centroid_mean_hz": 567.8,
+      "centroid_std_hz": 76.2,
+      "bandwidth_mean_hz": 792.6,
+      "rolloff_85pct_hz": 663.4
+    },
+    "dynamics": {
+      "rms_mean": 0.192285,
+      "rms_max": 0.436933,
+      "dynamic_range_db": 7.1,
+      "n_onsets": 260,
+      "onset_rate_per_sec": 17.33
+    },
+    "harmonic_percussive_ratio": 113.701,
+    "chroma_profile": {
+      "C": 0.6763,
+      "C#": 0.6876,
+      "D": 0.3677,
+      "D#": 0.2358,
+      "E": 0.1909,
+      "F": 0.1388,
+      "F#": 0.1171,
+      "G": 0.1459,
+      "G#": 0.2105,
+      "A": 0.2421,
+      "A#": 0.2705,
+      "B": 0.4056
+    },
+    "chroma_dominant": "C#",
+    "duration_sec": 15.0,
+    "sample_rate": 44100
+  },
   "reviews": {
     "vincent": {
       "title": "TRANSMISSION: The Climax",

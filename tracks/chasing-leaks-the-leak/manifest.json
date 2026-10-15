@@ -6,11 +6,44 @@
   "track": {
     "title": "Chasing Leaks — The Leak",
     "slug": "chasing-leaks-the-leak",
-    "duration_sec": null,
+    "duration_sec": 18.0,
     "parent": "Chasing Leaks",
-    "section": 4
+    "section": 4,
+    "tempo_bpm": 178.2
   },
-  "analysis": {},
+  "analysis": {
+    "spectral": {
+      "centroid_mean_hz": 1539.4,
+      "centroid_std_hz": 130.5,
+      "bandwidth_mean_hz": 1582.7,
+      "rolloff_85pct_hz": 2552.4
+    },
+    "dynamics": {
+      "rms_mean": 0.211965,
+      "rms_max": 0.345401,
+      "dynamic_range_db": 4.2,
+      "n_onsets": 255,
+      "onset_rate_per_sec": 14.17
+    },
+    "harmonic_percussive_ratio": 25.385,
+    "chroma_profile": {
+      "C": 0.2812,
+      "C#": 0.4791,
+      "D": 0.5454,
+      "D#": 0.4046,
+      "E": 0.2371,
+      "F": 0.231,
+      "F#": 0.3401,
+      "G": 0.5463,
+      "G#": 0.5226,
+      "A": 0.3587,
+      "A#": 0.4602,
+      "B": 0.347
+    },
+    "chroma_dominant": "G",
+    "duration_sec": 18.0,
+    "sample_rate": 44100
+  },
   "reviews": {
     "vincent": {
       "title": "TRANSMISSION: The Leak",

@@ -8,9 +8,42 @@
     "slug": "synthetic-storms-deep-pulse",
     "parent": "Synthetic Storms",
     "section": 2,
-    "duration_sec": 10.0
+    "duration_sec": 10.0,
+    "tempo_bpm": 58.7
   },
-  "analysis": {},
+  "analysis": {
+    "spectral": {
+      "centroid_mean_hz": 912.8,
+      "centroid_std_hz": 623.3,
+      "bandwidth_mean_hz": 1501.1,
+      "rolloff_85pct_hz": 1772.1
+    },
+    "dynamics": {
+      "rms_mean": 0.10526,
+      "rms_max": 0.323581,
+      "dynamic_range_db": 9.8,
+      "n_onsets": 11,
+      "onset_rate_per_sec": 1.1
+    },
+    "harmonic_percussive_ratio": 14.097,
+    "chroma_profile": {
+      "C": 0.526,
+      "C#": 0.5188,
+      "D": 0.5375,
+      "D#": 0.521,
+      "E": 0.5402,
+      "F": 0.6486,
+      "F#": 0.6485,
+      "G": 0.7211,
+      "G#": 0.5837,
+      "A": 0.4553,
+      "A#": 0.4248,
+      "B": 0.4498
+    },
+    "chroma_dominant": "G",
+    "duration_sec": 10.0,
+    "sample_rate": 44100
+  },
   "reviews": {
     "vincent": {
       "title": "TRANSMISSION: Deep Pulse",

@@ -8,9 +8,42 @@
     "slug": "synthetic-storms-static-field",
     "parent": "Synthetic Storms",
     "section": 1,
-    "duration_sec": 6.0
+    "duration_sec": 6.0,
+    "tempo_bpm": 77.1
   },
-  "analysis": {},
+  "analysis": {
+    "spectral": {
+      "centroid_mean_hz": 3360.6,
+      "centroid_std_hz": 3045.0,
+      "bandwidth_mean_hz": 2821.2,
+      "rolloff_85pct_hz": 6096.1
+    },
+    "dynamics": {
+      "rms_mean": 0.049081,
+      "rms_max": 0.245782,
+      "dynamic_range_db": 14.0,
+      "n_onsets": 13,
+      "onset_rate_per_sec": 2.17
+    },
+    "harmonic_percussive_ratio": 14.635,
+    "chroma_profile": {
+      "C": 0.5108,
+      "C#": 0.3334,
+      "D": 0.4377,
+      "D#": 0.5987,
+      "E": 0.6493,
+      "F": 0.6932,
+      "F#": 0.4658,
+      "G": 0.5124,
+      "G#": 0.4863,
+      "A": 0.4745,
+      "A#": 0.3158,
+      "B": 0.3249
+    },
+    "chroma_dominant": "F",
+    "duration_sec": 6.0,
+    "sample_rate": 44100
+  },
   "reviews": {
     "vincent": {
       "title": "TRANSMISSION: Static Field",

@@ -6,11 +6,44 @@
   "track": {
     "title": "Chasing Leaks — First Split",
     "slug": "chasing-leaks-first-split",
-    "duration_sec": null,
+    "duration_sec": 12.0,
     "parent": "Chasing Leaks",
-    "section": 2
+    "section": 2,
+    "tempo_bpm": 152.0
   },
-  "analysis": {},
+  "analysis": {
+    "spectral": {
+      "centroid_mean_hz": 906.4,
+      "centroid_std_hz": 174.6,
+      "bandwidth_mean_hz": 1077.1,
+      "rolloff_85pct_hz": 1496.7
+    },
+    "dynamics": {
+      "rms_mean": 0.244298,
+      "rms_max": 0.441331,
+      "dynamic_range_db": 5.1,
+      "n_onsets": 173,
+      "onset_rate_per_sec": 14.42
+    },
+    "harmonic_percussive_ratio": 273.02,
+    "chroma_profile": {
+      "C": 0.3934,
+      "C#": 0.5378,
+      "D": 0.7948,
+      "D#": 0.1283,
+      "E": 0.0411,
+      "F": 0.0408,
+      "F#": 0.1651,
+      "G": 0.4697,
+      "G#": 0.3912,
+      "A": 0.6303,
+      "A#": 0.3436,
+      "B": 0.3433
+    },
+    "chroma_dominant": "D",
+    "duration_sec": 12.0,
+    "sample_rate": 44100
+  },
   "reviews": {
     "vincent": {
       "title": "TRANSMISSION: The First Split",

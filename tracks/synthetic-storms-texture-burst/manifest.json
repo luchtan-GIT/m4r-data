@@ -8,9 +8,42 @@
     "slug": "synthetic-storms-texture-burst",
     "parent": "Synthetic Storms",
     "section": 3,
-    "duration_sec": 10.0
+    "duration_sec": 10.0,
+    "tempo_bpm": 120.2
   },
-  "analysis": {},
+  "analysis": {
+    "spectral": {
+      "centroid_mean_hz": 1645.0,
+      "centroid_std_hz": 1126.9,
+      "bandwidth_mean_hz": 2125.1,
+      "rolloff_85pct_hz": 3212.7
+    },
+    "dynamics": {
+      "rms_mean": 0.07169,
+      "rms_max": 0.230659,
+      "dynamic_range_db": 10.2,
+      "n_onsets": 29,
+      "onset_rate_per_sec": 2.9
+    },
+    "harmonic_percussive_ratio": 13.603,
+    "chroma_profile": {
+      "C": 0.4803,
+      "C#": 0.4777,
+      "D": 0.681,
+      "D#": 0.6458,
+      "E": 0.4522,
+      "F": 0.3858,
+      "F#": 0.4321,
+      "G": 0.6352,
+      "G#": 0.4336,
+      "A": 0.334,
+      "A#": 0.3079,
+      "B": 0.3522
+    },
+    "chroma_dominant": "D",
+    "duration_sec": 10.0,
+    "sample_rate": 44100
+  },
   "reviews": {
     "vincent": {
       "title": "TRANSMISSION: Texture Burst",

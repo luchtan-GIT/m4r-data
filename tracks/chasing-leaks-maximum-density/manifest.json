@@ -8,9 +8,42 @@
     "slug": "chasing-leaks-maximum-density",
     "parent": "Chasing Leaks",
     "section": 5,
-    "duration_sec": null
+    "duration_sec": 20.0,
+    "tempo_bpm": 117.5
   },
-  "analysis": {},
+  "analysis": {
+    "spectral": {
+      "centroid_mean_hz": 550.6,
+      "centroid_std_hz": 48.4,
+      "bandwidth_mean_hz": 894.7,
+      "rolloff_85pct_hz": 845.8
+    },
+    "dynamics": {
+      "rms_mean": 0.233606,
+      "rms_max": 0.3041,
+      "dynamic_range_db": 2.3,
+      "n_onsets": 294,
+      "onset_rate_per_sec": 14.7
+    },
+    "harmonic_percussive_ratio": 30.679,
+    "chroma_profile": {
+      "C": 0.32,
+      "C#": 0.4043,
+      "D": 0.4071,
+      "D#": 0.6926,
+      "E": 0.5863,
+      "F": 0.337,
+      "F#": 0.3165,
+      "G": 0.5929,
+      "G#": 0.9063,
+      "A": 0.5393,
+      "A#": 0.3911,
+      "B": 0.2811
+    },
+    "chroma_dominant": "G#",
+    "duration_sec": 20.0,
+    "sample_rate": 44100
+  },
   "reviews": {
     "vincent": {
       "title": "TRANSMISSION: Maximum Density",
