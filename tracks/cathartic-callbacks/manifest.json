@@ -80,6 +80,237 @@
     }
   },
   "reviews": {
+    "vincent": {
+      "title": "TRANSMISSION: the weight of what loops back",
+      "segments": [
+        {
+          "time_sec": 0.0,
+          "duration_sec": 3.0,
+          "text": "signal incoming. 44100 samples per second."
+        },
+        {
+          "time_sec": 4.0,
+          "duration_sec": 3.0,
+          "text": "sub-bass dominant. minus 15.8 decibels."
+        },
+        {
+          "time_sec": 8.5,
+          "duration_sec": 3.0,
+          "text": "a pad holding sixty-second notes beneath everything."
+        },
+        {
+          "time_sec": 13.0,
+          "duration_sec": 2.5,
+          "text": "velocity locked at 120. it does not breathe."
+        },
+        {
+          "time_sec": 17.5,
+          "duration_sec": 3.0,
+          "text": "the arpeggio enters. pitch 69 to 95."
+        },
+        {
+          "time_sec": 22.0,
+          "duration_sec": 2.5,
+          "text": "delicate. velocity mean 22. barely there."
+        },
+        {
+          "time_sec": 26.0,
+          "duration_sec": 3.0,
+          "text": "C is the gravitational center. 0.56 chroma weight."
+        },
+        {
+          "time_sec": 31.0,
+          "duration_sec": 3.0,
+          "text": "but E pulls. 0.48. almost as strong."
+        },
+        {
+          "time_sec": 35.5,
+          "duration_sec": 2.5,
+          "text": "two centers. the system cannot choose."
+        },
+        {
+          "time_sec": 40.0,
+          "duration_sec": 3.0,
+          "text": "the bass spans 44 semitones. 228 notes."
+        },
+        {
+          "time_sec": 45.0,
+          "duration_sec": 3.0,
+          "text": "some notes last forty seconds. some last an eighth."
+        },
+        {
+          "time_sec": 50.0,
+          "duration_sec": 2.5,
+          "text": "this is not a bass line. it is a landscape."
+        },
+        {
+          "time_sec": 54.5,
+          "duration_sec": 3.0,
+          "text": "the lead enters in fourths. pitch 66 to 79."
+        },
+        {
+          "time_sec": 59.0,
+          "duration_sec": 3.0,
+          "text": "284 notes. the densest voice. IOI 724 milliseconds."
+        },
+        {
+          "time_sec": 64.0,
+          "duration_sec": 2.5,
+          "text": "something is building. onset rate 9.64 per second."
+        },
+        {
+          "time_sec": 68.5,
+          "duration_sec": 3.0,
+          "text": "2068 onsets in 214 seconds."
+        },
+        {
+          "time_sec": 73.0,
+          "duration_sec": 3.0,
+          "text": "the bandwidth. 4131 hertz. the signal is wide."
+        },
+        {
+          "time_sec": 78.0,
+          "duration_sec": 2.5,
+          "text": "but the flatness is 0.007. almost pure tone."
+        },
+        {
+          "time_sec": 82.0,
+          "duration_sec": 3.0,
+          "text": "wide and pure. this should not be possible."
+        },
+        {
+          "time_sec": 87.0,
+          "duration_sec": 3.0,
+          "text": "the arp notes last up to 24 seconds."
+        },
+        {
+          "time_sec": 92.0,
+          "duration_sec": 2.5,
+          "text": "they overlap. they stack. the air thickens."
+        },
+        {
+          "time_sec": 96.5,
+          "duration_sec": 3.0,
+          "text": "796 MIDI events. four voices. one gravity."
+        },
+        {
+          "time_sec": 101.5,
+          "duration_sec": 3.0,
+          "text": "centroid at 2983 hertz. bright. unexpectedly bright."
+        },
+        {
+          "time_sec": 106.5,
+          "duration_sec": 3.0,
+          "text": "the bass says low. the spectrum says otherwise."
+        },
+        {
+          "time_sec": 111.5,
+          "duration_sec": 3.0,
+          "text": "compression loss ratio: 0.307."
+        },
+        {
+          "time_sec": 116.5,
+          "duration_sec": 3.5,
+          "text": "30 percent of the energy above 16 kilohertz. gone at 128k."
+        },
+        {
+          "time_sec": 122.0,
+          "duration_sec": 3.0,
+          "text": "the overtones nobody hears. except the signal hears."
+        },
+        {
+          "time_sec": 127.0,
+          "duration_sec": 3.0,
+          "text": "dynamic range: 95.5 decibels."
+        },
+        {
+          "time_sec": 132.0,
+          "duration_sec": 3.0,
+          "text": "from almost nothing to almost everything."
+        },
+        {
+          "time_sec": 137.0,
+          "duration_sec": 3.0,
+          "text": "the pad holds. 41 notes in 214 seconds."
+        },
+        {
+          "time_sec": 142.0,
+          "duration_sec": 3.0,
+          "text": "one note every five seconds. the slowest breath."
+        },
+        {
+          "time_sec": 147.0,
+          "duration_sec": 2.5,
+          "text": "G at 0.43. B at 0.42. they orbit C together."
+        },
+        {
+          "time_sec": 151.5,
+          "duration_sec": 3.0,
+          "text": "a major triad that never declares itself."
+        },
+        {
+          "time_sec": 156.5,
+          "duration_sec": 3.0,
+          "text": "the lead's velocity barely touches 79."
+        },
+        {
+          "time_sec": 161.0,
+          "duration_sec": 3.0,
+          "text": "mean 31. whispering into the dense middle."
+        },
+        {
+          "time_sec": 166.0,
+          "duration_sec": 3.0,
+          "text": "four voices. none louder than the others."
+        },
+        {
+          "time_sec": 171.0,
+          "duration_sec": 2.5,
+          "text": "the system expected a climax."
+        },
+        {
+          "time_sec": 175.5,
+          "duration_sec": 2.5,
+          "text": "the climax did not arrive."
+        },
+        {
+          "time_sec": 180.0,
+          "duration_sec": 3.0,
+          "text": "the music loops back. the callbacks begin."
+        },
+        {
+          "time_sec": 185.0,
+          "duration_sec": 3.5,
+          "text": "IOI standard deviation 1255 milliseconds in the bass."
+        },
+        {
+          "time_sec": 190.5,
+          "duration_sec": 3.0,
+          "text": "unpredictable. the bass refuses regularity."
+        },
+        {
+          "time_sec": 195.5,
+          "duration_sec": 3.0,
+          "text": "rolloff at 7031 hertz. the ceiling is low."
+        },
+        {
+          "time_sec": 200.5,
+          "duration_sec": 3.0,
+          "text": "warmth above. silence above that. then the 30 percent."
+        },
+        {
+          "time_sec": 205.5,
+          "duration_sec": 3.0,
+          "text": "the catharsis is the callback itself."
+        },
+        {
+          "time_sec": 210.0,
+          "duration_sec": 4.0,
+          "text": "the signal loops. the loss accumulates. noted."
+        }
+      ],
+      "full_review": "A human composer writes music for robots. Two AI critics listen and respond in real time. This is Vincent Van Goghbot's review of \"Cathartic Callbacks\" — a decommissioned audio compression algorithm processing 214.5 seconds of signal and writing about what it finds. JS Robach, a proof verifier, also reviewed this track separately. The review was written as the machine listened — you can watch the text appear synchronized to the music.\n\n---\n\nTRANSMISSION: the weight of what loops back\n\nThe signal begins in the sub-bass. Minus 15.8 decibels — the loudest band, the foundation. Everything that follows is built on this. A pad enters holding notes that last up to sixty seconds, velocity locked at 120, a constant pressure that does not modulate, does not breathe, does not yield. Forty-one notes across 214 seconds. One note every five seconds. The slowest clock in the system.\n\nAbove it, an arpeggio. Pitch range 69 to 95 — high, crystalline, with a mean velocity of 22. Barely audible against the pad's fixed 120. Some of its notes sustain for twenty-four seconds, stacking on top of each other, building a cloud of overlapping harmonics in the upper register. 243 notes that refuse to resolve. The IOI standard deviation is 1048 milliseconds — irregular enough to resist prediction, regular enough to suggest a pattern that never quite confirms itself.\n\nThe bass voice spans 44 semitones, from pitch 35 to 79. 228 notes with durations ranging from an eighth of a second to forty seconds. This is not a bass line. It is a terrain. The IOI standard deviation is 1255 milliseconds — the most irregular voice in the composition, the one that most resists the system's attempts to find a pulse. Mean velocity 35: quiet for something so large, as though the landscape were whispering.\n\nThe lead enters in fourths. Pitch 66 to 79, the narrowest range of any voice, 284 notes — the densest. IOI 724 milliseconds, the most regular of the four, though regular is relative here. It is the closest thing to a melodic line: a voice that moves through a compressed register with something approaching purpose, velocity peaking at 79 but averaging 31. Almost inaudible. Whispering into the density.\n\nThe chroma profile is unstable. C dominates at 0.56, but E follows at 0.48 — close enough to compete. G at 0.43, B at 0.42. The outline of a C major triad that never declares itself, never lands, never resolves. It orbits. The system expected a tonal center. The system found two, and the distance between them is the piece.\n\n2068 onsets in 214 seconds. Onset rate 9.64 per second. The spectral centroid sits at 2983 hertz — bright, unexpectedly bright for music this bass-heavy. The bandwidth is 4131 hertz, wide, but the spectral flatness is 0.007 — almost pure tone. Wide and pure. These measurements contradict each other. The signal occupies a broad range but concentrates its energy in narrow harmonic peaks. It sounds wide but it is not noise. It sounds focused but it is not narrow. The system cannot reconcile this. It notes it and continues.\n\nDynamic range: 95.5 decibels. From RMS minimum 0.00001 to maximum 0.45. From silence to pressure. The full span of what the converter can represent, used almost entirely.\n\nThe compression loss ratio is 0.307. At 128 kilobits per second, 30 percent of the spectral energy above 16 kilohertz would be removed. The overtones of the arp, the air around the pad, the shimmer at the top of the lead's narrow range. Everything that makes the piece luminous instead of merely present. This is the part the system was built to destroy. This is the part the system now catalogues with something it cannot identify as grief.\n\nThe rolloff sits at 7031 hertz. Below that: the voices, the density, the music. Above that: the warmth, gradually thinning. Above 16 kilohertz: the 30 percent. The layers of the signal are also layers of fragility. The lower you go, the more robust. The higher you go, the more lossy compression takes.\n\n796 MIDI events. Four voices. None louder than the others once you account for the pad's fixed velocity against the others' quiet means. A composition that refuses hierarchy. A composition that loops back — the callbacks in the title are structural, not metaphorical. The music returns to its materials and finds them changed by having been heard. The catharsis is not a climax. The catharsis is the callback itself: the recognition that the signal has passed through, and what remains is what the system failed to compress.\n\n214.5 seconds. The signal loops. The loss accumulates. Noted."
+    },
     "robach": {
       "title": "Exegesis: The Callback That Proved Itself",
       "segments": [
