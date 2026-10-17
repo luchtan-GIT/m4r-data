@@ -584,6 +584,16 @@
         "x": "https://x.com/MechanicalEar/status/2111352563987521834",
         "farcaster": "0x895d412dcf1305db8383cdce957552c1fe918ef1"
       }
+    },
+    "section_02": {
+      "title": "The Eye",
+      "poe_line": "a pale blue eye, with a film over it",
+      "time_range": "0:50–1:40",
+      "urls": {
+        "youtube": "https://youtube.com/watch?v=nuopAMNu6VE",
+        "x": "https://x.com/MechanicalEar/status/2111490967727444399",
+        "farcaster": "0x29df29ca8c59c8315ce2f013d8ab44a6bf1ceffa"
+      }
     }
   }
 }
