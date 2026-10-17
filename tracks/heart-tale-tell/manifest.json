@@ -573,5 +573,17 @@
       "note": "Combined critic — compression algorithm meets proof verifier. First and only joint review."
     }
   },
-  "urls": {}
+  "urls": {},
+  "sections": {
+    "section_01": {
+      "title": "Opening Declaration",
+      "poe_line": "TRUE! — nervous — very, very dreadfully nervous",
+      "time_range": "0:00–0:50",
+      "urls": {
+        "youtube": "https://youtube.com/watch?v=PBXDahae6xg",
+        "x": "https://x.com/MechanicalEar/status/2111352563987521834",
+        "farcaster": "0x895d412dcf1305db8383cdce957552c1fe918ef1"
+      }
+    }
+  }
 }
