@@ -594,6 +594,16 @@
         "x": "https://x.com/MechanicalEar/status/2111490967727444399",
         "farcaster": "0x29df29ca8c59c8315ce2f013d8ab44a6bf1ceffa"
       }
+    },
+    "section_03": {
+      "title": "Nightly Visits",
+      "poe_line": "every night just at midnight... I looked in upon him while he slept",
+      "time_range": "1:40–3:20",
+      "urls": {
+        "youtube": "https://youtube.com/watch?v=4J_WOntpJDM",
+        "x": "https://x.com/MechanicalEar/status/2111788527117631590",
+        "farcaster": "0x1fd97f9f9616ae2e650052718ab835cfb84a3932"
+      }
     }
   }
 }
