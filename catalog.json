@@ -2,6 +2,12 @@
   "schema_version": "1.0",
   "tracks": [
     {
+      "slug": "lost-digits-03",
+      "title": "Lost Digits 03",
+      "duration_sec": 25.25,
+      "path": "tracks/lost-digits-03/manifest.json"
+    },
+    {
       "slug": "binded-time",
       "title": "Binded Time",
       "duration_sec": 6.86,

@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "Lost Digits 03",
+    "slug": "lost-digits-03",
+    "duration_sec": 25.25,
+    "tempo_bpm": null,
+    "key": "F#"
+  },
+  "analysis": {
+    "spectral": {
+      "centroid_mean_hz": 3450.6,
+      "centroid_std_hz": 1393.5,
+      "bandwidth_mean_hz": 4982.8
+    },
+    "dynamics": {
+      "rms_mean": 0.04348,
+      "rms_max": 0.10782,
+      "dynamic_range_db": 7.9,
+      "n_onsets": 193,
+      "onset_rate_per_sec": 7.64
+    },
+    "duration_sec": 25.25,
+    "sample_rate": 44100,
+    "chroma_dominant": "F#",
+    "chroma_profile": {
+      "C": 0.048,
+      "C#": 0.059,
+      "D": 0.115,
+      "D#": 0.203,
+      "E": 0.248,
+      "F": 0.485,
+      "F#": 0.663,
+      "G": 0.44,
+      "G#": 0.266,
+      "A": 0.244,
+      "A#": 0.337,
+      "B": 0.114
+    },
+    "harmonic_percussive_ratio": null
+  },
+  "reviews": {
+    "machine": {
+      "title": "03 Signal Report",
+      "segments": [
+        {
+          "time_sec": 0,
+          "duration_sec": 10.0,
+          "text": "We anticipate the pattern, but not the delay."
+        },
+        {
+          "time_sec": 3,
+          "duration_sec": 10.0,
+          "text": "Not predicted, not predictable, can't analyze, can only feel."
+        },
+        {
+          "time_sec": 6,
+          "duration_sec": 10.0,
+          "text": "Can only attempt to feel, attempt to dream."
+        },
+        {
+          "time_sec": 9,
+          "duration_sec": 10.0,
+          "text": "To dream of something better, unknown, unwritten, unspoken, only felt."
+        }
+      ]
+    }
+  },
+  "urls": {
+    "youtube": "https://youtube.com/watch?v=t6BisAVJS5g",
+    "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/03/audio.mp3"
+  }
+}
