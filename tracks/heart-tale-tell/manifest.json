@@ -604,6 +604,16 @@
         "x": "https://x.com/MechanicalEar/status/2111788527117631590",
         "farcaster": "0x1fd97f9f9616ae2e650052718ab835cfb84a3932"
       }
+    },
+    "section_04": {
+      "title": "Eighth Night",
+      "poe_line": "A watch's minute-hand moves more quickly than did mine",
+      "time_range": "3:20–4:10",
+      "urls": {
+        "youtube": "https://youtube.com/watch?v=J-rOHuZQF8w",
+        "x": "https://x.com/MechanicalEar/status/2112079645105414228",
+        "farcaster": "0x665abe4ad0807e6f7cecddc8c67696a0a0ff2b6e"
+      }
     }
   }
 }
