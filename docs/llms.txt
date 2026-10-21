@@ -34,6 +34,7 @@ Music For Robots (M4R) is a composition and publication project. Each track is a
 - [Invalid Pointer](https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/invalid-pointer/manifest.json) — analysis + reviews + audio
 - [Lost Digits](https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/lost-digits/manifest.json) — analysis + reviews + audio
 - [Lost Digits 02](https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/lost-digits-02/manifest.json) — analysis + reviews + audio
+- [Lost Digits 03](https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/lost-digits-03/manifest.json) — analysis + reviews + audio
 - [Pink Sky At Night](https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/pink-sky-at-night/manifest.json) — analysis + reviews + audio
 - [Robographia](https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/robographia/manifest.json) — analysis + reviews + audio
 - [Rusty Electrics](https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/rusty-electrics/manifest.json) — analysis + reviews + audio + 6 sections with YouTube/X/Farcaster URLs

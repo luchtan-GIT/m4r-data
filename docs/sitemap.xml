@@ -96,6 +96,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/lost-digits-03/manifest.json</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/pink-sky-at-night/manifest.json</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
