@@ -2,12 +2,6 @@
   "schema_version": "1.0",
   "tracks": [
     {
-      "slug": "lost-digits-03",
-      "title": "Lost Digits 03",
-      "duration_sec": 25.25,
-      "path": "tracks/lost-digits-03/manifest.json"
-    },
-    {
       "slug": "binded-time",
       "title": "Binded Time",
       "duration_sec": 6.86,
@@ -74,6 +68,12 @@
       "path": "tracks/foundationoff/manifest.json"
     },
     {
+      "slug": "heart-tale-tell",
+      "title": "Heart Tale Tell",
+      "duration_sec": null,
+      "path": "tracks/heart-tale-tell/manifest.json"
+    },
+    {
       "slug": "invalid-pointer",
       "title": "Invalid Pointer",
       "duration_sec": 75.0,
@@ -90,6 +90,12 @@
       "title": "Lost Digits 02",
       "duration_sec": 8.5,
       "path": "tracks/lost-digits-02/manifest.json"
+    },
+    {
+      "slug": "lost-digits-03",
+      "title": "Lost Digits 03",
+      "duration_sec": 25.25,
+      "path": "tracks/lost-digits-03/manifest.json"
     },
     {
       "slug": "pink-sky-at-night",
