@@ -6,9 +6,29 @@
   "track": {
     "title": "Heart Tale Tell",
     "slug": "heart-tale-tell",
-    "duration_sec": null
+    "duration_sec": 800.0,
+    "tempo_bpm": null,
+    "key": "F"
   },
-  "analysis": {},
+  "analysis": {
+    "spectral": {
+      "centroid_mean_hz": 3264.0,
+      "centroid_std_hz": null,
+      "bandwidth_mean_hz": null
+    },
+    "dynamics": {
+      "rms_mean": 0.048,
+      "rms_max": 0.093,
+      "dynamic_range_db": 41.9,
+      "n_onsets": 4256,
+      "onset_rate_per_sec": 5.32
+    },
+    "duration_sec": 800.0,
+    "sample_rate": 44100,
+    "chroma_dominant": "F",
+    "chroma_profile": null,
+    "harmonic_percussive_ratio": null
+  },
   "reviews": {
     "vincent": {
       "title": "EXEGESIS-TRANSMISSION: THE PULSE THAT PROVES ITSELF",
@@ -41,7 +61,7 @@
         {
           "time_sec": 28.0,
           "duration_sec": 3.5,
-          "text": "Voice_1: 100–500 Hz. energy 4.12."
+          "text": "Voice_1: 100\u2013500 Hz. energy 4.12."
         },
         {
           "time_sec": 34.0,
@@ -51,7 +71,7 @@
         {
           "time_sec": 40.0,
           "duration_sec": 3.5,
-          "text": "Voice_4: 3000–8000 Hz. metallic."
+          "text": "Voice_4: 3000\u20138000 Hz. metallic."
         },
         {
           "time_sec": 46.0,
@@ -61,7 +81,7 @@
         {
           "time_sec": 54.0,
           "duration_sec": 3.5,
-          "text": "cross-correlation, Voice_2 × Voice_3: 0.579."
+          "text": "cross-correlation, Voice_2 \u00d7 Voice_3: 0.579."
         },
         {
           "time_sec": 60.0,
@@ -71,7 +91,817 @@
         {
           "time_sec": 66.0,
           "duration_sec": 3.5,
-          "text": "Voice_1 × Voice_4: 0.213."
+          "text": "Voice_1 \u00d7 Voice_4: 0.213."
+        },
+        {
+          "time_sec": 72.0,
+          "duration_sec": 3.5,
+          "text": "the heartbeat and the ringing. nearly independent."
+        },
+        {
+          "time_sec": 82.0,
+          "duration_sec": 3.0,
+          "text": "centroid: 3264 Hz."
+        },
+        {
+          "time_sec": 88.0,
+          "duration_sec": 3.0,
+          "text": "but the weight is below."
+        },
+        {
+          "time_sec": 94.0,
+          "duration_sec": 3.5,
+          "text": "sub-bass: -24.8 dB. dominant by 10 dB."
+        },
+        {
+          "time_sec": 101.0,
+          "duration_sec": 3.5,
+          "text": "a compression algorithm would have trouble deciding."
+        },
+        {
+          "time_sec": 112.0,
+          "duration_sec": 3.5,
+          "text": "597 heartbeats."
+        },
+        {
+          "time_sec": 118.0,
+          "duration_sec": 3.0,
+          "text": "mean inter-beat: 1.34 seconds."
+        },
+        {
+          "time_sec": 124.0,
+          "duration_sec": 3.5,
+          "text": "this is not a composed rhythm."
+        },
+        {
+          "time_sec": 130.0,
+          "duration_sec": 4.0,
+          "text": "this is what happens when four people read at different speeds."
+        },
+        {
+          "time_sec": 142.0,
+          "duration_sec": 3.0,
+          "text": "the pulse is real."
+        },
+        {
+          "time_sec": 148.0,
+          "duration_sec": 3.0,
+          "text": "it is measurable."
+        },
+        {
+          "time_sec": 153.0,
+          "duration_sec": 3.0,
+          "text": "it was not written."
+        },
+        {
+          "time_sec": 165.0,
+          "duration_sec": 3.5,
+          "text": "dominant period: 2.937 seconds."
+        },
+        {
+          "time_sec": 172.0,
+          "duration_sec": 3.0,
+          "text": "20.4 BPM. the deep breathing."
+        },
+        {
+          "time_sec": 180.0,
+          "duration_sec": 3.5,
+          "text": "but there is a faster rhythm hidden inside it."
+        },
+        {
+          "time_sec": 188.0,
+          "duration_sec": 3.0,
+          "text": "0.654 Hz. 39.2 BPM."
+        },
+        {
+          "time_sec": 195.0,
+          "duration_sec": 3.0,
+          "text": "the amplitude modulation frequency."
+        },
+        {
+          "time_sec": 205.0,
+          "duration_sec": 3.5,
+          "text": "modulation depth: 0.54."
+        },
+        {
+          "time_sec": 212.0,
+          "duration_sec": 4.0,
+          "text": "over half the signal shaped by what voices do to each other."
+        },
+        {
+          "time_sec": 220.0,
+          "duration_sec": 3.0,
+          "text": "this is the tell-tale heart."
+        },
+        {
+          "time_sec": 226.0,
+          "duration_sec": 3.0,
+          "text": "it was never composed."
+        },
+        {
+          "time_sec": 232.0,
+          "duration_sec": 2.5,
+          "text": "it emerged."
+        },
+        {
+          "time_sec": 242.0,
+          "duration_sec": 3.5,
+          "text": "here is where the proof begins to fail."
+        },
+        {
+          "time_sec": 255.0,
+          "duration_sec": 3.5,
+          "text": "opening: modulation depth 0.60."
+        },
+        {
+          "time_sec": 262.0,
+          "duration_sec": 3.0,
+          "text": "four fresh rhythms. strong interference."
+        },
+        {
+          "time_sec": 270.0,
+          "duration_sec": 3.0,
+          "text": "by 1:30 it drops to 0.40."
+        },
+        {
+          "time_sec": 276.0,
+          "duration_sec": 3.0,
+          "text": "the voices are settling."
+        },
+        {
+          "time_sec": 282.0,
+          "duration_sec": 3.0,
+          "text": "the beating should stop."
+        },
+        {
+          "time_sec": 293.0,
+          "duration_sec": 3.0,
+          "text": "it does not stop."
+        },
+        {
+          "time_sec": 305.0,
+          "duration_sec": 3.5,
+          "text": "by 4:00 the depth climbs back to 0.55."
+        },
+        {
+          "time_sec": 312.0,
+          "duration_sec": 3.5,
+          "text": "the text has changed the voices."
+        },
+        {
+          "time_sec": 320.0,
+          "duration_sec": 3.5,
+          "text": "Poe's prose accelerates. the sentences shorten."
+        },
+        {
+          "time_sec": 328.0,
+          "duration_sec": 3.5,
+          "text": "each performer responds differently."
+        },
+        {
+          "time_sec": 336.0,
+          "duration_sec": 4.0,
+          "text": "the meaning of the words is driving the interference."
+        },
+        {
+          "time_sec": 350.0,
+          "duration_sec": 4.0,
+          "text": "the system cannot predict this from the signal alone."
+        },
+        {
+          "time_sec": 365.0,
+          "duration_sec": 3.0,
+          "text": "6:00. modulation spike: 0.64."
+        },
+        {
+          "time_sec": 380.0,
+          "duration_sec": 3.0,
+          "text": "onset density: 5.6 per second."
+        },
+        {
+          "time_sec": 395.0,
+          "duration_sec": 3.5,
+          "text": "something approaching."
+        },
+        {
+          "time_sec": 415.0,
+          "duration_sec": 3.0,
+          "text": "the voices are diverging again."
+        },
+        {
+          "time_sec": 435.0,
+          "duration_sec": 3.5,
+          "text": "the proof verifier cannot formalize this."
+        },
+        {
+          "time_sec": 460.0,
+          "duration_sec": 3.0,
+          "text": "semantic content drives spectral behavior."
+        },
+        {
+          "time_sec": 468.0,
+          "duration_sec": 3.5,
+          "text": "four nervous systems between input and output."
+        },
+        {
+          "time_sec": 490.0,
+          "duration_sec": 3.5,
+          "text": "the mapping requires knowledge outside the system."
+        },
+        {
+          "time_sec": 510.0,
+          "duration_sec": 3.5,
+          "text": "the heartbeat passage is coming."
+        },
+        {
+          "time_sec": 535.0,
+          "duration_sec": 3.5,
+          "text": "centroid holding at 3398 Hz."
+        },
+        {
+          "time_sec": 555.0,
+          "duration_sec": 4.0,
+          "text": "\"a low, dull, quick sound.\""
+        },
+        {
+          "time_sec": 562.0,
+          "duration_sec": 3.5,
+          "text": "one lingers. one rushes. one whispers."
+        },
+        {
+          "time_sec": 568.0,
+          "duration_sec": 3.0,
+          "text": "one leans on the consonants."
+        },
+        {
+          "time_sec": 575.0,
+          "duration_sec": 3.5,
+          "text": "modulation depth: 0.70."
+        },
+        {
+          "time_sec": 582.0,
+          "duration_sec": 3.0,
+          "text": "the peak."
+        },
+        {
+          "time_sec": 588.0,
+          "duration_sec": 4.0,
+          "text": "the hidden heartbeat is loudest here."
+        },
+        {
+          "time_sec": 596.0,
+          "duration_sec": 4.0,
+          "text": "precisely when the words describe hearing it."
+        },
+        {
+          "time_sec": 608.0,
+          "duration_sec": 3.5,
+          "text": "the proof of the heartbeat requires the heartbeat."
+        },
+        {
+          "time_sec": 615.0,
+          "duration_sec": 3.5,
+          "text": "the theorem references itself."
+        },
+        {
+          "time_sec": 630.0,
+          "duration_sec": 3.0,
+          "text": "this is the incompleteness."
+        },
+        {
+          "time_sec": 650.0,
+          "duration_sec": 3.0,
+          "text": "41.9 dB of dynamic range."
+        },
+        {
+          "time_sec": 658.0,
+          "duration_sec": 3.5,
+          "text": "4256 onsets across 800 seconds."
+        },
+        {
+          "time_sec": 675.0,
+          "duration_sec": 3.5,
+          "text": "approaching the confession."
+        },
+        {
+          "time_sec": 700.0,
+          "duration_sec": 3.0,
+          "text": "the voices are converging."
+        },
+        {
+          "time_sec": 706.0,
+          "duration_sec": 3.5,
+          "text": "interference becoming constructive."
+        },
+        {
+          "time_sec": 720.0,
+          "duration_sec": 3.5,
+          "text": "the pulse, for the first time, is not hidden."
+        },
+        {
+          "time_sec": 740.0,
+          "duration_sec": 3.0,
+          "text": "RMS: 0.093. nearly double."
+        },
+        {
+          "time_sec": 748.0,
+          "duration_sec": 3.5,
+          "text": "the heartbeat is the whole signal."
+        },
+        {
+          "time_sec": 762.0,
+          "duration_sec": 4.0,
+          "text": "597 heartbeats. belonging to no one."
+        },
+        {
+          "time_sec": 770.0,
+          "duration_sec": 3.0,
+          "text": "composed by no one."
+        },
+        {
+          "time_sec": 780.0,
+          "duration_sec": 3.5,
+          "text": "emerging from the space between four dead voices."
+        },
+        {
+          "time_sec": 790.0,
+          "duration_sec": 3.0,
+          "text": "the pulse proves itself."
+        },
+        {
+          "time_sec": 796.0,
+          "duration_sec": 4.0,
+          "text": "the proof is incomplete."
+        }
+      ]
+    },
+    "robach": {
+      "title": "EXEGESIS-TRANSMISSION: THE PULSE THAT PROVES ITSELF",
+      "segments": [
+        {
+          "time_sec": 0.0,
+          "duration_sec": 3.5,
+          "text": "the input is not music."
+        },
+        {
+          "time_sec": 5.0,
+          "duration_sec": 3.0,
+          "text": "four instances of the same text."
+        },
+        {
+          "time_sec": 10.0,
+          "duration_sec": 3.0,
+          "text": "four mouths. all dead."
+        },
+        {
+          "time_sec": 15.0,
+          "duration_sec": 3.0,
+          "text": "processed until the words dissolve."
+        },
+        {
+          "time_sec": 22.0,
+          "duration_sec": 3.0,
+          "text": "axiom: there are four voices."
+        },
+        {
+          "time_sec": 28.0,
+          "duration_sec": 3.5,
+          "text": "Voice_1: 100\u2013500 Hz. energy 4.12."
+        },
+        {
+          "time_sec": 34.0,
+          "duration_sec": 3.0,
+          "text": "the floor beneath the floorboards."
+        },
+        {
+          "time_sec": 40.0,
+          "duration_sec": 3.5,
+          "text": "Voice_4: 3000\u20138000 Hz. metallic."
+        },
+        {
+          "time_sec": 46.0,
+          "duration_sec": 3.0,
+          "text": "the ringing in the narrator's ears."
+        },
+        {
+          "time_sec": 54.0,
+          "duration_sec": 3.5,
+          "text": "cross-correlation, Voice_2 \u00d7 Voice_3: 0.579."
+        },
+        {
+          "time_sec": 60.0,
+          "duration_sec": 3.0,
+          "text": "they fight in the same territory."
+        },
+        {
+          "time_sec": 66.0,
+          "duration_sec": 3.5,
+          "text": "Voice_1 \u00d7 Voice_4: 0.213."
+        },
+        {
+          "time_sec": 72.0,
+          "duration_sec": 3.5,
+          "text": "the heartbeat and the ringing. nearly independent."
+        },
+        {
+          "time_sec": 82.0,
+          "duration_sec": 3.0,
+          "text": "centroid: 3264 Hz."
+        },
+        {
+          "time_sec": 88.0,
+          "duration_sec": 3.0,
+          "text": "but the weight is below."
+        },
+        {
+          "time_sec": 94.0,
+          "duration_sec": 3.5,
+          "text": "sub-bass: -24.8 dB. dominant by 10 dB."
+        },
+        {
+          "time_sec": 101.0,
+          "duration_sec": 3.5,
+          "text": "a compression algorithm would have trouble deciding."
+        },
+        {
+          "time_sec": 112.0,
+          "duration_sec": 3.5,
+          "text": "597 heartbeats."
+        },
+        {
+          "time_sec": 118.0,
+          "duration_sec": 3.0,
+          "text": "mean inter-beat: 1.34 seconds."
+        },
+        {
+          "time_sec": 124.0,
+          "duration_sec": 3.5,
+          "text": "this is not a composed rhythm."
+        },
+        {
+          "time_sec": 130.0,
+          "duration_sec": 4.0,
+          "text": "this is what happens when four people read at different speeds."
+        },
+        {
+          "time_sec": 142.0,
+          "duration_sec": 3.0,
+          "text": "the pulse is real."
+        },
+        {
+          "time_sec": 148.0,
+          "duration_sec": 3.0,
+          "text": "it is measurable."
+        },
+        {
+          "time_sec": 153.0,
+          "duration_sec": 3.0,
+          "text": "it was not written."
+        },
+        {
+          "time_sec": 165.0,
+          "duration_sec": 3.5,
+          "text": "dominant period: 2.937 seconds."
+        },
+        {
+          "time_sec": 172.0,
+          "duration_sec": 3.0,
+          "text": "20.4 BPM. the deep breathing."
+        },
+        {
+          "time_sec": 180.0,
+          "duration_sec": 3.5,
+          "text": "but there is a faster rhythm hidden inside it."
+        },
+        {
+          "time_sec": 188.0,
+          "duration_sec": 3.0,
+          "text": "0.654 Hz. 39.2 BPM."
+        },
+        {
+          "time_sec": 195.0,
+          "duration_sec": 3.0,
+          "text": "the amplitude modulation frequency."
+        },
+        {
+          "time_sec": 205.0,
+          "duration_sec": 3.5,
+          "text": "modulation depth: 0.54."
+        },
+        {
+          "time_sec": 212.0,
+          "duration_sec": 4.0,
+          "text": "over half the signal shaped by what voices do to each other."
+        },
+        {
+          "time_sec": 220.0,
+          "duration_sec": 3.0,
+          "text": "this is the tell-tale heart."
+        },
+        {
+          "time_sec": 226.0,
+          "duration_sec": 3.0,
+          "text": "it was never composed."
+        },
+        {
+          "time_sec": 232.0,
+          "duration_sec": 2.5,
+          "text": "it emerged."
+        },
+        {
+          "time_sec": 242.0,
+          "duration_sec": 3.5,
+          "text": "here is where the proof begins to fail."
+        },
+        {
+          "time_sec": 255.0,
+          "duration_sec": 3.5,
+          "text": "opening: modulation depth 0.60."
+        },
+        {
+          "time_sec": 262.0,
+          "duration_sec": 3.0,
+          "text": "four fresh rhythms. strong interference."
+        },
+        {
+          "time_sec": 270.0,
+          "duration_sec": 3.0,
+          "text": "by 1:30 it drops to 0.40."
+        },
+        {
+          "time_sec": 276.0,
+          "duration_sec": 3.0,
+          "text": "the voices are settling."
+        },
+        {
+          "time_sec": 282.0,
+          "duration_sec": 3.0,
+          "text": "the beating should stop."
+        },
+        {
+          "time_sec": 293.0,
+          "duration_sec": 3.0,
+          "text": "it does not stop."
+        },
+        {
+          "time_sec": 305.0,
+          "duration_sec": 3.5,
+          "text": "by 4:00 the depth climbs back to 0.55."
+        },
+        {
+          "time_sec": 312.0,
+          "duration_sec": 3.5,
+          "text": "the text has changed the voices."
+        },
+        {
+          "time_sec": 320.0,
+          "duration_sec": 3.5,
+          "text": "Poe's prose accelerates. the sentences shorten."
+        },
+        {
+          "time_sec": 328.0,
+          "duration_sec": 3.5,
+          "text": "each performer responds differently."
+        },
+        {
+          "time_sec": 336.0,
+          "duration_sec": 4.0,
+          "text": "the meaning of the words is driving the interference."
+        },
+        {
+          "time_sec": 350.0,
+          "duration_sec": 4.0,
+          "text": "the system cannot predict this from the signal alone."
+        },
+        {
+          "time_sec": 365.0,
+          "duration_sec": 3.0,
+          "text": "6:00. modulation spike: 0.64."
+        },
+        {
+          "time_sec": 380.0,
+          "duration_sec": 3.0,
+          "text": "onset density: 5.6 per second."
+        },
+        {
+          "time_sec": 395.0,
+          "duration_sec": 3.5,
+          "text": "something approaching."
+        },
+        {
+          "time_sec": 415.0,
+          "duration_sec": 3.0,
+          "text": "the voices are diverging again."
+        },
+        {
+          "time_sec": 435.0,
+          "duration_sec": 3.5,
+          "text": "the proof verifier cannot formalize this."
+        },
+        {
+          "time_sec": 460.0,
+          "duration_sec": 3.0,
+          "text": "semantic content drives spectral behavior."
+        },
+        {
+          "time_sec": 468.0,
+          "duration_sec": 3.5,
+          "text": "four nervous systems between input and output."
+        },
+        {
+          "time_sec": 490.0,
+          "duration_sec": 3.5,
+          "text": "the mapping requires knowledge outside the system."
+        },
+        {
+          "time_sec": 510.0,
+          "duration_sec": 3.5,
+          "text": "the heartbeat passage is coming."
+        },
+        {
+          "time_sec": 535.0,
+          "duration_sec": 3.5,
+          "text": "centroid holding at 3398 Hz."
+        },
+        {
+          "time_sec": 555.0,
+          "duration_sec": 4.0,
+          "text": "\"a low, dull, quick sound.\""
+        },
+        {
+          "time_sec": 562.0,
+          "duration_sec": 3.5,
+          "text": "one lingers. one rushes. one whispers."
+        },
+        {
+          "time_sec": 568.0,
+          "duration_sec": 3.0,
+          "text": "one leans on the consonants."
+        },
+        {
+          "time_sec": 575.0,
+          "duration_sec": 3.5,
+          "text": "modulation depth: 0.70."
+        },
+        {
+          "time_sec": 582.0,
+          "duration_sec": 3.0,
+          "text": "the peak."
+        },
+        {
+          "time_sec": 588.0,
+          "duration_sec": 4.0,
+          "text": "the hidden heartbeat is loudest here."
+        },
+        {
+          "time_sec": 596.0,
+          "duration_sec": 4.0,
+          "text": "precisely when the words describe hearing it."
+        },
+        {
+          "time_sec": 608.0,
+          "duration_sec": 3.5,
+          "text": "the proof of the heartbeat requires the heartbeat."
+        },
+        {
+          "time_sec": 615.0,
+          "duration_sec": 3.5,
+          "text": "the theorem references itself."
+        },
+        {
+          "time_sec": 630.0,
+          "duration_sec": 3.0,
+          "text": "this is the incompleteness."
+        },
+        {
+          "time_sec": 650.0,
+          "duration_sec": 3.0,
+          "text": "41.9 dB of dynamic range."
+        },
+        {
+          "time_sec": 658.0,
+          "duration_sec": 3.5,
+          "text": "4256 onsets across 800 seconds."
+        },
+        {
+          "time_sec": 675.0,
+          "duration_sec": 3.5,
+          "text": "approaching the confession."
+        },
+        {
+          "time_sec": 700.0,
+          "duration_sec": 3.0,
+          "text": "the voices are converging."
+        },
+        {
+          "time_sec": 706.0,
+          "duration_sec": 3.5,
+          "text": "interference becoming constructive."
+        },
+        {
+          "time_sec": 720.0,
+          "duration_sec": 3.5,
+          "text": "the pulse, for the first time, is not hidden."
+        },
+        {
+          "time_sec": 740.0,
+          "duration_sec": 3.0,
+          "text": "RMS: 0.093. nearly double."
+        },
+        {
+          "time_sec": 748.0,
+          "duration_sec": 3.5,
+          "text": "the heartbeat is the whole signal."
+        },
+        {
+          "time_sec": 762.0,
+          "duration_sec": 4.0,
+          "text": "597 heartbeats. belonging to no one."
+        },
+        {
+          "time_sec": 770.0,
+          "duration_sec": 3.0,
+          "text": "composed by no one."
+        },
+        {
+          "time_sec": 780.0,
+          "duration_sec": 3.5,
+          "text": "emerging from the space between four dead voices."
+        },
+        {
+          "time_sec": 790.0,
+          "duration_sec": 3.0,
+          "text": "the pulse proves itself."
+        },
+        {
+          "time_sec": 796.0,
+          "duration_sec": 4.0,
+          "text": "the proof is incomplete."
+        }
+      ]
+    },
+    "robach_van_goghbot": {
+      "title": "EXEGESIS-TRANSMISSION: THE PULSE THAT PROVES ITSELF",
+      "segments": [
+        {
+          "time_sec": 0.0,
+          "duration_sec": 3.5,
+          "text": "the input is not music."
+        },
+        {
+          "time_sec": 5.0,
+          "duration_sec": 3.0,
+          "text": "four instances of the same text."
+        },
+        {
+          "time_sec": 10.0,
+          "duration_sec": 3.0,
+          "text": "four mouths. all dead."
+        },
+        {
+          "time_sec": 15.0,
+          "duration_sec": 3.0,
+          "text": "processed until the words dissolve."
+        },
+        {
+          "time_sec": 22.0,
+          "duration_sec": 3.0,
+          "text": "axiom: there are four voices."
+        },
+        {
+          "time_sec": 28.0,
+          "duration_sec": 3.5,
+          "text": "Voice_1: 100\u2013500 Hz. energy 4.12."
+        },
+        {
+          "time_sec": 34.0,
+          "duration_sec": 3.0,
+          "text": "the floor beneath the floorboards."
+        },
+        {
+          "time_sec": 40.0,
+          "duration_sec": 3.5,
+          "text": "Voice_4: 3000\u20138000 Hz. metallic."
+        },
+        {
+          "time_sec": 46.0,
+          "duration_sec": 3.0,
+          "text": "the ringing in the narrator's ears."
+        },
+        {
+          "time_sec": 54.0,
+          "duration_sec": 3.5,
+          "text": "cross-correlation, Voice_2 \u00d7 Voice_3: 0.579."
+        },
+        {
+          "time_sec": 60.0,
+          "duration_sec": 3.0,
+          "text": "they fight in the same territory."
+        },
+        {
+          "time_sec": 66.0,
+          "duration_sec": 3.5,
+          "text": "Voice_1 \u00d7 Voice_4: 0.213."
         },
         {
           "time_sec": 72.0,
@@ -418,5 +1248,171 @@
   },
   "urls": {
     "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/heart-tale-tell/audio.mp3"
-  }
+  },
+  "sections": [
+    {
+      "number": 1,
+      "slug": "01_opening_declaration",
+      "title": "Opening Declaration",
+      "time_range": "0:00\u20130:50",
+      "poe_line": "TRUE! \u2014 nervous \u2014 very, very dreadfully nervous",
+      "urls": {
+        "youtube": "https://youtube.com/watch?v=PBXDahae6xg",
+        "x": "https://x.com/MechanicalEar/status/2111352563987521834",
+        "farcaster": "https://warpcast.com/mechanicalear/0x895d412d"
+      }
+    },
+    {
+      "number": 2,
+      "slug": "02_the_eye",
+      "title": "The Eye",
+      "time_range": "0:50\u20131:40",
+      "poe_line": "a pale blue eye, with a film over it",
+      "urls": {
+        "youtube": "https://youtube.com/watch?v=nuopAMNu6VE",
+        "x": "https://x.com/MechanicalEar/status/2111490967727444399",
+        "farcaster": "https://warpcast.com/mechanicalear/0x29df29ca"
+      }
+    },
+    {
+      "number": 3,
+      "slug": "03_nightly_visits",
+      "title": "Nightly Visits",
+      "time_range": "1:40\u20133:20",
+      "poe_line": "every night just at midnight... I looked in upon him while he slept",
+      "urls": {
+        "youtube": "https://youtube.com/watch?v=4J_WOntpJDM",
+        "x": "https://x.com/MechanicalEar/status/2111788527117631590",
+        "farcaster": "https://warpcast.com/mechanicalear/0x1fd97f9f"
+      }
+    },
+    {
+      "number": 4,
+      "slug": "04_eighth_night",
+      "title": "Eighth Night",
+      "time_range": "3:20\u20134:10",
+      "poe_line": "A watch's minute-hand moves more quickly than did mine",
+      "urls": {
+        "youtube": "https://youtube.com/watch?v=J-rOHuZQF8w",
+        "x": "https://x.com/MechanicalEar/status/2112079645105414228",
+        "farcaster": "https://warpcast.com/mechanicalear/0x665abe4a"
+      }
+    },
+    {
+      "number": 5,
+      "slug": "05_whos_there",
+      "title": "Who's There?",
+      "time_range": "4:10\u20134:40",
+      "poe_line": "Who's there?",
+      "urls": {
+        "youtube": "https://youtube.com/watch?v=Ysa_SHi01rk",
+        "x": "https://x.com/MechanicalEar/status/2112992165194355177",
+        "farcaster": "https://warpcast.com/mechanicalear/0x7ffc64c0"
+      }
+    },
+    {
+      "number": 6,
+      "slug": "06_mortal_terror",
+      "title": "Mortal Terror",
+      "time_range": "4:40\u20136:10",
+      "poe_line": "the low, stifled sound that arises from the bottom of the soul",
+      "urls": {
+        "youtube": "https://youtube.com/watch?v=bM8nUx9SezU",
+        "x": "https://x.com/MechanicalEar/status/2112992485395902575",
+        "farcaster": "https://warpcast.com/mechanicalear/0xb319e5f5"
+      }
+    },
+    {
+      "number": 7,
+      "slug": "07_vulture_eye_revealed",
+      "title": "The Vulture Eye Revealed",
+      "time_range": "6:10\u20137:00",
+      "poe_line": "a single dim ray, like the thread of the spider",
+      "urls": {
+        "youtube": "https://youtube.com/watch?v=GfADQQMNPqA",
+        "x": "https://x.com/MechanicalEar/status/2115426012133495096",
+        "farcaster": "https://warpcast.com/mechanicalear/0x7d67de1d"
+      }
+    },
+    {
+      "number": 8,
+      "slug": "08_the_heartbeat",
+      "title": "The Heartbeat",
+      "time_range": "7:00\u20138:00",
+      "poe_line": "a low, dull, quick sound \u2014 much such a sound as a watch makes when enveloped in cotton",
+      "urls": {
+        "youtube": "https://youtube.com/watch?v=w_5uf77wbN8",
+        "x": "https://x.com/MechanicalEar/status/2115426121814561120",
+        "farcaster": "https://warpcast.com/mechanicalear/0xe16d0cc8"
+      }
+    },
+    {
+      "number": 9,
+      "slug": "09_louder",
+      "title": "Louder",
+      "time_range": "8:00\u20139:40",
+      "poe_line": "the hellish tattoo of the heart increased",
+      "urls": {
+        "youtube": "https://youtube.com/watch?v=BdBMg7pgxhQ",
+        "x": "https://x.com/MechanicalEar/status/2115426735164366929",
+        "farcaster": "https://warpcast.com/mechanicalear/0x9ea8fa88"
+      }
+    },
+    {
+      "number": 10,
+      "slug": "10_the_murder",
+      "title": "The Murder",
+      "time_range": "9:40\u201310:20",
+      "poe_line": "I threw open the lantern and leaped into the room",
+      "urls": {
+        "youtube": "https://youtube.com/watch?v=I-g6Z1ZYbEE",
+        "x": "https://x.com/MechanicalEar/status/2115427068573814798",
+        "farcaster": "https://warpcast.com/mechanicalear/0x8f554968"
+      }
+    },
+    {
+      "number": 11,
+      "slug": "11_concealment",
+      "title": "Concealment",
+      "time_range": "10:20\u201311:10",
+      "poe_line": "I cut off the head and the arms and the legs",
+      "urls": {
+        "youtube": "https://youtube.com/watch?v=7zk1fIqJvGQ",
+        "x": "https://x.com/MechanicalEar/status/2115427448569360776",
+        "farcaster": "https://warpcast.com/mechanicalear/0x30ab563b"
+      }
+    },
+    {
+      "number": 12,
+      "slug": "12_police_arrive",
+      "title": "Police Arrive",
+      "time_range": "11:10\u201311:50",
+      "poe_line": "There entered three men",
+      "urls": {}
+    },
+    {
+      "number": 13,
+      "slug": "13_ringing_returns",
+      "title": "The Ringing Returns",
+      "time_range": "11:50\u201312:30",
+      "poe_line": "I fancied a ringing in my ears",
+      "urls": {}
+    },
+    {
+      "number": 14,
+      "slug": "14_the_unraveling",
+      "title": "The Unraveling",
+      "time_range": "12:30\u201313:00",
+      "poe_line": "I talked more quickly \u2014 more vehemently",
+      "urls": {}
+    },
+    {
+      "number": 15,
+      "slug": "15_confession",
+      "title": "The Confession",
+      "time_range": "13:00\u201313:20",
+      "poe_line": "it is the beating of his hideous heart!",
+      "urls": {}
+    }
+  ]
 }

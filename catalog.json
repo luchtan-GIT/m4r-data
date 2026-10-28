@@ -15,43 +15,43 @@
     },
     {
       "slug": "chasing-leaks-climax",
-      "title": "Chasing Leaks — Climax",
+      "title": "Chasing Leaks \u2014 Climax",
       "duration_sec": 15.0,
       "path": "tracks/chasing-leaks-climax/manifest.json"
     },
     {
       "slug": "chasing-leaks-crystallization",
-      "title": "Chasing Leaks — Crystallization",
+      "title": "Chasing Leaks \u2014 Crystallization",
       "duration_sec": 9.0,
       "path": "tracks/chasing-leaks-crystallization/manifest.json"
     },
     {
       "slug": "chasing-leaks-first-split",
-      "title": "Chasing Leaks — First Split",
+      "title": "Chasing Leaks \u2014 First Split",
       "duration_sec": 12.0,
       "path": "tracks/chasing-leaks-first-split/manifest.json"
     },
     {
       "slug": "chasing-leaks-maximum-density",
-      "title": "Chasing Leaks — Maximum Density",
+      "title": "Chasing Leaks \u2014 Maximum Density",
       "duration_sec": 20.0,
       "path": "tracks/chasing-leaks-maximum-density/manifest.json"
     },
     {
       "slug": "chasing-leaks-migration",
-      "title": "Chasing Leaks — Migration",
+      "title": "Chasing Leaks \u2014 Migration",
       "duration_sec": 20.0,
       "path": "tracks/chasing-leaks-migration/manifest.json"
     },
     {
       "slug": "chasing-leaks-the-leak",
-      "title": "Chasing Leaks — The Leak",
+      "title": "Chasing Leaks \u2014 The Leak",
       "duration_sec": 18.0,
       "path": "tracks/chasing-leaks-the-leak/manifest.json"
     },
     {
       "slug": "chasing-leaks-the-return",
-      "title": "Chasing Leaks — The Return",
+      "title": "Chasing Leaks \u2014 The Return",
       "duration_sec": 20.0,
       "path": "tracks/chasing-leaks-the-return/manifest.json"
     },
@@ -70,7 +70,7 @@
     {
       "slug": "heart-tale-tell",
       "title": "Heart Tale Tell",
-      "duration_sec": null,
+      "duration_sec": 800.0,
       "path": "tracks/heart-tale-tell/manifest.json"
     },
     {
@@ -117,31 +117,31 @@
     },
     {
       "slug": "synthetic-storms-beating",
-      "title": "Synthetic Storms — Beating",
+      "title": "Synthetic Storms \u2014 Beating",
       "duration_sec": 10.0,
       "path": "tracks/synthetic-storms-beating/manifest.json"
     },
     {
       "slug": "synthetic-storms-convergence",
-      "title": "Synthetic Storms — Convergence",
+      "title": "Synthetic Storms \u2014 Convergence",
       "duration_sec": 10.0,
       "path": "tracks/synthetic-storms-convergence/manifest.json"
     },
     {
       "slug": "synthetic-storms-deep-pulse",
-      "title": "Synthetic Storms — Deep Pulse",
+      "title": "Synthetic Storms \u2014 Deep Pulse",
       "duration_sec": 10.0,
       "path": "tracks/synthetic-storms-deep-pulse/manifest.json"
     },
     {
       "slug": "synthetic-storms-static-field",
-      "title": "Synthetic Storms — Static Field",
+      "title": "Synthetic Storms \u2014 Static Field",
       "duration_sec": 6.0,
       "path": "tracks/synthetic-storms-static-field/manifest.json"
     },
     {
       "slug": "synthetic-storms-texture-burst",
-      "title": "Synthetic Storms — Texture Burst",
+      "title": "Synthetic Storms \u2014 Texture Burst",
       "duration_sec": 10.0,
       "path": "tracks/synthetic-storms-texture-burst/manifest.json"
     },
