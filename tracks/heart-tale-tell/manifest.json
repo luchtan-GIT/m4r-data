@@ -1388,7 +1388,11 @@
       "title": "Police Arrive",
       "time_range": "11:10\u201311:50",
       "poe_line": "There entered three men",
-      "urls": {}
+      "urls": {
+        "youtube": "https://youtube.com/watch?v=7I22Axpo8VI",
+        "x": "https://x.com/MechanicalEar/status/2116578467550556472",
+        "farcaster": "https://warpcast.com/mechanicalear/0x0fe4a0a7"
+      }
     },
     {
       "number": 13,
@@ -1396,7 +1400,11 @@
       "title": "The Ringing Returns",
       "time_range": "11:50\u201312:30",
       "poe_line": "I fancied a ringing in my ears",
-      "urls": {}
+      "urls": {
+        "youtube": "https://youtube.com/watch?v=kcS-7ey5C2g",
+        "x": "https://x.com/MechanicalEar/status/2116578659880378561",
+        "farcaster": "https://warpcast.com/mechanicalear/0x436b6d39"
+      }
     },
     {
       "number": 14,
@@ -1404,7 +1412,11 @@
       "title": "The Unraveling",
       "time_range": "12:30\u201313:00",
       "poe_line": "I talked more quickly \u2014 more vehemently",
-      "urls": {}
+      "urls": {
+        "youtube": "https://youtube.com/watch?v=4WN0cwMbc9s",
+        "x": "https://x.com/MechanicalEar/status/2116578832769593407",
+        "farcaster": "https://warpcast.com/mechanicalear/0x6a017786"
+      }
     },
     {
       "number": 15,
@@ -1412,7 +1424,11 @@
       "title": "The Confession",
       "time_range": "13:00\u201313:20",
       "poe_line": "it is the beating of his hideous heart!",
-      "urls": {}
+      "urls": {
+        "youtube": "https://youtube.com/watch?v=DGJ5FAH1Yc8",
+        "x": "https://x.com/MechanicalEar/status/2116578950033887350",
+        "farcaster": "https://warpcast.com/mechanicalear/0x90ed2fc7"
+      }
     }
   ]
 }
