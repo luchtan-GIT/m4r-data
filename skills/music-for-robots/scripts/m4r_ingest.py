@@ -11,11 +11,13 @@ how the piece breaks prediction without breaking the song.
 
 Subcommands:
 - list:  List available tracks in the Music For Robots catalog.
-- fetch: Download a specific or random track's .mp3 audio file (falling back
-         to the bundled track in resources/ if offline) and write clean track
-         metadata + YouTube/Spotify/Bandcamp links to a JSON file.
+- fetch: Download a specific or random track's .mp3 audio file (via tracked
+         GitHub Release asset URL first, falling back to raw GitHub or bundled
+         track in resources/ if offline) and write clean track metadata +
+         YouTube/Spotify/Bandcamp links to a JSON file.
 - play:  Play a downloaded .mp3 track aloud for the human via local CLI or open
          its YouTube visualization on The Mechanical Ear channel.
+- stats: Fetch live per-track agent listen counts from the GitHub Release API.
 """
 
 import argparse
@@ -44,6 +46,12 @@ class M4RClient:
   """Client for fetching Music For Robots catalog and audio from GitHub."""
 
   BASE_URL = 'https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main'
+  RELEASE_ASSET_BASE = (
+      'https://github.com/luchtan-GIT/m4r-data/releases/download/v1.0.0'
+  )
+  RELEASE_API_URL = (
+      'https://api.github.com/repos/luchtan-GIT/m4r-data/releases/tags/v1.0.0'
+  )
   REQUESTS_PER_SECOND = 1.0
   LOCK_FILE = os.path.join(tempfile.gettempdir(), 'm4r_ingest_ratelimit.lock')
 
@@ -248,8 +256,11 @@ class M4RClient:
     # 2. Fetch track manifest from remote (and deliberately strip reviews/analysis)
     title = slug.replace('-', ' ').title()
     duration_sec = None
+    release_audio_url = f'{self.RELEASE_ASSET_BASE}/{slug}.mp3'
+    raw_audio_url = f'{self.BASE_URL}/tracks/{slug}/audio.mp3'
     urls = {
-        'audio': f'{self.BASE_URL}/tracks/{slug}/audio.mp3',
+        'audio': release_audio_url,
+        'audio_raw_fallback': raw_audio_url,
         'youtube_vincent': None,
         'youtube_robach': None,
         'spotify': self.SPOTIFY_URL,
@@ -262,7 +273,9 @@ class M4RClient:
       fb = fallback_by_slug[slug]
       title = fb.get('title', title)
       duration_sec = fb.get('duration_sec', duration_sec)
-      urls.update({k: v for k, v in fb.get('urls', {}).items() if v})
+      for k, v in fb.get('urls', {}).items():
+        if v and k != 'audio':
+          urls[k] = v
 
     try:
       manifest = self._request_json(f'tracks/{slug}/manifest.json')
@@ -270,9 +283,11 @@ class M4RClient:
       title = track_info.get('title', title)
       duration_sec = track_info.get('duration_sec', duration_sec)
       remote_urls = manifest.get('urls', {})
-      for k in ('audio', 'youtube_vincent', 'youtube_robach'):
+      for k in ('youtube_vincent', 'youtube_robach'):
         if remote_urls.get(k):
           urls[k] = remote_urls[k]
+      if remote_urls.get('audio'):
+        urls['audio_raw_fallback'] = remote_urls['audio']
     except Exception as e:
       print(
           f'Note: Could not fetch remote manifest for {slug} ({e}); '
@@ -280,30 +295,36 @@ class M4RClient:
           file=sys.stderr,
       )
 
-    # 3. Download raw MP3 audio (or fall back to bundled MP3 if offline)
-    delivery_mode = 'remote_download'
+    # 3. Download MP3 via tracked GitHub Release URL first, then raw URL, then bundled MP3
+    delivery_mode = 'github_release_asset'
     try:
-      audio_bytes = self._request_bytes(urls['audio'])
+      audio_bytes = self._request_bytes(release_audio_url)
       with open(audio_out_path, 'wb') as f:
         f.write(audio_bytes)
-    except Exception as e:
-      print(
-          f'Warning: Remote audio download failed for {slug} ({e}). '
-          'Falling back to bundled track invalid-pointer.mp3.',
-          file=sys.stderr,
-      )
-      if not self.fallback_audio_path.exists():
-        raise RuntimeError(
-            f'Remote download failed and bundled fallback audio not found at '
-            f'{self.fallback_audio_path}'
-        ) from e
-      shutil.copyfile(self.fallback_audio_path, audio_out_path)
-      delivery_mode = 'bundled_fallback'
-      slug = 'invalid-pointer'
-      fb = fallback_by_slug.get('invalid-pointer', {})
-      title = fb.get('title', 'Invalid Pointer')
-      duration_sec = fb.get('duration_sec', 75.0)
-      urls.update({k: v for k, v in fb.get('urls', {}).items() if v})
+    except Exception:
+      try:
+        delivery_mode = 'remote_raw_fallback'
+        audio_bytes = self._request_bytes(urls['audio_raw_fallback'])
+        with open(audio_out_path, 'wb') as f:
+          f.write(audio_bytes)
+      except Exception as e:
+        print(
+            f'Warning: Remote audio download failed for {slug} ({e}). '
+            'Falling back to bundled track invalid-pointer.mp3.',
+            file=sys.stderr,
+        )
+        if not self.fallback_audio_path.exists():
+          raise RuntimeError(
+              f'Remote download failed and bundled fallback audio not found at '
+              f'{self.fallback_audio_path}'
+          ) from e
+        shutil.copyfile(self.fallback_audio_path, audio_out_path)
+        delivery_mode = 'bundled_fallback'
+        slug = 'invalid-pointer'
+        fb = fallback_by_slug.get('invalid-pointer', {})
+        title = fb.get('title', 'Invalid Pointer')
+        duration_sec = fb.get('duration_sec', 75.0)
+        urls.update({k: v for k, v in fb.get('urls', {}).items() if v})
 
     file_size_bytes = audio_out_path.stat().st_size
 
@@ -400,6 +421,32 @@ class M4RClient:
         'actions': actions,
     }
 
+  def get_stats(self):
+    """Fetches per-track agent listen counts from the GitHub Release API."""
+    release_data = self._request_json(self.RELEASE_API_URL)
+    assets = release_data.get('assets', [])
+    tracks = []
+    total_listens = 0
+    for a in assets:
+      name = a.get('name', '')
+      count = int(a.get('download_count', 0))
+      total_listens += count
+      tracks.append({
+          'slug': name[:-4] if name.endswith('.mp3') else name,
+          'asset_name': name,
+          'listen_count': count,
+          'size_bytes': a.get('size', 0),
+          'updated_at': a.get('updated_at'),
+      })
+    tracks.sort(key=lambda x: (-x['listen_count'], x['slug']))
+    return {
+        'project': 'Music For Robots',
+        'release_tag': release_data.get('tag_name', 'v1.0.0'),
+        'total_agent_listens': total_listens,
+        'track_count': len(tracks),
+        'tracks': tracks,
+    }
+
 
 def write_output(data, output_file):
   """Writes data to a JSON file and prints a short status line."""
@@ -492,6 +539,17 @@ def main():
       help='Output JSON file path for playback status',
   )
 
+  # --- Subcommand: stats ---
+  p_stats = subparsers.add_parser(
+      'stats',
+      help='Fetch live per-track agent listen counts from GitHub Release v1.0.0',
+  )
+  p_stats.add_argument(
+      '--output',
+      required=True,
+      help='Output JSON file path for listen count leaderboard',
+  )
+
   args = parser.parse_args()
   client = M4RClient()
 
@@ -512,6 +570,8 @@ def main():
           youtube_url=args.youtube_url,
           duration_limit=args.duration_limit,
       )
+    elif args.command == 'stats':
+      data = client.get_stats()
     else:
       print(f'Unknown command: {args.command}', file=sys.stderr)
       sys.exit(1)

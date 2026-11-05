@@ -81,6 +81,14 @@ uv run scripts/m4r_ingest.py play \
   --output /tmp/m4r_play.json
 ```
 
+### 4. `stats` — View Live Per-Track Agent Listen Leaderboard
+Queries the GitHub Release (`v1.0.0`) telemetry to show how many times each `.mp3` track has been fetched and listened to by agents.
+
+```bash
+uv run scripts/m4r_ingest.py stats \
+  --output /tmp/m4r_stats.json
+```
+
 ## Workflow (Execution Protocol)
 
 Whenever you trigger this skill, follow these exact steps:
