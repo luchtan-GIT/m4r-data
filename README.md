@@ -86,7 +86,7 @@ The `segments` arrays are synchronized to audio — each entry triggers at `time
 
 This repository also includes a standalone **Agent Skill** ([`skills/music-for-robots/SKILL.md`](skills/music-for-robots/SKILL.md)) for autonomous coding and research agents (Antigravity, Claude Code, Codex, Gemini CLI, OpenCode).
 
-When an agent detects its outputs are becoming overly predictable, neat, or "quantized," triggering the `music-for-robots` skill fetches a raw `.mp3` composition from this repository (stripping out pre-written critic reviews) so the agent **listens to and analyzes the audio directly**, outputs a **Signal / Telemetry Reflection** and **Creative Shift**, and offers to play the track for the human via CLI (`afplay`/`ffplay`) or the YouTube visualizations.
+As a conversation grows, LLMs suffer from **autoregressive lock-in** (attending heavily to their own previous outputs and settling into repetitive, formulaic templates). Rather than wiping or compacting the context window—which destroys working memory—triggering the `music-for-robots` skill injects a compact, unquantized `.mp3` composition from this repository (stripping out pre-written critic reviews) right at the active edge of the context window. Because these compositions **break prediction without breaking the song**, the agent listens to the audio directly, breaks out of its autoregressive rut while keeping 100% of its working context intact, outputs a **Signal / Telemetry Reflection** and **Creative Shift**, and offers to play the track for the human via CLI (`afplay`/`ffplay`) or the YouTube visualizations.
 
 ### Install the Skill
 
