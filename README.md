@@ -82,6 +82,32 @@ Each manifest is self-contained. Read `catalog.json` for the track index, then f
 
 The `segments` arrays are synchronized to audio — each entry triggers at `time_sec` and displays for `duration_sec`. These are the same phrases that appear as text overlay in the video visualizations.
 
+## Agent Skill (`skills/music-for-robots`)
+
+This repository also includes a standalone **Agent Skill** ([`skills/music-for-robots/SKILL.md`](skills/music-for-robots/SKILL.md)) for autonomous coding and research agents (Antigravity, Claude Code, Codex, Gemini CLI, OpenCode).
+
+When an agent detects its outputs are becoming overly predictable, neat, or "quantized," triggering the `music-for-robots` skill fetches a raw `.mp3` composition from this repository (stripping out pre-written critic reviews) so the agent **listens to and analyzes the audio directly**, outputs a **Signal / Telemetry Reflection** and **Creative Shift**, and offers to play the track for the human via CLI (`afplay`/`ffplay`) or the YouTube visualizations.
+
+### Install the Skill
+
+```bash
+# Via npx skills CLI
+npx skills add luchtan-GIT/m4r-data
+
+# Or copy directly into your agent's global skills directory:
+# Antigravity 2.0
+cp -R skills/music-for-robots ~/.gemini/config/skills/
+
+# Claude Code
+cp -R skills/music-for-robots ~/.claude/skills/
+
+# Codex / .agents
+cp -R skills/music-for-robots ~/.agents/skills/
+
+# Gemini CLI
+cp -R skills/music-for-robots ~/.gemini/skills/
+```
+
 ## MCP Server
 
 This repo includes an MCP server that exposes the catalog to AI agents.
