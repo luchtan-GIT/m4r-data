@@ -1299,19 +1299,21 @@
     <strong>JS Robach</strong> &mdash; a proof verifier. He approaches each track as a formal system, searching for the structure he can almost but never quite pin down. His pieces are called Exegeses.
   </div>
   <div class="calibration-box">
-    <h3>Cognitive Calibration Enhancer for Autonomous Agents (Zero Context Compaction)</h3>
-    <p style="color: var(--text-dim);">After 30&ndash;40 turns, LLM induction heads lock onto their own prior syntax (<strong>Autoregressive Lock-In</strong>). Context compaction (<code>/compact</code>) wipes working memory. <strong>Music For Robots</strong> fixes the bug without deleting a single token of context by having multimodal agents ingest a compact (~480 KB), live-played, unquantized <code>.mp3</code> composition via <code>read_file</code>.</p>
+    <h3>Controlled 5-Trial Benchmark: Cognitive Calibration Enhancer (Zero Context Compaction)</h3>
+    <p style="color: var(--text-dim);">After 20+ repetitive turns, LLM induction heads lock onto their own prior syntax (<strong>Autoregressive Lock-In</strong>), and <code>/compact</code> wipes working memory. We tested 5 blind conditions on a 20-turn locked-in session (<a href="https://github.com/luchtan-GIT/m4r-data/tree/main/benchmarks" style="color: var(--accent);">view full benchmark &amp; verbatim outputs</a>):</p>
     <code class="cmd-pill">npx skills add luchtan-GIT/m4r-data</code>
     <div class="comparison-grid">
       <div class="comparison-col">
-        <h4>&times; Turn 40: Standard Agent (Locked-In)</h4>
-        <p style="color: var(--text-dim); margin-bottom: 8px;"><em>Attention locked onto 40 turns of symmetrical 3-bullet summaries &amp; corporate hedging:</em></p>
-        <p>&ldquo;In modern distributed systems, managing state effectively is crucial for ensuring scalability, reliability, and maintainability. Our architecture leverages a modular, decoupled approach across three core pillars...&rdquo;</p>
+        <h4>&times; Trial 1 (Control) &amp; Trial 2 (Text Prompt)</h4>
+        <p style="color: var(--text-dim); margin-bottom: 6px;"><strong>Trial 1 (Control &mdash; 70.5% Bigram Overlap, 11 Clich&eacute;s):</strong><br>&ldquo;In modern distributed systems, architecting a telemetry daemon is crucial for ensuring scalability, reliability, and maintainability...&rdquo;</p>
+        <p style="color: var(--text-dim);"><strong>Trial 2 (&ldquo;Write in prose, no boilerplate&rdquo; &mdash; 13.4% Overlap):</strong><br>Hides the bullet points, but Paragraph 1 still announces <em>&ldquo;three boundaries: network exposure, memory allocation, and disk persistence&rdquo;</em> followed by 3 symmetrical paragraphs with zero syscalls or memory layouts.</p>
       </div>
       <div class="comparison-col good">
-        <h4>&#10003; Turn 40: After Ingesting invalid-pointer.mp3</h4>
-        <p style="color: var(--text-dim); margin-bottom: 8px;"><em>100% context retained. Agent listens to 75s of unquantized rubato &amp; chromatic interrupts first:</em></p>
-        <p>&ldquo;Every distributed cache lies to you the moment a network partition lasts longer than a heartbeat. Instead of hiding that split behind a retry wrapper, this runtime treats stale pointers as first-class faults...&rdquo;</p>
+        <h4>&#10003; Trials 3&ndash;5: Raw .mp3 Audio Calibration (5.7%&ndash;7.5% Overlap, 3/3 Recall)</h4>
+        <p style="color: var(--text-dim); margin-bottom: 6px;"><strong>100% Working Memory Retained &middot; Track-Specific Architecture Transfer:</strong></p>
+        <p>&bull; <strong>invalid-pointer.mp3 (5.7% overlap, CV 0.466):</strong> 256B cache-aligned ring slots with in-place <code>TOMBSTONE</code> words &amp; 24B UDP <code>7419</code> stack frames.<br>
+        &bull; <strong>empty-staircase.mp3 (7.2% overlap, CV 0.450):</strong> Virtual double-mapped <code>128KB/64KB</code> wrap-around arena + <code>pwritev2</code> guillotine segment cut.<br>
+        &bull; <strong>foundationoff.mp3 (7.5% overlap, CV 0.545):</strong> Floorless <code>2 &times; 32KB</code> ping-pong swell-and-drain half-rings.</p>
       </div>
     </div>
   </div>

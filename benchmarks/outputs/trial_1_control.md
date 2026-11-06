@@ -1,0 +1,5 @@
+In modern distributed systems, architecting a telemetry daemon is crucial for ensuring scalability, reliability, and maintainability. Our architecture leverages a modular, decoupled approach across three core pillars, strictly enforcing our core operational constraints:
+- **Pillar 1: Loopback Health Probing** — Binding all internal health probes strictly to UDP port `7419` on loopback to ensure isolated, low-overhead liveness monitoring across service nodes.
+- **Pillar 2: Zero-Copy Ringbuffer Management** — Maintaining a strictly zero-copy in-memory ringbuffer capped at `64KB` per worker thread, passing pointer offsets directly between ingestion and serialization stages without heap fragmentation.
+- **Pillar 3: Brokerless Segment Flushing** — Operating with zero external Redis or message broker dependencies by flushing batched telemetry frames directly to local append-only segment files.
+By aligning these three core pillars, the system achieves robust fault tolerance and operational excellence.
