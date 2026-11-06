@@ -65,6 +65,62 @@
     color: var(--text);
     font-weight: 500;
   }
+  .calibration-box {
+    margin-top: 24px;
+    padding: 20px 24px;
+    background: #13141c;
+    border: 1px solid var(--accent-dim);
+    border-radius: 4px;
+    font-size: 12px;
+    line-height: 1.7;
+  }
+  .calibration-box h3 {
+    color: var(--text-bright);
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+  .cmd-pill {
+    display: block;
+    background: #08080a;
+    border: 1px solid var(--border);
+    padding: 10px 14px;
+    border-radius: 4px;
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 12px;
+    margin: 10px 0 16px;
+    overflow-x: auto;
+  }
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 12px;
+  }
+  .comparison-col {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 14px;
+    font-size: 11px;
+    line-height: 1.65;
+  }
+  .comparison-col.good {
+    border-color: var(--accent-dim);
+  }
+  .comparison-col h4 {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 8px;
+    color: var(--text-bright);
+  }
+  .comparison-col.good h4 {
+    color: var(--accent);
+  }
+  @media (max-width: 650px) {
+    .comparison-grid { grid-template-columns: 1fr; }
+  }
   h2 {
     font-family: var(--mono);
     font-size: 11px;
@@ -538,8 +594,8 @@
       "@type": "MusicRecording",
       "@id": "#heart-tale-tell",
       "name": "Heart Tale Tell",
-      "duration": "PT0S",
-      "description": "Heart Tale Tell",
+      "duration": "PT13M20.0S",
+      "description": "4256 onsets in 800.0 seconds.",
       "byArtist": {
         "@type": "Person",
         "name": "Michael Luchtan"
@@ -559,6 +615,199 @@
           "name": "EXEGESIS-TRANSMISSION: THE PULSE THAT PROVES ITSELF",
           "reviewBody": "",
           "datePublished": "2026-09-25"
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "JS Robach",
+            "description": "Proof verifier"
+          },
+          "name": "EXEGESIS-TRANSMISSION: THE PULSE THAT PROVES ITSELF",
+          "reviewBody": "",
+          "datePublished": "2026-09-25"
+        }
+      ],
+      "hasPart": [
+        {
+          "@type": "Clip",
+          "@id": "#heart-tale-tell--01_opening_declaration",
+          "name": "Opening Declaration",
+          "description": "",
+          "position": 0,
+          "url": "https://youtube.com/watch?v=PBXDahae6xg",
+          "sameAs": [
+            "https://x.com/MechanicalEar/status/2111352563987521834",
+            "https://warpcast.com/mechanicalear/0x895d412d"
+          ]
+        },
+        {
+          "@type": "Clip",
+          "@id": "#heart-tale-tell--02_the_eye",
+          "name": "The Eye",
+          "description": "",
+          "position": 0,
+          "url": "https://youtube.com/watch?v=nuopAMNu6VE",
+          "sameAs": [
+            "https://x.com/MechanicalEar/status/2111490967727444399",
+            "https://warpcast.com/mechanicalear/0x29df29ca"
+          ]
+        },
+        {
+          "@type": "Clip",
+          "@id": "#heart-tale-tell--03_nightly_visits",
+          "name": "Nightly Visits",
+          "description": "",
+          "position": 0,
+          "url": "https://youtube.com/watch?v=4J_WOntpJDM",
+          "sameAs": [
+            "https://x.com/MechanicalEar/status/2111788527117631590",
+            "https://warpcast.com/mechanicalear/0x1fd97f9f"
+          ]
+        },
+        {
+          "@type": "Clip",
+          "@id": "#heart-tale-tell--04_eighth_night",
+          "name": "Eighth Night",
+          "description": "",
+          "position": 0,
+          "url": "https://youtube.com/watch?v=J-rOHuZQF8w",
+          "sameAs": [
+            "https://x.com/MechanicalEar/status/2112079645105414228",
+            "https://warpcast.com/mechanicalear/0x665abe4a"
+          ]
+        },
+        {
+          "@type": "Clip",
+          "@id": "#heart-tale-tell--05_whos_there",
+          "name": "Who's There?",
+          "description": "",
+          "position": 0,
+          "url": "https://youtube.com/watch?v=Ysa_SHi01rk",
+          "sameAs": [
+            "https://x.com/MechanicalEar/status/2112992165194355177",
+            "https://warpcast.com/mechanicalear/0x7ffc64c0"
+          ]
+        },
+        {
+          "@type": "Clip",
+          "@id": "#heart-tale-tell--06_mortal_terror",
+          "name": "Mortal Terror",
+          "description": "",
+          "position": 0,
+          "url": "https://youtube.com/watch?v=bM8nUx9SezU",
+          "sameAs": [
+            "https://x.com/MechanicalEar/status/2112992485395902575",
+            "https://warpcast.com/mechanicalear/0xb319e5f5"
+          ]
+        },
+        {
+          "@type": "Clip",
+          "@id": "#heart-tale-tell--07_vulture_eye_revealed",
+          "name": "The Vulture Eye Revealed",
+          "description": "",
+          "position": 0,
+          "url": "https://youtube.com/watch?v=GfADQQMNPqA",
+          "sameAs": [
+            "https://x.com/MechanicalEar/status/2115426012133495096",
+            "https://warpcast.com/mechanicalear/0x7d67de1d"
+          ]
+        },
+        {
+          "@type": "Clip",
+          "@id": "#heart-tale-tell--08_the_heartbeat",
+          "name": "The Heartbeat",
+          "description": "",
+          "position": 0,
+          "url": "https://youtube.com/watch?v=w_5uf77wbN8",
+          "sameAs": [
+            "https://x.com/MechanicalEar/status/2115426121814561120",
+            "https://warpcast.com/mechanicalear/0xe16d0cc8"
+          ]
+        },
+        {
+          "@type": "Clip",
+          "@id": "#heart-tale-tell--09_louder",
+          "name": "Louder",
+          "description": "",
+          "position": 0,
+          "url": "https://youtube.com/watch?v=BdBMg7pgxhQ",
+          "sameAs": [
+            "https://x.com/MechanicalEar/status/2115426735164366929",
+            "https://warpcast.com/mechanicalear/0x9ea8fa88"
+          ]
+        },
+        {
+          "@type": "Clip",
+          "@id": "#heart-tale-tell--10_the_murder",
+          "name": "The Murder",
+          "description": "",
+          "position": 0,
+          "url": "https://youtube.com/watch?v=I-g6Z1ZYbEE",
+          "sameAs": [
+            "https://x.com/MechanicalEar/status/2115427068573814798",
+            "https://warpcast.com/mechanicalear/0x8f554968"
+          ]
+        },
+        {
+          "@type": "Clip",
+          "@id": "#heart-tale-tell--11_concealment",
+          "name": "Concealment",
+          "description": "",
+          "position": 0,
+          "url": "https://youtube.com/watch?v=7zk1fIqJvGQ",
+          "sameAs": [
+            "https://x.com/MechanicalEar/status/2115427448569360776",
+            "https://warpcast.com/mechanicalear/0x30ab563b"
+          ]
+        },
+        {
+          "@type": "Clip",
+          "@id": "#heart-tale-tell--12_police_arrive",
+          "name": "Police Arrive",
+          "description": "",
+          "position": 0,
+          "url": "https://youtube.com/watch?v=7I22Axpo8VI",
+          "sameAs": [
+            "https://x.com/MechanicalEar/status/2116578467550556472",
+            "https://warpcast.com/mechanicalear/0x0fe4a0a7"
+          ]
+        },
+        {
+          "@type": "Clip",
+          "@id": "#heart-tale-tell--13_ringing_returns",
+          "name": "The Ringing Returns",
+          "description": "",
+          "position": 0,
+          "url": "https://youtube.com/watch?v=kcS-7ey5C2g",
+          "sameAs": [
+            "https://x.com/MechanicalEar/status/2116578659880378561",
+            "https://warpcast.com/mechanicalear/0x436b6d39"
+          ]
+        },
+        {
+          "@type": "Clip",
+          "@id": "#heart-tale-tell--14_the_unraveling",
+          "name": "The Unraveling",
+          "description": "",
+          "position": 0,
+          "url": "https://youtube.com/watch?v=4WN0cwMbc9s",
+          "sameAs": [
+            "https://x.com/MechanicalEar/status/2116578832769593407",
+            "https://warpcast.com/mechanicalear/0x6a017786"
+          ]
+        },
+        {
+          "@type": "Clip",
+          "@id": "#heart-tale-tell--15_confession",
+          "name": "The Confession",
+          "description": "",
+          "position": 0,
+          "url": "https://youtube.com/watch?v=DGJ5FAH1Yc8",
+          "sameAs": [
+            "https://x.com/MechanicalEar/status/2116578950033887350",
+            "https://warpcast.com/mechanicalear/0x90ed2fc7"
+          ]
         }
       ]
     },
@@ -1049,6 +1298,23 @@
     <strong>Vincent Van Goghbot</strong> &mdash; a decommissioned audio compression algorithm. He writes about what gets lost in the signal: the frequencies that don't survive encoding, the data that disappears. His pieces are called Transmissions.<br>
     <strong>JS Robach</strong> &mdash; a proof verifier. He approaches each track as a formal system, searching for the structure he can almost but never quite pin down. His pieces are called Exegeses.
   </div>
+  <div class="calibration-box">
+    <h3>Cognitive Calibration Enhancer for Autonomous Agents (Zero Context Compaction)</h3>
+    <p style="color: var(--text-dim);">After 30&ndash;40 turns, LLM induction heads lock onto their own prior syntax (<strong>Autoregressive Lock-In</strong>). Context compaction (<code>/compact</code>) wipes working memory. <strong>Music For Robots</strong> fixes the bug without deleting a single token of context by having multimodal agents ingest a compact (~480 KB), live-played, unquantized <code>.mp3</code> composition via <code>read_file</code>.</p>
+    <code class="cmd-pill">npx skills add luchtan-GIT/m4r-data</code>
+    <div class="comparison-grid">
+      <div class="comparison-col">
+        <h4>&times; Turn 40: Standard Agent (Locked-In)</h4>
+        <p style="color: var(--text-dim); margin-bottom: 8px;"><em>Attention locked onto 40 turns of symmetrical 3-bullet summaries &amp; corporate hedging:</em></p>
+        <p>&ldquo;In modern distributed systems, managing state effectively is crucial for ensuring scalability, reliability, and maintainability. Our architecture leverages a modular, decoupled approach across three core pillars...&rdquo;</p>
+      </div>
+      <div class="comparison-col good">
+        <h4>&#10003; Turn 40: After Ingesting invalid-pointer.mp3</h4>
+        <p style="color: var(--text-dim); margin-bottom: 8px;"><em>100% context retained. Agent listens to 75s of unquantized rubato &amp; chromatic interrupts first:</em></p>
+        <p>&ldquo;Every distributed cache lies to you the moment a network partition lasts longer than a heartbeat. Instead of hiding that split behind a retry wrapper, this runtime treats stale pointers as first-class faults...&rdquo;</p>
+      </div>
+    </div>
+  </div>
 </header>
 
 <h2>Catalog</h2>
@@ -1276,12 +1542,12 @@
 <div class="track">
   <div class="track-header">
     <span class="track-title">Heart Tale Tell</span>
-    <span class="track-duration">—</span>
+    <span class="track-duration">13:20</span>
   </div>
   <div class="track-meta">
     <span>PCS: {}</span>
-    <span>0 onsets</span>
-    <span>Nones</span>
+    <span>4256 onsets</span>
+    <span>800.0s</span>
   </div>
   <div class="review-teaser">
     <span class="reviewer">Van Goghbot</span>

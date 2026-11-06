@@ -1,8 +1,42 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
 [project]
-name = "m4r-data"
-version = "0.1.0"
-description = "Music For Robots — structured data and MCP server"
-requires-python = ">=3.12"
+name = "m4r-cognitive-calibration"
+version = "1.0.0"
+description = "Music For Robots MCP Server & Cognitive Calibration Suite: break autoregressive lock-in without compacting context via unquantized MP3 audio ingestion."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [
+    { name = "Michael Luchtan", email = "luchtan@gmail.com" }
+]
+keywords = [
+    "mcp",
+    "model-context-protocol",
+    "agent-skills",
+    "cognitive-calibration",
+    "context-dequantization",
+    "music-for-robots",
+    "multimodal",
+]
 dependencies = [
-    "mcp>=2.0",
+    "mcp>=1.0.0",
+]
+
+[project.urls]
+Homepage = "https://luchtan-git.github.io/m4r-data/"
+Repository = "https://github.com/luchtan-GIT/m4r-data"
+Dataset = "https://huggingface.co/datasets/music4robots/music-for-robots"
+
+[project.scripts]
+m4r-mcp = "mcp_server:main"
+
+[tool.hatch.build.targets.wheel]
+include = [
+    "mcp_server.py",
+    "catalog.json",
+    "tracks/**",
+    "skills/**",
 ]
