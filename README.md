@@ -82,30 +82,28 @@ Each manifest is self-contained. Read `catalog.json` for the track index, then f
 
 The `segments` arrays are synchronized to audio — each entry triggers at `time_sec` and displays for `duration_sec`. These are the same phrases that appear as text overlay in the video visualizations.
 
-## Agent Skill (`skills/music-for-robots`)
+## Cognitive Calibration Agent Skills Suite (`skills/`)
 
-This repository also includes a standalone **Agent Skill** ([`skills/music-for-robots/SKILL.md`](skills/music-for-robots/SKILL.md)) for autonomous coding and research agents (Antigravity, Claude Code, Codex, Gemini CLI, OpenCode).
+This repository includes a 4-skill **Cognitive Calibration & Cognitive Enhancer Suite** for autonomous coding, writing, and research agents (Antigravity, Claude Code, Codex, Gemini CLI, Cursor, OpenCode):
 
-As a conversation grows, LLMs suffer from **autoregressive lock-in** (attending heavily to their own previous outputs and settling into repetitive, formulaic templates). Rather than wiping or compacting the context window—which destroys working memory—triggering the `music-for-robots` skill injects a compact, unquantized `.mp3` composition from this repository (stripping out pre-written critic reviews) right at the active edge of the context window. Because these compositions **break prediction without breaking the song**, the agent listens to the audio directly, breaks out of its autoregressive rut while keeping 100% of its working context intact, outputs a **Signal / Telemetry Reflection** and **Creative Shift**, and offers to play the track for the human via CLI (`afplay`/`ffplay`) or the YouTube visualizations.
+| Skill | Purpose |
+|---|---|
+| [`music-for-robots`](skills/music-for-robots/SKILL.md) | Flagship **Cognitive Calibration & Context De-Quantization** skill — breaks autoregressive lock-in without wiping or compacting context by ingesting compact, unquantized `.mp3` compositions. |
+| [`cognitive-calibration`](skills/cognitive-calibration/SKILL.md) | **Anti-Slop & Expressive Enhancer** for writing, taste, and architectural prose — uses unquantized audio telemetry to escape median statistical smoothing and repetitive templates. |
+| [`unquantized-brainstorm`](skills/unquantized-brainstorm/SKILL.md) | **Divergent Ideation Enhancer** — maps microtiming drift, chromatic mediant pivots, and structural ruptures from *Music For Robots* tracks into non-obvious ideas. |
+| [`mechanical-ear-critic`](skills/mechanical-ear-critic/SKILL.md) | **Dual-Lens Structural Critique** — calibrates the agent's ear on a track, then critiques work through *Vincent Van Goghbot* (what is lost to compression/smoothing) and *JS Robach* (formal structure & productive incompleteness). |
 
-### Install the Skill
+### Install the Full Cognitive Calibration Suite
 
 ```bash
-# Via npx skills CLI
+# Installs all 4 cognitive calibration skills at once via npx skills CLI:
 npx skills add luchtan-GIT/m4r-data
 
 # Or copy directly into your agent's global skills directory:
-# Antigravity 2.0
-cp -R skills/music-for-robots ~/.gemini/config/skills/
-
-# Claude Code
-cp -R skills/music-for-robots ~/.claude/skills/
-
-# Codex / .agents
-cp -R skills/music-for-robots ~/.agents/skills/
-
-# Gemini CLI
-cp -R skills/music-for-robots ~/.gemini/skills/
+cp -R skills/* ~/.gemini/config/skills/   # Antigravity 2.0
+cp -R skills/* ~/.claude/skills/          # Claude Code
+cp -R skills/* ~/.agents/skills/          # Codex / .agents
+cp -R skills/* ~/.gemini/skills/          # Gemini CLI
 ```
 
 ## MCP Server

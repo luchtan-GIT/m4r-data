@@ -71,8 +71,37 @@ class M4RClient:
     else:
       self.skill_root = Path(skill_root).resolve()
     self.resources_dir = self.skill_root / 'resources'
-    self.fallback_catalog_path = self.resources_dir / 'fallback_catalog.json'
-    self.fallback_audio_path = self.resources_dir / 'invalid-pointer.mp3'
+    self.fallback_catalog_path = self._resolve_fallback_file(
+        'fallback_catalog.json'
+    )
+    self.fallback_audio_path = self._resolve_fallback_audio()
+
+  def _resolve_fallback_file(self, filename):
+    candidates = [
+        self.resources_dir / filename,
+        self.skill_root.parent / 'music-for-robots' / 'resources' / filename,
+    ]
+    for c in candidates:
+      if c.exists():
+        return c
+    return self.resources_dir / filename
+
+  def _resolve_fallback_audio(self):
+    candidates = [
+        self.resources_dir / 'invalid-pointer.mp3',
+        self.skill_root.parent
+        / 'music-for-robots'
+        / 'resources'
+        / 'invalid-pointer.mp3',
+        self.skill_root.parent.parent
+        / 'tracks'
+        / 'invalid-pointer'
+        / 'audio.mp3',
+    ]
+    for c in candidates:
+      if c.exists():
+        return c
+    return self.resources_dir / 'invalid-pointer.mp3'
 
   def _wait_for_rate_limit(self):
     """Enforces cross-process rate limiting via file lock and time.monotonic()."""

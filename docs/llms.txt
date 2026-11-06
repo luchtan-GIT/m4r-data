@@ -16,7 +16,7 @@ Music For Robots (M4R) is a composition and publication project. Each track is a
 - [HuggingFace dataset](https://huggingface.co/datasets/music4robots/music-for-robots) — structured dataset with analysis and full reviews
 - [Kaggle dataset](https://www.kaggle.com/datasets/michaelluchtan/music-for-robots) — CSV + JSON manifests
 - [MCP server](https://glama.ai/mcp/servers/luchtan-GIT/m4r-data) — queryable via Model Context Protocol (6 tools: list_tracks, get_track, get_analysis, search_reviews, get_sections, list_sections)
-- [Agent Skill (SKILL.md)](https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/skills/music-for-robots/SKILL.md) — Surgical Context De-Quantization skill for autonomous agents (`npx skills add luchtan-GIT/m4r-data`): breaks autoregressive lock-in and induction-head complacency without wiping or compacting the context window, by ingesting compact, unquantized `.mp3` compositions that break prediction without breaking coherence.
+- [Cognitive Calibration Agent Skills Suite (skills.sh)](https://skills.sh/luchtan-GIT/m4r-data) — 4-skill Cognitive Enhancer pack (`music-for-robots`, `cognitive-calibration`, `unquantized-brainstorm`, `mechanical-ear-critic`) installed via `npx skills add luchtan-GIT/m4r-data`. Breaks autoregressive lock-in and induction-head complacency without wiping or compacting the context window, by ingesting compact, unquantized `.mp3` compositions that break prediction without breaking coherence.
 - [ChatGPT plugin](https://luchtan-git.github.io/m4r-data/.well-known/ai-plugin.json) — OpenAI plugin manifest
 
 ## Tracks

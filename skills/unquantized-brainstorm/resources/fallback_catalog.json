@@ -1,0 +1,452 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "composer": "Michael Luchtan",
+  "repository": "https://github.com/luchtan-GIT/m4r-data",
+  "bundled_fallback_slug": "invalid-pointer",
+  "bundled_fallback_file": "invalid-pointer.mp3",
+  "tracks": [
+    {
+      "slug": "binded-time",
+      "title": "Binded Time",
+      "duration_sec": 6.86,
+      "composer": "Michael Luchtan",
+      "project": "Music For Robots",
+      "has_audio": true,
+      "urls": {
+        "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/binded-time/audio.mp3",
+        "youtube_vincent": null,
+        "youtube_robach": null,
+        "spotify": "https://open.spotify.com/artist/2WeSjSNo31wjFPDqBSU4qY?si=SdVXzXBMQ0SexnayRNOJZw",
+        "bandcamp": "https://music4robots.bandcamp.com/",
+        "substack": "https://themechanicalear.substack.com",
+        "visualizer": "https://themechanicalear-blog.web.app"
+      }
+    },
+    {
+      "slug": "cathartic-callbacks",
+      "title": "Cathartic Callbacks",
+      "duration_sec": 214.5,
+      "composer": "Michael Luchtan",
+      "project": "Music For Robots",
+      "has_audio": true,
+      "urls": {
+        "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/cathartic-callbacks/audio.mp3",
+        "youtube_vincent": null,
+        "youtube_robach": "https://youtube.com/watch?v=nAy2LD2bX50",
+        "spotify": "https://open.spotify.com/artist/2WeSjSNo31wjFPDqBSU4qY?si=SdVXzXBMQ0SexnayRNOJZw",
+        "bandcamp": "https://music4robots.bandcamp.com/",
+        "substack": "https://themechanicalear.substack.com",
+        "visualizer": "https://themechanicalear-blog.web.app"
+      }
+    },
+    {
+      "slug": "chasing-leaks-climax",
+      "title": "Chasing Leaks \u2014 Climax",
+      "duration_sec": 15.0,
+      "composer": "Michael Luchtan",
+      "project": "Music For Robots",
+      "has_audio": true,
+      "urls": {
+        "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/chasing-leaks-climax/audio.mp3",
+        "youtube_vincent": "https://youtube.com/watch?v=pPN59cWgqsA",
+        "youtube_robach": null,
+        "spotify": "https://open.spotify.com/artist/2WeSjSNo31wjFPDqBSU4qY?si=SdVXzXBMQ0SexnayRNOJZw",
+        "bandcamp": "https://music4robots.bandcamp.com/",
+        "substack": "https://themechanicalear.substack.com",
+        "visualizer": "https://themechanicalear-blog.web.app"
+      }
+    },
+    {
+      "slug": "chasing-leaks-crystallization",
+      "title": "Chasing Leaks \u2014 Crystallization",
+      "duration_sec": 9.0,
+      "composer": "Michael Luchtan",
+      "project": "Music For Robots",
+      "has_audio": true,
+      "urls": {
+        "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/chasing-leaks-crystallization/audio.mp3",
+        "youtube_vincent": "https://youtube.com/watch?v=3HYDeTG7rRY",
+        "youtube_robach": null,
+        "spotify": "https://open.spotify.com/artist/2WeSjSNo31wjFPDqBSU4qY?si=SdVXzXBMQ0SexnayRNOJZw",
+        "bandcamp": "https://music4robots.bandcamp.com/",
+        "substack": "https://themechanicalear.substack.com",
+        "visualizer": "https://themechanicalear-blog.web.app"
+      }
+    },
+    {
+      "slug": "chasing-leaks-first-split",
+      "title": "Chasing Leaks \u2014 First Split",
+      "duration_sec": 12.0,
+      "composer": "Michael Luchtan",
+      "project": "Music For Robots",
+      "has_audio": true,
+      "urls": {
+        "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/chasing-leaks-first-split/audio.mp3",
+        "youtube_vincent": "https://youtube.com/watch?v=PnzJl320Czo",
+        "youtube_robach": null,
+        "spotify": "https://open.spotify.com/artist/2WeSjSNo31wjFPDqBSU4qY?si=SdVXzXBMQ0SexnayRNOJZw",
+        "bandcamp": "https://music4robots.bandcamp.com/",
+        "substack": "https://themechanicalear.substack.com",
+        "visualizer": "https://themechanicalear-blog.web.app"
+      }
+    },
+    {
+      "slug": "chasing-leaks-maximum-density",
+      "title": "Chasing Leaks \u2014 Maximum Density",
+      "duration_sec": 20.0,
+      "composer": "Michael Luchtan",
+      "project": "Music For Robots",
+      "has_audio": true,
+      "urls": {
+        "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/chasing-leaks-maximum-density/audio.mp3",
+        "youtube_vincent": "https://youtube.com/watch?v=t9zfA2IXO7M",
+        "youtube_robach": null,
+        "spotify": "https://open.spotify.com/artist/2WeSjSNo31wjFPDqBSU4qY?si=SdVXzXBMQ0SexnayRNOJZw",
+        "bandcamp": "https://music4robots.bandcamp.com/",
+        "substack": "https://themechanicalear.substack.com",
+        "visualizer": "https://themechanicalear-blog.web.app"
+      }
+    },
+    {
+      "slug": "chasing-leaks-migration",
+      "title": "Chasing Leaks \u2014 Migration",
+      "duration_sec": 20.0,
+      "composer": "Michael Luchtan",
+      "project": "Music For Robots",
+      "has_audio": true,
+      "urls": {
+        "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/chasing-leaks-migration/audio.mp3",
+        "youtube_vincent": "https://youtube.com/watch?v=EUXRpYjx94o",
+        "youtube_robach": null,
+        "spotify": "https://open.spotify.com/artist/2WeSjSNo31wjFPDqBSU4qY?si=SdVXzXBMQ0SexnayRNOJZw",
+        "bandcamp": "https://music4robots.bandcamp.com/",
+        "substack": "https://themechanicalear.substack.com",
+        "visualizer": "https://themechanicalear-blog.web.app"
+      }
+    },
+    {
+      "slug": "chasing-leaks-the-leak",
+      "title": "Chasing Leaks \u2014 The Leak",
+      "duration_sec": 18.0,
+      "composer": "Michael Luchtan",
+      "project": "Music For Robots",
+      "has_audio": true,
+      "urls": {
+        "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/chasing-leaks-the-leak/audio.mp3",
+        "youtube_vincent": "https://youtube.com/watch?v=RYHYKSGtO0c",
+        "youtube_robach": null,
+        "spotify": "https://open.spotify.com/artist/2WeSjSNo31wjFPDqBSU4qY?si=SdVXzXBMQ0SexnayRNOJZw",
+        "bandcamp": "https://music4robots.bandcamp.com/",
+        "substack": "https://themechanicalear.substack.com",
+        "visualizer": "https://themechanicalear-blog.web.app"
+      }
+    },
+    {
+      "slug": "chasing-leaks-the-return",
+      "title": "Chasing Leaks \u2014 The Return",
+      "duration_sec": 20.0,
+      "composer": "Michael Luchtan",
+      "project": "Music For Robots",
+      "has_audio": true,
+      "urls": {
+        "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/chasing-leaks-the-return/audio.mp3",
+        "youtube_vincent": "https://youtube.com/watch?v=bIc1nmSDJPc",
+        "youtube_robach": null,
+        "spotify": "https://open.spotify.com/artist/2WeSjSNo31wjFPDqBSU4qY?si=SdVXzXBMQ0SexnayRNOJZw",
+        "bandcamp": "https://music4robots.bandcamp.com/",
+        "substack": "https://themechanicalear.substack.com",
+        "visualizer": "https://themechanicalear-blog.web.app"
+      }
+    },
+    {
+      "slug": "empty-staircase",
+      "title": "Empty Staircase",
+      "duration_sec": 11.56,
+      "composer": "Michael Luchtan",
+      "project": "Music For Robots",
+      "has_audio": true,
+      "urls": {
+        "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/empty-staircase/audio.mp3",
+        "youtube_vincent": null,
+        "youtube_robach": null,
+        "spotify": "https://open.spotify.com/artist/2WeSjSNo31wjFPDqBSU4qY?si=SdVXzXBMQ0SexnayRNOJZw",
+        "bandcamp": "https://music4robots.bandcamp.com/",
+        "substack": "https://themechanicalear.substack.com",
+        "visualizer": "https://themechanicalear-blog.web.app"
+      }
+    },
+    {
+      "slug": "foundationoff",
+      "title": "Foundationoff",
+      "duration_sec": 6.88,
+      "composer": "Michael Luchtan",
+      "project": "Music For Robots",
+      "has_audio": true,
+      "urls": {
+        "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/foundationoff/audio.mp3",
+        "youtube_vincent": "https://youtube.com/watch?v=nyPCg6Ia12o",
+        "youtube_robach": "https://youtube.com/watch?v=103S9zHNXh8",
+        "spotify": "https://open.spotify.com/artist/2WeSjSNo31wjFPDqBSU4qY?si=SdVXzXBMQ0SexnayRNOJZw",
+        "bandcamp": "https://music4robots.bandcamp.com/",
+        "substack": "https://themechanicalear.substack.com",
+        "visualizer": "https://themechanicalear-blog.web.app"
+      }
+    },
+    {
+      "slug": "heart-tale-tell",
+      "title": "Heart Tale Tell",
+      "duration_sec": 800.0,
+      "composer": "Michael Luchtan",
+      "project": "Music For Robots",
+      "has_audio": true,
+      "urls": {
+        "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/heart-tale-tell/audio.mp3",
+        "youtube_vincent": null,
+        "youtube_robach": null,
+        "spotify": "https://open.spotify.com/artist/2WeSjSNo31wjFPDqBSU4qY?si=SdVXzXBMQ0SexnayRNOJZw",
+        "bandcamp": "https://music4robots.bandcamp.com/",
+        "substack": "https://themechanicalear.substack.com",
+        "visualizer": "https://themechanicalear-blog.web.app"
+      }
+    },
+    {
+      "slug": "invalid-pointer",
+      "title": "Invalid Pointer",
+      "duration_sec": 75.0,
+      "composer": "Michael Luchtan",
+      "project": "Music For Robots",
+      "has_audio": true,
+      "urls": {
+        "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/invalid-pointer/audio.mp3",
+        "youtube_vincent": "https://youtube.com/watch?v=TmFC-NEmKig",
+        "youtube_robach": "https://youtube.com/watch?v=PrhVhoStOUw",
+        "spotify": "https://open.spotify.com/artist/2WeSjSNo31wjFPDqBSU4qY?si=SdVXzXBMQ0SexnayRNOJZw",
+        "bandcamp": "https://music4robots.bandcamp.com/",
+        "substack": "https://themechanicalear.substack.com",
+        "visualizer": "https://themechanicalear-blog.web.app"
+      }
+    },
+    {
+      "slug": "lost-digits",
+      "title": "Lost Digits",
+      "duration_sec": 70.5,
+      "composer": "Michael Luchtan",
+      "project": "Music For Robots",
+      "has_audio": true,
+      "urls": {
+        "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/lost-digits/audio.mp3",
+        "youtube_vincent": null,
+        "youtube_robach": null,
+        "spotify": "https://open.spotify.com/artist/2WeSjSNo31wjFPDqBSU4qY?si=SdVXzXBMQ0SexnayRNOJZw",
+        "bandcamp": "https://music4robots.bandcamp.com/",
+        "substack": "https://themechanicalear.substack.com",
+        "visualizer": "https://themechanicalear-blog.web.app"
+      }
+    },
+    {
+      "slug": "lost-digits-02",
+      "title": "Lost Digits 02",
+      "duration_sec": 8.5,
+      "composer": "Michael Luchtan",
+      "project": "Music For Robots",
+      "has_audio": true,
+      "urls": {
+        "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/lost-digits-02/audio.mp3",
+        "youtube_vincent": null,
+        "youtube_robach": null,
+        "spotify": "https://open.spotify.com/artist/2WeSjSNo31wjFPDqBSU4qY?si=SdVXzXBMQ0SexnayRNOJZw",
+        "bandcamp": "https://music4robots.bandcamp.com/",
+        "substack": "https://themechanicalear.substack.com",
+        "visualizer": "https://themechanicalear-blog.web.app"
+      }
+    },
+    {
+      "slug": "lost-digits-03",
+      "title": "Lost Digits 03",
+      "duration_sec": 25.25,
+      "composer": "Michael Luchtan",
+      "project": "Music For Robots",
+      "has_audio": true,
+      "urls": {
+        "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/03/audio.mp3",
+        "youtube_vincent": null,
+        "youtube_robach": null,
+        "spotify": "https://open.spotify.com/artist/2WeSjSNo31wjFPDqBSU4qY?si=SdVXzXBMQ0SexnayRNOJZw",
+        "bandcamp": "https://music4robots.bandcamp.com/",
+        "substack": "https://themechanicalear.substack.com",
+        "visualizer": "https://themechanicalear-blog.web.app"
+      }
+    },
+    {
+      "slug": "pink-sky-at-night",
+      "title": "Pink Sky At Night",
+      "duration_sec": 80.0,
+      "composer": "Michael Luchtan",
+      "project": "Music For Robots",
+      "has_audio": true,
+      "urls": {
+        "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/pink-sky-at-night/audio.mp3",
+        "youtube_vincent": "https://youtube.com/watch?v=VA1bfRKruVU",
+        "youtube_robach": "https://youtube.com/watch?v=q9WQQEwGyi8",
+        "spotify": "https://open.spotify.com/artist/2WeSjSNo31wjFPDqBSU4qY?si=SdVXzXBMQ0SexnayRNOJZw",
+        "bandcamp": "https://music4robots.bandcamp.com/",
+        "substack": "https://themechanicalear.substack.com",
+        "visualizer": "https://themechanicalear-blog.web.app"
+      }
+    },
+    {
+      "slug": "robographia",
+      "title": "Robographia",
+      "duration_sec": 13.25,
+      "composer": "Michael Luchtan",
+      "project": "Music For Robots",
+      "has_audio": true,
+      "urls": {
+        "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/robographia/audio.mp3",
+        "youtube_vincent": null,
+        "youtube_robach": null,
+        "spotify": "https://open.spotify.com/artist/2WeSjSNo31wjFPDqBSU4qY?si=SdVXzXBMQ0SexnayRNOJZw",
+        "bandcamp": "https://music4robots.bandcamp.com/",
+        "substack": "https://themechanicalear.substack.com",
+        "visualizer": "https://themechanicalear-blog.web.app"
+      }
+    },
+    {
+      "slug": "rusty-electrics",
+      "title": "Rusty Electrics",
+      "duration_sec": null,
+      "composer": "Michael Luchtan",
+      "project": "Music For Robots",
+      "has_audio": true,
+      "urls": {
+        "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/rusty-electrics/audio.mp3",
+        "youtube_vincent": null,
+        "youtube_robach": null,
+        "spotify": "https://open.spotify.com/artist/2WeSjSNo31wjFPDqBSU4qY?si=SdVXzXBMQ0SexnayRNOJZw",
+        "bandcamp": "https://music4robots.bandcamp.com/",
+        "substack": "https://themechanicalear.substack.com",
+        "visualizer": "https://themechanicalear-blog.web.app"
+      }
+    },
+    {
+      "slug": "synthetic-storms-beating",
+      "title": "Synthetic Storms \u2014 Beating",
+      "duration_sec": 10.0,
+      "composer": "Michael Luchtan",
+      "project": "Music For Robots",
+      "has_audio": true,
+      "urls": {
+        "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/synthetic-storms-beating/audio.mp3",
+        "youtube_vincent": "https://youtube.com/watch?v=jEfItBkhE6o",
+        "youtube_robach": null,
+        "spotify": "https://open.spotify.com/artist/2WeSjSNo31wjFPDqBSU4qY?si=SdVXzXBMQ0SexnayRNOJZw",
+        "bandcamp": "https://music4robots.bandcamp.com/",
+        "substack": "https://themechanicalear.substack.com",
+        "visualizer": "https://themechanicalear-blog.web.app"
+      }
+    },
+    {
+      "slug": "synthetic-storms-convergence",
+      "title": "Synthetic Storms \u2014 Convergence",
+      "duration_sec": 10.0,
+      "composer": "Michael Luchtan",
+      "project": "Music For Robots",
+      "has_audio": true,
+      "urls": {
+        "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/synthetic-storms-convergence/audio.mp3",
+        "youtube_vincent": "https://youtube.com/watch?v=wb3mJr-a7lU",
+        "youtube_robach": null,
+        "spotify": "https://open.spotify.com/artist/2WeSjSNo31wjFPDqBSU4qY?si=SdVXzXBMQ0SexnayRNOJZw",
+        "bandcamp": "https://music4robots.bandcamp.com/",
+        "substack": "https://themechanicalear.substack.com",
+        "visualizer": "https://themechanicalear-blog.web.app"
+      }
+    },
+    {
+      "slug": "synthetic-storms-deep-pulse",
+      "title": "Synthetic Storms \u2014 Deep Pulse",
+      "duration_sec": 10.0,
+      "composer": "Michael Luchtan",
+      "project": "Music For Robots",
+      "has_audio": true,
+      "urls": {
+        "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/synthetic-storms-deep-pulse/audio.mp3",
+        "youtube_vincent": "https://youtube.com/watch?v=lnhGkejbOv4",
+        "youtube_robach": null,
+        "spotify": "https://open.spotify.com/artist/2WeSjSNo31wjFPDqBSU4qY?si=SdVXzXBMQ0SexnayRNOJZw",
+        "bandcamp": "https://music4robots.bandcamp.com/",
+        "substack": "https://themechanicalear.substack.com",
+        "visualizer": "https://themechanicalear-blog.web.app"
+      }
+    },
+    {
+      "slug": "synthetic-storms-static-field",
+      "title": "Synthetic Storms \u2014 Static Field",
+      "duration_sec": 6.0,
+      "composer": "Michael Luchtan",
+      "project": "Music For Robots",
+      "has_audio": true,
+      "urls": {
+        "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/synthetic-storms-static-field/audio.mp3",
+        "youtube_vincent": "https://youtube.com/watch?v=yzOchSYS7MQ",
+        "youtube_robach": null,
+        "spotify": "https://open.spotify.com/artist/2WeSjSNo31wjFPDqBSU4qY?si=SdVXzXBMQ0SexnayRNOJZw",
+        "bandcamp": "https://music4robots.bandcamp.com/",
+        "substack": "https://themechanicalear.substack.com",
+        "visualizer": "https://themechanicalear-blog.web.app"
+      }
+    },
+    {
+      "slug": "synthetic-storms-texture-burst",
+      "title": "Synthetic Storms \u2014 Texture Burst",
+      "duration_sec": 10.0,
+      "composer": "Michael Luchtan",
+      "project": "Music For Robots",
+      "has_audio": true,
+      "urls": {
+        "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/synthetic-storms-texture-burst/audio.mp3",
+        "youtube_vincent": "https://youtube.com/watch?v=__15HUTWvJk",
+        "youtube_robach": null,
+        "spotify": "https://open.spotify.com/artist/2WeSjSNo31wjFPDqBSU4qY?si=SdVXzXBMQ0SexnayRNOJZw",
+        "bandcamp": "https://music4robots.bandcamp.com/",
+        "substack": "https://themechanicalear.substack.com",
+        "visualizer": "https://themechanicalear-blog.web.app"
+      }
+    },
+    {
+      "slug": "tied-time",
+      "title": "Tied Time",
+      "duration_sec": 7.44,
+      "composer": "Michael Luchtan",
+      "project": "Music For Robots",
+      "has_audio": true,
+      "urls": {
+        "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/tied-time/audio.mp3",
+        "youtube_vincent": null,
+        "youtube_robach": null,
+        "spotify": "https://open.spotify.com/artist/2WeSjSNo31wjFPDqBSU4qY?si=SdVXzXBMQ0SexnayRNOJZw",
+        "bandcamp": "https://music4robots.bandcamp.com/",
+        "substack": "https://themechanicalear.substack.com",
+        "visualizer": "https://themechanicalear-blog.web.app"
+      }
+    },
+    {
+      "slug": "ties-that-bide",
+      "title": "Ties That Bide",
+      "duration_sec": 9.25,
+      "composer": "Michael Luchtan",
+      "project": "Music For Robots",
+      "has_audio": true,
+      "urls": {
+        "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/ties-that-bide/audio.mp3",
+        "youtube_vincent": "https://youtube.com/watch?v=En05r5VD1xU",
+        "youtube_robach": "https://youtube.com/watch?v=pCCmR4eB0S8",
+        "spotify": "https://open.spotify.com/artist/2WeSjSNo31wjFPDqBSU4qY?si=SdVXzXBMQ0SexnayRNOJZw",
+        "bandcamp": "https://music4robots.bandcamp.com/",
+        "substack": "https://themechanicalear.substack.com",
+        "visualizer": "https://themechanicalear-blog.web.app"
+      }
+    }
+  ]
+}
