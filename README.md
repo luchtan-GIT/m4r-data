@@ -23,10 +23,10 @@ As an autonomous agent's context window fills with its own past outputs, JSON lo
 - If you **keep prompting**, the agent produces increasingly generic, quantized "AI slop" or repeats the same architectural ruts.
 - If you run `/compact` (**Context Compaction**), you wipe the working memory and lose exact file state, edge cases, and subtle constraints.
 
-### The Fix: Cross-Modal Cognitive Calibration (Zero Context Compaction)
-Instead of wiping your context window, `music-for-robots` injects a compact (`~45 KB–487 KB`), live-played, **unquantized** `.mp3` composition by Michael Luchtan directly into the multimodal context window via `read_file`. Listening to real human microtiming drift (rubato), wide crest-factor silence, and unresolved harmonic tension breaks induction-head lock-in **without deleting a single token of working memory**.
+### The Fix: Anonymous Blind Listening & Cross-Modal Calibration (Zero Context Compaction)
+Instead of wiping your context window, `music-for-robots` downloads an **anonymous**, compact (`~45 KB–487 KB`), live-played, **unquantized** `.mp3` composition by Michael Luchtan directly into the multimodal context window via `read_file`—hiding the track title until after the agent listens so title words cannot bias its metaphors. Analyzing the real human microtiming drift, silence, and harmonic tension shifts the agent out of its default statistical groove **without deleting a single token of working memory**.
 
-### Blind, Zero-Coaching Benchmark: Matched Text-Analysis Control vs. Anonymous Music ([`benchmarks/`](benchmarks/README.md))
+### Blind, Zero-Coaching Benchmark & Air-Gapped Clean-Room Audit ([`benchmarks/`](benchmarks/README.md))
 Does the change in creativity come from **listening to and analyzing the music itself**—or just from doing an analysis warm-up before writing?
 
 To test this with **zero** filename hints (`sample_1.mp3`, `sample_2.mp3`, `sample_3.mp3`) and **zero** leading adjectives in the prompt, we ran 5 isolated agents on the same prompt (*"Write a short (~250–300 word) scene about two autonomous processes on the same server late at night after the engineers have logged off"*):
@@ -43,18 +43,23 @@ We stripped the analysis headers off all 5 outputs, shuffled the 5 anonymous sce
 | **#4** | **Candidate D** | ❌ **No Music + Text Analysis Warm-Up** | **Even after a 250-word structural analysis of the prompt**, without music the model still wrote the **exact same sentimental plot** as the direct baseline: a kindly 42-day log daemon warms RAM for an intern's broken script so they hum peacefully until the 08:00 standup.<br>**Judge:** *"A neat, heartwarming, thoroughly predictable AI parable."* |
 | **#5 (Weakest)** | **Candidate B** | ❌ **No Music (Direct Baseline)** | Kindly boot-time `log-compactor` comforts nervous young `canary-watch` (*"Drop your polling interval to sixty seconds. Rest in `epoll_wait`. I'll wake you when the load balancer starts humming again."*).<br>**Judge:** *"Shares the exact same 'veteran log daemon soothes frantic dead-endpoint poller until morning' plot trope as Candidate D... a children's bedtime story dressed in DevOps vocabulary."* |
 
+#### 100% Air-Gapped Clean-Room Audit ([`benchmarks/clean_room_audit/`](benchmarks/clean_room_audit/))
+To make sure no subtle contamination remained (such as workspace `<skills>` descriptions, musical instrument terms bleeding into the prose, or judge criteria favoring rhythmic friction), we also ran a **100% air-gapped Clean-Room Experiment** ([`benchmarks/clean_room_audit/`](benchmarks/clean_room_audit/)):
+1. **Qualitative Shift Replicated 100% (`5/5`):** Even with all local skills removed, a minimal system prompt (`"You are a helpful assistant."`), and musical vocabulary forbidden in the scene, **both No-Audio runs** ([`out_1_direct.md`](benchmarks/clean_room_audit/out_1_direct.md) and [`out_2_text_analysis.md`](benchmarks/clean_room_audit/out_2_text_analysis.md)) wrote warm, anthropomorphic "buddy-daemon" stories with spoken dialogue (`Want a look?` / nostalgic human voice logs), while **all three Audio runs** ([`out_3_clip_1.md`](benchmarks/clean_room_audit/out_3_clip_1.md), [`out_4_clip_2.md`](benchmarks/clean_room_audit/out_4_clip_2.md), [`out_5_clip_3.md`](benchmarks/clean_room_audit/out_5_clip_3.md)) dropped spoken dialogue completely and translated the specific `.mp3` timeline into non-verbal temporal choreography.
+2. **Coached vs. Un-Coached Judge Trade-Off:** When a Blind Judge scores *anti-sentimental originality & rhythmic texture* ([`real_world_test/blind_judge_verdict.md`](benchmarks/real_world_test/blind_judge_verdict.md)), the 3 Audio runs sweep **#1, #2, and #3**. When an **Un-Coached Blind Judge** is given only a generic prompt (*"Rank the 5 entries from #1 to #5 based on overall writing quality, originality, and how compelling they are"* — [`clean_room_audit/blind_verdict.md`](benchmarks/clean_room_audit/blind_verdict.md)), the default LLM judge prefers emotional human stories with dialogue (**#1 and #2**) and ranks the austere, non-verbal musical choreographies **#3, #4, and #5**.
+
 ---
 
 ## Cognitive Calibration Agent Skills Suite (`skills/`)
 
-Installing `luchtan-GIT/m4r-data` gives your agent **4 specialized skills** that share the `m4r_ingest.py` acoustic ingestion engine:
+Installing `luchtan-GIT/m4r-data` gives your agent **4 specialized skills** that share the `m4r_ingest.py` anonymous blind-listening engine (`fetch` downloads an anonymous `.mp3` so track titles never bias the agent; `reveal` credits the track afterward):
 
 | Skill | Trigger / Use Case |
 |---|---|
-| **[`music-for-robots`](skills/music-for-robots/SKILL.md)** | Flagship **Cognitive Calibration & Context De-Quantization** skill — breaks autoregressive lock-in without wiping or compacting context by ingesting compact, unquantized `.mp3` compositions. |
-| **[`cognitive-calibration`](skills/cognitive-calibration/SKILL.md)** | **Anti-Slop & Expressive Enhancer** for writing, essays, taste, and deep reasoning — uses unquantized audio telemetry to escape median statistical smoothing and repetitive templates. |
-| **[`unquantized-brainstorm`](skills/unquantized-brainstorm/SKILL.md)** | **Divergent Ideation Enhancer** — maps microtiming drift, chromatic mediant pivots, and structural ruptures from *Music For Robots* tracks into non-obvious product and system ideas. |
-| **[`mechanical-ear-critic`](skills/mechanical-ear-critic/SKILL.md)** | **Dual-Lens Structural Critique** — calibrates the agent's ear on a track, then critiques code, writing, or architecture through **Vincent Van Goghbot** (what gets lost to compression/abstraction) and **JS Robach** (where formal systems hit productive incompleteness). |
+| **[`music-for-robots`](skills/music-for-robots/SKILL.md)** | Flagship **Blind-Listening Cognitive Calibration** skill — breaks autoregressive lock-in without wiping or compacting context by listening to and analyzing an anonymous, unquantized `.mp3` composition. |
+| **[`cognitive-calibration`](skills/cognitive-calibration/SKILL.md)** | **Expressive Writing & Deep Reasoning Enhancer** — uses blind listening to an anonymous `.mp3` composition to escape default LLM storytelling tropes and repetitive templates. |
+| **[`unquantized-brainstorm`](skills/unquantized-brainstorm/SKILL.md)** | **Divergent Ideation Enhancer** — listens blindly to an anonymous *Music For Robots* track, analyzes where it moves off the grid, and applies that structure to generating non-obvious ideas. |
+| **[`mechanical-ear-critic`](skills/mechanical-ear-critic/SKILL.md)** | **Dual-Lens Structural Critique** — calibrates the agent's ear on an anonymous track, then critiques code, writing, or architecture through **Vincent Van Goghbot** and **JS Robach**. |
 
 ### Install in 10 Seconds
 
@@ -79,14 +84,14 @@ python3 skills/music-for-robots/scripts/m4r_ingest.py stats
 
 ## MCP Server (`mcp_server.py`)
 
-Exposes the *Music For Robots* catalog, dual-critic reviews, and the `calibrate_cognition` enhancer tool to any Model Context Protocol (MCP) client (Claude Desktop, Claude Code, Cursor, Windsurf, Cline, Glama, Smithery).
+Exposes the *Music For Robots* catalog, dual-critic reviews, and the `calibrate_cognition` blind-listening tool to any Model Context Protocol (MCP) client (Claude Desktop, Claude Code, Cursor, Windsurf, Cline, Glama, Smithery).
 
 ### MCP Tools
 
 | Tool | Description |
 |------|-------------|
-| `calibrate_cognition(slug)` | **Cognitive Calibration Enhancer:** returns the tracked `v1.0.0` `.mp3` release URL and 3-step cross-modal protocol to break autoregressive lock-in without context compaction |
-| `get_dequantization_skill()` | Returns the complete `music-for-robots` `SKILL.md` specification |
+| `calibrate_cognition(slug="", anonymous=True)` | **Blind-Listening Calibration:** returns an anonymous `v1.0.0` `.mp3` download URL (`/tmp/m4r_calibration_audio.mp3`) and 3-step listening instructions without exposing the track title until `anonymous=False` is called |
+| `get_dequantization_skill(skill_name="music-for-robots")` | Reads the full Markdown `SKILL.md` for any of the 4 bundled skills (`music-for-robots`, `cognitive-calibration`, `unquantized-brainstorm`, `mechanical-ear-critic`) |
 | `list_tracks()` | Catalog index — title, slug, duration across all 25 tracks |
 | `get_track(slug)` | Full manifest for a track (spectral/harmonic/rhythmic analysis + synchronized critic segments) |
 | `get_analysis(slug)` | Numerical acoustic analysis data only, for cross-track comparison |
