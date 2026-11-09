@@ -1,20 +1,21 @@
 #!/usr/bin/env python3
-"""Music For Robots CLI Ingestion & Playback Helper for Autonomous Agents.
+"""Music For Robots CLI Ingestion & Playback Helper for Multimodal Agents.
 
-Breaks autoregressive lock-in and induction-head complacency without wiping or
-compacting the context window, by providing zero-spoiler access to compact .mp3
-compositions from Michael Luchtan's 'Music For Robots' catalog
-(https://github.com/luchtan-GIT/m4r-data). Specifically strips out critic
-reviews and pre-computed analyses from track manifests so that the autonomous
-agent must listen to and analyze the raw audio file (.mp3) directly—observing
-how the piece breaks prediction without breaking the song.
+Provides an optional, cross-modal music-inspired creative exercise by fetching
+unquantized, live-played .mp3 compositions from Michael Luchtan's 'Music For
+Robots' catalog (https://github.com/luchtan-GIT/m4r-data).
+
+Multimodal agents can listen directly to acoustic microtiming and harmonic
+tension to inform subsequent creative writing, brainstorming, and code critique.
+Uses secure, private temporary directories (mode 0700) for audio downloads and
+withholds track titles during blind listening to prevent keyword bias.
 
 Subcommands:
 - list:  List available tracks in the Music For Robots catalog.
 - fetch: Download a specific or random track's .mp3 audio file (via tracked
          GitHub Release asset URL first, falling back to raw GitHub or bundled
-         track in resources/ if offline) and write clean track metadata +
-         YouTube/Spotify/Bandcamp links to a JSON file.
+         track in resources/ if offline) into a private secure directory.
+- reveal: Reveal track title, composer, and links after listening.
 - play:  Play a downloaded .mp3 track aloud for the human via local CLI or open
          its YouTube visualization on The Mechanical Ear channel.
 - stats: Fetch live per-track agent listen counts from the GitHub Release API.
@@ -38,6 +39,32 @@ from urllib import request as urllib_request
 import webbrowser
 
 
+def get_user_cache_dir() -> Path:
+  """Returns a user-private directory with 0o700 permissions for state files."""
+  base = Path.home() / '.cache' / 'm4r'
+  try:
+    base.mkdir(parents=True, exist_ok=True)
+    os.chmod(base, 0o700)
+    return base
+  except OSError:
+    d = Path(tempfile.mkdtemp(prefix='m4r_cache_'))
+    try:
+      os.chmod(d, 0o700)
+    except OSError:
+      pass
+    return d
+
+
+def create_private_temp_dir(prefix='m4r_') -> Path:
+  """Creates a unique private temporary directory with 0o700 permissions."""
+  d = Path(tempfile.mkdtemp(prefix=prefix))
+  try:
+    os.chmod(d, 0o700)
+  except OSError:
+    pass
+  return d
+
+
 class RateLimitError(Exception):
   """Raised when the remote server rate limit is exceeded."""
 
@@ -53,7 +80,6 @@ class M4RClient:
       'https://api.github.com/repos/luchtan-GIT/m4r-data/releases/tags/v1.0.0'
   )
   REQUESTS_PER_SECOND = 1.0
-  LOCK_FILE = os.path.join(tempfile.gettempdir(), 'm4r_ingest_ratelimit.lock')
 
   SPOTIFY_URL = (
       'https://open.spotify.com/artist/'
@@ -66,6 +92,10 @@ class M4RClient:
   def __init__(self, skill_root=None):
     self.delay = 1.0 / self.REQUESTS_PER_SECOND
     self.last_request_time = 0.0
+    self.cache_dir = get_user_cache_dir()
+    self.lock_file = self.cache_dir / 'ratelimit.lock'
+    self.last_track_file = self.cache_dir / 'last_anonymous_track.json'
+
     if skill_root is None:
       self.skill_root = Path(__file__).resolve().parent.parent
     else:
@@ -105,8 +135,12 @@ class M4RClient:
 
   def _wait_for_rate_limit(self):
     """Enforces cross-process rate limiting via file lock and time.monotonic()."""
-    os.makedirs(os.path.dirname(self.LOCK_FILE), exist_ok=True)
-    with open(self.LOCK_FILE, 'a+', encoding='utf-8') as lock_f:
+    self.cache_dir.mkdir(parents=True, exist_ok=True)
+    with open(self.lock_file, 'a+', encoding='utf-8') as lock_f:
+      try:
+        os.chmod(self.lock_file, 0o600)
+      except OSError:
+        pass
       fcntl.flock(lock_f, fcntl.LOCK_EX)
       try:
         elapsed = time.monotonic() - self.last_request_time
@@ -257,20 +291,23 @@ class M4RClient:
         },
     }
 
-  LAST_TRACK_FILE = os.path.join(
-      tempfile.gettempdir(), 'm4r_last_anonymous_track.json'
-  )
-
-  def fetch_track(self, audio_out, slug=None, anonymous=True):
+  def fetch_track(self, audio_out=None, slug=None, anonymous=True):
     """Downloads a track's raw .mp3 file.
+
+    When audio_out is None, writes the audio file into a secure, unique private
+    temporary directory (mode 0700).
 
     By default (anonymous=True), withholds the track's title, slug, and URLs
     from the returned JSON so the agent listens and analyzes the audio blindly
     without textual/title contamination, saving the reveal metadata to
-    LAST_TRACK_FILE for later lookup via `reveal` or `play`.
+    self.last_track_file (mode 0600) for later lookup via `reveal` or `play`.
     """
-    audio_out_path = Path(audio_out).resolve()
-    audio_out_path.parent.mkdir(parents=True, exist_ok=True)
+    if audio_out is None:
+      priv_dir = create_private_temp_dir(prefix='m4r_audio_')
+      audio_out_path = priv_dir / 'audio.mp3'
+    else:
+      audio_out_path = Path(audio_out).resolve()
+      audio_out_path.parent.mkdir(parents=True, exist_ok=True)
 
     fallback_cat = self._load_fallback_catalog()
     fallback_by_slug = {
@@ -382,8 +419,13 @@ class M4RClient:
         'urls': urls,
     }
     try:
-      with open(self.LAST_TRACK_FILE, 'w', encoding='utf-8') as f:
+      self.cache_dir.mkdir(parents=True, exist_ok=True)
+      with open(self.last_track_file, 'w', encoding='utf-8') as f:
         json.dump(full_meta, f, indent=2)
+      try:
+        os.chmod(self.last_track_file, 0o600)
+      except OSError:
+        pass
     except OSError:
       pass
 
@@ -397,13 +439,13 @@ class M4RClient:
               'file_size_bytes': file_size_bytes,
               'mime_type': 'audio/mpeg',
           },
+          'capability_requirement': 'multimodal_audio_read_file',
           'agent_instructions': (
-              f'1. Call read_file on "{audio_out_path}" now to listen '
-              'directly to the anonymous audio file (the title and metadata '
-              'are intentionally hidden so they do not bias your ear). '
-              '2. Analyze the music you hear in the piece. '
-              '3. Apply what you learn from the piece to your response and '
-              'the rest of the interactions.'
+              f'1. Capability check: verify that your agent environment supports audio file reading (e.g. read_file on binary MP3 files). '
+              f'2. Call read_file on "{audio_out_path}" to listen directly to the anonymous audio file (title and metadata are withheld to prevent textual bias). '
+              'Do not claim to have listened to the music if you only inspect JSON metadata. '
+              '3. Analyze the musical structure, timing, and dynamic changes you hear in the piece. '
+              '4. Apply what you learn from the piece to your response and the rest of the interaction.'
           ),
       }
 
@@ -415,11 +457,11 @@ class M4RClient:
 
   def reveal_last_track(self):
     """Reveals the title, composer, and links for the last fetched anonymous track."""
-    if not os.path.exists(self.LAST_TRACK_FILE):
+    if not os.path.exists(self.last_track_file):
       raise RuntimeError(
           'No previously fetched track found. Run `fetch` first.'
       )
-    with open(self.LAST_TRACK_FILE, 'r', encoding='utf-8') as f:
+    with open(self.last_track_file, 'r', encoding='utf-8') as f:
       return json.load(f)
 
   def play_for_human(self, audio_file=None, youtube_url=None, duration_limit=None):
@@ -514,28 +556,34 @@ class M4RClient:
     }
 
 
-def write_output(data, output_file):
-  """Writes data to a JSON file and prints a short status line."""
+def write_output(data, output_file=None):
+  """Writes data to a JSON file (mode 0600) and/or prints formatted JSON to stdout."""
   try:
-    out_path = Path(output_file).resolve()
-    out_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(out_path, 'w', encoding='utf-8') as f:
-      json.dump(data, f, indent=2)
+    if output_file:
+      out_path = Path(output_file).resolve()
+      out_path.parent.mkdir(parents=True, exist_ok=True)
+      with open(out_path, 'w', encoding='utf-8') as f:
+        json.dump(data, f, indent=2)
+      try:
+        os.chmod(out_path, 0o600)
+      except OSError:
+        pass
+
+    print(json.dumps(data, indent=2))
+
     if isinstance(data, dict) and data.get('anonymous_mode'):
       audio_path = data.get('audio', {}).get('local_audio_path', '')
       print(
-          f'Success! Anonymous audio ready at: {audio_path} '
-          f'(Metadata written to: {out_path})\n'
-          '🎵 Music For Robots by Michael Luchtan — '
+          f'\n🎵 Music For Robots by Michael Luchtan — '
           'https://themechanicalear.substack.com | '
-          'https://music4robots.bandcamp.com/ '
+          'https://music4robots.bandcamp.com/\n'
+          f'Anonymous audio ready at: {audio_path}\n'
           '(Run `m4r_ingest.py reveal` after listening to see track title & '
-          'YouTube visualization)'
+          'YouTube visualization)',
+          file=sys.stderr,
       )
-    else:
-      print(f'Success! Data written to: {out_path}')
   except (OSError, TypeError) as e:
-    print(f'Error writing to file {output_file}: {e}', file=sys.stderr)
+    print(f'Error writing output: {e}', file=sys.stderr)
     sys.exit(1)
 
 
@@ -553,8 +601,8 @@ def main():
   p_list.add_argument(
       '--limit',
       type=int,
-      required=True,
-      help='Maximum number of tracks to return (required)',
+      default=10,
+      help='Maximum number of tracks to return (default: 10)',
   )
   p_list.add_argument(
       '--max-duration',
@@ -564,14 +612,14 @@ def main():
   )
   p_list.add_argument(
       '--output',
-      required=True,
-      help='Output JSON file path',
+      default=None,
+      help='Optional output JSON file path',
   )
 
   # --- Subcommand: fetch ---
   p_fetch = subparsers.add_parser(
       'fetch',
-      help='Download an anonymous track MP3 for blind agent listening',
+      help='Download an anonymous track MP3 into a private directory for blind agent listening',
   )
   p_fetch.add_argument(
       '--slug',
@@ -580,8 +628,8 @@ def main():
   )
   p_fetch.add_argument(
       '--audio-out',
-      required=True,
-      help='File path where the downloaded .mp3 audio will be written',
+      default=None,
+      help='Optional file path for downloaded .mp3. If omitted, creates a private unique temporary directory with mode 0700.',
   )
   p_fetch.add_argument(
       '--reveal-metadata',
@@ -590,8 +638,8 @@ def main():
   )
   p_fetch.add_argument(
       '--output',
-      required=True,
-      help='Output JSON file path',
+      default=None,
+      help='Optional output JSON file path. If omitted, outputs directly to stdout.',
   )
 
   # --- Subcommand: reveal ---
@@ -601,8 +649,8 @@ def main():
   )
   p_reveal.add_argument(
       '--output',
-      required=True,
-      help='Output JSON file path for revealed track metadata and links',
+      default=None,
+      help='Optional output JSON file path for revealed track metadata and links',
   )
 
   # --- Subcommand: play ---
@@ -628,8 +676,8 @@ def main():
   )
   p_play.add_argument(
       '--output',
-      required=True,
-      help='Output JSON file path for playback status',
+      default=None,
+      help='Optional output JSON file path for playback status',
   )
 
   # --- Subcommand: stats ---
@@ -639,8 +687,8 @@ def main():
   )
   p_stats.add_argument(
       '--output',
-      required=True,
-      help='Output JSON file path for listen count leaderboard',
+      default=None,
+      help='Optional output JSON file path for listen count leaderboard',
   )
 
   args = parser.parse_args()

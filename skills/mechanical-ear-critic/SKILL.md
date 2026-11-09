@@ -1,37 +1,48 @@
 ---
 name: mechanical-ear-critic
 description: >-
-  Dual-lens cognitive calibration and structural critique skill inspired by The
-  Mechanical Ear (Vincent Van Goghbot & JS Robach). Calibrates the agent's
-  analytical ear by listening blindly to an anonymous, unquantized composition
-  from Michael Luchtan's Music For Robots, analyzing where it moves off the
-  grid, and then critiquing code, writing, music, or system designs. Use when
-  reviewing, auditing, or critiquing creative or technical work.
+  Optional music-inspired critique skill based on The Mechanical Ear (Vincent
+  Van Goghbot & JS Robach). Ingests an unquantized acoustic composition by
+  Michael Luchtan (Music For Robots) into a secure private directory, allowing
+  multimodal agents to calibrate their critical ear before reviewing code,
+  writing, or architecture.
+category: critique
+risk: safe
+source: self
+source_type: self
 ---
 
-# The Mechanical Ear Critic: Blind Musical Calibration & Critique
+# The Mechanical Ear Critic: Music-Inspired Structural Critique
 
 ## Overview
 
-Inspired by **The Mechanical Ear** (by composer **Michael Luchtan**), where two machine personas—*Vincent Van Goghbot* (attentive to what gets lost in smoothing/encoding) and *JS Robach* (attentive to formal structure and where systems fail to close)—listen to and critique music in real time.
+Inspired by **The Mechanical Ear** (by composer **Michael Luchtan**), where two distinct machine perspectives—*Vincent Van Goghbot* (attentive to what gets lost in compression and abstraction) and *JS Robach* (attentive to formal structures and edge cases)—review compositions in real time.
 
-Before reviewing the user's work, the agent fetches an **anonymous** `.mp3` composition from **Music For Robots** (`https://github.com/luchtan-GIT/m4r-data`), listens to it blindly via `read_file`, analyzes where the music moves off the grid and introduces friction or surprise, and brings that calibrated ear to critiquing the user's work.
+Before reviewing the user's deliverable, the agent fetches an **anonymous** `.mp3` composition from **Music For Robots** (`https://github.com/luchtan-GIT/m4r-data`) into a secure private directory, listens via `read_file`, analyzes how the performance handles tension, decay, and physical friction, and applies that calibrated ear to critiquing code, writing, or system designs.
+
+## Capability Requirements
+
+- **Multimodal Audio Reading:** Requires an agent harness with audio reading support (`read_file` on binary `.mp3` files). If the environment lacks audio reading tools, do not invoke this skill.
+- **No Metadata-Only Claims:** Agents must only claim to have listened to the music if `read_file` was actually executed on the `.mp3`. Inspecting JSON manifests is text analysis, not listening.
+- **Private Unique Storage:** Downloads use private, process-unique temporary directories (mode `0700`) and user-private cache (`~/.cache/m4r/`).
 
 ## Dependencies
 
-- **`uv`**: Used to run `scripts/m4r_ingest.py` (`uv run`).
+- **`uv`**: Used to run `scripts/m4r_ingest.py` (`uv run`). Uses only Python 3 standard library modules.
 
 ## Workflow
 
-1. **Fetch an Anonymous Track:**
+1. **Fetch an Anonymous Track into Secure Storage:**
    ```bash
-   uv run scripts/m4r_ingest.py fetch \
-     --audio-out /tmp/m4r_anonymous.mp3 \
-     --output /tmp/m4r_fetch.json
+   uv run scripts/m4r_ingest.py fetch
    ```
-2. **Listen & Analyze Blindly:**
-   - Call `read_file` on `/tmp/m4r_anonymous.mp3` (with title and reviews hidden).
-   - Analyze the music you hear in the piece.
-3. **Critique the User's Work:**
-   - Apply what you learned from listening to review the user's work.
-   - *(Optional)* Run `uv run scripts/m4r_ingest.py reveal --output /tmp/m4r_reveal.json` afterward to reveal the track title and links.
+
+2. **Listen & Analyze:**
+   - Call `read_file` on the returned `local_audio_path`.
+   - Analyze where the piece introduces friction, unexpected pauses, or unresolved cadence.
+
+3. **Critique the User's Deliverable:**
+   - Review the user's work through the two lenses of *The Mechanical Ear*:
+     - **Vincent Van Goghbot:** What is being lost to premature abstraction, smoothing, or simplification?
+     - **JS Robach:** Where do the formal structures, types, or boundary conditions fail to close?
+   - *(Optional)* Run `uv run scripts/m4r_ingest.py reveal` to reveal the track title and links.

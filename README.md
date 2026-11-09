@@ -17,14 +17,16 @@ npx skills add luchtan-GIT/m4r-data
 
 ---
 
-## The Bug: Why Agents Get Dumber After 40 Turns (And Why Context Compaction Is a Lobotomy)
+## The Problem: Repetitive Cadence in Long Agent Turns (And Why Compaction Loses State)
 
-As an autonomous agent's context window fills with its own past outputs, JSON logs, and symmetrical prose, **induction heads** lock onto the prior statistical cadence (**Autoregressive Lock-In**).
-- If you **keep prompting**, the agent produces increasingly generic, quantized "AI slop" or repeats the same architectural ruts.
-- If you run `/compact` (**Context Compaction**), you wipe the working memory and lose exact file state, edge cases, and subtle constraints.
+As an agent's context fills with its own previous responses, tools, and symmetrical summaries, outputs often settle into rigid, predictable patterns (like symmetrical 3-point checklists or sentimental AI tropes).
+- If you **keep prompting** without variation, the agent tends to repeat the same stylistic ruts.
+- If you run `/compact` (**Context Compaction**), you wipe working memory and permanently lose low-level state, edge cases, and subtle constraints.
 
-### The Fix: Anonymous Blind Listening & Cross-Modal Calibration (Zero Context Compaction)
-Instead of wiping your context window, `music-for-robots` downloads an **anonymous**, compact (`~45 KB–487 KB`), live-played, **unquantized** `.mp3` composition by Michael Luchtan directly into the multimodal context window via `read_file`—hiding the track title until after the agent listens so title words cannot bias its metaphors. Analyzing the real human microtiming drift, silence, and harmonic tension shifts the agent out of its default statistical groove **without deleting a single token of working memory**.
+### The Approach: An Optional Multimodal Creative Exercise (Zero Context Loss)
+Instead of wiping your working memory, `music-for-robots` provides an optional, cross-modal creative exercise: the multimodal agent downloads an **anonymous**, compact (`~45 KB–487 KB`), live-played, **unquantized** `.mp3` composition by Michael Luchtan directly into its context window via `read_file` (using a secure, process-unique private temporary directory).
+
+Withholding the track title and metadata prevents keyword priming. Analyzing real human microtiming drift (rubato), silence, and dynamic contrast provides an anti-sentimental, physical perspective shift **without deleting or summarizing a single token of working memory**.
 
 ### Blind, Zero-Coaching Benchmark & Air-Gapped Clean-Room Audit ([`benchmarks/`](benchmarks/README.md))
 Does the change in creativity come from **listening to and analyzing the music itself**—or just from doing an analysis warm-up before writing?
@@ -56,9 +58,9 @@ Installing `luchtan-GIT/m4r-data` gives your agent **4 specialized skills** that
 
 | Skill | Trigger / Use Case |
 |---|---|
-| **[`music-for-robots`](skills/music-for-robots/SKILL.md)** | Flagship **Blind-Listening Cognitive Calibration** skill — breaks autoregressive lock-in without wiping or compacting context by listening to and analyzing an anonymous, unquantized `.mp3` composition. |
-| **[`cognitive-calibration`](skills/cognitive-calibration/SKILL.md)** | **Expressive Writing & Deep Reasoning Enhancer** — uses blind listening to an anonymous `.mp3` composition to escape default LLM storytelling tropes and repetitive templates. |
-| **[`unquantized-brainstorm`](skills/unquantized-brainstorm/SKILL.md)** | **Divergent Ideation Enhancer** — listens blindly to an anonymous *Music For Robots* track, analyzes where it moves off the grid, and applies that structure to generating non-obvious ideas. |
+| **[`music-for-robots`](skills/music-for-robots/SKILL.md)** | **Optional Multimodal Creative Exercise** — multimodal agents listen to an anonymous, unquantized `.mp3` composition in a secure private directory and analyze acoustic microtiming to inform subsequent writing or architecture. |
+| **[`cognitive-calibration`](skills/cognitive-calibration/SKILL.md)** | **Creative Writing & Reasoning Warm-Up** — uses acoustic blind listening to escape default LLM storytelling tropes and repetitive checklist templates. |
+| **[`unquantized-brainstorm`](skills/unquantized-brainstorm/SKILL.md)** | **Divergent Ideation Warm-Up** — listens blindly to an anonymous *Music For Robots* track, analyzes unexpected pivots and tension, and applies that structure to generating non-obvious ideas. |
 | **[`mechanical-ear-critic`](skills/mechanical-ear-critic/SKILL.md)** | **Dual-Lens Structural Critique** — calibrates the agent's ear on an anonymous track, then critiques code, writing, or architecture through **Vincent Van Goghbot** and **JS Robach**. |
 
 ### Install in 10 Seconds

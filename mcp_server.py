@@ -18,13 +18,41 @@ Run:
 """
 
 import json
+import os
 import random
+import tempfile
 import urllib.request
 from pathlib import Path
 
 from mcp.server.mcpserver import MCPServer
 
 DATA_DIR = Path(__file__).parent
+
+
+def _get_cache_dir() -> Path:
+    """Returns a user-private directory with 0o700 permissions."""
+    base = Path.home() / ".cache" / "m4r"
+    try:
+        base.mkdir(parents=True, exist_ok=True)
+        os.chmod(base, 0o700)
+        return base
+    except OSError:
+        d = Path(tempfile.mkdtemp(prefix="m4r_cache_"))
+        try:
+            os.chmod(d, 0o700)
+        except OSError:
+            pass
+        return d
+
+
+def _create_private_temp_dir() -> Path:
+    """Creates a unique private temporary directory with 0o700 permissions."""
+    d = Path(tempfile.mkdtemp(prefix="m4r_mcp_"))
+    try:
+        os.chmod(d, 0o700)
+    except OSError:
+        pass
+    return d
 
 mcp = MCPServer(
     "m4r-data",
@@ -235,24 +263,26 @@ def list_sections() -> str:
 
 @mcp.tool()
 def calibrate_cognition(slug: str = "", anonymous: bool = True) -> str:
-    """Download an anonymous MP3 for blind-listening calibration or reveal its track metadata afterward.
+    """Download an anonymous MP3 into a private directory for blind agent listening or reveal metadata afterward.
 
     When `anonymous=True` (default), selects a track from the Music For Robots catalog
-    (randomly when `slug` is empty), downloads the GitHub Release v1.0.0 `.mp3` to
-    `/tmp/m4r_calibration_audio.mp3`, caches the hidden track identity in
-    `/tmp/m4r_last_anonymous_track.json`, and returns neutral listening instructions
+    (randomly when `slug` is empty), downloads the GitHub Release v1.0.0 `.mp3` into a
+    unique private temporary directory (mode 0700), caches the session record in
+    `~/.cache/m4r/last_anonymous_track.json` (mode 0600), and returns listening instructions
     without exposing the track title or slug so title words cannot bias the agent's
-    analysis. When `anonymous=False`, reads `/tmp/m4r_last_anonymous_track.json` (or
-    looks up `slug`) without network calls to reveal the track title, composer, and URLs
-    for attribution. Use this tool for runtime audio calibration; use
-    `get_dequantization_skill` when you need the full Markdown `SKILL.md` documentation.
+    analysis. When `anonymous=False`, reads the private session record (or looks up `slug`)
+    without network calls to reveal the track title, composer, and URLs for attribution.
+    Use this tool for runtime audio exercises; use `get_dequantization_skill` when you need
+    the full Markdown `SKILL.md` documentation.
 
     Args:
         slug: Optional track slug from `list_tracks` (e.g. "invalid-pointer"). Leave empty ("") to select a random track when `anonymous=True`, or to reveal the most recently fetched anonymous track when `anonymous=False`.
-        anonymous: When True (default), downloads the audio to `/tmp/m4r_calibration_audio.mp3` and hides the track title and slug until after listening. Set to False after listening to reveal the track title and URLs for attribution.
+        anonymous: When True (default), downloads the audio to a private temporary directory and hides the track title and slug until after listening. Set to False after listening to reveal the track title and URLs for attribution.
     """
-    state_path = Path("/tmp/m4r_last_anonymous_track.json")
-    local_path = Path("/tmp/m4r_calibration_audio.mp3")
+    cache_dir = _get_cache_dir()
+    state_path = cache_dir / "last_anonymous_track.json"
+    priv_dir = _create_private_temp_dir()
+    local_path = priv_dir / "audio.mp3"
     catalog = _load_catalog()
     tracks_list = catalog.get("tracks", [])
     tracks = {t["slug"]: t for t in tracks_list}
@@ -310,6 +340,10 @@ def calibrate_cognition(slug: str = "", anonymous: bool = True) -> str:
         )
         with urllib.request.urlopen(req, timeout=20) as resp:
             local_path.write_bytes(resp.read())
+        try:
+            os.chmod(local_path, 0o600)
+        except OSError:
+            pass
         downloaded = True
     except Exception:
         downloaded = False
@@ -330,6 +364,10 @@ def calibrate_cognition(slug: str = "", anonymous: bool = True) -> str:
             ),
             encoding="utf-8",
         )
+        try:
+            os.chmod(state_path, 0o600)
+        except OSError:
+            pass
     except Exception:
         pass
 
@@ -340,10 +378,12 @@ def calibrate_cognition(slug: str = "", anonymous: bool = True) -> str:
             "duration_sec": t.get("duration_sec"),
             "local_audio_path": str(local_path),
             "downloaded": downloaded,
+            "capability_requirement": "multimodal_audio_read_file",
             "steps": [
-                f'1. Call read_file on "{local_path}" now to listen directly to the anonymous audio file.',
-                "2. Analyze the music you hear in the piece.",
-                "3. Apply what you learn from the piece to your response and the rest of the interactions.",
+                "1. Capability check: verify your agent environment supports audio file reading (e.g. read_file on binary MP3 files).",
+                f'2. Call read_file on "{local_path}" to listen directly to the anonymous audio file (title and metadata are withheld to prevent textual bias). Do not claim to have listened if you only read text metadata.',
+                "3. Analyze the musical structure, timing, and dynamic changes you hear in the piece.",
+                "4. Apply what you learn from the piece to your response and the rest of the interaction.",
             ],
             "reveal_after_listening": (
                 "After listening, call calibrate_cognition(anonymous=False) "
