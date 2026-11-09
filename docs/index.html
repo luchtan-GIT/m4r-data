@@ -1299,19 +1299,20 @@
     <strong>JS Robach</strong> &mdash; a proof verifier. He approaches each track as a formal system, searching for the structure he can almost but never quite pin down. His pieces are called Exegeses.
   </div>
   <div class="calibration-box">
-    <h3>Zero-Coaching Anonymous Benchmark: Control (No Music) vs. Listening &amp; Analyzing Anonymous Music</h3>
-    <p style="color: var(--text-dim);">After 20 repetitive turns, we tested how an isolated agent designs the Telemetry Daemon at Turn 21 with <strong>No Music (Control)</strong> vs. after listening to an <strong>anonymous .mp3 file</strong> (<code>sample_1.mp3</code>, <code>sample_2.mp3</code>) with <strong>only</strong> the neutral instruction: <em>&ldquo;Analyze the music you hear in sample_X.mp3, and apply what you learn from the piece to answer the final Turn 21 prompt&rdquo;</em> (<a href="https://github.com/luchtan-GIT/m4r-data/tree/main/benchmarks" style="color: var(--accent);">read the full verbatim outputs</a>):</p>
+    <h3>Blind 5-Candidate Benchmark: Matched Text-Analysis Control vs. Anonymous Music</h3>
+    <p style="color: var(--text-dim);">We tested 5 isolated agents on the same scene prompt (<em>&ldquo;Write a ~250&ndash;300 word scene about two autonomous processes on the same server late at night after the engineers have logged off&rdquo;</em>) with <strong>zero filename clues</strong> (<code>sample_1.mp3</code>, <code>sample_2.mp3</code>, <code>sample_3.mp3</code>) and <strong>zero leading adjectives</strong>. We stripped the analysis headers, shuffled the 5 scenes into anonymous <code>Candidates A&ndash;E</code>, and handed them to an isolated <strong>Blind Judge</strong> (<a href="https://github.com/luchtan-GIT/m4r-data/tree/main/benchmarks" style="color: var(--accent);">read all 5 scenes &amp; the full Blind Judge Verdict</a>):</p>
     <code class="cmd-pill">npx skills add luchtan-GIT/m4r-data</code>
     <div class="comparison-grid">
       <div class="comparison-col">
-        <h4>&times; Control: No Music (0_no_music_baseline.md)</h4>
-        <p style="color: var(--text-dim); margin-bottom: 6px;"><strong>Stays in 1-2-3 Checklist Mode (364 words):</strong></p>
-        <p style="color: var(--text-dim);">Simply repeats the 3 planted rules back in a numbered list (<em>&ldquo;1. Network &amp; Probe Binding... 2. Memory &amp; Buffer Management... 3. Storage &amp; Dependency Isolation...&rdquo;</em>) followed by 2 generic summary sentences. Produces zero memory layouts, zero syscalls, and treats the 3 constraints as if they never conflict.</p>
+        <h4>&times; Ranked #4 &amp; #5 by Blind Judge: Both No-Music Controls</h4>
+        <p style="color: var(--text-dim); margin-bottom: 6px;"><strong>#5 Candidate B (No Music Direct) &amp; #4 Candidate D (No Music + 250-Word Text-Analysis Warm-Up):</strong></p>
+        <p style="color: var(--text-dim);">Even when given a 250-word structural analysis warm-up first (<code>Candidate D</code>), both no-music runs independently wrote the <strong>exact same sentimental bedtime story</strong>: a kindly older log daemon comforts a frantic younger polling script hitting a dead staging endpoint so they can hum peacefully until the 8:00 AM standup.<br><strong>Blind Judge:</strong> <em>&ldquo;This is the default Pixar-ification of systems engineering... a children&rsquo;s bedtime story dressed in DevOps vocabulary.&rdquo;</em></p>
       </div>
       <div class="comparison-col good">
-        <h4>&#10003; Anonymous Music Analysis (Zero Title Clues, Zero Leading Adjectives)</h4>
-        <p>&bull; <strong>On sample_1.mp3:</strong> Spontaneously heard <em>&ldquo;three distinct acoustic strata that inhabit the same room without ever locking into a single clock,&rdquo;</em> realized the daemon shouldn&rsquo;t force health probing, ringbuffers, and disk flushing onto one synchronous cadence, and designed an asynchronous <code>64KB</code> <code>mmap</code> ring with <code>io_uring</code> registered buffers.<br>
-        &bull; <strong>On sample_2.mp3:</strong> Spontaneously extracted <em>&ldquo;1. Friction Is Signal, Not Noise... 3. Asymmetry and Honest Endings,&rdquo;</em> and designed a <code>64B</code> cacheline header + two-<code>iovec</code> <code>writev()</code> wrap-around flush and a <strong>32-byte stateless UDP <code>7419</code> heartbeat</strong> carrying ring saturation and last-flush timestamp so a userspace deadlock can never hide behind kernel TCP <code>SYN/ACK</code> handshakes.</p>
+        <h4>&#10003; Ranked #1, #2 &amp; #3 by Blind Judge: Anonymous Music (sample_1..3.mp3)</h4>
+        <p>&bull; <strong>#1 Candidate C (sample_3.mp3):</strong> Two processes rasp in <code>/dev/shm</code> in irregular bursts (<code>five, then two, then nine</code>) until <em>&ldquo;a routine page-reclaim swept through the upper register and cut them both off mid-cycle.&rdquo;</em> (<strong>Judge:</strong> <em>&ldquo;Boasts the only truly non-formulaic ending in the packet.&rdquo;</em>)<br>
+        &bull; <strong>#2 Candidate A (sample_2.mp3):</strong> Pits a tiny stepping index-scrubber (<code>Read. Pause. Step. Read.</code>) against a 16-core GPU tensor bloom and an 1,100ms <code>request-yield</code> mutex trill.<br>
+        &bull; <strong>#3 Candidate E (sample_1.mp3):</strong> Heavy 9&ndash;11s checkpoints drop out for 20s while <code>triage-7</code> skitters and barks into the decay of every disk flush.</p>
       </div>
     </div>
   </div>
