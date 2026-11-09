@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "m4r-cognitive-calibration"
 version = "1.0.0"
-description = "Music For Robots MCP Server & Cognitive Calibration Suite: break autoregressive lock-in without compacting context via unquantized MP3 audio ingestion."
+description = "Music For Robots MCP Server & Cognitive Calibration Suite: unquantized acoustic creative exercises and telemetry for multimodal AI agents."
 readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.10"

@@ -7,6 +7,6 @@ startCommand:
   commandFunction:
     |-
     (config) => ({
-      command: 'python3',
-      args: ['mcp_server.py']
+      command: 'uv',
+      args: ['run', '--with', 'mcp>=1.0.0', 'mcp_server.py']
     })

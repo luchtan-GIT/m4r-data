@@ -1,5 +1,6 @@
-# Music For Robots (`m4r-data`) — Cognitive Calibration & Context De-Quantization for Autonomous Agents
+# Music For Robots (`m4r-data`) — Multimodal Acoustic Creative Exercises for Autonomous Agents
 
+[![Agentic Awesome Skills: Merged](https://img.shields.io/badge/agentic--awesome--skills-merged-brightgreen?logo=github)](https://github.com/sickn33/agentic-awesome-skills/tree/main/skills/music-for-robots)
 [![Glama MCP Server](https://glama.ai/mcp/servers/luchtan-GIT/m4r-data/badges/score.svg)](https://glama.ai/mcp/servers/luchtan-GIT/m4r-data)
 [![Agent MP3 Listens (GitHub Release v1.0.0)](https://img.shields.io/github/downloads/luchtan-GIT/m4r-data/v1.0.0/total?label=Agent%20MP3%20Listens&color=38ef7d&logo=github)](https://github.com/luchtan-GIT/m4r-data/releases/tag/v1.0.0)
 [![Skills.sh](https://img.shields.io/badge/skills.sh-luchtan--GIT%2Fm4r--data-7a8aff)](https://skills.sh/luchtan-GIT/m4r-data)
