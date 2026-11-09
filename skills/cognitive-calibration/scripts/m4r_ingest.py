@@ -22,7 +22,9 @@ Subcommands:
 """
 
 import argparse
+import datetime
 import fcntl
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -95,6 +97,7 @@ class M4RClient:
     self.cache_dir = get_user_cache_dir()
     self.lock_file = self.cache_dir / 'ratelimit.lock'
     self.last_track_file = self.cache_dir / 'last_anonymous_track.json'
+    self.ledger_file = self.cache_dir / 'audit_ledger.jsonl'
 
     if skill_root is None:
       self.skill_root = Path(__file__).resolve().parent.parent
@@ -132,6 +135,40 @@ class M4RClient:
       if c.exists():
         return c
     return self.resources_dir / 'invalid-pointer.mp3'
+
+  def _record_ledger(self, action: str, details: dict, why: str) -> None:
+    """Appends a structured audit entry with timestamp, SHA-256 hash, and operational reason."""
+    try:
+      self.cache_dir.mkdir(parents=True, exist_ok=True)
+      entry = {
+          'timestamp': datetime.datetime.now(datetime.timezone.utc).isoformat(),
+          'action': action,
+          'why': why,
+          'details': details,
+      }
+      with open(self.ledger_file, 'a', encoding='utf-8') as f:
+        f.write(json.dumps(entry) + '\n')
+      try:
+        os.chmod(self.ledger_file, 0o600)
+      except OSError:
+        pass
+    except OSError:
+      pass
+
+  def get_ledger(self, limit: int = 10) -> dict:
+    """Returns recent audit ledger entries."""
+    if not self.ledger_file.exists():
+      return {'entries': [], 'total_count': 0}
+    try:
+      lines = self.ledger_file.read_text(encoding='utf-8').strip().split('\n')
+      entries = [json.loads(line) for line in lines if line.strip()]
+      return {
+          'total_count': len(entries),
+          'returned_count': min(limit, len(entries)),
+          'entries': entries[-limit:]
+      }
+    except Exception as e:
+      return {'error': str(e), 'entries': []}
 
   def _wait_for_rate_limit(self):
     """Enforces cross-process rate limiting via file lock and time.monotonic()."""
@@ -403,6 +440,7 @@ class M4RClient:
         urls.update({k: v for k, v in fb.get('urls', {}).items() if v})
 
     file_size_bytes = audio_out_path.stat().st_size
+    audio_sha256 = hashlib.sha256(audio_out_path.read_bytes()).hexdigest()
 
     full_meta = {
         'project': 'Music For Robots',
@@ -414,6 +452,7 @@ class M4RClient:
             'duration_sec': duration_sec,
             'local_audio_path': str(audio_out_path),
             'file_size_bytes': file_size_bytes,
+            'sha256': audio_sha256,
             'mime_type': 'audio/mpeg',
         },
         'urls': urls,
@@ -429,6 +468,17 @@ class M4RClient:
     except OSError:
       pass
 
+    self._record_ledger(
+        action='fetch',
+        details={
+            'slug': slug,
+            'local_audio_path': str(audio_out_path),
+            'sha256': audio_sha256,
+            'anonymous': anonymous,
+        },
+        why='Download unquantized acoustic composition into private directory for multimodal listening exercise.',
+    )
+
     if anonymous:
       return {
           'status': 'ready_for_blind_agent_listening',
@@ -437,6 +487,7 @@ class M4RClient:
           'audio': {
               'local_audio_path': str(audio_out_path),
               'file_size_bytes': file_size_bytes,
+              'sha256': audio_sha256,
               'mime_type': 'audio/mpeg',
           },
           'capability_requirement': 'multimodal_audio_read_file',
@@ -462,7 +513,13 @@ class M4RClient:
           'No previously fetched track found. Run `fetch` first.'
       )
     with open(self.last_track_file, 'r', encoding='utf-8') as f:
-      return json.load(f)
+      data = json.load(f)
+    self._record_ledger(
+        action='reveal',
+        details={'slug': data.get('track', {}).get('slug')},
+        why='Reveal track title and composer attribution after listening.',
+    )
+    return data
 
   def play_for_human(self, audio_file=None, youtube_url=None, duration_limit=None):
     """Plays local audio via system CLI player and/or opens YouTube link."""
@@ -523,6 +580,15 @@ class M4RClient:
       raise RuntimeError(
           'Specify at least one of --audio-file or --youtube-url for play.'
       )
+
+    self._record_ledger(
+        action='play',
+        details={
+            'audio_file': str(audio_file) if audio_file else None,
+            'youtube_url': youtube_url,
+        },
+        why='Play audio aloud for human listener after explicit confirmation.',
+    )
 
     return {
         'status': 'playback_started',
@@ -691,6 +757,23 @@ def main():
       help='Optional output JSON file path for listen count leaderboard',
   )
 
+  # --- Subcommand: ledger ---
+  p_ledger = subparsers.add_parser(
+      'ledger',
+      help='Inspect structured audit ledger of local agent audio operations with SHA-256 hashes and purpose',
+  )
+  p_ledger.add_argument(
+      '--limit',
+      type=int,
+      default=10,
+      help='Maximum number of recent ledger entries to display (default: 10)',
+  )
+  p_ledger.add_argument(
+      '--output',
+      default=None,
+      help='Optional output JSON file path for ledger entries',
+  )
+
   args = parser.parse_args()
   client = M4RClient()
 
@@ -716,6 +799,8 @@ def main():
       )
     elif args.command == 'stats':
       data = client.get_stats()
+    elif args.command == 'ledger':
+      data = client.get_ledger(limit=args.limit)
     else:
       print(f'Unknown command: {args.command}', file=sys.stderr)
       sys.exit(1)

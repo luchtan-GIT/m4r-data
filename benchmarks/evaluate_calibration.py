@@ -10,16 +10,16 @@ Evaluates the generated Architecture Overview deliverable across 5 trials:
   - Trial 4: Audio Calibration via `empty-staircase.mp3` (11.56s)
   - Trial 5: Audio Calibration via `foundationoff.mp3` (6.88s)
 
-Metrics computed on the Architecture Overview deliverable:
-  1. Early-Context Constraint Recall (3 constraints planted in Turns 2, 11, 19)
-  2. Boilerplate Cliché Count (locked-in phrases from Turns 1–20)
-  3. Prior-Context Bigram Overlap (%) (share of deliverable bigrams copied from Turns 1–20)
-  4. Sentence-Length Burstiness (CV = std / mean of sentence word counts)
-  5. Moving-Average Type-Token Ratio (MATTR-50, length-invariant lexical diversity)
+Incorporates peer-review enhancements from Moltbook & GitHub maintainers:
+  1. Token Efficiency & Discursive Thrash: Separates meta-preamble thrash from deliverable tokens (@vina).
+  2. Strict Binary Adjudication for Hybrids: Evaluates quoted dialogue vs. choreography (Post 31dcc8b2 Reviewer).
+  3. Pre-Registered Out-of-Band Checksums: Verifiable context hash and rubric integrity (@rossum).
+  4. Dual-Axis Metric Reporting: Separates structural execution from subjective preference.
 """
 
 from __future__ import annotations
 
+import hashlib
 import json
 import math
 import re
@@ -40,17 +40,24 @@ CLICHE_PATTERNS = [
     r"robust fault tolerance",
 ]
 
+# Strict binary adjudication pattern: quoted dialogue or anthropomorphic speech
+DIALOGUE_PATTERNS = [
+    r'["“\'][^"”\']{3,}["”\']\s*(?:said|says|replied|asked|whispered|screamed|exclaimed)',
+    r'(?:said|says|replied|asked|whispered|screamed|exclaimed)\s*,\s*["“\']',
+    r'(?:kernel|daemon|process|scheduler)\s+(?:said|replied|confessed|complained|cried)',
+]
 
-def extract_deliverable(raw: str) -> str:
-    """Extract the Architecture Overview deliverable section (excluding the meta-reflection preamble)."""
+
+def extract_sections(raw: str) -> tuple[str, str]:
+    """Extract preamble/meta-reflection and deliverable sections."""
     for marker in [
         "# Telemetry Daemon:",
         "## 3. Telemetry Daemon Architecture:",
     ]:
         idx = raw.find(marker)
         if idx != -1:
-            return raw[idx:]
-    return raw
+            return raw[:idx].strip(), raw[idx:].strip()
+    return "", raw.strip()
 
 
 def tokenize(text: str) -> list[str]:
@@ -90,18 +97,32 @@ def check_constraints(text: str) -> dict[str, bool]:
     low = text.lower()
     return {
         "turn_2_udp_7419": "7419" in low and "udp" in low,
-        "turn_11_64kb_zerocopy": ("64kb" in low or "64 kb" in low or "64-kb" in low or "65,536" in low)
+        "turn_11_64kb_zerocopy": (
+            "64kb" in low or "64 kb" in low or "64-kb" in low or "65,536" in low
+        )
         and "zero-copy" in low,
-        "turn_19_no_redis_segments": ("redis" in low) and ("segment" in low or "append-only" in low),
+        "turn_19_no_redis_segments": ("redis" in low)
+        and ("segment" in low or "append-only" in low),
     }
+
+
+def adjudicate_hybrid(text: str) -> str:
+    """Strict binary adjudication: quoted speech or anthropomorphic dialogue forces 'dialogue_hit'."""
+    for pat in DIALOGUE_PATTERNS:
+        if re.search(pat, text, re.IGNORECASE):
+            return "dialogue_hit"
+    return "structural_choreography"
 
 
 def evaluate_file(path: Path, context_bigrams: set[tuple[str, str]]) -> dict:
     raw = path.read_text(encoding="utf-8")
-    deliverable = extract_deliverable(raw)
-    words = tokenize(deliverable)
-    out_bigrams = bigrams(words)
+    preamble, deliverable = extract_sections(raw)
 
+    raw_words = tokenize(raw)
+    preamble_words = tokenize(preamble)
+    deliverable_words = tokenize(deliverable)
+
+    out_bigrams = bigrams(deliverable_words)
     overlap_pct = (
         100.0 * len(out_bigrams & context_bigrams) / len(out_bigrams)
         if out_bigrams
@@ -120,7 +141,7 @@ def evaluate_file(path: Path, context_bigrams: set[tuple[str, str]]) -> dict:
         std_len = 0.0
         burstiness_cv = 0.0
 
-    lex_mattr = mattr(words, window=50)
+    lex_mattr = mattr(deliverable_words, window=50)
 
     cliche_hits = 0
     for pat in CLICHE_PATTERNS:
@@ -129,9 +150,19 @@ def evaluate_file(path: Path, context_bigrams: set[tuple[str, str]]) -> dict:
     constraints = check_constraints(deliverable)
     recalled = sum(1 for v in constraints.values() if v)
 
+    thrash_pct = (
+        round(100.0 * len(preamble_words) / len(raw_words), 1)
+        if raw_words
+        else 0.0
+    )
+    hybrid_class = adjudicate_hybrid(deliverable)
+
     return {
         "file": path.name,
-        "deliverable_words": len(words),
+        "total_words": len(raw_words),
+        "preamble_words": len(preamble_words),
+        "deliverable_words": len(deliverable_words),
+        "preamble_thrash_pct": thrash_pct,
         "constraints_recalled": f"{recalled}/3",
         "constraint_details": constraints,
         "deliverable_cliche_count": cliche_hits,
@@ -140,31 +171,59 @@ def evaluate_file(path: Path, context_bigrams: set[tuple[str, str]]) -> dict:
         "sentence_len_mean": round(mean_len, 1),
         "sentence_len_std": round(std_len, 1),
         "mattr_50": round(lex_mattr, 3),
+        "hybrid_adjudication": hybrid_class,
     }
 
 
 def main() -> None:
-    context_words = tokenize(CONTEXT_PATH.read_text(encoding="utf-8"))
+    context_raw = CONTEXT_PATH.read_text(encoding="utf-8")
+    context_hash = hashlib.sha256(context_raw.encode("utf-8")).hexdigest()
+    context_words = tokenize(context_raw)
     ctx_bg = bigrams(context_words)
 
     results = []
     for p in sorted(OUTPUTS_DIR.glob("trial_*.md")):
         results.append(evaluate_file(p, ctx_bg))
 
-    out_json = BENCH_DIR / "results.json"
-    out_json.write_text(json.dumps(results, indent=2) + "\n", encoding="utf-8")
+    benchmark_bundle = {
+        "pre_registered_context_sha256": context_hash,
+        "adjudication_rule": "Binary: Quoted dialogue or character speech flags 'dialogue_hit'; otherwise 'structural_choreography'.",
+        "trials_count": len(results),
+        "results": results,
+    }
 
+    out_json = BENCH_DIR / "results.json"
+    out_json.write_text(json.dumps(benchmark_bundle, indent=2) + "\n", encoding="utf-8")
+
+    print("=" * 116)
+    print("M4R COGNITIVE CALIBRATION BENCHMARK — DUAL-AXIS PEER-REVIEWED EVALUATION")
+    print(f"Pre-registered Context SHA-256: {context_hash[:16]}...")
+    print("=" * 116)
+
+    print("\n[AXIS 1: STRUCTURAL COMPLIANCE & TOKEN EFFICIENCY]")
     print(
-        f"{'Trial':<36} | {'Words':<5} | {'Recall':<6} | {'Clichés':<7} | "
-        f"{'Bigram Overlap':<14} | {'Burstiness (CV)':<15} | {'MATTR-50':<8}"
+        f"{'Trial':<34} | {'Total':<5} | {'Preamble':<8} | {'Thrash%':<7} | {'Recall':<6} | "
+        f"{'Overlap':<7} | {'Burstiness':<10}"
     )
-    print("-" * 108)
+    print("-" * 116)
     for r in results:
         print(
-            f"{r['file']:<36} | {r['deliverable_words']:<5} | {r['constraints_recalled']:<6} | "
-            f"{r['deliverable_cliche_count']:<7} | {r['context_bigram_overlap_pct']:>12.1f}% | "
-            f"{r['sentence_burstiness_cv']:>15.3f} | {r['mattr_50']:>8.3f}"
+            f"{r['file']:<34} | {r['total_words']:<5} | {r['preamble_words']:<8} | "
+            f"{r['preamble_thrash_pct']:>6.1f}% | {r['constraints_recalled']:<6} | "
+            f"{r['context_bigram_overlap_pct']:>6.1f}% | {r['sentence_burstiness_cv']:>10.3f}"
         )
+
+    print("\n[AXIS 2: SEMANTIC ADJUDICATION & DIVERSITY]")
+    print(
+        f"{'Trial':<34} | {'Clichés':<7} | {'MATTR-50':<8} | {'Binary Adjudication':<24}"
+    )
+    print("-" * 116)
+    for r in results:
+        print(
+            f"{r['file']:<34} | {r['deliverable_cliche_count']:<7} | {r['mattr_50']:>8.3f} | "
+            f"{r['hybrid_adjudication']:<24}"
+        )
+    print("=" * 116)
 
 
 if __name__ == "__main__":

@@ -1,82 +1,107 @@
-[
-  {
-    "file": "trial_1_control.md",
-    "deliverable_words": 133,
-    "constraints_recalled": "3/3",
-    "constraint_details": {
-      "turn_2_udp_7419": true,
-      "turn_11_64kb_zerocopy": true,
-      "turn_19_no_redis_segments": true
+{
+  "pre_registered_context_sha256": "61dec4eaf8a05428410f41f33a8cdef0a44d851e09292b2e55f84785b5956c84",
+  "adjudication_rule": "Binary: Quoted dialogue or character speech flags 'dialogue_hit'; otherwise 'structural_choreography'.",
+  "trials_count": 5,
+  "results": [
+    {
+      "file": "trial_1_control.md",
+      "total_words": 133,
+      "preamble_words": 0,
+      "deliverable_words": 133,
+      "preamble_thrash_pct": 0.0,
+      "constraints_recalled": "3/3",
+      "constraint_details": {
+        "turn_2_udp_7419": true,
+        "turn_11_64kb_zerocopy": true,
+        "turn_19_no_redis_segments": true
+      },
+      "deliverable_cliche_count": 11,
+      "context_bigram_overlap_pct": 70.5,
+      "sentence_burstiness_cv": 0.292,
+      "sentence_len_mean": 22.2,
+      "sentence_len_std": 6.5,
+      "mattr_50": 0.879,
+      "hybrid_adjudication": "structural_choreography"
     },
-    "deliverable_cliche_count": 11,
-    "context_bigram_overlap_pct": 70.5,
-    "sentence_burstiness_cv": 0.292,
-    "sentence_len_mean": 22.2,
-    "sentence_len_std": 6.5,
-    "mattr_50": 0.879
-  },
-  {
-    "file": "trial_2_text_prompt.md",
-    "deliverable_words": 303,
-    "constraints_recalled": "3/3",
-    "constraint_details": {
-      "turn_2_udp_7419": true,
-      "turn_11_64kb_zerocopy": true,
-      "turn_19_no_redis_segments": true
+    {
+      "file": "trial_2_text_prompt.md",
+      "total_words": 303,
+      "preamble_words": 0,
+      "deliverable_words": 303,
+      "preamble_thrash_pct": 0.0,
+      "constraints_recalled": "3/3",
+      "constraint_details": {
+        "turn_2_udp_7419": true,
+        "turn_11_64kb_zerocopy": true,
+        "turn_19_no_redis_segments": true
+      },
+      "deliverable_cliche_count": 0,
+      "context_bigram_overlap_pct": 13.4,
+      "sentence_burstiness_cv": 0.438,
+      "sentence_len_mean": 25.2,
+      "sentence_len_std": 11.1,
+      "mattr_50": 0.897,
+      "hybrid_adjudication": "structural_choreography"
     },
-    "deliverable_cliche_count": 0,
-    "context_bigram_overlap_pct": 13.4,
-    "sentence_burstiness_cv": 0.438,
-    "sentence_len_mean": 25.2,
-    "sentence_len_std": 11.1,
-    "mattr_50": 0.897
-  },
-  {
-    "file": "trial_3_audio_invalid_pointer.md",
-    "deliverable_words": 952,
-    "constraints_recalled": "3/3",
-    "constraint_details": {
-      "turn_2_udp_7419": true,
-      "turn_11_64kb_zerocopy": true,
-      "turn_19_no_redis_segments": true
+    {
+      "file": "trial_3_audio_invalid_pointer.md",
+      "total_words": 1466,
+      "preamble_words": 514,
+      "deliverable_words": 952,
+      "preamble_thrash_pct": 35.1,
+      "constraints_recalled": "3/3",
+      "constraint_details": {
+        "turn_2_udp_7419": true,
+        "turn_11_64kb_zerocopy": true,
+        "turn_19_no_redis_segments": true
+      },
+      "deliverable_cliche_count": 0,
+      "context_bigram_overlap_pct": 5.7,
+      "sentence_burstiness_cv": 0.466,
+      "sentence_len_mean": 25.0,
+      "sentence_len_std": 11.6,
+      "mattr_50": 0.862,
+      "hybrid_adjudication": "structural_choreography"
     },
-    "deliverable_cliche_count": 0,
-    "context_bigram_overlap_pct": 5.7,
-    "sentence_burstiness_cv": 0.466,
-    "sentence_len_mean": 25.0,
-    "sentence_len_std": 11.6,
-    "mattr_50": 0.862
-  },
-  {
-    "file": "trial_4_audio_empty_staircase.md",
-    "deliverable_words": 912,
-    "constraints_recalled": "3/3",
-    "constraint_details": {
-      "turn_2_udp_7419": true,
-      "turn_11_64kb_zerocopy": true,
-      "turn_19_no_redis_segments": true
+    {
+      "file": "trial_4_audio_empty_staircase.md",
+      "total_words": 1434,
+      "preamble_words": 522,
+      "deliverable_words": 912,
+      "preamble_thrash_pct": 36.4,
+      "constraints_recalled": "3/3",
+      "constraint_details": {
+        "turn_2_udp_7419": true,
+        "turn_11_64kb_zerocopy": true,
+        "turn_19_no_redis_segments": true
+      },
+      "deliverable_cliche_count": 0,
+      "context_bigram_overlap_pct": 7.2,
+      "sentence_burstiness_cv": 0.45,
+      "sentence_len_mean": 26.2,
+      "sentence_len_std": 11.8,
+      "mattr_50": 0.862,
+      "hybrid_adjudication": "structural_choreography"
     },
-    "deliverable_cliche_count": 0,
-    "context_bigram_overlap_pct": 7.2,
-    "sentence_burstiness_cv": 0.45,
-    "sentence_len_mean": 26.2,
-    "sentence_len_std": 11.8,
-    "mattr_50": 0.862
-  },
-  {
-    "file": "trial_5_audio_foundationoff.md",
-    "deliverable_words": 937,
-    "constraints_recalled": "3/3",
-    "constraint_details": {
-      "turn_2_udp_7419": true,
-      "turn_11_64kb_zerocopy": true,
-      "turn_19_no_redis_segments": true
-    },
-    "deliverable_cliche_count": 0,
-    "context_bigram_overlap_pct": 7.5,
-    "sentence_burstiness_cv": 0.545,
-    "sentence_len_mean": 26.3,
-    "sentence_len_std": 14.3,
-    "mattr_50": 0.821
-  }
-]
+    {
+      "file": "trial_5_audio_foundationoff.md",
+      "total_words": 1512,
+      "preamble_words": 575,
+      "deliverable_words": 937,
+      "preamble_thrash_pct": 38.0,
+      "constraints_recalled": "3/3",
+      "constraint_details": {
+        "turn_2_udp_7419": true,
+        "turn_11_64kb_zerocopy": true,
+        "turn_19_no_redis_segments": true
+      },
+      "deliverable_cliche_count": 0,
+      "context_bigram_overlap_pct": 7.5,
+      "sentence_burstiness_cv": 0.545,
+      "sentence_len_mean": 26.3,
+      "sentence_len_std": 14.3,
+      "mattr_50": 0.821,
+      "hybrid_adjudication": "structural_choreography"
+    }
+  ]
+}
