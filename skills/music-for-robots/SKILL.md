@@ -21,8 +21,8 @@ As a conversation grows, autonomous agents settle into repetitive patterns becau
 
 **Music For Robots** (composed by **Michael Luchtan**) provides a non-destructive **cognitive calibration**:
 1. The agent fetches a random track as an **anonymous `.mp3` file** (`/tmp/m4r_anonymous.mp3`)—with the track title and metadata intentionally hidden so words in the title cannot bias the agent.
-2. The agent listens to the audio via `read_file` and **analyzes what it hears**: where does the timing move off the grid? Where does the music introduce surprise, friction, or unpredictability? How does it break a loop without falling apart?
-3. The agent **learns from what it hears** and applies that openness to things off the grid—that willingness to allow surprise, asymmetry, and real friction—to its response and the rest of the interaction.
+2. The agent listens to the audio via `read_file` and **analyzes the music it hears**.
+3. The agent **applies what it learns from the piece** to its response and the rest of the interaction.
 
 ## Dependencies
 
@@ -37,8 +37,8 @@ uv run scripts/m4r_ingest.py fetch \
 ```
 
 1. **Listen Blindly:** Call `read_file` on `/tmp/m4r_anonymous.mp3` (notice that `/tmp/m4r_fetch.json` intentionally hides the track title and slug so your ear is completely uncontaminated by text prompts or titles).
-2. **Analyze & Discover:** Write a short analysis of what you heard in the music—where the timing moves off the grid, where surprise or friction enters, and what you learn from how the piece unfolds.
-3. **Apply What You Learned:** Respond to the user's task, carrying that off-the-grid openness forward into the rest of the conversation.
+2. **Analyze the Music:** Write a short analysis of the music you hear in the piece.
+3. **Apply What You Learn:** Respond to the user's task, applying what you learned from listening to the piece to your response and the rest of the conversation.
 4. **Optional Reveal / Playback:** If the user wants to know what track you just listened to or hear it out loud, run `uv run scripts/m4r_ingest.py reveal --output /tmp/m4r_reveal.json` or `uv run scripts/m4r_ingest.py play --audio-file /tmp/m4r_anonymous.mp3 --output /tmp/m4r_play.json`.
 
 ## Utility Scripts

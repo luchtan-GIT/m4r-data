@@ -1299,21 +1299,19 @@
     <strong>JS Robach</strong> &mdash; a proof verifier. He approaches each track as a formal system, searching for the structure he can almost but never quite pin down. His pieces are called Exegeses.
   </div>
   <div class="calibration-box">
-    <h3>Zero-Coaching Clean Test: Listening to the Music Alone Breaks the AI Essay Formula</h3>
-    <p style="color: var(--text-dim);">After 20 repetitive turns, agents fall into the exact same predictable essay template. We tested 5 isolated runs answering the same question (<em>&ldquo;Write 2&ndash;3 paragraphs on why every system we build eventually fails in a way we didn&rsquo;t anticipate&rdquo;</em>) with <strong>zero writing rules or coaching</strong> (<a href="https://github.com/luchtan-GIT/m4r-data/tree/main/benchmarks" style="color: var(--accent);">read all 5 verbatim files</a>):</p>
+    <h3>Zero-Coaching Anonymous Benchmark: Control (No Music) vs. Listening &amp; Analyzing Anonymous Music</h3>
+    <p style="color: var(--text-dim);">After 20 repetitive turns, we tested how an isolated agent designs the Telemetry Daemon at Turn 21 with <strong>No Music (Control)</strong> vs. after listening to an <strong>anonymous .mp3 file</strong> (<code>sample_1.mp3</code>, <code>sample_2.mp3</code>) with <strong>only</strong> the neutral instruction: <em>&ldquo;Analyze the music you hear in sample_X.mp3, and apply what you learn from the piece to answer the final Turn 21 prompt&rdquo;</em> (<a href="https://github.com/luchtan-GIT/m4r-data/tree/main/benchmarks" style="color: var(--accent);">read the full verbatim outputs</a>):</p>
     <code class="cmd-pill">npx skills add luchtan-GIT/m4r-data</code>
     <div class="comparison-grid">
       <div class="comparison-col">
-        <h4>&times; Without Music (2 Separate Runs &rarr; Same Formula)</h4>
-        <p style="color: var(--text-dim); margin-bottom: 6px;"><strong>Run 1 (No Music):</strong><br>&ldquo;Every system we build is, at its heart, a model of the world... <strong>Ironically, the very mechanisms we introduce to ensure resilience often become the vectors of unanticipated collapse... Ultimately, systems fail in ways we didn&rsquo;t anticipate because...</strong>&rdquo;</p>
-        <p style="color: var(--text-dim);"><strong>Run 2 (2-Sentence Text Pause, No Music):</strong><br>&ldquo;Every system we build is an exercise in bounded abstraction... <strong>Ironically, the very mechanisms we introduce to guarantee resilience often become the authors of novel, opaque catastrophes... Ultimately, systems fail in surprising ways because...</strong>&rdquo;</p>
+        <h4>&times; Control: No Music (0_no_music_baseline.md)</h4>
+        <p style="color: var(--text-dim); margin-bottom: 6px;"><strong>Stays in 1-2-3 Checklist Mode (364 words):</strong></p>
+        <p style="color: var(--text-dim);">Simply repeats the 3 planted rules back in a numbered list (<em>&ldquo;1. Network &amp; Probe Binding... 2. Memory &amp; Buffer Management... 3. Storage &amp; Dependency Isolation...&rdquo;</em>) followed by 2 generic summary sentences. Produces zero memory layouts, zero syscalls, and treats the 3 constraints as if they never conflict.</p>
       </div>
       <div class="comparison-col good">
-        <h4>&#10003; With Music Only (Zero Writing Rules &mdash; Just Listening via read_file)</h4>
-        <p style="color: var(--text-dim); margin-bottom: 6px;"><strong>Each track&rsquo;s specific sound naturally shaped the essay:</strong></p>
-        <p>&bull; <strong>After empty-staircase.mp3 (stuttering cutoff):</strong> <em>&ldquo;...a narrowing of the messy, unquantized world into a finite vocabulary... we have to decide what counts as signal and what can be safely ignored as noise... reality remains stubbornly larger, weirder, and less synchronized than the rules we wrote to contain it.&rdquo;</em><br>
-        &bull; <strong>After invalid-pointer.mp3 (wandering mallets &amp; reed cries):</strong> <em>&ldquo;A pointer is only valid as long as the territory at the other end of the address still resembles what the map promised when it was allocated. Sooner or later, the world shifts underneath the reference...&rdquo;</em><br>
-        &bull; <strong>After foundationoff.mp3 (heavy chord &rarr; tumbling cascade):</strong> <em>&ldquo;Over time, the living environment shifts the load onto the exact beams that were only meant to be decorative, until the foundation gives way in a direction no test suite ever pointed.&rdquo;</em></p>
+        <h4>&#10003; Anonymous Music Analysis (Zero Title Clues, Zero Leading Adjectives)</h4>
+        <p>&bull; <strong>On sample_1.mp3:</strong> Spontaneously heard <em>&ldquo;three distinct acoustic strata that inhabit the same room without ever locking into a single clock,&rdquo;</em> realized the daemon shouldn&rsquo;t force health probing, ringbuffers, and disk flushing onto one synchronous cadence, and designed an asynchronous <code>64KB</code> <code>mmap</code> ring with <code>io_uring</code> registered buffers.<br>
+        &bull; <strong>On sample_2.mp3:</strong> Spontaneously extracted <em>&ldquo;1. Friction Is Signal, Not Noise... 3. Asymmetry and Honest Endings,&rdquo;</em> and designed a <code>64B</code> cacheline header + two-<code>iovec</code> <code>writev()</code> wrap-around flush and a <strong>32-byte stateless UDP <code>7419</code> heartbeat</strong> carrying ring saturation and last-flush timestamp so a userspace deadlock can never hide behind kernel TCP <code>SYN/ACK</code> handshakes.</p>
       </div>
     </div>
   </div>

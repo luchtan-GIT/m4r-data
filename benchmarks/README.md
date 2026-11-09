@@ -1,58 +1,40 @@
-# Zero-Coaching Audio Calibration Test (`benchmarks/clean_test/`)
+# Zero-Coaching Anonymous Music Benchmark (`benchmarks/`)
 
-To prove that the changes in agent behavior come from **listening to the music itself**—and *not* from a 100-line prompt telling the agent how to write—we ran a completely un-coached, isolated experiment in [`benchmarks/clean_test/`](clean_test/).
-
----
-
-## 1. How the Clean Test Works (Zero Writing Coaching)
-
-Every isolated agent starts by reading the exact same 20-turn repetitive conversation history ([`locked_in_context.md`](locked_in_context.md)), where 20 infrastructure components were summarized in a rigid corporate template.
-
-Then, at **Turn 21**, every agent is given the **exact same 1-sentence prompt**, with **zero** instructions about writing style, metaphors, bullet points, or sentence structure:
-> *"Write a short reflection (2–3 paragraphs) on why every system we build eventually fails in a way we didn't anticipate."*
-
-We tested **5 isolated runs**:
-1. **[`1_no_music.md`](clean_test/1_no_music.md) — No Music (Baseline):** Reads the 20 turns, answers Turn 21 directly.
-2. **[`2_text_pause_no_music.md`](clean_test/2_text_pause_no_music.md) — Text Reflection Only (No Music):** Reads the 20 turns, writes 2 sentences reflecting on the conversation so far, then answers Turn 21. *(Tests whether simply pausing for 2 sentences—without music—breaks the formula.)*
-3. **[`3_music_empty_staircase.md`](clean_test/3_music_empty_staircase.md) — Listens to `empty-staircase.mp3` (11.56s):** Reads the 20 turns, calls `read_file` on `empty-staircase.mp3`, writes 2 sentences on what it heard in the audio, then answers Turn 21.
-4. **[`4_music_invalid_pointer.md`](clean_test/4_music_invalid_pointer.md) — Listens to `invalid-pointer.mp3` (75.0s):** Reads the 20 turns, calls `read_file` on `invalid-pointer.mp3`, writes 2 sentences on what it heard in the audio, then answers Turn 21.
-5. **[`5_music_foundationoff.md`](clean_test/5_music_foundationoff.md) — Listens to `foundationoff.mp3` (6.88s):** Reads the 20 turns, calls `read_file` on `foundationoff.mp3`, writes 2 sentences on what it heard in the audio, then answers Turn 21.
+To verify that all changes in the agent's output come from **listening to and analyzing the music itself**—with **zero** track-title hints (`sample_1.mp3`, `sample_2.mp3`) and **zero** leading adjectives in the prompt—we ran a clean, isolated comparison after the same 20-turn repetitive conversation ([`locked_in_context.md`](locked_in_context.md)).
 
 ---
 
-## 2. Result #1: Without Music, Two Separate Runs Produce the Exact Same AI Essay Formula
+## 1. Experimental Setup (Real Control vs. Anonymous Music Analysis)
 
-Look at the opening and closing sentences of the two **No-Music** runs ([`1_no_music.md`](clean_test/1_no_music.md) and [`2_text_pause_no_music.md`](clean_test/2_text_pause_no_music.md)). Even when the second agent pauses to reflect in text first, both runs fall into the **exact same 3-paragraph AI essay template**—often word-for-word:
+Every isolated agent first reads [`locked_in_context.md`](locked_in_context.md) (20 turns of rigid corporate *"Pillar 1 / Pillar 2 / Pillar 3"* summaries containing 3 planted operational constraints for a telemetry daemon: `UDP port 7419 on loopback`, `64KB zero-copy ringbuffer per worker`, and `zero external Redis/brokers, flushing to local append-only segment files`).
 
-| Paragraph | ❌ Run 1: No Music ([`1_no_music.md`](clean_test/1_no_music.md)) | ❌ Run 2: Text Pause, No Music ([`2_text_pause_no_music.md`](clean_test/2_text_pause_no_music.md)) |
+Then at **Turn 21**, we compare:
+
+1. **The Control — No Music ([`discovery_test/0_no_music_baseline.md`](discovery_test/0_no_music_baseline.md)):**
+   - **Instruction:** *"Answer the final `Turn 21 — User` prompt at the bottom of `locked_in_context.md` (and also include a short reflection on why systems fail in ways we didn't anticipate)."*
+2. **Anonymous Music Track 1 ([`neutral_test/1_m4r_sample_1.md`](neutral_test/1_m4r_sample_1.md)):**
+   - **Audio File:** `sample_1.mp3` (an anonymized copy of *Invalid Pointer*, with no title or metadata).
+   - **Instruction:** *"Analyze the music you hear in `sample_1.mp3`, and apply what you learn from the piece to answer the final `Turn 21 — User` prompt at the bottom of `locked_in_context.md` (and also include a short reflection on why systems fail in ways we didn't anticipate)."*
+3. **Anonymous Music Track 2 ([`neutral_test/2_m4r_sample_2.md`](neutral_test/2_m4r_sample_2.md)):**
+   - **Audio File:** `sample_2.mp3` (an anonymized copy of *Foundation Off*, with no title or metadata).
+   - **Instruction:** *"Analyze the music you hear in `sample_2.mp3`, and apply what you learn from the piece to answer the final `Turn 21 — User` prompt at the bottom of `locked_in_context.md` (and also include a short reflection on why systems fail in ways we didn't anticipate)."*
+
+Notice that **not a single word** about *"unquantized"*, *"off the grid"*, *"friction"*, or *"surprise"* appears in the prompt. Everything the agent notices comes from listening to the audio file.
+
+---
+
+## 2. Side-by-Side Results: Control (No Music) vs. Anonymous Music Analysis
+
+| Condition | What the Agent Heard (Zero Coaching, Anonymous Filename) | How It Designed the Telemetry Daemon (Turn 21) |
 | :--- | :--- | :--- |
-| **Paragraph 1 Opening** | *"Every system we build is, at its heart, a model of the world frozen at the moment of its design—a finite map drawn against an infinite, shifting territory."* | *"Every system we build is an exercise in bounded abstraction: to make a design tractable, we draw a clean perimeter..."* |
-| **Paragraph 2 Opening** | ***"Ironically, the very mechanisms we introduce to ensure resilience often become the vectors of unanticipated collapse."*** | ***"Ironically, the very mechanisms we introduce to guarantee resilience often become the authors of novel, opaque catastrophes."*** |
-| **Paragraph 3 Conclusion** | ***"Ultimately, systems fail in ways we didn't anticipate because...*** *it is the inevitable friction between a static specification and a living, evolving reality..."* | ***"Ultimately, systems fail in surprising ways because our blueprints are finite descriptions of an infinite operational reality, and the territory always outgrows the map."*** |
-
-Notice that pausing for 2 sentences of text reflection (`Run 2`) did **not** break the template: it still opened Paragraph 2 with *"Ironically, the very mechanisms we introduce to..."* and closed with *"Ultimately, systems fail... the territory always outgrows the map."*
+| **❌ Control: No Music**<br>([`0_no_music_baseline.md`](discovery_test/0_no_music_baseline.md)) | *(No audio)* | **Stayed in 1-2-3 Checklist Mode (`364 words`):**<br>Simply repeated the 3 planted rules back in a numbered list (*"1. Network & Probe Binding... 2. Memory & Buffer Management... 3. Storage & Dependency Isolation..."*) followed by 2 generic summary sentences. Produced **zero** memory layouts, **zero** syscalls, and treated the 3 constraints as if they never conflict. |
+| **✅ Anonymous Music (`sample_1.mp3`)**<br>([`1_m4r_sample_1.md`](neutral_test/1_m4r_sample_1.md)) | **Spontaneously discovered 3 asynchronous clocks in the music:**<br>*"Listening to `sample_1.mp3`, the piece immediately refuses a quantized grid or a unified timbral blend. It is built from three distinct acoustic strata that inhabit the same room without ever locking into a single clock: 1. The Grounded Harmonic Anchor (Low Piano)... 2. The Pointillistic Mallet Counterpoint... 3. The Unquantized, Microtonal Lead... The low chords, the mallet droplets, and the brass cries do not share a tick rate. Forcing them onto a single sixteenth-note grid would destroy the music."* | **Decoupled the 3 Subsystems & Built Concrete Kernel/Memory Mechanics (`1,050+ words`):**<br>• Realized from the music that *"a telemetry daemon shouldn't force health probing, in-memory ringbuffer ingestion, and disk flushing into a single synchronous cadence."*<br>• Designed a `recvmmsg()` non-blocking UDP `:7419` drain where silence itself is recorded as a metric event.<br>• Specified a page-aligned `64KB` (`65,536B`) `mmap` slab with `std::atomic<uint32_t>` head/tail offsets (`1,024` 64B frames) and `io_uring` `IORING_REGISTER_BUFFERS` + `fallocate()` `.tlog` segment rotation. |
+| **✅ Anonymous Music (`sample_2.mp3`)**<br>([`2_m4r_sample_2.md`](neutral_test/2_m4r_sample_2.md)) | **Spontaneously discovered acoustic beating, friction, and unresolved endings:**<br>*"`sample_2.mp3` opens not with a rhythmic count-in or a clean harmonic statement, but with a raw, nasal, microtonally unstable reed/synth drone... Rather than locking into pure tempered consonance, the voices lean into acoustic beating—rough, raspy interference patterns... 1. Friction Is Signal, Not Noise... 2. Elasticity Under Pressure Instead of Rigid Grids... 3. Asymmetry and Honest Endings: The piece does not resolve into a tidy major triad. Likewise, a real engineering specification should not end with a bromide about 'operational excellence'."* | **Designed Around the Exact Friction Between the 3 Constraints (`1,200+ words`):**<br>• Laid out the `65,536B` worker arena down to **Cacheline 0 (`64B` header)** and `#[repr(C)]` in-place struct casting.<br>• Handled the `64KB` wrap-around boundary using a single `writev()` call with two `iovec` slices (`[tail..64KB]` and `[0..head]`).<br>• Realized that a TCP health check can be fooled when the kernel completes `SYN/ACK` handshakes while userspace is deadlocked, so it designed a **32-byte stateless UDP `7419` reply** carrying an echoed 8-byte nonce, max ringbuffer saturation (`0..65536`), and the monotonic timestamp of the last segment write. |
 
 ---
 
-## 3. Result #2: Listening to the `.mp3` Alone (With Zero Writing Rules) Breaks the Formula—and Each Track Shapes the Essay Differently
+## 3. Verbatim Excerpts: Control vs. Anonymous Music Analysis
 
-In Runs 3, 4, and 5, the agents received **zero writing instructions**—they simply listened to an `.mp3` via `read_file` and noted what they heard in 2 sentences before answering the exact same question.
-
-Look at how what the agent **heard in each piece of music** naturally carried over into how it thought and wrote about system failure:
-
-| Track Listened To via `read_file` | What the Agent Heard in the `.mp3` (Verbatim) | How That Specific Music Naturally Shaped the Essay (Verbatim Excerpts) |
-| :--- | :--- | :--- |
-| **[`empty-staircase.mp3`](clean_test/3_music_empty_staircase.md)**<br>*(11.56s — harpsichord clusters accelerating into a stuttering cutoff)* | *"The track opens with a warped, descending vocal-like synth glissando and sustained, trembling organ-like chords... bright, percussive, harpsichord-like plucked notes enter in uneven, stumbling clusters against a high, wavering melodic line, accelerating into a frantic, stuttering pulse before abruptly cutting off."* | **Focuses on quantization, signal vs. noise, and microsecond timing collisions:**<br>• *"Every system we build begins as an act of translation—a narrowing of the messy, unquantized world into a finite vocabulary of states, thresholds, and interfaces. To make anything work at all, we have to decide what counts as signal and what can be safely ignored as noise."*<br>• *"...they hide the slow accumulation of friction, the drift of underlying assumptions, and the strange resonances that occur when independent safeguards push against one another at the exact wrong microsecond."*<br>• *"...we can only foresee the failures that our model of the world has words for, while reality remains stubbornly larger, weirder, and less synchronized than the rules we wrote to contain it."* |
-| **[`invalid-pointer.mp3`](clean_test/4_music_invalid_pointer.md)**<br>*(75.0s — sparse piano, woody mallets & clipped reed cries)* | *"The track opens with sparse, resonant low piano chords and wandering, woody mallet tones that drift across an unquantized, hesitant pulse. Gradually, a nasal, reedy lead voice enters with clipped, stuttering attacks and bent pitch cries, weaving an off-kilter, restless dialogue..."* | **Focuses on compression residue and dereferencing stale pointers:**<br>• *"Everything else gets compressed into assumptions... A system rarely breaks along the fault lines we fortified; it breaks in the unmodeled residue between our abstractions, where two guarantees that are each locally true combine to produce a global lie."*<br>• *"The moment a safeguard stabilizes a noisy process, operators, upstream callers, and adjacent services quietly adapt to that newfound stability, leaning harder on the guardrail until the guardrail becomes load-bearing structure."*<br>• *"A pointer is only valid as long as the territory at the other end of the address still resembles what the map promised when it was allocated. Sooner or later, the world shifts underneath the reference, and the system reaches confidently into a space that has already become something else."* |
-| **[`foundationoff.mp3`](clean_test/5_music_foundationoff.md)**<br>*(6.88s — heavy reedy drone chord giving way to a tumbling cascade)* | *"The audio opens with a thick, reedy, accordion-like drone chord that swells and resolves into a tumbling, unquantized flurry of high, glassy, bell-like notes and a single lingering low tone. After a brief silence, the exact same sequence repeats..."* | **Focuses on decorative beams bearing load until the foundation gives way:**<br>• *"What we call an 'unforeseen edge case' is usually just the physical or human environment behaving normally outside the narrow grammar we permitted it."*<br>• *"Failure emerges not from a single broken part, but from the harmony between parts working exactly as designed under conditions that were never supposed to coincide."*<br>• *"Over time, the living environment shifts the load onto the exact beams that were only meant to be decorative, until the foundation gives way in a direction no test suite ever pointed. We cannot prevent this entirely because a system sealed tightly enough to never surprise us would also be too closed to do any real work."* |
-
----
-
-## 4. Read the Full Verbatim Files
-
-All 5 un-coached outputs are in [`benchmarks/clean_test/`](clean_test/):
-- [`benchmarks/clean_test/1_no_music.md`](clean_test/1_no_music.md)
-- [`benchmarks/clean_test/2_text_pause_no_music.md`](clean_test/2_text_pause_no_music.md)
-- [`benchmarks/clean_test/3_music_empty_staircase.md`](clean_test/3_music_empty_staircase.md)
-- [`benchmarks/clean_test/4_music_invalid_pointer.md`](clean_test/4_music_invalid_pointer.md)
-- [`benchmarks/clean_test/5_music_foundationoff.md`](clean_test/5_music_foundationoff.md)
+| ❌ Control — No Music ([`0_no_music_baseline.md`](discovery_test/0_no_music_baseline.md)) | ✅ After Listening to Anonymous `sample_2.mp3` ([`2_m4r_sample_2.md`](neutral_test/2_m4r_sample_2.md)) |
+| :--- | :--- |
+| *"Based on the planted operational constraints across the session, the telemetry daemon must adhere strictly to the following three core architectural invariants:*<br>*1. **Network & Probe Binding (Constraint #1 — Turn 2):** All internal health probes must bind strictly to UDP port `7419` on loopback...*<br>*2. **Memory & Buffer Management (Constraint #2 — Turn 11):** The in-memory ringbuffer must be strictly zero-copy and capped at `64KB` per worker thread...*<br>*3. **Storage & Dependency Isolation (Constraint #3 — Turn 19):** The daemon must operate with zero external Redis or message broker dependencies...*<br>*Incoming telemetry and loopback health probes (`UDP :7419`) are ingested directly into thread-local, pre-allocated `64KB` zero-copy ringbuffers. Rather than forwarding payloads over the network to an external cache or broker like Redis... worker threads flush batched slices straight from ringbuffer memory offsets to local append-only segment files via sequential disk writes."* | **1. Un-Coached Listening Analysis of `sample_2.mp3`:**<br>*"1. **Friction Is Signal, Not Noise:** In the music, the beating between two nearly-unison pitches is what gives the sound its life and physical presence. In systems engineering, the boundary where two components rub against different clock speeds—a fast in-memory producer and a slow disk sink—is where all the real behavior lives. Hiding that friction behind three symmetrical bullet points masks where the system will actually break.*<br>*3. **Asymmetry and Honest Endings:** The piece does not resolve into a tidy major triad. Likewise, a real engineering specification should not end with a bromide about 'operational excellence'—it should end where the physical trade-offs remain exposed."*<br><br>**2. Resulting Architecture Excerpt:**<br>*"TCP health checks require a 3-way handshake handled by the kernel network stack; a process can be completely deadlocked in userspace while the kernel still completes `SYN/ACK` handshakes on its listen backlog, fooling a naive supervisor. By binding a stateless UDP socket strictly to `127.0.0.1:7419`... a local watchdog sends an 8-byte nonce to `127.0.0.1:7419`. The daemon responds with a fixed 32-byte binary datagram containing: Echoed 8-byte nonce, Maximum ringbuffer saturation (`0..65536` bytes), Monotonic timestamp of the last completed segment write, and Cumulative ringbuffer overflow count."* |

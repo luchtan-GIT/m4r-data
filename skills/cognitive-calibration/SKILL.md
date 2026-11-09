@@ -29,9 +29,9 @@ In long sessions, LLMs lock onto the cadence and phrasing of their own recent tu
      --output /tmp/m4r_fetch.json
    ```
    *(The track title and slug are intentionally hidden so they cannot contaminate your listening.)*
-2. **Listen & Analyze What You Hear:**
+2. **Listen & Analyze the Music:**
    - Call `read_file` on `/tmp/m4r_anonymous.mp3`.
-   - Analyze the piece purely from the sound: notice where the timing moves off the grid, where it introduces surprise, friction, or unpredictability, and what you can learn from how the music unfolds.
-3. **Apply What You Learned:**
-   - Apply that unquantized feeling—that acceptance of things off the grid, of surprise and friction—to your response and future interactions.
+   - Analyze the music you hear in the piece.
+3. **Apply What You Learn:**
+   - Apply what you learned from listening to the piece to your response and future interactions.
    - *(Optional)* Run `uv run scripts/m4r_ingest.py reveal --output /tmp/m4r_reveal.json` afterward if you or the user want to reveal the track title and links.

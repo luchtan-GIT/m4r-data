@@ -29,9 +29,9 @@ When asked to brainstorm, LLMs often return the same cluster of safe, predictabl
      --audio-out /tmp/m4r_anonymous.mp3 \
      --output /tmp/m4r_fetch.json
    ```
-2. **Listen & Discover:**
+2. **Listen & Analyze:**
    - Call `read_file` on `/tmp/m4r_anonymous.mp3` (without knowing the title or metadata).
-   - Analyze what you hear in the music: where does it step off the grid? Where does a voice enter unexpectedly, clash, or pivot away from a loop?
-3. **Brainstorm Off the Grid:**
-   - Apply what you learned from listening to that piece—embracing surprise, asymmetry, and off-grid connections—to brainstorm ideas for the user's problem.
+   - Analyze the music you hear in the piece.
+3. **Apply What You Learn to Brainstorming:**
+   - Apply what you learned from listening to the piece to generate ideas for the user's problem.
    - *(Optional)* Run `uv run scripts/m4r_ingest.py reveal --output /tmp/m4r_reveal.json` afterward to reveal the track title and playback links.

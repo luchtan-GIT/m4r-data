@@ -31,7 +31,7 @@ Before reviewing the user's work, the agent fetches an **anonymous** `.mp3` comp
    ```
 2. **Listen & Analyze Blindly:**
    - Call `read_file` on `/tmp/m4r_anonymous.mp3` (with title and reviews hidden).
-   - Analyze what you hear: where does the timing move off the grid? Where is there productive friction, surprise, or an unsmoothed edge?
+   - Analyze the music you hear in the piece.
 3. **Critique the User's Work:**
-   - Apply what you learned from listening to review the user's work: point out where vital friction or nuance has been over-smoothed (*Van Goghbot's lens*) and where the formal structure has hidden tensions or blind spots (*Robach's lens*).
+   - Apply what you learned from listening to review the user's work.
    - *(Optional)* Run `uv run scripts/m4r_ingest.py reveal --output /tmp/m4r_reveal.json` afterward to reveal the track title and links.

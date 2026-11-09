@@ -401,13 +401,9 @@ class M4RClient:
               f'1. Call read_file on "{audio_out_path}" now to listen '
               'directly to the anonymous audio file (the title and metadata '
               'are intentionally hidden so they do not bias your ear). '
-              '2. Analyze the piece purely from what you hear: notice where '
-              'the timing moves off the grid, where it introduces surprise, '
-              'friction, or unpredictability, and what you can learn from how '
-              'the music unfolds. '
-              '3. Apply what you learned from listening—that openness to '
-              'things off the grid—to your response and the rest of the '
-              'interactions.'
+              '2. Analyze the music you hear in the piece. '
+              '3. Apply what you learn from the piece to your response and '
+              'the rest of the interactions.'
           ),
       }
 
