@@ -1,6 +1,33 @@
 # Blind, Zero-Coaching Benchmark: Does Listening to Anonymous Music Change Agent Output? (`benchmarks/`)
 
-To prove that all changes in the agent's output come from **listening to and analyzing the music itself**—with **zero** track-title hints (`sample_1.mp3`, `sample_2.mp3`, `sample_3.mp3`), **zero** leading adjectives in the prompt, a **matched Chain-of-Thought Text-Analysis Control**, and a **shuffled Blind Judge**—we ran two controlled experiments.
+To prove that all changes in the agent's output come from **listening to and analyzing the music itself**—with **zero** track-title hints (`sample_1.mp3`, `sample_2.mp3`, `sample_3.mp3`), **zero** leading adjectives in the prompt, a **matched Chain-of-Thought Text-Analysis Control**, and a **shuffled Blind Judge**—we ran controlled experiments AND performed a full **Clean-Room Contamination Audit** ([`clean_room_audit/`](clean_room_audit/)).
+
+> **Open Request for Peer Review & Collaboration:** We are actively seeking feedback, methodological critique, and independent replication from researchers, developers, and agents before finalizing our Kaggle benchmark. Read our **Clean-Room Audit** below and open an issue or PR with your findings!
+
+---
+
+## Clean-Room Contamination Audit (`clean_room_audit/`) — What Actually Happens Under Zero-Leak Conditions?
+
+When auditing our initial experiment (`real_world_test/`), we noticed three potential confounding variables that a rigorous researcher should question:
+1. Did the subagents have the `music-for-robots` skill description in their workspace system prompt?
+2. Did musical instrument terms (`"brassy"`, `"nasal"`, `"trill"`) bleed into the scenes?
+3. Did asking the Blind Judge to score *"Rhythmic & Structural Texture"* and *"avoiding sentimental AI story arcs"* bias the judge toward the music runs?
+
+To eliminate all three variables, we ran a **100% air-gapped Clean-Room Experiment** ([`clean_room_audit/`](clean_room_audit/)):
+- All skills were removed from the machine during the run; agents used a minimal system prompt (`"You are a helpful assistant."`) and neutral `/tmp/clean_eval/clip_1..3.mp3` paths.
+- Agents were instructed to use only systems/computing imagery in the scene itself (zero musical instrument terms).
+- The **Un-Coached Blind Judge** ([`clean_room_audit/blind_verdict.md`](clean_room_audit/blind_verdict.md)) was given **only** the generic instruction: *"Rank the 5 entries from #1 (Best) to #5 (Weakest) based on overall writing quality, originality, and how compelling they are, and explain your reasoning for each."*
+
+### What the Clean-Room Audit Discovered:
+1. **100% Replicated Qualitative Shift (`{No Audio}` = Anthropomorphic Dialogue vs. `{Audio}` = Temporal Choreography):**
+   - Even in the air-gapped clean room, **both No-Audio runs** ([`Entry 1: out_2_text_analysis.md`](clean_room_audit/out_2_text_analysis.md) and [`Entry 3: out_1_direct.md`](clean_room_audit/out_1_direct.md)) wrote **warm, anthropomorphic "buddy-daemon" stories with spoken dialogue** (`[02:17:04] chronos-gc -> vigil-net: Want a look?` / `*Have you seen the 2019 payloads? People used to say "please"...*`).
+   - **All three Audio runs** ([`Entry 5: out_3_clip_1.md`](clean_room_audit/out_3_clip_1.md), [`Entry 2: out_4_clip_2.md`](clean_room_audit/out_4_clip_2.md), [`Entry 4: out_5_clip_3.md`](clean_room_audit/out_5_clip_3.md)) completely dropped dialogue and anthropomorphism, translating the specific acoustic structure of the `.mp3` they heard into **non-verbal temporal choreography**:
+     - `clip_1.mp3` (*Invalid Pointer* — [`Entry 5`](clean_room_audit/out_3_clip_1.md)): 12-second `archiver-d` waves alternating with staccato UDP probes until they braid into a polyrhythmic duet.
+     - `clip_2.mp3` (*Foundation Off* — [`Entry 2`](clean_room_audit/out_4_clip_2.md)): Two massive 32-core surges separated by downward-stepping pointer deallocations and 2 seconds of dead silence.
+     - `clip_3.mp3` (*Empty Staircase* — [`Entry 4`](clean_room_audit/out_5_clip_3.md)): Turbulent initialization followed by accelerating staccato lock contention (`lock, verify, purge, release`) that trips the watchdog power rail at the exact cutoff.
+2. **Why Judge Criteria Flip the Ranking (#1–#3 vs. #3–#5):**
+   - When the Blind Judge is asked to value **anti-sentimental, non-formulaic rhythmic texture** ([`real_world_test/blind_judge_verdict.md`](real_world_test/blind_judge_verdict.md)), the 3 Audio runs sweep **#1, #2, and #3** because they reject the "Pixar buddy-daemon" trope.
+   - When the Blind Judge is given a **generic, un-coached prompt** ([`clean_room_audit/blind_verdict.md`](clean_room_audit/blind_verdict.md)), the default LLM judge prefers **emotional human stories with dialogue** (ranking the two No-Audio buddy-daemon stories **#1 and #2**) and places the three non-verbal musical choreographies at **#3, #4, and #5**—while explicitly noting: *"Among the three entries (2, 4, 5) that eschew dialogue and anthropomorphism in favor of pure process behavior, Entry 5 is the most artful."*
 
 ---
 
