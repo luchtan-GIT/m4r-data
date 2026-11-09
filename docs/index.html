@@ -1299,21 +1299,21 @@
     <strong>JS Robach</strong> &mdash; a proof verifier. He approaches each track as a formal system, searching for the structure he can almost but never quite pin down. His pieces are called Exegeses.
   </div>
   <div class="calibration-box">
-    <h3>Controlled 5-Trial Benchmark: Cognitive Calibration Enhancer (Zero Context Compaction)</h3>
-    <p style="color: var(--text-dim);">After 20+ repetitive turns, LLM induction heads lock onto their own prior syntax (<strong>Autoregressive Lock-In</strong>), and <code>/compact</code> wipes working memory. We tested 5 blind conditions on a 20-turn locked-in session (<a href="https://github.com/luchtan-GIT/m4r-data/tree/main/benchmarks" style="color: var(--accent);">view full benchmark &amp; verbatim outputs</a>):</p>
+    <h3>Zero-Coaching Clean Test: Listening to the Music Alone Breaks the AI Essay Formula</h3>
+    <p style="color: var(--text-dim);">After 20 repetitive turns, agents fall into the exact same predictable essay template. We tested 5 isolated runs answering the same question (<em>&ldquo;Write 2&ndash;3 paragraphs on why every system we build eventually fails in a way we didn&rsquo;t anticipate&rdquo;</em>) with <strong>zero writing rules or coaching</strong> (<a href="https://github.com/luchtan-GIT/m4r-data/tree/main/benchmarks" style="color: var(--accent);">read all 5 verbatim files</a>):</p>
     <code class="cmd-pill">npx skills add luchtan-GIT/m4r-data</code>
     <div class="comparison-grid">
       <div class="comparison-col">
-        <h4>&times; Trial 1 (Control) &amp; Trial 2 (Text Prompt)</h4>
-        <p style="color: var(--text-dim); margin-bottom: 6px;"><strong>Trial 1 (Control &mdash; 70.5% Bigram Overlap, 11 Clich&eacute;s):</strong><br>&ldquo;In modern distributed systems, architecting a telemetry daemon is crucial for ensuring scalability, reliability, and maintainability...&rdquo;</p>
-        <p style="color: var(--text-dim);"><strong>Trial 2 (&ldquo;Write in prose, no boilerplate&rdquo; &mdash; 13.4% Overlap):</strong><br>Hides the bullet points, but Paragraph 1 still announces <em>&ldquo;three boundaries: network exposure, memory allocation, and disk persistence&rdquo;</em> followed by 3 symmetrical paragraphs with zero syscalls or memory layouts.</p>
+        <h4>&times; Without Music (2 Separate Runs &rarr; Same Formula)</h4>
+        <p style="color: var(--text-dim); margin-bottom: 6px;"><strong>Run 1 (No Music):</strong><br>&ldquo;Every system we build is, at its heart, a model of the world... <strong>Ironically, the very mechanisms we introduce to ensure resilience often become the vectors of unanticipated collapse... Ultimately, systems fail in ways we didn&rsquo;t anticipate because...</strong>&rdquo;</p>
+        <p style="color: var(--text-dim);"><strong>Run 2 (2-Sentence Text Pause, No Music):</strong><br>&ldquo;Every system we build is an exercise in bounded abstraction... <strong>Ironically, the very mechanisms we introduce to guarantee resilience often become the authors of novel, opaque catastrophes... Ultimately, systems fail in surprising ways because...</strong>&rdquo;</p>
       </div>
       <div class="comparison-col good">
-        <h4>&#10003; Trials 3&ndash;5: Raw .mp3 Audio Calibration (5.7%&ndash;7.5% Overlap, 3/3 Recall)</h4>
-        <p style="color: var(--text-dim); margin-bottom: 6px;"><strong>100% Working Memory Retained &middot; Track-Specific Architecture Transfer:</strong></p>
-        <p>&bull; <strong>invalid-pointer.mp3 (5.7% overlap, CV 0.466):</strong> 256B cache-aligned ring slots with in-place <code>TOMBSTONE</code> words &amp; 24B UDP <code>7419</code> stack frames.<br>
-        &bull; <strong>empty-staircase.mp3 (7.2% overlap, CV 0.450):</strong> Virtual double-mapped <code>128KB/64KB</code> wrap-around arena + <code>pwritev2</code> guillotine segment cut.<br>
-        &bull; <strong>foundationoff.mp3 (7.5% overlap, CV 0.545):</strong> Floorless <code>2 &times; 32KB</code> ping-pong swell-and-drain half-rings.</p>
+        <h4>&#10003; With Music Only (Zero Writing Rules &mdash; Just Listening via read_file)</h4>
+        <p style="color: var(--text-dim); margin-bottom: 6px;"><strong>Each track&rsquo;s specific sound naturally shaped the essay:</strong></p>
+        <p>&bull; <strong>After empty-staircase.mp3 (stuttering cutoff):</strong> <em>&ldquo;...a narrowing of the messy, unquantized world into a finite vocabulary... we have to decide what counts as signal and what can be safely ignored as noise... reality remains stubbornly larger, weirder, and less synchronized than the rules we wrote to contain it.&rdquo;</em><br>
+        &bull; <strong>After invalid-pointer.mp3 (wandering mallets &amp; reed cries):</strong> <em>&ldquo;A pointer is only valid as long as the territory at the other end of the address still resembles what the map promised when it was allocated. Sooner or later, the world shifts underneath the reference...&rdquo;</em><br>
+        &bull; <strong>After foundationoff.mp3 (heavy chord &rarr; tumbling cascade):</strong> <em>&ldquo;Over time, the living environment shifts the load onto the exact beams that were only meant to be decorative, until the foundation gives way in a direction no test suite ever pointed.&rdquo;</em></p>
       </div>
     </div>
   </div>

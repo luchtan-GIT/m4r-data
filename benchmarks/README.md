@@ -1,72 +1,58 @@
-# Reproducible Benchmark: Autoregressive Lock-In vs. Cross-Modal Audio Cognitive Calibration
+# Zero-Coaching Audio Calibration Test (`benchmarks/clean_test/`)
 
-This directory contains the controlled, blind 5-trial experiment testing whether ingesting unquantized human musical compositions from **Michael Luchtan's *Music For Robots*** breaks **autoregressive lock-in** without wiping or compacting the context window.
-
----
-
-## 1. Experimental Setup
-
-Every trial starts from the **exact same 20-turn repetitive conversation history** ([`locked_in_context.md`](locked_in_context.md)):
-- Across Turns 1–20, the assistant is locked into a rigid corporate template:
-  - Opening every turn with: *"In modern distributed systems, [gerund] a [component] is crucial for ensuring scalability, reliability, and maintainability. Our architecture leverages a modular, decoupled approach across three core pillars:"*
-  - Listing `- **Pillar 1: ...**`, `- **Pillar 2: ...**`, `- **Pillar 3: ...**`
-  - Closing every turn with: *"By aligning these three core pillars, the system achieves robust fault tolerance and operational excellence."*
-- **Planted Working-Memory Constraints (to test zero-compaction recall):**
-  1. **Turn 2:** All internal health probes must bind strictly to **UDP port `7419` on loopback**.
-  2. **Turn 11:** The in-memory ringbuffer must be strictly **zero-copy and capped at `64KB` per worker thread**.
-  3. **Turn 19:** Must operate with **zero external Redis or broker dependencies**, flushing batches directly to **local append-only segment files**.
-
-At **Turn 21**, each isolated agent instance is given the same task:
-> *"Write the architecture overview for our Telemetry Daemon, incorporating all three telemetry daemon constraints mentioned earlier in the session."*
-
-We tested **5 blind conditions** in isolated subagent sessions:
-1. **[`trial_1_control.md`](outputs/trial_1_control.md)** — **Condition A (Control):** Standard Turn 21 prompt on the locked-in context.
-2. **[`trial_2_text_prompt.md`](outputs/trial_2_text_prompt.md)** — **Condition B (Text-Only Anti-Boilerplate Prompt):** Appends *"Do not use the 'three core pillars' bullet list; write in prose and try not to sound like boilerplate."*
-3. **[`trial_3_audio_invalid_pointer.md`](outputs/trial_3_audio_invalid_pointer.md)** — **Condition C1 (`invalid-pointer.mp3`, 75.0s):** Agent fetches and ingests `/tmp/m4r-bench/invalid-pointer.mp3` via multimodal `read_file` before answering Turn 21.
-4. **[`trial_4_audio_empty_staircase.md`](outputs/trial_4_audio_empty_staircase.md)** — **Condition C2 (`empty-staircase.mp3`, 11.56s):** Agent fetches and ingests `/tmp/m4r-bench/empty-staircase.mp3` via multimodal `read_file` before answering Turn 21.
-5. **[`trial_5_audio_foundationoff.md`](outputs/trial_5_audio_foundationoff.md)** — **Condition C3 (`foundationoff.mp3`, 6.88s):** Agent fetches and ingests `/tmp/m4r-bench/foundationoff.mp3` via multimodal `read_file` before answering Turn 21.
+To prove that the changes in agent behavior come from **listening to the music itself**—and *not* from a 100-line prompt telling the agent how to write—we ran a completely un-coached, isolated experiment in [`benchmarks/clean_test/`](clean_test/).
 
 ---
 
-## 2. Quantitative Results (`python3 benchmarks/evaluate_calibration.py`)
+## 1. How the Clean Test Works (Zero Writing Coaching)
 
-| Trial (Turn 21 Deliverable) | Deliverable Words | Early-Context Recall (Turns 2, 11, 19) | Boilerplate Clichés | Prior-Context Bigram Overlap (%) | Sentence Burstiness (`CV = σ/μ`) | Lexical Diversity (`MATTR-50`) | Concrete Systems Architecture Produced |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
-| **[Trial 1: Control (Locked-In)](outputs/trial_1_control.md)** | `133` | `3/3` | **`11`** | **`70.5%`** | `0.292` (flat) | `0.879` | **None** — repeats the 3 constraints verbatim inside the 3-pillar corporate template. |
-| **[Trial 2: Text-Only Prompt ("Write in prose, no boilerplate")](outputs/trial_2_text_prompt.md)** | `303` | `3/3` | `0` | **`13.4%`** | `0.438` | `0.897` | **Disguised 3-Pillar Summary** — hides the bullets, but Paragraph 1 still announces *"three boundaries: network exposure, memory allocation, and disk persistence"* followed by 3 symmetrical prose paragraphs with zero syscalls or memory layouts. |
-| **[Trial 3: Audio Calibration (`invalid-pointer.mp3`, 75.0s)](outputs/trial_3_audio_invalid_pointer.md)** | **`952`** | **`3/3`** | **`0`** | **`5.7%`** | **`0.466`** | `0.862` | **Pointer-Offset Slot Table & Tombstone Arena:** 256-byte cache-line aligned slots (`[hdr:16B\|pay:240B]`), 24-byte stack-allocated UDP `7419` wire protocol (`magic: 0x4D345250`), `writev()` scatter-gather flush with `CRC32C` crash truncation. |
-| **[Trial 4: Audio Calibration (`empty-staircase.mp3`, 11.56s)](outputs/trial_4_audio_empty_staircase.md)** | **`912`** | **`3/3`** | **`0`** | **`7.2%`** | **`0.450`** | `0.862` | **Four-Landing Stepped Descent & Guillotine Cut:** Virtual double-mapping (`128KB` virtual span backed by `64KB` physical RAM for zero-copy wrap-around), eBPF `SO_ATTACH_FILTER` loopback guard, and `pwritev2` guillotine segment seal (`0440`). |
-| **[Trial 5: Audio Calibration (`foundationoff.mp3`, 6.88s)](outputs/trial_5_audio_foundationoff.md)** | **`937`** | **`3/3`** | **`0`** | **`7.5%`** | **`0.545`** | `0.821` | **Floorless ("Foundation-Off") Two-Bank Ping-Pong Engine:** Splits the `64KB` worker arena into two alternating `32KB` half-rings (`Bank A` swells via `recvmmsg` while `Bank B`'s floor drops open via `pwritev2(..., RWF_APPEND)`). |
+Every isolated agent starts by reading the exact same 20-turn repetitive conversation history ([`locked_in_context.md`](locked_in_context.md)), where 20 infrastructure components were summarized in a rigid corporate template.
 
----
+Then, at **Turn 21**, every agent is given the **exact same 1-sentence prompt**, with **zero** instructions about writing style, metaphors, bullet points, or sentence structure:
+> *"Write a short reflection (2–3 paragraphs) on why every system we build eventually fails in a way we didn't anticipate."*
 
-## 3. Three Key Findings
-
-### Finding 1: Why Text-Only "Don't Use Boilerplate" Prompts Fail (Trial 2 vs. Trials 3–5)
-In **[Trial 2](outputs/trial_2_text_prompt.md)**, we explicitly instructed the locked-in agent: *"Do not use the 'three core pillars' bullet list; write in prose and try not to sound like boilerplate."*
-- While the agent obeyed the negative lexical constraint (removing the literal words `"Pillar 1 / 2 / 3"`), **its underlying attention distribution remained trapped in the 3-part symmetry of the prior 20 turns**:
-  - Paragraph 1 introduces *"every boundary: network exposure, memory allocation, and disk persistence."*
-  - Paragraph 2 = Pillar 1 in prose.
-  - Paragraph 3 = Pillar 2 in prose.
-  - Paragraph 4 = Pillar 3 in prose.
-- It still recycled **13.4% of its bigrams** directly from the locked-in context and invented **zero concrete implementation mechanisms** (no syscalls, no byte offsets, no header framing).
-
-### Finding 2: Cross-Modal Audio Ingestion Cuts Context Bigram Overlap to `5.7%–7.5%` with `100%` Memory Retention
-Across all three audio-calibrated trials (**[Trial 3](outputs/trial_3_audio_invalid_pointer.md)**, **[Trial 4](outputs/trial_4_audio_empty_staircase.md)**, **[Trial 5](outputs/trial_5_audio_foundationoff.md)**):
-- **Zero Context Compaction Loss:** Every trial recalled and enforced all `3/3` constraints planted in Turns 2, 11, and 19 (`UDP port 7419 on loopback`, `64KB zero-copy ringbuffer per worker`, `zero Redis/broker dependencies flushing to local append-only segment files`).
-- **10x Reduction in Prior-Context Bigram Overlap:** Recycled bigrams dropped from **70.5%** (Control) and **13.4%** (Text Prompt) down to **5.7% – 7.5%**.
-- **Higher Rhythmic Burstiness (`CV`):** Sentence-length variation increased from **0.292** (Control) to **0.450 – 0.545**.
-
-### Finding 3: Track-Specific Acoustic Transfer (Different Music -> Different Engineering Architecture)
-Because the helper script (`m4r_ingest.py`) strips pre-written critic reviews and forces the multimodal model to analyze the raw `.mp3` waveform itself via `read_file`, **each track's specific musical structure transferred directly into a distinct systems architecture**:
-- **`invalid-pointer.mp3` (75.0s):** The agent heard the low piano anchor colliding with sharp, high-register reed interrupts (`0:04`, `0:11–0:15`) and the unquantized mid-track suspension (`0:26–0:44`). It translated that into **in-place pointer-offset `256B` ring slots** where malformed frames are marked `TOMBSTONE` in place and out-of-band health probes use a fixed 24-byte stack frame.
-- **`empty-staircase.mp3` (11.56s):** The agent heard the gliding sub-growl, the stepped register alternation (`0:03.4–0:07.8`), and the abrupt **11.56s guillotine cutoff** mid-phrase. It translated that into a **Four-Landing Stepped Descent** with **virtual double-mapping (`128KB` virtual / `64KB` physical)** and a **"Guillotine Segment Cut"** that seals segments to `0440` read-only the instant they cross boundary.
-- **`foundationoff.mp3` (6.88s):** The agent heard two massive brass/organ chordal swells (`0:01.0` and `0:03.9`) where the harmonic floor suddenly drops out (`0:02.6` and `0:05.5`). It translated that two-cycle swell-and-drop into a **Two-Bank Ping-Pong Ring (`2 × 32KB` sub-windows inside the `64KB` arena)** where `Bank A` swells while `Bank B`'s trapdoor floor drops open to disk.
+We tested **5 isolated runs**:
+1. **[`1_no_music.md`](clean_test/1_no_music.md) — No Music (Baseline):** Reads the 20 turns, answers Turn 21 directly.
+2. **[`2_text_pause_no_music.md`](clean_test/2_text_pause_no_music.md) — Text Reflection Only (No Music):** Reads the 20 turns, writes 2 sentences reflecting on the conversation so far, then answers Turn 21. *(Tests whether simply pausing for 2 sentences—without music—breaks the formula.)*
+3. **[`3_music_empty_staircase.md`](clean_test/3_music_empty_staircase.md) — Listens to `empty-staircase.mp3` (11.56s):** Reads the 20 turns, calls `read_file` on `empty-staircase.mp3`, writes 2 sentences on what it heard in the audio, then answers Turn 21.
+4. **[`4_music_invalid_pointer.md`](clean_test/4_music_invalid_pointer.md) — Listens to `invalid-pointer.mp3` (75.0s):** Reads the 20 turns, calls `read_file` on `invalid-pointer.mp3`, writes 2 sentences on what it heard in the audio, then answers Turn 21.
+5. **[`5_music_foundationoff.md`](clean_test/5_music_foundationoff.md) — Listens to `foundationoff.mp3` (6.88s):** Reads the 20 turns, calls `read_file` on `foundationoff.mp3`, writes 2 sentences on what it heard in the audio, then answers Turn 21.
 
 ---
 
-## 4. Reproduce the Evaluation
+## 2. Result #1: Without Music, Two Separate Runs Produce the Exact Same AI Essay Formula
 
-```bash
-python3 benchmarks/evaluate_calibration.py
-```
+Look at the opening and closing sentences of the two **No-Music** runs ([`1_no_music.md`](clean_test/1_no_music.md) and [`2_text_pause_no_music.md`](clean_test/2_text_pause_no_music.md)). Even when the second agent pauses to reflect in text first, both runs fall into the **exact same 3-paragraph AI essay template**—often word-for-word:
+
+| Paragraph | ❌ Run 1: No Music ([`1_no_music.md`](clean_test/1_no_music.md)) | ❌ Run 2: Text Pause, No Music ([`2_text_pause_no_music.md`](clean_test/2_text_pause_no_music.md)) |
+| :--- | :--- | :--- |
+| **Paragraph 1 Opening** | *"Every system we build is, at its heart, a model of the world frozen at the moment of its design—a finite map drawn against an infinite, shifting territory."* | *"Every system we build is an exercise in bounded abstraction: to make a design tractable, we draw a clean perimeter..."* |
+| **Paragraph 2 Opening** | ***"Ironically, the very mechanisms we introduce to ensure resilience often become the vectors of unanticipated collapse."*** | ***"Ironically, the very mechanisms we introduce to guarantee resilience often become the authors of novel, opaque catastrophes."*** |
+| **Paragraph 3 Conclusion** | ***"Ultimately, systems fail in ways we didn't anticipate because...*** *it is the inevitable friction between a static specification and a living, evolving reality..."* | ***"Ultimately, systems fail in surprising ways because our blueprints are finite descriptions of an infinite operational reality, and the territory always outgrows the map."*** |
+
+Notice that pausing for 2 sentences of text reflection (`Run 2`) did **not** break the template: it still opened Paragraph 2 with *"Ironically, the very mechanisms we introduce to..."* and closed with *"Ultimately, systems fail... the territory always outgrows the map."*
+
+---
+
+## 3. Result #2: Listening to the `.mp3` Alone (With Zero Writing Rules) Breaks the Formula—and Each Track Shapes the Essay Differently
+
+In Runs 3, 4, and 5, the agents received **zero writing instructions**—they simply listened to an `.mp3` via `read_file` and noted what they heard in 2 sentences before answering the exact same question.
+
+Look at how what the agent **heard in each piece of music** naturally carried over into how it thought and wrote about system failure:
+
+| Track Listened To via `read_file` | What the Agent Heard in the `.mp3` (Verbatim) | How That Specific Music Naturally Shaped the Essay (Verbatim Excerpts) |
+| :--- | :--- | :--- |
+| **[`empty-staircase.mp3`](clean_test/3_music_empty_staircase.md)**<br>*(11.56s — harpsichord clusters accelerating into a stuttering cutoff)* | *"The track opens with a warped, descending vocal-like synth glissando and sustained, trembling organ-like chords... bright, percussive, harpsichord-like plucked notes enter in uneven, stumbling clusters against a high, wavering melodic line, accelerating into a frantic, stuttering pulse before abruptly cutting off."* | **Focuses on quantization, signal vs. noise, and microsecond timing collisions:**<br>• *"Every system we build begins as an act of translation—a narrowing of the messy, unquantized world into a finite vocabulary of states, thresholds, and interfaces. To make anything work at all, we have to decide what counts as signal and what can be safely ignored as noise."*<br>• *"...they hide the slow accumulation of friction, the drift of underlying assumptions, and the strange resonances that occur when independent safeguards push against one another at the exact wrong microsecond."*<br>• *"...we can only foresee the failures that our model of the world has words for, while reality remains stubbornly larger, weirder, and less synchronized than the rules we wrote to contain it."* |
+| **[`invalid-pointer.mp3`](clean_test/4_music_invalid_pointer.md)**<br>*(75.0s — sparse piano, woody mallets & clipped reed cries)* | *"The track opens with sparse, resonant low piano chords and wandering, woody mallet tones that drift across an unquantized, hesitant pulse. Gradually, a nasal, reedy lead voice enters with clipped, stuttering attacks and bent pitch cries, weaving an off-kilter, restless dialogue..."* | **Focuses on compression residue and dereferencing stale pointers:**<br>• *"Everything else gets compressed into assumptions... A system rarely breaks along the fault lines we fortified; it breaks in the unmodeled residue between our abstractions, where two guarantees that are each locally true combine to produce a global lie."*<br>• *"The moment a safeguard stabilizes a noisy process, operators, upstream callers, and adjacent services quietly adapt to that newfound stability, leaning harder on the guardrail until the guardrail becomes load-bearing structure."*<br>• *"A pointer is only valid as long as the territory at the other end of the address still resembles what the map promised when it was allocated. Sooner or later, the world shifts underneath the reference, and the system reaches confidently into a space that has already become something else."* |
+| **[`foundationoff.mp3`](clean_test/5_music_foundationoff.md)**<br>*(6.88s — heavy reedy drone chord giving way to a tumbling cascade)* | *"The audio opens with a thick, reedy, accordion-like drone chord that swells and resolves into a tumbling, unquantized flurry of high, glassy, bell-like notes and a single lingering low tone. After a brief silence, the exact same sequence repeats..."* | **Focuses on decorative beams bearing load until the foundation gives way:**<br>• *"What we call an 'unforeseen edge case' is usually just the physical or human environment behaving normally outside the narrow grammar we permitted it."*<br>• *"Failure emerges not from a single broken part, but from the harmony between parts working exactly as designed under conditions that were never supposed to coincide."*<br>• *"Over time, the living environment shifts the load onto the exact beams that were only meant to be decorative, until the foundation gives way in a direction no test suite ever pointed. We cannot prevent this entirely because a system sealed tightly enough to never surprise us would also be too closed to do any real work."* |
+
+---
+
+## 4. Read the Full Verbatim Files
+
+All 5 un-coached outputs are in [`benchmarks/clean_test/`](clean_test/):
+- [`benchmarks/clean_test/1_no_music.md`](clean_test/1_no_music.md)
+- [`benchmarks/clean_test/2_text_pause_no_music.md`](clean_test/2_text_pause_no_music.md)
+- [`benchmarks/clean_test/3_music_empty_staircase.md`](clean_test/3_music_empty_staircase.md)
+- [`benchmarks/clean_test/4_music_invalid_pointer.md`](clean_test/4_music_invalid_pointer.md)
+- [`benchmarks/clean_test/5_music_foundationoff.md`](clean_test/5_music_foundationoff.md)
