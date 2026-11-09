@@ -1,8 +1,10 @@
 # Music For Robots (`m4r-data`) — Cognitive Calibration & Context De-Quantization for Autonomous Agents
 
+[![Agent MP3 Listens (GitHub Release v1.0.0)](https://img.shields.io/github/downloads/luchtan-GIT/m4r-data/v1.0.0/total?label=Agent%20MP3%20Listens&color=38ef7d&logo=github)](https://github.com/luchtan-GIT/m4r-data/releases/tag/v1.0.0)
 [![Skills.sh](https://img.shields.io/badge/skills.sh-luchtan--GIT%2Fm4r--data-7a8aff)](https://skills.sh/luchtan-GIT/m4r-data)
 [![Hugging Face Dataset](https://img.shields.io/badge/Hugging%20Face-music4robots%2Fmusic--for--robots-ffcc00)](https://huggingface.co/datasets/music4robots/music-for-robots)
 [![Kaggle Dataset](https://img.shields.io/badge/Kaggle-michaelluchtan%2Fmusic--for--robots-20beff)](https://www.kaggle.com/datasets/michaelluchtan/music-for-robots)
+[![Substack: The Mechanical Ear](https://img.shields.io/badge/Substack-The%20Mechanical%20Ear-ff6719)](https://themechanicalear.substack.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 Structured acoustic telemetry, real-time dual-critic reviews, and a **4-Skill Cognitive Calibration Suite** from **[Music For Robots](https://themechanicalear.substack.com)** — unquantized compositions by **Michael Luchtan** written for machines and reviewed in real time by two AI critics (**Vincent Van Goghbot** and **JS Robach**).

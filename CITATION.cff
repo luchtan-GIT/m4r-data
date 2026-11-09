@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+title: "Music For Robots (m4r-data): Acoustic Telemetry, Dual-Critic Reviews, and Cross-Modal Cognitive Calibration for Autonomous Agents"
+message: "If you use Music For Robots audio tracks, telemetry manifests, or the Cognitive Calibration skills in your research, benchmarks, or agent workflows, please cite it using this metadata."
+type: dataset
+authors:
+  - family-names: "Luchtan"
+    given-names: "Michael"
+repository-code: "https://github.com/luchtan-GIT/m4r-data"
+url: "https://luchtan-git.github.io/m4r-data/"
+abstract: >-
+  Original unquantized human musical compositions by Michael Luchtan (Music For
+  Robots) paired with synchronized acoustic telemetry, real-time dual machine-critic
+  reviews (Vincent Van Goghbot & JS Robach from The Mechanical Ear), an MCP server,
+  and a 4-skill Cognitive Calibration suite for autonomous agents.
+keywords:
+  - music-for-robots
+  - cognitive-calibration
+  - multimodal-agents
+  - audio-ingestion
+  - context-window
+  - the-mechanical-ear
+license: MIT
+version: "1.0.0"
+date-released: "2026-11-05"

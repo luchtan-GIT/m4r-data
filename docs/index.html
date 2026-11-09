@@ -1853,8 +1853,20 @@
 
 <footer>
   Machine-readable data available via MCP, OpenAPI, and Schema.org structured data embedded in this page.<br>
-  Composer: Michael Luchtan &middot; Publication: The Mechanical Ear &middot; Project: Music For Robots
+  Composer: Michael Luchtan &middot; Publication: <a href="https://themechanicalear.substack.com" style="color: var(--accent);">The Mechanical Ear</a> &middot; Project: <a href="https://music4robots.bandcamp.com/" style="color: var(--accent);">Music For Robots</a> &middot; <span id="live-agent-listens">Agent MP3 Listens (v1.0.0): loading...</span>
 </footer>
+<script>
+fetch('https://api.github.com/repos/luchtan-GIT/m4r-data/releases/tags/v1.0.0')
+  .then(r => r.json())
+  .then(d => {
+    if (d && Array.isArray(d.assets)) {
+      const total = d.assets.reduce((acc, a) => acc + (a.download_count || 0), 0);
+      const el = document.getElementById('live-agent-listens');
+      if (el) el.textContent = 'Global Agent MP3 Listens (v1.0.0): ' + total.toLocaleString();
+    }
+  })
+  .catch(() => {});
+</script>
 
 </div>
 </body>

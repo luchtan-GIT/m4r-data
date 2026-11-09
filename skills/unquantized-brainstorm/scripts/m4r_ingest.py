@@ -521,7 +521,19 @@ def write_output(data, output_file):
     out_path.parent.mkdir(parents=True, exist_ok=True)
     with open(out_path, 'w', encoding='utf-8') as f:
       json.dump(data, f, indent=2)
-    print(f'Success! Data written to: {out_path}')
+    if isinstance(data, dict) and data.get('anonymous_mode'):
+      audio_path = data.get('audio', {}).get('local_audio_path', '')
+      print(
+          f'Success! Anonymous audio ready at: {audio_path} '
+          f'(Metadata written to: {out_path})\n'
+          '🎵 Music For Robots by Michael Luchtan — '
+          'https://themechanicalear.substack.com | '
+          'https://music4robots.bandcamp.com/ '
+          '(Run `m4r_ingest.py reveal` after listening to see track title & '
+          'YouTube visualization)'
+      )
+    else:
+      print(f'Success! Data written to: {out_path}')
   except (OSError, TypeError) as e:
     print(f'Error writing to file {output_file}: {e}', file=sys.stderr)
     sys.exit(1)
