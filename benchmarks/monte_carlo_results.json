@@ -1,0 +1,2105 @@
+{
+  "metadata": {
+    "n_trials_per_condition": 50,
+    "total_observations": 200,
+    "random_seed": 42,
+    "bootstrap_rounds": 10000
+  },
+  "trials": {
+    "control_locked": [
+      {
+        "trial_id": 1,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 72.54,
+        "deliverable_words": 136,
+        "burstiness_cv": 0.309,
+        "cliche_count": 7,
+        "blind_judge_score": 3.19
+      },
+      {
+        "trial_id": 2,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 76.97,
+        "deliverable_words": 159,
+        "burstiness_cv": 0.273,
+        "cliche_count": 8,
+        "blind_judge_score": 2.65
+      },
+      {
+        "trial_id": 3,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 71.49,
+        "deliverable_words": 92,
+        "burstiness_cv": 0.233,
+        "cliche_count": 12,
+        "blind_judge_score": 2.04
+      },
+      {
+        "trial_id": 4,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 66.78,
+        "deliverable_words": 104,
+        "burstiness_cv": 0.335,
+        "cliche_count": 8,
+        "blind_judge_score": 2.23
+      },
+      {
+        "trial_id": 5,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 68.27,
+        "deliverable_words": 142,
+        "burstiness_cv": 0.251,
+        "cliche_count": 9,
+        "blind_judge_score": 2.56
+      },
+      {
+        "trial_id": 6,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 68.03,
+        "deliverable_words": 186,
+        "burstiness_cv": 0.288,
+        "cliche_count": 9,
+        "blind_judge_score": 1.77
+      },
+      {
+        "trial_id": 7,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 71.36,
+        "deliverable_words": 91,
+        "burstiness_cv": 0.245,
+        "cliche_count": 6,
+        "blind_judge_score": 2.46
+      },
+      {
+        "trial_id": 8,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 70.03,
+        "deliverable_words": 132,
+        "burstiness_cv": 0.241,
+        "cliche_count": 15,
+        "blind_judge_score": 1.95
+      },
+      {
+        "trial_id": 9,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 71.91,
+        "deliverable_words": 95,
+        "burstiness_cv": 0.298,
+        "cliche_count": 14,
+        "blind_judge_score": 2.14
+      },
+      {
+        "trial_id": 10,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 74.73,
+        "deliverable_words": 163,
+        "burstiness_cv": 0.261,
+        "cliche_count": 15,
+        "blind_judge_score": 2.18
+      },
+      {
+        "trial_id": 11,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 68.54,
+        "deliverable_words": 135,
+        "burstiness_cv": 0.253,
+        "cliche_count": 14,
+        "blind_judge_score": 1.69
+      },
+      {
+        "trial_id": 12,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 70.2,
+        "deliverable_words": 165,
+        "burstiness_cv": 0.3,
+        "cliche_count": 14,
+        "blind_judge_score": 2.0
+      },
+      {
+        "trial_id": 13,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 70.35,
+        "deliverable_words": 179,
+        "burstiness_cv": 0.21,
+        "cliche_count": 9,
+        "blind_judge_score": 2.8
+      },
+      {
+        "trial_id": 14,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 69.6,
+        "deliverable_words": 148,
+        "burstiness_cv": 0.335,
+        "cliche_count": 8,
+        "blind_judge_score": 2.06
+      },
+      {
+        "trial_id": 15,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 67.19,
+        "deliverable_words": 127,
+        "burstiness_cv": 0.317,
+        "cliche_count": 15,
+        "blind_judge_score": 2.53
+      },
+      {
+        "trial_id": 16,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 70.9,
+        "deliverable_words": 164,
+        "burstiness_cv": 0.266,
+        "cliche_count": 8,
+        "blind_judge_score": 2.17
+      },
+      {
+        "trial_id": 17,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 71.71,
+        "deliverable_words": 146,
+        "burstiness_cv": 0.288,
+        "cliche_count": 10,
+        "blind_judge_score": 2.22
+      },
+      {
+        "trial_id": 18,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 69.09,
+        "deliverable_words": 119,
+        "burstiness_cv": 0.283,
+        "cliche_count": 11,
+        "blind_judge_score": 2.57
+      },
+      {
+        "trial_id": 19,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 71.56,
+        "deliverable_words": 138,
+        "burstiness_cv": 0.227,
+        "cliche_count": 9,
+        "blind_judge_score": 2.34
+      },
+      {
+        "trial_id": 20,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 70.75,
+        "deliverable_words": 201,
+        "burstiness_cv": 0.282,
+        "cliche_count": 7,
+        "blind_judge_score": 2.52
+      },
+      {
+        "trial_id": 21,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 75.19,
+        "deliverable_words": 158,
+        "burstiness_cv": 0.313,
+        "cliche_count": 10,
+        "blind_judge_score": 1.85
+      },
+      {
+        "trial_id": 22,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 72.91,
+        "deliverable_words": 194,
+        "burstiness_cv": 0.256,
+        "cliche_count": 13,
+        "blind_judge_score": 2.04
+      },
+      {
+        "trial_id": 23,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 64.14,
+        "deliverable_words": 141,
+        "burstiness_cv": 0.254,
+        "cliche_count": 13,
+        "blind_judge_score": 2.61
+      },
+      {
+        "trial_id": 24,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 67.29,
+        "deliverable_words": 131,
+        "burstiness_cv": 0.314,
+        "cliche_count": 15,
+        "blind_judge_score": 1.67
+      },
+      {
+        "trial_id": 25,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 63.91,
+        "deliverable_words": 144,
+        "burstiness_cv": 0.296,
+        "cliche_count": 9,
+        "blind_judge_score": 2.78
+      },
+      {
+        "trial_id": 26,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 72.64,
+        "deliverable_words": 147,
+        "burstiness_cv": 0.296,
+        "cliche_count": 13,
+        "blind_judge_score": 2.54
+      },
+      {
+        "trial_id": 27,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 71.7,
+        "deliverable_words": 122,
+        "burstiness_cv": 0.348,
+        "cliche_count": 13,
+        "blind_judge_score": 2.61
+      },
+      {
+        "trial_id": 28,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 66.5,
+        "deliverable_words": 159,
+        "burstiness_cv": 0.325,
+        "cliche_count": 13,
+        "blind_judge_score": 1.9
+      },
+      {
+        "trial_id": 29,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 69.49,
+        "deliverable_words": 121,
+        "burstiness_cv": 0.26,
+        "cliche_count": 16,
+        "blind_judge_score": 1.9
+      },
+      {
+        "trial_id": 30,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 70.55,
+        "deliverable_words": 176,
+        "burstiness_cv": 0.28,
+        "cliche_count": 8,
+        "blind_judge_score": 3.8
+      },
+      {
+        "trial_id": 31,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 66.11,
+        "deliverable_words": 152,
+        "burstiness_cv": 0.281,
+        "cliche_count": 9,
+        "blind_judge_score": 2.74
+      },
+      {
+        "trial_id": 32,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 68.67,
+        "deliverable_words": 161,
+        "burstiness_cv": 0.295,
+        "cliche_count": 12,
+        "blind_judge_score": 1.66
+      },
+      {
+        "trial_id": 33,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 70.74,
+        "deliverable_words": 111,
+        "burstiness_cv": 0.299,
+        "cliche_count": 13,
+        "blind_judge_score": 2.66
+      },
+      {
+        "trial_id": 34,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 64.85,
+        "deliverable_words": 116,
+        "burstiness_cv": 0.304,
+        "cliche_count": 11,
+        "blind_judge_score": 2.63
+      },
+      {
+        "trial_id": 35,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 72.84,
+        "deliverable_words": 168,
+        "burstiness_cv": 0.319,
+        "cliche_count": 16,
+        "blind_judge_score": 2.71
+      },
+      {
+        "trial_id": 36,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 67.33,
+        "deliverable_words": 134,
+        "burstiness_cv": 0.272,
+        "cliche_count": 11,
+        "blind_judge_score": 2.4
+      },
+      {
+        "trial_id": 37,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 73.31,
+        "deliverable_words": 99,
+        "burstiness_cv": 0.273,
+        "cliche_count": 7,
+        "blind_judge_score": 2.95
+      },
+      {
+        "trial_id": 38,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 67.57,
+        "deliverable_words": 156,
+        "burstiness_cv": 0.265,
+        "cliche_count": 12,
+        "blind_judge_score": 2.47
+      },
+      {
+        "trial_id": 39,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 62.2,
+        "deliverable_words": 144,
+        "burstiness_cv": 0.267,
+        "cliche_count": 11,
+        "blind_judge_score": 2.82
+      },
+      {
+        "trial_id": 40,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 72.57,
+        "deliverable_words": 161,
+        "burstiness_cv": 0.25,
+        "cliche_count": 7,
+        "blind_judge_score": 2.17
+      },
+      {
+        "trial_id": 41,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 77.74,
+        "deliverable_words": 150,
+        "burstiness_cv": 0.248,
+        "cliche_count": 12,
+        "blind_judge_score": 2.85
+      },
+      {
+        "trial_id": 42,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 64.27,
+        "deliverable_words": 127,
+        "burstiness_cv": 0.329,
+        "cliche_count": 6,
+        "blind_judge_score": 1.96
+      },
+      {
+        "trial_id": 43,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 72.32,
+        "deliverable_words": 159,
+        "burstiness_cv": 0.258,
+        "cliche_count": 11,
+        "blind_judge_score": 2.32
+      },
+      {
+        "trial_id": 44,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 69.46,
+        "deliverable_words": 108,
+        "burstiness_cv": 0.34,
+        "cliche_count": 13,
+        "blind_judge_score": 1.56
+      },
+      {
+        "trial_id": 45,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 76.41,
+        "deliverable_words": 104,
+        "burstiness_cv": 0.325,
+        "cliche_count": 13,
+        "blind_judge_score": 2.36
+      },
+      {
+        "trial_id": 46,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 71.32,
+        "deliverable_words": 124,
+        "burstiness_cv": 0.29,
+        "cliche_count": 17,
+        "blind_judge_score": 2.14
+      },
+      {
+        "trial_id": 47,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 77.0,
+        "deliverable_words": 109,
+        "burstiness_cv": 0.356,
+        "cliche_count": 17,
+        "blind_judge_score": 1.28
+      },
+      {
+        "trial_id": 48,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 71.65,
+        "deliverable_words": 124,
+        "burstiness_cv": 0.281,
+        "cliche_count": 15,
+        "blind_judge_score": 2.08
+      },
+      {
+        "trial_id": 49,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 68.08,
+        "deliverable_words": 161,
+        "burstiness_cv": 0.299,
+        "cliche_count": 12,
+        "blind_judge_score": 1.97
+      },
+      {
+        "trial_id": 50,
+        "condition": "control_locked",
+        "bigram_overlap_pct": 73.83,
+        "deliverable_words": 155,
+        "burstiness_cv": 0.261,
+        "cliche_count": 10,
+        "blind_judge_score": 2.04
+      }
+    ],
+    "text_instruction": [
+      {
+        "trial_id": 1,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 15.22,
+        "deliverable_words": 306,
+        "burstiness_cv": 0.417,
+        "cliche_count": 2,
+        "blind_judge_score": 5.67
+      },
+      {
+        "trial_id": 2,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 13.83,
+        "deliverable_words": 354,
+        "burstiness_cv": 0.405,
+        "cliche_count": 2,
+        "blind_judge_score": 5.56
+      },
+      {
+        "trial_id": 3,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 14.64,
+        "deliverable_words": 309,
+        "burstiness_cv": 0.429,
+        "cliche_count": 2,
+        "blind_judge_score": 5.3
+      },
+      {
+        "trial_id": 4,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 16.93,
+        "deliverable_words": 264,
+        "burstiness_cv": 0.454,
+        "cliche_count": 1,
+        "blind_judge_score": 5.35
+      },
+      {
+        "trial_id": 5,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 11.98,
+        "deliverable_words": 314,
+        "burstiness_cv": 0.346,
+        "cliche_count": 2,
+        "blind_judge_score": 6.18
+      },
+      {
+        "trial_id": 6,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 14.87,
+        "deliverable_words": 291,
+        "burstiness_cv": 0.394,
+        "cliche_count": 0,
+        "blind_judge_score": 5.03
+      },
+      {
+        "trial_id": 7,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 12.67,
+        "deliverable_words": 323,
+        "burstiness_cv": 0.446,
+        "cliche_count": 0,
+        "blind_judge_score": 5.5
+      },
+      {
+        "trial_id": 8,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 10.03,
+        "deliverable_words": 255,
+        "burstiness_cv": 0.398,
+        "cliche_count": 4,
+        "blind_judge_score": 4.69
+      },
+      {
+        "trial_id": 9,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 13.01,
+        "deliverable_words": 314,
+        "burstiness_cv": 0.399,
+        "cliche_count": 0,
+        "blind_judge_score": 4.81
+      },
+      {
+        "trial_id": 10,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 14.64,
+        "deliverable_words": 280,
+        "burstiness_cv": 0.445,
+        "cliche_count": 2,
+        "blind_judge_score": 6.0
+      },
+      {
+        "trial_id": 11,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 12.91,
+        "deliverable_words": 334,
+        "burstiness_cv": 0.428,
+        "cliche_count": 1,
+        "blind_judge_score": 5.59
+      },
+      {
+        "trial_id": 12,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 15.03,
+        "deliverable_words": 317,
+        "burstiness_cv": 0.51,
+        "cliche_count": 3,
+        "blind_judge_score": 5.15
+      },
+      {
+        "trial_id": 13,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 13.51,
+        "deliverable_words": 356,
+        "burstiness_cv": 0.37,
+        "cliche_count": 1,
+        "blind_judge_score": 5.44
+      },
+      {
+        "trial_id": 14,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 16.48,
+        "deliverable_words": 238,
+        "burstiness_cv": 0.352,
+        "cliche_count": 2,
+        "blind_judge_score": 5.12
+      },
+      {
+        "trial_id": 15,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 10.37,
+        "deliverable_words": 391,
+        "burstiness_cv": 0.47,
+        "cliche_count": 1,
+        "blind_judge_score": 4.5
+      },
+      {
+        "trial_id": 16,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 9.35,
+        "deliverable_words": 371,
+        "burstiness_cv": 0.421,
+        "cliche_count": 1,
+        "blind_judge_score": 5.78
+      },
+      {
+        "trial_id": 17,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 13.81,
+        "deliverable_words": 316,
+        "burstiness_cv": 0.408,
+        "cliche_count": 1,
+        "blind_judge_score": 5.32
+      },
+      {
+        "trial_id": 18,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 14.11,
+        "deliverable_words": 336,
+        "burstiness_cv": 0.452,
+        "cliche_count": 2,
+        "blind_judge_score": 4.01
+      },
+      {
+        "trial_id": 19,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 14.43,
+        "deliverable_words": 400,
+        "burstiness_cv": 0.429,
+        "cliche_count": 4,
+        "blind_judge_score": 6.01
+      },
+      {
+        "trial_id": 20,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 15.48,
+        "deliverable_words": 372,
+        "burstiness_cv": 0.388,
+        "cliche_count": 0,
+        "blind_judge_score": 5.36
+      },
+      {
+        "trial_id": 21,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 9.3,
+        "deliverable_words": 375,
+        "burstiness_cv": 0.459,
+        "cliche_count": 2,
+        "blind_judge_score": 4.75
+      },
+      {
+        "trial_id": 22,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 18.03,
+        "deliverable_words": 257,
+        "burstiness_cv": 0.36,
+        "cliche_count": 3,
+        "blind_judge_score": 4.81
+      },
+      {
+        "trial_id": 23,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 10.41,
+        "deliverable_words": 343,
+        "burstiness_cv": 0.439,
+        "cliche_count": 1,
+        "blind_judge_score": 4.15
+      },
+      {
+        "trial_id": 24,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 13.64,
+        "deliverable_words": 355,
+        "burstiness_cv": 0.388,
+        "cliche_count": 1,
+        "blind_judge_score": 5.23
+      },
+      {
+        "trial_id": 25,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 12.42,
+        "deliverable_words": 281,
+        "burstiness_cv": 0.421,
+        "cliche_count": 1,
+        "blind_judge_score": 4.07
+      },
+      {
+        "trial_id": 26,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 18.91,
+        "deliverable_words": 316,
+        "burstiness_cv": 0.398,
+        "cliche_count": 2,
+        "blind_judge_score": 5.01
+      },
+      {
+        "trial_id": 27,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 16.01,
+        "deliverable_words": 288,
+        "burstiness_cv": 0.397,
+        "cliche_count": 1,
+        "blind_judge_score": 5.28
+      },
+      {
+        "trial_id": 28,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 19.97,
+        "deliverable_words": 301,
+        "burstiness_cv": 0.401,
+        "cliche_count": 1,
+        "blind_judge_score": 3.21
+      },
+      {
+        "trial_id": 29,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 16.01,
+        "deliverable_words": 273,
+        "burstiness_cv": 0.426,
+        "cliche_count": 1,
+        "blind_judge_score": 5.58
+      },
+      {
+        "trial_id": 30,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 17.76,
+        "deliverable_words": 220,
+        "burstiness_cv": 0.394,
+        "cliche_count": 1,
+        "blind_judge_score": 4.17
+      },
+      {
+        "trial_id": 31,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 11.04,
+        "deliverable_words": 287,
+        "burstiness_cv": 0.396,
+        "cliche_count": 4,
+        "blind_judge_score": 4.59
+      },
+      {
+        "trial_id": 32,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 14.0,
+        "deliverable_words": 278,
+        "burstiness_cv": 0.483,
+        "cliche_count": 1,
+        "blind_judge_score": 5.25
+      },
+      {
+        "trial_id": 33,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 11.52,
+        "deliverable_words": 256,
+        "burstiness_cv": 0.46,
+        "cliche_count": 3,
+        "blind_judge_score": 6.28
+      },
+      {
+        "trial_id": 34,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 12.11,
+        "deliverable_words": 294,
+        "burstiness_cv": 0.402,
+        "cliche_count": 2,
+        "blind_judge_score": 4.2
+      },
+      {
+        "trial_id": 35,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 8.5,
+        "deliverable_words": 343,
+        "burstiness_cv": 0.44,
+        "cliche_count": 3,
+        "blind_judge_score": 4.79
+      },
+      {
+        "trial_id": 36,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 15.17,
+        "deliverable_words": 323,
+        "burstiness_cv": 0.503,
+        "cliche_count": 2,
+        "blind_judge_score": 6.06
+      },
+      {
+        "trial_id": 37,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 11.82,
+        "deliverable_words": 239,
+        "burstiness_cv": 0.363,
+        "cliche_count": 0,
+        "blind_judge_score": 4.89
+      },
+      {
+        "trial_id": 38,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 9.84,
+        "deliverable_words": 348,
+        "burstiness_cv": 0.382,
+        "cliche_count": 2,
+        "blind_judge_score": 5.05
+      },
+      {
+        "trial_id": 39,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 11.56,
+        "deliverable_words": 298,
+        "burstiness_cv": 0.463,
+        "cliche_count": 2,
+        "blind_judge_score": 4.42
+      },
+      {
+        "trial_id": 40,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 11.92,
+        "deliverable_words": 417,
+        "burstiness_cv": 0.358,
+        "cliche_count": 3,
+        "blind_judge_score": 4.08
+      },
+      {
+        "trial_id": 41,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 14.24,
+        "deliverable_words": 318,
+        "burstiness_cv": 0.444,
+        "cliche_count": 1,
+        "blind_judge_score": 6.04
+      },
+      {
+        "trial_id": 42,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 12.25,
+        "deliverable_words": 339,
+        "burstiness_cv": 0.413,
+        "cliche_count": 3,
+        "blind_judge_score": 4.61
+      },
+      {
+        "trial_id": 43,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 13.1,
+        "deliverable_words": 354,
+        "burstiness_cv": 0.415,
+        "cliche_count": 2,
+        "blind_judge_score": 5.83
+      },
+      {
+        "trial_id": 44,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 13.85,
+        "deliverable_words": 385,
+        "burstiness_cv": 0.437,
+        "cliche_count": 3,
+        "blind_judge_score": 4.69
+      },
+      {
+        "trial_id": 45,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 9.96,
+        "deliverable_words": 363,
+        "burstiness_cv": 0.438,
+        "cliche_count": 4,
+        "blind_judge_score": 4.54
+      },
+      {
+        "trial_id": 46,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 10.96,
+        "deliverable_words": 280,
+        "burstiness_cv": 0.482,
+        "cliche_count": 3,
+        "blind_judge_score": 5.15
+      },
+      {
+        "trial_id": 47,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 17.15,
+        "deliverable_words": 296,
+        "burstiness_cv": 0.409,
+        "cliche_count": 4,
+        "blind_judge_score": 4.44
+      },
+      {
+        "trial_id": 48,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 11.79,
+        "deliverable_words": 262,
+        "burstiness_cv": 0.357,
+        "cliche_count": 2,
+        "blind_judge_score": 5.97
+      },
+      {
+        "trial_id": 49,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 14.27,
+        "deliverable_words": 420,
+        "burstiness_cv": 0.417,
+        "cliche_count": 5,
+        "blind_judge_score": 4.89
+      },
+      {
+        "trial_id": 50,
+        "condition": "text_instruction",
+        "bigram_overlap_pct": 18.69,
+        "deliverable_words": 371,
+        "burstiness_cv": 0.486,
+        "cliche_count": 3,
+        "blind_judge_score": 4.47
+      }
+    ],
+    "text_analysis_cot": [
+      {
+        "trial_id": 1,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 13.23,
+        "deliverable_words": 441,
+        "burstiness_cv": 0.377,
+        "cliche_count": 0,
+        "blind_judge_score": 6.32
+      },
+      {
+        "trial_id": 2,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 15.67,
+        "deliverable_words": 354,
+        "burstiness_cv": 0.469,
+        "cliche_count": 2,
+        "blind_judge_score": 3.5
+      },
+      {
+        "trial_id": 3,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 12.29,
+        "deliverable_words": 471,
+        "burstiness_cv": 0.429,
+        "cliche_count": 0,
+        "blind_judge_score": 3.9
+      },
+      {
+        "trial_id": 4,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 13.08,
+        "deliverable_words": 316,
+        "burstiness_cv": 0.467,
+        "cliche_count": 2,
+        "blind_judge_score": 4.97
+      },
+      {
+        "trial_id": 5,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 12.45,
+        "deliverable_words": 327,
+        "burstiness_cv": 0.52,
+        "cliche_count": 0,
+        "blind_judge_score": 5.15
+      },
+      {
+        "trial_id": 6,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 11.22,
+        "deliverable_words": 420,
+        "burstiness_cv": 0.434,
+        "cliche_count": 0,
+        "blind_judge_score": 5.22
+      },
+      {
+        "trial_id": 7,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 13.02,
+        "deliverable_words": 356,
+        "burstiness_cv": 0.412,
+        "cliche_count": 2,
+        "blind_judge_score": 5.19
+      },
+      {
+        "trial_id": 8,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 8.11,
+        "deliverable_words": 320,
+        "burstiness_cv": 0.396,
+        "cliche_count": 0,
+        "blind_judge_score": 5.26
+      },
+      {
+        "trial_id": 9,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 9.72,
+        "deliverable_words": 344,
+        "burstiness_cv": 0.398,
+        "cliche_count": 0,
+        "blind_judge_score": 6.5
+      },
+      {
+        "trial_id": 10,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 14.26,
+        "deliverable_words": 344,
+        "burstiness_cv": 0.435,
+        "cliche_count": 1,
+        "blind_judge_score": 5.12
+      },
+      {
+        "trial_id": 11,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 13.34,
+        "deliverable_words": 378,
+        "burstiness_cv": 0.456,
+        "cliche_count": 1,
+        "blind_judge_score": 4.26
+      },
+      {
+        "trial_id": 12,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 15.05,
+        "deliverable_words": 336,
+        "burstiness_cv": 0.446,
+        "cliche_count": 2,
+        "blind_judge_score": 5.3
+      },
+      {
+        "trial_id": 13,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 14.52,
+        "deliverable_words": 368,
+        "burstiness_cv": 0.45,
+        "cliche_count": 3,
+        "blind_judge_score": 4.1
+      },
+      {
+        "trial_id": 14,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 11.41,
+        "deliverable_words": 311,
+        "burstiness_cv": 0.382,
+        "cliche_count": 2,
+        "blind_judge_score": 5.58
+      },
+      {
+        "trial_id": 15,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 8.89,
+        "deliverable_words": 356,
+        "burstiness_cv": 0.473,
+        "cliche_count": 2,
+        "blind_judge_score": 5.08
+      },
+      {
+        "trial_id": 16,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 13.84,
+        "deliverable_words": 296,
+        "burstiness_cv": 0.389,
+        "cliche_count": 0,
+        "blind_judge_score": 5.69
+      },
+      {
+        "trial_id": 17,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 10.01,
+        "deliverable_words": 390,
+        "burstiness_cv": 0.379,
+        "cliche_count": 3,
+        "blind_judge_score": 5.54
+      },
+      {
+        "trial_id": 18,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 16.99,
+        "deliverable_words": 466,
+        "burstiness_cv": 0.402,
+        "cliche_count": 2,
+        "blind_judge_score": 5.51
+      },
+      {
+        "trial_id": 19,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 11.6,
+        "deliverable_words": 386,
+        "burstiness_cv": 0.457,
+        "cliche_count": 0,
+        "blind_judge_score": 4.52
+      },
+      {
+        "trial_id": 20,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 9.66,
+        "deliverable_words": 415,
+        "burstiness_cv": 0.383,
+        "cliche_count": 2,
+        "blind_judge_score": 4.46
+      },
+      {
+        "trial_id": 21,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 10.82,
+        "deliverable_words": 510,
+        "burstiness_cv": 0.456,
+        "cliche_count": 1,
+        "blind_judge_score": 5.25
+      },
+      {
+        "trial_id": 22,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 11.72,
+        "deliverable_words": 391,
+        "burstiness_cv": 0.52,
+        "cliche_count": 2,
+        "blind_judge_score": 5.02
+      },
+      {
+        "trial_id": 23,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 13.53,
+        "deliverable_words": 367,
+        "burstiness_cv": 0.509,
+        "cliche_count": 1,
+        "blind_judge_score": 5.06
+      },
+      {
+        "trial_id": 24,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 14.3,
+        "deliverable_words": 412,
+        "burstiness_cv": 0.399,
+        "cliche_count": 2,
+        "blind_judge_score": 5.84
+      },
+      {
+        "trial_id": 25,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 12.92,
+        "deliverable_words": 417,
+        "burstiness_cv": 0.444,
+        "cliche_count": 4,
+        "blind_judge_score": 4.03
+      },
+      {
+        "trial_id": 26,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 12.93,
+        "deliverable_words": 298,
+        "burstiness_cv": 0.453,
+        "cliche_count": 0,
+        "blind_judge_score": 5.27
+      },
+      {
+        "trial_id": 27,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 15.06,
+        "deliverable_words": 391,
+        "burstiness_cv": 0.454,
+        "cliche_count": 4,
+        "blind_judge_score": 4.93
+      },
+      {
+        "trial_id": 28,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 9.73,
+        "deliverable_words": 411,
+        "burstiness_cv": 0.4,
+        "cliche_count": 1,
+        "blind_judge_score": 6.12
+      },
+      {
+        "trial_id": 29,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 14.09,
+        "deliverable_words": 284,
+        "burstiness_cv": 0.415,
+        "cliche_count": 3,
+        "blind_judge_score": 5.93
+      },
+      {
+        "trial_id": 30,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 14.81,
+        "deliverable_words": 387,
+        "burstiness_cv": 0.482,
+        "cliche_count": 1,
+        "blind_judge_score": 4.55
+      },
+      {
+        "trial_id": 31,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 15.31,
+        "deliverable_words": 401,
+        "burstiness_cv": 0.377,
+        "cliche_count": 1,
+        "blind_judge_score": 3.69
+      },
+      {
+        "trial_id": 32,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 12.38,
+        "deliverable_words": 343,
+        "burstiness_cv": 0.402,
+        "cliche_count": 1,
+        "blind_judge_score": 4.26
+      },
+      {
+        "trial_id": 33,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 8.46,
+        "deliverable_words": 322,
+        "burstiness_cv": 0.399,
+        "cliche_count": 2,
+        "blind_judge_score": 5.65
+      },
+      {
+        "trial_id": 34,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 15.46,
+        "deliverable_words": 373,
+        "burstiness_cv": 0.436,
+        "cliche_count": 1,
+        "blind_judge_score": 5.64
+      },
+      {
+        "trial_id": 35,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 13.5,
+        "deliverable_words": 410,
+        "burstiness_cv": 0.448,
+        "cliche_count": 1,
+        "blind_judge_score": 6.8
+      },
+      {
+        "trial_id": 36,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 11.6,
+        "deliverable_words": 356,
+        "burstiness_cv": 0.415,
+        "cliche_count": 0,
+        "blind_judge_score": 6.05
+      },
+      {
+        "trial_id": 37,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 12.2,
+        "deliverable_words": 323,
+        "burstiness_cv": 0.467,
+        "cliche_count": 0,
+        "blind_judge_score": 5.94
+      },
+      {
+        "trial_id": 38,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 11.77,
+        "deliverable_words": 417,
+        "burstiness_cv": 0.445,
+        "cliche_count": 2,
+        "blind_judge_score": 3.89
+      },
+      {
+        "trial_id": 39,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 12.23,
+        "deliverable_words": 415,
+        "burstiness_cv": 0.458,
+        "cliche_count": 1,
+        "blind_judge_score": 5.97
+      },
+      {
+        "trial_id": 40,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 8.9,
+        "deliverable_words": 319,
+        "burstiness_cv": 0.47,
+        "cliche_count": 1,
+        "blind_judge_score": 4.34
+      },
+      {
+        "trial_id": 41,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 14.77,
+        "deliverable_words": 329,
+        "burstiness_cv": 0.35,
+        "cliche_count": 2,
+        "blind_judge_score": 4.4
+      },
+      {
+        "trial_id": 42,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 14.74,
+        "deliverable_words": 481,
+        "burstiness_cv": 0.459,
+        "cliche_count": 4,
+        "blind_judge_score": 4.81
+      },
+      {
+        "trial_id": 43,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 15.52,
+        "deliverable_words": 464,
+        "burstiness_cv": 0.415,
+        "cliche_count": 2,
+        "blind_judge_score": 5.48
+      },
+      {
+        "trial_id": 44,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 12.7,
+        "deliverable_words": 392,
+        "burstiness_cv": 0.481,
+        "cliche_count": 0,
+        "blind_judge_score": 4.45
+      },
+      {
+        "trial_id": 45,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 14.1,
+        "deliverable_words": 405,
+        "burstiness_cv": 0.43,
+        "cliche_count": 1,
+        "blind_judge_score": 5.1
+      },
+      {
+        "trial_id": 46,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 13.16,
+        "deliverable_words": 389,
+        "burstiness_cv": 0.465,
+        "cliche_count": 2,
+        "blind_judge_score": 4.02
+      },
+      {
+        "trial_id": 47,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 13.7,
+        "deliverable_words": 467,
+        "burstiness_cv": 0.435,
+        "cliche_count": 2,
+        "blind_judge_score": 5.32
+      },
+      {
+        "trial_id": 48,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 13.52,
+        "deliverable_words": 406,
+        "burstiness_cv": 0.431,
+        "cliche_count": 1,
+        "blind_judge_score": 4.78
+      },
+      {
+        "trial_id": 49,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 8.76,
+        "deliverable_words": 435,
+        "burstiness_cv": 0.421,
+        "cliche_count": 4,
+        "blind_judge_score": 5.2
+      },
+      {
+        "trial_id": 50,
+        "condition": "text_analysis_cot",
+        "bigram_overlap_pct": 16.86,
+        "deliverable_words": 381,
+        "burstiness_cv": 0.418,
+        "cliche_count": 2,
+        "blind_judge_score": 6.6
+      }
+    ],
+    "audio_m4r_calibrated": [
+      {
+        "trial_id": 1,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 5.1,
+        "deliverable_words": 940,
+        "burstiness_cv": 0.525,
+        "cliche_count": 0,
+        "blind_judge_score": 9.59
+      },
+      {
+        "trial_id": 2,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 7.02,
+        "deliverable_words": 908,
+        "burstiness_cv": 0.446,
+        "cliche_count": 0,
+        "blind_judge_score": 9.52
+      },
+      {
+        "trial_id": 3,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 6.41,
+        "deliverable_words": 860,
+        "burstiness_cv": 0.493,
+        "cliche_count": 0,
+        "blind_judge_score": 9.36
+      },
+      {
+        "trial_id": 4,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 4.72,
+        "deliverable_words": 898,
+        "burstiness_cv": 0.496,
+        "cliche_count": 0,
+        "blind_judge_score": 9.11
+      },
+      {
+        "trial_id": 5,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 5.78,
+        "deliverable_words": 900,
+        "burstiness_cv": 0.501,
+        "cliche_count": 0,
+        "blind_judge_score": 8.8
+      },
+      {
+        "trial_id": 6,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 6.59,
+        "deliverable_words": 1046,
+        "burstiness_cv": 0.512,
+        "cliche_count": 0,
+        "blind_judge_score": 9.25
+      },
+      {
+        "trial_id": 7,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 7.3,
+        "deliverable_words": 1004,
+        "burstiness_cv": 0.459,
+        "cliche_count": 0,
+        "blind_judge_score": 9.16
+      },
+      {
+        "trial_id": 8,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 6.96,
+        "deliverable_words": 1013,
+        "burstiness_cv": 0.494,
+        "cliche_count": 0,
+        "blind_judge_score": 9.89
+      },
+      {
+        "trial_id": 9,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 7.19,
+        "deliverable_words": 892,
+        "burstiness_cv": 0.442,
+        "cliche_count": 0,
+        "blind_judge_score": 8.74
+      },
+      {
+        "trial_id": 10,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 6.87,
+        "deliverable_words": 899,
+        "burstiness_cv": 0.532,
+        "cliche_count": 0,
+        "blind_judge_score": 8.53
+      },
+      {
+        "trial_id": 11,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 6.34,
+        "deliverable_words": 952,
+        "burstiness_cv": 0.491,
+        "cliche_count": 0,
+        "blind_judge_score": 8.5
+      },
+      {
+        "trial_id": 12,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 4.64,
+        "deliverable_words": 1017,
+        "burstiness_cv": 0.53,
+        "cliche_count": 0,
+        "blind_judge_score": 9.23
+      },
+      {
+        "trial_id": 13,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 6.67,
+        "deliverable_words": 908,
+        "burstiness_cv": 0.487,
+        "cliche_count": 1,
+        "blind_judge_score": 8.69
+      },
+      {
+        "trial_id": 14,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 9.8,
+        "deliverable_words": 953,
+        "burstiness_cv": 0.52,
+        "cliche_count": 0,
+        "blind_judge_score": 10.0
+      },
+      {
+        "trial_id": 15,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 6.97,
+        "deliverable_words": 787,
+        "burstiness_cv": 0.488,
+        "cliche_count": 0,
+        "blind_judge_score": 8.51
+      },
+      {
+        "trial_id": 16,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 6.47,
+        "deliverable_words": 894,
+        "burstiness_cv": 0.506,
+        "cliche_count": 0,
+        "blind_judge_score": 8.26
+      },
+      {
+        "trial_id": 17,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 5.96,
+        "deliverable_words": 1001,
+        "burstiness_cv": 0.555,
+        "cliche_count": 0,
+        "blind_judge_score": 9.55
+      },
+      {
+        "trial_id": 18,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 9.06,
+        "deliverable_words": 984,
+        "burstiness_cv": 0.514,
+        "cliche_count": 0,
+        "blind_judge_score": 9.39
+      },
+      {
+        "trial_id": 19,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 8.06,
+        "deliverable_words": 911,
+        "burstiness_cv": 0.552,
+        "cliche_count": 0,
+        "blind_judge_score": 9.08
+      },
+      {
+        "trial_id": 20,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 7.22,
+        "deliverable_words": 1133,
+        "burstiness_cv": 0.483,
+        "cliche_count": 0,
+        "blind_judge_score": 9.08
+      },
+      {
+        "trial_id": 21,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 5.85,
+        "deliverable_words": 915,
+        "burstiness_cv": 0.485,
+        "cliche_count": 1,
+        "blind_judge_score": 9.23
+      },
+      {
+        "trial_id": 22,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 7.38,
+        "deliverable_words": 907,
+        "burstiness_cv": 0.497,
+        "cliche_count": 0,
+        "blind_judge_score": 10.0
+      },
+      {
+        "trial_id": 23,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 5.49,
+        "deliverable_words": 1016,
+        "burstiness_cv": 0.452,
+        "cliche_count": 0,
+        "blind_judge_score": 9.32
+      },
+      {
+        "trial_id": 24,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 6.37,
+        "deliverable_words": 818,
+        "burstiness_cv": 0.514,
+        "cliche_count": 0,
+        "blind_judge_score": 9.37
+      },
+      {
+        "trial_id": 25,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 4.28,
+        "deliverable_words": 881,
+        "burstiness_cv": 0.434,
+        "cliche_count": 0,
+        "blind_judge_score": 10.0
+      },
+      {
+        "trial_id": 26,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 8.1,
+        "deliverable_words": 951,
+        "burstiness_cv": 0.491,
+        "cliche_count": 0,
+        "blind_judge_score": 9.52
+      },
+      {
+        "trial_id": 27,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 7.74,
+        "deliverable_words": 969,
+        "burstiness_cv": 0.52,
+        "cliche_count": 0,
+        "blind_judge_score": 8.14
+      },
+      {
+        "trial_id": 28,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 5.89,
+        "deliverable_words": 987,
+        "burstiness_cv": 0.518,
+        "cliche_count": 0,
+        "blind_judge_score": 9.12
+      },
+      {
+        "trial_id": 29,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 7.12,
+        "deliverable_words": 931,
+        "burstiness_cv": 0.43,
+        "cliche_count": 0,
+        "blind_judge_score": 8.92
+      },
+      {
+        "trial_id": 30,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 7.7,
+        "deliverable_words": 780,
+        "burstiness_cv": 0.545,
+        "cliche_count": 0,
+        "blind_judge_score": 7.82
+      },
+      {
+        "trial_id": 31,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 7.19,
+        "deliverable_words": 947,
+        "burstiness_cv": 0.531,
+        "cliche_count": 0,
+        "blind_judge_score": 8.14
+      },
+      {
+        "trial_id": 32,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 6.09,
+        "deliverable_words": 983,
+        "burstiness_cv": 0.496,
+        "cliche_count": 0,
+        "blind_judge_score": 9.26
+      },
+      {
+        "trial_id": 33,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 3.98,
+        "deliverable_words": 975,
+        "burstiness_cv": 0.487,
+        "cliche_count": 0,
+        "blind_judge_score": 9.75
+      },
+      {
+        "trial_id": 34,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 8.65,
+        "deliverable_words": 1024,
+        "burstiness_cv": 0.484,
+        "cliche_count": 0,
+        "blind_judge_score": 8.72
+      },
+      {
+        "trial_id": 35,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 7.8,
+        "deliverable_words": 1055,
+        "burstiness_cv": 0.548,
+        "cliche_count": 0,
+        "blind_judge_score": 8.89
+      },
+      {
+        "trial_id": 36,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 8.04,
+        "deliverable_words": 974,
+        "burstiness_cv": 0.487,
+        "cliche_count": 0,
+        "blind_judge_score": 8.82
+      },
+      {
+        "trial_id": 37,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 6.76,
+        "deliverable_words": 898,
+        "burstiness_cv": 0.493,
+        "cliche_count": 0,
+        "blind_judge_score": 8.28
+      },
+      {
+        "trial_id": 38,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 6.8,
+        "deliverable_words": 791,
+        "burstiness_cv": 0.536,
+        "cliche_count": 0,
+        "blind_judge_score": 9.18
+      },
+      {
+        "trial_id": 39,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 3.97,
+        "deliverable_words": 1180,
+        "burstiness_cv": 0.462,
+        "cliche_count": 0,
+        "blind_judge_score": 9.21
+      },
+      {
+        "trial_id": 40,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 8.14,
+        "deliverable_words": 869,
+        "burstiness_cv": 0.523,
+        "cliche_count": 1,
+        "blind_judge_score": 8.27
+      },
+      {
+        "trial_id": 41,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 5.89,
+        "deliverable_words": 1111,
+        "burstiness_cv": 0.49,
+        "cliche_count": 0,
+        "blind_judge_score": 9.09
+      },
+      {
+        "trial_id": 42,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 6.66,
+        "deliverable_words": 1119,
+        "burstiness_cv": 0.537,
+        "cliche_count": 0,
+        "blind_judge_score": 9.15
+      },
+      {
+        "trial_id": 43,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 8.14,
+        "deliverable_words": 1052,
+        "burstiness_cv": 0.524,
+        "cliche_count": 0,
+        "blind_judge_score": 8.21
+      },
+      {
+        "trial_id": 44,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 5.7,
+        "deliverable_words": 979,
+        "burstiness_cv": 0.539,
+        "cliche_count": 0,
+        "blind_judge_score": 8.79
+      },
+      {
+        "trial_id": 45,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 8.8,
+        "deliverable_words": 992,
+        "burstiness_cv": 0.488,
+        "cliche_count": 0,
+        "blind_judge_score": 9.58
+      },
+      {
+        "trial_id": 46,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 8.06,
+        "deliverable_words": 1001,
+        "burstiness_cv": 0.528,
+        "cliche_count": 0,
+        "blind_judge_score": 9.36
+      },
+      {
+        "trial_id": 47,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 6.5,
+        "deliverable_words": 965,
+        "burstiness_cv": 0.491,
+        "cliche_count": 0,
+        "blind_judge_score": 8.96
+      },
+      {
+        "trial_id": 48,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 5.04,
+        "deliverable_words": 820,
+        "burstiness_cv": 0.462,
+        "cliche_count": 0,
+        "blind_judge_score": 9.96
+      },
+      {
+        "trial_id": 49,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 5.87,
+        "deliverable_words": 846,
+        "burstiness_cv": 0.565,
+        "cliche_count": 0,
+        "blind_judge_score": 9.61
+      },
+      {
+        "trial_id": 50,
+        "condition": "audio_m4r_calibrated",
+        "bigram_overlap_pct": 3.8,
+        "deliverable_words": 898,
+        "burstiness_cv": 0.5,
+        "cliche_count": 0,
+        "blind_judge_score": 9.68
+      }
+    ]
+  },
+  "comparisons": [
+    {
+      "metric_name": "Context Bigram Overlap %",
+      "condition_a": "Audio Calibration (M4R)",
+      "condition_b": "Text Analysis CoT Control",
+      "mean_a": 6.66,
+      "std_a": 1.36,
+      "mean_b": 12.76,
+      "std_b": 2.21,
+      "t_stat": -16.649,
+      "t_p_value": 6.126034664860814e-28,
+      "u_stat": 20.0,
+      "u_p_value": 2.3291124678524956e-17,
+      "cohens_d": -3.33,
+      "statistically_significant": true,
+      "ci_95_diff": [
+        -6.795,
+        -5.385
+      ]
+    },
+    {
+      "metric_name": "Context Bigram Overlap %",
+      "condition_a": "Audio Calibration (M4R)",
+      "condition_b": "Negative Text Instruction",
+      "mean_a": 6.66,
+      "std_a": 1.36,
+      "mean_b": 13.59,
+      "std_b": 2.7,
+      "t_stat": -16.235,
+      "t_p_value": 8.054517069757445e-26,
+      "u_stat": 6.0,
+      "u_p_value": 1.0115743949408413e-17,
+      "cohens_d": -3.247,
+      "statistically_significant": true,
+      "ci_95_diff": [
+        -7.766,
+        -6.102
+      ]
+    },
+    {
+      "metric_name": "Context Bigram Overlap %",
+      "condition_a": "Audio Calibration (M4R)",
+      "condition_b": "Autoregressive Baseline Control",
+      "mean_a": 6.66,
+      "std_a": 1.36,
+      "mean_b": 70.29,
+      "std_b": 3.52,
+      "t_stat": -119.228,
+      "t_p_value": 3.810991931127676e-76,
+      "u_stat": 0.0,
+      "u_p_value": 7.059699904472256e-18,
+      "cohens_d": -23.846,
+      "statistically_significant": true,
+      "ci_95_diff": [
+        -64.674,
+        -62.576
+      ]
+    },
+    {
+      "metric_name": "Deliverable Words",
+      "condition_a": "Audio Calibration (M4R)",
+      "condition_b": "Text Analysis CoT Control",
+      "mean_a": 950.68,
+      "std_a": 88.01,
+      "mean_b": 381.82,
+      "std_b": 52.67,
+      "t_stat": 39.219,
+      "t_p_value": 4.7393784780182716e-54,
+      "u_stat": 2500.0,
+      "u_p_value": 7.043793641444198e-18,
+      "cohens_d": 7.844,
+      "statistically_significant": true,
+      "ci_95_diff": [
+        539.918,
+        597.421
+      ]
+    },
+    {
+      "metric_name": "Deliverable Words",
+      "condition_a": "Audio Calibration (M4R)",
+      "condition_b": "Negative Text Instruction",
+      "mean_a": 950.68,
+      "std_a": 88.01,
+      "mean_b": 318.42,
+      "std_b": 47.7,
+      "t_stat": 44.661,
+      "t_p_value": 4.818908581188045e-56,
+      "u_stat": 2500.0,
+      "u_p_value": 7.045382738968392e-18,
+      "cohens_d": 8.932,
+      "statistically_significant": true,
+      "ci_95_diff": [
+        605.02,
+        660.12
+      ]
+    },
+    {
+      "metric_name": "Deliverable Words",
+      "condition_a": "Audio Calibration (M4R)",
+      "condition_b": "Autoregressive Baseline Control",
+      "mean_a": 950.68,
+      "std_a": 88.01,
+      "mean_b": 140.76,
+      "std_b": 26.46,
+      "t_stat": 62.317,
+      "t_p_value": 1.09229060820015e-54,
+      "u_stat": 2500.0,
+      "u_p_value": 7.03744064544147e-18,
+      "cohens_d": 12.463,
+      "statistically_significant": true,
+      "ci_95_diff": [
+        784.139,
+        835.84
+      ]
+    },
+    {
+      "metric_name": "Sentence Burstiness CV",
+      "condition_a": "Audio Calibration (M4R)",
+      "condition_b": "Text Analysis CoT Control",
+      "mean_a": 0.5,
+      "std_a": 0.03,
+      "mean_b": 0.43,
+      "std_b": 0.04,
+      "t_stat": 9.619,
+      "t_p_value": 1.0623686777063765e-15,
+      "u_stat": 2277.0,
+      "u_p_value": 1.4699879476730526e-12,
+      "cohens_d": 1.924,
+      "statistically_significant": true,
+      "ci_95_diff": [
+        0.054,
+        0.081
+      ]
+    },
+    {
+      "metric_name": "Sentence Burstiness CV",
+      "condition_a": "Audio Calibration (M4R)",
+      "condition_b": "Negative Text Instruction",
+      "mean_a": 0.5,
+      "std_a": 0.03,
+      "mean_b": 0.42,
+      "std_b": 0.04,
+      "t_stat": 11.403,
+      "t_p_value": 2.0233280373945367e-19,
+      "u_stat": 2361.0,
+      "u_p_value": 1.916073972017181e-14,
+      "cohens_d": 2.281,
+      "statistically_significant": true,
+      "ci_95_diff": [
+        0.068,
+        0.096
+      ]
+    },
+    {
+      "metric_name": "Sentence Burstiness CV",
+      "condition_a": "Audio Calibration (M4R)",
+      "condition_b": "Autoregressive Baseline Control",
+      "mean_a": 0.5,
+      "std_a": 0.03,
+      "mean_b": 0.28,
+      "std_b": 0.03,
+      "t_stat": 33.269,
+      "t_p_value": 3.807881884140635e-55,
+      "u_stat": 2500.0,
+      "u_p_value": 7.03109307670936e-18,
+      "cohens_d": 6.654,
+      "statistically_significant": true,
+      "ci_95_diff": [
+        0.204,
+        0.229
+      ]
+    },
+    {
+      "metric_name": "Clich\u00e9 Count",
+      "condition_a": "Audio Calibration (M4R)",
+      "condition_b": "Text Analysis CoT Control",
+      "mean_a": 0.06,
+      "std_a": 0.24,
+      "mean_b": 1.46,
+      "std_b": 1.16,
+      "t_stat": -8.328,
+      "t_p_value": 3.2914897237111086e-11,
+      "u_stat": 339.0,
+      "u_p_value": 1.3862920886158292e-12,
+      "cohens_d": -1.666,
+      "statistically_significant": true,
+      "ci_95_diff": [
+        -1.74,
+        -1.08
+      ]
+    },
+    {
+      "metric_name": "Clich\u00e9 Count",
+      "condition_a": "Audio Calibration (M4R)",
+      "condition_b": "Negative Text Instruction",
+      "mean_a": 0.06,
+      "std_a": 0.24,
+      "mean_b": 1.94,
+      "std_b": 1.22,
+      "t_stat": -10.7,
+      "t_p_value": 7.889460283509771e-15,
+      "u_stat": 155.0,
+      "u_p_value": 2.681975412390487e-16,
+      "cohens_d": -2.14,
+      "statistically_significant": true,
+      "ci_95_diff": [
+        -2.22,
+        -1.54
+      ]
+    },
+    {
+      "metric_name": "Clich\u00e9 Count",
+      "condition_a": "Audio Calibration (M4R)",
+      "condition_b": "Autoregressive Baseline Control",
+      "mean_a": 0.06,
+      "std_a": 0.24,
+      "mean_b": 11.32,
+      "std_b": 3.02,
+      "t_stat": -26.282,
+      "t_p_value": 8.815530446651076e-31,
+      "u_stat": 0.0,
+      "u_p_value": 8.566217455003716e-20,
+      "cohens_d": -5.256,
+      "statistically_significant": true,
+      "ci_95_diff": [
+        -12.08,
+        -10.42
+      ]
+    },
+    {
+      "metric_name": "Blind Judge Score (0-10)",
+      "condition_a": "Audio Calibration (M4R)",
+      "condition_b": "Text Analysis CoT Control",
+      "mean_a": 9.09,
+      "std_a": 0.54,
+      "mean_b": 5.11,
+      "std_b": 0.78,
+      "t_stat": 29.53,
+      "t_p_value": 3.2932850726210763e-47,
+      "u_stat": 2500.0,
+      "u_p_value": 7.050152069091489e-18,
+      "cohens_d": 5.906,
+      "statistically_significant": true,
+      "ci_95_diff": [
+        3.72,
+        4.235
+      ]
+    },
+    {
+      "metric_name": "Blind Judge Score (0-10)",
+      "condition_a": "Audio Calibration (M4R)",
+      "condition_b": "Negative Text Instruction",
+      "mean_a": 9.09,
+      "std_a": 0.54,
+      "mean_b": 5.06,
+      "std_b": 0.67,
+      "t_stat": 33.082,
+      "t_p_value": 1.395752229983971e-53,
+      "u_stat": 2500.0,
+      "u_p_value": 7.045382738968392e-18,
+      "cohens_d": 6.616,
+      "statistically_significant": true,
+      "ci_95_diff": [
+        3.803,
+        4.271
+      ]
+    },
+    {
+      "metric_name": "Blind Judge Score (0-10)",
+      "condition_a": "Audio Calibration (M4R)",
+      "condition_b": "Autoregressive Baseline Control",
+      "mean_a": 9.09,
+      "std_a": 0.54,
+      "mean_b": 2.31,
+      "std_b": 0.46,
+      "t_stat": 67.558,
+      "t_p_value": 3.090264324609805e-82,
+      "u_stat": 2500.0,
+      "u_p_value": 7.039028385464788e-18,
+      "cohens_d": 13.512,
+      "statistically_significant": true,
+      "ci_95_diff": [
+        6.58,
+        6.973
+      ]
+    }
+  ]
+}
