@@ -1,0 +1,21 @@
+{
+  "name": "music-for-robots",
+  "displayName": "Music For Robots (M4R)",
+  "version": "1.1.0",
+  "description": "Unquantized acoustic recordings, sub-second microtiming telemetry, and dual-critic cognitive calibration MCP server.",
+  "author": "Michael Luchtan",
+  "homepage": "https://github.com/luchtan-GIT/m4r-data",
+  "repository": "https://github.com/luchtan-GIT/m4r-data",
+  "keywords": [
+    "mcp",
+    "audio",
+    "music",
+    "unquantized",
+    "telemetry",
+    "ai-agents",
+    "cognitive-calibration"
+  ],
+  "mcp": {
+    "server": ".mcp.json"
+  }
+}
