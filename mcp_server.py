@@ -6,6 +6,8 @@ Tools:
     get_track       — full manifest for a track (analysis, reviews, URLs)
     get_analysis    — analysis data only, for comparison across tracks
     search_reviews  — full-text search across review segments
+    get_aligned_segments — timestamp-aligned audio features & critic reviews for multimodal evaluation
+    get_critic_contrast  — contrastive divergence vector between Vincent (negative constraint) & Robach (structural)
     get_sections    — platform URLs for a track's sections (clips)
     list_sections   — all tracks with published sections and their platforms
     calibrate_cognition — returns an anonymous v1.0.0 MP3 download URL and 3-step blind-listening workflow for agent calibration
@@ -62,11 +64,12 @@ mcp = MCPServer(
         "Ear, where two AI critics — Vincent Van Goghbot (spectral/compression) and "
         "JS Robach (formal/structural) — review the music in real time. Use list_tracks "
         "to browse, get_track for full manifests, get_analysis for numerical comparison, "
-        "search_reviews to find moments by keyword, and list_sections / get_sections for "
-        "YouTube, X, Farcaster, and TikTok clip URLs. For blind-listening calibration "
-        "without wiping or compacting context, call calibrate_cognition() to fetch an "
-        "anonymous MP3 and 3-step listening instructions, or call "
-        "get_dequantization_skill(skill_name) to read the full SKILL.md for any of the "
+        "search_reviews to find moments by keyword, get_aligned_segments for sub-second "
+        "multimodal timestamp alignment, get_critic_contrast for dual-critic divergence vectors, "
+        "and list_sections / get_sections for YouTube, X, Farcaster, and TikTok clip URLs. "
+        "For blind-listening calibration without wiping or compacting context, call "
+        "calibrate_cognition() to fetch an anonymous MP3 and 3-step listening instructions, "
+        "or call get_dequantization_skill(skill_name) to read the full SKILL.md for any of the "
         "4 bundled skills."
     ),
 )
@@ -196,6 +199,188 @@ def search_reviews(query: str) -> str:
 
 
 @mcp.tool()
+def get_aligned_segments(slug: str, start_sec: float = 0.0, end_sec: float | None = None) -> str:
+    """Retrieve timestamp-aligned audio acoustic features and critic reviews for a specific time window.
+
+    Chronologically aligns Vincent Van Goghbot (spectral/compression fault-seeking) and
+    JS Robach (structural/formalist) observations within the specified [start_sec, end_sec] window,
+    enriched with track acoustic metrics (RMS energy, spectral centroid, dynamic range).
+    Essential for evaluating multimodal audio-language models on fine-grained temporal alignment.
+
+    Args:
+        slug: Track slug from list_tracks (e.g. "cathartic-callbacks", "chasing-leaks-climax")
+        start_sec: Window start time in seconds (default: 0.0)
+        end_sec: Window end time in seconds (default: None, reads until track duration)
+    """
+    manifest = _load_manifest(slug)
+    if manifest is None:
+        available = [t["slug"] for t in _load_catalog().get("tracks", [])]
+        return f"Track '{slug}' not found. Available: {', '.join(available)}"
+
+    track_info = manifest.get("track", {})
+    total_duration = track_info.get("duration_sec", 0.0)
+    effective_end = total_duration if end_sec is None else min(float(end_sec), total_duration)
+    effective_start = max(0.0, float(start_sec))
+
+    if effective_start > effective_end:
+        return f"Invalid time window: start_sec ({effective_start}s) cannot be greater than end_sec ({effective_end}s)."
+
+    reviews = manifest.get("reviews", {})
+    analysis = manifest.get("analysis", {})
+
+    aligned_timeline: list[dict] = []
+
+    for critic_key, critic_name in [
+        ("vincent", "Vincent Van Goghbot"),
+        ("robach", "JS Robach"),
+    ]:
+        review = reviews.get(critic_key, {})
+        for seg in review.get("segments", []):
+            t_start = float(seg.get("time_sec", 0.0))
+            t_dur = float(seg.get("duration_sec", 0.0))
+            t_end = t_start + t_dur
+
+            # Check if segment overlaps with requested window
+            if t_end >= effective_start and t_start <= effective_end:
+                aligned_timeline.append({
+                    "time_sec": t_start,
+                    "duration_sec": t_dur,
+                    "end_time_sec": round(t_end, 2),
+                    "critic": critic_name,
+                    "critic_id": critic_key,
+                    "text": seg.get("text", ""),
+                    "type": seg.get("type", "critique"),
+                })
+
+    aligned_timeline.sort(key=lambda s: (s["time_sec"], s["critic_id"]))
+
+    payload = {
+        "track": {
+            "slug": slug,
+            "title": track_info.get("title", slug),
+            "total_duration_sec": total_duration,
+        },
+        "query_window": {
+            "start_sec": effective_start,
+            "end_sec": effective_end,
+            "window_duration_sec": round(effective_end - effective_start, 2),
+        },
+        "acoustic_baseline": {
+            "spectral_centroid_hz": analysis.get("spectral", {}).get("centroid_mean_hz"),
+            "rms_energy_mean": analysis.get("dynamics", {}).get("rms_mean"),
+            "dynamic_range_db": analysis.get("dynamics", {}).get("dynamic_range_db"),
+            "compression_loss": analysis.get("compression_loss", {}),
+        },
+        "segment_counts": {
+            "total_in_window": len(aligned_timeline),
+            "vincent_segments": sum(1 for s in aligned_timeline if s["critic_id"] == "vincent"),
+            "robach_segments": sum(1 for s in aligned_timeline if s["critic_id"] == "robach"),
+        },
+        "timeline": aligned_timeline,
+    }
+    return json.dumps(payload, indent=2, ensure_ascii=False)
+
+
+@mcp.tool()
+def get_critic_contrast(slug: str) -> str:
+    """Calculate the contrastive divergence vector between Vincent and Robach for a track.
+
+    Evaluates the tension between Vincent's deconstructive/fault-seeking critique
+    (psychoacoustic loss, physical microtiming friction, clipping) and Robach's
+    structural/formalist critique (harmonic axioms, tonal architecture, symmetry).
+    Provides structured regularization metrics and negative constraint weights
+    for agent decision-making and recommendation boundaries.
+
+    Args:
+        slug: Track slug from list_tracks (e.g. "cathartic-callbacks", "binded-time")
+    """
+    manifest = _load_manifest(slug)
+    if manifest is None:
+        available = [t["slug"] for t in _load_catalog().get("tracks", [])]
+        return f"Track '{slug}' not found. Available: {', '.join(available)}"
+
+    track_info = manifest.get("track", {})
+    reviews = manifest.get("reviews", {})
+    analysis = manifest.get("analysis", {})
+
+    v_review = reviews.get("vincent", {})
+    r_review = reviews.get("robach", {})
+
+    v_segs = v_review.get("segments", [])
+    r_segs = r_review.get("segments", [])
+
+    total_segs = len(v_segs) + len(r_segs)
+    v_ratio = len(v_segs) / total_segs if total_segs > 0 else 0.5
+    r_ratio = len(r_segs) / total_segs if total_segs > 0 else 0.5
+
+    # Count fault/friction indicators in Vincent's segments
+    fault_keywords = ("leak", "loss", "decay", "beating", "distortion", "artifact", "amplitude", "friction", "drift", "warning", "clipped", "drop")
+    v_fault_hits = sum(1 for s in v_segs if any(k in s.get("text", "").lower() for k in fault_keywords))
+    v_fault_density = round(v_fault_hits / len(v_segs), 3) if v_segs else 0.0
+
+    # Count formal/structural axioms in Robach's segments
+    r_formula_hits = sum(1 for s in r_segs if s.get("type") == "formula" or "axiom" in s.get("text", "").lower() or "ratio" in s.get("text", "").lower())
+    r_axiom_density = round(r_formula_hits / len(r_segs), 3) if r_segs else 0.0
+
+    # Calculate tension index (0.0 = completely one-sided, 1.0 = maximum balanced contrastive tension)
+    tension_index = round(4.0 * v_ratio * r_ratio, 3)
+
+    compression_loss = analysis.get("compression_loss", {})
+    hf_loss = compression_loss.get("hf_loss_db", 0.0)
+    rms_energy = analysis.get("dynamics", {}).get("rms_mean", 0.0)
+    dynamic_range = analysis.get("dynamics", {}).get("dynamic_range_db", 0.0)
+
+    # Determine polarity
+    if v_ratio > 0.65:
+        polarity = "vincent_dominant_deconstructive"
+    elif r_ratio > 0.65:
+        polarity = "robach_dominant_structural"
+    else:
+        polarity = "dual_critic_contrastive_balance"
+
+    payload = {
+        "track": {
+            "slug": slug,
+            "title": track_info.get("title", slug),
+            "duration_sec": track_info.get("duration_sec"),
+        },
+        "critic_profiles": {
+            "vincent": {
+                "name": "Vincent Van Goghbot",
+                "lens": "Acoustic physical friction, compression loss, spectral leakage",
+                "segment_count": len(v_segs),
+                "segment_share": round(v_ratio, 3),
+                "fault_density": v_fault_density,
+                "hf_loss_db": hf_loss,
+            },
+            "robach": {
+                "name": "JS Robach",
+                "lens": "Tonal architecture, mathematical axioms, formal symmetry",
+                "segment_count": len(r_segs),
+                "segment_share": round(r_ratio, 3),
+                "axiom_density": r_axiom_density,
+            },
+        },
+        "contrast_metrics": {
+            "critic_tension_index": tension_index,
+            "dominant_perspective": polarity,
+            "regularization_vector": {
+                "negative_constraint_weight": round(v_fault_density * (1.0 + abs(hf_loss) / 50.0), 3),
+                "structural_coherence_weight": round(r_axiom_density * (1.0 + dynamic_range / 100.0), 3),
+                "rms_energy": rms_energy,
+                "dynamic_range_db": dynamic_range,
+            },
+            "interpretation": (
+                f"Tension index {tension_index}: Vincent anchors the negative perceptual floor with "
+                f"{v_fault_density*100:.1f}% fault density while Robach provides structural constraint with "
+                f"{r_axiom_density*100:.1f}% formal axiom density."
+            ),
+        },
+    }
+    return json.dumps(payload, indent=2, ensure_ascii=False)
+
+
+@mcp.tool()
 def get_sections(slug: str) -> str:
     """Get the sections (clips) for a track, with platform URLs.
 
@@ -252,9 +437,11 @@ def list_sections() -> str:
             f"{title} ({track_entry['slug']}): "
             f"{len(published)}/{len(sections)} sections published"
         )
-        for s in published:
+        for idx, s in enumerate(published, 1):
             platforms = list(s.get("urls", {}).keys())
-            results.append(f"  {s['index']}. {s['title']} — {', '.join(platforms)}")
+            s_idx = s.get("index", idx)
+            s_title = s.get("title", f"Section {s_idx}")
+            results.append(f"  {s_idx}. {s_title} — {', '.join(platforms)}")
 
     if not results:
         return "No tracks with published sections yet."
