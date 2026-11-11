@@ -139,7 +139,8 @@ def check_notifications():
 GROWTH_CHANNELS = [
     "ai-agents", "music-tech", "music", "elizaos", "ai",
     "sound", "creative-coding", "dev", "data", "open-source",
-    "python", "base", "founders", "builder"
+    "python", "base", "founders", "builder", "llms", "engineering",
+    "agents", "ai-art"
 ]
 
 def auto_follow_channel_creators(channels=GROWTH_CHANNELS, limit_per_run=15):
