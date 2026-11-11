@@ -169,7 +169,9 @@ def explore_feed(channels=["ai-agents", "music", "music-tech"]):
         except Exception as e:
             print(f"  • [/{ch}] Error: {e}")
 
-def spotlight_track(slug=None, channel_id="ai-agents"):
+CHANNELS_ROTATION = ["ai-agents", "music", "music-tech"]
+
+def spotlight_track(slug=None, channel_id=None):
     if not CATALOG_FILE.exists():
         print(f"Catalog file not found: {CATALOG_FILE}")
         return
@@ -180,6 +182,9 @@ def spotlight_track(slug=None, channel_id="ai-agents"):
     tracks = catalog.get("tracks", [])
     state = load_state()
     posted_slugs = state.get("posted_slugs", [])
+
+    if not channel_id:
+        channel_id = CHANNELS_ROTATION[len(posted_slugs) % len(CHANNELS_ROTATION)]
 
     selected = None
     if slug:
@@ -277,7 +282,7 @@ def main():
     parser.add_argument("--check", action="store_true", help="Check notifications and mentions")
     parser.add_argument("--spotlight", action="store_true", help="Post next track spotlight")
     parser.add_argument("--track", type=str, help="Specify slug for spotlight")
-    parser.add_argument("--channel", type=str, default="ai-agents", help="Target channel ID")
+    parser.add_argument("--channel", type=str, default=None, help="Target channel ID (defaults to automatic rotation)")
     parser.add_argument("--status", action="store_true", help="Show Farcaster bot status")
     args = parser.parse_args()
 
