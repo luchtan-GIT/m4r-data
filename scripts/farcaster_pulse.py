@@ -70,6 +70,9 @@ def post_cast(text, embeds=None, channel_id="ai-agents", parent_hash=None):
         "Content-Type": "application/json"
     }
 
+    if "#m4r" not in text.lower():
+        text = text.strip() + "\n\n#m4r"
+
     payload = {
         "signer_uuid": signer_uuid,
         "text": text
