@@ -317,7 +317,7 @@ def spotlight_track(slug=None, channel_id=None):
                 if pcs:
                     pitch_set = f"Pitch Class Set: {{{', '.join(pcs)}}}"
                 
-                # Check Vincent or Robach review
+                # Check Vincent, Robach, or Machine review
                 v_review = mdata.get("reviews", {}).get("vincent", {})
                 v_segs = v_review.get("segments", [])
                 if v_segs and len(v_segs) > 0:
@@ -327,6 +327,13 @@ def spotlight_track(slug=None, channel_id=None):
                     r_segs = r_review.get("segments", [])
                     if r_segs and len(r_segs) > 0:
                         critic_quote = f'"{r_segs[0].get("text")}" — JS Robach'
+                    else:
+                        m_review = mdata.get("reviews", {}).get("machine", {})
+                        m_segs = m_review.get("segments", [])
+                        if m_segs and len(m_segs) > 0:
+                            # Pick an evocative segment
+                            seg_txt = m_segs[-1].get("text") if len(m_segs) > 1 else m_segs[0].get("text")
+                            critic_quote = f'"{seg_txt}" — Signal Report'
         except Exception as e:
             print(f"Error parsing manifest {manifest_path}: {e}")
 
