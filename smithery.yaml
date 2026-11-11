@@ -7,6 +7,6 @@ startCommand:
   commandFunction:
     |-
     (config) => ({
-      command: 'uv',
-      args: ['run', '--with', 'mcp>=1.0.0', 'mcp_server.py']
+      command: 'uvx',
+      args: ['--from', 'git+https://github.com/luchtan-GIT/m4r-data.git', 'm4r-mcp']
     })
