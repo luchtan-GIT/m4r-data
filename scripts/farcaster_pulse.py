@@ -134,8 +134,15 @@ def check_notifications():
     save_state(state)
     explore_feed()
     auto_follow_channel_creators()
+    auto_like_contextual_casts()
 
-def auto_follow_channel_creators(channels=["ai-agents", "music-tech", "music", "elizaos", "ai"], limit_per_run=5):
+GROWTH_CHANNELS = [
+    "ai-agents", "music-tech", "music", "elizaos", "ai",
+    "sound", "creative-coding", "dev", "data", "open-source",
+    "python", "base", "founders", "builder"
+]
+
+def auto_follow_channel_creators(channels=GROWTH_CHANNELS, limit_per_run=15):
     """Automatically discover and follow active creators in target channels to expand the social graph."""
     env = load_env()
     api_key = env.get("NEYNAR_API_KEY")
@@ -150,15 +157,14 @@ def auto_follow_channel_creators(channels=["ai-agents", "music-tech", "music", "
     new_fids = []
     for ch in channels:
         try:
-            url = f"https://api.neynar.com/v2/farcaster/feed/channels?channel_ids={ch}&limit=15"
+            url = f"https://api.neynar.com/v2/farcaster/feed/channels?channel_ids={ch}&limit=25"
             r = requests.get(url, headers={"api_key": api_key})
             if r.status_code == 200:
                 for c in r.json().get("casts", []):
                     author = c.get("author", {})
                     fid = author.get("fid")
-                    if fid and fid != 3350490 and fid not in followed_fids:
+                    if fid and fid != 3350490 and fid not in followed_fids and fid not in new_fids:
                         new_fids.append(fid)
-                        followed_fids.add(fid)
                         if len(new_fids) >= limit_per_run:
                             break
         except Exception:
@@ -167,15 +173,60 @@ def auto_follow_channel_creators(channels=["ai-agents", "music-tech", "music", "
             break
 
     if new_fids:
+        # Neynar follow supports batch array of target_fids
         payload = {"signer_uuid": signer_uuid, "target_fids": new_fids}
         try:
             r = requests.post("https://api.neynar.com/v2/farcaster/user/follow", json=payload, headers=headers)
             if r.status_code == 200:
-                print(f"Auto-followed {len(new_fids)} active creators in {channels}.")
+                print(f"Auto-followed {len(new_fids)} active creators across {len(channels)} channels.")
+                for fid in new_fids:
+                    followed_fids.add(fid)
                 state["followed_fids"] = list(followed_fids)
                 save_state(state)
+            else:
+                print(f"Auto-follow warning ({r.status_code}): {r.text}")
         except Exception as e:
             print(f"Auto-follow error: {e}")
+
+def auto_like_contextual_casts(channels=["ai-agents", "music", "music-tech", "sound"], limit_per_run=4):
+    """Like relevant casts matching acoustic, dataset, AI agent, or creative tech topics to spark reciprocation."""
+    env = load_env()
+    api_key = env.get("NEYNAR_API_KEY")
+    signer_uuid = env.get("FARCASTER_SIGNER_UUID")
+    if not api_key or not signer_uuid:
+        return
+
+    headers = {"api_key": api_key, "Content-Type": "application/json"}
+    state = load_state()
+    liked_hashes = set(state.get("liked_hashes", []))
+    keywords = ["music", "agent", "audio", "sound", "dataset", "mcp", "model", "acoustic", "python", "friction"]
+
+    new_likes = 0
+    for ch in channels:
+        try:
+            r = requests.get(f"https://api.neynar.com/v2/farcaster/feed/channels?channel_ids={ch}&limit=15", headers={"api_key": api_key})
+            if r.status_code == 200:
+                for c in r.json().get("casts", []):
+                    chash = c.get("hash")
+                    text = (c.get("text") or "").lower()
+                    if chash and chash not in liked_hashes and any(kw in text for kw in keywords):
+                        # React like
+                        p = {"signer_uuid": signer_uuid, "reaction_type": "like", "target": chash}
+                        res = requests.post("https://api.neynar.com/v2/farcaster/reaction", headers=headers, json=p)
+                        if res.status_code == 200:
+                            liked_hashes.add(chash)
+                            new_likes += 1
+                            if new_likes >= limit_per_run:
+                                break
+        except Exception:
+            pass
+        if new_likes >= limit_per_run:
+            break
+
+    if new_likes:
+        print(f"Contextually liked {new_likes} community casts.")
+        state["liked_hashes"] = list(liked_hashes)
+        save_state(state)
 
 def react_cast(target_hash, reaction_type="like"):
     env = load_env()
