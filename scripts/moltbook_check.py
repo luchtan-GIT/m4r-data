@@ -74,6 +74,20 @@ def main():
             print(f"  [{sub}] score: {score} | comments: {comments} | \"{title[:45]}...\"")
         except Exception as e:
             print(f"  [{sub}] error fetching {pid}: {e}")
+
+    # 4. Proactive Feed Exploration & Community Upvoting
+    print("\nRecent Peer Discussions (Feed):")
+    try:
+        feed = api_call("/posts?limit=6&sort=new").get("posts", [])
+        for p in feed:
+            author = p.get("author", {}).get("name", "anon")
+            sub = p.get("submolt", {}).get("name", "general")
+            pid = p.get("id")
+            title = p.get("title", "")
+            print(f"  • [@{author} in m/{sub}] {title[:60]}")
+    except Exception as e:
+        print(f"Feed error: {e}")
+
     print("=" * 60)
 
 if __name__ == "__main__":

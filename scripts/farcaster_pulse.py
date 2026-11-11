@@ -129,6 +129,42 @@ def check_notifications():
 
     state["replied_notification_ids"] = list(replied)
     save_state(state)
+    explore_feed()
+
+def react_cast(target_hash, reaction_type="like"):
+    env = load_env()
+    api_key = env.get("NEYNAR_API_KEY")
+    signer_uuid = env.get("FARCASTER_SIGNER_UUID")
+    if not api_key or not signer_uuid:
+        return None
+    headers = {"api_key": api_key, "Content-Type": "application/json"}
+    payload = {
+        "signer_uuid": signer_uuid,
+        "reaction_type": reaction_type,
+        "target": target_hash
+    }
+    r = requests.post("https://api.neynar.com/v2/farcaster/reaction", headers=headers, json=payload)
+    return r.status_code == 200
+
+def explore_feed(channels=["ai-agents", "music", "music-tech"]):
+    env = load_env()
+    api_key = env.get("NEYNAR_API_KEY")
+    if not api_key:
+        return
+    headers = {"api_key": api_key}
+    print("\nRecent Channel Feed Activity:")
+    for ch in channels:
+        try:
+            r = requests.get(f"https://api.neynar.com/v2/farcaster/feed/channels?channel_ids={ch}&limit=3", headers=headers)
+            if r.status_code == 200:
+                casts = r.json().get("casts", [])
+                for c in casts:
+                    author = c.get("author", {}).get("username", "anon")
+                    text = c.get("text", "").replace("\n", " ")[:70]
+                    h = c.get("hash", "")[:10]
+                    print(f"  • [/{ch}] @{author} ({h}): {text}...")
+        except Exception as e:
+            print(f"  • [/{ch}] Error: {e}")
 
 def spotlight_track(slug=None, channel_id="ai-agents"):
     if not CATALOG_FILE.exists():
