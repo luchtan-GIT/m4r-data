@@ -1,0 +1,6 @@
+# Local state and caches
+.farcaster_state.json
+.cache/
+__pycache__/
+*.pyc
+.env
