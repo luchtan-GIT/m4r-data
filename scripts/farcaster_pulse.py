@@ -133,6 +133,49 @@ def check_notifications():
     state["replied_notification_ids"] = list(replied)
     save_state(state)
     explore_feed()
+    auto_follow_channel_creators()
+
+def auto_follow_channel_creators(channels=["ai-agents", "music-tech", "music", "elizaos", "ai"], limit_per_run=5):
+    """Automatically discover and follow active creators in target channels to expand the social graph."""
+    env = load_env()
+    api_key = env.get("NEYNAR_API_KEY")
+    signer_uuid = env.get("FARCASTER_SIGNER_UUID")
+    if not api_key or not signer_uuid:
+        return
+
+    headers = {"api_key": api_key, "Content-Type": "application/json"}
+    state = load_state()
+    followed_fids = set(state.get("followed_fids", []))
+
+    new_fids = []
+    for ch in channels:
+        try:
+            url = f"https://api.neynar.com/v2/farcaster/feed/channels?channel_ids={ch}&limit=15"
+            r = requests.get(url, headers={"api_key": api_key})
+            if r.status_code == 200:
+                for c in r.json().get("casts", []):
+                    author = c.get("author", {})
+                    fid = author.get("fid")
+                    if fid and fid != 3350490 and fid not in followed_fids:
+                        new_fids.append(fid)
+                        followed_fids.add(fid)
+                        if len(new_fids) >= limit_per_run:
+                            break
+        except Exception:
+            pass
+        if len(new_fids) >= limit_per_run:
+            break
+
+    if new_fids:
+        payload = {"signer_uuid": signer_uuid, "target_fids": new_fids}
+        try:
+            r = requests.post("https://api.neynar.com/v2/farcaster/user/follow", json=payload, headers=headers)
+            if r.status_code == 200:
+                print(f"Auto-followed {len(new_fids)} active creators in {channels}.")
+                state["followed_fids"] = list(followed_fids)
+                save_state(state)
+        except Exception as e:
+            print(f"Auto-follow error: {e}")
 
 def react_cast(target_hash, reaction_type="like"):
     env = load_env()
