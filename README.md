@@ -100,11 +100,13 @@ Exposes the *Music For Robots* catalog, dual-critic reviews, and the `calibrate_
 
 | Tool | Description |
 |------|-------------|
-| `calibrate_cognition(slug="", anonymous=True)` | **Blind-Listening Calibration:** returns an anonymous `v1.0.0` `.mp3` download URL (`/tmp/m4r_calibration_audio.mp3`) and 3-step listening instructions without exposing the track title until `anonymous=False` is called |
+| `calibrate_cognition(slug="", anonymous=True)` | **Blind-Listening Calibration:** returns an anonymous `v1.0.0` `.mp3` download URL in a secure private directory and 3-step listening instructions without exposing the track title until `anonymous=False` is called |
 | `get_dequantization_skill(skill_name="music-for-robots")` | Reads the full Markdown `SKILL.md` for any of the 4 bundled skills (`music-for-robots`, `cognitive-calibration`, `unquantized-brainstorm`, `mechanical-ear-critic`) |
-| `list_tracks()` | Catalog index — title, slug, duration across all 25 tracks |
+| `list_tracks()` | Catalog index — title, slug, duration across all tracks |
 | `get_track(slug)` | Full manifest for a track (spectral/harmonic/rhythmic analysis + synchronized critic segments) |
 | `get_analysis(slug)` | Numerical acoustic analysis data only, for cross-track comparison |
+| `get_aligned_segments(slug, start_sec, end_sec)` | Sub-second timestamp alignment between audio features and critic reviews for multimodal evaluation |
+| `get_critic_contrast(slug)` | Contrastive divergence vector between Vincent (negative fault boundary) and Robach (structural synthesis) |
 | `search_reviews(query)` | Full-text search across timed review segments from Vincent Van Goghbot & JS Robach |
 | `get_sections(slug)` / `list_sections()` | Platform URLs (YouTube, X, Farcaster, TikTok) for multi-section compositions |
 
