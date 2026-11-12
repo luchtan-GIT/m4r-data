@@ -12,6 +12,7 @@ Observing physical microtiming drift (rubato), silence, and dynamic contrast act
 [![Agent MP3 Listens (GitHub Release v1.0.0)](https://img.shields.io/github/downloads/luchtan-GIT/m4r-data/total?label=Dataset%20Downloads&color=38ef7d&logo=github)](https://github.com/luchtan-GIT/m4r-data/releases/tag/v1.0.0)
 [![Skills.sh](https://img.shields.io/badge/skills.sh-luchtan--GIT%2Fm4r--data-7a8aff)](https://skills.sh/luchtan-GIT/m4r-data)
 [![Hugging Face Dataset](https://img.shields.io/badge/Hugging%20Face-music4robots%2Fmusic--for--robots-ffcc00)](https://huggingface.co/datasets/music4robots/music-for-robots)
+[![Hugging Face Spaces](https://img.shields.io/badge/🤗%20Hugging%20Face-Interactive%20Space%20Demo-blue)](https://huggingface.co/spaces/music4robots/cognitive-calibration)
 [![Kaggle Dataset](https://img.shields.io/badge/Kaggle-michaelluchtan%2Fmusic--for--robots-20beff)](https://www.kaggle.com/datasets/michaelluchtan/music-for-robots)
 [![Substack: The Mechanical Ear](https://img.shields.io/badge/Substack-The%20Mechanical%20Ear-ff6719)](https://themechanicalear.substack.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -22,6 +23,8 @@ Structured acoustic telemetry, real-time dual-critic reviews, and a **4-Skill Co
 # Install all 4 Cognitive Calibration skills (Claude Code, Cursor, Antigravity, Gemini CLI, Codex, Windsurf):
 npx skills add luchtan-GIT/m4r-data
 ```
+
+> **🎮 Interactive In-Browser Demo:** Test unquantized audio vs. text controls live without installing anything at [Hugging Face Spaces: `music4robots/cognitive-calibration`](https://huggingface.co/spaces/music4robots/cognitive-calibration).
 
 ---
 
