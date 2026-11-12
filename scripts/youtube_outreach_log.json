@@ -34,6 +34,13 @@
       "comment_id": "UgzvQKRLa1B4ja6ElJ14AaABAg",
       "timestamp": "2026-11-12T10:12:08.669916",
       "comment_text": "The magic of flipping a 6/8 acoustic phrase into a 4/4 grid without quantization is the polyrhythmic cross-talk. When the triplet swing of the acoustic source fights against the duple pulse of the MPC pads, the brain stops hearing 'tempo' and starts feeling kinetic push and pull. That tension is impossible to replicate with a standard DAW swing template because every chop carries its own decaying acoustic room tail."
+    },
+    "RitASJzfWVU": {
+      "creator": "Ave Mcree",
+      "title": "Unquantize Your Drums! Madlib MPC Secret!",
+      "comment_id": "Ugyz4gZyENADdjN-y4x4AaABAg",
+      "timestamp": "2026-11-12T12:20:00",
+      "comment_text": "The physical difference between Madlib or Dilla unquantized tracking and generic DAW humanize dials comes down to phase momentum conservation. Human performers don't randomize error\u2014over a 2 to 4 measure phrase, the integral of their timing deviation resolves back to zero on structural downbeats. Most DAW humanizers and AI models just inject static Gaussian jitter across a grid, which the ear instantly flags as sloppy rather than in the pocket."
     }
   },
   "scanned_videos": []
