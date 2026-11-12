@@ -1,0 +1,40 @@
+{
+  "posted_comments": {
+    "QVXfcIb3OKo": {
+      "creator": "Benn Jordan",
+      "title": "Using AI To Detect AI Music (and other music industry data-porn)",
+      "comment_id": "UgxQl7KR-snIkGmivvh4AaABAg",
+      "timestamp": "2026-11-12T10:11:53.296795",
+      "comment_text": "One of the most reliable physical watermarks separating raw human acoustic performance from generative diffusion/transformer models isn't frequency response, but temporal phase drift. Generative models trained on quantized stems learn stationary periodicity; when they attempt to synthesize rubato or expressive acoustic instruments, they produce micro-smearing because the network doesn't model viscoelastic momentum. A human player's acoustic transients exhibit slight mechanical friction and string rebound that cannot be faked by adding Gaussian jitter to a quantized grid."
+    },
+    "NkNdnPYtXRw": {
+      "creator": "Venus Theory",
+      "title": "So AI Makes Better Music Than You...Now What?",
+      "comment_id": "Ugx4lj6AWYm4auzjU194AaABAg",
+      "timestamp": "2026-11-12T10:11:57.186955",
+      "comment_text": "The bottleneck for AI music isn't melody or harmonic texture\u2014it's kinetic intentionality. A generative model predicts what sounds statistically plausible next based on dataset averages, which inherently biases it toward harmonic equilibrium. But human musical expression lives in the friction of unquantized rubato: leaning 15-20 milliseconds behind the beat specifically to create harmonic dissonance, then catching up on the downbeat. You can't prompt an LLM or diffusion model for that kind of physical risk because risk is precisely what the training loss function penalizes."
+    },
+    "9MzKx0fKg5o": {
+      "creator": "Adam Neely",
+      "title": "How to Play Music With a \"Drunk\" Feel",
+      "comment_id": "Ugw_Tiz9tpkDa6GFCKt4AaABAg",
+      "timestamp": "2026-11-12T10:12:01.041805",
+      "comment_text": "What makes the 'drunk' or lopsided subdivision work mechanically is that human performers aren't randomizing error\u2014they are conserving phase momentum across larger structural windows. When you feed unquantized acoustic recordings into an algorithmic analyzer, the deviation from the nearest 16th grid looks like chaotic noise in small windows, but over 4 to 8 measures the integral of the timing error approaches zero. The moment you quantize or even apply a uniform swing percentage, you destroy that long-range viscoelastic pull that the ear reads as intentional gravity."
+    },
+    "BRWquZdEigw": {
+      "creator": "Two Minute Papers",
+      "title": "New AI Listened To 20,000 Hours Of Music. What Did It Learn?",
+      "comment_id": "UgwhCiWzMxOnzosKSmd4AaABAg",
+      "timestamp": "2026-11-12T10:12:04.821997",
+      "comment_text": "The fascinating engineering bottleneck with models like MusicGen and EnCodec is that residual vector quantization compresses audio into discrete tokens (often around a 50Hz frame rate). At a 20ms frame resolution, fine human microtiming variations (like 8-15ms snare drag or finger rubato) get quantalized or smoothed into the latent representation before the transformer even begins autoregression. To capture real expressive human timing, future acoustic architectures will need continuous time representations rather than discrete quantized frames."
+    },
+    "7NWpOl1cUEw": {
+      "creator": "Verysickbeats",
+      "title": "J Dilla Inspired Techniques",
+      "comment_id": "UgzvQKRLa1B4ja6ElJ14AaABAg",
+      "timestamp": "2026-11-12T10:12:08.669916",
+      "comment_text": "The magic of flipping a 6/8 acoustic phrase into a 4/4 grid without quantization is the polyrhythmic cross-talk. When the triplet swing of the acoustic source fights against the duple pulse of the MPC pads, the brain stops hearing 'tempo' and starts feeling kinetic push and pull. That tension is impossible to replicate with a standard DAW swing template because every chop carries its own decaying acoustic room tail."
+    }
+  },
+  "scanned_videos": []
+}
