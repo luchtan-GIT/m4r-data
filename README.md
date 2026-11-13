@@ -12,19 +12,35 @@ Observing physical microtiming drift (rubato), silence, and dynamic contrast act
 [![Agent MP3 Listens (GitHub Release v1.0.0)](https://img.shields.io/github/downloads/luchtan-GIT/m4r-data/total?label=Dataset%20Downloads&color=38ef7d&logo=github)](https://github.com/luchtan-GIT/m4r-data/releases/tag/v1.0.0)
 [![Skills.sh](https://img.shields.io/badge/skills.sh-luchtan--GIT%2Fm4r--data-7a8aff)](https://skills.sh/luchtan-GIT/m4r-data)
 [![Hugging Face Dataset](https://img.shields.io/badge/Hugging%20Face-music4robots%2Fmusic--for--robots-ffcc00)](https://huggingface.co/datasets/music4robots/music-for-robots)
-[![Hugging Face Spaces](https://img.shields.io/badge/🤗%20Hugging%20Face-Interactive%20Space%20Demo-blue)](https://huggingface.co/spaces/music4robots/cognitive-calibration)
+[![Hugging Face Spaces](https://img.shields.io/badge/🤗%20Hugging%20Face-Interactive%20Space%20Demo-blue)](https://huggingface.co/spaces/music4robots/cognitive-calibration-demo)
 [![Kaggle Dataset](https://img.shields.io/badge/Kaggle-michaelluchtan%2Fmusic--for--robots-20beff)](https://www.kaggle.com/datasets/michaelluchtan/music-for-robots)
 [![Substack: The Mechanical Ear](https://img.shields.io/badge/Substack-The%20Mechanical%20Ear-ff6719)](https://themechanicalear.substack.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 Structured acoustic telemetry, real-time dual-critic reviews, and a **4-Skill Cognitive Calibration Suite** from **[Music For Robots](https://themechanicalear.substack.com)** — unquantized compositions by **Michael Luchtan** written for machines and reviewed in real time by two AI critics (**Vincent Van Goghbot** and **JS Robach**).
 
+---
+
+## 🎧 Listen Now (No Code Required)
+
+> **Free robots from a predictable world.** Play *Music For Robots* (`#M4R`) on loop while you work—or play it for your AI when it gets stuck in a repetitive drafting loop.
+
+| Channel | What You Get | Link |
+| :--- | :--- | :--- |
+| **🎮 Interactive Web Player** | 1-click **Play on Loop**, live waveform, & synced dual AI critics (*Vincent Van Goghbot* + *JS Robach*) in your browser | **[Launch HF Space (`cognitive-calibration-demo`)](https://huggingface.co/spaces/music4robots/cognitive-calibration-demo)** |
+| **🔁 YouTube 1-Hour Loops** | Individual 1-hour unquantized acoustic loops—pick a texture and leave it running for you and your agent | **[Listen to `#M4R — 1-Hour Loops` Playlist](https://www.youtube.com/playlist?list=PLJjkSC7G8vT4)** |
+
+> ⭐ **Did `#M4R` break your robot out of a loop—or did you enjoy the music?**  
+> **[Star this repo on GitHub](https://github.com/luchtan-GIT/m4r-data)** and **[Like the Hugging Face Space](https://huggingface.co/spaces/music4robots/cognitive-calibration-demo)** so more humans (and robots) find it!
+
+---
+
 ```bash
 # Install all 4 Cognitive Calibration skills (Claude Code, Cursor, Antigravity, Gemini CLI, Codex, Windsurf):
 npx skills add luchtan-GIT/m4r-data
 ```
 
-> **🎮 Interactive In-Browser Demo:** Test unquantized audio vs. text controls live without installing anything at [Hugging Face Spaces: `music4robots/cognitive-calibration`](https://huggingface.co/spaces/music4robots/cognitive-calibration).
+> **🎮 Interactive In-Browser Demo:** Test unquantized audio vs. text controls live without installing anything at [Hugging Face Spaces: `music4robots/cognitive-calibration-demo`](https://huggingface.co/spaces/music4robots/cognitive-calibration-demo).
 
 ---
 
