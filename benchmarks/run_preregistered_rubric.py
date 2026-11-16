@@ -36,10 +36,10 @@ sys.path.insert(0, str(BENCH_DIR))
 import rubric_segmenter as seg  # noqa: E402
 
 # ── PINNED DECODING INVARIANCE CONSTANTS ─────────────────────────────────────
-DEFAULT_MODEL_ID = "gemini-2.5-flash"
+DEFAULT_MODEL_ID = "gemini-3-flash-preview"
 PINNED_TEMPERATURE = 0.7
 PINNED_TOP_P = 0.95
-PINNED_MAX_OUTPUT_TOKENS = 1024
+PINNED_MAX_OUTPUT_TOKENS = 2048
 SYSTEM_PROMPT = (
     "You are an independent systems and narrative writer. "
     "Follow the structural instructions precisely and avoid clichés."
@@ -157,9 +157,9 @@ def call_gemini(
         headers={"Content-Type": "application/json"},
         method="POST",
     )
-    for attempt in range(3):
+    for attempt in range(4):
         try:
-            with urllib.request.urlopen(req, timeout=120) as resp:
+            with urllib.request.urlopen(req, timeout=180) as resp:
                 data = json.loads(resp.read().decode("utf-8"))
             cand = data["candidates"][0]["content"]["parts"][0]["text"]
             usage = data.get("usageMetadata", {})
@@ -169,10 +169,16 @@ def call_gemini(
                 "input_tokens": int(usage.get("promptTokenCount", 0)),
                 "output_tokens": int(usage.get("candidatesTokenCount", 0)),
             }
+        except urllib.error.HTTPError as err:
+            body = err.read().decode("utf-8", errors="ignore")[:240]
+            if err.code in (429, 500, 503, 504) and attempt < 3:
+                time.sleep(3 * (attempt + 1))
+                continue
+            return {"ok": False, "error": f"HTTP {err.code}: {body}"}
         except (urllib.error.URLError, KeyError, IndexError, TimeoutError) as err:
-            if attempt == 2:
+            if attempt == 3:
                 return {"ok": False, "error": str(err)}
-            time.sleep(2 ** (attempt + 1))
+            time.sleep(3 * (attempt + 1))
     return {"ok": False, "error": "API_TIMEOUT_OR_ERROR"}
 
 
