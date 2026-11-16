@@ -62,6 +62,12 @@
       "path": "tracks/empty-staircase/manifest.json"
     },
     {
+      "slug": "festicide",
+      "title": "Festicide",
+      "duration_sec": 118.57,
+      "path": "tracks/festicide/manifest.json"
+    },
+    {
       "slug": "foundationoff",
       "title": "Foundationoff",
       "duration_sec": 6.88,

@@ -1,0 +1,91 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "Festicide",
+    "slug": "festicide",
+    "mix": "FesticideRAW3",
+    "duration_sec": 118.57
+  },
+  "analysis": {
+    "spectral": {
+      "centroid_mean_hz": 1656.6,
+      "centroid_std_hz": 620.1,
+      "bandwidth_mean_hz": 2482.2,
+      "rolloff_85pct_hz": 3248.9
+    },
+    "dynamics": {
+      "rms_mean": 0.0286,
+      "rms_max": 0.0627,
+      "dynamic_range_db": 14.8,
+      "n_onsets": 255,
+      "onset_rate_per_sec": 2.15
+    },
+    "compression_loss": {
+      "energy_above_16khz": 3.6e-05,
+      "energy_below_16khz": 0.952139,
+      "loss_ratio": 3.8e-05,
+      "note": "ratio of spectral energy above 16kHz to below — what a 128kbps encode would discard"
+    },
+    "duration_sec": 118.57,
+    "sample_rate": 44100,
+    "chroma_dominant": "E",
+    "chroma_profile": {
+      "C": 0.6233989596366882,
+      "C#": 0.5758563280105591,
+      "D": 0.8452037572860718,
+      "D#": 0.8049339056015015,
+      "E": 1.0,
+      "F": 0.8983743786811829,
+      "F#": 0.7852519154548645,
+      "G": 0.8896338939666748,
+      "G#": 0.7316162586212158,
+      "A": 0.797359049320221,
+      "A#": 0.6024532318115234,
+      "B": 0.5439221858978271
+    },
+    "harmonic": {
+      "pitch_class_set": [
+        "C",
+        "C#",
+        "D",
+        "D#",
+        "E",
+        "F",
+        "F#",
+        "G",
+        "G#",
+        "A",
+        "A#",
+        "B"
+      ],
+      "cardinality": 12
+    },
+    "harmonic_percussive_ratio": 42.78
+  },
+  "urls": {
+    "youtube": "https://youtube.com/watch?v=oQ6UrCAC1Fc",
+    "x": "https://x.com/MechanicalEar/status/2122319079130239447",
+    "farcaster": [
+      "https://warpcast.com/mechanicalear/0x4f2b8fe7",
+      "https://warpcast.com/mechanicalear/0xd5262c7d",
+      "https://warpcast.com/mechanicalear/0x08bdc87b"
+    ],
+    "sections": [
+      {
+        "index": 1,
+        "slug": "festicide-raw3-v12-whisper",
+        "title": "Festicide (RAW3) — Whispered-ASCII Waterfall",
+        "urls": {
+          "youtube": "https://youtube.com/watch?v=oQ6UrCAC1Fc",
+          "x": "https://x.com/MechanicalEar/status/2122319079130239447",
+          "farcaster_music": "0x4f2b8fe74df9f34587480f55d37dafb0c3427438",
+          "farcaster_art": "0xd5262c7d6075be01ddbab24c114fcbdd3cc30e53",
+          "farcaster_ai": "0x08bdc87b5013854c92f634540b47e94ccd2755a3"
+        }
+      }
+    ]
+  }
+}
