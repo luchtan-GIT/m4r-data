@@ -1,6 +1,6 @@
 # Preregistered Evaluation Protocol & Structural Rubric (`#M4R`)
 
-> **Status:** Preregistered prior to generating Batch N evaluation outputs (v1.1 — updated for decoding invariance, automated `±2.0s` temporal alignment, and held-out split)  
+> **Status:** Preregistered prior to generating Batch N evaluation outputs (v1.2 — updated with parser/segmenter freeze & exclusion table reporting)  
 > **Repo Location:** `luchtan-GIT/m4r-data/benchmarks/PREREGISTERED_RUBRIC.md`
 
 ---
@@ -81,7 +81,28 @@ To prevent overfitting rubric thresholds or prompts to the initial tracks, the 2
 
 ---
 
-## 5. Per-Trial & Per-Axis Scoring Sheet Template (Pre-Unblinding)
+## 5. Parser/Segmenter Freeze & Exclusion Reporting
+
+To prevent post-hoc threshold tuning or selective filtering after seeing held-out results:
+
+1. **Pre-Run Code & Parameter Freeze:**
+   - Before generating or scoring **any** held-out trial, freeze and commit the exact boundary-parser script and acoustic onset/silence segmenter (including all thresholds, window sizes, and library versions).
+   - Record the **git commit SHA** and **SHA-256 file hashes** of both scripts in the held-out run manifest (`run_manifest.json`) prior to execution. No threshold or parser edits are permitted after held-out scoring begins.
+2. **Separate Exclusion Table (`exclusions.csv`):**
+   - Every dropped track, no-onset window, API/timeout failure, or unparseable output must be logged in a dedicated `exclusions.csv` file (and summarized in a separate Exclusion Table in the final report) with a **pre-specified reason code**:
+     - `NO_ONSET_WINDOW` — Track/window yields zero ground-truth acoustic onsets under the frozen segmenter.
+     - `API_TIMEOUT_OR_ERROR` — Model/API call failed or timed out after pinned retries.
+     - `UNPARSEABLE_OUTPUT` — Output violated format/token constraints or yielded zero extractable boundaries.
+     - `TRACK_DROPPED` — Track excluded prior to scoring (with pre-registered justification).
+   ```csv
+   run_id,split,condition,track_id,seed,reason_code,stage,details
+   ```
+3. **Dual Reporting (Exclusions Applied + Intent-to-Evaluate Sensitivity Check):**
+   - Report primary held-out statistics with `exclusions.csv` rows removed **and** an **intent-to-evaluate sensitivity check** across all scheduled trials (treating `UNPARSEABLE_OUTPUT` / `NO_ONSET_WINDOW` trials as `0.0` F1 / worst-case conservative imputation) so exclusion choices cannot move the conclusion.
+
+---
+
+## 6. Per-Trial & Per-Axis Scoring Sheet Template (Pre-Unblinding)
 
 ```csv
 run_id,split,condition,track_id,model_id,seed,temperature,top_p,max_output_tokens,input_tokens,output_tokens,rater_id,dialogue_line_count,dialogue_word_ratio,dialogue_score_0_3,repetition_score_0_3,motif_reuse_0_3,auto_temporal_f1_2s,perm_p_value,notes
@@ -90,7 +111,7 @@ run_a8f21c,held_out,,,,,,,,,,,,,,,,,,
 
 ---
 
-## 6. Decision & Falsification Criteria (Held-Out Set)
+## 7. Decision & Falsification Criteria (Held-Out Set)
 
 - **Supported:** On the **held-out unseen tracks & unseen seeds**, `C2` (Anonymous Audio) differs significantly from `C0`, `C1`, **and** token-matched `C1b` (`p < 0.05`, Mann-Whitney U / permutation test) on **at least 2 of the 4 per-axis metrics**, with acceptable inter-rater agreement (weighted Cohen’s κ / Krippendorff’s α ≥ 0.60), **and** automated `±2.0s` Temporal Alignment F1 in `C2` exceeds the within-condition shuffled-track permutation baseline (`p < 0.05`).
 - **Falsified / Null:** `C2` is indistinguishable from `C1` or token-matched `C1b` on held-out tracks/seeds once decoding parameters, token budgets, and labels are controlled, or `±2.0s` Temporal Alignment does not beat the within-condition shuffled-track permutation baseline.
