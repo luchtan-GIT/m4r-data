@@ -39,7 +39,8 @@ import rubric_segmenter as seg  # noqa: E402
 DEFAULT_MODEL_ID = "gemini-3-flash-preview"
 PINNED_TEMPERATURE = 0.7
 PINNED_TOP_P = 0.95
-PINNED_MAX_OUTPUT_TOKENS = 2048
+PINNED_MAX_OUTPUT_TOKENS = 4096
+PINNED_THINKING_BUDGET = 0
 SYSTEM_PROMPT = (
     "You are an independent systems and narrative writer. "
     "Follow the structural instructions precisely and avoid clichés."
@@ -148,6 +149,7 @@ def call_gemini(
             "topP": PINNED_TOP_P,
             "maxOutputTokens": PINNED_MAX_OUTPUT_TOKENS,
             "seed": seed,
+            "thinkingConfig": {"thinkingBudget": PINNED_THINKING_BUDGET},
         },
     }
     url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_id}:generateContent?key={api_key}"
@@ -314,7 +316,7 @@ def main() -> None:
             c2_input_tokens.append(res["input_tokens"])
 
         target_text, has_delim = strip_preamble(res["text"])
-        if len(target_text.split()) < 40:
+        if (cond != "C0" and not has_delim) or len(target_text.split()) < 40:
             exclusions.append({**t, "split": args.split, "reason_code": "UNPARSEABLE_OUTPUT", "stage": "parser", "details": f"delim={has_delim}, words={len(target_text.split())}"})
             continue
 
