@@ -222,6 +222,8 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--split", choices=["dev", "held_out"], default="held_out")
     parser.add_argument("--model", default=DEFAULT_MODEL_ID)
+    parser.add_argument("--resume", type=str, default="", help="Existing run directory to resume")
+    parser.add_argument("--limit", type=int, default=0, help="Max new API calls in this batch (0=all)")
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
 
@@ -230,35 +232,51 @@ def main() -> None:
         print("ERROR: Missing GEMINI_API_KEY (or GOOGLE_API_KEY) in environment or ~/.env.")
         sys.exit(1)
 
-    run_tag = f"{args.split}_{datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')}"
-    out_dir = BENCH_DIR / "preregistered_runs" / run_tag
-    out_dir.mkdir(parents=True, exist_ok=True)
-
-    # 1. Freeze manifest
-    freeze_manifest = {
-        "run_tag": run_tag,
-        "split": args.split,
-        "git_commit_sha": git_head_sha(),
-        "rubric_sha256": seg.sha256_file(BENCH_DIR / "PREREGISTERED_RUBRIC.md"),
-        "segmenter_sha256": seg.sha256_file(BENCH_DIR / "rubric_segmenter.py"),
-        "harness_sha256": seg.sha256_file(Path(__file__).resolve()),
-        "pinned_decoding": {
-            "model_id": args.model,
-            "temperature": PINNED_TEMPERATURE,
-            "top_p": PINNED_TOP_P,
-            "max_output_tokens": PINNED_MAX_OUTPUT_TOKENS,
-            "system_prompt": SYSTEM_PROMPT,
-        },
-        "frozen_segmenter_params": {
-            "tolerance_sec": seg.TOLERANCE_SEC,
-            "n_permutations": seg.N_PERMUTATIONS,
-            "onset_delta": seg.ONSET_DELTA,
-            "onset_wait_frames": seg.ONSET_WAIT_FRAMES,
-            "silence_top_db": seg.SILENCE_TOP_DB,
-            "min_boundary_gap_sec": seg.MIN_BOUNDARY_GAP_SEC,
-        },
-    }
-    (out_dir / "run_manifest.json").write_text(json.dumps(freeze_manifest, indent=2) + "\n", encoding="utf-8")
+    completed: list[dict[str, Any]] = []
+    if args.resume:
+        out_dir = Path(args.resume).resolve()
+        manifest_path = out_dir / "run_manifest.json"
+        if not manifest_path.exists():
+            print(f"ERROR: Missing run_manifest.json in {out_dir}")
+            sys.exit(1)
+        freeze_manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        args.split = freeze_manifest["split"]
+        args.model = freeze_manifest["pinned_decoding"]["model_id"]
+        run_tag = freeze_manifest["run_tag"]
+        telem_path = out_dir / "raw_telemetry.jsonl"
+        if telem_path.exists():
+            for line in telem_path.read_text(encoding="utf-8").splitlines():
+                if line.strip():
+                    completed.append(json.loads(line))
+        print(f"Resuming {run_tag} ({args.split}, {args.model}) with {len(completed)} completed trials")
+    else:
+        run_tag = f"{args.split}_{datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')}"
+        out_dir = BENCH_DIR / "preregistered_runs" / run_tag
+        out_dir.mkdir(parents=True, exist_ok=True)
+        freeze_manifest = {
+            "run_tag": run_tag,
+            "split": args.split,
+            "git_commit_sha": git_head_sha(),
+            "rubric_sha256": seg.sha256_file(BENCH_DIR / "PREREGISTERED_RUBRIC.md"),
+            "segmenter_sha256": seg.sha256_file(BENCH_DIR / "rubric_segmenter.py"),
+            "harness_sha256": seg.sha256_file(Path(__file__).resolve()),
+            "pinned_decoding": {
+                "model_id": args.model,
+                "temperature": PINNED_TEMPERATURE,
+                "top_p": PINNED_TOP_P,
+                "max_output_tokens": PINNED_MAX_OUTPUT_TOKENS,
+                "system_prompt": SYSTEM_PROMPT,
+            },
+            "frozen_segmenter_params": {
+                "tolerance_sec": seg.TOLERANCE_SEC,
+                "n_permutations": seg.N_PERMUTATIONS,
+                "onset_delta": seg.ONSET_DELTA,
+                "onset_wait_frames": seg.ONSET_WAIT_FRAMES,
+                "silence_top_db": seg.SILENCE_TOP_DB,
+                "min_boundary_gap_sec": seg.MIN_BOUNDARY_GAP_SEC,
+            },
+        }
+        (out_dir / "run_manifest.json").write_text(json.dumps(freeze_manifest, indent=2) + "\n", encoding="utf-8")
 
     # 2. Pre-extract ground-truth acoustic vectors G for all scheduled tracks
     trials = build_schedule(args.split)
@@ -282,11 +300,20 @@ def main() -> None:
     other_trials = [t for t in trials if t["condition"] != "C2"]
     ordered_trials = c2_trials + other_trials
 
+    done_ids = {item["run_id"] for item in completed}
     exclusions: list[dict[str, Any]] = []
-    completed: list[dict[str, Any]] = []
-    c2_input_tokens: list[int] = []
+    c2_input_tokens: list[int] = [
+        int(item["input_tokens"]) for item in completed if item.get("condition") == "C2"
+    ]
 
+    attempted = 0
     for idx, t in enumerate(ordered_trials, 1):
+        if t["run_id"] in done_ids:
+            continue
+        if args.limit > 0 and attempted >= args.limit:
+            print(f"Reached batch limit ({args.limit}). Run --resume {out_dir} to continue.")
+            break
+        attempted += 1
         cond = t["condition"]
         slug = t["track_id"]
         print(f"[{idx}/{len(ordered_trials)}] {t['run_id']} ({cond} {slug or '-'})...")
@@ -309,7 +336,11 @@ def main() -> None:
             res = call_gemini(api_key, args.model, c1b_prompt, t["seed"])
 
         if not res.get("ok"):
-            exclusions.append({**t, "split": args.split, "reason_code": "API_TIMEOUT_OR_ERROR", "stage": "generation", "details": res.get("error", "")})
+            err_msg = res.get("error", "")
+            if "HTTP 429" in err_msg:
+                print(f"Hit HTTP 429 quota limit; saving {len(completed)} completed trials. Resume with:\n  python benchmarks/run_preregistered_rubric.py --resume {out_dir}")
+                break
+            exclusions.append({**t, "split": args.split, "reason_code": "API_TIMEOUT_OR_ERROR", "stage": "generation", "details": err_msg})
             continue
 
         if cond == "C2":
