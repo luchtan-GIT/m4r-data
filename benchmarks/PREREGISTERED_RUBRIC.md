@@ -31,7 +31,7 @@ Under identical decoding parameters and token-matched controls, ingesting an ano
 ### Dev/Pilot vs. Held-Out Track & Seed Split
 To prevent overfitting rubric thresholds or prompts to the initial tracks, the 26-track `m4r-data` catalog is partitioned before generation:
 - **Dev / Pilot Set (6 tracks, dev seeds):** Used only to verify harness stability, audio-frame token counts, and segmenter calibration (e.g., *Binded Time*, *Empty Staircase*, *Invalid Pointer*, *Robographia*, *Tied Time*, *Pink Sky At Night*).
-- **Held-Out Test Set (6 unseen tracks × 5 unseen seeds = 30 `C2` trials):** Disjoint tracks and fresh random seeds never inspected during dev/pilot tuning (e.g., *Foundationoff*, *Cathartic Callbacks*, *Heart Tale Tell*, *Ties That Bide*, *Rusty Electrics*, *Lost Digits 02*), matched with **10 unseen-seed trials** each for `C0`, `C1`, and `C1b` (60 total held-out trials per model family).
+- **Held-Out Test Set (6 unseen tracks × 5 unseen seeds = 30 `C2` trials):** Disjoint tracks and fresh random seeds never inspected during dev/pilot tuning (e.g., *Foundationoff*, *Cathartic Callbacks*, *Chasing Leaks — Climax*, *Ties That Bide*, *Rusty Electrics*, *Lost Digits 02*), matched with **10 unseen-seed trials** each for `C0`, `C1`, and `C1b` (60 total held-out trials per model family).
 - **Vocabulary Constraint (Clean-Room):** Prohibit musical instrument/theory terms in the target output so raters cannot infer condition from surface vocabulary.
 
 ---
