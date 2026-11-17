@@ -1,0 +1,91 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "BeYond",
+    "slug": "beyond",
+    "mix": "BeYond3",
+    "duration_sec": 69.31
+  },
+  "analysis": {
+    "spectral": {
+      "centroid_mean_hz": 2317.1,
+      "centroid_std_hz": 1065.7,
+      "bandwidth_mean_hz": 3452.3,
+      "rolloff_85pct_hz": 4858.6
+    },
+    "dynamics": {
+      "rms_mean": 0.07166,
+      "rms_max": 0.18992,
+      "dynamic_range_db": 18.2,
+      "n_onsets": 292,
+      "onset_rate_per_sec": 4.21
+    },
+    "compression_loss": {
+      "energy_above_16khz": 0.015187,
+      "energy_below_16khz": 6.547122,
+      "loss_ratio": 0.00232,
+      "note": "ratio of spectral energy above 16kHz to below \u2014 what a 128kbps encode would discard"
+    },
+    "duration_sec": 69.31,
+    "sample_rate": 44100,
+    "chroma_dominant": "G",
+    "chroma_profile": {
+      "C": 0.7746008038520813,
+      "C#": 0.720137894153595,
+      "D": 0.8372518420219421,
+      "D#": 0.7386319041252136,
+      "E": 0.8037736415863037,
+      "F": 0.6425209045410156,
+      "F#": 0.7896231412887573,
+      "G": 1.0,
+      "G#": 0.7472662329673767,
+      "A": 0.6812715530395508,
+      "A#": 0.5966470837593079,
+      "B": 0.6423160433769226
+    },
+    "harmonic": {
+      "pitch_class_set": [
+        "C",
+        "C#",
+        "D",
+        "D#",
+        "E",
+        "F",
+        "F#",
+        "G",
+        "G#",
+        "A",
+        "A#",
+        "B"
+      ],
+      "cardinality": 12
+    },
+    "harmonic_percussive_ratio": 7.12
+  },
+  "urls": {
+    "youtube": "https://youtube.com/watch?v=lyFaUTXEFjQ",
+    "x": "https://x.com/MechanicalEar/status/2122657364184584255",
+    "farcaster": [
+      "https://warpcast.com/mechanicalear/0xbaf9408e",
+      "https://warpcast.com/mechanicalear/0xe91dade7",
+      "https://warpcast.com/mechanicalear/0xae69d21e"
+    ],
+    "sections": [
+      {
+        "index": 1,
+        "slug": "beyond3-v14-planes",
+        "title": "BeYond (Mix 3) \u2014 3-Plane Z-Depth Waterfall",
+        "urls": {
+          "youtube": "https://youtube.com/watch?v=lyFaUTXEFjQ",
+          "x": "https://x.com/MechanicalEar/status/2122657364184584255",
+          "farcaster_music": "0xbaf9408ec6386a6dbe6e0e1f1cbbf740110b682b",
+          "farcaster_art": "0xe91dade7f9764fad09919d1dd1b860012f9de89a",
+          "farcaster_ai": "0xae69d21eddec3c2162e868a1fc96bcc6272c5c16"
+        }
+      }
+    ]
+  }
+}

@@ -2,6 +2,12 @@
   "schema_version": "1.0",
   "tracks": [
     {
+      "slug": "beyond",
+      "title": "BeYond",
+      "duration_sec": 69.31,
+      "path": "tracks/beyond/manifest.json"
+    },
+    {
       "slug": "binded-time",
       "title": "Binded Time",
       "duration_sec": 6.86,
