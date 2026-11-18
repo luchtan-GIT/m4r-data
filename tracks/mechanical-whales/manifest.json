@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "Mechanical Whales",
+    "slug": "mechanical-whales",
+    "album": "1010M4R10011",
+    "duration_sec": 69.0
+  },
+  "analysis": {
+    "duration_sec": 69.0,
+    "sample_rate": 44100,
+    "spectral": {
+      "centroid_mean_hz": 2603.4,
+      "rolloff_85pct_hz": 4853.1
+    },
+    "dynamics": {
+      "rms_mean": 0.07356,
+      "rms_max": 0.13866,
+      "dynamic_range_db": 16.4
+    },
+    "compression_loss": {
+      "energy_above_16khz": 1e-06,
+      "energy_below_16khz": 17.430655,
+      "loss_ratio": 0.0,
+      "note": "ratio of spectral energy above 16kHz to below \u2014 what a 128kbps encode would discard"
+    }
+  }
+}

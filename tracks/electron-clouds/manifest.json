@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "Electron Clouds",
+    "slug": "electron-clouds",
+    "album": "Atmosphere Protocols",
+    "duration_sec": 66.0
+  },
+  "analysis": {
+    "duration_sec": 66.0,
+    "sample_rate": 44100,
+    "spectral": {
+      "centroid_mean_hz": 5890.4,
+      "rolloff_85pct_hz": 13175.2
+    },
+    "dynamics": {
+      "rms_mean": 0.09017,
+      "rms_max": 0.1811,
+      "dynamic_range_db": 16.1
+    },
+    "compression_loss": {
+      "energy_above_16khz": 0.206646,
+      "energy_below_16khz": 31.180253,
+      "loss_ratio": 0.006627,
+      "note": "ratio of spectral energy above 16kHz to below \u2014 what a 128kbps encode would discard"
+    }
+  }
+}

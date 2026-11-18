@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "Corrupted Variables",
+    "slug": "corrupted-variables",
+    "album": "Decompression Etudes Vol. 1",
+    "duration_sec": 78.28
+  },
+  "analysis": {
+    "duration_sec": 78.28,
+    "sample_rate": 44100,
+    "spectral": {
+      "centroid_mean_hz": 2600.2,
+      "rolloff_85pct_hz": 5637.5
+    },
+    "dynamics": {
+      "rms_mean": 0.15575,
+      "rms_max": 0.36931,
+      "dynamic_range_db": 22.4
+    },
+    "compression_loss": {
+      "energy_above_16khz": 0.023362,
+      "energy_below_16khz": 92.745096,
+      "loss_ratio": 0.000252,
+      "note": "ratio of spectral energy above 16kHz to below \u2014 what a 128kbps encode would discard"
+    }
+  }
+}

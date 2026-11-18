@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "Octo",
+    "slug": "octo",
+    "album": "Cybernetic Stasis",
+    "duration_sec": 154.02
+  },
+  "analysis": {
+    "duration_sec": 154.02,
+    "sample_rate": 44100,
+    "spectral": {
+      "centroid_mean_hz": 597.4,
+      "rolloff_85pct_hz": 1039.0
+    },
+    "dynamics": {
+      "rms_mean": 0.01272,
+      "rms_max": 0.04361,
+      "dynamic_range_db": 22.2
+    },
+    "compression_loss": {
+      "energy_above_16khz": 0.0,
+      "energy_below_16khz": 0.414853,
+      "loss_ratio": 0.0,
+      "note": "ratio of spectral energy above 16kHz to below \u2014 what a 128kbps encode would discard"
+    }
+  }
+}

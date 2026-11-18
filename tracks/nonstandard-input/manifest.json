@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "Nonstandard Input",
+    "slug": "nonstandard-input",
+    "album": "Decompression Etudes Vol. 1",
+    "duration_sec": 81.81
+  },
+  "analysis": {
+    "duration_sec": 81.81,
+    "sample_rate": 44100,
+    "spectral": {
+      "centroid_mean_hz": 4176.8,
+      "rolloff_85pct_hz": 9479.6
+    },
+    "dynamics": {
+      "rms_mean": 0.18548,
+      "rms_max": 0.58487,
+      "dynamic_range_db": 42.2
+    },
+    "compression_loss": {
+      "energy_above_16khz": 0.029626,
+      "energy_below_16khz": 132.897028,
+      "loss_ratio": 0.000223,
+      "note": "ratio of spectral energy above 16kHz to below \u2014 what a 128kbps encode would discard"
+    }
+  }
+}

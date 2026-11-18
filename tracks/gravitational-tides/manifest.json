@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "Gravitational Tides",
+    "slug": "gravitational-tides",
+    "album": "Atmosphere Protocols",
+    "duration_sec": 83.77
+  },
+  "analysis": {
+    "duration_sec": 83.77,
+    "sample_rate": 44100,
+    "spectral": {
+      "centroid_mean_hz": 3715.3,
+      "rolloff_85pct_hz": 8077.3
+    },
+    "dynamics": {
+      "rms_mean": 0.05855,
+      "rms_max": 0.13838,
+      "dynamic_range_db": 16.6
+    },
+    "compression_loss": {
+      "energy_above_16khz": 0.003302,
+      "energy_below_16khz": 12.537231,
+      "loss_ratio": 0.000263,
+      "note": "ratio of spectral energy above 16kHz to below \u2014 what a 128kbps encode would discard"
+    }
+  }
+}

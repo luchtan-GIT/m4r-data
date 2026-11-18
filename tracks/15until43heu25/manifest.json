@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "15Until43Heu25",
+    "slug": "15until43heu25",
+    "album": "Binary Transmissions (1010M4R)",
+    "duration_sec": 58.0
+  },
+  "analysis": {
+    "duration_sec": 58.0,
+    "sample_rate": 44100,
+    "spectral": {
+      "centroid_mean_hz": 1325.4,
+      "rolloff_85pct_hz": 2092.1
+    },
+    "dynamics": {
+      "rms_mean": 0.0358,
+      "rms_max": 0.06053,
+      "dynamic_range_db": 12.1
+    },
+    "compression_loss": {
+      "energy_above_16khz": 1e-06,
+      "energy_below_16khz": 4.193417,
+      "loss_ratio": 0.0,
+      "note": "ratio of spectral energy above 16kHz to below \u2014 what a 128kbps encode would discard"
+    }
+  }
+}

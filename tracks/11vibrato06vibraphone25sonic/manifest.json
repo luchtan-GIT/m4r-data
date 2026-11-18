@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "11Vibrato06Vibraphone25Sonic",
+    "slug": "11vibrato06vibraphone25sonic",
+    "album": "Cybernetic Stasis",
+    "duration_sec": 528.01
+  },
+  "analysis": {
+    "duration_sec": 528.01,
+    "sample_rate": 44100,
+    "spectral": {
+      "centroid_mean_hz": 764.5,
+      "rolloff_85pct_hz": 895.9
+    },
+    "dynamics": {
+      "rms_mean": 0.01212,
+      "rms_max": 0.03336,
+      "dynamic_range_db": 21.2
+    },
+    "compression_loss": {
+      "energy_above_16khz": 0.0,
+      "energy_below_16khz": 0.545893,
+      "loss_ratio": 0.0,
+      "note": "ratio of spectral energy above 16kHz to below \u2014 what a 128kbps encode would discard"
+    }
+  }
+}

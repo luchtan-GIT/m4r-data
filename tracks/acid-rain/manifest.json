@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "Acid Rain",
+    "slug": "acid-rain",
+    "album": "Atmosphere Protocols",
+    "duration_sec": 76.1
+  },
+  "analysis": {
+    "duration_sec": 76.1,
+    "sample_rate": 44100,
+    "spectral": {
+      "centroid_mean_hz": 1761.1,
+      "rolloff_85pct_hz": 3288.6
+    },
+    "dynamics": {
+      "rms_mean": 0.10235,
+      "rms_max": 0.3171,
+      "dynamic_range_db": 38.6
+    },
+    "compression_loss": {
+      "energy_above_16khz": 3.5e-05,
+      "energy_below_16khz": 40.023096,
+      "loss_ratio": 1e-06,
+      "note": "ratio of spectral energy above 16kHz to below \u2014 what a 128kbps encode would discard"
+    }
+  }
+}

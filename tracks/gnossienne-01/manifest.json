@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "Gnossienne 01",
+    "slug": "gnossienne-01",
+    "album": "Robot Satie (Gnossiennes)",
+    "duration_sec": 114.0
+  },
+  "analysis": {
+    "duration_sec": 114.0,
+    "sample_rate": 44100,
+    "spectral": {
+      "centroid_mean_hz": 4962.2,
+      "rolloff_85pct_hz": 11482.1
+    },
+    "dynamics": {
+      "rms_mean": 0.03576,
+      "rms_max": 0.07118,
+      "dynamic_range_db": 34.3
+    },
+    "compression_loss": {
+      "energy_above_16khz": 0.048612,
+      "energy_below_16khz": 3.881434,
+      "loss_ratio": 0.012524,
+      "note": "ratio of spectral energy above 16kHz to below \u2014 what a 128kbps encode would discard"
+    }
+  }
+}

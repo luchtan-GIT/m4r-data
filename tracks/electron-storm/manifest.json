@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "Electron Storm",
+    "slug": "electron-storm",
+    "album": "Atmosphere Protocols",
+    "duration_sec": 94.4
+  },
+  "analysis": {
+    "duration_sec": 94.4,
+    "sample_rate": 44100,
+    "spectral": {
+      "centroid_mean_hz": 3619.2,
+      "rolloff_85pct_hz": 7865.4
+    },
+    "dynamics": {
+      "rms_mean": 0.02926,
+      "rms_max": 0.09011,
+      "dynamic_range_db": 30.5
+    },
+    "compression_loss": {
+      "energy_above_16khz": 3.5e-05,
+      "energy_below_16khz": 3.456461,
+      "loss_ratio": 1e-05,
+      "note": "ratio of spectral energy above 16kHz to below \u2014 what a 128kbps encode would discard"
+    }
+  }
+}

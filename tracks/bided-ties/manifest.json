@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "Bided Ties",
+    "slug": "bided-ties",
+    "album": "Time & Ties",
+    "duration_sec": 21.0
+  },
+  "analysis": {
+    "duration_sec": 21.0,
+    "sample_rate": 44100,
+    "spectral": {
+      "centroid_mean_hz": 1260.4,
+      "rolloff_85pct_hz": 1380.5
+    },
+    "dynamics": {
+      "rms_mean": 0.09555,
+      "rms_max": 0.35832,
+      "dynamic_range_db": 29.7
+    },
+    "compression_loss": {
+      "energy_above_16khz": 0.000103,
+      "energy_below_16khz": 3.915332,
+      "loss_ratio": 2.6e-05,
+      "note": "ratio of spectral energy above 16kHz to below \u2014 what a 128kbps encode would discard"
+    }
+  }
+}

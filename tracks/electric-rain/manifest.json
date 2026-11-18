@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "Electric Rain",
+    "slug": "electric-rain",
+    "album": "Atmosphere Protocols",
+    "duration_sec": 74.22
+  },
+  "analysis": {
+    "duration_sec": 74.22,
+    "sample_rate": 44100,
+    "spectral": {
+      "centroid_mean_hz": 2682.7,
+      "rolloff_85pct_hz": 3948.3
+    },
+    "dynamics": {
+      "rms_mean": 0.07773,
+      "rms_max": 0.20615,
+      "dynamic_range_db": 46.5
+    },
+    "compression_loss": {
+      "energy_above_16khz": 0.00767,
+      "energy_below_16khz": 21.670509,
+      "loss_ratio": 0.000354,
+      "note": "ratio of spectral energy above 16kHz to below \u2014 what a 128kbps encode would discard"
+    }
+  }
+}

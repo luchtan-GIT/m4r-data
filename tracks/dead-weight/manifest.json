@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "Dead Weight",
+    "slug": "dead-weight",
+    "album": "1010M4R10011",
+    "duration_sec": 74.35
+  },
+  "analysis": {
+    "duration_sec": 74.35,
+    "sample_rate": 44100,
+    "spectral": {
+      "centroid_mean_hz": 5826.6,
+      "rolloff_85pct_hz": 12381.7
+    },
+    "dynamics": {
+      "rms_mean": 0.06393,
+      "rms_max": 0.10274,
+      "dynamic_range_db": 9.5
+    },
+    "compression_loss": {
+      "energy_above_16khz": 0.061066,
+      "energy_below_16khz": 12.02591,
+      "loss_ratio": 0.005078,
+      "note": "ratio of spectral energy above 16kHz to below \u2014 what a 128kbps encode would discard"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "Staring At The Sky",
+    "slug": "staring-at-the-sky",
+    "album": "Atmosphere Protocols",
+    "duration_sec": 80.24
+  },
+  "analysis": {
+    "duration_sec": 80.24,
+    "sample_rate": 44100,
+    "spectral": {
+      "centroid_mean_hz": 2791.1,
+      "rolloff_85pct_hz": 5476.8
+    },
+    "dynamics": {
+      "rms_mean": 0.0649,
+      "rms_max": 0.1605,
+      "dynamic_range_db": 18.5
+    },
+    "compression_loss": {
+      "energy_above_16khz": 0.002891,
+      "energy_below_16khz": 16.626252,
+      "loss_ratio": 0.000174,
+      "note": "ratio of spectral energy above 16kHz to below \u2014 what a 128kbps encode would discard"
+    }
+  }
+}

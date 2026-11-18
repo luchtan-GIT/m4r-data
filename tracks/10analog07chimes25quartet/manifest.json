@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "10Analog07Chimes25Quartet",
+    "slug": "10analog07chimes25quartet",
+    "album": "Cybernetic Stasis",
+    "duration_sec": 155.98
+  },
+  "analysis": {
+    "duration_sec": 155.98,
+    "sample_rate": 44100,
+    "spectral": {
+      "centroid_mean_hz": 3080.4,
+      "rolloff_85pct_hz": 6785.8
+    },
+    "dynamics": {
+      "rms_mean": 0.0175,
+      "rms_max": 0.13608,
+      "dynamic_range_db": 31.3
+    },
+    "compression_loss": {
+      "energy_above_16khz": 7.8e-05,
+      "energy_below_16khz": 0.212127,
+      "loss_ratio": 0.00037,
+      "note": "ratio of spectral energy above 16kHz to below \u2014 what a 128kbps encode would discard"
+    }
+  }
+}

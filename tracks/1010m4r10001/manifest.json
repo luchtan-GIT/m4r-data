@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "1010M4R10001",
+    "slug": "1010m4r10001",
+    "album": "Binary Transmissions (1010M4R)",
+    "duration_sec": 49.5
+  },
+  "analysis": {
+    "duration_sec": 49.5,
+    "sample_rate": 44100,
+    "spectral": {
+      "centroid_mean_hz": 2760.0,
+      "rolloff_85pct_hz": 5901.7
+    },
+    "dynamics": {
+      "rms_mean": 0.06113,
+      "rms_max": 0.18782,
+      "dynamic_range_db": 38.7
+    },
+    "compression_loss": {
+      "energy_above_16khz": 0.000505,
+      "energy_below_16khz": 10.474227,
+      "loss_ratio": 4.8e-05,
+      "note": "ratio of spectral energy above 16kHz to below \u2014 what a 128kbps encode would discard"
+    }
+  }
+}
