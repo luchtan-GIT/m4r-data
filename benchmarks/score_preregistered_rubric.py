@@ -111,6 +111,32 @@ def main() -> None:
     report_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(f"Wrote {report_path}")
 
+    # Export Albot Einstein -> JJonahJ structured lab brief JSON
+    lab_brief = {
+        "run_tag": manifest["run_tag"],
+        "split": manifest["split"],
+        "model_id": manifest["pinned_decoding"]["model_id"],
+        "completed_trials": len(rows),
+        "excluded_trials": len(exclusions),
+        "c2_temporal_f1_applied": mean_std(c2_f1_applied),
+        "c2_temporal_f1_ite": mean_std(c2_f1_ite),
+        "conditions": {
+            cond: {
+                "n": len(by_cond.get(cond, [])),
+                "dialogue_word_ratio": mean_std(col_vals(by_cond.get(cond, []), "dialogue_word_ratio")),
+                "auto_temporal_f1_2s": mean_std(col_vals(by_cond.get(cond, []), "auto_temporal_f1_2s")),
+            }
+            for cond in ["C0", "C1", "C1b", "C2"]
+        },
+        "editorial_hook": (
+            f"Run {manifest['run_tag']} ({manifest['pinned_decoding']['model_id']}): "
+            f"{len(rows)} completed trials, C2 temporal F1={mean_std(c2_f1_applied)}."
+        ),
+    }
+    brief_path = run_dir / "lab_brief.json"
+    brief_path.write_text(json.dumps(lab_brief, indent=2) + "\n", encoding="utf-8")
+    print(f"Wrote {brief_path}")
+
 
 if __name__ == "__main__":
     main()
