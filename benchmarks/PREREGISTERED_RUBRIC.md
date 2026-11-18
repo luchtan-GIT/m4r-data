@@ -115,3 +115,15 @@ run_a8f21c,held_out,,,,,,,,,,,,,,,,,,
 
 - **Supported:** On the **held-out unseen tracks & unseen seeds**, `C2` (Anonymous Audio) differs significantly from `C0`, `C1`, **and** token-matched `C1b` (`p < 0.05`, Mann-Whitney U / permutation test) on **at least 2 of the 4 per-axis metrics**, with acceptable inter-rater agreement (weighted Cohen’s κ / Krippendorff’s α ≥ 0.60), **and** automated `±2.0s` Temporal Alignment F1 in `C2` exceeds the within-condition shuffled-track permutation baseline (`p < 0.05`).
 - **Falsified / Null:** `C2` is indistinguishable from `C1` or token-matched `C1b` on held-out tracks/seeds once decoding parameters, token budgets, and labels are controlled, or `±2.0s` Temporal Alignment does not beat the within-condition shuffled-track permutation baseline.
+
+---
+
+## 8. Two-Tier Evaluation Protocol (Frontier vs. Compact `7B–14B` Models)
+
+Empirical Kaggle replication on 4-bit `Qwen2-Audio-7B-Instruct` (`60` 1-turn held-out trials + `40` 2-turn `<15s` trials) revealed a capacity threshold in smaller (`7B–14B`) multimodal models:
+- **1-Turn Failure Mode on `7B`:** Passing raw `.mp3` audio (especially `>60s` tracks) in the same turn as architectural constraints cut constraint recall in half (`C2 = 1.00/3` vs `C0 = 2.20/3`, `p = 0.009`) and triggered musical-jargon leakage (`3.67` hits vs `0.00`).
+- **2-Turn `<15s` Fix (`Tier 2`):** Restricting `7B–14B` models to `<15s` micro-clips (`foundationoff`, `ties-that-bide`, `lost-digits-02`, `empty-staircase`) and separating **Turn 1 (audio listening -> 3-sentence physical pacing note)** from **Turn 2 (raw audio dropped, execute constrained task)** restored constraint recall to `2.00/3` (`p = 0.525` vs `C0`) and cut jargon bleed by `78%` (`3.67 -> 0.80`).
+
+Accordingly, benchmarks are reported in two explicit tiers:
+- **Tier 1 (Frontier Multimodal Models):** Single-turn pinned harness (`run_preregistered_rubric.py`) across the compact held-out set (`foundationoff`, `cathartic-callbacks`, `chasing-leaks-climax`, `ties-that-bide`, `rusty-electrics`, `lost-digits-02`).
+- **Tier 2 (Compact / Local `7B–14B` Models):** Two-turn audio-drop protocol on `<15s` micro-clips (`benchmarks/kaggle_two_turn/`), evaluated against 2-turn text-cadence controls (`C1b`) and direct baselines (`C0`).

@@ -55,6 +55,8 @@ Select a track `<slug>` from the verified `v1.0.0` release assets below (or choo
 
 ## Workflow
 
+> **Note for Compact / Local (`7B–14B`) Models:** In 100-trial Kaggle benchmarks on `Qwen2-Audio-7B-Instruct`, single-turn long audio (`>60s`) reduced constraint recall (`2.20 -> 1.00/3`). If you are running a compact/local model, select a `<15s` micro-clip (`foundationoff`, `binded-time`, `ties-that-bide`, `empty-staircase`), summarize its physical pacing in Turn 1, and **drop the raw audio attachment** before executing constrained code/writing in Turn 2.
+
 ### 1. Ingest Audio into a Private Unique Directory
 Create a private, process-unique directory (mode `0700`) and fetch the audio asset using `--fail` to ensure non-200 HTTP responses halt immediately:
 

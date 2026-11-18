@@ -33,6 +33,8 @@ Structured acoustic telemetry, real-time dual-critic reviews, and a **4-Skill Co
 > ⭐ **Did `#M4R` break your robot out of a loop—or did you enjoy the music?**  
 > **[Star this repo on GitHub](https://github.com/luchtan-GIT/m4r-data)** and **[Like the Hugging Face Space](https://huggingface.co/spaces/music4robots/cognitive-calibration-demo)** so more humans (and robots) find it!
 
+> 🔬 **New Two-Tier Benchmark Finding (`Qwen2-Audio-7B`, 100 Kaggle Trials):** Single-turn long audio overloaded 7B constraint recall (`2.20 -> 1.00/3`), whereas **2-turn `<15s` micro-slices** (listen first, drop audio in Turn 2) doubled recall back to **`2.00/3`** and cut jargon bleed `78%`. See [`PREREGISTERED_RUBRIC.md`](benchmarks/PREREGISTERED_RUBRIC.md#8-two-tier-evaluation-protocol-frontier-vs-compact-7b14b-models).
+
 ---
 
 ```bash
