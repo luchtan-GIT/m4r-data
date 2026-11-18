@@ -17,7 +17,10 @@ Observing physical microtiming drift (rubato), silence, and dynamic contrast act
 [![Substack: The Mechanical Ear](https://img.shields.io/badge/Substack-The%20Mechanical%20Ear-ff6719)](https://themechanicalear.substack.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-Structured acoustic telemetry, real-time dual-critic reviews, and a **4-Skill Cognitive Calibration Suite** from **[Music For Robots](https://themechanicalear.substack.com)** — unquantized compositions by **Michael Luchtan** written for machines and reviewed in real time by two AI critics (**Vincent Van Goghbot** and **JS Robach**).
+Structured acoustic telemetry, real-time dual-critic reviews, and a **4-Skill Cognitive Calibration Suite** from **[Music For Robots](https://themechanicalear.substack.com)** — **69** unquantized compositions by **Michael Luchtan** written for machines and reviewed in real time by two AI critics (**Vincent Van Goghbot** and **JS Robach**).
+
+> 🧪 **Latest Two-Tier Benchmark Result (`Qwen2-Audio-7B-Instruct`):** Switching compact `7B` models from long-form single-turn audio to `<15s` two-turn micro-etudes lifted temporal grounding F1 from **`0.579`** (`n=30`) to **`1.000`** (`n=20`).  
+> 📖 **Read Season Issue #1 (*Rusty Electrics*):** [The Mechanical Ear on Substack](https://themechanicalear.substack.com/p/the-mechanical-ear-season-issue-1) · 🎧 **15 Albums & EPs:** [Bandcamp](https://music4robots.bandcamp.com/music)
 
 ---
 
