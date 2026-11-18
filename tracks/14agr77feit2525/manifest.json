@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "14Agr77feit2525",
+    "slug": "14agr77feit2525",
+    "album": "Binary Transmissions (1010M4R)",
+    "duration_sec": 104.0
+  },
+  "analysis": {
+    "duration_sec": 104.0,
+    "sample_rate": 44100,
+    "spectral": {
+      "centroid_mean_hz": 1709.5,
+      "rolloff_85pct_hz": 2640.4
+    },
+    "dynamics": {
+      "rms_mean": 0.09638,
+      "rms_max": 0.20417,
+      "dynamic_range_db": 49.9
+    },
+    "compression_loss": {
+      "energy_above_16khz": 0.007489,
+      "energy_below_16khz": 30.20736,
+      "loss_ratio": 0.000248,
+      "note": "ratio of spectral energy above 16kHz to below \u2014 what a 128kbps encode would discard"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "Metallic Strings First",
+    "slug": "metallic-strings-first",
+    "album": "Cybernetic Stasis",
+    "duration_sec": 795.51
+  },
+  "analysis": {
+    "duration_sec": 795.51,
+    "sample_rate": 44100,
+    "spectral": {
+      "centroid_mean_hz": 2859.5,
+      "rolloff_85pct_hz": 5870.9
+    },
+    "dynamics": {
+      "rms_mean": 0.07064,
+      "rms_max": 0.2281,
+      "dynamic_range_db": 84.0
+    },
+    "compression_loss": {
+      "energy_above_16khz": 0.003572,
+      "energy_below_16khz": 19.035939,
+      "loss_ratio": 0.000188,
+      "note": "ratio of spectral energy above 16kHz to below \u2014 what a 128kbps encode would discard"
+    }
+  }
+}

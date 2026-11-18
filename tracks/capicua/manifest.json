@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "Capicua",
+    "slug": "capicua",
+    "album": "Cybernetic Stasis",
+    "duration_sec": 345.0
+  },
+  "analysis": {
+    "duration_sec": 345.0,
+    "sample_rate": 44100,
+    "spectral": {
+      "centroid_mean_hz": 632.7,
+      "rolloff_85pct_hz": 560.0
+    },
+    "dynamics": {
+      "rms_mean": 0.00544,
+      "rms_max": 0.05532,
+      "dynamic_range_db": 8.3
+    },
+    "compression_loss": {
+      "energy_above_16khz": 0.0,
+      "energy_below_16khz": 0.59613,
+      "loss_ratio": 0.0,
+      "note": "ratio of spectral energy above 16kHz to below \u2014 what a 128kbps encode would discard"
+    }
+  }
+}

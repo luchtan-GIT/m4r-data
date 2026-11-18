@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "Rusty Batteries",
+    "slug": "rusty-batteries",
+    "album": "1010M4R10011",
+    "duration_sec": 74.0
+  },
+  "analysis": {
+    "duration_sec": 74.0,
+    "sample_rate": 44100,
+    "spectral": {
+      "centroid_mean_hz": 11482.8,
+      "rolloff_85pct_hz": 20199.2
+    },
+    "dynamics": {
+      "rms_mean": 0.02259,
+      "rms_max": 0.07441,
+      "dynamic_range_db": 26.3
+    },
+    "compression_loss": {
+      "energy_above_16khz": 0.526161,
+      "energy_below_16khz": 1.410793,
+      "loss_ratio": 0.372954,
+      "note": "ratio of spectral energy above 16kHz to below \u2014 what a 128kbps encode would discard"
+    }
+  }
+}

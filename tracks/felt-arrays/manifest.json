@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "Felt Arrays",
+    "slug": "felt-arrays",
+    "album": "Cybernetic Stasis",
+    "duration_sec": 66.5
+  },
+  "analysis": {
+    "duration_sec": 66.5,
+    "sample_rate": 44100,
+    "spectral": {
+      "centroid_mean_hz": 4964.4,
+      "rolloff_85pct_hz": 11278.7
+    },
+    "dynamics": {
+      "rms_mean": 0.05362,
+      "rms_max": 0.12066,
+      "dynamic_range_db": 24.2
+    },
+    "compression_loss": {
+      "energy_above_16khz": 0.022289,
+      "energy_below_16khz": 10.726495,
+      "loss_ratio": 0.002078,
+      "note": "ratio of spectral energy above 16kHz to below \u2014 what a 128kbps encode would discard"
+    }
+  }
+}

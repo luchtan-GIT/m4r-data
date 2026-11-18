@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "13Neuf10vint5",
+    "slug": "13neuf10vint5",
+    "album": "Binary Transmissions (1010M4R)",
+    "duration_sec": 86.0
+  },
+  "analysis": {
+    "duration_sec": 86.0,
+    "sample_rate": 44100,
+    "spectral": {
+      "centroid_mean_hz": 2978.7,
+      "rolloff_85pct_hz": 6986.6
+    },
+    "dynamics": {
+      "rms_mean": 0.07483,
+      "rms_max": 0.25037,
+      "dynamic_range_db": 27.5
+    },
+    "compression_loss": {
+      "energy_above_16khz": 0.049033,
+      "energy_below_16khz": 27.302603,
+      "loss_ratio": 0.001796,
+      "note": "ratio of spectral energy above 16kHz to below \u2014 what a 128kbps encode would discard"
+    }
+  }
+}
