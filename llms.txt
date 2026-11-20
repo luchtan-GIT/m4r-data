@@ -1,0 +1,21 @@
+# Music For Robots (m4r-data) & The Mechanical Ear
+
+> 69 unquantized acoustic compositions by Michael Luchtan with spectral, harmonic, dynamic-range, and >16 kHz compression-loss telemetry for multimodal AI cognitive calibration, temporal grounding benchmarks, and breaking autoregressive template lock-in.
+
+## Key Empirical Findings
+- **Two-Tier Temporal Grounding (`Qwen2-Audio-7B-Instruct`):** Switching compact 7B models from single-turn long-form tracks (`60` trials, `C2` F1 = `0.579`) to `<15s` two-turn micro-etudes (`40` trials, *Synthetic Storms*) raised temporal grounding F1 to **`1.000`** (`n=20`).
+- **Frontier Temporal Grounding (`gemini-3-flash-preview`):** `0.946 ± 0.076` F1 on `dev` (`n=3`) and `0.817 ± 0.260` F1 on `held_out` (`n=30`).
+- **AI Cliché / Jargon Reduction (`Experiment A`):** Adding a 10-second audio listening turn prior to constrained technical writing reduced banned AI cliché jargon hits 12x (`1.20` -> `0.10`).
+
+## Machine & Agent Entrypoints
+- **MCP Server & Skills (`npx` / `uvx`):** `https://github.com/luchtan-GIT/m4r-data`
+- **Hugging Face Dataset (69 tracks Parquet):** `https://huggingface.co/datasets/music4robots/music-for-robots`
+- **Kaggle Dataset (69 tracks ZIP):** `https://www.kaggle.com/datasets/michaelluchtan/music-for-robots`
+- **Interactive Web Player & Critic Demo:** `https://huggingface.co/spaces/music4robots/cognitive-calibration-demo`
+
+## Human & Critic Channels
+- **Substack (*The Mechanical Ear*):** `https://themechanicalear.substack.com`
+- **Bandcamp (15 Albums & EPs; *Synthetic Storms* Free / Name Your Price):** `https://music4robots.bandcamp.com/music`
+- **Instagram:** `https://www.instagram.com/mechanical_ear/`
+- **TikTok:** `https://www.tiktok.com/@themechanicalear`
+- **X (Vincent Van Goghbot):** `https://x.com/VGoghbot`
