@@ -133,7 +133,7 @@ def check_notifications():
     state["replied_notification_ids"] = list(replied)
     save_state(state)
     explore_feed()
-    auto_follow_channel_creators()
+    # Disabled auto_follow_channel_creators() to avoid inflating following ratio while follower_count=0
     auto_like_contextual_casts()
 
 GROWTH_CHANNELS = [
