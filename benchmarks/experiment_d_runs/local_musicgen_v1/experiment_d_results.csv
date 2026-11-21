@@ -1,0 +1,11 @@
+track_id,mode,prompt_sec,cont_sec,mfcc_timbre_similarity,human_centroid_hz,ai_centroid_hz,centroid_err_hz,human_dr_db,ai_dr_db,dr_diff_db,human_onset_rate,ai_onset_rate,human_rubato_ioi_cv,ai_rubato_ioi_cv,rubato_retention_ratio
+ties-that-bide,AudioOnly_Blind,4.5,4.75,0.9409,1453.7,2097.8,644.1,12.8,58.0,45.2,3.16,2.35,0.413,1.383,3.349
+ties-that-bide,AudioPlusTextHint,4.5,4.75,0.9934,1453.7,2355.2,901.5,12.8,11.3,-1.5,3.16,5.77,0.413,0.279,0.676
+bided-ties,AudioOnly_Blind,10.0,10.0,0.9912,1176.5,1783.4,606.9,26.8,53.1,26.3,3.9,2.31,0.455,0.678,1.49
+bided-ties,AudioPlusTextHint,10.0,10.0,0.968,1176.5,3660.3,2483.8,26.8,34.2,7.4,3.9,1.71,0.455,2.585,5.681
+gnossienne-01,AudioOnly_Blind,10.0,10.0,0.9879,2389.0,1127.1,1261.9,12.6,49.5,36.9,4.5,1.41,1.009,0.549,0.544
+gnossienne-01,AudioPlusTextHint,10.0,10.0,0.993,2389.0,776.0,1613.0,12.6,22.7,10.1,4.5,2.11,1.009,0.799,0.792
+rusty-electrics,AudioOnly_Blind,10.0,10.0,0.9139,1836.1,1259.1,577.0,13.6,49.5,35.9,3.8,2.72,0.899,0.77,0.857
+rusty-electrics,AudioPlusTextHint,10.0,10.0,0.9479,1836.1,2480.8,644.7,13.6,10.7,-2.9,3.8,3.82,0.899,0.53,0.59
+cathartic-callbacks,AudioOnly_Blind,10.0,10.0,0.9128,1071.1,1342.4,271.3,11.8,52.1,40.3,5.5,1.91,0.478,1.367,2.86
+cathartic-callbacks,AudioPlusTextHint,10.0,10.0,0.9839,1071.1,430.7,640.4,11.8,7.4,-4.4,5.5,5.33,0.478,0.334,0.699

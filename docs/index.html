@@ -622,7 +622,7 @@
     <!-- Hero -->
     <section class="hero">
       <div class="container">
-        <div class="eyebrow">Open Empirical Audio-AI Laboratory · CC-BY-4.0 · 318 Completed Trials</div>
+        <div class="eyebrow">Open Empirical Audio-AI Laboratory · CC-BY-4.0 · 328 Completed Trials</div>
         <h1>Everyone asks whether robots can make music for humans. We test what happens when a human plays <em>unquantized music for a robot.</em></h1>
         <p class="hero-sub">
           An open-access research lab pairing <strong>69 unquantized acoustic &amp; electric compositions by Michael Luchtan</strong> with reproducible multimodal AI benchmarks across <code>Gemini 3 Flash</code> and <code>Qwen2-Audio-7B-Instruct</code>—measuring temporal collapse, breaking RLHF cliché lock-in, and auditing where machines still confabulate.
@@ -636,8 +636,8 @@
 
         <div class="metrics-strip">
           <div class="metric-box">
-            <div class="metric-val amber">318</div>
-            <div class="metric-label">Completed empirical trials (Experiments A, B &amp; C)</div>
+            <div class="metric-val amber">328</div>
+            <div class="metric-label">Completed empirical trials (Experiments A, B, C &amp; D)</div>
           </div>
           <div class="metric-box">
             <div class="metric-val teal">1.000 F1</div>
@@ -800,6 +800,79 @@
               <span class="quote-model" style="color: var(--rose);">Blind Twin Confabulation (Human = Clip B)</span>
               &ldquo;VERDICT: CLIP A [actually quantized]. The unquantized human performance featured a more organic feel with naturally varying pitches and tempos.&rdquo;
             </blockquote>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experiment D: Finish the Human's Phrase -->
+    <section id="experiment-d">
+      <div class="container">
+        <div class="section-kicker">Experiment D · Audio Continuation Arena · MusicGen vs. Human</div>
+        <h2>Can a Robot Finish a Human's Unquantized Phrase?</h2>
+        <p class="section-lead">
+          We fed the <strong>first half</strong> of 5 unquantized human performances into <code>facebook/musicgen-small</code> and asked it to finish each phrase&mdash;both blind (audio-only) and with a 1-line text hint. <strong>Finding:</strong> Blind audio-only continuation collapses into <code>49.5&ndash;58.0 dB</code> dynamic dropouts; adding a text hint nails the timbre (<code>0.948&ndash;0.993</code> MFCC similarity) <strong>but smooths out the human's rubato</strong> on 4 of 5 tracks (cutting inter-onset irregularity <code>IOI CV</code> by 21%&ndash;41%). Hear the human vs. AI endings side-by-side:
+        </p>
+
+        <div class="listening-grid">
+          <article class="track-card">
+            <div class="track-head">
+              <div>
+                <h3 class="track-title">Ties That Bide (4.5s prompt &rarr; 4.75s ending)</h3>
+                <div class="track-meta">MFCC Sim: 0.993 · Human Rubato CV 0.413 &rarr; AI 0.279 (-32%)</div>
+              </div>
+            </div>
+            <div class="cta-row" style="margin-block-end: 0;">
+              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/benchmarks/experiment_d_runs/local_musicgen_v1/continuations/ties-that-bide_human_full.mp3" data-track="expd-ttb">Human Ending</button>
+              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/benchmarks/experiment_d_runs/local_musicgen_v1/continuations/ties-that-bide_ai_AudioPlusTextHint.mp3" data-track="expd-ttb">AI Ending (Guided)</button>
+              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/benchmarks/experiment_d_runs/local_musicgen_v1/continuations/ties-that-bide_ai_AudioOnly_Blind.mp3" data-track="expd-ttb">AI Ending (Blind)</button>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" id="prog-expd-ttb"></div></div>
+          </article>
+
+          <article class="track-card">
+            <div class="track-head">
+              <div>
+                <h3 class="track-title">Robot Satie: Gnossienne 01 (10s &rarr; 10s)</h3>
+                <div class="track-meta">MFCC Sim: 0.993 · Human Rubato CV 1.009 &rarr; AI 0.799 (-21%)</div>
+              </div>
+            </div>
+            <div class="cta-row" style="margin-block-end: 0;">
+              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/benchmarks/experiment_d_runs/local_musicgen_v1/continuations/gnossienne-01_human_full.mp3" data-track="expd-g01">Human Ending</button>
+              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/benchmarks/experiment_d_runs/local_musicgen_v1/continuations/gnossienne-01_ai_AudioPlusTextHint.mp3" data-track="expd-g01">AI Ending (Guided)</button>
+              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/benchmarks/experiment_d_runs/local_musicgen_v1/continuations/gnossienne-01_ai_AudioOnly_Blind.mp3" data-track="expd-g01">AI Ending (Blind)</button>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" id="prog-expd-g01"></div></div>
+          </article>
+
+          <article class="track-card">
+            <div class="track-head">
+              <div>
+                <h3 class="track-title">Rusty Electrics (10s &rarr; 10s)</h3>
+                <div class="track-meta">MFCC Sim: 0.948 · Human Rubato CV 0.899 &rarr; AI 0.530 (-41%)</div>
+              </div>
+            </div>
+            <div class="cta-row" style="margin-block-end: 0;">
+              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/benchmarks/experiment_d_runs/local_musicgen_v1/continuations/rusty-electrics_human_full.mp3" data-track="expd-re">Human Ending</button>
+              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/benchmarks/experiment_d_runs/local_musicgen_v1/continuations/rusty-electrics_ai_AudioPlusTextHint.mp3" data-track="expd-re">AI Ending (Guided)</button>
+              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/benchmarks/experiment_d_runs/local_musicgen_v1/continuations/rusty-electrics_ai_AudioOnly_Blind.mp3" data-track="expd-re">AI Ending (Blind)</button>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" id="prog-expd-re"></div></div>
+          </article>
+
+          <article class="track-card">
+            <div class="track-head">
+              <div>
+                <h3 class="track-title">Cathartic Callbacks (10s &rarr; 10s)</h3>
+                <div class="track-meta">MFCC Sim: 0.984 · Human Rubato CV 0.478 &rarr; AI 0.334 (-30%)</div>
+              </div>
+            </div>
+            <div class="cta-row" style="margin-block-end: 0;">
+              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/benchmarks/experiment_d_runs/local_musicgen_v1/continuations/cathartic-callbacks_human_full.mp3" data-track="expd-cc">Human Ending</button>
+              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/benchmarks/experiment_d_runs/local_musicgen_v1/continuations/cathartic-callbacks_ai_AudioPlusTextHint.mp3" data-track="expd-cc">AI Ending (Guided)</button>
+              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/benchmarks/experiment_d_runs/local_musicgen_v1/continuations/cathartic-callbacks_ai_AudioOnly_Blind.mp3" data-track="expd-cc">AI Ending (Blind)</button>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" id="prog-expd-cc"></div></div>
           </article>
         </div>
       </div>
