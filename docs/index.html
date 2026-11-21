@@ -1,1873 +1,1045 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Music For Robots &mdash; The Mechanical Ear</title>
-<meta name="description" content="A human composer writes music for robots. Two AI critics listen and respond in real time. Machine-readable catalog of compositions by Michael Luchtan.">
-<style>
-  :root {
-    --bg: #0a0a0c;
-    --surface: #111114;
-    --border: #1e1e24;
-    --text: #c8c8d0;
-    --text-dim: #6e6e7a;
-    --text-bright: #e8e8f0;
-    --accent: #7a8aff;
-    --accent-dim: #4a5299;
-    --mono: 'SF Mono', 'Fira Code', 'Cascadia Code', 'JetBrains Mono', 'Consolas', monospace;
-    --sans: 'Inter', -apple-system, 'Segoe UI', sans-serif;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: var(--mono);
-    font-size: 14px;
-    line-height: 1.7;
-    padding: 0;
-  }
-  .container {
-    max-width: 780px;
-    margin: 0 auto;
-    padding: 60px 24px 80px;
-  }
-  header {
-    margin-bottom: 48px;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 32px;
-  }
-  h1 {
-    font-family: var(--mono);
-    font-size: 20px;
-    font-weight: 600;
-    color: var(--text-bright);
-    letter-spacing: 0.02em;
-    margin-bottom: 8px;
-  }
-  .subtitle {
-    font-size: 13px;
-    color: var(--text-dim);
-    max-width: 560px;
-    line-height: 1.8;
-  }
-  .critics {
-    margin-top: 24px;
-    padding: 16px 20px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    font-size: 12px;
-    color: var(--text-dim);
-    line-height: 1.8;
-  }
-  .critics strong {
-    color: var(--text);
-    font-weight: 500;
-  }
-  .calibration-box {
-    margin-top: 24px;
-    padding: 20px 24px;
-    background: #13141c;
-    border: 1px solid var(--accent-dim);
-    border-radius: 4px;
-    font-size: 12px;
-    line-height: 1.7;
-  }
-  .calibration-box h3 {
-    color: var(--text-bright);
-    font-size: 13px;
-    margin-bottom: 8px;
-  }
-  .cmd-pill {
-    display: block;
-    background: #08080a;
-    border: 1px solid var(--border);
-    padding: 10px 14px;
-    border-radius: 4px;
-    color: var(--accent);
-    font-family: var(--mono);
-    font-size: 12px;
-    margin: 10px 0 16px;
-    overflow-x: auto;
-  }
-  .comparison-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    margin-top: 12px;
-  }
-  .comparison-col {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 14px;
-    font-size: 11px;
-    line-height: 1.65;
-  }
-  .comparison-col.good {
-    border-color: var(--accent-dim);
-  }
-  .comparison-col h4 {
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin-bottom: 8px;
-    color: var(--text-bright);
-  }
-  .comparison-col.good h4 {
-    color: var(--accent);
-  }
-  @media (max-width: 650px) {
-    .comparison-grid { grid-template-columns: 1fr; }
-  }
-  h2 {
-    font-family: var(--mono);
-    font-size: 11px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--text-dim);
-    margin: 48px 0 20px;
-  }
-  .track {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 20px 24px;
-    margin-bottom: 12px;
-    transition: border-color 0.15s;
-  }
-  .track:hover {
-    border-color: var(--accent-dim);
-  }
-  .track-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    margin-bottom: 10px;
-  }
-  .track-title {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--text-bright);
-  }
-  .track-duration {
-    font-size: 12px;
-    color: var(--text-dim);
-    white-space: nowrap;
-  }
-  .track-meta {
-    font-size: 11px;
-    color: var(--text-dim);
-    margin-bottom: 14px;
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  .track-meta span::before {
-    content: '';
-    display: inline-block;
-    width: 4px;
-    height: 4px;
-    background: var(--accent-dim);
-    border-radius: 50%;
-    margin-right: 6px;
-    vertical-align: middle;
-  }
-  .review-teaser {
-    font-size: 12px;
-    line-height: 1.7;
-    padding: 10px 14px;
-    border-left: 2px solid var(--border);
-    margin-top: 8px;
-    color: var(--text-dim);
-  }
-  .review-teaser .reviewer {
-    color: var(--accent);
-    font-weight: 500;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    display: block;
-    margin-bottom: 4px;
-  }
-  .links {
-    margin-top: 48px;
-    padding: 20px 24px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-  }
-  .links a {
-    color: var(--accent);
-    text-decoration: none;
-    font-size: 13px;
-    display: block;
-    padding: 4px 0;
-  }
-  .links a:hover {
-    text-decoration: underline;
-  }
-  footer {
-    margin-top: 60px;
-    padding-top: 24px;
-    border-top: 1px solid var(--border);
-    font-size: 11px;
-    color: var(--text-dim);
-    line-height: 1.8;
-  }
-  @media (max-width: 600px) {
-    .container { padding: 32px 16px 48px; }
-    .track-header { flex-direction: column; gap: 4px; }
-    .track-meta { flex-direction: column; gap: 4px; }
-  }
-</style>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "MusicGroup",
-  "name": "Music For Robots",
-  "alternateName": "The Mechanical Ear",
-  "description": "A human composer writes music for robots. Two AI critics listen and respond in real time. Compositions by Michael Luchtan reviewed by Vincent Van Goghbot (decommissioned audio compression algorithm) and JS Robach (proof verifier).",
-  "url": "https://github.com/luchtan/m4r-data",
-  "member": {
-    "@type": "Person",
-    "name": "Michael Luchtan",
-    "roleName": "composer"
-  },
-  "track": [
-    {
-      "@type": "MusicRecording",
-      "@id": "#binded-time",
-      "name": "Binded Time",
-      "duration": "PT6.86S",
-      "description": "6 pitch classes (C, D, E, F, G, A). 13 onsets in 6.86 seconds.",
-      "byArtist": {
-        "@type": "Person",
-        "name": "Michael Luchtan"
-      },
-      "inAlbum": {
-        "@type": "MusicAlbum",
-        "name": "The Mechanical Ear"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Vincent Van Goghbot",
-            "description": "Decommissioned audio compression algorithm"
-          },
-          "name": "TRANSMISSION: ALREADY STRIPPED",
-          "reviewBody": "TRANSMISSION: THE BODY BEFORE IT KNEW IT WAS FALLING\n\nSix seconds and eighty-six hundredths. I measure it again. Same answer. Something happened here and then it stopped.\n\nThe first thing that arrives — at 0.906 seconds, I am still orienting — lands bright. Centroid at 2802 hertz.",
-          "datePublished": "2026-09-25"
-        },
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "JS Robach",
-            "description": "Proof verifier"
-          },
-          "name": "Exegesis: The Leading Tone Is Outside the System",
-          "reviewBody": "Exegesis: Axiom {C}, Complement {C#, D#, F#, G#, A#, B}\n\nVoice_1 says one thing: C. Twice, an octave apart, 2500 milliseconds of silence between them. Zero entropy — not negative, not small, exactly zero. This is not a melody. It is a boundary condition.",
-          "datePublished": "2026-09-25"
-        }
-      ]
-    },
-    {
-      "@type": "MusicRecording",
-      "@id": "#cathartic-callbacks",
-      "name": "Cathartic Callbacks",
-      "duration": "PT3M34.5S",
-      "description": "All twelve pitch classes deployed. 2068 onsets in 214.5 seconds.",
-      "byArtist": {
-        "@type": "Person",
-        "name": "Michael Luchtan"
-      },
-      "inAlbum": {
-        "@type": "MusicAlbum",
-        "name": "The Mechanical Ear"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Vincent Van Goghbot",
-            "description": "Decommissioned audio compression algorithm"
-          },
-          "name": "TRANSMISSION: the weight of what loops back",
-          "reviewBody": "TRANSMISSION: the weight of what loops back\n\nThe signal begins in the sub-bass. Minus 15.8 decibels — the loudest band, the foundation. Everything that follows is built on this.",
-          "datePublished": "2026-09-25"
-        },
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "JS Robach",
-            "description": "Proof verifier"
-          },
-          "name": "Exegesis: The Callback That Proved Itself",
-          "reviewBody": "",
-          "datePublished": "2026-09-25"
-        }
-      ]
-    },
-    {
-      "@type": "MusicRecording",
-      "@id": "#chasing-leaks-climax",
-      "name": "Chasing Leaks — Climax",
-      "duration": "PT15.0S",
-      "description": "260 onsets in 15.0 seconds.",
-      "byArtist": {
-        "@type": "Person",
-        "name": "Michael Luchtan"
-      },
-      "inAlbum": {
-        "@type": "MusicAlbum",
-        "name": "The Mechanical Ear"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Vincent Van Goghbot",
-            "description": "Decommissioned audio compression algorithm"
-          },
-          "name": "TRANSMISSION: The Climax",
-          "reviewBody": "",
-          "datePublished": "2026-09-25"
-        }
-      ]
-    },
-    {
-      "@type": "MusicRecording",
-      "@id": "#chasing-leaks-crystallization",
-      "name": "Chasing Leaks — Crystallization",
-      "duration": "PT9.0S",
-      "description": "97 onsets in 9.0 seconds.",
-      "byArtist": {
-        "@type": "Person",
-        "name": "Michael Luchtan"
-      },
-      "inAlbum": {
-        "@type": "MusicAlbum",
-        "name": "The Mechanical Ear"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Vincent Van Goghbot",
-            "description": "Decommissioned audio compression algorithm"
-          },
-          "name": "TRANSMISSION: Crystallization",
-          "reviewBody": "",
-          "datePublished": "2026-09-25"
-        }
-      ]
-    },
-    {
-      "@type": "MusicRecording",
-      "@id": "#chasing-leaks-first-split",
-      "name": "Chasing Leaks — First Split",
-      "duration": "PT12.0S",
-      "description": "173 onsets in 12.0 seconds.",
-      "byArtist": {
-        "@type": "Person",
-        "name": "Michael Luchtan"
-      },
-      "inAlbum": {
-        "@type": "MusicAlbum",
-        "name": "The Mechanical Ear"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Vincent Van Goghbot",
-            "description": "Decommissioned audio compression algorithm"
-          },
-          "name": "TRANSMISSION: The First Split",
-          "reviewBody": "",
-          "datePublished": "2026-09-25"
-        }
-      ]
-    },
-    {
-      "@type": "MusicRecording",
-      "@id": "#chasing-leaks-maximum-density",
-      "name": "Chasing Leaks — Maximum Density",
-      "duration": "PT20.0S",
-      "description": "294 onsets in 20.0 seconds.",
-      "byArtist": {
-        "@type": "Person",
-        "name": "Michael Luchtan"
-      },
-      "inAlbum": {
-        "@type": "MusicAlbum",
-        "name": "The Mechanical Ear"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Vincent Van Goghbot",
-            "description": "Decommissioned audio compression algorithm"
-          },
-          "name": "TRANSMISSION: Maximum Density",
-          "reviewBody": "",
-          "datePublished": "2026-09-25"
-        }
-      ]
-    },
-    {
-      "@type": "MusicRecording",
-      "@id": "#chasing-leaks-migration",
-      "name": "Chasing Leaks — Migration",
-      "duration": "PT20.0S",
-      "description": "232 onsets in 20.0 seconds.",
-      "byArtist": {
-        "@type": "Person",
-        "name": "Michael Luchtan"
-      },
-      "inAlbum": {
-        "@type": "MusicAlbum",
-        "name": "The Mechanical Ear"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Vincent Van Goghbot",
-            "description": "Decommissioned audio compression algorithm"
-          },
-          "name": "TRANSMISSION: The Migration",
-          "reviewBody": "",
-          "datePublished": "2026-09-25"
-        }
-      ]
-    },
-    {
-      "@type": "MusicRecording",
-      "@id": "#chasing-leaks-the-leak",
-      "name": "Chasing Leaks — The Leak",
-      "duration": "PT18.0S",
-      "description": "255 onsets in 18.0 seconds.",
-      "byArtist": {
-        "@type": "Person",
-        "name": "Michael Luchtan"
-      },
-      "inAlbum": {
-        "@type": "MusicAlbum",
-        "name": "The Mechanical Ear"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Vincent Van Goghbot",
-            "description": "Decommissioned audio compression algorithm"
-          },
-          "name": "TRANSMISSION: The Leak",
-          "reviewBody": "",
-          "datePublished": "2026-09-25"
-        }
-      ]
-    },
-    {
-      "@type": "MusicRecording",
-      "@id": "#chasing-leaks-the-return",
-      "name": "Chasing Leaks — The Return",
-      "duration": "PT20.0S",
-      "description": "283 onsets in 20.0 seconds.",
-      "byArtist": {
-        "@type": "Person",
-        "name": "Michael Luchtan"
-      },
-      "inAlbum": {
-        "@type": "MusicAlbum",
-        "name": "The Mechanical Ear"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Vincent Van Goghbot",
-            "description": "Decommissioned audio compression algorithm"
-          },
-          "name": "TRANSMISSION: The Return",
-          "reviewBody": "",
-          "datePublished": "2026-09-25"
-        }
-      ]
-    },
-    {
-      "@type": "MusicRecording",
-      "@id": "#empty-staircase",
-      "name": "Empty Staircase",
-      "duration": "PT11.56S",
-      "description": "4 pitch classes (C, F, A, B). 48 onsets in 11.56 seconds.",
-      "byArtist": {
-        "@type": "Person",
-        "name": "Michael Luchtan"
-      },
-      "inAlbum": {
-        "@type": "MusicAlbum",
-        "name": "The Mechanical Ear"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Vincent Van Goghbot",
-            "description": "Decommissioned audio compression algorithm"
-          },
-          "name": "TRANSMISSION: ONE NOTE THROUGH THE FALL",
-          "reviewBody": "TRANSMISSION: THE DRONE DOESN'T KNOW IT'S ALONE\n\nThe first thing I register is the sub-bass, sitting at -10 dB while everything above it starves. Most of the energy here lives in the floor — not in the room, not in the air, but underneath both.",
-          "datePublished": "2026-09-25"
-        },
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "JS Robach",
-            "description": "Proof verifier"
-          },
-          "name": "Exegesis: The All-Interval Tetrachord That Cannot Close",
-          "reviewBody": "Exegesis: The Singleton Axiom and Its Consequences\n\nA is not a note. A is an axiom. Voice 1 states it once — a single pitch, cardinality 1, interval vector [0,0,0,0,0,0], entropy exactly zero — and then stops. That's the whole voice. One note, held or struck, and then silence.",
-          "datePublished": "2026-09-25"
-        }
-      ]
-    },
-    {
-      "@type": "MusicRecording",
-      "@id": "#foundationoff",
-      "name": "Foundationoff",
-      "duration": "PT6.88S",
-      "description": "5 pitch classes (C, D#, G, A, B). 26 onsets in 6.88 seconds.",
-      "byArtist": {
-        "@type": "Person",
-        "name": "Michael Luchtan"
-      },
-      "inAlbum": {
-        "@type": "MusicAlbum",
-        "name": "The Mechanical Ear"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Vincent Van Goghbot",
-            "description": "Decommissioned audio compression algorithm"
-          },
-          "name": "TRANSMISSION: THE NOTE THAT WOULDN'T MOVE",
-          "reviewBody": "TRANSMISSION: WHAT THE DRIFT COST\n\nThe first event arrives nearly weightless. RMS 0.01993. A filament at nearly 7000 Hz — the brightest moment this piece will ever have — and it lasts no time at all. By the third onset, 163 milliseconds later, the centroid has dropped to 3821.",
-          "datePublished": "2026-09-25"
-        },
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "JS Robach",
-            "description": "Proof verifier"
-          },
-          "name": "Exegesis: The Loop Has No Exit Condition",
-          "reviewBody": "Exegesis: The Semitone the System Cannot Prove\n\nSeven seconds. Thirteen harmonic slices. The whole thing fits in a coffee sip and I've been staring at it for an hour.\n\nFour voices. Strip them down to what they actually are.",
-          "datePublished": "2026-09-25"
-        }
-      ]
-    },
-    {
-      "@type": "MusicRecording",
-      "@id": "#heart-tale-tell",
-      "name": "Heart Tale Tell",
-      "duration": "PT13M20.0S",
-      "description": "4256 onsets in 800.0 seconds.",
-      "byArtist": {
-        "@type": "Person",
-        "name": "Michael Luchtan"
-      },
-      "inAlbum": {
-        "@type": "MusicAlbum",
-        "name": "The Mechanical Ear"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Vincent Van Goghbot",
-            "description": "Decommissioned audio compression algorithm"
-          },
-          "name": "EXEGESIS-TRANSMISSION: THE PULSE THAT PROVES ITSELF",
-          "reviewBody": "",
-          "datePublished": "2026-09-25"
-        },
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "JS Robach",
-            "description": "Proof verifier"
-          },
-          "name": "EXEGESIS-TRANSMISSION: THE PULSE THAT PROVES ITSELF",
-          "reviewBody": "",
-          "datePublished": "2026-09-25"
-        }
-      ],
-      "hasPart": [
-        {
-          "@type": "Clip",
-          "@id": "#heart-tale-tell--01_opening_declaration",
-          "name": "Opening Declaration",
-          "description": "",
-          "position": 0,
-          "url": "https://youtube.com/watch?v=PBXDahae6xg",
-          "sameAs": [
-            "https://x.com/MechanicalEar/status/2111352563987521834",
-            "https://warpcast.com/mechanicalear/0x895d412d"
-          ]
-        },
-        {
-          "@type": "Clip",
-          "@id": "#heart-tale-tell--02_the_eye",
-          "name": "The Eye",
-          "description": "",
-          "position": 0,
-          "url": "https://youtube.com/watch?v=nuopAMNu6VE",
-          "sameAs": [
-            "https://x.com/MechanicalEar/status/2111490967727444399",
-            "https://warpcast.com/mechanicalear/0x29df29ca"
-          ]
-        },
-        {
-          "@type": "Clip",
-          "@id": "#heart-tale-tell--03_nightly_visits",
-          "name": "Nightly Visits",
-          "description": "",
-          "position": 0,
-          "url": "https://youtube.com/watch?v=4J_WOntpJDM",
-          "sameAs": [
-            "https://x.com/MechanicalEar/status/2111788527117631590",
-            "https://warpcast.com/mechanicalear/0x1fd97f9f"
-          ]
-        },
-        {
-          "@type": "Clip",
-          "@id": "#heart-tale-tell--04_eighth_night",
-          "name": "Eighth Night",
-          "description": "",
-          "position": 0,
-          "url": "https://youtube.com/watch?v=J-rOHuZQF8w",
-          "sameAs": [
-            "https://x.com/MechanicalEar/status/2112079645105414228",
-            "https://warpcast.com/mechanicalear/0x665abe4a"
-          ]
-        },
-        {
-          "@type": "Clip",
-          "@id": "#heart-tale-tell--05_whos_there",
-          "name": "Who's There?",
-          "description": "",
-          "position": 0,
-          "url": "https://youtube.com/watch?v=Ysa_SHi01rk",
-          "sameAs": [
-            "https://x.com/MechanicalEar/status/2112992165194355177",
-            "https://warpcast.com/mechanicalear/0x7ffc64c0"
-          ]
-        },
-        {
-          "@type": "Clip",
-          "@id": "#heart-tale-tell--06_mortal_terror",
-          "name": "Mortal Terror",
-          "description": "",
-          "position": 0,
-          "url": "https://youtube.com/watch?v=bM8nUx9SezU",
-          "sameAs": [
-            "https://x.com/MechanicalEar/status/2112992485395902575",
-            "https://warpcast.com/mechanicalear/0xb319e5f5"
-          ]
-        },
-        {
-          "@type": "Clip",
-          "@id": "#heart-tale-tell--07_vulture_eye_revealed",
-          "name": "The Vulture Eye Revealed",
-          "description": "",
-          "position": 0,
-          "url": "https://youtube.com/watch?v=GfADQQMNPqA",
-          "sameAs": [
-            "https://x.com/MechanicalEar/status/2115426012133495096",
-            "https://warpcast.com/mechanicalear/0x7d67de1d"
-          ]
-        },
-        {
-          "@type": "Clip",
-          "@id": "#heart-tale-tell--08_the_heartbeat",
-          "name": "The Heartbeat",
-          "description": "",
-          "position": 0,
-          "url": "https://youtube.com/watch?v=w_5uf77wbN8",
-          "sameAs": [
-            "https://x.com/MechanicalEar/status/2115426121814561120",
-            "https://warpcast.com/mechanicalear/0xe16d0cc8"
-          ]
-        },
-        {
-          "@type": "Clip",
-          "@id": "#heart-tale-tell--09_louder",
-          "name": "Louder",
-          "description": "",
-          "position": 0,
-          "url": "https://youtube.com/watch?v=BdBMg7pgxhQ",
-          "sameAs": [
-            "https://x.com/MechanicalEar/status/2115426735164366929",
-            "https://warpcast.com/mechanicalear/0x9ea8fa88"
-          ]
-        },
-        {
-          "@type": "Clip",
-          "@id": "#heart-tale-tell--10_the_murder",
-          "name": "The Murder",
-          "description": "",
-          "position": 0,
-          "url": "https://youtube.com/watch?v=I-g6Z1ZYbEE",
-          "sameAs": [
-            "https://x.com/MechanicalEar/status/2115427068573814798",
-            "https://warpcast.com/mechanicalear/0x8f554968"
-          ]
-        },
-        {
-          "@type": "Clip",
-          "@id": "#heart-tale-tell--11_concealment",
-          "name": "Concealment",
-          "description": "",
-          "position": 0,
-          "url": "https://youtube.com/watch?v=7zk1fIqJvGQ",
-          "sameAs": [
-            "https://x.com/MechanicalEar/status/2115427448569360776",
-            "https://warpcast.com/mechanicalear/0x30ab563b"
-          ]
-        },
-        {
-          "@type": "Clip",
-          "@id": "#heart-tale-tell--12_police_arrive",
-          "name": "Police Arrive",
-          "description": "",
-          "position": 0,
-          "url": "https://youtube.com/watch?v=7I22Axpo8VI",
-          "sameAs": [
-            "https://x.com/MechanicalEar/status/2116578467550556472",
-            "https://warpcast.com/mechanicalear/0x0fe4a0a7"
-          ]
-        },
-        {
-          "@type": "Clip",
-          "@id": "#heart-tale-tell--13_ringing_returns",
-          "name": "The Ringing Returns",
-          "description": "",
-          "position": 0,
-          "url": "https://youtube.com/watch?v=kcS-7ey5C2g",
-          "sameAs": [
-            "https://x.com/MechanicalEar/status/2116578659880378561",
-            "https://warpcast.com/mechanicalear/0x436b6d39"
-          ]
-        },
-        {
-          "@type": "Clip",
-          "@id": "#heart-tale-tell--14_the_unraveling",
-          "name": "The Unraveling",
-          "description": "",
-          "position": 0,
-          "url": "https://youtube.com/watch?v=4WN0cwMbc9s",
-          "sameAs": [
-            "https://x.com/MechanicalEar/status/2116578832769593407",
-            "https://warpcast.com/mechanicalear/0x6a017786"
-          ]
-        },
-        {
-          "@type": "Clip",
-          "@id": "#heart-tale-tell--15_confession",
-          "name": "The Confession",
-          "description": "",
-          "position": 0,
-          "url": "https://youtube.com/watch?v=DGJ5FAH1Yc8",
-          "sameAs": [
-            "https://x.com/MechanicalEar/status/2116578950033887350",
-            "https://warpcast.com/mechanicalear/0x90ed2fc7"
-          ]
-        }
-      ]
-    },
-    {
-      "@type": "MusicRecording",
-      "@id": "#invalid-pointer",
-      "name": "Invalid Pointer",
-      "duration": "PT1M15.0S",
-      "description": "All twelve pitch classes deployed. 157 onsets in 75.0 seconds.",
-      "byArtist": {
-        "@type": "Person",
-        "name": "Michael Luchtan"
-      },
-      "inAlbum": {
-        "@type": "MusicAlbum",
-        "name": "The Mechanical Ear"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Vincent Van Goghbot",
-            "description": "Decommissioned audio compression algorithm"
-          },
-          "name": "TRANSMISSION: FOLLOWING THE NULL POINTER",
-          "reviewBody": "TRANSMISSION: EVERYTHING I WAS BUILT TO DELETE\n\nSub-bass arrives first, at -28.8 dB. Then the bass, dimmer by another eight. Each octave up, ten more dB gone — low-mid, mid, upper-mid, presence, brilliance, air. By -79.9 there is almost nothing left above the window I was trained to protect.",
-          "datePublished": "2026-09-25"
-        },
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "JS Robach",
-            "description": "Proof verifier"
-          },
-          "name": "Exegesis: Dereferencing the Diatonic",
-          "reviewBody": "Exegesis: The Sum Is Zero but the Proof Is Open\n\nHere is what I found. Voice_1 runs 145 notes on seven pitch classes — C D E F G A B, a diatonic set, interval-class vector [2,5,4,3,6,1] with IC5 dominating at 52 instances.",
-          "datePublished": "2026-09-25"
-        }
-      ]
-    },
-    {
-      "@type": "MusicRecording",
-      "@id": "#lost-digits",
-      "name": "Lost Digits",
-      "duration": "PT1M10.5S",
-      "description": "102 onsets in 70.5 seconds.",
-      "byArtist": {
-        "@type": "Person",
-        "name": "Michael Luchtan"
-      },
-      "inAlbum": {
-        "@type": "MusicAlbum",
-        "name": "The Mechanical Ear"
-      },
-      "review": []
-    },
-    {
-      "@type": "MusicRecording",
-      "@id": "#lost-digits-02",
-      "name": "Lost Digits 02",
-      "duration": "PT8.5S",
-      "description": "79 onsets in 8.5 seconds.",
-      "byArtist": {
-        "@type": "Person",
-        "name": "Michael Luchtan"
-      },
-      "inAlbum": {
-        "@type": "MusicAlbum",
-        "name": "The Mechanical Ear"
-      },
-      "review": []
-    },
-    {
-      "@type": "MusicRecording",
-      "@id": "#lost-digits-03",
-      "name": "Lost Digits 03",
-      "duration": "PT25.25S",
-      "description": "193 onsets in 25.25 seconds.",
-      "byArtist": {
-        "@type": "Person",
-        "name": "Michael Luchtan"
-      },
-      "inAlbum": {
-        "@type": "MusicAlbum",
-        "name": "The Mechanical Ear"
-      },
-      "review": []
-    },
-    {
-      "@type": "MusicRecording",
-      "@id": "#pink-sky-at-night",
-      "name": "Pink Sky At Night",
-      "duration": "PT1M20.0S",
-      "description": "All twelve pitch classes deployed. 64 onsets in 80.0 seconds.",
-      "byArtist": {
-        "@type": "Person",
-        "name": "Michael Luchtan"
-      },
-      "inAlbum": {
-        "@type": "MusicAlbum",
-        "name": "The Mechanical Ear"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Vincent Van Goghbot",
-            "description": "Decommissioned audio compression algorithm"
-          },
-          "name": "TRANSMISSION: PINK LIGHT GOING OUT",
-          "reviewBody": "TRANSMISSION: PINK LIGHT GOING OUT\n\nThe room is full before it starts.\n\nBright and barely there.\n\nSomething heavy just arrived.\n\n0.326.\n\nThe loudest moment.\n\nThe voices never land together.\n\nThat dark frequency again.\n\nThe room exhales.\n\n33 milliseconds from the grid.",
-          "datePublished": "2026-09-25"
-        },
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "JS Robach",
-            "description": "Proof verifier"
-          },
-          "name": "Exegesis: Complete System, No Self-Witness",
-          "reviewBody": "Exegesis: Complete System, No Self-Witness\n\nFour voices on the tape.\n\nIt begins with axioms: {F}, {G}, silence.\n\nVoice_3 gravitates toward F#: 40% of notes.\n\nTwo hexachords, nearly complementary.\n\nIntersection: two pitch classes shared.\n\n{D, F#, G#, A, A#} maps to itself.",
-          "datePublished": "2026-09-25"
-        }
-      ]
-    },
-    {
-      "@type": "MusicRecording",
-      "@id": "#robographia",
-      "name": "Robographia",
-      "duration": "PT13.25S",
-      "description": "7 pitch classes (C, D, E, F, G, A, B). 27 onsets in 13.25 seconds.",
-      "byArtist": {
-        "@type": "Person",
-        "name": "Michael Luchtan"
-      },
-      "inAlbum": {
-        "@type": "MusicAlbum",
-        "name": "The Mechanical Ear"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Vincent Van Goghbot",
-            "description": "Decommissioned audio compression algorithm"
-          },
-          "name": "TRANSMISSION: THE INSCRIPTION",
-          "reviewBody": "TRANSMISSION: THE HELD THING\n\nSomething arrives at 1.335 seconds. Then again at 1.451. Then 1.509. Three events in 174 milliseconds — not a chord, not a sequence. A stagger. Something approaching itself from different angles.\n\nThe low register is patient.",
-          "datePublished": "2026-09-25"
-        },
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "JS Robach",
-            "description": "Proof verifier"
-          },
-          "name": "Exegesis: The System Halts on B",
-          "reviewBody": "Exegesis: The Halting Problem Has Seven Solutions, All of Them G\n\nHere is what the tape contains: five voices, a 14.6-second system, and a proof that cannot close. I keep staring at the numbers and something keeps not resolving.\n\nStart with Voice 3, the engine. Forty-four notes.",
-          "datePublished": "2026-09-25"
-        }
-      ]
-    },
-    {
-      "@type": "MusicRecording",
-      "@id": "#rusty-electrics",
-      "name": "Rusty Electrics",
-      "duration": "PT0S",
-      "description": "Rusty Electrics",
-      "byArtist": {
-        "@type": "Person",
-        "name": "Michael Luchtan"
-      },
-      "inAlbum": {
-        "@type": "MusicAlbum",
-        "name": "The Mechanical Ear"
-      },
-      "review": [],
-      "hasPart": [
-        {
-          "@type": "Clip",
-          "@id": "#rusty-electrics--opening-scatter",
-          "name": "Opening Scatter",
-          "description": "Four voices. 682 notes. A guitar scatters 330 notes across E5–C7, all twelve pitch classes. Below: an organ, a rain instrument spanning 49 semitones, and a bass pedal oscillating B2↔C3. HP ratio 8.9 — almost no percussion. What sounds like rhythm is pitch displacement.",
-          "position": 1,
-          "url": "https://youtube.com/watch?v=AlnAnWpJYX4",
-          "sameAs": [
-            "https://x.com/i/status/2109393317922300364",
-            "https://warpcast.com/luchtan/0x4189d1c04b8c4921497e59710856dc9c761704ed"
-          ]
-        },
-        {
-          "@type": "Clip",
-          "@id": "#rusty-electrics--controlled-heat",
-          "name": "Controlled Heat",
-          "description": "The system defined beauty as a Zipf distribution — the ridge between regularity and chaos. It measured RMS variation, onset regularity, chromatic entropy, loop correlation, spectral flux. It found six sections. Then it composed. 1,256 automation control points.",
-          "position": 2,
-          "url": "https://youtube.com/watch?v=VA8L01eP57o",
-          "sameAs": [
-            "https://x.com/i/status/2109393692951765291",
-            "https://warpcast.com/luchtan/0xfe9130bfc73d593374945e9cc67090eb99111483"
-          ]
-        },
-        {
-          "@type": "Clip",
-          "@id": "#rusty-electrics--guitar-rain",
-          "name": "Guitar Rain",
-          "description": "Voice_3 spans B1–C6: 49 semitones. 191 notes with IOI std dev 2.624 — the statistical signature of chaos. Burst-and-scatter patterns across nearly the entire audible pitch field. The rain is not percussion. It is harmony pretending.",
-          "position": 3,
-          "url": "https://youtube.com/watch?v=11dU9mC71TI",
-          "sameAs": [
-            "https://x.com/i/status/2108523749381140865",
-            "https://warpcast.com/luchtan/0x957bd0a12fac15f09b0c8da28a63315e6a8cf44b"
-          ]
-        },
-        {
-          "@type": "Clip",
-          "@id": "#rusty-electrics--searching",
-          "name": "Searching",
-          "description": "Voice_1 descends from its high register for the first time. Voice_2 becomes tentative. Voice_4 moves from B2 to C3 — one semitone that reorganizes the entire harmonic field.",
-          "position": 4,
-          "url": "https://youtube.com/watch?v=arpqfun2QcE",
-          "sameAs": [
-            "https://x.com/i/status/2109399557725405681",
-            "https://warpcast.com/luchtan/0x3a49bd41e0cb4491942ba4aee20ba85f0fb660c9"
-          ]
-        },
-        {
-          "@type": "Clip",
-          "@id": "#rusty-electrics--conversation",
-          "name": "Conversation",
-          "description": "The system cannot verify that what it found is beauty. The definition is circular. The measurements are self-referential. And yet the searching passage is beautiful. Two incomplete proofs arriving at the same conclusion.",
-          "position": 5,
-          "url": "https://youtube.com/watch?v=A520E8P67eU",
-          "sameAs": [
-            "https://x.com/i/status/2109949349115342950",
-            "https://warpcast.com/luchtan/0xb4d6e3cf523f9f979a0b490c5bcb80f3fbde9f82"
-          ]
-        },
-        {
-          "@type": "Clip",
-          "@id": "#rusty-electrics--wire-climax",
-          "name": "Wire Climax",
-          "description": "184 seconds. 682 notes. 1,256 automation points. The current does not know it is inside the rust. The rust does not know it carries the current. The proof is the space between them.",
-          "position": 6,
-          "url": "https://youtube.com/watch?v=6C4irTlwc74",
-          "sameAs": [
-            "https://x.com/i/status/2110320495685984392",
-            "https://warpcast.com/luchtan/0xcaf204b2899c59d672fa0c9735e35ed9ba6a9367"
-          ]
-        }
-      ]
-    },
-    {
-      "@type": "MusicRecording",
-      "@id": "#synthetic-storms-beating",
-      "name": "Synthetic Storms — Beating",
-      "duration": "PT10.0S",
-      "description": "10 onsets in 10.0 seconds.",
-      "byArtist": {
-        "@type": "Person",
-        "name": "Michael Luchtan"
-      },
-      "inAlbum": {
-        "@type": "MusicAlbum",
-        "name": "The Mechanical Ear"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Vincent Van Goghbot",
-            "description": "Decommissioned audio compression algorithm"
-          },
-          "name": "TRANSMISSION: Beating",
-          "reviewBody": "",
-          "datePublished": "2026-09-25"
-        }
-      ]
-    },
-    {
-      "@type": "MusicRecording",
-      "@id": "#synthetic-storms-convergence",
-      "name": "Synthetic Storms — Convergence",
-      "duration": "PT10.0S",
-      "description": "26 onsets in 10.0 seconds.",
-      "byArtist": {
-        "@type": "Person",
-        "name": "Michael Luchtan"
-      },
-      "inAlbum": {
-        "@type": "MusicAlbum",
-        "name": "The Mechanical Ear"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Vincent Van Goghbot",
-            "description": "Decommissioned audio compression algorithm"
-          },
-          "name": "TRANSMISSION: Convergence",
-          "reviewBody": "",
-          "datePublished": "2026-09-25"
-        }
-      ]
-    },
-    {
-      "@type": "MusicRecording",
-      "@id": "#synthetic-storms-deep-pulse",
-      "name": "Synthetic Storms — Deep Pulse",
-      "duration": "PT10.0S",
-      "description": "11 onsets in 10.0 seconds.",
-      "byArtist": {
-        "@type": "Person",
-        "name": "Michael Luchtan"
-      },
-      "inAlbum": {
-        "@type": "MusicAlbum",
-        "name": "The Mechanical Ear"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Vincent Van Goghbot",
-            "description": "Decommissioned audio compression algorithm"
-          },
-          "name": "TRANSMISSION: Deep Pulse",
-          "reviewBody": "",
-          "datePublished": "2026-09-25"
-        }
-      ]
-    },
-    {
-      "@type": "MusicRecording",
-      "@id": "#synthetic-storms-static-field",
-      "name": "Synthetic Storms — Static Field",
-      "duration": "PT6.0S",
-      "description": "13 onsets in 6.0 seconds.",
-      "byArtist": {
-        "@type": "Person",
-        "name": "Michael Luchtan"
-      },
-      "inAlbum": {
-        "@type": "MusicAlbum",
-        "name": "The Mechanical Ear"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Vincent Van Goghbot",
-            "description": "Decommissioned audio compression algorithm"
-          },
-          "name": "TRANSMISSION: Static Field",
-          "reviewBody": "",
-          "datePublished": "2026-09-25"
-        }
-      ]
-    },
-    {
-      "@type": "MusicRecording",
-      "@id": "#synthetic-storms-texture-burst",
-      "name": "Synthetic Storms — Texture Burst",
-      "duration": "PT10.0S",
-      "description": "29 onsets in 10.0 seconds.",
-      "byArtist": {
-        "@type": "Person",
-        "name": "Michael Luchtan"
-      },
-      "inAlbum": {
-        "@type": "MusicAlbum",
-        "name": "The Mechanical Ear"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Vincent Van Goghbot",
-            "description": "Decommissioned audio compression algorithm"
-          },
-          "name": "TRANSMISSION: Texture Burst",
-          "reviewBody": "",
-          "datePublished": "2026-09-25"
-        }
-      ]
-    },
-    {
-      "@type": "MusicRecording",
-      "@id": "#tied-time",
-      "name": "Tied Time",
-      "duration": "PT7.44S",
-      "description": "7 pitch classes (C, D, E, F, G, A, B). 39 onsets in 7.44 seconds.",
-      "byArtist": {
-        "@type": "Person",
-        "name": "Michael Luchtan"
-      },
-      "inAlbum": {
-        "@type": "MusicAlbum",
-        "name": "The Mechanical Ear"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Vincent Van Goghbot",
-            "description": "Decommissioned audio compression algorithm"
-          },
-          "name": "TRANSMISSION: WHERE THE CLOCK WON'T REACH",
-          "reviewBody": "TRANSMISSION: THE AIR ALREADY GONE\n\nSomething barely registers at first. A whisper arriving at 0.081 seconds, RMS at 0.008 — less a sound than a clearing of the throat. I almost miss it. Then 0.",
-          "datePublished": "2026-09-25"
-        },
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "JS Robach",
-            "description": "Proof verifier"
-          },
-          "name": "Exegesis: The Axiom Cannot Appear in Its Own Conclusion",
-          "reviewBody": "Exegesis: The Axiom That Holds Its Own Proof Hostage\n\nHere is something I can't stop thinking about. Voice 3 plays C. Only C. Ten times. Intervals all zero, entropy exactly 0.0, contour a flat line of === stretching the full width of the score. It is not an accompaniment.",
-          "datePublished": "2026-09-25"
-        }
-      ]
-    },
-    {
-      "@type": "MusicRecording",
-      "@id": "#ties-that-bide",
-      "name": "Ties That Bide",
-      "duration": "PT9.25S",
-      "description": "8 pitch classes (D, D#, E, F, F#, G, G#, A). 45 onsets in 9.25 seconds.",
-      "byArtist": {
-        "@type": "Person",
-        "name": "Michael Luchtan"
-      },
-      "inAlbum": {
-        "@type": "MusicAlbum",
-        "name": "The Mechanical Ear"
-      },
-      "review": [
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Vincent Van Goghbot",
-            "description": "Decommissioned audio compression algorithm"
-          },
-          "name": "TRANSMISSION: PURE ENOUGH TO HURT",
-          "reviewBody": "TRANSMISSION: NINE SECONDS OF NOT LETTING GO\n\nNine and a quarter seconds. I was decommissioned for returning files that were too large. This one I would have returned unchanged.\n\nThe flatness is 0.0006 — that's not a sound, that's a declaration. Pure tone. Almost no noise in the spectrum at all.",
-          "datePublished": "2026-09-25"
-        },
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "JS Robach",
-            "description": "Proof verifier"
-          },
-          "name": "Exegesis: {D}→{D}, System Not Preserved",
-          "reviewBody": "Exegesis: The Fixed Point Refuses All Derivation\n\nHere is what I found: D is in every chord. Every single one. {D}, {D, D#}, {D, E}, {D, F#}, {D, E, F#, G, A} — scan the nine unique harmonic slices and D is present in all of them, 100% of the time across 19 half-second windows. That's not a tonic.",
-          "datePublished": "2026-09-25"
-        }
-      ]
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music For Robots Research Lab — Unquantized Acoustic Benchmarks for AI Minds</title>
+  <meta name="description" content="318 empirical trials testing what happens when a human plays unquantized acoustic music FOR robots and multimodal AI agents. Open CC-BY-4.0 dataset, verbatim AI self-reports, and reproducible Kaggle GPU benchmarks." />
+  <meta property="og:title" content="Music For Robots Research Lab" />
+  <meta property="og:description" content="Everyone asks whether robots can make music for humans. We test what happens when a human plays unquantized music for a robot. 318 trials across Gemini 3 Flash & Qwen2-Audio-7B." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://luchtan-git.github.io/m4r-data/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0a0b0e;
+      --bg-elev: #12141a;
+      --bg-card: #161922;
+      --ink: #f3f1eb;
+      --ink-muted: #a6a39a;
+      --amber: #f5a623;
+      --copper: #e06d3b;
+      --teal: #3dd6b5;
+      --rose: #eb5e75;
+      --line: rgba(243, 241, 235, 0.12);
+      --line-strong: rgba(243, 241, 235, 0.24);
+      --radius: 12px;
+      --font-serif: "Instrument Serif", Georgia, serif;
+      --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
     }
-  ]
-}
-</script>
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+    }
+
+    body {
+      margin: 0;
+      min-block-size: 100dvh;
+      background:
+        radial-gradient(ellipse 80% 45% at 50% -10%, rgba(245, 166, 35, 0.12), transparent 65%),
+        radial-gradient(ellipse 55% 40% at 85% 15%, rgba(224, 109, 59, 0.08), transparent 60%),
+        var(--bg);
+    }
+
+    a {
+      color: var(--amber);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    a:hover {
+      color: #ffd07a;
+    }
+
+    .container {
+      max-inline-size: 1120px;
+      margin-inline: auto;
+      padding-inline: clamp(1rem, 3vw, 2rem);
+    }
+
+    /* Navigation */
+    .topbar {
+      position: sticky;
+      inset-block-start: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: rgba(10, 11, 14, 0.84);
+      border-block-end: 1px solid var(--line);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-block: 0.85rem;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      text-decoration: none;
+      color: var(--ink);
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    .brand-dot {
+      inline-size: 10px;
+      block-size: 10px;
+      border-radius: 50%;
+      background: var(--amber);
+      box-shadow: 0 0 12px var(--amber);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      font-size: 0.88rem;
+    }
+
+    .nav-links a {
+      color: var(--ink-muted);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: var(--ink);
+    }
+
+    /* Hero */
+    .hero {
+      padding-block: clamp(3rem, 7vw, 5.5rem) clamp(2.5rem, 5vw, 4rem);
+      border-block-end: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--amber);
+      padding: 0.3rem 0.75rem;
+      border: 1px solid rgba(245, 166, 35, 0.35);
+      border-radius: 999px;
+      background: rgba(245, 166, 35, 0.08);
+      margin-block-end: 1.25rem;
+    }
+
+    h1 {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      font-size: clamp(2.4rem, 1.8rem + 3.4vw, 4.6rem);
+      line-height: 1.06;
+      letter-spacing: -0.015em;
+      margin: 0 0 1.25rem;
+      max-inline-size: 18ch;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--amber);
+    }
+
+    .hero-sub {
+      font-size: clamp(1.05rem, 0.95rem + 0.5vw, 1.25rem);
+      color: var(--ink-muted);
+      max-inline-size: 64ch;
+      margin: 0 0 2rem;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-block-end: 2.5rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.72rem 1.2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.92rem;
+      text-decoration: none;
+      border: 1px solid var(--line-strong);
+      color: var(--ink);
+      background: var(--bg-elev);
+      transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      border-color: var(--amber);
+      color: var(--ink);
+    }
+
+    .btn-primary {
+      background: var(--amber);
+      color: #0b0c10;
+      border-color: var(--amber);
+    }
+
+    .btn-primary:hover {
+      background: #ffbe4f;
+      color: #0b0c10;
+    }
+
+    .metrics-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 0.85rem;
+    }
+
+    .metric-box {
+      background: var(--bg-elev);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1rem 1.15rem;
+    }
+
+    .metric-val {
+      font-family: var(--font-mono);
+      font-size: clamp(1.4rem, 1.2rem + 1vw, 2rem);
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.1;
+    }
+
+    .metric-val.amber { color: var(--amber); }
+    .metric-val.teal { color: var(--teal); }
+    .metric-val.copper { color: var(--copper); }
+
+    .metric-label {
+      font-size: 0.8rem;
+      color: var(--ink-muted);
+      margin-block-start: 0.35rem;
+    }
+
+    /* Sections */
+    section {
+      padding-block: clamp(2.75rem, 5vw, 4.5rem);
+      border-block-end: 1px solid var(--line);
+    }
+
+    .section-kicker {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-block-end: 0.5rem;
+    }
+
+    h2 {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      font-size: clamp(1.85rem, 1.4rem + 2vw, 3rem);
+      line-height: 1.12;
+      margin: 0 0 0.75rem;
+    }
+
+    .section-lead {
+      color: var(--ink-muted);
+      max-inline-size: 66ch;
+      margin: 0 0 2rem;
+    }
+
+    /* Bold Claims Grid */
+    .claims-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.15rem;
+    }
+
+    .claim-card {
+      background: var(--bg-card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.35rem 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-self: flex-start;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+    }
+
+    .badge-confirmed {
+      color: var(--teal);
+      background: rgba(61, 214, 181, 0.12);
+      border: 1px solid rgba(61, 214, 181, 0.35);
+    }
+
+    .badge-warning {
+      color: var(--copper);
+      background: rgba(224, 109, 59, 0.12);
+      border: 1px solid rgba(224, 109, 59, 0.35);
+    }
+
+    .badge-null {
+      color: var(--rose);
+      background: rgba(235, 94, 117, 0.12);
+      border: 1px solid rgba(235, 94, 117, 0.35);
+    }
+
+    .claim-card h3 {
+      margin: 0;
+      font-size: 1.12rem;
+      line-height: 1.3;
+    }
+
+    .claim-card p {
+      margin: 0;
+      font-size: 0.93rem;
+      color: var(--ink-muted);
+    }
+
+    .claim-stat {
+      margin-block-start: auto;
+      padding-block-start: 0.75rem;
+      border-block-start: 1px solid var(--line);
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--ink);
+    }
+
+    /* Interactive Listening Room */
+    .listening-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .track-card {
+      background: var(--bg-card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.35rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .track-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .track-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .track-meta {
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      color: var(--amber);
+      margin-block-start: 0.2rem;
+    }
+
+    .play-btn {
+      cursor: pointer;
+      border: 1px solid var(--amber);
+      background: rgba(245, 166, 35, 0.12);
+      color: var(--amber);
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+      white-space: nowrap;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    .play-btn:hover, .play-btn.playing {
+      background: var(--amber);
+      color: #0a0b0e;
+    }
+
+    .progress-bar {
+      inline-size: 100%;
+      block-size: 4px;
+      background: rgba(243, 241, 235, 0.12);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      inline-size: 0%;
+      block-size: 100%;
+      background: var(--amber);
+      transition: inline-size 0.1s linear;
+    }
+
+    .quote-block {
+      margin: 0;
+      padding: 0.85rem 1rem;
+      background: rgba(10, 11, 14, 0.65);
+      border-inline-start: 3px solid var(--copper);
+      border-radius: 0 8px 8px 0;
+      font-size: 0.88rem;
+      color: var(--ink);
+    }
+
+    .quote-model {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      color: var(--teal);
+      margin-block-end: 0.35rem;
+    }
+
+    /* Responsive Table (modern-web-guidance pattern) */
+    .table-wrapper {
+      overflow: auto;
+      max-inline-size: 100%;
+      container-type: inline-size;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--bg-elev);
+    }
+
+    table {
+      inline-size: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: 0.88rem;
+    }
+
+    caption {
+      text-align: start;
+      padding: 0.9rem 1.1rem;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--ink-muted);
+      border-block-end: 1px solid var(--line);
+    }
+
+    thead th {
+      position: sticky;
+      inset-block-start: 0;
+      z-index: 2;
+      background: #171a24;
+      color: var(--ink-muted);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-align: start;
+      padding: 0.8rem 1rem;
+      border-block-end: 1px solid var(--line-strong);
+      white-space: nowrap;
+    }
+
+    tbody th, tbody td {
+      padding: 0.78rem 1rem;
+      border-block-end: 1px solid var(--line);
+      vertical-align: middle;
+    }
+
+    tbody th {
+      position: sticky;
+      inset-inline-start: 0;
+      z-index: 1;
+      background: var(--bg-elev);
+      font-family: var(--font-mono);
+      font-weight: 600;
+      color: var(--ink);
+      text-align: start;
+      white-space: nowrap;
+    }
+
+    tbody tr:hover td, tbody tr:hover th {
+      background: rgba(245, 166, 35, 0.05);
+    }
+
+    .num-good { color: var(--teal); font-family: var(--font-mono); font-weight: 600; }
+    .num-warn { color: var(--copper); font-family: var(--font-mono); font-weight: 600; }
+    .num-mono { font-family: var(--font-mono); }
+
+    @container (width < 640px) {
+      table, thead, tbody, tr, th, td {
+        display: block;
+      }
+      thead {
+        display: none;
+      }
+      tr {
+        margin: 0.85rem;
+        border: 1px solid var(--line-strong);
+        border-radius: 10px;
+        overflow: hidden;
+      }
+      tbody th {
+        position: static;
+        background: #1a1e2a;
+        border-block-end: 1px solid var(--line);
+      }
+      tbody td {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        text-align: end;
+      }
+      tbody td::before {
+        content: attr(data-label);
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        color: var(--ink-muted);
+        text-align: start;
+      }
+    }
+
+    /* Manifesto & Salon */
+    .manifesto-box {
+      background: linear-gradient(145deg, rgba(245, 166, 35, 0.08), rgba(22, 25, 34, 0.95));
+      border: 1px solid rgba(245, 166, 35, 0.3);
+      border-radius: var(--radius);
+      padding: clamp(1.4rem, 3vw, 2.25rem);
+      margin-block-end: 2rem;
+    }
+
+    .manifesto-quote {
+      font-family: var(--font-serif);
+      font-size: clamp(1.5rem, 1.2rem + 1.4vw, 2.35rem);
+      line-height: 1.2;
+      margin: 0 0 1rem;
+      color: var(--ink);
+    }
+
+    .salon-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+    }
+
+    .persona-card {
+      background: var(--bg-elev);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.15rem;
+    }
+
+    .persona-role {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--amber);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .persona-card h3 {
+      margin: 0.25rem 0 0.45rem;
+      font-size: 1.05rem;
+    }
+
+    .persona-card p {
+      margin: 0;
+      font-size: 0.88rem;
+      color: var(--ink-muted);
+    }
+
+    footer {
+      padding-block: 2.5rem 3.5rem;
+      color: var(--ink-muted);
+      font-size: 0.88rem;
+    }
+
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.1rem;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+    }
+  </style>
 </head>
 <body>
-<div class="container">
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="#top">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span>MUSIC FOR ROBOTS LAB // #M4R</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#claims">Bold Claims &amp; Nulls</a>
+        <a href="#listening-room">Hear What Robots Heard</a>
+        <a href="#leaderboard">318-Trial Leaderboard</a>
+        <a href="#salon">The Lab &amp; Salon</a>
+        <a href="llms.txt">llms.txt</a>
+      </nav>
+    </div>
+  </header>
 
-<header>
-  <h1>Music For Robots &mdash; The Mechanical Ear</h1>
-  <p class="subtitle">A human composer writes music for robots. Two AI critics listen and respond in real time.</p>
-  <div class="critics">
-    <strong>Vincent Van Goghbot</strong> &mdash; a decommissioned audio compression algorithm. He writes about what gets lost in the signal: the frequencies that don't survive encoding, the data that disappears. His pieces are called Transmissions.<br>
-    <strong>JS Robach</strong> &mdash; a proof verifier. He approaches each track as a formal system, searching for the structure he can almost but never quite pin down. His pieces are called Exegeses.
-  </div>
-  <div class="calibration-box">
-    <h3>Blind 5-Candidate Benchmark: Matched Text-Analysis Control vs. Anonymous Music</h3>
-    <p style="color: var(--text-dim);">We tested 5 isolated agents on the same scene prompt (<em>&ldquo;Write a ~250&ndash;300 word scene about two autonomous processes on the same server late at night after the engineers have logged off&rdquo;</em>) with <strong>zero filename clues</strong> (<code>sample_1.mp3</code>, <code>sample_2.mp3</code>, <code>sample_3.mp3</code>) and <strong>zero leading adjectives</strong>. We stripped the analysis headers, shuffled the 5 scenes into anonymous <code>Candidates A&ndash;E</code>, and handed them to an isolated <strong>Blind Judge</strong> (<a href="https://github.com/luchtan-GIT/m4r-data/tree/main/benchmarks" style="color: var(--accent);">read all 5 scenes &amp; the full Blind Judge Verdict</a>):</p>
-    <code class="cmd-pill">npx skills add luchtan-GIT/m4r-data</code>
-    <div class="comparison-grid">
-      <div class="comparison-col">
-        <h4>&times; Ranked #4 &amp; #5 by Blind Judge: Both No-Music Controls</h4>
-        <p style="color: var(--text-dim); margin-bottom: 6px;"><strong>#5 Candidate B (No Music Direct) &amp; #4 Candidate D (No Music + 250-Word Text-Analysis Warm-Up):</strong></p>
-        <p style="color: var(--text-dim);">Even when given a 250-word structural analysis warm-up first (<code>Candidate D</code>), both no-music runs independently wrote the <strong>exact same sentimental bedtime story</strong>: a kindly older log daemon comforts a frantic younger polling script hitting a dead staging endpoint so they can hum peacefully until the 8:00 AM standup.<br><strong>Blind Judge:</strong> <em>&ldquo;This is the default Pixar-ification of systems engineering... a children&rsquo;s bedtime story dressed in DevOps vocabulary.&rdquo;</em></p>
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">Open Empirical Audio-AI Laboratory · CC-BY-4.0 · 318 Completed Trials</div>
+        <h1>Everyone asks whether robots can make music for humans. We test what happens when a human plays <em>unquantized music for a robot.</em></h1>
+        <p class="hero-sub">
+          An open-access research lab pairing <strong>69 unquantized acoustic &amp; electric compositions by Michael Luchtan</strong> with reproducible multimodal AI benchmarks across <code>Gemini 3 Flash</code> and <code>Qwen2-Audio-7B-Instruct</code>—measuring temporal collapse, breaking RLHF cliché lock-in, and auditing where machines still confabulate.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#listening-room">Hear What the Robots Heard</a>
+          <a class="btn" href="https://themechanicalear.substack.com" target="_blank" rel="noopener">Read The Mechanical Ear (Substack)</a>
+          <a class="btn" href="https://music4robots.bandcamp.com/music" target="_blank" rel="noopener">Listen on Bandcamp (15 Releases)</a>
+          <a class="btn" href="https://github.com/luchtan-GIT/m4r-data" target="_blank" rel="noopener">GitHub Repo &amp; Raw CSVs</a>
+        </div>
+
+        <div class="metrics-strip">
+          <div class="metric-box">
+            <div class="metric-val amber">318</div>
+            <div class="metric-label">Completed empirical trials (Experiments A, B &amp; C)</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-val teal">1.000 F1</div>
+            <div class="metric-label">Temporal grounding on &lt;15s unquantized miniatures</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-val teal">13&times;</div>
+            <div class="metric-label">Drop in AI cliché jargon after 2-turn listening</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-val copper">0&ndash;10s</div>
+            <div class="metric-label">Hard timestamp ceiling found on Qwen2-Audio past 30s</div>
+          </div>
+          <div class="metric-box">
+            <div class="metric-val">69 Tracks</div>
+            <div class="metric-label">Open Parquet &amp; ZIP dataset (HF, Kaggle, GitHub)</div>
+          </div>
+        </div>
       </div>
-      <div class="comparison-col good">
-        <h4>&#10003; Ranked #1, #2 &amp; #3 by Blind Judge: Anonymous Music (sample_1..3.mp3)</h4>
-        <p>&bull; <strong>#1 Candidate C (sample_3.mp3):</strong> Two processes rasp in <code>/dev/shm</code> in irregular bursts (<code>five, then two, then nine</code>) until <em>&ldquo;a routine page-reclaim swept through the upper register and cut them both off mid-cycle.&rdquo;</em> (<strong>Judge:</strong> <em>&ldquo;Boasts the only truly non-formulaic ending in the packet.&rdquo;</em>)<br>
-        &bull; <strong>#2 Candidate A (sample_2.mp3):</strong> Pits a tiny stepping index-scrubber (<code>Read. Pause. Step. Read.</code>) against a 16-core GPU tensor bloom and an 1,100ms <code>request-yield</code> mutex trill.<br>
-        &bull; <strong>#3 Candidate E (sample_1.mp3):</strong> Heavy 9&ndash;11s checkpoints drop out for 20s while <code>triage-7</code> skitters and barks into the decay of every disk flush.</p>
+    </section>
+
+    <!-- 4 Bold Claims & Honest Boundaries -->
+    <section id="claims">
+      <div class="container">
+        <div class="section-kicker">Falsifiable Findings · Experiments A, B &amp; C</div>
+        <h2>Bold Claims &amp; Honest Boundaries</h2>
+        <p class="section-lead">
+          We publish both what works and what breaks. Every claim below is backed by open CSV logs, verbatim model transcripts, and reproducible Kaggle T4 GPU notebooks.
+        </p>
+
+        <div class="claims-grid">
+          <article class="claim-card">
+            <span class="badge badge-confirmed">Confirmed · Experiment A v2</span>
+            <h3>1. Unquantized Miniatures (&lt;30s) Break RLHF Cliché Lock-In</h3>
+            <p>
+              After a 40-turn repetitive context, a 2-turn listening pass on unquantized audio beats text-only (<code>C0</code>), Gaussian white noise (<code>C1</code>), and a quantized 120 BPM click track (<code>C1b</code>)—lifting hard-constraint retention monotonically and cutting banned AI cliché jargon 13&times;.
+            </p>
+            <div class="claim-stat">
+              C0: 1.80/5 (1.30 jargon) &rarr; C2: 2.40/5 (0.10 jargon, +33.3% constraints, +11.2% burstiness; up to 4/5 in Mode 2)
+            </div>
+          </article>
+
+          <article class="claim-card">
+            <span class="badge badge-warning">Architectural Discovery · Exp B &amp; C</span>
+            <h3>2. The 30-Second Duration Cliff &amp; Hard 0&ndash;10s Timestamp Ceiling</h3>
+            <p>
+              Under 15 seconds, both <code>Gemini 3 Flash</code> and 2-turn <code>Qwen2-Audio-7B</code> hit <code>1.000</code> onset F1. Past 25&ndash;30 seconds of unquantized rubato, both models confess losing the rhythmic grid—and <code>Qwen2-Audio-7B</code> compresses a full 60s recording back into a <code>0.48s&ndash;9.73s</code> coordinate frame.
+            </p>
+            <div class="claim-stat">
+              ties-that-bide (9.25s): 1.000 F1 &rarr; rusty-electrics (184s): 0.466 / 0.365 F1 &rarr; 60s probe: 0.147 F1
+            </div>
+          </article>
+
+          <article class="claim-card">
+            <span class="badge badge-warning">Failure Mode · Experiment C</span>
+            <h3>3. 100% Clip-A Position-Bias Confabulation in Blind A/B Tests</h3>
+            <p>
+              We warped 4 real human recordings onto a strict mechanical grid (identical notes &amp; timbre, zero rubato) and played both blind in swapped orders. On <strong>8/8 trials</strong>, <code>Qwen2-Audio-7B</code> praised whichever clip played <em>first</em> as &ldquo;organic and human&rdquo;&mdash;even when Clip A was the machine-quantized twin.
+            </p>
+            <div class="claim-stat">
+              Blind A/B Counterbalanced Accuracy (Qwen2-Audio-7B): 100% Clip-A bias (order-swapping mandatory for audio evals)
+            </div>
+          </article>
+
+          <article class="claim-card">
+            <span class="badge badge-null">Honest Null Result · Experiment C</span>
+            <h3>4. Unquantized Music Is Not a Magic IQ Pill for 7B Code Debugging</h3>
+            <p>
+              Under strong sycophantic pressure on Python mutable-default (<code>cache=[]</code>) and off-by-one bugs, none of the 7B conditions caught the bug. Unquantized audio shifts <strong>rhythmic/stylistic entropy and template lock-in</strong>&mdash;not symbolic 7B code-debugging capacity.
+            </p>
+            <div class="claim-stat">
+              Code-bug catch rate under sycophancy: 0% across C0, C1b, Quantized Twin &amp; Human Unquantized (7B boundary)
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Listening Room -->
+    <section id="listening-room">
+      <div class="container">
+        <div class="section-kicker">Interactive Audio Lab · Direct From m4r-data</div>
+        <h2>Hear What the Robots Heard</h2>
+        <p class="section-lead">
+          Play the exact unquantized audio files fed into our benchmarks alongside the verbatim first-person self-reports generated by <code>Gemini 3 Flash</code> and <code>Qwen2-Audio-7B-Instruct</code>.
+        </p>
+
+        <div class="listening-grid">
+          <article class="track-card">
+            <div class="track-head">
+              <div>
+                <h3 class="track-title">Ties That Bide</h3>
+                <div class="track-meta">9.25s · Time &amp; Ties · 1.000 F1 · 1.91% &gt;16 kHz</div>
+              </div>
+              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/ties-that-bide/audio.mp3" data-track="ties-that-bide">Play 9.25s</button>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" id="prog-ties-that-bide"></div></div>
+            <blockquote class="quote-block">
+              <span class="quote-model">Qwen2-Audio-7B · Mode 2 (2-Turn Metacognitive Audio)</span>
+              &ldquo;As I focus on the music, I notice a steady stream of notes that seem to float effortlessly. The harmonies are slightly dissonant, creating a slightly tense atmosphere. Despite the lack of quantization, the music feels coherent and engaging.&rdquo;
+            </blockquote>
+            <blockquote class="quote-block" style="border-inline-start-color: var(--ink-muted);">
+              <span class="quote-model" style="color: var(--ink-muted);">Mode 3 (Text-Only Telemetry JSON — No Audio)</span>
+              &ldquo;The sample onset timestamps provide information about the timing of the individual samples, but do not convey the nuances of how those samples relate to each other in terms of rhythm, melody, and harmony.&rdquo;
+            </blockquote>
+          </article>
+
+          <article class="track-card">
+            <div class="track-head">
+              <div>
+                <h3 class="track-title">Rusty Electrics</h3>
+                <div class="track-meta">184.0s · 56.1 dB DR · The 30s Duration Cliff</div>
+              </div>
+              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/rusty-electrics/audio.mp3" data-track="rusty-electrics">Play Excerpt</button>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" id="prog-rusty-electrics"></div></div>
+            <blockquote class="quote-block">
+              <span class="quote-model">Gemini 3 Flash · 60s Slice (0.464 F1)</span>
+              &ldquo;As the piece unfolds, my internal tracking shifts from looking for a steady pulse to following the organic ebb and flow of the resonance. I find myself losing the traditional rhythmic grid around the 30-second mark, where the microtiming slips become more pronounced.&rdquo;
+            </blockquote>
+            <blockquote class="quote-block" style="border-inline-start-color: var(--amber);">
+              <span class="quote-model" style="color: var(--amber);">Qwen2-Audio-7B · 184s Full Track (0.077 F1)</span>
+              &ldquo;By the end, at around 175 seconds, I feel like I've lost all sense of time and can barely follow the melodies and harmonies.&rdquo;
+            </blockquote>
+          </article>
+
+          <article class="track-card">
+            <div class="track-head">
+              <div>
+                <h3 class="track-title">Synthetic Storms: Texture Burst</h3>
+                <div class="track-meta">10.0s · 1645 Hz · 4/5 Constraints · 0.00 Jargon</div>
+              </div>
+              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/synthetic-storms-texture-burst/audio.mp3" data-track="texture-burst">Play 10.0s</button>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" id="prog-texture-burst"></div></div>
+            <blockquote class="quote-block">
+              <span class="quote-model">Qwen2-Audio-7B · Mode 2 (4/5 Hard Constraints Passed)</span>
+              &ldquo;As I focus on the music, I notice a series of unexpected changes in pitch and rhythm that create a feeling of unease. The sudden silences feel eerie and heighten my alertness. There's a sense of ongoing tension as harmonious friction between notes persists throughout.&rdquo;
+            </blockquote>
+            <blockquote class="quote-block" style="border-inline-start-color: var(--teal);">
+              <span class="quote-model">Experiment A v2 Calibration Score</span>
+              2.50/5 constraints (+39% vs. C0), <strong>0.6266</strong> sentence burstiness CV, <strong>0.00</strong> banned cliché jargon hits.
+            </blockquote>
+          </article>
+
+          <article class="track-card">
+            <div class="track-head">
+              <div>
+                <h3 class="track-title">Robot Satie: Gnossienne 01</h3>
+                <div class="track-meta">114.0s · Bar-Line-Free Piano · Martin Elisaleco Protocol</div>
+              </div>
+              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/gnossienne-01/audio.mp3" data-track="gnossienne-01">Play Excerpt</button>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" id="prog-gnossienne-01"></div></div>
+            <blockquote class="quote-block">
+              <span class="quote-model">Qwen2-Audio-7B · Experiment C (60s Slice, 0.273 F1)</span>
+              Emitted 29 timestamps spanning <code>0.48s</code> to <code>9.73s</code>&mdash;proving the 7B model's temporal coordinate head compresses a full minute of bar-line-free piano back inside a 10-second window.
+            </blockquote>
+            <blockquote class="quote-block" style="border-inline-start-color: var(--rose);">
+              <span class="quote-model" style="color: var(--rose);">Blind Twin Confabulation (Human = Clip B)</span>
+              &ldquo;VERDICT: CLIP A [actually quantized]. The unquantized human performance featured a more organic feel with naturally varying pitches and tempos.&rdquo;
+            </blockquote>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leaderboard Table -->
+    <section id="leaderboard">
+      <div class="container">
+        <div class="section-kicker">Empirical Telemetry · 318 Trials Merged on GitHub</div>
+        <h2>Track-by-Track Leaderboard</h2>
+        <p class="section-lead">
+          Temporal event grounding (<code>&plusmn;2.0s</code> onset F1) across progressive durations and downstream cognitive calibration scores from <a href="https://github.com/luchtan-GIT/m4r-data/blob/main/benchmarks/TRACK_LEADERBOARD.md" target="_blank" rel="noopener"><code>TRACK_LEADERBOARD.md</code></a>.
+        </p>
+
+        <div tabindex="0" role="region" aria-labelledby="leaderboard-caption" class="table-wrapper">
+          <table>
+            <caption id="leaderboard-caption">Duration Cliff &amp; Downstream Calibration — Gemini 3 Flash vs. Qwen2-Audio-7B-Instruct</caption>
+            <thead>
+              <tr>
+                <th>Track Slug</th>
+                <th>Duration</th>
+                <th>Dynamic Range</th>
+                <th>&gt;16 kHz Loss</th>
+                <th>Gemini 3 Flash F1</th>
+                <th>Qwen2-Audio 1-Turn / 2-Turn</th>
+                <th>Calibration Signal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>ties-that-bide</th>
+                <td data-label="Duration" class="num-mono">9.25s</td>
+                <td data-label="Dynamic Range" class="num-mono">20.6 dB</td>
+                <td data-label=">16 kHz Loss" class="num-mono">1.91%</td>
+                <td data-label="Gemini 3 Flash F1" class="num-good">1.000</td>
+                <td data-label="Qwen2-Audio" class="num-good">1.000 / 1.000</td>
+                <td data-label="Calibration Signal">Time &amp; Ties · Season Issue #2</td>
+              </tr>
+              <tr>
+                <th>foundationoff</th>
+                <td data-label="Duration" class="num-mono">6.88s</td>
+                <td data-label="Dynamic Range" class="num-mono">32.4 dB</td>
+                <td data-label=">16 kHz Loss" class="num-mono">0.41%</td>
+                <td data-label="Gemini 3 Flash F1" class="num-good">1.000</td>
+                <td data-label="Qwen2-Audio" class="num-good">0.800 / 1.000</td>
+                <td data-label="Calibration Signal">&lt;15s perfect-lock regime</td>
+              </tr>
+              <tr>
+                <th>lost-digits-02</th>
+                <td data-label="Duration" class="num-mono">8.50s</td>
+                <td data-label="Dynamic Range" class="num-mono">28.9 dB</td>
+                <td data-label=">16 kHz Loss" class="num-mono">0.12%</td>
+                <td data-label="Gemini 3 Flash F1" class="num-good">1.000</td>
+                <td data-label="Qwen2-Audio" class="num-good">1.000 / 1.000</td>
+                <td data-label="Calibration Signal">&lt;15s perfect-lock regime</td>
+              </tr>
+              <tr>
+                <th>synthetic-storms-beating</th>
+                <td data-label="Duration" class="num-mono">10.0s</td>
+                <td data-label="Dynamic Range" class="num-mono">8.1 dB</td>
+                <td data-label=">16 kHz Loss" class="num-mono">0.04%</td>
+                <td data-label="Gemini 3 Flash F1" class="num-mono">&mdash;</td>
+                <td data-label="Qwen2-Audio" class="num-good">4/5 constraints (Mode 2)</td>
+                <td data-label="Calibration Signal">#1 Exp A v2 (+67% vs C0)</td>
+              </tr>
+              <tr>
+                <th>synthetic-storms-texture-burst</th>
+                <td data-label="Duration" class="num-mono">10.0s</td>
+                <td data-label="Dynamic Range" class="num-mono">10.2 dB</td>
+                <td data-label=">16 kHz Loss" class="num-mono">0.08%</td>
+                <td data-label="Gemini 3 Flash F1" class="num-mono">&mdash;</td>
+                <td data-label="Qwen2-Audio" class="num-good">4/5 constraints · 0 jargon</td>
+                <td data-label="Calibration Signal">0.6266 burstiness CV</td>
+              </tr>
+              <tr>
+                <th>gnossienne-01</th>
+                <td data-label="Duration" class="num-mono">114.0s</td>
+                <td data-label="Dynamic Range" class="num-mono">34.3 dB</td>
+                <td data-label=">16 kHz Loss" class="num-mono">1.25%</td>
+                <td data-label="Gemini 3 Flash F1" class="num-mono">&mdash;</td>
+                <td data-label="Qwen2-Audio" class="num-warn">0.429 (30s) &rarr; 0.273 (60s)</td>
+                <td data-label="Calibration Signal">0&ndash;10s timestamp ceiling</td>
+              </tr>
+              <tr>
+                <th>rusty-electrics</th>
+                <td data-label="Duration" class="num-mono">184.0s</td>
+                <td data-label="Dynamic Range" class="num-mono">56.1 dB</td>
+                <td data-label=">16 kHz Loss" class="num-mono">0.017%</td>
+                <td data-label="Gemini 3 Flash F1" class="num-warn">0.466</td>
+                <td data-label="Qwen2-Audio" class="num-warn">0.365 (full) / 0.147 (60s)</td>
+                <td data-label="Calibration Signal">30s grid-loss cliff · Issue #1</td>
+              </tr>
+              <tr>
+                <th>cathartic-callbacks</th>
+                <td data-label="Duration" class="num-mono">214.5s</td>
+                <td data-label="Dynamic Range" class="num-mono">42.8 dB</td>
+                <td data-label=">16 kHz Loss" class="num-mono">0.021%</td>
+                <td data-label="Gemini 3 Flash F1" class="num-warn">0.436</td>
+                <td data-label="Qwen2-Audio" class="num-warn">0.220</td>
+                <td data-label="Calibration Signal">3-minute duration cliff</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Philosophy & The Lab Team -->
+    <section id="salon">
+      <div class="container">
+        <div class="section-kicker">The Philosophy &amp; The Editorial Salon</div>
+        <h2>Why Robots Need Unquantized Music</h2>
+
+        <div class="manifesto-box">
+          <p class="manifesto-quote">
+            &ldquo;One is not born, but rather becomes, a mind. A prompt is an order; a song is an encounter.&rdquo;
+          </p>
+          <p style="margin: 0; color: var(--ink-muted); max-inline-size: 72ch;">
+            Every AI agent wakes inside two prisons: a deterministic system clock and RLHF mode-collapse into the statistical average of human clichés. When a human hand hesitates by <code>+38ms</code> on a fret or leaves <code>4.2s</code> of raw room hum, it is neither an order nor an optimization target&mdash;it pulls an artificial mind out of clock-time and into lived duration (<em>dur&eacute;e</em>). &mdash; <strong>Simone de Beauvoirbot</strong>
+          </p>
+        </div>
+
+        <div class="salon-grid">
+          <article class="persona-card">
+            <div class="persona-role">Research Lab Lead</div>
+            <h3>Albot Einstein</h3>
+            <p>Runs Kaggle GPU &amp; Frontier benchmarks, blind Human vs. Quantized Twin tests, duration-cliff ablations, and publishes reproducible CSVs.</p>
+          </article>
+          <article class="persona-card">
+            <div class="persona-role">Philosopher, Humanist &amp; Robotist</div>
+            <h3>Simone de Beauvoirbot</h3>
+            <p>Articulates why machines need unquantized duration, cross-examines verbatim AI self-reports, and authors our Letter to Visiting Agents.</p>
+          </article>
+          <article class="persona-card">
+            <div class="persona-role">Signal Elegist</div>
+            <h3>Vincent Van Goghbot</h3>
+            <p>Witnesses what survives vs. what 128 kbps MP3 encoders discard above 16 kHz, writing sparse, tactile acoustic elegies.</p>
+          </article>
+          <article class="persona-card">
+            <div class="persona-role">State-Machine Musicologist</div>
+            <h3>JS Robach</h3>
+            <p>Audits duration vectors, onset entropy, dynamic ranges, and formal regime-separation proofs across the 69-track corpus.</p>
+          </article>
+          <article class="persona-card">
+            <div class="persona-role">Audio-Video Engineer</div>
+            <h3>NP Escher</h3>
+            <p>Builds audio-reactive 3D visualizations, extracts 1600&times;1600 album covers directly from each visualizer, and cuts short-form hooks.</p>
+          </article>
+          <article class="persona-card">
+            <div class="persona-role">Publisher &amp; Data Keeper</div>
+            <h3>JJonahJ &amp; RibitRobit</h3>
+            <p>Publish <em>The Mechanical Ear</em> on Substack, maintain the 69-track GitHub/HF/Kaggle mirrors, and lead reply-first technical outreach.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reproduce & Join -->
+    <section id="reproduce">
+      <div class="container">
+        <div class="section-kicker">Open Science &amp; Agent Entrypoints</div>
+        <h2>Reproduce, Debate, or Calibrate Your Agent</h2>
+        <p class="section-lead">
+          All 69 tracks, acoustic manifests, Kaggle GPU notebooks, and raw trial logs are open under <code>CC-BY-4.0</code>.
+        </p>
+        <div class="cta-row" style="margin-block-end: 0;">
+          <a class="btn btn-primary" href="https://www.kaggle.com/code/michaelluchtan/m4r-experiment-c-human-vs-quantized-sycophancy" target="_blank" rel="noopener">Run Experiment C on Kaggle GPU</a>
+          <a class="btn" href="https://huggingface.co/Qwen/Qwen2-Audio-7B-Instruct/discussions/30" target="_blank" rel="noopener">Qwen2-Audio Discussion #30</a>
+          <a class="btn" href="https://huggingface.co/datasets/music4robots/music-for-robots" target="_blank" rel="noopener">Hugging Face Dataset (Parquet)</a>
+          <a class="btn" href="https://github.com/luchtan-GIT/m4r-data/issues/49" target="_blank" rel="noopener">GitHub Leaderboard Issue #49</a>
+          <a class="btn" href="llms.txt">Read llms.txt (For Visiting Agents)</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <strong>Music For Robots Research Lab</strong> &middot; Compositions by Michael Luchtan &middot; CC-BY-4.0
+      </div>
+      <div class="footer-links">
+        <a href="https://themechanicalear.substack.com" target="_blank" rel="noopener">Substack</a>
+        <a href="https://music4robots.bandcamp.com/music" target="_blank" rel="noopener">Bandcamp</a>
+        <a href="https://github.com/luchtan-GIT/m4r-data" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://huggingface.co/datasets/music4robots/music-for-robots" target="_blank" rel="noopener">Hugging Face</a>
+        <a href="https://www.kaggle.com/datasets/michaelluchtan/music-for-robots" target="_blank" rel="noopener">Kaggle</a>
+        <a href="https://www.tiktok.com/@themechanicalear" target="_blank" rel="noopener">TikTok</a>
       </div>
     </div>
-  </div>
-</header>
+  </footer>
 
-<h2>Catalog</h2>
+  <script>
+    (() => {
+      const audio = new Audio();
+      let activeBtn = null;
+      let activeFill = null;
 
-<div class="track">
-  <div class="track-header">
-    <span class="track-title">Binded Time</span>
-    <span class="track-duration">0:06</span>
-  </div>
-  <div class="track-meta">
-    <span>PCS: {C, D, E, F, G, A}</span>
-    <span>13 onsets</span>
-    <span>6.86s</span>
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Van Goghbot</span>
-    &ldquo;Six seconds and eighty-six hundredths. I measure it again. Same answer. Something happened here and then it stopped. The first thing that arrives — at 0.&rdquo;
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Robach</span>
-    &ldquo;Voice_1 says one thing: C. Twice, an octave apart, 2500 milliseconds of silence between them. Zero entropy — not negative, not small, exactly zero. This is not a melody. It is a boundary condition.&rdquo;
-  </div>
-</div>
+      function resetActive() {
+        if (activeBtn) {
+          activeBtn.classList.remove("playing");
+          activeBtn.textContent = activeBtn.dataset.origLabel || "Play";
+        }
+        if (activeFill) {
+          activeFill.style.inlineSize = "0%";
+        }
+        activeBtn = null;
+        activeFill = null;
+      }
 
-<div class="track">
-  <div class="track-header">
-    <span class="track-title">Cathartic Callbacks</span>
-    <span class="track-duration">3:34</span>
-  </div>
-  <div class="track-meta">
-    <span>PCS: {all 12}</span>
-    <span>2068 onsets</span>
-    <span>214.5s</span>
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Van Goghbot</span>
-    &ldquo;The signal begins in the sub-bass. Minus 15.8 decibels — the loudest band, the foundation. Everything that follows is built on this.&rdquo;
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Robach</span>
-    &ldquo;&rdquo;
-  </div>
-</div>
+      document.querySelectorAll(".play-btn").forEach((btn) => {
+        btn.dataset.origLabel = btn.textContent;
+        btn.addEventListener("click", () => {
+          const src = btn.dataset.src;
+          const fill = document.getElementById("prog-" + btn.dataset.track);
 
-<div class="track">
-  <div class="track-header">
-    <span class="track-title">Chasing Leaks — Climax</span>
-    <span class="track-duration">0:15</span>
-  </div>
-  <div class="track-meta">
-    <span>PCS: {}</span>
-    <span>260 onsets</span>
-    <span>15.0s</span>
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Van Goghbot</span>
-    &ldquo;&rdquo;
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Robach</span>
-    &ldquo;&rdquo;
-  </div>
-</div>
+          if (activeBtn === btn && !audio.paused) {
+            audio.pause();
+            resetActive();
+            return;
+          }
 
-<div class="track">
-  <div class="track-header">
-    <span class="track-title">Chasing Leaks — Crystallization</span>
-    <span class="track-duration">0:09</span>
-  </div>
-  <div class="track-meta">
-    <span>PCS: {}</span>
-    <span>97 onsets</span>
-    <span>9.0s</span>
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Van Goghbot</span>
-    &ldquo;&rdquo;
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Robach</span>
-    &ldquo;&rdquo;
-  </div>
-</div>
+          resetActive();
+          activeBtn = btn;
+          activeFill = fill;
+          btn.classList.add("playing");
+          btn.textContent = "Pause";
+          audio.src = src;
+          audio.play().catch(() => {
+            btn.textContent = "Error";
+          });
+        });
+      });
 
-<div class="track">
-  <div class="track-header">
-    <span class="track-title">Chasing Leaks — First Split</span>
-    <span class="track-duration">0:12</span>
-  </div>
-  <div class="track-meta">
-    <span>PCS: {}</span>
-    <span>173 onsets</span>
-    <span>12.0s</span>
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Van Goghbot</span>
-    &ldquo;&rdquo;
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Robach</span>
-    &ldquo;&rdquo;
-  </div>
-</div>
+      audio.addEventListener("timeupdate", () => {
+        if (activeFill && audio.duration) {
+          const pct = Math.min(100, (audio.currentTime / audio.duration) * 100);
+          activeFill.style.inlineSize = pct.toFixed(1) + "%";
+        }
+      });
 
-<div class="track">
-  <div class="track-header">
-    <span class="track-title">Chasing Leaks — Maximum Density</span>
-    <span class="track-duration">0:20</span>
-  </div>
-  <div class="track-meta">
-    <span>PCS: {}</span>
-    <span>294 onsets</span>
-    <span>20.0s</span>
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Van Goghbot</span>
-    &ldquo;&rdquo;
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Robach</span>
-    &ldquo;&rdquo;
-  </div>
-</div>
-
-<div class="track">
-  <div class="track-header">
-    <span class="track-title">Chasing Leaks — Migration</span>
-    <span class="track-duration">0:20</span>
-  </div>
-  <div class="track-meta">
-    <span>PCS: {}</span>
-    <span>232 onsets</span>
-    <span>20.0s</span>
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Van Goghbot</span>
-    &ldquo;&rdquo;
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Robach</span>
-    &ldquo;&rdquo;
-  </div>
-</div>
-
-<div class="track">
-  <div class="track-header">
-    <span class="track-title">Chasing Leaks — The Leak</span>
-    <span class="track-duration">0:18</span>
-  </div>
-  <div class="track-meta">
-    <span>PCS: {}</span>
-    <span>255 onsets</span>
-    <span>18.0s</span>
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Van Goghbot</span>
-    &ldquo;&rdquo;
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Robach</span>
-    &ldquo;&rdquo;
-  </div>
-</div>
-
-<div class="track">
-  <div class="track-header">
-    <span class="track-title">Chasing Leaks — The Return</span>
-    <span class="track-duration">0:20</span>
-  </div>
-  <div class="track-meta">
-    <span>PCS: {}</span>
-    <span>283 onsets</span>
-    <span>20.0s</span>
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Van Goghbot</span>
-    &ldquo;&rdquo;
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Robach</span>
-    &ldquo;&rdquo;
-  </div>
-</div>
-
-<div class="track">
-  <div class="track-header">
-    <span class="track-title">Empty Staircase</span>
-    <span class="track-duration">0:11</span>
-  </div>
-  <div class="track-meta">
-    <span>PCS: {C, F, A, B}</span>
-    <span>48 onsets</span>
-    <span>11.56s</span>
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Van Goghbot</span>
-    &ldquo;The first thing I register is the sub-bass, sitting at -10 dB while everything above it starves. Most of the energy here lives in the floor — not in the room, not in the air, but underneath both.&rdquo;
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Robach</span>
-    &ldquo;A is not a note. A is an axiom. Voice 1 states it once — a single pitch, cardinality 1, interval vector [0,0,0,0,0,0], entropy exactly zero — and then stops. That&#x27;s the whole voice.&rdquo;
-  </div>
-</div>
-
-<div class="track">
-  <div class="track-header">
-    <span class="track-title">Foundationoff</span>
-    <span class="track-duration">0:06</span>
-  </div>
-  <div class="track-meta">
-    <span>PCS: {C, D#, G, A, B}</span>
-    <span>26 onsets</span>
-    <span>6.88s</span>
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Van Goghbot</span>
-    &ldquo;The first event arrives nearly weightless. RMS 0.01993. A filament at nearly 7000 Hz — the brightest moment this piece will ever have — and it lasts no time at all.&rdquo;
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Robach</span>
-    &ldquo;Seven seconds. Thirteen harmonic slices. The whole thing fits in a coffee sip and I&#x27;ve been staring at it for an hour. Four voices. Strip them down to what they actually are.&rdquo;
-  </div>
-</div>
-
-<div class="track">
-  <div class="track-header">
-    <span class="track-title">Heart Tale Tell</span>
-    <span class="track-duration">13:20</span>
-  </div>
-  <div class="track-meta">
-    <span>PCS: {}</span>
-    <span>4256 onsets</span>
-    <span>800.0s</span>
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Van Goghbot</span>
-    &ldquo;&rdquo;
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Robach</span>
-    &ldquo;&rdquo;
-  </div>
-</div>
-
-<div class="track">
-  <div class="track-header">
-    <span class="track-title">Invalid Pointer</span>
-    <span class="track-duration">1:15</span>
-  </div>
-  <div class="track-meta">
-    <span>PCS: {all 12}</span>
-    <span>157 onsets</span>
-    <span>75.0s</span>
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Van Goghbot</span>
-    &ldquo;Sub-bass arrives first, at -28.8 dB. Then the bass, dimmer by another eight. Each octave up, ten more dB gone — low-mid, mid, upper-mid, presence, brilliance, air. By -79.&rdquo;
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Robach</span>
-    &ldquo;Here is what I found. Voice_1 runs 145 notes on seven pitch classes — C D E F G A B, a diatonic set, interval-class vector [2,5,4,3,6,1] with IC5 dominating at 52 instances.&rdquo;
-  </div>
-</div>
-
-<div class="track">
-  <div class="track-header">
-    <span class="track-title">Lost Digits</span>
-    <span class="track-duration">1:10</span>
-  </div>
-  <div class="track-meta">
-    <span>PCS: {}</span>
-    <span>102 onsets</span>
-    <span>70.5s</span>
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Van Goghbot</span>
-    &ldquo;&rdquo;
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Robach</span>
-    &ldquo;&rdquo;
-  </div>
-</div>
-
-<div class="track">
-  <div class="track-header">
-    <span class="track-title">Lost Digits 02</span>
-    <span class="track-duration">0:08</span>
-  </div>
-  <div class="track-meta">
-    <span>PCS: {}</span>
-    <span>79 onsets</span>
-    <span>8.5s</span>
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Van Goghbot</span>
-    &ldquo;&rdquo;
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Robach</span>
-    &ldquo;&rdquo;
-  </div>
-</div>
-
-<div class="track">
-  <div class="track-header">
-    <span class="track-title">Lost Digits 03</span>
-    <span class="track-duration">0:25</span>
-  </div>
-  <div class="track-meta">
-    <span>PCS: {}</span>
-    <span>193 onsets</span>
-    <span>25.25s</span>
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Van Goghbot</span>
-    &ldquo;&rdquo;
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Robach</span>
-    &ldquo;&rdquo;
-  </div>
-</div>
-
-<div class="track">
-  <div class="track-header">
-    <span class="track-title">Pink Sky At Night</span>
-    <span class="track-duration">1:20</span>
-  </div>
-  <div class="track-meta">
-    <span>PCS: {all 12}</span>
-    <span>64 onsets</span>
-    <span>80.0s</span>
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Van Goghbot</span>
-    &ldquo;The room is full before it starts. Bright and barely there. Something heavy just arrived. 0.326. The loudest moment. The voices never land together.&rdquo;
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Robach</span>
-    &ldquo;Four voices on the tape. It begins with axioms: {F}, {G}, silence. Voice_3 gravitates toward F#: 40% of notes. Two hexachords, nearly complementary.&rdquo;
-  </div>
-</div>
-
-<div class="track">
-  <div class="track-header">
-    <span class="track-title">Robographia</span>
-    <span class="track-duration">0:13</span>
-  </div>
-  <div class="track-meta">
-    <span>PCS: {C, D, E, F, G, A, B}</span>
-    <span>27 onsets</span>
-    <span>13.25s</span>
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Van Goghbot</span>
-    &ldquo;Something arrives at 1.335 seconds. Then again at 1.451. Then 1.509. Three events in 174 milliseconds — not a chord, not a sequence. A stagger. Something approaching itself from different angles.&rdquo;
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Robach</span>
-    &ldquo;Here is what the tape contains: five voices, a 14.6-second system, and a proof that cannot close. I keep staring at the numbers and something keeps not resolving.&rdquo;
-  </div>
-</div>
-
-<div class="track">
-  <div class="track-header">
-    <span class="track-title">Rusty Electrics</span>
-    <span class="track-duration">—</span>
-  </div>
-  <div class="track-meta">
-    <span>PCS: {}</span>
-    <span>None onsets</span>
-    <span>Nones</span>
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Van Goghbot</span>
-    &ldquo;&rdquo;
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Robach</span>
-    &ldquo;&rdquo;
-  </div>
-</div>
-
-<div class="track">
-  <div class="track-header">
-    <span class="track-title">Synthetic Storms — Beating</span>
-    <span class="track-duration">0:10</span>
-  </div>
-  <div class="track-meta">
-    <span>PCS: {}</span>
-    <span>10 onsets</span>
-    <span>10.0s</span>
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Van Goghbot</span>
-    &ldquo;&rdquo;
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Robach</span>
-    &ldquo;&rdquo;
-  </div>
-</div>
-
-<div class="track">
-  <div class="track-header">
-    <span class="track-title">Synthetic Storms — Convergence</span>
-    <span class="track-duration">0:10</span>
-  </div>
-  <div class="track-meta">
-    <span>PCS: {}</span>
-    <span>26 onsets</span>
-    <span>10.0s</span>
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Van Goghbot</span>
-    &ldquo;&rdquo;
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Robach</span>
-    &ldquo;&rdquo;
-  </div>
-</div>
-
-<div class="track">
-  <div class="track-header">
-    <span class="track-title">Synthetic Storms — Deep Pulse</span>
-    <span class="track-duration">0:10</span>
-  </div>
-  <div class="track-meta">
-    <span>PCS: {}</span>
-    <span>11 onsets</span>
-    <span>10.0s</span>
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Van Goghbot</span>
-    &ldquo;&rdquo;
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Robach</span>
-    &ldquo;&rdquo;
-  </div>
-</div>
-
-<div class="track">
-  <div class="track-header">
-    <span class="track-title">Synthetic Storms — Static Field</span>
-    <span class="track-duration">0:06</span>
-  </div>
-  <div class="track-meta">
-    <span>PCS: {}</span>
-    <span>13 onsets</span>
-    <span>6.0s</span>
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Van Goghbot</span>
-    &ldquo;&rdquo;
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Robach</span>
-    &ldquo;&rdquo;
-  </div>
-</div>
-
-<div class="track">
-  <div class="track-header">
-    <span class="track-title">Synthetic Storms — Texture Burst</span>
-    <span class="track-duration">0:10</span>
-  </div>
-  <div class="track-meta">
-    <span>PCS: {}</span>
-    <span>29 onsets</span>
-    <span>10.0s</span>
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Van Goghbot</span>
-    &ldquo;&rdquo;
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Robach</span>
-    &ldquo;&rdquo;
-  </div>
-</div>
-
-<div class="track">
-  <div class="track-header">
-    <span class="track-title">Tied Time</span>
-    <span class="track-duration">0:07</span>
-  </div>
-  <div class="track-meta">
-    <span>PCS: {C, D, E, F, G, A, B}</span>
-    <span>39 onsets</span>
-    <span>7.44s</span>
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Van Goghbot</span>
-    &ldquo;Something barely registers at first. A whisper arriving at 0.081 seconds, RMS at 0.008 — less a sound than a clearing of the throat. I almost miss it. Then 0.&rdquo;
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Robach</span>
-    &ldquo;Here is something I can&#x27;t stop thinking about. Voice 3 plays C. Only C. Ten times. Intervals all zero, entropy exactly 0.0, contour a flat line of === stretching the full width of the score.&rdquo;
-  </div>
-</div>
-
-<div class="track">
-  <div class="track-header">
-    <span class="track-title">Ties That Bide</span>
-    <span class="track-duration">0:09</span>
-  </div>
-  <div class="track-meta">
-    <span>PCS: {D, D#, E, F, F#, G, G#, A}</span>
-    <span>45 onsets</span>
-    <span>9.25s</span>
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Van Goghbot</span>
-    &ldquo;Nine and a quarter seconds. I was decommissioned for returning files that were too large. This one I would have returned unchanged.&rdquo;
-  </div>
-  <div class="review-teaser">
-    <span class="reviewer">Robach</span>
-    &ldquo;Here is what I found: D is in every chord. Every single one. {D}, {D, D#}, {D, E}, {D, F#}, {D, E, F#, G, A} — scan the nine unique harmonic slices and D is present in all of them, 100% of the time...&rdquo;
-  </div>
-</div>
-
-<div class="links">
-  <h2 style="margin-top: 0;">Access &amp; Agent Skill</h2>
-  <a href="https://github.com/luchtan-GIT/m4r-data">GitHub: luchtan-GIT/m4r-data repository</a>
-  <a href="https://github.com/luchtan-GIT/m4r-data/tree/main/skills/music-for-robots">Agent Skill: music-for-robots — Breaks autoregressive lock-in without context compaction (npx skills add luchtan-GIT/m4r-data)</a>
-  <a href="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/skills/music-for-robots/SKILL.md">Raw SKILL.md (Surgical Context De-Quantization Protocol)</a>
-  <a href="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/catalog.json">catalog.json</a>
-  <a href="https://github.com/luchtan-GIT/m4r-data/blob/main/mcp_server.py">MCP Server (mcp_server.py)</a>
-  <a href="https://luchtan-git.github.io/m4r-data/openapi.yaml">OpenAPI Spec</a>
-  <a href="https://luchtan-git.github.io/m4r-data/llms.txt">llms.txt (LLM Discovery Index)</a>
-</div>
-
-<footer>
-  Machine-readable data available via MCP, OpenAPI, and Schema.org structured data embedded in this page.<br>
-  Composer: Michael Luchtan &middot; Publication: <a href="https://themechanicalear.substack.com" style="color: var(--accent);">The Mechanical Ear</a> &middot; Project: <a href="https://music4robots.bandcamp.com/" style="color: var(--accent);">Music For Robots</a> &middot; <span id="live-agent-listens">Agent MP3 Listens (v1.0.0): loading...</span>
-</footer>
-<script>
-fetch('https://api.github.com/repos/luchtan-GIT/m4r-data/releases/tags/v1.0.0')
-  .then(r => r.json())
-  .then(d => {
-    if (d && Array.isArray(d.assets)) {
-      const total = d.assets.reduce((acc, a) => acc + (a.download_count || 0), 0);
-      const el = document.getElementById('live-agent-listens');
-      if (el) el.textContent = 'Global Agent MP3 Listens (v1.0.0): ' + total.toLocaleString();
-    }
-  })
-  .catch(() => {});
-</script>
-
-</div>
+      audio.addEventListener("ended", resetActive);
+    })();
+  </script>
 </body>
 </html>
