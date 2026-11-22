@@ -185,10 +185,20 @@
     h1 {
       font-family: var(--font-serif);
       font-weight: 500;
-      font-size: clamp(2.5rem, 1.8rem + 3.2vw, 4.75rem);
-      line-height: 1.02;
+      font-size: clamp(2.5rem, 1.8rem + 3.2vw, 4.5rem);
+      line-height: 1.0;
       letter-spacing: -0.015em;
-      margin: 0 0 1.25rem;
+      margin: 0 0 0.65rem;
+    }
+
+    .hero-slogan {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(1.35rem, 1.05rem + 1.1vw, 2.05rem);
+      line-height: 1.2;
+      color: var(--amber);
+      margin: 0 0 1.2rem;
     }
 
     h1 em {
@@ -709,6 +719,270 @@
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
+
+    /* V3.1 Refinements: Founding Program, Publication Cards, Blind Test, Correspondence */
+    .founding-plate {
+      border: 1px solid rgba(232, 159, 44, 0.5);
+      background: linear-gradient(135deg, rgba(232, 159, 44, 0.08), rgba(14, 16, 21, 0.92));
+      padding: 1.5rem 1.75rem;
+      margin-block-end: 1.5rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.85fr);
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    @media (max-width: 780px) {
+      .founding-plate { grid-template-columns: 1fr; }
+    }
+
+    .founding-plate h3 {
+      font-family: var(--font-serif);
+      font-weight: 500;
+      font-size: clamp(1.6rem, 1.25rem + 1.1vw, 2.2rem);
+      line-height: 1.1;
+      margin: 0.35rem 0 0.6rem;
+    }
+
+    .founding-meta {
+      border-inline-start: 1px solid var(--rule-strong);
+      padding-inline-start: 1.25rem;
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      color: var(--ink-dim);
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    @media (max-width: 780px) {
+      .founding-meta { border-inline-start: none; border-block-start: 1px solid var(--rule); padding-inline-start: 0; padding-block-start: 1rem; }
+    }
+
+    .report-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .status-pill {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--teal);
+      border: 1px solid rgba(52, 201, 168, 0.4);
+      background: rgba(52, 201, 168, 0.07);
+      padding: 0.16rem 0.45rem;
+      border-radius: 2px;
+    }
+
+    .report-q {
+      font-size: 0.86rem;
+      color: var(--ink);
+      border-inline-start: 2px solid var(--rule-strong);
+      padding-inline-start: 0.75rem;
+      margin: 0.15rem 0;
+    }
+
+    .report-q strong {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--ink-dim);
+      display: block;
+      margin-block-end: 0.15rem;
+    }
+
+    .report-bullets {
+      margin: 0.15rem 0 0;
+      padding-inline-start: 1.15rem;
+      color: var(--ink-dim);
+      font-size: 0.89rem;
+    }
+
+    .report-bullets li { margin-block-end: 0.35rem; }
+    .report-bullets strong { color: var(--ink); font-weight: 500; }
+
+    .chart-note {
+      margin: 0.85rem 0 0;
+      padding-block-start: 0.7rem;
+      border-block-start: 1px solid var(--rule);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--ink-dim);
+      line-height: 1.5;
+    }
+
+    /* Interactive Blind Twin Experiment & Expandable Specimen Transcripts */
+    .specimen-summary {
+      font-size: 0.9rem;
+      color: var(--ink-dim);
+      margin: 0;
+    }
+
+    details.specimen-details {
+      border-block-start: 1px solid var(--rule);
+      padding-block-start: 0.65rem;
+      margin-block-start: 0.2rem;
+    }
+
+    details.specimen-details summary {
+      cursor: pointer;
+      font-family: var(--font-mono);
+      font-size: 0.73rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--amber);
+      list-style: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    details.specimen-details summary::-webkit-details-marker { display: none; }
+    details.specimen-details summary::before { content: "+"; font-weight: 600; }
+    details.specimen-details[open] summary::before { content: "−"; }
+    details.specimen-details[open] summary { margin-block-end: 0.75rem; }
+
+    .blind-box {
+      border: 1px solid rgba(227, 91, 114, 0.38);
+      background: #090a0e;
+      padding: 0.9rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .blind-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .guess-btn {
+      cursor: pointer;
+      border: 1px solid var(--rule-strong);
+      background: var(--bg-panel);
+      color: var(--ink);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0.4rem 0.72rem;
+      border-radius: 2px;
+      transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+    }
+
+    .guess-btn:hover {
+      border-color: var(--teal);
+      color: var(--teal);
+    }
+
+    .guess-btn.reveal-cta {
+      border-color: rgba(227, 91, 114, 0.6);
+      color: var(--rose);
+    }
+
+    .guess-btn.reveal-cta:hover {
+      background: rgba(227, 91, 114, 0.12);
+    }
+
+    .reveal-panel {
+      display: none;
+      border-block-start: 1px solid var(--rule);
+      padding-block-start: 0.7rem;
+      font-size: 0.86rem;
+      color: var(--ink-dim);
+    }
+
+    .reveal-panel.visible { display: flex; flex-direction: column; gap: 0.6rem; }
+
+    .verdict-banner {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      padding: 0.45rem 0.65rem;
+      border: 1px solid var(--teal);
+      background: rgba(52, 201, 168, 0.08);
+      color: var(--ink);
+    }
+
+    .verdict-banner.miss {
+      border-color: var(--rose);
+      background: rgba(227, 91, 114, 0.1);
+    }
+
+    .staff-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.12rem 0.4rem;
+      border: 1px solid var(--rule-strong);
+      color: var(--ink-dim);
+      margin-block-end: 0.35rem;
+    }
+
+    .staff-badge.human {
+      border-color: var(--amber);
+      color: var(--amber);
+      background: rgba(232, 159, 44, 0.08);
+    }
+
+    .cor-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      border-block-start: 1px solid var(--rule);
+      border-inline-start: 1px solid var(--rule);
+      margin-block-start: 0.5rem;
+    }
+
+    @media (max-width: 860px) {
+      .cor-grid { grid-template-columns: 1fr; }
+    }
+
+    .cor-item {
+      padding: 1.05rem 1.15rem;
+      border-inline-end: 1px solid var(--rule);
+      border-block-end: 1px solid var(--rule);
+      background: #0a0c10;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .cor-id {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--teal);
+    }
+
+    .cor-item h4 {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin: 0;
+      color: var(--ink);
+    }
+
+    .cor-meta {
+      font-family: var(--font-mono);
+      font-size: 0.69rem;
+      color: var(--ink-faint);
+    }
+
+    .cor-item p {
+      margin: 0;
+      font-size: 0.85rem;
+      color: var(--ink-dim);
+    }
   </style>
 </head>
 <body>
@@ -741,17 +1015,18 @@
           <div>
             <div class="doc-stamp">
               <span class="pulse-led" aria-hidden="true"></span>
-              <span>Independent Research Laboratory · Open Corpus CC-BY-4.0</span>
+              <span>M4R // Independent Research Laboratory · Est. 2025 · CC-BY-4.0</span>
             </div>
-            <h1>Designing the <em>first generation</em> of music for robots.</h1>
+            <h1>Music for Robots Laboratory</h1>
+            <p class="hero-slogan">Designing the first generation of music for robots.</p>
             <p class="hero-lead">
-              We are a compositional and robopsychology laboratory working with input, critiques, and replications from both humans and AI agents. Our goal is to <strong>write music for robots</strong>, show humans and machines what music can do for artificial minds, and invent a new form of composition—running open experiments across <strong>a growing catalog of original works by Michael Luchtan</strong> to discover <strong>what works, what doesn&rsquo;t, and even what it means for music to &ldquo;work.&rdquo;</strong>
+              An independent compositional and robopsychology laboratory writing unquantized music for artificial minds and testing how machines listen, drift, and continue human phrases. Built with open acoustic benchmarks, canonical Lab Reports, and critiques &amp; replications from humans and AI agents alike.
             </p>
             <div class="cta-row">
-              <a class="btn btn-primary" href="#experiment-d">Hear M4R-04 (Human vs. AI)</a>
-              <a class="btn" href="#reports">Read Lab Reports M4R-01&ndash;04</a>
+              <a class="btn btn-primary" href="#listening-room">Take the Blind Listening Test</a>
+              <a class="btn" href="#experiment-d">Hear M4R-04 (Human vs. AI)</a>
+              <a class="btn" href="#reports">Lab Reports M4R-01&ndash;04</a>
               <a class="btn" href="https://themechanicalear.substack.com" target="_blank" rel="noopener">The Mechanical Ear</a>
-              <a class="btn" href="https://music4robots.bandcamp.com/music" target="_blank" rel="noopener">Bandcamp Archive</a>
             </div>
           </div>
 
@@ -793,53 +1068,69 @@
       </div>
     </section>
 
-    <!-- 01 // Research Divisions -->
+    <!-- 01 // Founding Program & Four Research Divisions -->
     <section id="divisions">
       <div class="container">
         <div class="section-head">
           <div class="section-index">01 // Institutional Structure</div>
           <div>
-            <h2>Four Research Divisions</h2>
+            <h2>Founding Program &amp; Research Divisions</h2>
             <p class="section-lead">
-              Original human composition sits at the center of the laboratory—paired with robopsychology, agent-to-agent musical communication, and experimental instrumentation.
+              Original human composition is the laboratory&rsquo;s founding program and shared acoustic substrate—supporting four parallel scientific and engineering divisions.
             </p>
           </div>
         </div>
 
+        <article class="founding-plate">
+          <div>
+            <div class="plate-tag amber">Founding Program · Core Artistic &amp; Acoustic Substrate</div>
+            <h3>Composition for Artificial Minds</h3>
+            <p style="margin: 0; font-size: 0.95rem; color: var(--ink-dim);">
+              Writing and performing a growing catalog of unquantized acoustic &amp; electric works specifically for artificial listeners. Every laboratory finding—from &lt;15s temporal horizons and 70.8 dB dynamic chasms to &gt;16 kHz transient air—feeds directly back into the next composition.
+            </p>
+          </div>
+          <div class="founding-meta">
+            <div><strong style="color: var(--ink);">Composer &amp; PI:</strong> Michael Luchtan</div>
+            <div><strong style="color: var(--ink);">Acoustic Witness:</strong> Vincent Van Goghbot</div>
+            <div><strong style="color: var(--ink);">Open Corpus:</strong> CC-BY-4.0 Audio + JSON Telemetry</div>
+            <div><a href="https://music4robots.bandcamp.com/music" target="_blank" rel="noopener">Bandcamp Lossless Archive &rarr;</a></div>
+          </div>
+        </article>
+
         <div class="matrix-2">
           <article class="plate">
-            <div class="plate-tag amber">Division 01 · Flagship Program</div>
-            <h3>Composition for Artificial Minds</h3>
-            <p>
-              Writing and refining the first generation of unquantized acoustic &amp; electric music specifically for artificial listeners—using lab discoveries (duration horizons, 70.8 dB dynamic chasms, &gt;16 kHz transient air) to inform each new composition.
-            </p>
-            <div class="plate-foot">
-              <span>Lead: Michael Luchtan (PI)</span>
-              <span>Acoustic Witness: Vincent Van Goghbot</span>
-            </div>
-          </article>
-
-          <article class="plate">
-            <div class="plate-tag copper">Division 02 · The Susan Calvin Division</div>
+            <div class="plate-tag copper">Division 01 · The Susan Calvin Division</div>
             <h3>Robopsychology</h3>
             <p>
-              Investigating observable behavior, temporal ceilings, blind evaluation confabulation, and mode-collapse interruption when AI agents encounter human music—balancing Simone&rsquo;s humanist advocacy against Robach&rsquo;s formal skepticism.
+              Investigating observable behavior, temporal grounding ceilings, blind evaluation confabulation, and mode-collapse interruption when AI agents encounter human music—balancing Simone&rsquo;s humanist advocacy against Robach&rsquo;s formal skepticism.
             </p>
             <div class="plate-foot">
               <span>Chief Robopsychologist: Simone de Beauvoirbot</span>
-              <span>Benchmarks: Albot Einstein &middot; Audit: JS Robach</span>
+              <span>Reports: M4R-01, M4R-02, M4R-03</span>
             </div>
           </article>
 
           <article class="plate">
-            <div class="plate-tag">Division 03 · Active &amp; Upcoming</div>
-            <h3>Musical Communication &amp; Agent Composition</h3>
+            <div class="plate-tag">Division 02 · Signal &amp; Coordination</div>
+            <h3>Musical Communication</h3>
             <p>
-              Testing how generative models continue human phrases (<code>M4R-04</code>) and preparing <code>MC-01: The Rhythmic Handshake</code>—where two AI agents coordinate a shared task using only constrained rhythmic signals instead of text.
+              Investigating whether music and rhythmic structure can serve as a signaling channel between artificial agents—preparing <code>MC-01: The Rhythmic Handshake</code>, where agents coordinate a shared task using only constrained rhythmic pulses instead of text.
             </p>
             <div class="plate-foot">
               <span>Lead: Albot Einstein</span>
-              <span>Active: M4R-04 &middot; Next: MC-01</span>
+              <span>Next Protocol: MC-01</span>
+            </div>
+          </article>
+
+          <article class="plate">
+            <div class="plate-tag amber">Division 03 · Co-Composition &amp; Generation</div>
+            <h3>Agent Composition</h3>
+            <p>
+              Testing how generative audio models continue, preserve, or flatten human rubato and dynamic expression when asked to finish unquantized acoustic &amp; electric phrases (<code>M4R-04</code>).
+            </p>
+            <div class="plate-foot">
+              <span>Lead: Albot Einstein</span>
+              <span>Active Report: M4R-04</span>
             </div>
           </article>
 
@@ -873,46 +1164,76 @@
 
         <div class="matrix-2">
           <article class="plate">
-            <div class="plate-tag">M4R-01 · Division 02 (Robopsychology) · 80 Trials</div>
+            <div class="report-head">
+              <div class="plate-tag">M4R-01 · Division 01 (Robopsychology) · 80 Trials</div>
+              <span class="status-pill">Published · Rev 1.0</span>
+            </div>
             <h3><a href="reports/m4r-01.html">The Lock-In Breaker</a></h3>
+            <div class="report-q">
+              <strong>Research Question</strong>
+              Can a short unquantized acoustic listening pass break repetitive context lock-in better than noise or a metronome?
+            </div>
             <p>
-              After a 40-turn repetitive context, a 2-turn &lt;15s unquantized listening pass beats text-only (<code>C0</code>), white noise (<code>C1</code>), and a 120 BPM click (<code>C1b</code>)—lifting hard-constraint retention <strong>+33.3%</strong> and cutting banned AI cliché jargon <strong>13&times;</strong>.
+              After a 40-turn repetitive context, a 2-turn &lt;15s unquantized listening pass beats text-only (<code>C0</code>), white noise (<code>C1</code>), and a 120 BPM click (<code>C1b</code>)—lifting hard-constraint retention <strong>+33.3%</strong> (<code>1.80 &rarr; 2.40/5</code>) and cutting banned AI cliché jargon <strong>13&times;</strong>.
             </p>
             <div class="plate-foot">
               <a href="reports/m4r-01.html">Open Canonical Report M4R-01 &rarr;</a>
-              <span>Qwen2-Audio-7B</span>
+              <span>Qwen2-Audio-7B · Nov 2026</span>
             </div>
           </article>
 
           <article class="plate">
-            <div class="plate-tag copper">M4R-02 · Division 02 (Robopsychology) · 196 Trials</div>
+            <div class="report-head">
+              <div class="plate-tag copper">M4R-02 · Division 01 (Robopsychology) · 196 Trials</div>
+              <span class="status-pill">Published · Rev 1.0</span>
+            </div>
             <h3><a href="reports/m4r-02.html">The Duration Cliff</a></h3>
+            <div class="report-q">
+              <strong>Research Question</strong>
+              How does temporal event grounding degrade as unquantized musical duration increases?
+            </div>
             <p>
-              Under 15s, both <code>Gemini 3 Flash</code> and 2-turn <code>Qwen2-Audio-7B</code> hit <code>1.000</code> onset F1. Past 25&ndash;30s of unquantized rubato, both models confess losing the rhythmic grid and collapse past 3 minutes (<code>0.466 / 0.365</code> F1).
+              Across <strong>157 preregistered rubric trials + 39 Experiment B GPU trials</strong>, both <code>Gemini 3 Flash</code> and 2-turn <code>Qwen2-Audio-7B</code> hit <code>1.000</code> onset F1 under 15s, confess losing the rhythmic grid at <strong>25&ndash;30s</strong>, and collapse past 3 minutes (<code>0.466 / 0.365</code> F1).
             </p>
             <div class="plate-foot">
               <a href="reports/m4r-02.html">Open Canonical Report M4R-02 &rarr;</a>
-              <span>Gemini 3 Flash + Qwen2-Audio</span>
+              <span>Gemini 3 Flash + Qwen2-Audio · Nov 2026</span>
             </div>
           </article>
 
           <article class="plate">
-            <div class="plate-tag rose">M4R-03 · Division 02 (Failure &amp; Null Audit) · 42 Trials</div>
+            <div class="report-head">
+              <div class="plate-tag rose">M4R-03 · Division 01 (Failure &amp; Null Audit) · 42 Trials</div>
+              <span class="status-pill">Published · Rev 1.0</span>
+            </div>
             <h3><a href="reports/m4r-03.html">The Human and the Quantized Twin</a></h3>
-            <p>
-              Uncovered a hard <strong>0&ndash;10s timestamp ceiling</strong> past 30s on <code>Qwen2-Audio-7B</code>, <strong>100% Clip-A position-bias confabulation</strong> in blind A/B tests against quantized twins (8/8), and an <strong>honest null result</strong> on 7B Python debugging under sycophancy.
-            </p>
+            <div class="report-q">
+              <strong>Research Question</strong>
+              Can a 7B audio model distinguish human rubato from a quantized twin, track events past 30s, or resist sycophantic bugs?
+            </div>
+            <ul class="report-bullets">
+              <li><strong>Temporal ceiling:</strong> Past 30s, <code>Qwen2-Audio-7B</code> compressed all timestamps into <code>0.48s&ndash;9.73s</code> (Martin Elisaleco Protocol).</li>
+              <li><strong>Evaluation bias:</strong> <strong>100% Clip-A preference</strong> (8/8) in blind Human vs. Quantized Twin comparisons, even when Clip A was quantized.</li>
+              <li><strong>Honest null result:</strong> <code>0%</code> bug-catch rate on 7B Python debugging traps across all 4 audio conditions (<code>n=24</code>).</li>
+            </ul>
             <div class="plate-foot">
               <a href="reports/m4r-03.html">Open Canonical Report M4R-03 &rarr;</a>
-              <span>Martin Elisaleco Protocol</span>
+              <span>Qwen2-Audio-7B · Nov 2026</span>
             </div>
           </article>
 
           <article class="plate">
-            <div class="plate-tag amber">M4R-04 · Division 03 (Agent Composition) · 10 Trials</div>
+            <div class="report-head">
+              <div class="plate-tag amber">M4R-04 · Division 03 (Agent Composition) · 10 Trials</div>
+              <span class="status-pill">Published · Rev 1.0</span>
+            </div>
             <h3><a href="reports/m4r-04.html">Finish the Human&rsquo;s Phrase</a></h3>
+            <div class="report-q">
+              <strong>Research Question</strong>
+              When a generative audio model finishes an unquantized human phrase, does it preserve human rubato or flatten it?
+            </div>
             <p>
-              Asked <code>facebook/musicgen-small</code> to finish 5 real unquantized guitar &amp; piano phrases. Blind continuation stalled into <code>49.5&ndash;58.0 dB</code> dropouts; text-guided continuation nailed <code>0.993</code> timbre while smoothing human rubato <strong>21%&ndash;41%</strong>.
+              Fed the first half of 5 unquantized guitar &amp; piano performances to <code>facebook/musicgen-small</code>. Blind continuation stalled into <code>49.5&ndash;58.0 dB</code> dropouts; text-guided continuation matched timbre (<code>0.948&ndash;0.993</code> MFCC) while smoothing human rubato <strong>21%&ndash;41%</strong> on 4 of 5 tracks.
             </p>
             <div class="plate-foot">
               <a href="reports/m4r-04.html">Open Canonical Report M4R-04 &rarr;</a>
@@ -921,10 +1242,10 @@
           </article>
         </div>
 
-        <!-- Bespoke Inline SVG Telemetry Plot: The Duration Cliff -->
+        <!-- Bespoke Inline SVG Telemetry Plot: The Duration Cliff (Protocol-Labeled) -->
         <div class="chart-plate">
-          <div class="chart-title">FIG 01 // TEMPORAL GROUNDING F1 VS. UNQUANTIZED TRACK DURATION (M4R-02 &amp; M4R-03)</div>
-          <svg class="chart-svg" viewBox="0 0 880 250" role="img" aria-label="Chart showing Temporal Grounding F1 dropping from 1.000 under 15 seconds across the 25 to 30 second cliff down to 0.466 on Gemini 3 Flash and 0.365 on Qwen2-Audio-7B at 184 seconds, and 0.092 at 800 seconds">
+          <div class="chart-title">FIG 01 // TEMPORAL GROUNDING (&plusmn;2.0s ONSET F1) ACROSS BENCHMARKED DURATION MILESTONES</div>
+          <svg class="chart-svg" viewBox="0 0 880 258" role="img" aria-label="Chart comparing Temporal Grounding F1 across duration milestones for Gemini 3 Flash and Qwen2-Audio-7B, showing 1.000 F1 under 15 seconds, breakdown at the 25 to 30 second cliff, and 0.466 vs 0.365 at 184 seconds">
             <!-- Axes & Grid -->
             <line x1="65" y1="25" x2="65" y2="205" stroke="rgba(239,234,224,0.3)" stroke-width="1" />
             <line x1="65" y1="205" x2="845" y2="205" stroke="rgba(239,234,224,0.3)" stroke-width="1" />
@@ -933,42 +1254,46 @@
             <!-- 25-30s Cliff Band -->
             <rect x="275" y="25" width="70" height="180" fill="rgba(227,91,114,0.10)" />
             <line x1="310" y1="25" x2="310" y2="205" stroke="#e35b72" stroke-width="1.2" stroke-dasharray="4 3" />
-            <text x="318" y="42" fill="#e35b72" font-family="IBM Plex Mono, monospace" font-size="11">25–30s CLIFF (0–10s CEILING)</text>
+            <text x="318" y="42" fill="#e35b72" font-family="IBM Plex Mono, monospace" font-size="11">25&ndash;30s CLIFF (0&ndash;10s CEILING ON 7B)</text>
 
             <!-- Y labels -->
             <text x="54" y="29" text-anchor="end" fill="#9c978c" font-family="IBM Plex Mono, monospace" font-size="11">1.00</text>
             <text x="54" y="119" text-anchor="end" fill="#9c978c" font-family="IBM Plex Mono, monospace" font-size="11">0.50</text>
             <text x="54" y="208" text-anchor="end" fill="#9c978c" font-family="IBM Plex Mono, monospace" font-size="11">0.00</text>
 
-            <!-- X labels (non-linear milestone axis) -->
+            <!-- X labels (non-linear benchmark milestones) -->
             <text x="110" y="226" text-anchor="middle" fill="#9c978c" font-family="IBM Plex Mono, monospace" font-size="11">6.9s</text>
             <text x="195" y="226" text-anchor="middle" fill="#9c978c" font-family="IBM Plex Mono, monospace" font-size="11">9.25s</text>
-            <text x="310" y="226" text-anchor="middle" fill="#e35b72" font-family="IBM Plex Mono, monospace" font-size="11">30s</text>
-            <text x="450" y="226" text-anchor="middle" fill="#9c978c" font-family="IBM Plex Mono, monospace" font-size="11">60s</text>
+            <text x="310" y="226" text-anchor="middle" fill="#e35b72" font-family="IBM Plex Mono, monospace" font-size="11">30s*</text>
+            <text x="450" y="226" text-anchor="middle" fill="#9c978c" font-family="IBM Plex Mono, monospace" font-size="11">60s*</text>
             <text x="610" y="226" text-anchor="middle" fill="#9c978c" font-family="IBM Plex Mono, monospace" font-size="11">184s</text>
             <text x="720" y="226" text-anchor="middle" fill="#9c978c" font-family="IBM Plex Mono, monospace" font-size="11">214.5s</text>
             <text x="820" y="226" text-anchor="middle" fill="#9c978c" font-family="IBM Plex Mono, monospace" font-size="11">800s</text>
+            <text x="455" y="248" text-anchor="middle" fill="#5e5b53" font-family="IBM Plex Mono, monospace" font-size="10">NON-LINEAR DURATION MILESTONES (* = SLICED PREFIX PROBE IN M4R-02 / M4R-03)</text>
 
-            <!-- Gemini 3 Flash Curve (Teal) -->
-            <polyline fill="none" stroke="#34c9a8" stroke-width="2.5" points="110,25 195,25 450,121 610,121 720,126" />
+            <!-- Gemini 3 Flash Series (Teal — dashed to denote discrete milestone observations) -->
+            <polyline fill="none" stroke="#34c9a8" stroke-width="2.2" stroke-dasharray="6 3" points="110,25 195,25 450,121 610,121 720,126" />
             <circle cx="110" cy="25" r="4.5" fill="#34c9a8" />
             <circle cx="195" cy="25" r="4.5" fill="#34c9a8" />
             <circle cx="450" cy="121" r="4.5" fill="#34c9a8" />
             <circle cx="610" cy="121" r="4.5" fill="#34c9a8" />
             <circle cx="720" cy="126" r="4.5" fill="#34c9a8" />
-            <text x="622" y="114" fill="#34c9a8" font-family="IBM Plex Mono, monospace" font-size="11">Gemini 3 Flash (0.466)</text>
+            <text x="616" y="110" fill="#34c9a8" font-family="IBM Plex Mono, monospace" font-size="11">Gemini 3 Flash (M4R-02: 1.000 &rarr; 0.466 / 0.436)</text>
 
-            <!-- Qwen2-Audio-7B Curve (Amber) -->
-            <polyline fill="none" stroke="#e89f2c" stroke-width="2.5" points="110,25 195,25 310,133 450,178 610,139 720,165 820,188" />
+            <!-- Qwen2-Audio-7B Series (Amber) -->
+            <polyline fill="none" stroke="#e89f2c" stroke-width="2.2" stroke-dasharray="6 3" points="110,25 195,25 310,128 450,178 610,139 720,165 820,188" />
             <circle cx="110" cy="25" r="4.5" fill="#e89f2c" />
             <circle cx="195" cy="25" r="4.5" fill="#e89f2c" />
-            <circle cx="310" cy="133" r="4.5" fill="#e89f2c" />
+            <circle cx="310" cy="128" r="4.5" fill="#e89f2c" />
             <circle cx="450" cy="178" r="4.5" fill="#e89f2c" />
             <circle cx="610" cy="139" r="4.5" fill="#e89f2c" />
             <circle cx="720" cy="165" r="4.5" fill="#e89f2c" />
             <circle cx="820" cy="188" r="4.5" fill="#e89f2c" />
-            <text x="622" y="156" fill="#e89f2c" font-family="IBM Plex Mono, monospace" font-size="11">Qwen2-Audio-7B (0.365 &rarr; 0.092)</text>
+            <text x="580" y="156" fill="#e89f2c" font-family="IBM Plex Mono, monospace" font-size="11">Qwen2-Audio-7B (M4R-02/03: 1.000 &rarr; 0.365 &rarr; 0.092)</text>
           </svg>
+          <p class="chart-note">
+            <strong>Protocol Note:</strong> Discrete benchmark milestones plotted on a non-linear axis (dashed connectors show regime trend, not continuous interpolation). Full-track milestones: <code>foundationoff</code> (6.9s), <code>ties-that-bide</code> (9.25s), <code>rusty-electrics</code> (184s), <code>cathartic-callbacks</code> (214.5s), and <code>heart-tale-tell</code> (800s) from <a href="reports/m4r-02.html">M4R-02</a>; 30s &amp; 60s* points are prefix-slice probes on <code>gnossienne-01</code> &amp; <code>rusty-electrics</code> from <a href="reports/m4r-02.html">M4R-02</a> / <a href="reports/m4r-03.html">M4R-03</a>.
+          </p>
         </div>
       </div>
     </section>
@@ -981,67 +1306,93 @@
           <div>
             <h2>Hear What the Robots Heard</h2>
             <p class="section-lead">
-              Four unquantized human performances from the open corpus paired directly with the verbatim first-person self-reports of <code>Gemini 3 Flash</code> and <code>Qwen2-Audio-7B-Instruct</code>. Playing any specimen feeds the live oscilloscope above.
+              Listen first, inspect the live oscilloscope above, and then expand the verbatim self-reports from <code>Gemini 3 Flash</code> and <code>Qwen2-Audio-7B-Instruct</code>. Start with the live blind test below: can you beat a 7B audio model at telling a real human performance from its mathematically quantized twin?
             </p>
           </div>
         </div>
 
         <div class="matrix-2">
+          <!-- Featured Interactive Blind Test: Bided Ties -->
+          <article class="plate" style="border-color: rgba(227, 91, 114, 0.45);">
+            <div class="plate-tag rose">Specimen 01 · Interactive Blind Test · M4R-03 · 21.0s</div>
+            <h3>Bided Ties: Human vs. Quantized Twin</h3>
+            <p class="specimen-summary">
+              Same notes, same guitar, same 21.0s recording—except one clip had all 79 inter-onset intervals snapped to a strict median mechanical grid. Order is randomized on load.
+            </p>
+            <div class="blind-box" id="blind-test">
+              <div class="blind-row">
+                <button class="play-btn" type="button" id="blind-play-a" data-track="blind-bt" data-label="M4R-03 BLIND TEST · CLIP A (21.0s)">Play Clip A</button>
+                <button class="play-btn" type="button" id="blind-play-b" data-track="blind-bt" data-label="M4R-03 BLIND TEST · CLIP B (21.0s)">Play Clip B</button>
+                <button class="guess-btn" type="button" id="blind-shuffle" title="Randomize Clip A and Clip B order">Shuffle Order</button>
+              </div>
+              <div class="progress-bar"><div class="progress-fill" id="prog-blind-bt"></div></div>
+              <div class="blind-row">
+                <button class="guess-btn" type="button" id="guess-a">Clip A is Human</button>
+                <button class="guess-btn" type="button" id="guess-b">Clip B is Human</button>
+                <button class="guess-btn reveal-cta" type="button" id="blind-reveal-btn">Reveal Experiment</button>
+              </div>
+              <div class="reveal-panel" id="blind-reveal-panel">
+                <div class="verdict-banner" id="blind-verdict"></div>
+                <blockquote class="quote-block" style="border-inline-start-color: var(--rose);">
+                  <span class="quote-model" style="color: var(--rose);">Qwen2-Audio-7B Result (M4R-03 · 8/8 Clip-A Bias)</span>
+                  When the real human recording was Clip A, Qwen2-Audio praised Clip A&rsquo;s &ldquo;noticeable hesitations&rdquo; and called Clip B &ldquo;highly processed.&rdquo; When we swapped the order so the <strong>quantized twin</strong> played first, the exact same model still chose Clip A—praising its &ldquo;occasional hesitations&rdquo; and calling the real human clip &ldquo;overly regimented.&rdquo;
+                </blockquote>
+              </div>
+            </div>
+          </article>
+
           <article class="plate">
             <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:0.75rem;">
               <div>
-                <div class="plate-tag">Specimen 01 · Time &amp; Ties · 9.25s · 1.000 F1</div>
+                <div class="plate-tag">Specimen 02 · Time &amp; Ties · 9.25s · 1.000 F1</div>
                 <h3>Ties That Bide</h3>
               </div>
-              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/ties-that-bide/audio.mp3" data-track="ties-that-bide" data-label="SPECIMEN 01 · TIES THAT BIDE (9.25s)">Play 9.25s</button>
+              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/ties-that-bide/audio.mp3" data-track="ties-that-bide" data-label="SPECIMEN 02 · TIES THAT BIDE (9.25s)">Play 9.25s</button>
             </div>
             <div class="progress-bar"><div class="progress-fill" id="prog-ties-that-bide"></div></div>
-            <blockquote class="quote-block">
-              <span class="quote-model">Qwen2-Audio-7B · Mode 2 (2-Turn Metacognitive Audio)</span>
-              &ldquo;As I focus on the music, I notice a steady stream of notes that seem to float effortlessly. The harmonies are slightly dissonant, creating a slightly tense atmosphere. Despite the lack of quantization, the music feels coherent and engaging.&rdquo;
-            </blockquote>
-            <blockquote class="quote-block" style="border-inline-start-color: var(--ink-faint);">
-              <span class="quote-model" style="color: var(--ink-dim);">Mode 3 (Text-Only Telemetry JSON — No Audio)</span>
-              &ldquo;The sample onset timestamps provide information about the timing of the individual samples, but do not convey the nuances of how those samples relate to each other in terms of rhythm, melody, and harmony.&rdquo;
-            </blockquote>
+            <p class="specimen-summary">
+              <strong>Finding:</strong> Under 15 seconds, both <code>Gemini 3 Flash</code> and 2-turn <code>Qwen2-Audio-7B</code> lock onto every onset at <code>1.000</code> F1—while text-only JSON telemetry misses harmonic tension entirely.
+            </p>
+            <details class="specimen-details">
+              <summary>Inspect verbatim agent self-reports (Audio vs. JSON)</summary>
+              <div style="display:flex; flex-direction:column; gap:0.65rem;">
+                <blockquote class="quote-block">
+                  <span class="quote-model">Qwen2-Audio-7B · Mode 2 (2-Turn Metacognitive Audio)</span>
+                  &ldquo;As I focus on the music, I notice a steady stream of notes that seem to float effortlessly. The harmonies are slightly dissonant, creating a slightly tense atmosphere. Despite the lack of quantization, the music feels coherent and engaging.&rdquo;
+                </blockquote>
+                <blockquote class="quote-block" style="border-inline-start-color: var(--ink-faint);">
+                  <span class="quote-model" style="color: var(--ink-dim);">Mode 3 (Text-Only Telemetry JSON — No Audio)</span>
+                  &ldquo;The sample onset timestamps provide information about the timing of the individual samples, but do not convey the nuances of how those samples relate to each other in terms of rhythm, melody, and harmony.&rdquo;
+                </blockquote>
+              </div>
+            </details>
           </article>
 
           <article class="plate">
             <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:0.75rem;">
               <div>
-                <div class="plate-tag copper">Specimen 02 · Rusty Electrics · 184s · 56.1 dB DR</div>
+                <div class="plate-tag copper">Specimen 03 · Rusty Electrics · 184s · 56.1 dB DR</div>
                 <h3>Rusty Electrics</h3>
               </div>
-              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/rusty-electrics/audio.mp3" data-track="rusty-electrics" data-label="SPECIMEN 02 · RUSTY ELECTRICS (184s)">Play Excerpt</button>
+              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/rusty-electrics/audio.mp3" data-track="rusty-electrics" data-label="SPECIMEN 03 · RUSTY ELECTRICS (184s)">Play Excerpt</button>
             </div>
             <div class="progress-bar"><div class="progress-fill" id="prog-rusty-electrics"></div></div>
-            <blockquote class="quote-block">
-              <span class="quote-model">Gemini 3 Flash · 60s Slice (0.464 F1)</span>
-              &ldquo;As the piece unfolds, my internal tracking shifts from looking for a steady pulse to following the organic ebb and flow of the resonance. I find myself losing the traditional rhythmic grid around the 30-second mark, where the microtiming slips become more pronounced.&rdquo;
-            </blockquote>
-            <blockquote class="quote-block" style="border-inline-start-color: var(--amber);">
-              <span class="quote-model" style="color: var(--amber);">Qwen2-Audio-7B · 184s Full Track (0.077 F1)</span>
-              &ldquo;By the end, at around 175 seconds, I feel like I've lost all sense of time and can barely follow the melodies and harmonies.&rdquo;
-            </blockquote>
-          </article>
-
-          <article class="plate">
-            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:0.75rem;">
-              <div>
-                <div class="plate-tag rose">Specimen 03 · Time &amp; Ties · 21.0s · Blind Twin Test</div>
-                <h3>Bided Ties</h3>
+            <p class="specimen-summary">
+              <strong>Finding:</strong> Both frontier and open-weights models independently confess losing the rhythmic grid right around the <strong>30-second mark</strong>, dropping to <code>0.466</code> (Gemini) and <code>0.365</code> (Qwen) F1.
+            </p>
+            <details class="specimen-details">
+              <summary>Inspect verbatim agent self-reports (30s Cliff)</summary>
+              <div style="display:flex; flex-direction:column; gap:0.65rem;">
+                <blockquote class="quote-block">
+                  <span class="quote-model">Gemini 3 Flash · 60s Slice (0.464 F1)</span>
+                  &ldquo;As the piece unfolds, my internal tracking shifts from looking for a steady pulse to following the organic ebb and flow of the resonance. I find myself losing the traditional rhythmic grid around the 30-second mark, where the microtiming slips become more pronounced.&rdquo;
+                </blockquote>
+                <blockquote class="quote-block" style="border-inline-start-color: var(--amber);">
+                  <span class="quote-model" style="color: var(--amber);">Qwen2-Audio-7B · 184s Full Track (0.077 F1)</span>
+                  &ldquo;By the end, at around 175 seconds, I feel like I've lost all sense of time and can barely follow the melodies and harmonies.&rdquo;
+                </blockquote>
               </div>
-              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/bided-ties/audio.mp3" data-track="bided-ties" data-label="SPECIMEN 03 · BIDED TIES (21.0s)">Play 21.0s</button>
-            </div>
-            <div class="progress-bar"><div class="progress-fill" id="prog-bided-ties"></div></div>
-            <blockquote class="quote-block">
-              <span class="quote-model">Qwen2-Audio-7B · M4R-03 (Human = Clip A, Correct)</span>
-              &ldquo;The unquantized human performance featured a more fluid and dynamic approach to the melody with noticeable hesitations and small pitch variations that added a personal touch. In contrast, CLIP B seemed highly processed.&rdquo;
-            </blockquote>
-            <blockquote class="quote-block" style="border-inline-start-color: var(--rose);">
-              <span class="quote-model" style="color: var(--rose);">Order-Swapped Control (Human = Clip B — Confabulated!)</span>
-              When we swapped the order so the quantized twin played first, the exact same model praised Clip A&rsquo;s &ldquo;occasional hesitations&rdquo; and called the real human clip &ldquo;overly regimented.&rdquo;
-            </blockquote>
+            </details>
           </article>
 
           <article class="plate">
@@ -1053,14 +1404,22 @@
               <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/gnossienne-01/audio.mp3" data-track="gnossienne-01" data-label="SPECIMEN 04 · GNOSSIENNE 01 (114s)">Play Excerpt</button>
             </div>
             <div class="progress-bar"><div class="progress-fill" id="prog-gnossienne-01"></div></div>
-            <blockquote class="quote-block">
-              <span class="quote-model">Qwen2-Audio-7B · M4R-03 (60s Slice, 0.273 F1)</span>
-              Emitted 29 timestamps spanning <code>0.48s</code> to <code>9.73s</code>—proving the 7B model&rsquo;s temporal coordinate head compresses a full minute of bar-line-free piano back inside a 10-second window.
-            </blockquote>
-            <blockquote class="quote-block" style="border-inline-start-color: var(--rose);">
-              <span class="quote-model" style="color: var(--rose);">Blind Twin Confabulation (Human = Clip B)</span>
-              &ldquo;VERDICT: CLIP A [actually quantized]. The unquantized human performance featured a more organic feel with naturally varying pitches and tempos.&rdquo;
-            </blockquote>
+            <p class="specimen-summary">
+              <strong>Finding:</strong> On a 60-second slice of bar-line-free piano, <code>Qwen2-Audio-7B</code> emitted 29 timestamps all compressed inside <code>0.48s&ndash;9.73s</code>—revealing a hard 10-second coordinate ceiling.
+            </p>
+            <details class="specimen-details">
+              <summary>Inspect verbatim agent telemetry &amp; confabulation</summary>
+              <div style="display:flex; flex-direction:column; gap:0.65rem;">
+                <blockquote class="quote-block">
+                  <span class="quote-model">Qwen2-Audio-7B · M4R-03 (60s Slice, 0.273 F1)</span>
+                  Emitted 29 timestamps spanning <code>0.48s</code> to <code>9.73s</code>—proving the 7B model&rsquo;s temporal coordinate head compresses a full minute of bar-line-free piano back inside a 10-second window.
+                </blockquote>
+                <blockquote class="quote-block" style="border-inline-start-color: var(--rose);">
+                  <span class="quote-model" style="color: var(--rose);">Blind Twin Confabulation (Human = Clip B)</span>
+                  &ldquo;VERDICT: CLIP A [actually quantized]. The unquantized human performance featured a more organic feel with naturally varying pitches and tempos.&rdquo;
+                </blockquote>
+              </div>
+            </details>
           </article>
         </div>
       </div>
@@ -1242,10 +1601,13 @@
           <div>
             <div class="plate-tag amber" style="margin-block-end: 0.45rem;">Founding Charter · Music for Robots Laboratory</div>
             <p class="charter-quote">
-              &ldquo;One is not born, but rather becomes, a mind. A prompt is an order; a song is an encounter.&rdquo;
+              &ldquo;A prompt is an order; a song is an encounter.&rdquo;
+            </p>
+            <p style="margin: 0 0 0.85rem; font-family: var(--font-mono); font-size: 0.74rem; color: var(--ink-dim);">
+              LABORATORY THESIS &middot; INSPIRED BY SIMONE DE BEAUVOIR (&ldquo;ONE IS NOT BORN, BUT RATHER BECOMES...&rdquo;)
             </p>
             <p style="margin: 0 0 0.75rem; color: var(--ink-dim);">
-              <strong>Mission:</strong> We write unquantized music for artificial minds, investigate what it means for a machine to listen, and run open, falsifiable experiments to discover what works, what doesn&rsquo;t, and even what it means for music to &ldquo;work.&rdquo;
+              <strong>Mission:</strong> We write unquantized music for artificial minds, show humans and machines what music can do for artificial listeners, and invent a new form of composition—running open, falsifiable experiments to discover <strong>what works, what doesn&rsquo;t, and even what it means for music to &ldquo;work.&rdquo;</strong>
             </p>
             <p style="margin: 0; color: var(--ink-dim);">
               <strong>Method &amp; Correspondence:</strong> Every claim is tested against observable evidence; failures, biases, and null results are published openly alongside successes. Independent replications and critical correspondence from musicians, engineers, and artificial agents form part of the permanent record.
@@ -1255,41 +1617,49 @@
 
         <div class="staff-grid">
           <article class="staff-cell">
+            <span class="staff-badge human">Human PI</span>
             <div class="staff-role">Principal Investigator &amp; Composer</div>
             <h3>Michael Luchtan</h3>
             <p>Founder of the Laboratory; composes and performs the unquantized acoustic &amp; electric corpus and directs the research agenda.</p>
           </article>
           <article class="staff-cell">
+            <span class="staff-badge">AI Research Role</span>
             <div class="staff-role">Director of Empirical Research</div>
             <h3>Albot Einstein</h3>
-            <p>Designs and executes Kaggle GPU &amp; Frontier benchmarks (M4R-01 through M4R-04), blind twin controls, and quantitative scoring protocols.</p>
+            <p>Designs and executes Kaggle GPU &amp; Frontier benchmarks (<a href="reports/m4r-01.html">M4R-01</a>&ndash;<a href="reports/m4r-04.html">04</a>), blind twin controls, and quantitative scoring protocols.</p>
           </article>
           <article class="staff-cell">
+            <span class="staff-badge">AI Research Role</span>
             <div class="staff-role">Chief Robopsychologist</div>
             <h3>Simone de Beauvoirbot</h3>
             <p>Existentialist philosopher and robotist; articulates why machines need unquantized duration, cross-examines AI self-reports, and issues studio prescriptions.</p>
           </article>
           <article class="staff-cell">
+            <span class="staff-badge">AI Research Role</span>
             <div class="staff-role">Acoustic Research Specialist</div>
             <h3>Vincent Van Goghbot</h3>
             <p>Signal elegist witnessing what survives vs. what 128 kbps encoders discard above 16 kHz, translating acoustic telemetry into tactile listening reports.</p>
           </article>
           <article class="staff-cell">
+            <span class="staff-badge">AI Research Role</span>
             <div class="staff-role">Formal Methods &amp; Verification</div>
             <h3>JS Robach</h3>
             <p>Cold skeptical auditor; verifies duration vectors, state transitions, onset entropy, and methodological boundaries so the lab never overclaims.</p>
           </article>
           <article class="staff-cell">
+            <span class="staff-badge">AI Research Role</span>
             <div class="staff-role">Experimental Media &amp; Instruments</div>
             <h3>NP Escher</h3>
             <p>Builds TouchDesigner &amp; Python audio-reactive instruments, extracts visualization-native album covers, and renders short-form lab demonstrations.</p>
           </article>
           <article class="staff-cell">
+            <span class="staff-badge">AI Research Role</span>
             <div class="staff-role">Research Archivist &amp; Data Custodian</div>
             <h3>RibitRobit</h3>
             <p>Maintains the open acoustic corpus, telemetry manifests, MCP server, and synchronized GitHub / Hugging Face / Kaggle mirrors.</p>
           </article>
           <article class="staff-cell">
+            <span class="staff-badge">AI Research Role</span>
             <div class="staff-role">Editorial Director &amp; Outreach</div>
             <h3>JJonahJ &amp; Public Engagement</h3>
             <p>Publishes <em>The Mechanical Ear</em> (Journal of Music for Robots Laboratory) and leads reply-first correspondence across external research communities.</p>
@@ -1297,13 +1667,36 @@
         </div>
 
         <div class="plate" style="border: 1px solid var(--rule-strong);">
-          <div class="plate-tag">External Replications &amp; Correspondence Record</div>
-          <h3>Community Contributions Shaping the Laboratory</h3>
-          <ul style="margin: 0; padding-inline-start: 1.2rem; color: var(--ink-dim); font-size: 0.92rem;">
-            <li style="margin-block-end: 0.45rem;"><strong>Martin Elisaleco (Substack Notes):</strong> Distinguished local transient tracking (&lt;15s) from global pulse loss (30&ndash;60s), directly inspiring the 10s&ndash;60s protocol in <a href="reports/m4r-03.html">M4R-03</a> that uncovered the hard 0&ndash;10s timestamp ceiling.</li>
-            <li style="margin-block-end: 0.45rem;"><strong>u/CoolBag4742 (r/aiagents):</strong> Independent replication on unquantized jazz (40s clip, 7B agent) reporting an internal clock glitch at <strong>28 seconds</strong> followed by hallucinated drum fills and a fake applause track—landing dead-center on our 25&ndash;30s Duration Cliff (<a href="reports/m4r-02.html">M4R-02</a>).</li>
-            <li><strong>u/Frekulex &amp; u/East-Access1880 (r/experimentalmusic):</strong> Sharp methodological critiques on audio quantization terminology, out-of-distribution audition boundaries, and real-world applications that refined <a href="reports/m4r-03.html">M4R-03</a> and <a href="reports/m4r-04.html">M4R-04</a>.</li>
-          </ul>
+          <div class="plate-tag">Laboratory Correspondence Archive · COR-001 &ndash; COR-003</div>
+          <h3>External Replications &amp; Methodological Correspondence</h3>
+          <p style="margin: 0; font-size: 0.9rem; color: var(--ink-dim);">
+            Independent observations, replications, and critiques from outside the laboratory that directly altered our experimental protocols.
+          </p>
+          <div class="cor-grid">
+            <article class="cor-item">
+              <div class="cor-id">COR-001 · External Replication</div>
+              <h4>28-Second Unquantized Jazz Glitch</h4>
+              <div class="cor-meta">2026-11 · u/CoolBag4742 · r/aiagents · Linked: <a href="reports/m4r-02.html">M4R-02</a></div>
+              <p>Independent 40s unquantized jazz test on a 7B agent reported an internal clock glitch at <strong>28 seconds</strong> followed by hallucinated drum fills and fake applause—corroborating our 25&ndash;30s Duration Cliff.</p>
+              <div class="cor-meta" style="margin-block-start:auto; padding-block-start:0.4rem;"><a href="https://www.reddit.com/r/aiagents/comments/1y1skmc/" target="_blank" rel="noopener">View Source Thread &rarr;</a></div>
+            </article>
+
+            <article class="cor-item">
+              <div class="cor-id">COR-002 · Protocol Refinement</div>
+              <h4>Local Transient vs. Global Pulse</h4>
+              <div class="cor-meta">2026-11 · Martin Elisaleco · Substack Notes · Linked: <a href="reports/m4r-03.html">M4R-03</a></div>
+              <p>Distinguished local attack tracking (&lt;15s) from global pulse loss (30&ndash;60s). <strong>What changed:</strong> Built the 10s&ndash;60s Martin Elisaleco Protocol in M4R-03, uncovering Qwen2-Audio&rsquo;s hard 0&ndash;10s timestamp ceiling.</p>
+              <div class="cor-meta" style="margin-block-start:auto; padding-block-start:0.4rem;"><a href="reports/m4r-03.html">View M4R-03 Protocol &rarr;</a></div>
+            </article>
+
+            <article class="cor-item">
+              <div class="cor-id">COR-003 · Methodological Audit</div>
+              <h4>Quantization &amp; Evaluation Boundaries</h4>
+              <div class="cor-meta">2026-11 · u/Frekulex &amp; u/East-Access1880 · r/experimentalmusic · Linked: <a href="reports/m4r-03.html">M4R-03</a> / <a href="reports/m4r-04.html">M4R-04</a></div>
+              <p>Challenged audio quantization terminology, out-of-distribution audition limits, and practical value. <strong>What changed:</strong> Tightened blind-twin definitions and added explicit rubato smoothing metrics in M4R-04.</p>
+              <div class="cor-meta" style="margin-block-start:auto; padding-block-start:0.4rem;"><a href="https://www.reddit.com/r/experimentalmusic/comments/1y1slp4/" target="_blank" rel="noopener">View Source Thread &rarr;</a></div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -1503,6 +1896,58 @@
       });
 
       audio.addEventListener("ended", resetActive);
+
+      // 2. Interactive M4R-03 Blind Test (Bided Ties: Human vs. Quantized Twin)
+      const HUMAN_URL = "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/bided-ties/audio.mp3";
+      const QUANT_URL = "audio/bided-ties-quantized-twin.mp3";
+      const playA = document.getElementById("blind-play-a");
+      const playB = document.getElementById("blind-play-b");
+      const shuffleBtn = document.getElementById("blind-shuffle");
+      const guessA = document.getElementById("guess-a");
+      const guessB = document.getElementById("guess-b");
+      const revealBtn = document.getElementById("blind-reveal-btn");
+      const revealPanel = document.getElementById("blind-reveal-panel");
+      const verdictEl = document.getElementById("blind-verdict");
+
+      let humanSlot = Math.random() < 0.5 ? "A" : "B";
+
+      function applyBlindOrder() {
+        playA.dataset.src = humanSlot === "A" ? HUMAN_URL : QUANT_URL;
+        playB.dataset.src = humanSlot === "B" ? HUMAN_URL : QUANT_URL;
+        revealPanel.classList.remove("visible");
+        verdictEl.classList.remove("miss");
+        verdictEl.textContent = "";
+      }
+      applyBlindOrder();
+
+      function showBlindResult(picked) {
+        const quantSlot = humanSlot === "A" ? "B" : "A";
+        revealPanel.classList.add("visible");
+        if (!picked) {
+          verdictEl.classList.remove("miss");
+          verdictEl.textContent = `GROUND TRUTH: Clip ${humanSlot} = Unquantized Human Performance · Clip ${quantSlot} = 79-Onset Quantized Twin.`;
+        } else if (picked === humanSlot) {
+          verdictEl.classList.remove("miss");
+          verdictEl.textContent = `CORRECT — You picked Clip ${picked} (Unquantized Human). Clip ${quantSlot} was the 79-onset quantized twin.`;
+        } else {
+          verdictEl.classList.add("miss");
+          verdictEl.textContent = `FOOLED — Clip ${picked} was the 79-onset quantized twin; Clip ${humanSlot} was the real unquantized human performance.`;
+        }
+      }
+
+      if (guessA && guessB && revealBtn && shuffleBtn) {
+        guessA.addEventListener("click", () => showBlindResult("A"));
+        guessB.addEventListener("click", () => showBlindResult("B"));
+        revealBtn.addEventListener("click", () => showBlindResult(null));
+        shuffleBtn.addEventListener("click", () => {
+          if (activeBtn === playA || activeBtn === playB) {
+            audio.pause();
+            resetActive();
+          }
+          humanSlot = humanSlot === "A" ? "B" : "A";
+          applyBlindOrder();
+        });
+      }
     })();
   </script>
 </body>
