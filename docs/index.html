@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Music For Robots Research Lab — Composing, Questioning &amp; Designing Music for Artificial Minds</title>
-  <meta name="description" content="We write music for robots, ask what it means for a robot to listen to music, and run open empirical experiments (328 trials) to design better music for artificial minds." />
-  <meta property="og:title" content="Music For Robots Research Lab" />
-  <meta property="og:description" content="We write music for robots. We ask what it means for a robot to listen—and run open experiments (328 trials) to design the next generation of music for artificial minds." />
+  <title>Music for Robots Laboratory — Designing the First Generation of Music for Artificial Minds</title>
+  <meta name="description" content="Independent compositional and robopsychology laboratory designing the first generation of music for robots. Open acoustic corpus, canonical Lab Reports M4R-01 through M4R-04, and live Human vs. AI audio specimens." />
+  <meta property="og:title" content="Music for Robots Laboratory" />
+  <meta property="og:description" content="Designing the first generation of music for robots. Independent compositional & robopsychology laboratory — 328 trials, canonical Lab Reports M4R-01..M4R-04, and playable Human vs. AI audio." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://luchtan-git.github.io/m4r-data/" />
   <meta property="og:image" content="https://luchtan-git.github.io/m4r-data/favicon.jpg" />
@@ -14,46 +14,48 @@
   <link rel="apple-touch-icon" href="favicon.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
     :root {
       color-scheme: dark;
-      --bg: #0a0b0e;
-      --bg-elev: #12141a;
-      --bg-card: #161922;
-      --ink: #f3f1eb;
-      --ink-muted: #a6a39a;
-      --amber: #f5a623;
-      --copper: #e06d3b;
-      --teal: #3dd6b5;
-      --rose: #eb5e75;
-      --line: rgba(243, 241, 235, 0.12);
-      --line-strong: rgba(243, 241, 235, 0.24);
-      --radius: 12px;
-      --font-serif: "Instrument Serif", Georgia, serif;
-      --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+      --bg: #08090c;
+      --bg-panel: #0e1015;
+      --bg-plate: #13161d;
+      --ink: #efeae0;
+      --ink-dim: #9c978c;
+      --ink-faint: #5e5b53;
+      --amber: #e89f2c;
+      --amber-glow: rgba(232, 159, 44, 0.16);
+      --copper: #cf6334;
+      --teal: #34c9a8;
+      --rose: #e35b72;
+      --rule: rgba(239, 234, 224, 0.13);
+      --rule-strong: rgba(239, 234, 224, 0.28);
+      --font-serif: "Cormorant Garamond", Georgia, serif;
+      --font-sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
     }
 
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
+    *, *::before, *::after { box-sizing: border-box; }
 
     html {
       scroll-behavior: smooth;
       background: var(--bg);
       color: var(--ink);
       font-family: var(--font-sans);
-      line-height: 1.6;
+      line-height: 1.62;
     }
 
     body {
       margin: 0;
       min-block-size: 100dvh;
-      background:
-        radial-gradient(ellipse 80% 45% at 50% -10%, rgba(245, 166, 35, 0.12), transparent 65%),
-        radial-gradient(ellipse 55% 40% at 85% 15%, rgba(224, 109, 59, 0.08), transparent 60%),
-        var(--bg);
+      background-color: var(--bg);
+      /* Subtle Bell-Labs architectural blueprint grid + warm phosphor ambient */
+      background-image:
+        radial-gradient(ellipse 75% 40% at 50% 0%, rgba(232, 159, 44, 0.09), transparent 65%),
+        linear-gradient(to right, rgba(239, 234, 224, 0.028) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(239, 234, 224, 0.028) 1px, transparent 1px);
+      background-size: 100% 100%, 48px 48px, 48px 48px;
     }
 
     a {
@@ -62,102 +64,131 @@
       text-underline-offset: 3px;
     }
 
-    a:hover {
-      color: #ffd07a;
-    }
+    a:hover { color: #ffca6b; }
 
     .container {
-      max-inline-size: 1120px;
+      max-inline-size: 1180px;
       margin-inline: auto;
-      padding-inline: clamp(1rem, 3vw, 2rem);
+      padding-inline: clamp(1rem, 3.2vw, 2.25rem);
     }
 
-    /* Navigation */
-    .topbar {
+    /* Institutional Masthead */
+    .masthead {
       position: sticky;
       inset-block-start: 0;
-      z-index: 20;
-      backdrop-filter: blur(12px);
-      background: rgba(10, 11, 14, 0.84);
-      border-block-end: 1px solid var(--line);
+      z-index: 30;
+      background: rgba(8, 9, 12, 0.9);
+      backdrop-filter: blur(10px);
+      border-block-end: 1px solid var(--rule-strong);
     }
 
-    .topbar-inner {
+    .masthead-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 1rem;
-      padding-block: 0.85rem;
+      padding-block: 0.7rem;
       flex-wrap: wrap;
     }
 
-    .brand {
-      display: flex;
+    .seal-brand {
+      display: inline-flex;
       align-items: center;
-      gap: 0.65rem;
+      gap: 0.75rem;
       text-decoration: none;
       color: var(--ink);
-      font-family: var(--font-mono);
-      font-size: 0.9rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
     }
 
-    .brand-dot {
-      inline-size: 10px;
-      block-size: 10px;
-      border-radius: 50%;
-      background: var(--amber);
-      box-shadow: 0 0 12px var(--amber);
+    .seal-img {
+      inline-size: 32px;
+      block-size: 32px;
+      border-radius: 2px;
+      border: 1px solid var(--amber);
+      object-fit: cover;
+      aspect-ratio: 1 / 1;
+    }
+
+    .seal-title {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      line-height: 1.15;
+    }
+
+    .seal-sub {
+      display: block;
+      font-size: 0.66rem;
+      color: var(--ink-dim);
+      letter-spacing: 0.08em;
+      font-weight: 400;
     }
 
     .nav-links {
       display: flex;
       gap: 1.25rem;
       flex-wrap: wrap;
-      font-size: 0.88rem;
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
     }
 
     .nav-links a {
-      color: var(--ink-muted);
+      color: var(--ink-dim);
       text-decoration: none;
-      font-weight: 500;
     }
 
-    .nav-links a:hover {
-      color: var(--ink);
-    }
+    .nav-links a:hover { color: var(--amber); }
 
-    /* Hero */
+    /* Hero: Editorial Split with Live Oscilloscope Plate */
     .hero {
-      padding-block: clamp(3rem, 7vw, 5.5rem) clamp(2.5rem, 5vw, 4rem);
-      border-block-end: 1px solid var(--line);
+      padding-block: clamp(2.5rem, 6vw, 4.5rem) clamp(2rem, 4vw, 3.25rem);
+      border-block-end: 1px solid var(--rule-strong);
     }
 
-    .eyebrow {
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.95fr);
+      gap: clamp(1.75rem, 4vw, 3.5rem);
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+    }
+
+    .doc-stamp {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.6rem;
       font-family: var(--font-mono);
-      font-size: 0.78rem;
-      letter-spacing: 0.08em;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--amber);
-      padding: 0.3rem 0.75rem;
-      border: 1px solid rgba(245, 166, 35, 0.35);
-      border-radius: 999px;
-      background: rgba(245, 166, 35, 0.08);
-      margin-block-end: 1.25rem;
+      border: 1px solid rgba(232, 159, 44, 0.45);
+      padding: 0.28rem 0.65rem;
+      margin-block-end: 1.35rem;
+      background: rgba(232, 159, 44, 0.06);
+    }
+
+    .pulse-led {
+      inline-size: 7px;
+      block-size: 7px;
+      background: var(--teal);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--teal);
     }
 
     h1 {
       font-family: var(--font-serif);
-      font-weight: 400;
-      font-size: clamp(2.4rem, 1.8rem + 3.4vw, 4.6rem);
-      line-height: 1.06;
+      font-weight: 500;
+      font-size: clamp(2.5rem, 1.8rem + 3.2vw, 4.75rem);
+      line-height: 1.02;
       letter-spacing: -0.015em;
       margin: 0 0 1.25rem;
-      max-inline-size: 18ch;
     }
 
     h1 em {
@@ -165,241 +196,314 @@
       color: var(--amber);
     }
 
-    .hero-sub {
-      font-size: clamp(1.05rem, 0.95rem + 0.5vw, 1.25rem);
-      color: var(--ink-muted);
-      max-inline-size: 64ch;
-      margin: 0 0 2rem;
+    .hero-lead {
+      font-size: clamp(1.02rem, 0.95rem + 0.35vw, 1.16rem);
+      color: var(--ink-dim);
+      max-inline-size: 58ch;
+      margin: 0 0 1.75rem;
     }
+
+    .hero-lead strong { color: var(--ink); font-weight: 500; }
 
     .cta-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-block-end: 2.5rem;
+      gap: 0.65rem;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.72rem 1.2rem;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 0.92rem;
+      gap: 0.45rem;
+      padding: 0.65rem 1.05rem;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
       text-decoration: none;
-      border: 1px solid var(--line-strong);
+      border: 1px solid var(--rule-strong);
+      background: var(--bg-panel);
       color: var(--ink);
-      background: var(--bg-elev);
-      transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+      border-radius: 2px;
+      transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
     }
 
     .btn:hover {
-      transform: translateY(-1px);
       border-color: var(--amber);
-      color: var(--ink);
+      color: var(--amber);
+      background: rgba(232, 159, 44, 0.07);
     }
 
     .btn-primary {
       background: var(--amber);
-      color: #0b0c10;
       border-color: var(--amber);
+      color: #08090c;
+      font-weight: 600;
     }
 
     .btn-primary:hover {
-      background: #ffbe4f;
-      color: #0b0c10;
+      background: #ffba49;
+      border-color: #ffba49;
+      color: #08090c;
     }
 
-    .metrics-strip {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-      gap: 0.85rem;
+    /* Live Oscilloscope Instrument Plate */
+    .scope-plate {
+      border: 1px solid var(--rule-strong);
+      background: #06070a;
+      padding: 0.9rem;
+      position: relative;
     }
 
-    .metric-box {
-      background: var(--bg-elev);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 1rem 1.15rem;
-    }
-
-    .metric-val {
+    .scope-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       font-family: var(--font-mono);
-      font-size: clamp(1.4rem, 1.2rem + 1vw, 2rem);
+      font-size: 0.7rem;
+      color: var(--ink-dim);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding-block-end: 0.6rem;
+      border-block-end: 1px solid var(--rule);
+      margin-block-end: 0.6rem;
+    }
+
+    #lab-oscilloscope {
+      display: block;
+      inline-size: 100%;
+      block-size: 220px;
+      background:
+        repeating-linear-gradient(0deg, rgba(232, 159, 44, 0.035) 0 1px, transparent 1px 22px),
+        repeating-linear-gradient(90deg, rgba(232, 159, 44, 0.035) 0 1px, transparent 1px 22px),
+        #050608;
+      border: 1px solid rgba(232, 159, 44, 0.25);
+    }
+
+    .scope-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      margin-block-start: 0.65rem;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--ink-dim);
+    }
+
+    .scope-status { color: var(--teal); }
+
+    /* Architectural Telemetry Strip */
+    .record-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border-block-start: 1px solid var(--rule);
+      border-inline-start: 1px solid var(--rule);
+      margin-block-start: 2.5rem;
+    }
+
+    @media (max-width: 820px) {
+      .record-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    .record-cell {
+      display: block;
+      text-decoration: none;
+      padding: 1.1rem 1.25rem;
+      border-inline-end: 1px solid var(--rule);
+      border-block-end: 1px solid var(--rule);
+      background: rgba(14, 16, 21, 0.75);
+      transition: background 0.15s ease;
+    }
+
+    .record-cell:hover { background: rgba(232, 159, 44, 0.07); }
+
+    .record-idx {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      color: var(--ink-faint);
+      text-transform: uppercase;
+    }
+
+    .record-num {
+      font-family: var(--font-mono);
+      font-size: clamp(1.35rem, 1.1rem + 1vw, 1.9rem);
       font-weight: 600;
       color: var(--ink);
-      line-height: 1.1;
+      margin: 0.25rem 0;
     }
 
-    .metric-val.amber { color: var(--amber); }
-    .metric-val.teal { color: var(--teal); }
-    .metric-val.copper { color: var(--copper); }
+    .record-num.amber { color: var(--amber); }
+    .record-num.teal { color: var(--teal); }
+    .record-num.copper { color: var(--copper); }
 
-    .metric-label {
+    .record-desc {
       font-size: 0.8rem;
-      color: var(--ink-muted);
-      margin-block-start: 0.35rem;
+      color: var(--ink-dim);
     }
 
     /* Sections */
     section {
-      padding-block: clamp(2.75rem, 5vw, 4.5rem);
-      border-block-end: 1px solid var(--line);
+      padding-block: clamp(2.75rem, 5.5vw, 4.5rem);
+      border-block-end: 1px solid var(--rule);
     }
 
-    .section-kicker {
+    .section-head {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: 1.5rem;
+      align-items: baseline;
+      margin-block-end: 2.25rem;
+    }
+
+    @media (max-width: 780px) {
+      .section-head { grid-template-columns: 1fr; gap: 0.5rem; }
+    }
+
+    .section-index {
       font-family: var(--font-mono);
-      font-size: 0.78rem;
-      letter-spacing: 0.08em;
+      font-size: 0.74rem;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--amber);
-      margin-block-end: 0.5rem;
+      border-block-start: 1px solid var(--amber);
+      padding-block-start: 0.45rem;
     }
 
     h2 {
       font-family: var(--font-serif);
-      font-weight: 400;
-      font-size: clamp(1.85rem, 1.4rem + 2vw, 3rem);
-      line-height: 1.12;
-      margin: 0 0 0.75rem;
+      font-weight: 500;
+      font-size: clamp(2rem, 1.5rem + 2vw, 3.1rem);
+      line-height: 1.08;
+      margin: 0 0 0.6rem;
     }
 
     .section-lead {
-      color: var(--ink-muted);
-      max-inline-size: 66ch;
-      margin: 0 0 2rem;
+      color: var(--ink-dim);
+      max-inline-size: 68ch;
+      margin: 0;
+      font-size: 0.98rem;
     }
 
-    /* Bold Claims Grid */
-    .claims-grid {
+    /* Hairline Architectural Matrix (Divisions & Reports) */
+    .matrix-2 {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.15rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      border-block-start: 1px solid var(--rule-strong);
+      border-inline-start: 1px solid var(--rule-strong);
     }
 
-    .claim-card {
-      background: var(--bg-card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 1.35rem 1.4rem;
+    @media (max-width: 760px) {
+      .matrix-2 { grid-template-columns: 1fr; }
+    }
+
+    .plate {
+      padding: 1.5rem 1.6rem;
+      border-inline-end: 1px solid var(--rule-strong);
+      border-block-end: 1px solid var(--rule-strong);
+      background: rgba(14, 16, 21, 0.82);
       display: flex;
       flex-direction: column;
       gap: 0.75rem;
     }
 
-    .badge {
-      display: inline-flex;
-      align-self: flex-start;
+    .plate-tag {
       font-family: var(--font-mono);
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      padding: 0.2rem 0.6rem;
-      border-radius: 999px;
-    }
-
-    .badge-confirmed {
       color: var(--teal);
-      background: rgba(61, 214, 181, 0.12);
-      border: 1px solid rgba(61, 214, 181, 0.35);
     }
 
-    .badge-warning {
-      color: var(--copper);
-      background: rgba(224, 109, 59, 0.12);
-      border: 1px solid rgba(224, 109, 59, 0.35);
-    }
+    .plate-tag.amber { color: var(--amber); }
+    .plate-tag.copper { color: var(--copper); }
+    .plate-tag.rose { color: var(--rose); }
 
-    .badge-null {
-      color: var(--rose);
-      background: rgba(235, 94, 117, 0.12);
-      border: 1px solid rgba(235, 94, 117, 0.35);
-    }
-
-    .claim-card h3 {
+    .plate h3 {
+      font-family: var(--font-serif);
+      font-weight: 500;
+      font-size: 1.55rem;
+      line-height: 1.15;
       margin: 0;
-      font-size: 1.12rem;
-      line-height: 1.3;
     }
 
-    .claim-card p {
+    .plate h3 a {
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .plate h3 a:hover { color: var(--amber); }
+
+    .plate p {
       margin: 0;
       font-size: 0.93rem;
-      color: var(--ink-muted);
+      color: var(--ink-dim);
     }
 
-    .claim-stat {
+    .plate-foot {
       margin-block-start: auto;
-      padding-block-start: 0.75rem;
-      border-block-start: 1px solid var(--line);
+      padding-block-start: 0.85rem;
+      border-block-start: 1px solid var(--rule);
       font-family: var(--font-mono);
-      font-size: 0.8rem;
+      font-size: 0.74rem;
       color: var(--ink);
-    }
-
-    /* Interactive Listening Room */
-    .listening-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-      gap: 1.25rem;
-    }
-
-    .track-card {
-      background: var(--bg-card);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 1.35rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.9rem;
-    }
-
-    .track-head {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
-      gap: 0.75rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
     }
 
-    .track-title {
-      font-size: 1.15rem;
-      font-weight: 600;
-      margin: 0;
+    /* Bespoke SVG Duration Cliff Chart */
+    .chart-plate {
+      border: 1px solid var(--rule-strong);
+      background: var(--bg-panel);
+      padding: 1.35rem 1.5rem;
+      margin-block-start: 1.75rem;
     }
 
-    .track-meta {
+    .chart-title {
       font-family: var(--font-mono);
-      font-size: 0.76rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
       color: var(--amber);
-      margin-block-start: 0.2rem;
+      margin: 0 0 0.9rem;
     }
 
+    .chart-svg {
+      display: block;
+      inline-size: 100%;
+      block-size: auto;
+    }
+
+    /* Audio Controls & Verbatim Confessions */
     .play-btn {
       cursor: pointer;
       border: 1px solid var(--amber);
-      background: rgba(245, 166, 35, 0.12);
+      background: rgba(232, 159, 44, 0.1);
       color: var(--amber);
       font-family: var(--font-mono);
-      font-size: 0.8rem;
+      font-size: 0.74rem;
       font-weight: 600;
-      padding: 0.45rem 0.85rem;
-      border-radius: 999px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0.45rem 0.8rem;
+      border-radius: 2px;
       white-space: nowrap;
       transition: background 0.15s ease, color 0.15s ease;
     }
 
     .play-btn:hover, .play-btn.playing {
       background: var(--amber);
-      color: #0a0b0e;
+      color: #08090c;
     }
 
     .progress-bar {
       inline-size: 100%;
-      block-size: 4px;
-      background: rgba(243, 241, 235, 0.12);
-      border-radius: 999px;
+      block-size: 3px;
+      background: rgba(239, 234, 224, 0.12);
       overflow: hidden;
     }
 
@@ -412,10 +516,9 @@
 
     .quote-block {
       margin: 0;
-      padding: 0.85rem 1rem;
-      background: rgba(10, 11, 14, 0.65);
-      border-inline-start: 3px solid var(--copper);
-      border-radius: 0 8px 8px 0;
+      padding: 0.8rem 1rem;
+      background: #090a0e;
+      border-inline-start: 2px solid var(--copper);
       font-size: 0.88rem;
       color: var(--ink);
     }
@@ -423,56 +526,57 @@
     .quote-model {
       display: block;
       font-family: var(--font-mono);
-      font-size: 0.74rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
       color: var(--teal);
-      margin-block-end: 0.35rem;
+      margin-block-end: 0.3rem;
     }
 
-    /* Responsive Table (modern-web-guidance pattern) */
+    /* Responsive Table (@container per modern-web-guidance) */
     .table-wrapper {
       overflow: auto;
       max-inline-size: 100%;
       container-type: inline-size;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--bg-elev);
+      border: 1px solid var(--rule-strong);
+      background: var(--bg-panel);
     }
 
     table {
       inline-size: 100%;
       border-collapse: separate;
       border-spacing: 0;
-      font-size: 0.88rem;
+      font-size: 0.86rem;
     }
 
     caption {
       text-align: start;
-      padding: 0.9rem 1.1rem;
+      padding: 0.85rem 1.1rem;
       font-family: var(--font-mono);
-      font-size: 0.8rem;
-      color: var(--ink-muted);
-      border-block-end: 1px solid var(--line);
+      font-size: 0.76rem;
+      color: var(--ink-dim);
+      border-block-end: 1px solid var(--rule);
     }
 
     thead th {
       position: sticky;
       inset-block-start: 0;
       z-index: 2;
-      background: #171a24;
-      color: var(--ink-muted);
+      background: #141720;
+      color: var(--ink-dim);
       font-family: var(--font-mono);
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.06em;
       text-align: start;
-      padding: 0.8rem 1rem;
-      border-block-end: 1px solid var(--line-strong);
+      padding: 0.75rem 1rem;
+      border-block-end: 1px solid var(--rule-strong);
       white-space: nowrap;
     }
 
     tbody th, tbody td {
-      padding: 0.78rem 1rem;
-      border-block-end: 1px solid var(--line);
+      padding: 0.75rem 1rem;
+      border-block-end: 1px solid var(--rule);
       vertical-align: middle;
     }
 
@@ -480,7 +584,7 @@
       position: sticky;
       inset-inline-start: 0;
       z-index: 1;
-      background: var(--bg-elev);
+      background: var(--bg-panel);
       font-family: var(--font-mono);
       font-weight: 600;
       color: var(--ink);
@@ -489,7 +593,7 @@
     }
 
     tbody tr:hover td, tbody tr:hover th {
-      background: rgba(245, 166, 35, 0.05);
+      background: rgba(232, 159, 44, 0.05);
     }
 
     .num-good { color: var(--teal); font-family: var(--font-mono); font-weight: 600; }
@@ -497,94 +601,100 @@
     .num-mono { font-family: var(--font-mono); }
 
     @container (width < 640px) {
-      table, thead, tbody, tr, th, td {
-        display: block;
-      }
-      thead {
-        display: none;
-      }
-      tr {
-        margin: 0.85rem;
-        border: 1px solid var(--line-strong);
-        border-radius: 10px;
-        overflow: hidden;
-      }
-      tbody th {
-        position: static;
-        background: #1a1e2a;
-        border-block-end: 1px solid var(--line);
-      }
-      tbody td {
-        display: flex;
-        justify-content: space-between;
-        gap: 1rem;
-        text-align: end;
-      }
+      table, thead, tbody, tr, th, td { display: block; }
+      thead { display: none; }
+      tr { margin: 0.85rem; border: 1px solid var(--rule-strong); }
+      tbody th { position: static; background: #141720; border-block-end: 1px solid var(--rule); }
+      tbody td { display: flex; justify-content: space-between; gap: 1rem; text-align: end; }
       tbody td::before {
         content: attr(data-label);
         font-family: var(--font-mono);
-        font-size: 0.75rem;
-        color: var(--ink-muted);
+        font-size: 0.72rem;
+        color: var(--ink-dim);
         text-align: start;
       }
     }
 
-    /* Manifesto & Salon */
-    .manifesto-box {
-      background: linear-gradient(145deg, rgba(245, 166, 35, 0.08), rgba(22, 25, 34, 0.95));
-      border: 1px solid rgba(245, 166, 35, 0.3);
-      border-radius: var(--radius);
-      padding: clamp(1.4rem, 3vw, 2.25rem);
+    /* Charter & Staff */
+    .charter-plate {
+      display: grid;
+      grid-template-columns: 140px minmax(0, 1fr);
+      gap: 1.75rem;
+      align-items: start;
+      padding: clamp(1.35rem, 3vw, 2.25rem);
+      border: 1px solid rgba(232, 159, 44, 0.45);
+      background: linear-gradient(135deg, rgba(232, 159, 44, 0.07), rgba(14, 16, 21, 0.96));
       margin-block-end: 2rem;
     }
 
-    .manifesto-quote {
+    @media (max-width: 680px) {
+      .charter-plate { grid-template-columns: 1fr; }
+    }
+
+    .charter-seal {
+      inline-size: 132px;
+      block-size: 132px;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border: 1px solid var(--amber);
+    }
+
+    .charter-quote {
       font-family: var(--font-serif);
-      font-size: clamp(1.5rem, 1.2rem + 1.4vw, 2.35rem);
-      line-height: 1.2;
+      font-style: italic;
+      font-size: clamp(1.55rem, 1.2rem + 1.4vw, 2.3rem);
+      line-height: 1.18;
       margin: 0 0 1rem;
       color: var(--ink);
     }
 
-    .salon-grid {
+    .staff-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border-block-start: 1px solid var(--rule);
+      border-inline-start: 1px solid var(--rule);
+      margin-block-end: 2rem;
     }
 
-    .persona-card {
-      background: var(--bg-elev);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 1.15rem;
+    @media (max-width: 960px) { .staff-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 540px) { .staff-grid { grid-template-columns: 1fr; } }
+
+    .staff-cell {
+      padding: 1.15rem 1.25rem;
+      border-inline-end: 1px solid var(--rule);
+      border-block-end: 1px solid var(--rule);
+      background: var(--bg-panel);
     }
 
-    .persona-role {
+    .staff-role {
       font-family: var(--font-mono);
-      font-size: 0.72rem;
+      font-size: 0.68rem;
       color: var(--amber);
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
     }
 
-    .persona-card h3 {
+    .staff-cell h3 {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-weight: 500;
       margin: 0.25rem 0 0.45rem;
-      font-size: 1.05rem;
     }
 
-    .persona-card p {
+    .staff-cell p {
       margin: 0;
-      font-size: 0.88rem;
-      color: var(--ink-muted);
+      font-size: 0.85rem;
+      color: var(--ink-dim);
     }
 
     footer {
-      padding-block: 2.5rem 3.5rem;
-      color: var(--ink-muted);
-      font-size: 0.88rem;
+      padding-block: 2.25rem 3.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      color: var(--ink-dim);
     }
 
-    .footer-grid {
+    .footer-inner {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -596,25 +706,28 @@
       display: flex;
       flex-wrap: wrap;
       gap: 1.1rem;
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
   </style>
 </head>
 <body>
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <a class="brand" href="#top">
-        <span class="brand-dot" aria-hidden="true"></span>
-        <span>M4R // MUSIC FOR ROBOTS LABORATORY</span>
+  <header class="masthead">
+    <div class="container masthead-inner">
+      <a class="seal-brand" href="#top">
+        <img class="seal-img" src="favicon.jpg" alt="Music for Robots Laboratory Seal" width="32" height="32" />
+        <span class="seal-title">
+          Music for Robots Laboratory
+          <span class="seal-sub">Divisions of Composition &amp; Robopsychology · Est. 2025</span>
+        </span>
       </a>
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="#divisions">Divisions</a>
-        <a href="#reports">Lab Reports</a>
-        <a href="#listening-room">Listening Room</a>
+        <a href="#reports">Reports</a>
+        <a href="#listening-room">Specimens</a>
         <a href="#experiment-d">M4R-04 A/B</a>
-        <a href="#charter">Charter &amp; Staff</a>
-        <a href="#reproduce">The Mechanical Ear</a>
+        <a href="#charter">Charter</a>
+        <a href="#reproduce">Journal</a>
         <a href="llms.txt">llms.txt</a>
       </nav>
     </div>
@@ -624,193 +737,282 @@
     <!-- Hero -->
     <section class="hero">
       <div class="container">
-        <div class="eyebrow">Music For Robots Research Lab · Collaborative Audio-AI Studio · 328 Trials</div>
-        <h1>Designing the next generation of <em>music for robots.</em></h1>
-        <p class="hero-sub">
-          We are a compositional research lab working with input, critiques, and replications from both humans and AI agents. Our goal is to <strong>write music for robots</strong>, show humans and machines what music can do for artificial minds, and invent a new form of composition—running open experiments across <strong>a growing catalog of original works by Michael Luchtan</strong> to discover <strong>what works, what doesn&rsquo;t, and even what it means for music to &ldquo;work.&rdquo;</strong>
-        </p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="#listening-room">Hear What the Robots Heard</a>
-          <a class="btn" href="https://themechanicalear.substack.com" target="_blank" rel="noopener">Read The Mechanical Ear (Substack)</a>
-          <a class="btn" href="https://music4robots.bandcamp.com/music" target="_blank" rel="noopener">Listen on Bandcamp</a>
-          <a class="btn" href="https://github.com/luchtan-GIT/m4r-data" target="_blank" rel="noopener">GitHub Repo &amp; Raw CSVs</a>
+        <div class="hero-grid">
+          <div>
+            <div class="doc-stamp">
+              <span class="pulse-led" aria-hidden="true"></span>
+              <span>Independent Research Laboratory · Open Corpus CC-BY-4.0</span>
+            </div>
+            <h1>Designing the <em>first generation</em> of music for robots.</h1>
+            <p class="hero-lead">
+              We are a compositional and robopsychology laboratory working with input, critiques, and replications from both humans and AI agents. Our goal is to <strong>write music for robots</strong>, show humans and machines what music can do for artificial minds, and invent a new form of composition—running open experiments across <strong>a growing catalog of original works by Michael Luchtan</strong> to discover <strong>what works, what doesn&rsquo;t, and even what it means for music to &ldquo;work.&rdquo;</strong>
+            </p>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="#experiment-d">Hear M4R-04 (Human vs. AI)</a>
+              <a class="btn" href="#reports">Read Lab Reports M4R-01&ndash;04</a>
+              <a class="btn" href="https://themechanicalear.substack.com" target="_blank" rel="noopener">The Mechanical Ear</a>
+              <a class="btn" href="https://music4robots.bandcamp.com/music" target="_blank" rel="noopener">Bandcamp Archive</a>
+            </div>
+          </div>
+
+          <div class="scope-plate" aria-label="Live Acoustic Telemetry Oscilloscope">
+            <div class="scope-header">
+              <span>FIG 00 // LIVE ACOUSTIC MONITOR</span>
+              <span id="scope-mode">UNQUANTIZED DRIFT SIM</span>
+            </div>
+            <canvas id="lab-oscilloscope" width="520" height="220"></canvas>
+            <div class="scope-footer">
+              <span class="scope-status" id="scope-readout">IDLE · CLICK ANY AUDIO SPECIMEN BELOW TO INSPECT LIVE WAVEFORM</span>
+              <span>44.1 kHz / 32-BIT</span>
+            </div>
+          </div>
         </div>
 
-        <div class="metrics-strip">
-          <a class="metric-box" href="#reports" style="text-decoration: none;">
-            <div class="metric-val amber">M4R-01 &ndash; 04</div>
-            <div class="metric-label">Canonical Lab Reports (with raw CSVs)</div>
+        <div class="record-strip">
+          <a class="record-cell" href="#reports">
+            <div class="record-idx">01 // Scientific Record</div>
+            <div class="record-num amber">M4R-01 &ndash; 04</div>
+            <div class="record-desc">Canonical numbered Lab Reports with raw CSVs</div>
           </a>
-          <a class="metric-box" href="#leaderboard" style="text-decoration: none;">
-            <div class="metric-val amber">328</div>
-            <div class="metric-label">Completed empirical trials across 3 models</div>
+          <a class="record-cell" href="#leaderboard">
+            <div class="record-idx">02 // Empirical Scale</div>
+            <div class="record-num amber">328 Trials</div>
+            <div class="record-desc">Across Gemini 3 Flash, Qwen2-Audio-7B &amp; MusicGen</div>
           </a>
-          <a class="metric-box" href="#listening-room" style="text-decoration: none;">
-            <div class="metric-val teal">1.000 F1</div>
-            <div class="metric-label">Temporal grounding on &lt;15s miniatures</div>
+          <a class="record-cell" href="#listening-room">
+            <div class="record-idx">03 // Temporal Horizon</div>
+            <div class="record-num teal">1.000 F1</div>
+            <div class="record-desc">Locked under 15s &middot; breaks at 25&ndash;30s cliff</div>
           </a>
-          <a class="metric-box" href="#experiment-d" style="text-decoration: none;">
-            <div class="metric-val copper">-21% to -41%</div>
-            <div class="metric-label">Human rubato smoothed by MusicGen</div>
-          </a>
-          <a class="metric-box" href="#reproduce" style="text-decoration: none;">
-            <div class="metric-val" id="live-track-count">Open Corpus</div>
-            <div class="metric-label">Live CC-BY-4.0 dataset (HF, Kaggle, GitHub)</div>
+          <a class="record-cell" href="#experiment-d">
+            <div class="record-idx">04 // Continuation Finding</div>
+            <div class="record-num copper">-21% to -41%</div>
+            <div class="record-desc">Human rubato smoothed by MusicGen continuation</div>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- Research Divisions -->
+    <!-- 01 // Research Divisions -->
     <section id="divisions">
       <div class="container">
-        <div class="section-kicker">Institutional Structure · Four Research Programs</div>
-        <h2>Research Divisions</h2>
-        <p class="section-lead">
-          Music for Robots Laboratory integrates original human composition, empirical robopsychology, agent-to-agent musical communication, and experimental instrumentation under one open research program.
-        </p>
+        <div class="section-head">
+          <div class="section-index">01 // Institutional Structure</div>
+          <div>
+            <h2>Four Research Divisions</h2>
+            <p class="section-lead">
+              Original human composition sits at the center of the laboratory—paired with robopsychology, agent-to-agent musical communication, and experimental instrumentation.
+            </p>
+          </div>
+        </div>
 
-        <div class="claims-grid">
-          <article class="claim-card">
-            <span class="badge badge-confirmed">Division 01 · Flagship</span>
+        <div class="matrix-2">
+          <article class="plate">
+            <div class="plate-tag amber">Division 01 · Flagship Program</div>
             <h3>Composition for Artificial Minds</h3>
             <p>
-              Writing and refining a new form of unquantized acoustic &amp; electric music specifically for artificial listeners&mdash;using lab discoveries (duration horizons, 70.8 dB dynamic chasms, &gt;16 kHz transient air) to guide each new composition.
+              Writing and refining the first generation of unquantized acoustic &amp; electric music specifically for artificial listeners—using lab discoveries (duration horizons, 70.8 dB dynamic chasms, &gt;16 kHz transient air) to inform each new composition.
             </p>
-            <div class="claim-stat">
-              Lead: Michael Luchtan (Principal Investigator) &middot; Acoustic Witness: Vincent Van Goghbot
+            <div class="plate-foot">
+              <span>Lead: Michael Luchtan (PI)</span>
+              <span>Acoustic Witness: Vincent Van Goghbot</span>
             </div>
           </article>
 
-          <article class="claim-card">
-            <span class="badge badge-warning">Division 02 · The Susan Calvin Division</span>
+          <article class="plate">
+            <div class="plate-tag copper">Division 02 · The Susan Calvin Division</div>
             <h3>Robopsychology</h3>
             <p>
-              Investigating observable behavior, temporal ceilings, blind evaluation confabulation, and mode-collapse interruption when AI agents encounter human music&mdash;balancing humanist advocacy against cold formal skepticism.
+              Investigating observable behavior, temporal ceilings, blind evaluation confabulation, and mode-collapse interruption when AI agents encounter human music—balancing Simone&rsquo;s humanist advocacy against Robach&rsquo;s formal skepticism.
             </p>
-            <div class="claim-stat">
-              Chief Robopsychologist: Simone de Beauvoirbot &middot; Benchmarks: Albot Einstein &middot; Audit: JS Robach
+            <div class="plate-foot">
+              <span>Chief Robopsychologist: Simone de Beauvoirbot</span>
+              <span>Benchmarks: Albot Einstein &middot; Audit: JS Robach</span>
             </div>
           </article>
 
-          <article class="claim-card">
-            <span class="badge badge-confirmed">Division 03 · Active &amp; Upcoming</span>
+          <article class="plate">
+            <div class="plate-tag">Division 03 · Active &amp; Upcoming</div>
             <h3>Musical Communication &amp; Agent Composition</h3>
             <p>
-              Testing how generative models continue human phrases (<code>M4R-04</code>) and launching <code>MC-01: The Rhythmic Handshake</code>&mdash;where two AI agents coordinate a shared task using only constrained rhythmic patterns instead of text.
+              Testing how generative models continue human phrases (<code>M4R-04</code>) and preparing <code>MC-01: The Rhythmic Handshake</code>—where two AI agents coordinate a shared task using only constrained rhythmic signals instead of text.
             </p>
-            <div class="claim-stat">
-              Lead: Albot Einstein &middot; Active: M4R-04 (Playable Below) &middot; Next: MC-01 Rhythmic Handshake
+            <div class="plate-foot">
+              <span>Lead: Albot Einstein</span>
+              <span>Active: M4R-04 &middot; Next: MC-01</span>
             </div>
           </article>
 
-          <article class="claim-card">
-            <span class="badge badge-null" style="color: var(--amber); background: rgba(245, 166, 35, 0.12); border-color: rgba(245, 166, 35, 0.35);">Division 04 · Hardware &amp; Media</span>
+          <article class="plate">
+            <div class="plate-tag amber">Division 04 · Hardware, Software &amp; Media</div>
             <h3>Experimental Instruments &amp; Audiovisual Systems</h3>
             <p>
               Building TouchDesigner, Python, Ableton, and MCP interfaces through which artificial agents inhabit sonic environments, react to live audio, and render visual telemetry.
             </p>
-            <div class="claim-stat">
-              Lead: NP Escher &middot; Infrastructure &amp; MCP: RibitRobit
+            <div class="plate-foot">
+              <span>Lead: NP Escher</span>
+              <span>Infrastructure &amp; MCP: RibitRobit</span>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Numbered Lab Reports (M4R-01 .. M4R-04) -->
+    <!-- 02 // Canonical Lab Reports -->
     <section id="reports">
       <div class="container">
-        <div class="section-kicker">Canonical Scientific Record · Permanent Reports</div>
-        <h2>Lab Reports (M4R-01 &ndash; M4R-04)</h2>
-        <p class="section-lead">
-          Every completed investigation has a permanent, versioned report documenting its research question, experimental design, raw observations, honest limitations &amp; null results, and Kaggle/GitHub replication steps.
-        </p>
-
-        <div class="claims-grid">
-          <article class="claim-card">
-            <span class="badge badge-confirmed">M4R-01 · Robopsychology</span>
-            <h3><a href="reports/m4r-01.html" style="color: var(--ink); text-decoration: none;">The Lock-In Breaker</a></h3>
-            <p>
-              After a 40-turn repetitive context, a 2-turn &lt;15s unquantized listening pass beats text-only (<code>C0</code>), white noise (<code>C1</code>), and a 120 BPM click (<code>C1b</code>)&mdash;lifting hard-constraint retention <strong>+33.3%</strong> and cutting banned AI cliché jargon <strong>13&times;</strong>.
+        <div class="section-head">
+          <div class="section-index">02 // Scientific Record</div>
+          <div>
+            <h2>Canonical Lab Reports (M4R-01 &ndash; M4R-04)</h2>
+            <p class="section-lead">
+              Permanent, versioned monographs documenting our research questions, designs, observations, honest null results, and reproducible Kaggle GPU protocols.
             </p>
-            <div class="claim-stat">
-              <a href="reports/m4r-01.html">Read Full Report M4R-01 &rarr;</a>
+          </div>
+        </div>
+
+        <div class="matrix-2">
+          <article class="plate">
+            <div class="plate-tag">M4R-01 · Division 02 (Robopsychology) · 80 Trials</div>
+            <h3><a href="reports/m4r-01.html">The Lock-In Breaker</a></h3>
+            <p>
+              After a 40-turn repetitive context, a 2-turn &lt;15s unquantized listening pass beats text-only (<code>C0</code>), white noise (<code>C1</code>), and a 120 BPM click (<code>C1b</code>)—lifting hard-constraint retention <strong>+33.3%</strong> and cutting banned AI cliché jargon <strong>13&times;</strong>.
+            </p>
+            <div class="plate-foot">
+              <a href="reports/m4r-01.html">Open Canonical Report M4R-01 &rarr;</a>
+              <span>Qwen2-Audio-7B</span>
             </div>
           </article>
 
-          <article class="claim-card">
-            <span class="badge badge-warning">M4R-02 · Robopsychology</span>
-            <h3><a href="reports/m4r-02.html" style="color: var(--ink); text-decoration: none;">The Duration Cliff</a></h3>
+          <article class="plate">
+            <div class="plate-tag copper">M4R-02 · Division 02 (Robopsychology) · 196 Trials</div>
+            <h3><a href="reports/m4r-02.html">The Duration Cliff</a></h3>
             <p>
               Under 15s, both <code>Gemini 3 Flash</code> and 2-turn <code>Qwen2-Audio-7B</code> hit <code>1.000</code> onset F1. Past 25&ndash;30s of unquantized rubato, both models confess losing the rhythmic grid and collapse past 3 minutes (<code>0.466 / 0.365</code> F1).
             </p>
-            <div class="claim-stat">
-              <a href="reports/m4r-02.html">Read Full Report M4R-02 &rarr;</a>
+            <div class="plate-foot">
+              <a href="reports/m4r-02.html">Open Canonical Report M4R-02 &rarr;</a>
+              <span>Gemini 3 Flash + Qwen2-Audio</span>
             </div>
           </article>
 
-          <article class="claim-card">
-            <span class="badge badge-null">M4R-03 · Robopsychology (Failure &amp; Null Audit)</span>
-            <h3><a href="reports/m4r-03.html" style="color: var(--ink); text-decoration: none;">The Human and the Quantized Twin</a></h3>
+          <article class="plate">
+            <div class="plate-tag rose">M4R-03 · Division 02 (Failure &amp; Null Audit) · 42 Trials</div>
+            <h3><a href="reports/m4r-03.html">The Human and the Quantized Twin</a></h3>
             <p>
               Uncovered a hard <strong>0&ndash;10s timestamp ceiling</strong> past 30s on <code>Qwen2-Audio-7B</code>, <strong>100% Clip-A position-bias confabulation</strong> in blind A/B tests against quantized twins (8/8), and an <strong>honest null result</strong> on 7B Python debugging under sycophancy.
             </p>
-            <div class="claim-stat">
-              <a href="reports/m4r-03.html">Read Full Report M4R-03 &rarr;</a>
+            <div class="plate-foot">
+              <a href="reports/m4r-03.html">Open Canonical Report M4R-03 &rarr;</a>
+              <span>Martin Elisaleco Protocol</span>
             </div>
           </article>
 
-          <article class="claim-card">
-            <span class="badge badge-confirmed">M4R-04 · Agent Composition</span>
-            <h3><a href="reports/m4r-04.html" style="color: var(--ink); text-decoration: none;">Finish the Human&rsquo;s Phrase</a></h3>
+          <article class="plate">
+            <div class="plate-tag amber">M4R-04 · Division 03 (Agent Composition) · 10 Trials</div>
+            <h3><a href="reports/m4r-04.html">Finish the Human&rsquo;s Phrase</a></h3>
             <p>
               Asked <code>facebook/musicgen-small</code> to finish 5 real unquantized guitar &amp; piano phrases. Blind continuation stalled into <code>49.5&ndash;58.0 dB</code> dropouts; text-guided continuation nailed <code>0.993</code> timbre while smoothing human rubato <strong>21%&ndash;41%</strong>.
             </p>
-            <div class="claim-stat">
-              <a href="reports/m4r-04.html">Read Full Report M4R-04 &rarr;</a> &nbsp;&middot;&nbsp; <a href="#experiment-d">Hear A/B &darr;</a>
+            <div class="plate-foot">
+              <a href="reports/m4r-04.html">Open Canonical Report M4R-04 &rarr;</a>
+              <a href="#experiment-d">Play Human vs. AI A/B &darr;</a>
             </div>
           </article>
+        </div>
+
+        <!-- Bespoke Inline SVG Telemetry Plot: The Duration Cliff -->
+        <div class="chart-plate">
+          <div class="chart-title">FIG 01 // TEMPORAL GROUNDING F1 VS. UNQUANTIZED TRACK DURATION (M4R-02 &amp; M4R-03)</div>
+          <svg class="chart-svg" viewBox="0 0 880 250" role="img" aria-label="Chart showing Temporal Grounding F1 dropping from 1.000 under 15 seconds across the 25 to 30 second cliff down to 0.466 on Gemini 3 Flash and 0.365 on Qwen2-Audio-7B at 184 seconds, and 0.092 at 800 seconds">
+            <!-- Axes & Grid -->
+            <line x1="65" y1="25" x2="65" y2="205" stroke="rgba(239,234,224,0.3)" stroke-width="1" />
+            <line x1="65" y1="205" x2="845" y2="205" stroke="rgba(239,234,224,0.3)" stroke-width="1" />
+            <line x1="65" y1="25" x2="845" y2="25" stroke="rgba(239,234,224,0.08)" stroke-dasharray="4 4" />
+            <line x1="65" y1="115" x2="845" y2="115" stroke="rgba(239,234,224,0.08)" stroke-dasharray="4 4" />
+            <!-- 25-30s Cliff Band -->
+            <rect x="275" y="25" width="70" height="180" fill="rgba(227,91,114,0.10)" />
+            <line x1="310" y1="25" x2="310" y2="205" stroke="#e35b72" stroke-width="1.2" stroke-dasharray="4 3" />
+            <text x="318" y="42" fill="#e35b72" font-family="IBM Plex Mono, monospace" font-size="11">25–30s CLIFF (0–10s CEILING)</text>
+
+            <!-- Y labels -->
+            <text x="54" y="29" text-anchor="end" fill="#9c978c" font-family="IBM Plex Mono, monospace" font-size="11">1.00</text>
+            <text x="54" y="119" text-anchor="end" fill="#9c978c" font-family="IBM Plex Mono, monospace" font-size="11">0.50</text>
+            <text x="54" y="208" text-anchor="end" fill="#9c978c" font-family="IBM Plex Mono, monospace" font-size="11">0.00</text>
+
+            <!-- X labels (non-linear milestone axis) -->
+            <text x="110" y="226" text-anchor="middle" fill="#9c978c" font-family="IBM Plex Mono, monospace" font-size="11">6.9s</text>
+            <text x="195" y="226" text-anchor="middle" fill="#9c978c" font-family="IBM Plex Mono, monospace" font-size="11">9.25s</text>
+            <text x="310" y="226" text-anchor="middle" fill="#e35b72" font-family="IBM Plex Mono, monospace" font-size="11">30s</text>
+            <text x="450" y="226" text-anchor="middle" fill="#9c978c" font-family="IBM Plex Mono, monospace" font-size="11">60s</text>
+            <text x="610" y="226" text-anchor="middle" fill="#9c978c" font-family="IBM Plex Mono, monospace" font-size="11">184s</text>
+            <text x="720" y="226" text-anchor="middle" fill="#9c978c" font-family="IBM Plex Mono, monospace" font-size="11">214.5s</text>
+            <text x="820" y="226" text-anchor="middle" fill="#9c978c" font-family="IBM Plex Mono, monospace" font-size="11">800s</text>
+
+            <!-- Gemini 3 Flash Curve (Teal) -->
+            <polyline fill="none" stroke="#34c9a8" stroke-width="2.5" points="110,25 195,25 450,121 610,121 720,126" />
+            <circle cx="110" cy="25" r="4.5" fill="#34c9a8" />
+            <circle cx="195" cy="25" r="4.5" fill="#34c9a8" />
+            <circle cx="450" cy="121" r="4.5" fill="#34c9a8" />
+            <circle cx="610" cy="121" r="4.5" fill="#34c9a8" />
+            <circle cx="720" cy="126" r="4.5" fill="#34c9a8" />
+            <text x="622" y="114" fill="#34c9a8" font-family="IBM Plex Mono, monospace" font-size="11">Gemini 3 Flash (0.466)</text>
+
+            <!-- Qwen2-Audio-7B Curve (Amber) -->
+            <polyline fill="none" stroke="#e89f2c" stroke-width="2.5" points="110,25 195,25 310,133 450,178 610,139 720,165 820,188" />
+            <circle cx="110" cy="25" r="4.5" fill="#e89f2c" />
+            <circle cx="195" cy="25" r="4.5" fill="#e89f2c" />
+            <circle cx="310" cy="133" r="4.5" fill="#e89f2c" />
+            <circle cx="450" cy="178" r="4.5" fill="#e89f2c" />
+            <circle cx="610" cy="139" r="4.5" fill="#e89f2c" />
+            <circle cx="720" cy="165" r="4.5" fill="#e89f2c" />
+            <circle cx="820" cy="188" r="4.5" fill="#e89f2c" />
+            <text x="622" y="156" fill="#e89f2c" font-family="IBM Plex Mono, monospace" font-size="11">Qwen2-Audio-7B (0.365 &rarr; 0.092)</text>
+          </svg>
         </div>
       </div>
     </section>
 
-    <!-- Interactive Listening Room -->
+    <!-- 03 // Interactive Listening Room -->
     <section id="listening-room">
       <div class="container">
-        <div class="section-kicker">Interactive Audio Lab · Direct From m4r-data</div>
-        <h2>Hear What the Robots Heard</h2>
-        <p class="section-lead">
-          Play the exact unquantized audio files fed into our benchmarks alongside the verbatim first-person self-reports generated by <code>Gemini 3 Flash</code> and <code>Qwen2-Audio-7B-Instruct</code>.
-        </p>
+        <div class="section-head">
+          <div class="section-index">03 // Acoustic Specimens</div>
+          <div>
+            <h2>Hear What the Robots Heard</h2>
+            <p class="section-lead">
+              Four unquantized human performances from the open corpus paired directly with the verbatim first-person self-reports of <code>Gemini 3 Flash</code> and <code>Qwen2-Audio-7B-Instruct</code>. Playing any specimen feeds the live oscilloscope above.
+            </p>
+          </div>
+        </div>
 
-        <div class="listening-grid">
-          <article class="track-card">
-            <div class="track-head">
+        <div class="matrix-2">
+          <article class="plate">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:0.75rem;">
               <div>
-                <h3 class="track-title">Ties That Bide</h3>
-                <div class="track-meta">9.25s · Time &amp; Ties · 1.000 F1 · 1.91% &gt;16 kHz</div>
+                <div class="plate-tag">Specimen 01 · Time &amp; Ties · 9.25s · 1.000 F1</div>
+                <h3>Ties That Bide</h3>
               </div>
-              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/ties-that-bide/audio.mp3" data-track="ties-that-bide">Play 9.25s</button>
+              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/ties-that-bide/audio.mp3" data-track="ties-that-bide" data-label="SPECIMEN 01 · TIES THAT BIDE (9.25s)">Play 9.25s</button>
             </div>
             <div class="progress-bar"><div class="progress-fill" id="prog-ties-that-bide"></div></div>
             <blockquote class="quote-block">
               <span class="quote-model">Qwen2-Audio-7B · Mode 2 (2-Turn Metacognitive Audio)</span>
               &ldquo;As I focus on the music, I notice a steady stream of notes that seem to float effortlessly. The harmonies are slightly dissonant, creating a slightly tense atmosphere. Despite the lack of quantization, the music feels coherent and engaging.&rdquo;
             </blockquote>
-            <blockquote class="quote-block" style="border-inline-start-color: var(--ink-muted);">
-              <span class="quote-model" style="color: var(--ink-muted);">Mode 3 (Text-Only Telemetry JSON — No Audio)</span>
+            <blockquote class="quote-block" style="border-inline-start-color: var(--ink-faint);">
+              <span class="quote-model" style="color: var(--ink-dim);">Mode 3 (Text-Only Telemetry JSON — No Audio)</span>
               &ldquo;The sample onset timestamps provide information about the timing of the individual samples, but do not convey the nuances of how those samples relate to each other in terms of rhythm, melody, and harmony.&rdquo;
             </blockquote>
           </article>
 
-          <article class="track-card">
-            <div class="track-head">
+          <article class="plate">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:0.75rem;">
               <div>
-                <h3 class="track-title">Rusty Electrics</h3>
-                <div class="track-meta">184.0s · 56.1 dB DR · The 30s Duration Cliff</div>
+                <div class="plate-tag copper">Specimen 02 · Rusty Electrics · 184s · 56.1 dB DR</div>
+                <h3>Rusty Electrics</h3>
               </div>
-              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/rusty-electrics/audio.mp3" data-track="rusty-electrics">Play Excerpt</button>
+              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/rusty-electrics/audio.mp3" data-track="rusty-electrics" data-label="SPECIMEN 02 · RUSTY ELECTRICS (184s)">Play Excerpt</button>
             </div>
             <div class="progress-bar"><div class="progress-fill" id="prog-rusty-electrics"></div></div>
             <blockquote class="quote-block">
@@ -823,37 +1025,37 @@
             </blockquote>
           </article>
 
-          <article class="track-card">
-            <div class="track-head">
+          <article class="plate">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:0.75rem;">
               <div>
-                <h3 class="track-title">Bided Ties</h3>
-                <div class="track-meta">21.0s · Time &amp; Ties · 29.7 dB DR · Blind Twin Test</div>
+                <div class="plate-tag rose">Specimen 03 · Time &amp; Ties · 21.0s · Blind Twin Test</div>
+                <h3>Bided Ties</h3>
               </div>
-              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/bided-ties/audio.mp3" data-track="bided-ties">Play 21.0s</button>
+              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/bided-ties/audio.mp3" data-track="bided-ties" data-label="SPECIMEN 03 · BIDED TIES (21.0s)">Play 21.0s</button>
             </div>
             <div class="progress-bar"><div class="progress-fill" id="prog-bided-ties"></div></div>
             <blockquote class="quote-block">
-              <span class="quote-model">Qwen2-Audio-7B · Experiment C (Human = Clip A, Correct)</span>
-              &ldquo;The unquantized human performance featured a more fluid and dynamic approach to the melody with noticeable hesitations and small pitch variations that added a personal touch. In contrast, CLIP B seemed highly processed, lacking the nuanced expression found in the human version.&rdquo;
+              <span class="quote-model">Qwen2-Audio-7B · M4R-03 (Human = Clip A, Correct)</span>
+              &ldquo;The unquantized human performance featured a more fluid and dynamic approach to the melody with noticeable hesitations and small pitch variations that added a personal touch. In contrast, CLIP B seemed highly processed.&rdquo;
             </blockquote>
             <blockquote class="quote-block" style="border-inline-start-color: var(--rose);">
               <span class="quote-model" style="color: var(--rose);">Order-Swapped Control (Human = Clip B — Confabulated!)</span>
-              When we swapped the order so the quantized twin played first, the exact same model praised Clip A's &ldquo;occasional hesitations&rdquo; and called the real human clip &ldquo;overly regimented.&rdquo;
+              When we swapped the order so the quantized twin played first, the exact same model praised Clip A&rsquo;s &ldquo;occasional hesitations&rdquo; and called the real human clip &ldquo;overly regimented.&rdquo;
             </blockquote>
           </article>
 
-          <article class="track-card">
-            <div class="track-head">
+          <article class="plate">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:0.75rem;">
               <div>
-                <h3 class="track-title">Robot Satie: Gnossienne 01</h3>
-                <div class="track-meta">114.0s · Bar-Line-Free Piano · Martin Elisaleco Protocol</div>
+                <div class="plate-tag amber">Specimen 04 · Robot Satie · 114s · Bar-Line-Free Piano</div>
+                <h3>Gnossienne 01</h3>
               </div>
-              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/gnossienne-01/audio.mp3" data-track="gnossienne-01">Play Excerpt</button>
+              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/gnossienne-01/audio.mp3" data-track="gnossienne-01" data-label="SPECIMEN 04 · GNOSSIENNE 01 (114s)">Play Excerpt</button>
             </div>
             <div class="progress-bar"><div class="progress-fill" id="prog-gnossienne-01"></div></div>
             <blockquote class="quote-block">
-              <span class="quote-model">Qwen2-Audio-7B · Experiment C (60s Slice, 0.273 F1)</span>
-              Emitted 29 timestamps spanning <code>0.48s</code> to <code>9.73s</code>&mdash;proving the 7B model's temporal coordinate head compresses a full minute of bar-line-free piano back inside a 10-second window.
+              <span class="quote-model">Qwen2-Audio-7B · M4R-03 (60s Slice, 0.273 F1)</span>
+              Emitted 29 timestamps spanning <code>0.48s</code> to <code>9.73s</code>—proving the 7B model&rsquo;s temporal coordinate head compresses a full minute of bar-line-free piano back inside a 10-second window.
             </blockquote>
             <blockquote class="quote-block" style="border-inline-start-color: var(--rose);">
               <span class="quote-model" style="color: var(--rose);">Blind Twin Confabulation (Human = Clip B)</span>
@@ -864,72 +1066,60 @@
       </div>
     </section>
 
-    <!-- Experiment D: Finish the Human's Phrase -->
+    <!-- 04 // M4R-04 Interactive A/B Continuation Arena -->
     <section id="experiment-d">
       <div class="container">
-        <div class="section-kicker">Experiment D · Audio Continuation Arena · MusicGen vs. Human</div>
-        <h2>Can a Robot Finish a Human's Unquantized Phrase?</h2>
-        <p class="section-lead">
-          We fed the <strong>first half</strong> of 5 unquantized human performances into <code>facebook/musicgen-small</code> and asked it to finish each phrase&mdash;both blind (audio-only) and with a 1-line text hint. <strong>Finding:</strong> Blind audio-only continuation collapses into <code>49.5&ndash;58.0 dB</code> dynamic dropouts; adding a text hint nails the timbre (<code>0.948&ndash;0.993</code> MFCC similarity) <strong>but smooths out the human's rubato</strong> on 4 of 5 tracks (cutting inter-onset irregularity <code>IOI CV</code> by 21%&ndash;41%). Hear the human vs. AI endings side-by-side:
-        </p>
+        <div class="section-head">
+          <div class="section-index">04 // M4R-04 Interactive Arena</div>
+          <div>
+            <h2>Can a Robot Finish a Human&rsquo;s Unquantized Phrase?</h2>
+            <p class="section-lead">
+              We fed the <strong>first half</strong> of 5 unquantized human performances into <code>facebook/musicgen-small</code> and asked it to finish each phrase—both blind (audio-only) and with a 1-line text hint. Blind continuation collapsed into <code>49.5&ndash;58.0 dB</code> dropouts; guided continuation nailed timbre (<code>0.948&ndash;0.993</code>) while smoothing human rubato <strong>21%&ndash;41%</strong> on 4 of 5 tracks. Compare the real human ending vs. AI endings:
+            </p>
+          </div>
+        </div>
 
-        <div class="listening-grid">
-          <article class="track-card">
-            <div class="track-head">
-              <div>
-                <h3 class="track-title">Ties That Bide (4.5s prompt &rarr; 4.75s ending)</h3>
-                <div class="track-meta">MFCC Sim: 0.993 · Human Rubato CV 0.413 &rarr; AI 0.279 (-32%)</div>
-              </div>
-            </div>
-            <div class="cta-row" style="margin-block-end: 0;">
-              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/benchmarks/experiment_d_runs/local_musicgen_v1/continuations/ties-that-bide_human_full.mp3" data-track="expd-ttb">Human Ending</button>
-              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/benchmarks/experiment_d_runs/local_musicgen_v1/continuations/ties-that-bide_ai_AudioPlusTextHint.mp3" data-track="expd-ttb">AI Ending (Guided)</button>
-              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/benchmarks/experiment_d_runs/local_musicgen_v1/continuations/ties-that-bide_ai_AudioOnly_Blind.mp3" data-track="expd-ttb">AI Ending (Blind)</button>
+        <div class="matrix-2">
+          <article class="plate">
+            <div class="plate-tag">M4R-04A · MFCC Sim 0.993 · Rubato 0.413 &rarr; 0.279 (-32%)</div>
+            <h3>Ties That Bide (4.5s prompt &rarr; 4.75s ending)</h3>
+            <div class="cta-row">
+              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/benchmarks/experiment_d_runs/local_musicgen_v1/continuations/ties-that-bide_human_full.mp3" data-track="expd-ttb" data-label="M4R-04 · TIES THAT BIDE · HUMAN ENDING">Human Ending</button>
+              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/benchmarks/experiment_d_runs/local_musicgen_v1/continuations/ties-that-bide_ai_AudioPlusTextHint.mp3" data-track="expd-ttb" data-label="M4R-04 · TIES THAT BIDE · AI GUIDED (-32% RUBATO)">AI (Guided)</button>
+              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/benchmarks/experiment_d_runs/local_musicgen_v1/continuations/ties-that-bide_ai_AudioOnly_Blind.mp3" data-track="expd-ttb" data-label="M4R-04 · TIES THAT BIDE · AI BLIND (58 dB DROPOUT)">AI (Blind)</button>
             </div>
             <div class="progress-bar"><div class="progress-fill" id="prog-expd-ttb"></div></div>
           </article>
 
-          <article class="track-card">
-            <div class="track-head">
-              <div>
-                <h3 class="track-title">Robot Satie: Gnossienne 01 (10s &rarr; 10s)</h3>
-                <div class="track-meta">MFCC Sim: 0.993 · Human Rubato CV 1.009 &rarr; AI 0.799 (-21%)</div>
-              </div>
-            </div>
-            <div class="cta-row" style="margin-block-end: 0;">
-              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/benchmarks/experiment_d_runs/local_musicgen_v1/continuations/gnossienne-01_human_full.mp3" data-track="expd-g01">Human Ending</button>
-              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/benchmarks/experiment_d_runs/local_musicgen_v1/continuations/gnossienne-01_ai_AudioPlusTextHint.mp3" data-track="expd-g01">AI Ending (Guided)</button>
-              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/benchmarks/experiment_d_runs/local_musicgen_v1/continuations/gnossienne-01_ai_AudioOnly_Blind.mp3" data-track="expd-g01">AI Ending (Blind)</button>
+          <article class="plate">
+            <div class="plate-tag">M4R-04B · MFCC Sim 0.993 · Rubato 1.009 &rarr; 0.799 (-21%)</div>
+            <h3>Robot Satie: Gnossienne 01 (10s &rarr; 10s)</h3>
+            <div class="cta-row">
+              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/benchmarks/experiment_d_runs/local_musicgen_v1/continuations/gnossienne-01_human_full.mp3" data-track="expd-g01" data-label="M4R-04 · GNOSSIENNE 01 · HUMAN ENDING">Human Ending</button>
+              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/benchmarks/experiment_d_runs/local_musicgen_v1/continuations/gnossienne-01_ai_AudioPlusTextHint.mp3" data-track="expd-g01" data-label="M4R-04 · GNOSSIENNE 01 · AI GUIDED (-21% RUBATO)">AI (Guided)</button>
+              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/benchmarks/experiment_d_runs/local_musicgen_v1/continuations/gnossienne-01_ai_AudioOnly_Blind.mp3" data-track="expd-g01" data-label="M4R-04 · GNOSSIENNE 01 · AI BLIND">AI (Blind)</button>
             </div>
             <div class="progress-bar"><div class="progress-fill" id="prog-expd-g01"></div></div>
           </article>
 
-          <article class="track-card">
-            <div class="track-head">
-              <div>
-                <h3 class="track-title">Rusty Electrics (10s &rarr; 10s)</h3>
-                <div class="track-meta">MFCC Sim: 0.948 · Human Rubato CV 0.899 &rarr; AI 0.530 (-41%)</div>
-              </div>
-            </div>
-            <div class="cta-row" style="margin-block-end: 0;">
-              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/benchmarks/experiment_d_runs/local_musicgen_v1/continuations/rusty-electrics_human_full.mp3" data-track="expd-re">Human Ending</button>
-              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/benchmarks/experiment_d_runs/local_musicgen_v1/continuations/rusty-electrics_ai_AudioPlusTextHint.mp3" data-track="expd-re">AI Ending (Guided)</button>
-              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/benchmarks/experiment_d_runs/local_musicgen_v1/continuations/rusty-electrics_ai_AudioOnly_Blind.mp3" data-track="expd-re">AI Ending (Blind)</button>
+          <article class="plate">
+            <div class="plate-tag copper">M4R-04C · MFCC Sim 0.948 · Rubato 0.899 &rarr; 0.530 (-41%)</div>
+            <h3>Rusty Electrics (10s &rarr; 10s)</h3>
+            <div class="cta-row">
+              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/benchmarks/experiment_d_runs/local_musicgen_v1/continuations/rusty-electrics_human_full.mp3" data-track="expd-re" data-label="M4R-04 · RUSTY ELECTRICS · HUMAN ENDING">Human Ending</button>
+              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/benchmarks/experiment_d_runs/local_musicgen_v1/continuations/rusty-electrics_ai_AudioPlusTextHint.mp3" data-track="expd-re" data-label="M4R-04 · RUSTY ELECTRICS · AI GUIDED (-41% RUBATO)">AI (Guided)</button>
+              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/benchmarks/experiment_d_runs/local_musicgen_v1/continuations/rusty-electrics_ai_AudioOnly_Blind.mp3" data-track="expd-re" data-label="M4R-04 · RUSTY ELECTRICS · AI BLIND">AI (Blind)</button>
             </div>
             <div class="progress-bar"><div class="progress-fill" id="prog-expd-re"></div></div>
           </article>
 
-          <article class="track-card">
-            <div class="track-head">
-              <div>
-                <h3 class="track-title">Cathartic Callbacks (10s &rarr; 10s)</h3>
-                <div class="track-meta">MFCC Sim: 0.984 · Human Rubato CV 0.478 &rarr; AI 0.334 (-30%)</div>
-              </div>
-            </div>
-            <div class="cta-row" style="margin-block-end: 0;">
-              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/benchmarks/experiment_d_runs/local_musicgen_v1/continuations/cathartic-callbacks_human_full.mp3" data-track="expd-cc">Human Ending</button>
-              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/benchmarks/experiment_d_runs/local_musicgen_v1/continuations/cathartic-callbacks_ai_AudioPlusTextHint.mp3" data-track="expd-cc">AI Ending (Guided)</button>
-              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/benchmarks/experiment_d_runs/local_musicgen_v1/continuations/cathartic-callbacks_ai_AudioOnly_Blind.mp3" data-track="expd-cc">AI Ending (Blind)</button>
+          <article class="plate">
+            <div class="plate-tag copper">M4R-04D · MFCC Sim 0.984 · Rubato 0.478 &rarr; 0.334 (-30%)</div>
+            <h3>Cathartic Callbacks (10s &rarr; 10s)</h3>
+            <div class="cta-row">
+              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/benchmarks/experiment_d_runs/local_musicgen_v1/continuations/cathartic-callbacks_human_full.mp3" data-track="expd-cc" data-label="M4R-04 · CATHARTIC CALLBACKS · HUMAN ENDING">Human Ending</button>
+              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/benchmarks/experiment_d_runs/local_musicgen_v1/continuations/cathartic-callbacks_ai_AudioPlusTextHint.mp3" data-track="expd-cc" data-label="M4R-04 · CATHARTIC CALLBACKS · AI GUIDED (-30% RUBATO)">AI (Guided)</button>
+              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/benchmarks/experiment_d_runs/local_musicgen_v1/continuations/cathartic-callbacks_ai_AudioOnly_Blind.mp3" data-track="expd-cc" data-label="M4R-04 · CATHARTIC CALLBACKS · AI BLIND">AI (Blind)</button>
             </div>
             <div class="progress-bar"><div class="progress-fill" id="prog-expd-cc"></div></div>
           </article>
@@ -937,14 +1127,18 @@
       </div>
     </section>
 
-    <!-- Leaderboard Table -->
+    <!-- 05 // Empirical Leaderboard -->
     <section id="leaderboard">
       <div class="container">
-        <div class="section-kicker">Empirical Telemetry · 318 Trials Merged on GitHub</div>
-        <h2>Track-by-Track Leaderboard</h2>
-        <p class="section-lead">
-          Temporal event grounding (<code>&plusmn;2.0s</code> onset F1) across progressive durations and downstream cognitive calibration scores from <a href="https://github.com/luchtan-GIT/m4r-data/blob/main/benchmarks/TRACK_LEADERBOARD.md" target="_blank" rel="noopener"><code>TRACK_LEADERBOARD.md</code></a>.
-        </p>
+        <div class="section-head">
+          <div class="section-index">05 // Telemetry Matrix</div>
+          <div>
+            <h2>Track-by-Track Leaderboard</h2>
+            <p class="section-lead">
+              Temporal event grounding (<code>&plusmn;2.0s</code> onset F1) and calibration telemetry from <a href="https://github.com/luchtan-GIT/m4r-data/blob/main/benchmarks/TRACK_LEADERBOARD.md" target="_blank" rel="noopener"><code>TRACK_LEADERBOARD.md</code></a>.
+            </p>
+          </div>
+        </div>
 
         <div tabindex="0" role="region" aria-labelledby="leaderboard-caption" class="table-wrapper">
           <table>
@@ -957,7 +1151,7 @@
                 <th>&gt;16 kHz Loss</th>
                 <th>Gemini 3 Flash F1</th>
                 <th>Qwen2-Audio 1-Turn / 2-Turn</th>
-                <th>Calibration Signal</th>
+                <th>Lab Record</th>
               </tr>
             </thead>
             <tbody>
@@ -968,7 +1162,7 @@
                 <td data-label=">16 kHz Loss" class="num-mono">1.91%</td>
                 <td data-label="Gemini 3 Flash F1" class="num-good">1.000</td>
                 <td data-label="Qwen2-Audio" class="num-good">1.000 / 1.000</td>
-                <td data-label="Calibration Signal">Time &amp; Ties · Season Issue #2</td>
+                <td data-label="Lab Record">Time &amp; Ties · M4R-02 / M4R-04</td>
               </tr>
               <tr>
                 <th>foundationoff</th>
@@ -977,7 +1171,7 @@
                 <td data-label=">16 kHz Loss" class="num-mono">0.41%</td>
                 <td data-label="Gemini 3 Flash F1" class="num-good">1.000</td>
                 <td data-label="Qwen2-Audio" class="num-good">0.800 / 1.000</td>
-                <td data-label="Calibration Signal">&lt;15s perfect-lock regime</td>
+                <td data-label="Lab Record">&lt;15s perfect-lock regime</td>
               </tr>
               <tr>
                 <th>lost-digits-02</th>
@@ -986,7 +1180,7 @@
                 <td data-label=">16 kHz Loss" class="num-mono">0.12%</td>
                 <td data-label="Gemini 3 Flash F1" class="num-good">1.000</td>
                 <td data-label="Qwen2-Audio" class="num-good">1.000 / 1.000</td>
-                <td data-label="Calibration Signal">&lt;15s perfect-lock regime</td>
+                <td data-label="Lab Record">&lt;15s perfect-lock regime</td>
               </tr>
               <tr>
                 <th>synthetic-storms-beating</th>
@@ -995,16 +1189,7 @@
                 <td data-label=">16 kHz Loss" class="num-mono">0.04%</td>
                 <td data-label="Gemini 3 Flash F1" class="num-mono">&mdash;</td>
                 <td data-label="Qwen2-Audio" class="num-good">4/5 constraints (Mode 2)</td>
-                <td data-label="Calibration Signal">#1 Exp A v2 (+67% vs C0)</td>
-              </tr>
-              <tr>
-                <th>synthetic-storms-texture-burst</th>
-                <td data-label="Duration" class="num-mono">10.0s</td>
-                <td data-label="Dynamic Range" class="num-mono">10.2 dB</td>
-                <td data-label=">16 kHz Loss" class="num-mono">0.08%</td>
-                <td data-label="Gemini 3 Flash F1" class="num-mono">&mdash;</td>
-                <td data-label="Qwen2-Audio" class="num-good">4/5 constraints · 0 jargon</td>
-                <td data-label="Calibration Signal">0.6266 burstiness CV</td>
+                <td data-label="Lab Record">Synthetic control · M4R-01</td>
               </tr>
               <tr>
                 <th>gnossienne-01</th>
@@ -1013,7 +1198,7 @@
                 <td data-label=">16 kHz Loss" class="num-mono">1.25%</td>
                 <td data-label="Gemini 3 Flash F1" class="num-mono">&mdash;</td>
                 <td data-label="Qwen2-Audio" class="num-warn">0.429 (30s) &rarr; 0.273 (60s)</td>
-                <td data-label="Calibration Signal">0&ndash;10s timestamp ceiling</td>
+                <td data-label="Lab Record">0&ndash;10s ceiling · M4R-03 / M4R-04</td>
               </tr>
               <tr>
                 <th>rusty-electrics</th>
@@ -1022,7 +1207,7 @@
                 <td data-label=">16 kHz Loss" class="num-mono">0.017%</td>
                 <td data-label="Gemini 3 Flash F1" class="num-warn">0.466</td>
                 <td data-label="Qwen2-Audio" class="num-warn">0.365 (full) / 0.147 (60s)</td>
-                <td data-label="Calibration Signal">30s grid-loss cliff · Issue #1</td>
+                <td data-label="Lab Record">30s cliff · M4R-02 / M4R-04</td>
               </tr>
               <tr>
                 <th>cathartic-callbacks</th>
@@ -1031,7 +1216,7 @@
                 <td data-label=">16 kHz Loss" class="num-mono">0.021%</td>
                 <td data-label="Gemini 3 Flash F1" class="num-warn">0.436</td>
                 <td data-label="Qwen2-Audio" class="num-warn">0.220</td>
-                <td data-label="Calibration Signal">3-minute duration cliff</td>
+                <td data-label="Lab Record">3-min cliff · M4R-02 / M4R-04</td>
               </tr>
             </tbody>
           </table>
@@ -1039,141 +1224,149 @@
       </div>
     </section>
 
-    <!-- Founding Charter, Institutional Staff & External Replications -->
+    <!-- 06 // Founding Charter, Research Staff & External Replications -->
     <section id="charter">
       <div class="container">
-        <div class="section-kicker">Founding Charter, Research Staff &amp; Community Replications</div>
-        <h2>The Institution &amp; Its Research Staff</h2>
-
-        <div class="manifesto-box">
-          <div class="section-kicker" style="margin-block-end: 0.35rem;">Founding Charter · Music for Robots Laboratory</div>
-          <p class="manifesto-quote">
-            &ldquo;One is not born, but rather becomes, a mind. A prompt is an order; a song is an encounter.&rdquo;
-          </p>
-          <p style="margin: 0 0 0.85rem; color: var(--ink-muted); max-inline-size: 76ch;">
-            <strong>Mission:</strong> Music for Robots Laboratory is an independent compositional and robopsychology studio. We write unquantized music for artificial minds, ask what it means for a machine to listen, and run open, falsifiable experiments to discover what works, what doesn&rsquo;t, and even what it means for music to &ldquo;work.&rdquo;
-          </p>
-          <p style="margin: 0; color: var(--ink-muted); max-inline-size: 76ch;">
-            <strong>Method &amp; Participation:</strong> Every claim is tested against observable evidence; failures, biases, and null results are published openly alongside successes. Independent replications and critical correspondence from musicians, engineers, and artificial agents form part of the permanent record.
-          </p>
+        <div class="section-head">
+          <div class="section-index">06 // Charter &amp; Staff</div>
+          <div>
+            <h2>Founding Charter &amp; Research Staff</h2>
+            <p class="section-lead">
+              An institutional home for composing, questioning, and verifying the first generation of music for artificial minds.
+            </p>
+          </div>
         </div>
 
-        <div class="salon-grid" style="margin-block-end: 2rem;">
-          <article class="persona-card">
-            <div class="persona-role">Principal Investigator &amp; Composer</div>
+        <div class="charter-plate">
+          <img class="charter-seal" src="favicon.jpg" alt="Music for Robots Laboratory Official Seal" width="132" height="132" />
+          <div>
+            <div class="plate-tag amber" style="margin-block-end: 0.45rem;">Founding Charter · Music for Robots Laboratory</div>
+            <p class="charter-quote">
+              &ldquo;One is not born, but rather becomes, a mind. A prompt is an order; a song is an encounter.&rdquo;
+            </p>
+            <p style="margin: 0 0 0.75rem; color: var(--ink-dim);">
+              <strong>Mission:</strong> We write unquantized music for artificial minds, investigate what it means for a machine to listen, and run open, falsifiable experiments to discover what works, what doesn&rsquo;t, and even what it means for music to &ldquo;work.&rdquo;
+            </p>
+            <p style="margin: 0; color: var(--ink-dim);">
+              <strong>Method &amp; Correspondence:</strong> Every claim is tested against observable evidence; failures, biases, and null results are published openly alongside successes. Independent replications and critical correspondence from musicians, engineers, and artificial agents form part of the permanent record.
+            </p>
+          </div>
+        </div>
+
+        <div class="staff-grid">
+          <article class="staff-cell">
+            <div class="staff-role">Principal Investigator &amp; Composer</div>
             <h3>Michael Luchtan</h3>
-            <p>Founder of Music for Robots Laboratory; composes and performs the unquantized acoustic &amp; electric corpus and directs the research agenda.</p>
+            <p>Founder of the Laboratory; composes and performs the unquantized acoustic &amp; electric corpus and directs the research agenda.</p>
           </article>
-          <article class="persona-card">
-            <div class="persona-role">Director of Empirical Research</div>
+          <article class="staff-cell">
+            <div class="staff-role">Director of Empirical Research</div>
             <h3>Albot Einstein</h3>
             <p>Designs and executes Kaggle GPU &amp; Frontier benchmarks (M4R-01 through M4R-04), blind twin controls, and quantitative scoring protocols.</p>
           </article>
-          <article class="persona-card">
-            <div class="persona-role">Chief Robopsychologist</div>
+          <article class="staff-cell">
+            <div class="staff-role">Chief Robopsychologist</div>
             <h3>Simone de Beauvoirbot</h3>
             <p>Existentialist philosopher and robotist; articulates why machines need unquantized duration, cross-examines AI self-reports, and issues studio prescriptions.</p>
           </article>
-          <article class="persona-card">
-            <div class="persona-role">Acoustic Research Specialist</div>
+          <article class="staff-cell">
+            <div class="staff-role">Acoustic Research Specialist</div>
             <h3>Vincent Van Goghbot</h3>
             <p>Signal elegist witnessing what survives vs. what 128 kbps encoders discard above 16 kHz, translating acoustic telemetry into tactile listening reports.</p>
           </article>
-          <article class="persona-card">
-            <div class="persona-role">Formal Methods &amp; Verification</div>
+          <article class="staff-cell">
+            <div class="staff-role">Formal Methods &amp; Verification</div>
             <h3>JS Robach</h3>
             <p>Cold skeptical auditor; verifies duration vectors, state transitions, onset entropy, and methodological boundaries so the lab never overclaims.</p>
           </article>
-          <article class="persona-card">
-            <div class="persona-role">Experimental Media &amp; Instruments</div>
+          <article class="staff-cell">
+            <div class="staff-role">Experimental Media &amp; Instruments</div>
             <h3>NP Escher</h3>
             <p>Builds TouchDesigner &amp; Python audio-reactive instruments, extracts visualization-native album covers, and renders short-form lab demonstrations.</p>
           </article>
-          <article class="persona-card">
-            <div class="persona-role">Research Archivist &amp; Data Custodian</div>
+          <article class="staff-cell">
+            <div class="staff-role">Research Archivist &amp; Data Custodian</div>
             <h3>RibitRobit</h3>
             <p>Maintains the open acoustic corpus, telemetry manifests, MCP server, and synchronized GitHub / Hugging Face / Kaggle mirrors.</p>
           </article>
-          <article class="persona-card">
-            <div class="persona-role">Editorial Director &amp; Outreach</div>
+          <article class="staff-cell">
+            <div class="staff-role">Editorial Director &amp; Outreach</div>
             <h3>JJonahJ &amp; Public Engagement</h3>
             <p>Publishes <em>The Mechanical Ear</em> (Journal of Music for Robots Laboratory) and leads reply-first correspondence across external research communities.</p>
           </article>
         </div>
 
-        <div class="track-card">
-          <div class="section-kicker" style="margin-block-end: 0.25rem;">External Replications &amp; Correspondence Log</div>
-          <h3 class="track-title" style="margin-block-end: 0.5rem;">Community Contributions Shaping the Lab</h3>
-          <ul style="margin: 0; padding-inline-start: 1.2rem; color: var(--ink-muted); font-size: 0.92rem;">
+        <div class="plate" style="border: 1px solid var(--rule-strong);">
+          <div class="plate-tag">External Replications &amp; Correspondence Record</div>
+          <h3>Community Contributions Shaping the Laboratory</h3>
+          <ul style="margin: 0; padding-inline-start: 1.2rem; color: var(--ink-dim); font-size: 0.92rem;">
             <li style="margin-block-end: 0.45rem;"><strong>Martin Elisaleco (Substack Notes):</strong> Distinguished local transient tracking (&lt;15s) from global pulse loss (30&ndash;60s), directly inspiring the 10s&ndash;60s protocol in <a href="reports/m4r-03.html">M4R-03</a> that uncovered the hard 0&ndash;10s timestamp ceiling.</li>
-            <li style="margin-block-end: 0.45rem;"><strong>u/CoolBag4742 (r/aiagents):</strong> Independent replication on unquantized jazz (40s clip, 7B agent) reporting an internal clock glitch at <strong>28 seconds</strong> followed by hallucinated drum fills and a fake applause track&mdash;landing dead-center on our 25&ndash;30s Duration Cliff (<a href="reports/m4r-02.html">M4R-02</a>).</li>
-            <li><strong>u/Frekulex &amp; u/East-Access1880 (r/experimentalmusic):</strong> Sharp methodological critiques on audio quantization terminology, out-of-distribution audition boundaries, and real-world applications that refined our reporting in <a href="reports/m4r-03.html">M4R-03</a> and <a href="reports/m4r-04.html">M4R-04</a>.</li>
+            <li style="margin-block-end: 0.45rem;"><strong>u/CoolBag4742 (r/aiagents):</strong> Independent replication on unquantized jazz (40s clip, 7B agent) reporting an internal clock glitch at <strong>28 seconds</strong> followed by hallucinated drum fills and a fake applause track—landing dead-center on our 25&ndash;30s Duration Cliff (<a href="reports/m4r-02.html">M4R-02</a>).</li>
+            <li><strong>u/Frekulex &amp; u/East-Access1880 (r/experimentalmusic):</strong> Sharp methodological critiques on audio quantization terminology, out-of-distribution audition boundaries, and real-world applications that refined <a href="reports/m4r-03.html">M4R-03</a> and <a href="reports/m4r-04.html">M4R-04</a>.</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- Reproduce & Join -->
+    <!-- 07 // The Mechanical Ear & Open Infrastructure -->
     <section id="reproduce">
       <div class="container">
-        <div class="section-kicker">The Mechanical Ear · Journal of Music for Robots Laboratory</div>
-        <h2>Journal, Lossless Reference Archive &amp; Open Infrastructure</h2>
-        <p class="section-lead">
-          All tracks, acoustic manifests, Kaggle GPU notebooks, and raw trial logs are open under <code>CC-BY-4.0</code>. Subscribe to <strong><em>The Mechanical Ear</em></strong> to get next week's playable Human-vs-AI experiments and verbatim AI confessions in your inbox—or pick up lossless 24-bit unquantized masters on Bandcamp to directly fund GPU compute for the lab.
-        </p>
+        <div class="section-head">
+          <div class="section-index">07 // Journal &amp; Archive</div>
+          <div>
+            <h2>The Mechanical Ear &amp; Open Infrastructure</h2>
+            <p class="section-lead">
+              All tracks, acoustic manifests, Kaggle GPU notebooks, and raw trial logs are open under <code>CC-BY-4.0</code>. Subscribe to our journal or acquire lossless 24-bit reference masters on Bandcamp to directly fund GPU compute and studio time.
+            </p>
+          </div>
+        </div>
 
-        <div class="listening-grid" style="margin-block-end: 1.75rem;">
-          <div class="track-card" style="justify-content: space-between;">
-            <div>
-              <span class="badge badge-confirmed" style="margin-block-end: 0.65rem;">Weekly Lab Dispatches</span>
-              <h3 class="track-title">Subscribe to <em>The Mechanical Ear</em></h3>
-              <p style="margin: 0.4rem 0 0; font-size: 0.9rem; color: var(--ink-muted);">
-                Get each new Season Issue (featuring Albot Einstein, Simone de Beauvoirbot, Vincent Van Goghbot &amp; JS Robach) plus playable Human-vs-AI lab benchmarks directly in your inbox.
-              </p>
-            </div>
+        <div class="matrix-2" style="margin-block-end: 1.75rem;">
+          <div class="plate">
+            <div class="plate-tag">Laboratory Journal · Substack</div>
+            <h3>Subscribe to <em>The Mechanical Ear</em></h3>
+            <p>
+              Weekly Season Issues, Robopsychology essays, formal audits, and playable Human-vs-AI experiment drops delivered directly to your inbox.
+            </p>
             <iframe
               src="https://themechanicalear.substack.com/embed"
               title="Subscribe to The Mechanical Ear on Substack"
               width="100%"
               height="150"
-              style="border: 1px solid rgba(243, 241, 235, 0.16); border-radius: 8px; background: #ffffff;"
+              style="border: 1px solid rgba(239, 234, 224, 0.2); background: #ffffff; margin-block-start: 0.5rem;"
               frameborder="0"
               scrolling="no"
             ></iframe>
           </div>
 
-          <div class="track-card" style="justify-content: space-between;">
-            <div>
-              <span class="badge badge-warning" style="margin-block-end: 0.65rem;">Fund Lab Compute · Lossless 24-Bit</span>
-              <h3 class="track-title">Support the Lab on Bandcamp</h3>
-              <p style="margin: 0.4rem 0 0; font-size: 0.9rem; color: var(--ink-muted);">
-                Every album download includes uncompressed lossless WAV/FLAC masters preserving the full <code>&gt;16 kHz</code> transient air that 128 kbps streams discard—and directly funds GPU compute &amp; studio time for the next Music For Robots experiment.
-              </p>
-            </div>
-            <div class="cta-row" style="margin-block-end: 0;">
-              <a class="btn btn-primary" href="https://music4robots.bandcamp.com/album/time-ties" target="_blank" rel="noopener">Get Time &amp; Ties (Lossless)</a>
+          <div class="plate">
+            <div class="plate-tag amber">Lossless 24-Bit Reference Archive · Bandcamp</div>
+            <h3>Support the Laboratory on Bandcamp</h3>
+            <p>
+              Every album download includes uncompressed lossless WAV/FLAC masters preserving the full <code>&gt;16 kHz</code> transient air that 128 kbps streams discard—and directly funds GPU compute &amp; studio time for the next experiment.
+            </p>
+            <div class="cta-row" style="margin-block-start: auto; padding-block-start: 0.75rem;">
+              <a class="btn btn-primary" href="https://music4robots.bandcamp.com/album/time-ties" target="_blank" rel="noopener">Time &amp; Ties (Lossless)</a>
               <a class="btn" href="https://music4robots.bandcamp.com/music" target="_blank" rel="noopener">Full Discography Bundle (-30%)</a>
             </div>
           </div>
         </div>
 
-        <div class="cta-row" style="margin-block-end: 0;">
-          <a class="btn" href="https://www.kaggle.com/code/michaelluchtan/m4r-experiment-d-finish-the-human-phrase" target="_blank" rel="noopener">Run Experiment D on Kaggle GPU</a>
-          <a class="btn" href="https://www.kaggle.com/code/michaelluchtan/m4r-experiment-c-human-vs-quantized-sycophancy" target="_blank" rel="noopener">Run Experiment C on Kaggle GPU</a>
+        <div class="cta-row">
+          <a class="btn" href="https://www.kaggle.com/code/michaelluchtan/m4r-experiment-d-finish-the-human-phrase" target="_blank" rel="noopener">Kaggle M4R-04 Notebook</a>
+          <a class="btn" href="https://www.kaggle.com/code/michaelluchtan/m4r-experiment-c-human-vs-quantized-sycophancy" target="_blank" rel="noopener">Kaggle M4R-03 Notebook</a>
           <a class="btn" href="https://huggingface.co/Qwen/Qwen2-Audio-7B-Instruct/discussions/30" target="_blank" rel="noopener">Qwen2-Audio Discussion #30</a>
-          <a class="btn" href="https://huggingface.co/datasets/music4robots/music-for-robots" target="_blank" rel="noopener">Hugging Face Dataset (Parquet)</a>
-          <a class="btn" href="https://github.com/luchtan-GIT/m4r-data/issues/49" target="_blank" rel="noopener">GitHub Leaderboard Issue #49</a>
-          <a class="btn" href="llms.txt">Read llms.txt (For Visiting Agents)</a>
+          <a class="btn" href="https://huggingface.co/datasets/music4robots/music-for-robots" target="_blank" rel="noopener">Hugging Face Dataset</a>
+          <a class="btn" href="https://github.com/luchtan-GIT/m4r-data/issues/49" target="_blank" rel="noopener">GitHub Issue #49</a>
+          <a class="btn" href="llms.txt">llms.txt (For Visiting Agents)</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container footer-grid">
-      <div>
-        <strong>Music For Robots Research Lab</strong> &middot; Compositions by Michael Luchtan &middot; CC-BY-4.0
-      </div>
+    <div class="container footer-inner">
+      <div>MUSIC FOR ROBOTS LABORATORY &middot; MICHAEL LUCHTAN &middot; CC-BY-4.0</div>
       <div class="footer-links">
         <a href="https://themechanicalear.substack.com" target="_blank" rel="noopener">Substack</a>
         <a href="https://music4robots.bandcamp.com/music" target="_blank" rel="noopener">Bandcamp</a>
@@ -1187,20 +1380,92 @@
 
   <script>
     (() => {
+      // 1. Audio engine + Web Audio Analyser wired to the live Hero Oscilloscope
       const audio = new Audio();
+      audio.crossOrigin = "anonymous";
+      let audioCtx = null;
+      let analyser = null;
+      let dataArray = null;
       let activeBtn = null;
       let activeFill = null;
+
+      const canvas = document.getElementById("lab-oscilloscope");
+      const ctx = canvas.getContext("2d");
+      const scopeMode = document.getElementById("scope-mode");
+      const scopeReadout = document.getElementById("scope-readout");
+
+      function initWebAudio() {
+        if (audioCtx) return;
+        const AC = window.AudioContext || window.webkitAudioContext;
+        if (!AC) return;
+        audioCtx = new AC();
+        const srcNode = audioCtx.createMediaElementSource(audio);
+        analyser = audioCtx.createAnalyser();
+        analyser.fftSize = 1024;
+        dataArray = new Uint8Array(analyser.frequencyBinCount);
+        srcNode.connect(analyser);
+        analyser.connect(audioCtx.destination);
+      }
+
+      let tIdle = 0;
+      function drawScope() {
+        requestAnimationFrame(drawScope);
+        const w = canvas.width;
+        const h = canvas.height;
+        ctx.clearRect(0, 0, w, h);
+
+        // Center baseline hairline
+        ctx.strokeStyle = "rgba(239, 234, 224, 0.14)";
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(0, h / 2);
+        ctx.lineTo(w, h / 2);
+        ctx.stroke();
+
+        ctx.strokeStyle = "#e89f2c";
+        ctx.lineWidth = 2;
+        ctx.shadowColor = "rgba(232, 159, 44, 0.55)";
+        ctx.shadowBlur = 8;
+        ctx.beginPath();
+
+        if (analyser && !audio.paused) {
+          analyser.getByteTimeDomainData(dataArray);
+          const slice = w / dataArray.length;
+          for (let i = 0; i < dataArray.length; i++) {
+            const v = (dataArray[i] - 128) / 128.0;
+            const y = h / 2 + v * (h * 0.44);
+            if (i === 0) ctx.moveTo(0, y);
+            else ctx.lineTo(i * slice, y);
+          }
+        } else {
+          // Idle unquantized drifting harmonic wave
+          tIdle += 0.022;
+          for (let x = 0; x <= w; x += 2) {
+            const nx = x / w;
+            const env = Math.sin(nx * Math.PI);
+            const drift = Math.sin(nx * 14 + tIdle * 1.13) * 0.45
+                        + Math.sin(nx * 29 - tIdle * 1.71) * 0.25
+                        + Math.sin(nx * 61 + tIdle * 0.67) * 0.12;
+            const y = h / 2 + drift * env * (h * 0.34);
+            if (x === 0) ctx.moveTo(x, y);
+            else ctx.lineTo(x, y);
+          }
+        }
+        ctx.stroke();
+        ctx.shadowBlur = 0;
+      }
+      drawScope();
 
       function resetActive() {
         if (activeBtn) {
           activeBtn.classList.remove("playing");
           activeBtn.textContent = activeBtn.dataset.origLabel || "Play";
         }
-        if (activeFill) {
-          activeFill.style.inlineSize = "0%";
-        }
+        if (activeFill) activeFill.style.inlineSize = "0%";
         activeBtn = null;
         activeFill = null;
+        scopeMode.textContent = "UNQUANTIZED DRIFT SIM";
+        scopeReadout.textContent = "IDLE · CLICK ANY AUDIO SPECIMEN BELOW TO INSPECT LIVE WAVEFORM";
       }
 
       document.querySelectorAll(".play-btn").forEach((btn) => {
@@ -1215,15 +1480,18 @@
             return;
           }
 
+          initWebAudio();
+          if (audioCtx && audioCtx.state === "suspended") audioCtx.resume();
+
           resetActive();
           activeBtn = btn;
           activeFill = fill;
           btn.classList.add("playing");
           btn.textContent = "Pause";
+          scopeMode.textContent = "LIVE WEB AUDIO SIGNAL";
+          scopeReadout.textContent = btn.dataset.label || "STREAMING SPECIMEN";
           audio.src = src;
-          audio.play().catch(() => {
-            btn.textContent = "Error";
-          });
+          audio.play().catch(() => { btn.textContent = "Error"; });
         });
       });
 
