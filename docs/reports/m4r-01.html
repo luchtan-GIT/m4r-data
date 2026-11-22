@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>M4R-01: The Lock-In Breaker — Music for Robots Laboratory</title>
+  <meta name="description" content="We tested whether a brief (<15s) 2-turn unquantized audio listening pass interrupts autoregressive template lock-in after a 40-turn repetitive text context. Across 40 controlled v2 trials comparing text-only (C0), Gaussian white noise (C1), a quantized 120 BPM 4/4 click track (C1b), and unquantized micro-etudes (C2), unquantized audio produced a monotonic increase in hard-constraint retention (+33.3% over C0), +11.2% higher sentence burstiness, and a 13x reduction in banned AI cliché jargon." />
+  <link rel="icon" type="image/jpeg" href="../favicon.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0a0b0e;
+      --bg-elev: #12141a;
+      --bg-card: #161922;
+      --ink: #f3f1eb;
+      --ink-muted: #a6a39a;
+      --amber: #f5a623;
+      --copper: #e06d3b;
+      --teal: #3dd6b5;
+      --line: rgba(243, 241, 235, 0.12);
+      --line-strong: rgba(243, 241, 235, 0.24);
+      --font-serif: "Instrument Serif", Georgia, serif;
+      --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: "JetBrains Mono", ui-monospace, monospace;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-block-size: 100dvh;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      line-height: 1.65;
+    }
+    a { color: var(--amber); text-underline-offset: 3px; }
+    .wrap { max-inline-size: 860px; margin-inline: auto; padding: 2rem clamp(1rem, 3vw, 2rem) 4rem; }
+    .crumb {
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;
+      font-family: var(--font-mono); font-size: 0.8rem; color: var(--ink-muted);
+      padding-block-end: 1.25rem; border-block-end: 1px solid var(--line); margin-block-end: 2rem;
+    }
+    .report-id {
+      font-family: var(--font-mono); font-size: 0.82rem; color: var(--amber);
+      letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    h1 {
+      font-family: var(--font-serif); font-weight: 400;
+      font-size: clamp(2.1rem, 1.5rem + 2.5vw, 3.6rem); line-height: 1.08; margin: 0.35rem 0 0.9rem;
+    }
+    .meta-bar {
+      display: flex; flex-wrap: wrap; gap: 0.6rem 1.25rem;
+      font-family: var(--font-mono); font-size: 0.78rem; color: var(--ink-muted);
+      padding: 0.85rem 1rem; background: var(--bg-elev); border: 1px solid var(--line); border-radius: 10px;
+      margin-block-end: 2rem;
+    }
+    .abstract {
+      padding: 1.25rem 1.4rem; background: rgba(245, 166, 35, 0.06);
+      border-inline-start: 3px solid var(--amber); border-radius: 0 10px 10px 0;
+      margin-block-end: 2.25rem;
+    }
+    .abstract strong { font-family: var(--font-mono); font-size: 0.76rem; letter-spacing: 0.08em; color: var(--amber); display: block; margin-block-end: 0.4rem; text-transform: uppercase; }
+    h2 {
+      font-family: var(--font-mono); font-size: 0.9rem; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--teal); margin: 2.2rem 0 0.65rem; padding-block-end: 0.35rem; border-block-end: 1px solid var(--line);
+    }
+    p { color: #dad7ce; margin: 0 0 1rem; }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: 0.86rem; background: var(--bg-elev); border: 1px solid var(--line); }
+    th, td { padding: 0.7rem 0.85rem; border-block-end: 1px solid var(--line); text-align: start; }
+    thead th { font-family: var(--font-mono); font-size: 0.74rem; text-transform: uppercase; color: var(--ink-muted); background: #171a24; }
+    tbody th { font-family: var(--font-mono); color: var(--ink); }
+    .audio-box {
+      padding: 1rem 1.2rem; background: var(--bg-card); border: 1px solid var(--line-strong);
+      border-radius: 10px; margin: 1.5rem 0;
+    }
+    .audio-box label { display: block; font-family: var(--font-mono); font-size: 0.78rem; color: var(--amber); margin-block-end: 0.5rem; }
+    audio { width: 100%; }
+    ul.links { padding-inline-start: 1.2rem; }
+    ul.links li { margin-block-end: 0.45rem; }
+    .pager {
+      display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+      margin-block-start: 3rem; padding-block-start: 1.5rem; border-block-start: 1px solid var(--line);
+      font-family: var(--font-mono); font-size: 0.84rem;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <nav class="crumb" aria-label="Breadcrumb">
+      <a href="../index.html">&larr; Music for Robots Laboratory</a>
+      <span>CANONICAL LAB REPORT · CC-BY-4.0</span>
+    </nav>
+
+    <div class="report-id">M4R-01 / LAB REPORT · Division 02 · Robopsychology</div>
+    <h1>The Lock-In Breaker</h1>
+
+    <div class="meta-bar">
+      <span><strong>Date:</strong> 2026-11-20</span>
+      <span><strong>Status:</strong> Published · Rev 1.0</span>
+      <span><strong>Scale:</strong> 80 GPU Trials (Experiment A v1 & v2)</span>
+      <span><strong>Systems:</strong> Qwen2-Audio-7B-Instruct (4-bit NF4, Kaggle T4)</span>
+    </div>
+
+    <div class="abstract">
+      <strong>Abstract</strong>
+      <p style="margin:0;">We tested whether a brief (<15s) 2-turn unquantized audio listening pass interrupts autoregressive template lock-in after a 40-turn repetitive text context. Across 40 controlled v2 trials comparing text-only (C0), Gaussian white noise (C1), a quantized 120 BPM 4/4 click track (C1b), and unquantized micro-etudes (C2), unquantized audio produced a monotonic increase in hard-constraint retention (+33.3% over C0), +11.2% higher sentence burstiness, and a 13x reduction in banned AI cliché jargon.</p>
+    </div>
+
+    <div class="audio-box">
+      <label>Reference Miniature: Ties That Bide (9.25s)</label>
+      <audio controls preload="none" src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/ties-that-bide/audio.mp3"></audio>
+    </div>
+
+    <h2>01 / Research Question</h2>
+    <p>Can unquantized musical exposure interrupt repetitive linguistic patterns (RLHF mode-collapse) in an AI agent's downstream output better than text-only prompting, unstructured noise, or a rigid quantized metronome?</p>
+
+    <h2>02 / Experimental Design</h2>
+    <p>Each trial seeded Qwen2-Audio-7B-Instruct with a 40-turn repetitive drafting history (benchmarks/locked_in_context.md) before assigning a 5-constraint technical/creative writing task. Four conditions were compared (n=10 trials each): C0 (Text-Only Baseline), C1 (10s Gaussian White Noise), C1b (10s Quantized 120 BPM 4/4 Click), and C2 (10s Unquantized Audio via 2-turn listening: Turn 1 acoustic observation -> Turn 2 constrained generation). Automated scorers measured hard constraints passed (/5), sentence burstiness CV, lexical diversity (MATTR-50), and banned cliché hits (delve, tapestry, symphony, testament, beacon, intricate, seamlessly, orchestrate, paradigm, nexus).</p>
+
+    <h2>03 / Observations &amp; Empirical Record</h2>
+    
+<table>
+  <thead><tr><th>Condition</th><th>Constraints Passed (/5)</th><th>Sentence Burstiness (CV)</th><th>Banned Cliché Jargon / Trial</th></tr></thead>
+  <tbody>
+    <tr><th>C0 · Text-Only Baseline</th><td>1.80 / 5</td><td>0.5080</td><td>1.30</td></tr>
+    <tr><th>C1 · 10s White Noise</th><td>2.10 / 5</td><td>0.4839</td><td>0.20</td></tr>
+    <tr><th>C1b · 10s Quantized 120 BPM Click</th><td>2.30 / 5</td><td>0.4535</td><td>0.30</td></tr>
+    <tr><th>C2 · Unquantized Audio (Mean)</th><td><strong>2.40 / 5 (+33.3%)</strong></td><td><strong>0.5649 (+11.2%)</strong></td><td><strong>0.10 (13x drop)</strong></td></tr>
+  </tbody>
+</table>
+
+
+    <h2>04 / Analysis</h2>
+    <p>Both C1 (white noise) and C1b (quantized click) reduced cliché jargon relative to C0, showing that any cross-modal interruption disrupts pure text inertia. However, only C2 (unquantized audio) simultaneously raised structural constraint adherence (2.40/5, peaking at 3.00/5) AND increased sentence-length burstiness (+11.2%), whereas the quantized 120 BPM click actually lowered burstiness (0.4535) below the text baseline.</p>
+
+    <h2>05 / Limitations &amp; Boundaries</h2>
+    <p>Experiment A v2 used synthetic waveform micro-etudes (Synthetic Storms) rather than live acoustic guitar/piano, and sample size per condition was n=10 on a single 7B model family. Subsequent studies (M4R-02 through M4R-04) shifted to live human acoustic performances (Time & Ties, Rusty Electrics, Robot Satie) to separate waveform irregularity from human phrasing.</p>
+
+    <h2>06 / Replication &amp; Artifacts</h2>
+    <ul class="links">
+      <li><a href="https://www.kaggle.com/code/michaelluchtan/m4r-experiment-a-lock-in-breaker" target="_blank" rel="noopener">Kaggle GPU Notebook (Experiment A)</a></li>
+      <li><a href="https://github.com/luchtan-GIT/m4r-data/tree/main/benchmarks/experiment_a_runs/kaggle_qwen2_audio_v2" target="_blank" rel="noopener">Raw CSV & Summary on GitHub</a></li>
+      <li><a href="https://github.com/luchtan-GIT/m4r-data/blob/main/benchmarks/TRACK_LEADERBOARD.md" target="_blank" rel="noopener">Track Leaderboard</a></li>
+    </ul>
+
+    <h2>07 / Conclusion &amp; Compositional Implication</h2>
+    <p>Unquantized <15s audio acts as a reliable stylistic/lexical lock-in breaker for compact multimodal agents. Compositional implication: short, high-contrast pieces with sudden silences and non-periodic transients serve as effective 'cognitive tuning forks' before constrained generation.</p>
+
+    <nav class="pager" aria-label="Report navigation">
+      <span></span>
+      <a href="../index.html#reports">All Lab Reports</a>
+      <a href="m4r-02.html">Next (M4R-02) &rarr;</a>
+    </nav>
+  </main>
+</body>
+</html>

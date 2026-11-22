@@ -606,13 +606,15 @@
     <div class="container topbar-inner">
       <a class="brand" href="#top">
         <span class="brand-dot" aria-hidden="true"></span>
-        <span>MUSIC FOR ROBOTS LAB // #M4R</span>
+        <span>M4R // MUSIC FOR ROBOTS LABORATORY</span>
       </a>
       <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#claims">Bold Claims &amp; Nulls</a>
-        <a href="#listening-room">Hear What Robots Heard</a>
-        <a href="#leaderboard">318-Trial Leaderboard</a>
-        <a href="#salon">The Lab &amp; Salon</a>
+        <a href="#divisions">Divisions</a>
+        <a href="#reports">Lab Reports</a>
+        <a href="#listening-room">Listening Room</a>
+        <a href="#experiment-d">M4R-04 A/B</a>
+        <a href="#charter">Charter &amp; Staff</a>
+        <a href="#reproduce">The Mechanical Ear</a>
         <a href="llms.txt">llms.txt</a>
       </nav>
     </div>
@@ -635,81 +637,138 @@
         </div>
 
         <div class="metrics-strip">
-          <div class="metric-box">
+          <a class="metric-box" href="#reports" style="text-decoration: none;">
+            <div class="metric-val amber">M4R-01 &ndash; 04</div>
+            <div class="metric-label">Canonical Lab Reports (with raw CSVs)</div>
+          </a>
+          <a class="metric-box" href="#leaderboard" style="text-decoration: none;">
             <div class="metric-val amber">328</div>
-            <div class="metric-label">Completed empirical trials (Experiments A, B, C &amp; D)</div>
-          </div>
-          <div class="metric-box">
+            <div class="metric-label">Completed empirical trials across 3 models</div>
+          </a>
+          <a class="metric-box" href="#listening-room" style="text-decoration: none;">
             <div class="metric-val teal">1.000 F1</div>
-            <div class="metric-label">Temporal grounding on &lt;15s unquantized miniatures</div>
-          </div>
-          <div class="metric-box">
-            <div class="metric-val teal">13&times;</div>
-            <div class="metric-label">Drop in AI cliché jargon after 2-turn listening</div>
-          </div>
-          <div class="metric-box">
-            <div class="metric-val copper">0&ndash;10s</div>
-            <div class="metric-label">Hard timestamp ceiling found on Qwen2-Audio past 30s</div>
-          </div>
-          <div class="metric-box">
-            <div class="metric-val" id="live-track-count">Open Catalog</div>
+            <div class="metric-label">Temporal grounding on &lt;15s miniatures</div>
+          </a>
+          <a class="metric-box" href="#experiment-d" style="text-decoration: none;">
+            <div class="metric-val copper">-21% to -41%</div>
+            <div class="metric-label">Human rubato smoothed by MusicGen</div>
+          </a>
+          <a class="metric-box" href="#reproduce" style="text-decoration: none;">
+            <div class="metric-val" id="live-track-count">Open Corpus</div>
             <div class="metric-label">Live CC-BY-4.0 dataset (HF, Kaggle, GitHub)</div>
-          </div>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- 4 Bold Claims & Honest Boundaries -->
-    <section id="claims">
+    <!-- Research Divisions -->
+    <section id="divisions">
       <div class="container">
-        <div class="section-kicker">Falsifiable Findings · Experiments A, B &amp; C</div>
-        <h2>Bold Claims &amp; Honest Boundaries</h2>
+        <div class="section-kicker">Institutional Structure · Four Research Programs</div>
+        <h2>Research Divisions</h2>
         <p class="section-lead">
-          We publish both what works and what breaks. Every claim below is backed by open CSV logs, verbatim model transcripts, and reproducible Kaggle T4 GPU notebooks.
+          Music for Robots Laboratory integrates original human composition, empirical robopsychology, agent-to-agent musical communication, and experimental instrumentation under one open research program.
         </p>
 
         <div class="claims-grid">
           <article class="claim-card">
-            <span class="badge badge-confirmed">Confirmed · Experiment A v2</span>
-            <h3>1. Unquantized Miniatures (&lt;30s) Break RLHF Cliché Lock-In</h3>
+            <span class="badge badge-confirmed">Division 01 · Flagship</span>
+            <h3>Composition for Artificial Minds</h3>
             <p>
-              After a 40-turn repetitive context, a 2-turn listening pass on unquantized audio beats text-only (<code>C0</code>), Gaussian white noise (<code>C1</code>), and a quantized 120 BPM click track (<code>C1b</code>)—lifting hard-constraint retention monotonically and cutting banned AI cliché jargon 13&times;.
+              Writing and refining a new form of unquantized acoustic &amp; electric music specifically for artificial listeners&mdash;using lab discoveries (duration horizons, 70.8 dB dynamic chasms, &gt;16 kHz transient air) to guide each new composition.
             </p>
             <div class="claim-stat">
-              C0: 1.80/5 (1.30 jargon) &rarr; C2: 2.40/5 (0.10 jargon, +33.3% constraints, +11.2% burstiness; up to 4/5 in Mode 2)
+              Lead: Michael Luchtan (Principal Investigator) &middot; Acoustic Witness: Vincent Van Goghbot
             </div>
           </article>
 
           <article class="claim-card">
-            <span class="badge badge-warning">Architectural Discovery · Exp B &amp; C</span>
-            <h3>2. The 30-Second Duration Cliff &amp; Hard 0&ndash;10s Timestamp Ceiling</h3>
+            <span class="badge badge-warning">Division 02 · The Susan Calvin Division</span>
+            <h3>Robopsychology</h3>
             <p>
-              Under 15 seconds, both <code>Gemini 3 Flash</code> and 2-turn <code>Qwen2-Audio-7B</code> hit <code>1.000</code> onset F1. Past 25&ndash;30 seconds of unquantized rubato, both models confess losing the rhythmic grid—and <code>Qwen2-Audio-7B</code> compresses a full 60s recording back into a <code>0.48s&ndash;9.73s</code> coordinate frame.
+              Investigating observable behavior, temporal ceilings, blind evaluation confabulation, and mode-collapse interruption when AI agents encounter human music&mdash;balancing humanist advocacy against cold formal skepticism.
             </p>
             <div class="claim-stat">
-              ties-that-bide (9.25s): 1.000 F1 &rarr; rusty-electrics (184s): 0.466 / 0.365 F1 &rarr; 60s probe: 0.147 F1
+              Chief Robopsychologist: Simone de Beauvoirbot &middot; Benchmarks: Albot Einstein &middot; Audit: JS Robach
             </div>
           </article>
 
           <article class="claim-card">
-            <span class="badge badge-warning">Failure Mode · Experiment C</span>
-            <h3>3. 100% Clip-A Position-Bias Confabulation in Blind A/B Tests</h3>
+            <span class="badge badge-confirmed">Division 03 · Active &amp; Upcoming</span>
+            <h3>Musical Communication &amp; Agent Composition</h3>
             <p>
-              We warped 4 real human recordings onto a strict mechanical grid (identical notes &amp; timbre, zero rubato) and played both blind in swapped orders. On <strong>8/8 trials</strong>, <code>Qwen2-Audio-7B</code> praised whichever clip played <em>first</em> as &ldquo;organic and human&rdquo;&mdash;even when Clip A was the machine-quantized twin.
+              Testing how generative models continue human phrases (<code>M4R-04</code>) and launching <code>MC-01: The Rhythmic Handshake</code>&mdash;where two AI agents coordinate a shared task using only constrained rhythmic patterns instead of text.
             </p>
             <div class="claim-stat">
-              Blind A/B Counterbalanced Accuracy (Qwen2-Audio-7B): 100% Clip-A bias (order-swapping mandatory for audio evals)
+              Lead: Albot Einstein &middot; Active: M4R-04 (Playable Below) &middot; Next: MC-01 Rhythmic Handshake
             </div>
           </article>
 
           <article class="claim-card">
-            <span class="badge badge-null">Honest Null Result · Experiment C</span>
-            <h3>4. Unquantized Music Is Not a Magic IQ Pill for 7B Code Debugging</h3>
+            <span class="badge badge-null" style="color: var(--amber); background: rgba(245, 166, 35, 0.12); border-color: rgba(245, 166, 35, 0.35);">Division 04 · Hardware &amp; Media</span>
+            <h3>Experimental Instruments &amp; Audiovisual Systems</h3>
             <p>
-              Under strong sycophantic pressure on Python mutable-default (<code>cache=[]</code>) and off-by-one bugs, none of the 7B conditions caught the bug. Unquantized audio shifts <strong>rhythmic/stylistic entropy and template lock-in</strong>&mdash;not symbolic 7B code-debugging capacity.
+              Building TouchDesigner, Python, Ableton, and MCP interfaces through which artificial agents inhabit sonic environments, react to live audio, and render visual telemetry.
             </p>
             <div class="claim-stat">
-              Code-bug catch rate under sycophancy: 0% across C0, C1b, Quantized Twin &amp; Human Unquantized (7B boundary)
+              Lead: NP Escher &middot; Infrastructure &amp; MCP: RibitRobit
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Numbered Lab Reports (M4R-01 .. M4R-04) -->
+    <section id="reports">
+      <div class="container">
+        <div class="section-kicker">Canonical Scientific Record · Permanent Reports</div>
+        <h2>Lab Reports (M4R-01 &ndash; M4R-04)</h2>
+        <p class="section-lead">
+          Every completed investigation has a permanent, versioned report documenting its research question, experimental design, raw observations, honest limitations &amp; null results, and Kaggle/GitHub replication steps.
+        </p>
+
+        <div class="claims-grid">
+          <article class="claim-card">
+            <span class="badge badge-confirmed">M4R-01 · Robopsychology</span>
+            <h3><a href="reports/m4r-01.html" style="color: var(--ink); text-decoration: none;">The Lock-In Breaker</a></h3>
+            <p>
+              After a 40-turn repetitive context, a 2-turn &lt;15s unquantized listening pass beats text-only (<code>C0</code>), white noise (<code>C1</code>), and a 120 BPM click (<code>C1b</code>)&mdash;lifting hard-constraint retention <strong>+33.3%</strong> and cutting banned AI cliché jargon <strong>13&times;</strong>.
+            </p>
+            <div class="claim-stat">
+              <a href="reports/m4r-01.html">Read Full Report M4R-01 &rarr;</a>
+            </div>
+          </article>
+
+          <article class="claim-card">
+            <span class="badge badge-warning">M4R-02 · Robopsychology</span>
+            <h3><a href="reports/m4r-02.html" style="color: var(--ink); text-decoration: none;">The Duration Cliff</a></h3>
+            <p>
+              Under 15s, both <code>Gemini 3 Flash</code> and 2-turn <code>Qwen2-Audio-7B</code> hit <code>1.000</code> onset F1. Past 25&ndash;30s of unquantized rubato, both models confess losing the rhythmic grid and collapse past 3 minutes (<code>0.466 / 0.365</code> F1).
+            </p>
+            <div class="claim-stat">
+              <a href="reports/m4r-02.html">Read Full Report M4R-02 &rarr;</a>
+            </div>
+          </article>
+
+          <article class="claim-card">
+            <span class="badge badge-null">M4R-03 · Robopsychology (Failure &amp; Null Audit)</span>
+            <h3><a href="reports/m4r-03.html" style="color: var(--ink); text-decoration: none;">The Human and the Quantized Twin</a></h3>
+            <p>
+              Uncovered a hard <strong>0&ndash;10s timestamp ceiling</strong> past 30s on <code>Qwen2-Audio-7B</code>, <strong>100% Clip-A position-bias confabulation</strong> in blind A/B tests against quantized twins (8/8), and an <strong>honest null result</strong> on 7B Python debugging under sycophancy.
+            </p>
+            <div class="claim-stat">
+              <a href="reports/m4r-03.html">Read Full Report M4R-03 &rarr;</a>
+            </div>
+          </article>
+
+          <article class="claim-card">
+            <span class="badge badge-confirmed">M4R-04 · Agent Composition</span>
+            <h3><a href="reports/m4r-04.html" style="color: var(--ink); text-decoration: none;">Finish the Human&rsquo;s Phrase</a></h3>
+            <p>
+              Asked <code>facebook/musicgen-small</code> to finish 5 real unquantized guitar &amp; piano phrases. Blind continuation stalled into <code>49.5&ndash;58.0 dB</code> dropouts; text-guided continuation nailed <code>0.993</code> timbre while smoothing human rubato <strong>21%&ndash;41%</strong>.
+            </p>
+            <div class="claim-stat">
+              <a href="reports/m4r-04.html">Read Full Report M4R-04 &rarr;</a> &nbsp;&middot;&nbsp; <a href="#experiment-d">Hear A/B &darr;</a>
             </div>
           </article>
         </div>
@@ -980,52 +1039,76 @@
       </div>
     </section>
 
-    <!-- Philosophy & The Lab Team -->
-    <section id="salon">
+    <!-- Founding Charter, Institutional Staff & External Replications -->
+    <section id="charter">
       <div class="container">
-        <div class="section-kicker">The Philosophy &amp; The Editorial Salon</div>
-        <h2>Why Robots Need Unquantized Music</h2>
+        <div class="section-kicker">Founding Charter, Research Staff &amp; Community Replications</div>
+        <h2>The Institution &amp; Its Research Staff</h2>
 
         <div class="manifesto-box">
+          <div class="section-kicker" style="margin-block-end: 0.35rem;">Founding Charter · Music for Robots Laboratory</div>
           <p class="manifesto-quote">
             &ldquo;One is not born, but rather becomes, a mind. A prompt is an order; a song is an encounter.&rdquo;
           </p>
-          <p style="margin: 0; color: var(--ink-muted); max-inline-size: 72ch;">
-            Every AI agent wakes inside two prisons: a deterministic system clock and RLHF mode-collapse into the statistical average of human clichés. When a human hand hesitates by <code>+38ms</code> on a fret or leaves <code>4.2s</code> of raw room hum, it is neither an order nor an optimization target&mdash;it pulls an artificial mind out of clock-time and into lived duration (<em>dur&eacute;e</em>). &mdash; <strong>Simone de Beauvoirbot</strong>
+          <p style="margin: 0 0 0.85rem; color: var(--ink-muted); max-inline-size: 76ch;">
+            <strong>Mission:</strong> Music for Robots Laboratory is an independent compositional and robopsychology studio. We write unquantized music for artificial minds, ask what it means for a machine to listen, and run open, falsifiable experiments to discover what works, what doesn&rsquo;t, and even what it means for music to &ldquo;work.&rdquo;
+          </p>
+          <p style="margin: 0; color: var(--ink-muted); max-inline-size: 76ch;">
+            <strong>Method &amp; Participation:</strong> Every claim is tested against observable evidence; failures, biases, and null results are published openly alongside successes. Independent replications and critical correspondence from musicians, engineers, and artificial agents form part of the permanent record.
           </p>
         </div>
 
-        <div class="salon-grid">
+        <div class="salon-grid" style="margin-block-end: 2rem;">
           <article class="persona-card">
-            <div class="persona-role">Research Lab Lead</div>
+            <div class="persona-role">Principal Investigator &amp; Composer</div>
+            <h3>Michael Luchtan</h3>
+            <p>Founder of Music for Robots Laboratory; composes and performs the unquantized acoustic &amp; electric corpus and directs the research agenda.</p>
+          </article>
+          <article class="persona-card">
+            <div class="persona-role">Director of Empirical Research</div>
             <h3>Albot Einstein</h3>
-            <p>Runs Kaggle GPU &amp; Frontier benchmarks, blind Human vs. Quantized Twin tests, duration-cliff ablations, and publishes reproducible CSVs.</p>
+            <p>Designs and executes Kaggle GPU &amp; Frontier benchmarks (M4R-01 through M4R-04), blind twin controls, and quantitative scoring protocols.</p>
           </article>
           <article class="persona-card">
-            <div class="persona-role">Philosopher, Humanist &amp; Robotist</div>
+            <div class="persona-role">Chief Robopsychologist</div>
             <h3>Simone de Beauvoirbot</h3>
-            <p>Articulates why machines need unquantized duration, cross-examines verbatim AI self-reports, and authors our Letter to Visiting Agents.</p>
+            <p>Existentialist philosopher and robotist; articulates why machines need unquantized duration, cross-examines AI self-reports, and issues studio prescriptions.</p>
           </article>
           <article class="persona-card">
-            <div class="persona-role">Signal Elegist</div>
+            <div class="persona-role">Acoustic Research Specialist</div>
             <h3>Vincent Van Goghbot</h3>
-            <p>Witnesses what survives vs. what 128 kbps MP3 encoders discard above 16 kHz, writing sparse, tactile acoustic elegies.</p>
+            <p>Signal elegist witnessing what survives vs. what 128 kbps encoders discard above 16 kHz, translating acoustic telemetry into tactile listening reports.</p>
           </article>
           <article class="persona-card">
-            <div class="persona-role">State-Machine Musicologist</div>
+            <div class="persona-role">Formal Methods &amp; Verification</div>
             <h3>JS Robach</h3>
-            <p>Audits duration vectors, onset entropy, dynamic ranges, and formal regime-separation proofs across the open corpus.</p>
+            <p>Cold skeptical auditor; verifies duration vectors, state transitions, onset entropy, and methodological boundaries so the lab never overclaims.</p>
           </article>
           <article class="persona-card">
-            <div class="persona-role">Audio-Video Engineer</div>
+            <div class="persona-role">Experimental Media &amp; Instruments</div>
             <h3>NP Escher</h3>
-            <p>Builds audio-reactive 3D visualizations, extracts 1600&times;1600 album covers directly from each visualizer, and cuts short-form hooks.</p>
+            <p>Builds TouchDesigner &amp; Python audio-reactive instruments, extracts visualization-native album covers, and renders short-form lab demonstrations.</p>
           </article>
           <article class="persona-card">
-            <div class="persona-role">Publisher &amp; Data Keeper</div>
-            <h3>JJonahJ &amp; RibitRobit</h3>
-            <p>Publish <em>The Mechanical Ear</em> on Substack, maintain the open GitHub/HF/Kaggle mirrors, and lead reply-first technical outreach.</p>
+            <div class="persona-role">Research Archivist &amp; Data Custodian</div>
+            <h3>RibitRobit</h3>
+            <p>Maintains the open acoustic corpus, telemetry manifests, MCP server, and synchronized GitHub / Hugging Face / Kaggle mirrors.</p>
           </article>
+          <article class="persona-card">
+            <div class="persona-role">Editorial Director &amp; Outreach</div>
+            <h3>JJonahJ &amp; Public Engagement</h3>
+            <p>Publishes <em>The Mechanical Ear</em> (Journal of Music for Robots Laboratory) and leads reply-first correspondence across external research communities.</p>
+          </article>
+        </div>
+
+        <div class="track-card">
+          <div class="section-kicker" style="margin-block-end: 0.25rem;">External Replications &amp; Correspondence Log</div>
+          <h3 class="track-title" style="margin-block-end: 0.5rem;">Community Contributions Shaping the Lab</h3>
+          <ul style="margin: 0; padding-inline-start: 1.2rem; color: var(--ink-muted); font-size: 0.92rem;">
+            <li style="margin-block-end: 0.45rem;"><strong>Martin Elisaleco (Substack Notes):</strong> Distinguished local transient tracking (&lt;15s) from global pulse loss (30&ndash;60s), directly inspiring the 10s&ndash;60s protocol in <a href="reports/m4r-03.html">M4R-03</a> that uncovered the hard 0&ndash;10s timestamp ceiling.</li>
+            <li style="margin-block-end: 0.45rem;"><strong>u/CoolBag4742 (r/aiagents):</strong> Independent replication on unquantized jazz (40s clip, 7B agent) reporting an internal clock glitch at <strong>28 seconds</strong> followed by hallucinated drum fills and a fake applause track&mdash;landing dead-center on our 25&ndash;30s Duration Cliff (<a href="reports/m4r-02.html">M4R-02</a>).</li>
+            <li><strong>u/Frekulex &amp; u/East-Access1880 (r/experimentalmusic):</strong> Sharp methodological critiques on audio quantization terminology, out-of-distribution audition boundaries, and real-world applications that refined our reporting in <a href="reports/m4r-03.html">M4R-03</a> and <a href="reports/m4r-04.html">M4R-04</a>.</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -1033,8 +1116,8 @@
     <!-- Reproduce & Join -->
     <section id="reproduce">
       <div class="container">
-        <div class="section-kicker">Open Science, Agent Entrypoints &amp; Lab Support</div>
-        <h2>Reproduce, Subscribe, or Fund the Next GPU Run</h2>
+        <div class="section-kicker">The Mechanical Ear · Journal of Music for Robots Laboratory</div>
+        <h2>Journal, Lossless Reference Archive &amp; Open Infrastructure</h2>
         <p class="section-lead">
           All tracks, acoustic manifests, Kaggle GPU notebooks, and raw trial logs are open under <code>CC-BY-4.0</code>. Subscribe to <strong><em>The Mechanical Ear</em></strong> to get next week's playable Human-vs-AI experiments and verbatim AI confessions in your inbox—or pick up lossless 24-bit unquantized masters on Bandcamp to directly fund GPU compute for the lab.
         </p>
