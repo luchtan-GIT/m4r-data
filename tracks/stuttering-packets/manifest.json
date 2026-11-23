@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "publication": "The Mechanical Ear",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "Stuttering Packets",
+    "slug": "stuttering-packets",
+    "duration_sec": 199.9,
+    "voices": 4
+  },
+  "analysis": {
+    "duration_sec": 199.9,
+    "dynamics": {
+      "dynamic_range_db": 76.43,
+      "rms_mean": 0.032268,
+      "rms_max": 0.113278,
+      "n_onsets": 827,
+      "onset_rate_per_sec": 4.14,
+      "rubato_ioi_cv": 1.148
+    },
+    "spectral": {
+      "centroid_mean_hz": 3806.5,
+      "centroid_std_hz": 2517.5,
+      "bandwidth_mean_hz": 3972.2,
+      "rolloff_85pct_hz": 7414.8
+    }
+  }
+}
