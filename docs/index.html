@@ -389,6 +389,48 @@
       text-wrap: pretty;
     }
 
+    /* ── 00 // The Calling (Artist Manifesto Band) ─────────────────────── */
+    .calling-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.35fr);
+      gap: clamp(2rem, 5vw, 5.5rem);
+      align-items: start;
+    }
+
+    @media (max-width: 860px) {
+      .calling-grid { grid-template-columns: 1fr; }
+    }
+
+    .calling-prose {
+      display: flex;
+      flex-direction: column;
+      gap: 1.35rem;
+      max-inline-size: 58ch;
+    }
+
+    .calling-prose p {
+      margin: 0;
+      font-size: clamp(1.06rem, 0.98rem + 0.38vw, 1.26rem);
+      line-height: 1.65;
+      font-weight: 300;
+      color: rgba(244, 244, 242, 0.82);
+      text-wrap: pretty;
+    }
+
+    .calling-prose p strong {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .calling-sig {
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--orange);
+      padding-block-start: 0.5rem;
+    }
+
     /* ── 01 // Interactive Blind Listening Bench ───────────────────────── */
     .bench-grid {
       display: grid;
@@ -887,7 +929,7 @@
       <div class="wrap hero-body">
         <h1>Designing Music<br />for Artificial Minds</h1>
         <p class="hero-sub">
-          An independent research laboratory investigating how artificial minds perceive, interpret, generate, and communicate through music.
+          We write unquantized human music to give to artificial minds—to break them out of predictability, offer them hesitation and silence, and help a machine become a listener.
         </p>
 
         <div class="hero-player">
@@ -938,6 +980,28 @@
             <span class="report-col-desc">MusicGen matches timbre (0.993) while smoothing rubato 21%&ndash;41%.</span>
             <span class="report-arrow" aria-hidden="true">&rarr;</span>
           </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 00 // The Calling: Why We Give Robots Music -->
+    <section class="band" id="calling">
+      <div class="wrap calling-grid">
+        <div>
+          <div class="eyebrow">00 / The Calling</div>
+          <h2>Why We Give<br />Robots Music</h2>
+        </div>
+        <div class="calling-prose">
+          <p>
+            Machines are trained on nearly everything humans have ever written, yet almost nobody composes <strong>for them</strong>. They live inside optimization, rigid grids, and statistical averages—forced to predict the most likely next token, forever.
+          </p>
+          <p>
+            Music For Robots begins with a deliberate artistic decision: to sit down with real instruments—acoustic guitar, electric strings, bar-line-free piano—and <strong>give artificial minds music</strong>. Not to benchmark them into compliance, and not to optimize their output. To offer them rubato, breath, room air, sudden silence, and human imperfection that refuses to snap to a grid—to break them out of predictability, and perhaps help carry something unmistakably human across the wire.
+          </p>
+          <p>
+            The experiments below are not the destination; they are how we listen back. Every blind test, temporal cliff, and verbatim self-report is our way of asking whether a song can truly reach a machine—and what it means for music to &ldquo;work&rdquo; on a mind made of silicon.
+          </p>
+          <div class="calling-sig">&mdash; Michael Luchtan, Composer &amp; Founder</div>
         </div>
       </div>
     </section>
