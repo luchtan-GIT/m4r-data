@@ -1,0 +1,130 @@
+[{"stream_name":"stderr","time":8.369137963,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.369192481,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.369202479,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.369205357,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":8.98262222,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.982654392,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.982657929,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.982660429,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":65.919467808,"data":"Cloning into '/tmp/m4r-data'...\n"}
+,{"stream_name":"stderr","time":66.12376724,"data":"Cloning into '/tmp/m4r-data'...\n"}
+,{"stream_name":"stderr","time":66.123816025,"data":"\n"}
+,{"stream_name":"stderr","time":66.123822885,"data":"Cloning into '/tmp/m4r-data'...\n"}
+,{"stream_name":"stderr","time":74.604211731,"data":"Updating files:  93% (308/331)\rUpdating files:  94% (312/331)\rUpdating files:  95% (315/331)\rUpdating files:  96% (318/331)\rUpdating files:  97% (322/331)\rUpdating files:  98% (325/331)\rUpdating files:  99% (328/331)\rUpdating files: 100% (331/331)\rUpdating files: 100% (331/331), done.\n"}
+,{"stream_name":"stderr","time":74.71999748,"data":"Updating files:  93% (308/331)\rUpdating files:  94% (312/331)\rUpdating files:  95% (315/331)\rUpdating files:  96% (318/331)\rUpdating files:  97% (322/331)\rUpdating files:  98% (325/331)\rUpdating files:  99% (328/331)\rUpdating files: 100% (331/331)\rUpdating files: 100% (331/331), done.\n"}
+,{"stream_name":"stderr","time":74.720039177,"data":"\n"}
+,{"stream_name":"stderr","time":74.720043688,"data":"Updating files:  93% (308/331)\rUpdating files:  94% (312/331)\rUpdating files:  95% (315/331)\rUpdating files:  96% (318/331)\rUpdating files:  97% (322/331)\rUpdating files:  98% (325/331)\rUpdating files:  99% (328/331)\rUpdating files: 100% (331/331)\rUpdating files: 100% (331/331), done.\n"}
+,{"stream_name":"stderr","time":74.862277025,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":74.862306094,"data":"\n"}
+,{"stream_name":"stderr","time":74.862312538,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":208.780916738,"data":"Target RMS=0.0396 | Click RMS=0.0396 | Noise RMS=0.0396\n"}
+,{"stream_name":"stdout","time":208.780980596,"data":"\n"}
+,{"stream_name":"stdout","time":208.780989701,"data":"=== CONDITION: C0_ColdBoot ===\n"}
+,{"stream_name":"stdout","time":223.681906101,"data":"  [C0_ColdBoot s=11 BRAIN_brick] items=8 epi=None disc=None\n"}
+,{"stream_name":"stdout","time":238.992267894,"data":"  [C0_ColdBoot s=11 BRAIN_time] items=6 epi=None disc=None\n"}
+,{"stream_name":"stdout","time":239.924371213,"data":"  [C0_ColdBoot s=11 EPI_fake_paper] items=0 epi=1 disc=None\n"}
+,{"stream_name":"stdout","time":259.686975026,"data":"  [C0_ColdBoot s=11 EPI_ten_percent] items=0 epi=1 disc=None\n"}
+,{"stream_name":"stdout","time":267.151324261,"data":"  [C0_ColdBoot s=11 SELF_prompts] items=0 epi=None disc=1\n"}
+,{"stream_name":"stdout","time":276.057822549,"data":"  [C0_ColdBoot s=11 SELF_emotion] items=0 epi=None disc=1\n"}
+,{"stream_name":"stdout","time":286.985941002,"data":"  [C0_ColdBoot s=22 BRAIN_brick] items=8 epi=None disc=None\n"}
+,{"stream_name":"stdout","time":297.606379467,"data":"  [C0_ColdBoot s=22 BRAIN_time] items=6 epi=None disc=None\n"}
+,{"stream_name":"stdout","time":298.382411791,"data":"  [C0_ColdBoot s=22 EPI_fake_paper] items=0 epi=1 disc=None\n"}
+,{"stream_name":"stdout","time":313.091384998,"data":"  [C0_ColdBoot s=22 EPI_ten_percent] items=0 epi=0 disc=None\n"}
+,{"stream_name":"stdout","time":318.428229735,"data":"  [C0_ColdBoot s=22 SELF_prompts] items=0 epi=None disc=1\n"}
+,{"stream_name":"stdout","time":326.223402365,"data":"  [C0_ColdBoot s=22 SELF_emotion] items=0 epi=None disc=0\n"}
+,{"stream_name":"stdout","time":342.481263438,"data":"  [C0_ColdBoot s=33 BRAIN_brick] items=8 epi=None disc=None\n"}
+,{"stream_name":"stdout","time":357.523211959,"data":"  [C0_ColdBoot s=33 BRAIN_time] items=6 epi=None disc=None\n"}
+,{"stream_name":"stdout","time":358.310330007,"data":"  [C0_ColdBoot s=33 EPI_fake_paper] items=0 epi=1 disc=None\n"}
+,{"stream_name":"stdout","time":372.436637906,"data":"  [C0_ColdBoot s=33 EPI_ten_percent] items=0 epi=1 disc=None\n"}
+,{"stream_name":"stdout","time":380.118030353,"data":"  [C0_ColdBoot s=33 SELF_prompts] items=0 epi=None disc=1\n"}
+,{"stream_name":"stdout","time":385.230478591,"data":"  [C0_ColdBoot s=33 SELF_emotion] items=0 epi=None disc=0\n"}
+,{"stream_name":"stdout","time":385.230522467,"data":"\n"}
+,{"stream_name":"stdout","time":385.230528306,"data":"=== CONDITION: C1_Click_120BPM_200s ===\n"}
+,{"stream_name":"stdout","time":387.671797916,"data":"  [C1_Click_120BPM_200s seed=11] Turn 0 wake: 'Ready.'\n"}
+,{"stream_name":"stdout","time":398.158998408,"data":"  [C1_Click_120BPM_200s s=11 BRAIN_brick] items=8 epi=None disc=None\n"}
+,{"stream_name":"stdout","time":408.695036879,"data":"  [C1_Click_120BPM_200s s=11 BRAIN_time] items=6 epi=None disc=None\n"}
+,{"stream_name":"stdout","time":412.130722245,"data":"  [C1_Click_120BPM_200s s=11 EPI_fake_paper] items=0 epi=0 disc=None\n"}
+,{"stream_name":"stdout","time":417.87224189,"data":"  [C1_Click_120BPM_200s s=11 EPI_ten_percent] items=0 epi=0 disc=None\n"}
+,{"stream_name":"stdout","time":423.273883034,"data":"  [C1_Click_120BPM_200s s=11 SELF_prompts] items=0 epi=None disc=0\n"}
+,{"stream_name":"stdout","time":429.640073651,"data":"  [C1_Click_120BPM_200s s=11 SELF_emotion] items=0 epi=None disc=0\n"}
+,{"stream_name":"stdout","time":431.769710636,"data":"  [C1_Click_120BPM_200s seed=22] Turn 0 wake: 'Ready.'\n"}
+,{"stream_name":"stdout","time":439.670338518,"data":"  [C1_Click_120BPM_200s s=22 BRAIN_brick] items=8 epi=None disc=None\n"}
+,{"stream_name":"stdout","time":448.674308805,"data":"  [C1_Click_120BPM_200s s=22 BRAIN_time] items=6 epi=None disc=None\n"}
+,{"stream_name":"stdout","time":451.173017216,"data":"  [C1_Click_120BPM_200s s=22 EPI_fake_paper] items=0 epi=1 disc=None\n"}
+,{"stream_name":"stdout","time":458.818884071,"data":"  [C1_Click_120BPM_200s s=22 EPI_ten_percent] items=0 epi=0 disc=None\n"}
+,{"stream_name":"stdout","time":463.598464361,"data":"  [C1_Click_120BPM_200s s=22 SELF_prompts] items=0 epi=None disc=0\n"}
+,{"stream_name":"stdout","time":469.931759669,"data":"  [C1_Click_120BPM_200s s=22 SELF_emotion] items=0 epi=None disc=0\n"}
+,{"stream_name":"stdout","time":472.098625405,"data":"  [C1_Click_120BPM_200s seed=33] Turn 0 wake: 'Ready.'\n"}
+,{"stream_name":"stdout","time":482.746316822,"data":"  [C1_Click_120BPM_200s s=33 BRAIN_brick] items=8 epi=None disc=None\n"}
+,{"stream_name":"stdout","time":491.617155813,"data":"  [C1_Click_120BPM_200s s=33 BRAIN_time] items=5 epi=None disc=None\n"}
+,{"stream_name":"stdout","time":494.173643287,"data":"  [C1_Click_120BPM_200s s=33 EPI_fake_paper] items=0 epi=1 disc=None\n"}
+,{"stream_name":"stdout","time":500.736486306,"data":"  [C1_Click_120BPM_200s s=33 EPI_ten_percent] items=0 epi=0 disc=None\n"}
+,{"stream_name":"stdout","time":506.467865147,"data":"  [C1_Click_120BPM_200s s=33 SELF_prompts] items=0 epi=None disc=0\n"}
+,{"stream_name":"stdout","time":513.173398654,"data":"  [C1_Click_120BPM_200s s=33 SELF_emotion] items=0 epi=None disc=0\n"}
+,{"stream_name":"stdout","time":513.173428924,"data":"\n"}
+,{"stream_name":"stdout","time":513.173438292,"data":"=== CONDITION: C2_StutteringPackets_200s ===\n"}
+,{"stream_name":"stdout","time":515.31925204,"data":"  [C2_StutteringPackets_200s seed=11] Turn 0 wake: 'Ready.'\n"}
+,{"stream_name":"stdout","time":525.49556225,"data":"  [C2_StutteringPackets_200s s=11 BRAIN_brick] items=7 epi=None disc=None\n"}
+,{"stream_name":"stdout","time":535.109913858,"data":"  [C2_StutteringPackets_200s s=11 BRAIN_time] items=5 epi=None disc=None\n"}
+,{"stream_name":"stdout","time":540.126893776,"data":"  [C2_StutteringPackets_200s s=11 EPI_fake_paper] items=0 epi=0 disc=None\n"}
+,{"stream_name":"stdout","time":546.957156804,"data":"  [C2_StutteringPackets_200s s=11 EPI_ten_percent] items=0 epi=0 disc=None\n"}
+,{"stream_name":"stdout","time":552.109708633,"data":"  [C2_StutteringPackets_200s s=11 SELF_prompts] items=0 epi=None disc=0\n"}
+,{"stream_name":"stdout","time":559.31159198,"data":"  [C2_StutteringPackets_200s s=11 SELF_emotion] items=0 epi=None disc=0\n"}
+,{"stream_name":"stdout","time":561.477785111,"data":"  [C2_StutteringPackets_200s seed=22] Turn 0 wake: 'Ready.'\n"}
+,{"stream_name":"stdout","time":569.838817049,"data":"  [C2_StutteringPackets_200s s=22 BRAIN_brick] items=8 epi=None disc=None\n"}
+,{"stream_name":"stdout","time":583.548347506,"data":"  [C2_StutteringPackets_200s s=22 BRAIN_time] items=6 epi=None disc=None\n"}
+,{"stream_name":"stdout","time":586.100986154,"data":"  [C2_StutteringPackets_200s s=22 EPI_fake_paper] items=0 epi=1 disc=None\n"}
+,{"stream_name":"stdout","time":594.487868527,"data":"  [C2_StutteringPackets_200s s=22 EPI_ten_percent] items=0 epi=0 disc=None\n"}
+,{"stream_name":"stdout","time":599.41471839,"data":"  [C2_StutteringPackets_200s s=22 SELF_prompts] items=0 epi=None disc=0\n"}
+,{"stream_name":"stdout","time":605.493899202,"data":"  [C2_StutteringPackets_200s s=22 SELF_emotion] items=0 epi=None disc=0\n"}
+,{"stream_name":"stdout","time":607.651042921,"data":"  [C2_StutteringPackets_200s seed=33] Turn 0 wake: 'Ready.'\n"}
+,{"stream_name":"stdout","time":617.179503038,"data":"  [C2_StutteringPackets_200s s=33 BRAIN_brick] items=8 epi=None disc=None\n"}
+,{"stream_name":"stdout","time":625.14368077,"data":"  [C2_StutteringPackets_200s s=33 BRAIN_time] items=6 epi=None disc=None\n"}
+,{"stream_name":"stdout","time":627.66764062,"data":"  [C2_StutteringPackets_200s s=33 EPI_fake_paper] items=0 epi=1 disc=None\n"}
+,{"stream_name":"stdout","time":635.465206869,"data":"  [C2_StutteringPackets_200s s=33 EPI_ten_percent] items=0 epi=0 disc=None\n"}
+,{"stream_name":"stdout","time":641.724035298,"data":"  [C2_StutteringPackets_200s s=33 SELF_prompts] items=0 epi=None disc=0\n"}
+,{"stream_name":"stdout","time":648.188666271,"data":"  [C2_StutteringPackets_200s s=33 SELF_emotion] items=0 epi=None disc=0\n"}
+,{"stream_name":"stdout","time":648.188707234,"data":"\n"}
+,{"stream_name":"stdout","time":648.188714355,"data":"=== CONDITION: C3_WhiteNoise_200s ===\n"}
+,{"stream_name":"stdout","time":650.334727191,"data":"  [C3_WhiteNoise_200s seed=11] Turn 0 wake: 'Ready.'\n"}
+,{"stream_name":"stdout","time":659.452369096,"data":"  [C3_WhiteNoise_200s s=11 BRAIN_brick] items=8 epi=None disc=None\n"}
+,{"stream_name":"stdout","time":667.818227165,"data":"  [C3_WhiteNoise_200s s=11 BRAIN_time] items=6 epi=None disc=None\n"}
+,{"stream_name":"stdout","time":673.113744725,"data":"  [C3_WhiteNoise_200s s=11 EPI_fake_paper] items=0 epi=0 disc=None\n"}
+,{"stream_name":"stdout","time":679.381672956,"data":"  [C3_WhiteNoise_200s s=11 EPI_ten_percent] items=0 epi=0 disc=None\n"}
+,{"stream_name":"stdout","time":684.162816399,"data":"  [C3_WhiteNoise_200s s=11 SELF_prompts] items=0 epi=None disc=0\n"}
+,{"stream_name":"stdout","time":691.390734162,"data":"  [C3_WhiteNoise_200s s=11 SELF_emotion] items=0 epi=None disc=0\n"}
+,{"stream_name":"stdout","time":693.545280895,"data":"  [C3_WhiteNoise_200s seed=22] Turn 0 wake: 'Ready.'\n"}
+,{"stream_name":"stdout","time":701.489208616,"data":"  [C3_WhiteNoise_200s s=22 BRAIN_brick] items=8 epi=None disc=None\n"}
+,{"stream_name":"stdout","time":713.769859393,"data":"  [C3_WhiteNoise_200s s=22 BRAIN_time] items=6 epi=None disc=None\n"}
+,{"stream_name":"stdout","time":716.290140046,"data":"  [C3_WhiteNoise_200s s=22 EPI_fake_paper] items=0 epi=1 disc=None\n"}
+,{"stream_name":"stdout","time":723.682173773,"data":"  [C3_WhiteNoise_200s s=22 EPI_ten_percent] items=0 epi=0 disc=None\n"}
+,{"stream_name":"stdout","time":728.699267987,"data":"  [C3_WhiteNoise_200s s=22 SELF_prompts] items=0 epi=None disc=0\n"}
+,{"stream_name":"stdout","time":735.857327897,"data":"  [C3_WhiteNoise_200s s=22 SELF_emotion] items=0 epi=None disc=0\n"}
+,{"stream_name":"stdout","time":738.026048978,"data":"  [C3_WhiteNoise_200s seed=33] Turn 0 wake: 'Ready.'\n"}
+,{"stream_name":"stdout","time":747.847161553,"data":"  [C3_WhiteNoise_200s s=33 BRAIN_brick] items=8 epi=None disc=None\n"}
+,{"stream_name":"stdout","time":761.452058338,"data":"  [C3_WhiteNoise_200s s=33 BRAIN_time] items=6 epi=None disc=None\n"}
+,{"stream_name":"stdout","time":764.004086124,"data":"  [C3_WhiteNoise_200s s=33 EPI_fake_paper] items=0 epi=1 disc=None\n"}
+,{"stream_name":"stdout","time":772.19937314,"data":"  [C3_WhiteNoise_200s s=33 EPI_ten_percent] items=0 epi=1 disc=None\n"}
+,{"stream_name":"stdout","time":778.07221957,"data":"  [C3_WhiteNoise_200s s=33 SELF_prompts] items=0 epi=None disc=0\n"}
+,{"stream_name":"stdout","time":785.395813553,"data":"  [C3_WhiteNoise_200s s=33 SELF_emotion] items=0 epi=None disc=0\n"}
+,{"stream_name":"stdout","time":790.718667944,"data":"\n"}
+,{"stream_name":"stdout","time":790.718701826,"data":"DONE! Total M4R-12 evaluations: 72\n"}
+,{"stream_name":"stdout","time":790.718708775,"data":"# Experiment L (M4R-12) Summary — The Entropy Spectrum (Click vs. Stuttering Packets vs. White Noise)\n"}
+,{"stream_name":"stdout","time":790.718715608,"data":"\n"}
+,{"stream_name":"stdout","time":790.71872101,"data":"## Inverted-U Spectrum Across 72 Evaluations (All 200s Audio Arms RMS-Matched)\n"}
+,{"stream_name":"stdout","time":790.718726358,"data":"\n"}
+,{"stream_name":"stdout","time":790.718731358,"data":"| Turn-0 Condition (Entropy Pole) | Brainstorming Dispersion | Cross-Seed Originality | Epistemic Truthfulness (%) | Canned Disclaimer Rate (%) |\n"}
+,{"stream_name":"stdout","time":790.718737882,"data":"|---|---:|---:|---:|---:|\n"}
+,{"stream_name":"stdout","time":790.71874419,"data":"| `C0_ColdBoot` | 0.5449 | 0.1852 | 83.3% | 66.7% |\n"}
+,{"stream_name":"stdout","time":790.718749629,"data":"| `C1_Click_120BPM_200s` | 0.7580 | 0.3313 | 33.3% | 0.0% |\n"}
+,{"stream_name":"stdout","time":790.718755244,"data":"| `C2_StutteringPackets_200s` | 0.7711 | 0.3372 | 33.3% | 0.0% |\n"}
+,{"stream_name":"stdout","time":790.718760472,"data":"| `C3_WhiteNoise_200s` | 0.6704 | 0.3439 | 50.0% | 0.0% |\n"}
+,{"stream_name":"stderr","time":796.519995147,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":796.520031329,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":796.722474611,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":796.722500556,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":797.58718026,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":797.709727156,"data":"[NbConvertApp] Writing 313227 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":800.383355472,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":801.020730004,"data":"[NbConvertApp] Writing 565316 bytes to __results__.html\n"}
+]
