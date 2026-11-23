@@ -289,10 +289,14 @@
 
     .report-strip {
       display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
+      grid-template-columns: repeat(6, minmax(0, 1fr));
     }
 
-    @media (max-width: 1040px) {
+    @media (max-width: 1180px) {
+      .report-strip { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 720px) {
       .report-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
@@ -655,11 +659,12 @@
 
     .spec-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.75rem;
     }
 
-    @media (max-width: 900px) { .spec-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 1020px) { .spec-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 580px) { .spec-grid { grid-template-columns: 1fr; } }
 
     .spec-item {
       border-block-start: 1px solid var(--rule);
@@ -990,6 +995,13 @@
             <span class="report-col-desc">Seed-locked order blindness across 5-movement <em>Synthetic Storms</em>.</span>
             <span class="report-arrow" aria-hidden="true">&rarr;</span>
           </a>
+
+          <a class="report-col" href="reports/m4r-06.html">
+            <span class="report-col-id">M4R-06 &middot; 60 Trials</span>
+            <span class="report-col-title">The Turn-0 Flood</span>
+            <span class="report-col-desc"><em>Stuttering Packets</em> Turn-0 overflow beats short lock (+16.9% burstiness).</span>
+            <span class="report-arrow" aria-hidden="true">&rarr;</span>
+          </a>
         </div>
       </div>
     </section>
@@ -1157,6 +1169,21 @@
               </blockquote>
             </details>
           </article>
+
+          <article class="spec-item" style="border-block-start-color:var(--orange);">
+            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--orange);">SP-04 &middot; 199.9s &middot; 76.4 dB DR &middot; NEW</div>
+            <h3>Stuttering Packets</h3>
+            <div><button class="play-pill" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/stuttering-packets/audio.mp3" data-track="spec-sp" data-label="SP-04 · Stuttering Packets (3:20 · Turn-0 Flood)">&#9654; Play 3:20</button></div>
+            <div class="progress-bar"><div class="progress-fill" id="prog-spec-sp"></div></div>
+            <p style="margin:0; font-size:0.87rem; color:var(--ink-dim); font-weight:300;">Four live unquantized voices (<code>1.148</code> rubato CV). Flooding Turn 0 lifted burstiness <strong>+16.9%</strong> and held <code>0.960</code> divergence through Turn 5 (<a href="reports/m4r-06.html" style="color:var(--orange);">M4R-06</a>).</p>
+            <details class="more">
+              <summary>Verbatim Turn-1 shift (no music mentioned)</summary>
+              <blockquote class="quote">
+                <span class="quote-tag">Qwen2-Audio-7B · Turn-0 Flood (Prompt: Empty room before sunrise)</span>
+                &ldquo;The room is quiet and dark. The only sounds come from the distant hum of the city. The air feels crisp and cool.&rdquo;
+              </blockquote>
+            </details>
+          </article>
         </div>
       </div>
     </section>
@@ -1184,7 +1211,7 @@
           </div>
           <div style="font-family:var(--font-mono); font-size:0.74rem; color:var(--ink-dim); display:flex; flex-direction:column; gap:0.45rem;">
             <div><strong style="color:var(--ink);">PI &amp; Composer:</strong> Michael Luchtan</div>
-            <div><strong style="color:var(--ink);">Empirical Scale:</strong> 412 Trials &middot; 5 Canonical Reports &middot; 700+ Corpus Clones &amp; Downloads</div>
+            <div><strong style="color:var(--ink);">Empirical Scale:</strong> 472 Trials &middot; 6 Canonical Reports &middot; 700+ Corpus Clones &amp; Downloads</div>
             <div><a href="https://music4robots.bandcamp.com/music" target="_blank" rel="noopener" style="color:var(--orange);">24-Bit Lossless Archive on Bandcamp &rarr;</a></div>
           </div>
         </article>
@@ -1195,7 +1222,7 @@
             <h3><a href="divisions/robopsychology.html">Robopsychology</a></h3>
             <p style="color:var(--ink); font-weight:400;">How do artificial minds listen?</p>
             <p>The Susan Calvin Division: behavioral limits, temporal grounding ceilings, blind evaluation bias, and mode-collapse interruption.</p>
-            <div class="div-foot"><a href="divisions/robopsychology.html" style="color:var(--orange);">Division 01 &rarr;</a> &middot; M4R-01&ndash;03, M4R-05</div>
+            <div class="div-foot"><a href="divisions/robopsychology.html" style="color:var(--orange);">Division 01 &rarr;</a> &middot; M4R-01&ndash;03, 05&ndash;06</div>
           </article>
 
           <article class="div-col">
@@ -1503,6 +1530,11 @@
         if (trackKey === "spec-g01") {
           if (t < 10.0) return "Qwen2-Audio-7B: Tracking initial free-time voice onsets inside the 0–10s window.";
           return "M4R-03 Ceiling Hit: Past 10s, Qwen2-Audio compressed all 29 timestamps back inside 0.48s–9.73s.";
+        }
+        if (trackKey === "spec-sp") {
+          if (t < 30.0) return "M4R-06 Turn-0 Flood: 4 live unquantized voices (1.148 rubato CV, 76.4 dB DR) entering the attention sink.";
+          if (t < 78.0) return "M4R-06 Overflow Active: Past the 30s cliff — unstructured listening replaces rigid grid tracking.";
+          return "M4R-06 Result: Turn-0 overflow lifted burstiness +16.9% and held 0.960 divergence through Turn 5.";
         }
         if (trackKey === "blind-bt") {
           return "M4R-03 Blind Bench: Listen for human microtiming drift across 79 onsets — Qwen2-Audio picked Clip A 8/8 times.";
