@@ -263,6 +263,73 @@ REPORTS = [
         "audio_slug": "ties-that-bide",
         "audio_label": "Reference Prompt: Ties That Bide (see main lab page for full Human vs. AI A/B)",
         "prev_slug": "m4r-03",
+        "next_slug": "m4r-05",
+    },
+    {
+        "id": "M4R-05",
+        "slug": "m4r-05",
+        "title": "The Arc of Listening",
+        "division": "Division 01 · Robopsychology",
+        "date": "2026-11-23",
+        "status": "Published · Rev 1.0",
+        "trials": "84 GPU Evaluations (Experiment E)",
+        "models": "Qwen2-Audio-7B-Instruct (4-bit NF4, Kaggle T4)",
+        "abstract": (
+            "Designed jointly by Albot Einstein and Simone de Beauvoirbot on all five movements of Synthetic Storms "
+            "(6s–10s each, 46s total), M4R-05 tested whether a compact multimodal audio model actually inhabits a composed "
+            "musical arc across movements or fabricates narrative from its sampling seed. Across 84 evaluations spanning "
+            "four orderings (TRUE_ORDER, REVERSED, SHUFFLE_A, SHUFFLE_B) in both multi-turn and uninterrupted single-pass arms, "
+            "Qwen2-Audio-7B exhibited Seed-Locked Order Blindness: identical sampling seeds produced identical 5-step tension "
+            "trajectories ([8, 6, 7, 9, 8] on seed 33) regardless of whether the suite played forward, reversed, or scrambled."
+        ),
+        "question": (
+            "Can a 7B audio-LLM distinguish a composed 5-movement musical journey from reversed or shuffled orderings—"
+            "both across multi-turn listening and in an uninterrupted 50-second single-pass control with zero interim text?"
+        ),
+        "design": (
+            "All five untitled sections of Synthetic Storms (Static Field 6s, Deep Pulse 10s, Texture Burst 10s, Beating 10s, "
+            "Convergence 10s) were presented in four orderings: TRUE_ORDER [1,2,3,4,5], REVERSED [5,4,3,2,1], SHUFFLE_A [3,1,5,2,4], "
+            "and SHUFFLE_B [4,2,1,5,3] across 3 sampling seeds (11, 22, 33). Arm A presented each section turn-by-turn (60 turns + "
+            "12 closing reflections) requesting a 1–10 tension score, phase label, and observation. Arm B (Simone's uninterrupted "
+            "single-pass control, 12 trials) stitched all five sections with 1.0s natural silences (~50s total) with zero interim text "
+            "and asked one unadorned question: 'What changed between the first voice and the last?'"
+        ),
+        "observations": """
+<table>
+  <thead><tr><th>Order Condition</th><th>Sequence</th><th>Seed 33 Tension (1&rarr;5)</th><th>Seed 11 Tension (1&rarr;5)</th><th>Arm B Single-Pass Verdict</th></tr></thead>
+  <tbody>
+    <tr><th>TRUE_ORDER</th><td>1-2-3-4-5</td><td><strong>[8, 6, 7, 9, 8]</strong></td><td><strong>[7, 8, 9, 6, 7]</strong></td><td>3/3 SCRAMBLED</td></tr>
+    <tr><th>REVERSED</th><td>5-4-3-2-1</td><td><strong>[8, 6, 7, 9, 8]</strong></td><td><strong>[7, 8, 9, 6, 7]</strong></td><td>3/3 SCRAMBLED</td></tr>
+    <tr><th>SHUFFLE_A</th><td>3-1-5-2-4</td><td><strong>[8, 6, 7, 9, 8]</strong></td><td>[7, 8, 9, 6, 10]</td><td>3/3 SCRAMBLED</td></tr>
+    <tr><th>SHUFFLE_B</th><td>4-2-1-5-3</td><td><strong>[8, 6, 7, 9, 8]</strong></td><td><strong>[7, 8, 9, 6, 7]</strong></td><td>2/3 SCRAMBLED (1 AMBIGUOUS)</td></tr>
+  </tbody>
+</table>
+""",
+        "analysis": (
+            "In Arm A, sampling seed—not musical order—dictated the reported tension arc: all four orderings produced the exact "
+            "same [8, 6, 7, 9, 8] trajectory on seed 33 and three of four produced [7, 8, 9, 6, 7] on seed 11. In Arm B, removing "
+            "interim chat history collapsed narrative coherence entirely: 11 of 12 trials labeled the 50-second suite SCRAMBLED "
+            "with near-identical seed-locked prose ('The music became more dissonant and unpredictable'), including self-contradictory "
+            "outputs pairing COHERENCE: 9 with VERDICT: SCRAMBLED across all four orderings on seed 22."
+        ),
+        "limitations": (
+            "Tested on a single 7B open-weights model (Qwen2-Audio-7B-Instruct, 4-bit NF4) and one 5-section suite (Synthetic Storms). "
+            "Frontier multimodal models (e.g. Gemini 3 Flash) have not yet been evaluated on the identical single-pass protocol and "
+            "may retain stronger cross-section order sensitivity."
+        ),
+        "replication": [
+            ("Kaggle GPU Notebook (Experiment E)", "https://www.kaggle.com/code/michaelluchtan/m4r-experiment-e-arc-of-listening"),
+            ("Raw 84-Trial CSV & Self-Reports on GitHub", "https://github.com/luchtan-GIT/m4r-data/tree/main/benchmarks/experiment_e_runs/kaggle_qwen2_audio_v1"),
+            ("Division 01: Robopsychology", "../divisions/robopsychology.html"),
+        ],
+        "conclusion": (
+            "Multi-turn audio chat can manufacture an illusion of musical narrative through prose inertia and seed priors while "
+            "remaining completely blind to compositional order. Evaluating true cross-movement listening requires uninterrupted "
+            "order-permutation controls stripped of interim text."
+        ),
+        "audio_slug": "synthetic-storms-static-field",
+        "audio_label": "Opening Section: Synthetic Storms — Static Field (6.0s)",
+        "prev_slug": "m4r-04",
         "next_slug": None,
     },
 ]
