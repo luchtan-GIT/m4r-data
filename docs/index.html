@@ -3,37 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Music for Robots Laboratory — Designing the First Generation of Music for Artificial Minds</title>
-  <meta name="description" content="Independent compositional and robopsychology laboratory designing the first generation of music for robots. Open acoustic corpus, canonical Lab Reports M4R-01 through M4R-04, and interactive Human vs. AI listening instruments." />
-  <meta property="og:title" content="Music for Robots Laboratory" />
-  <meta property="og:description" content="Designing the first generation of music for robots. Art + Science flagship laboratory: 328 trials, canonical Lab Reports M4R-01..M4R-04, and live Human vs. AI listening instruments." />
+  <title>M4R — Music For Robots Laboratory</title>
+  <meta name="description" content="An independent research laboratory designing the first generation of music for robots, robopsychology, and the empirical study of sound. Open CC-BY-4.0 corpus and canonical Lab Reports M4R-01 through M4R-04." />
+  <meta property="og:title" content="Music For Robots Laboratory — Designing Music for Artificial Minds" />
+  <meta property="og:description" content="An independent research laboratory exploring music for artificial minds, robopsychology, and the empirical study of sound. 328 empirical trials, M4R-01 through M4R-04, and interactive Human vs. AI listening benchmarks." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://luchtan-git.github.io/m4r-data/" />
-  <meta property="og:image" content="https://luchtan-git.github.io/m4r-data/favicon.jpg" />
+  <meta property="og:image" content="https://luchtan-git.github.io/m4r-data/assets/hero-listener.jpg" />
   <link rel="icon" type="image/jpeg" href="favicon.jpg" />
   <link rel="apple-touch-icon" href="favicon.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     :root {
       color-scheme: dark;
-      --bg: #08080a;
-      --surface: #0f1014;
-      --surface-2: #15171d;
-      --bezel: #1c1e26;
-      --ink: #f4f0e8;
-      --ink-dim: #a39e93;
-      --ink-faint: #625f58;
-      --amber: #f09a2b;
-      --vermilion: #e5533d;
-      --mint: #39d0a8;
-      --rule: rgba(244, 240, 232, 0.11);
-      --rule-strong: rgba(244, 240, 232, 0.24);
-      --font-display: "Instrument Serif", Georgia, serif;
-      --font-sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+      --bg: #111113;
+      --bg-elev: #161619;
+      --bg-card: #1a1a1e;
+      --ink: #f4f4f2;
+      --ink-dim: #9e9ea6;
+      --ink-faint: #66666e;
+      --orange: #ff7216;
+      --orange-hover: #ff8738;
+      --mint: #3dd6ab;
+      --rule: rgba(255, 255, 255, 0.11);
+      --rule-strong: rgba(255, 255, 255, 0.2);
+      --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
       --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
-      --radius: 3px;
     }
 
     *, *::before, *::after { box-sizing: border-box; }
@@ -43,621 +40,436 @@
       background: var(--bg);
       color: var(--ink);
       font-family: var(--font-sans);
-      line-height: 1.6;
+      line-height: 1.55;
       -webkit-font-smoothing: antialiased;
     }
 
     body {
       margin: 0;
       min-block-size: 100dvh;
-      background-color: var(--bg);
-      background-image:
-        radial-gradient(ellipse 80% 38% at 50% -4%, rgba(240, 154, 43, 0.08), transparent 68%),
-        radial-gradient(circle at 85% 18%, rgba(229, 83, 61, 0.04), transparent 40%);
+      background: var(--bg);
       overflow-wrap: break-word;
     }
 
     a {
-      color: var(--amber);
-      text-decoration-thickness: 1px;
-      text-underline-offset: 3px;
-      transition: color 0.16s ease;
+      color: var(--ink);
+      text-decoration: none;
+      transition: color 0.16s ease, border-color 0.16s ease, background 0.16s ease;
     }
-    a:hover { color: #ffca73; }
+
+    a:hover { color: var(--orange); }
     a:focus-visible, button:focus-visible, summary:focus-visible {
-      outline: 2px solid var(--amber);
+      outline: 2px solid var(--orange);
       outline-offset: 3px;
     }
 
     .wrap {
-      max-inline-size: 1240px;
+      max-inline-size: 1320px;
       margin-inline: auto;
-      padding-inline: clamp(1.1rem, 3.8vw, 3rem);
+      padding-inline: clamp(1.25rem, 4vw, 3.5rem);
     }
 
-    /* ── Top Precision Bar ─────────────────────────────────────────────── */
+    /* ── Header (Exact Top-Right Match) ────────────────────────────────── */
     .topbar {
       position: sticky;
       inset-block-start: 0;
       z-index: 40;
-      background: rgba(8, 8, 10, 0.86);
+      background: rgba(17, 17, 19, 0.82);
       backdrop-filter: blur(14px);
-      border-block-end: 1px solid var(--rule);
+      border-block-end: 1px solid rgba(255, 255, 255, 0.06);
     }
 
     .topbar-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1.25rem;
-      padding-block: 0.85rem;
+      gap: 1.5rem;
+      padding-block: 1.15rem;
       flex-wrap: wrap;
     }
 
     .brand {
       display: inline-flex;
       align-items: center;
-      gap: 0.75rem;
-      text-decoration: none;
+      gap: 0.85rem;
       color: var(--ink);
     }
 
-    .brand-seal {
-      inline-size: 30px;
-      block-size: 30px;
-      object-fit: cover;
-      border-radius: 2px;
-      border: 1px solid rgba(240, 154, 43, 0.55);
-    }
-
-    .brand-name {
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
+    .brand-mark {
+      font-size: 1.55rem;
       font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+      letter-spacing: -0.03em;
+      line-height: 1;
     }
 
-    .brand-meta {
-      color: var(--ink-faint);
+    .brand-sub {
+      font-size: 0.78rem;
+      line-height: 1.25;
+      color: var(--ink-dim);
       font-weight: 400;
-      margin-inline-start: 0.5rem;
     }
 
     .nav {
       display: flex;
-      gap: clamp(0.85rem, 2vw, 1.75rem);
+      align-items: center;
+      gap: clamp(1rem, 2.2vw, 2rem);
       flex-wrap: wrap;
-      font-family: var(--font-mono);
-      font-size: 0.74rem;
+      font-size: 0.78rem;
+      font-weight: 500;
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
-    .nav a {
-      color: var(--ink-dim);
-      text-decoration: none;
-    }
+    .nav a { color: var(--ink-dim); }
     .nav a:hover { color: var(--ink); }
 
-    /* ── Hero: Museum Title + Hardware Acoustic Console ────────────────── */
+    .nav-journal {
+      color: var(--orange) !important;
+      border: 1px solid rgba(255, 114, 22, 0.72);
+      padding: 0.45rem 0.95rem;
+      border-radius: 2px;
+    }
+
+    .nav-journal:hover {
+      background: var(--orange);
+      color: #111113 !important;
+    }
+
+    /* ── Hero Stage (Full-Bleed Android Portrait + Waveform + 4 Reports) ─ */
     .hero {
-      padding-block: clamp(3.2rem, 7vw, 6rem) clamp(3rem, 6vw, 5rem);
+      position: relative;
+      min-block-size: min(90dvh, 840px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-color: var(--bg);
+      background-image:
+        linear-gradient(90deg, #111113 0%, rgba(17, 17, 19, 0.94) 36%, rgba(17, 17, 19, 0.35) 64%, rgba(17, 17, 19, 0.08) 100%),
+        linear-gradient(180deg, rgba(17, 17, 19, 0.25) 0%, transparent 22%, rgba(17, 17, 19, 0.65) 78%, #111113 100%),
+        url("assets/hero-listener.jpg");
+      background-size: cover, cover, cover;
+      background-position: center, center, right 18%;
+      background-repeat: no-repeat;
       border-block-end: 1px solid var(--rule);
     }
 
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.65rem;
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--ink-dim);
-      margin-block-end: 1.5rem;
-    }
-
-    .led {
-      inline-size: 7px;
-      block-size: 7px;
-      border-radius: 50%;
-      background: var(--vermilion);
-      box-shadow: 0 0 10px rgba(229, 83, 61, 0.75);
-    }
-
-    .hero-top {
-      display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.85fr);
-      gap: clamp(1.5rem, 4vw, 4rem);
-      align-items: end;
-      margin-block-end: clamp(2.25rem, 5vw, 3.75rem);
-    }
-
     @media (max-width: 900px) {
-      .hero-top { grid-template-columns: 1fr; align-items: start; }
+      .hero {
+        min-block-size: auto;
+        background-image:
+          linear-gradient(180deg, rgba(17, 17, 19, 0.72) 0%, rgba(17, 17, 19, 0.86) 65%, #111113 100%),
+          url("assets/hero-listener.jpg");
+        background-position: center, 72% top;
+      }
+    }
+
+    .hero-body {
+      padding-block: clamp(4rem, 10vh, 7.5rem) clamp(2.5rem, 6vh, 4.5rem);
+      position: relative;
+      z-index: 2;
     }
 
     h1 {
-      font-family: var(--font-display);
       font-weight: 400;
-      font-size: clamp(3.1rem, 1.9rem + 4.8vw, 6.2rem);
-      line-height: 0.94;
-      letter-spacing: -0.02em;
-      margin: 0;
+      font-size: clamp(2.85rem, 1.8rem + 3.8vw, 5.1rem);
+      line-height: 1.04;
+      letter-spacing: -0.03em;
+      margin: 0 0 1.45rem;
+      max-inline-size: 13ch;
       text-wrap: balance;
     }
 
-    .hero-slogan {
-      font-family: var(--font-display);
-      font-style: italic;
-      font-size: clamp(1.45rem, 1.15rem + 1.2vw, 2.35rem);
-      line-height: 1.15;
-      color: var(--amber);
-      margin: 0.85rem 0 0;
-      text-wrap: balance;
-    }
-
-    .hero-side {
-      display: flex;
-      flex-direction: column;
-      gap: 1.35rem;
-      padding-block-end: 0.35rem;
-    }
-
-    .hero-lead {
-      margin: 0;
-      font-size: clamp(0.98rem, 0.94rem + 0.25vw, 1.08rem);
-      color: var(--ink-dim);
-      max-inline-size: 48ch;
+    .hero-sub {
+      font-size: clamp(1rem, 0.95rem + 0.3vw, 1.18rem);
+      line-height: 1.55;
+      color: rgba(244, 244, 242, 0.82);
+      max-inline-size: 46ch;
+      margin: 0 0 clamp(2.2rem, 5vh, 3.6rem);
+      font-weight: 300;
       text-wrap: pretty;
     }
 
-    .hero-lead strong { color: var(--ink); font-weight: 500; }
+    /* Signature Circular Orange Play Button + Delicate Silver Waveform */
+    .hero-player {
+      display: flex;
+      align-items: center;
+      gap: clamp(1rem, 2.2vw, 1.75rem);
+      max-inline-size: 860px;
+    }
 
-    .cta-row {
+    @media (max-width: 680px) {
+      .hero-player { flex-wrap: wrap; }
+    }
+
+    .circle-play {
+      flex-shrink: 0;
+      inline-size: 58px;
+      block-size: 58px;
+      border-radius: 50%;
+      border: none;
+      background: var(--orange);
+      color: #111113;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      transition: transform 0.16s ease, background 0.16s ease;
+    }
+
+    .circle-play:hover {
+      background: var(--orange-hover);
+      transform: scale(1.04);
+    }
+
+    .circle-play svg {
+      inline-size: 20px;
+      block-size: 20px;
+      fill: currentColor;
+      margin-inline-start: 2px;
+    }
+
+    .circle-play.playing svg { margin-inline-start: 0; }
+
+    .hero-track-meta {
+      flex-shrink: 0;
+      min-inline-size: 132px;
+    }
+
+    .hero-track-id {
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      color: var(--ink);
+      letter-spacing: 0.04em;
+    }
+
+    .hero-track-title {
+      font-size: 0.88rem;
+      color: var(--ink-dim);
+      line-height: 1.3;
+    }
+
+    .hero-wave-wrap {
+      flex: 1 1 260px;
+      min-inline-size: 200px;
+      position: relative;
+    }
+
+    #hero-waveform {
+      display: block;
+      inline-size: 100%;
+      block-size: 64px;
+    }
+
+    /* Bottom Hero 4-Column Canonical Report Strip (Exact Top-Right Match) */
+    .hero-reports {
+      position: relative;
+      z-index: 2;
+      border-block-start: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(17, 17, 19, 0.72);
+      backdrop-filter: blur(8px);
+    }
+
+    .report-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    @media (max-width: 900px) {
+      .report-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 520px) {
+      .report-strip { grid-template-columns: 1fr; }
+    }
+
+    .report-col {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      padding: 1.45rem 1.5rem 1.55rem 0;
+      border-inline-end: 1px solid rgba(255, 255, 255, 0.09);
+      padding-inline-start: 1.5rem;
+      color: var(--ink);
+      transition: background 0.16s ease;
+    }
+
+    .report-col:first-child { padding-inline-start: 0; }
+    .report-col:last-child { border-inline-end: none; }
+    .report-col:hover { background: rgba(255, 255, 255, 0.03); color: var(--ink); }
+
+    @media (max-width: 900px) {
+      .report-col { padding: 1.25rem 1rem; border-block-end: 1px solid rgba(255, 255, 255, 0.09); }
+      .report-col:first-child { padding-inline-start: 1rem; }
+    }
+
+    .report-col-id {
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      color: var(--ink-dim);
+      letter-spacing: 0.04em;
+    }
+
+    .report-col-title {
+      font-size: 0.96rem;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .report-col-desc {
+      font-size: 0.82rem;
+      color: var(--ink-dim);
+      line-height: 1.4;
+      margin-block-end: 0.55rem;
+    }
+
+    .report-arrow {
+      margin-block-start: auto;
+      color: var(--orange);
+      font-size: 1rem;
+      line-height: 1;
+    }
+
+    /* ── Clean Obsidian Sections Below the Fold ────────────────────────── */
+    section.band {
+      padding-block: clamp(4.25rem, 8vw, 6.5rem);
+      border-block-end: 1px solid var(--rule);
+    }
+
+    .band-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-block-end: clamp(2.25rem, 4.5vw, 3.5rem);
+    }
+
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-block-end: 0.65rem;
+    }
+
+    h2 {
+      font-weight: 400;
+      font-size: clamp(2rem, 1.4rem + 2vw, 3.15rem);
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+      margin: 0;
+      text-wrap: balance;
+    }
+
+    .band-lead {
+      margin: 0;
+      font-size: 0.98rem;
+      color: var(--ink-dim);
+      max-inline-size: 52ch;
+      font-weight: 300;
+      text-wrap: pretty;
+    }
+
+    /* ── 01 // Interactive Blind Listening Bench ───────────────────────── */
+    .bench-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+      gap: clamp(2rem, 4.5vw, 4.5rem);
+      align-items: start;
+    }
+
+    @media (max-width: 880px) {
+      .bench-grid { grid-template-columns: 1fr; }
+    }
+
+    .bench-panel {
+      background: var(--bg-elev);
+      border: 1px solid var(--rule);
+      padding: clamp(1.35rem, 3vw, 2rem);
+      border-radius: 3px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.15rem;
+    }
+
+    .btn-row {
       display: flex;
       flex-wrap: wrap;
       gap: 0.65rem;
+      align-items: center;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.45rem;
-      padding: 0.7rem 1.15rem;
-      font-family: var(--font-mono);
-      font-size: 0.74rem;
+      gap: 0.5rem;
+      padding: 0.68rem 1.1rem;
+      font-size: 0.78rem;
       font-weight: 500;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      text-decoration: none;
       border: 1px solid var(--rule-strong);
       background: transparent;
       color: var(--ink);
-      border-radius: var(--radius);
+      border-radius: 2px;
       cursor: pointer;
-      transition: background 0.16s ease, border-color 0.16s ease, color 0.16s ease;
+      transition: all 0.15s ease;
     }
 
     .btn:hover {
-      border-color: var(--amber);
-      color: var(--amber);
-      background: rgba(240, 154, 43, 0.07);
+      border-color: var(--orange);
+      color: var(--orange);
     }
 
-    .btn-accent {
-      background: var(--vermilion);
-      border-color: var(--vermilion);
-      color: #fff;
+    .btn-orange {
+      background: var(--orange);
+      border-color: var(--orange);
+      color: #111113;
       font-weight: 600;
     }
 
-    .btn-accent:hover {
-      background: #f0654f;
-      border-color: #f0654f;
-      color: #fff;
+    .btn-orange:hover {
+      background: var(--orange-hover);
+      border-color: var(--orange-hover);
+      color: #111113;
     }
 
-    .btn-amber {
-      background: var(--amber);
-      border-color: var(--amber);
-      color: #08080a;
-      font-weight: 600;
-    }
-
-    .btn-amber:hover {
-      background: #ffbc58;
-      border-color: #ffbc58;
-      color: #08080a;
-    }
-
-    /* Hardware Instrument Console (Tektronix × Teenage Engineering) */
-    .console {
-      background: linear-gradient(180deg, #13141a 0%, #0b0c10 100%);
-      border: 1px solid var(--rule-strong);
-      border-radius: 4px;
-      padding: clamp(0.9rem, 2vw, 1.35rem);
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
-    }
-
-    .console-bar {
-      display: flex;
-      justify-content: space-between;
+    .play-pill {
+      display: inline-flex;
       align-items: center;
-      gap: 0.85rem;
-      flex-wrap: wrap;
-      padding-block-end: 0.8rem;
-      border-block-end: 1px solid var(--rule);
-      margin-block-end: 0.85rem;
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      color: var(--ink-dim);
-    }
-
-    .console-switches {
-      display: flex;
-      align-items: center;
-      gap: 0.45rem;
-      flex-wrap: wrap;
-    }
-
-    .hw-key {
-      cursor: pointer;
-      font-family: var(--font-mono);
-      font-size: 0.68rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 0.34rem 0.65rem;
-      border-radius: 2px;
-      border: 1px solid var(--rule-strong);
-      background: #090a0d;
-      color: var(--ink-dim);
-      transition: all 0.14s ease;
-    }
-
-    .hw-key:hover { border-color: var(--ink); color: var(--ink); }
-    .hw-key.active {
-      background: var(--amber);
-      border-color: var(--amber);
-      color: #08080a;
-      font-weight: 600;
-    }
-
-    .crt-frame {
-      position: relative;
-      border: 1px solid rgba(240, 154, 43, 0.25);
-      background:
-        repeating-linear-gradient(0deg, rgba(240, 154, 43, 0.035) 0 1px, transparent 1px 28px),
-        repeating-linear-gradient(90deg, rgba(240, 154, 43, 0.035) 0 1px, transparent 1px 28px),
-        #050608;
-      border-radius: 2px;
-      overflow: hidden;
-    }
-
-    #lab-oscilloscope {
-      display: block;
-      inline-size: 100%;
-      block-size: clamp(190px, 24vw, 270px);
-    }
-
-    .console-deck {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-      padding-block-start: 0.85rem;
-      margin-block-start: 0.85rem;
-      border-block-start: 1px solid var(--rule);
-    }
-
-    .scope-readout {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      color: var(--mint);
+      gap: 0.55rem;
+      padding: 0.68rem 1.1rem;
+      font-size: 0.78rem;
+      font-weight: 500;
       letter-spacing: 0.05em;
-    }
-
-    .quick-audition {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
-
-    /* ── Traction & Signal Ribbon (No Heavy Boxes) ─────────────────────── */
-    .signal-ribbon {
-      padding-block: clamp(2rem, 4vw, 3rem);
-      border-block-end: 1px solid var(--rule);
-    }
-
-    .signal-grid {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 1.5rem;
-    }
-
-    @media (max-width: 920px) {
-      .signal-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-
-    .signal-stat {
-      border-block-start: 1px solid var(--rule-strong);
-      padding-block-start: 0.85rem;
-    }
-
-    .signal-num {
-      font-family: var(--font-display);
-      font-size: clamp(2.1rem, 1.7rem + 1.4vw, 3rem);
-      line-height: 1;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 114, 22, 0.55);
+      background: rgba(255, 114, 22, 0.08);
       color: var(--ink);
-    }
-
-    .signal-num.amber { color: var(--amber); }
-    .signal-num.mint { color: var(--mint); }
-    .signal-num.vermilion { color: var(--vermilion); }
-
-    .signal-label {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--ink-dim);
-      margin-block-start: 0.45rem;
-    }
-
-    /* ── Editorial Section Cadence ─────────────────────────────────────── */
-    section.chapter {
-      padding-block: clamp(4rem, 8vw, 6.75rem);
-      border-block-end: 1px solid var(--rule);
-    }
-
-    .chapter-head {
-      display: grid;
-      grid-template-columns: minmax(0, 240px) minmax(0, 1fr);
-      gap: clamp(1rem, 3vw, 3rem);
-      align-items: baseline;
-      margin-block-end: clamp(2.25rem, 4.5vw, 3.75rem);
-    }
-
-    @media (max-width: 820px) {
-      .chapter-head { grid-template-columns: 1fr; gap: 0.65rem; }
-    }
-
-    .chapter-idx {
-      font-family: var(--font-mono);
-      font-size: 0.73rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--amber);
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    .chapter-idx::before {
-      content: "";
-      inline-size: 18px;
-      block-size: 1px;
-      background: var(--amber);
-    }
-
-    h2 {
-      font-family: var(--font-display);
-      font-weight: 400;
-      font-size: clamp(2.35rem, 1.65rem + 2.6vw, 4rem);
-      line-height: 1.02;
-      letter-spacing: -0.015em;
-      margin: 0 0 0.8rem;
-      text-wrap: balance;
-    }
-
-    .chapter-lead {
-      margin: 0;
-      font-size: clamp(0.98rem, 0.94rem + 0.25vw, 1.08rem);
-      color: var(--ink-dim);
-      max-inline-size: 64ch;
-      text-wrap: pretty;
-    }
-
-    /* ── 01 // Asymmetric Spread: Founding Program + Divisions Ledger ──── */
-    .spread {
-      display: grid;
-      grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.28fr);
-      gap: clamp(2rem, 5vw, 5rem);
-      align-items: start;
-    }
-
-    @media (max-width: 900px) {
-      .spread { grid-template-columns: 1fr; }
-    }
-
-    .founding-rail {
-      position: sticky;
-      inset-block-start: 5.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-    }
-
-    @media (max-width: 900px) {
-      .founding-rail { position: static; }
-    }
-
-    .emblem-frame {
-      border: 1px solid var(--rule-strong);
-      background: #050507;
-      padding: 0.75rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.65rem;
-    }
-
-    .emblem-frame img {
-      display: block;
-      inline-size: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-    }
-
-    .emblem-caption {
-      display: flex;
-      justify-content: space-between;
-      font-family: var(--font-mono);
-      font-size: 0.68rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--ink-faint);
-    }
-
-    .founding-title {
-      font-family: var(--font-display);
-      font-size: clamp(1.85rem, 1.5rem + 1vw, 2.5rem);
-      line-height: 1.06;
-      margin: 0;
-    }
-
-    .ledger {
-      border-block-start: 1px solid var(--rule-strong);
-    }
-
-    .ledger-row {
-      display: grid;
-      grid-template-columns: 110px minmax(0, 1fr);
-      gap: 1.25rem;
-      padding-block: 1.65rem;
-      border-block-end: 1px solid var(--rule);
-    }
-
-    @media (max-width: 600px) {
-      .ledger-row { grid-template-columns: 1fr; gap: 0.45rem; }
-    }
-
-    .ledger-num {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--amber);
-      padding-block-start: 0.35rem;
-    }
-
-    .ledger-row h3 {
-      font-family: var(--font-display);
-      font-weight: 400;
-      font-size: clamp(1.6rem, 1.35rem + 0.8vw, 2.15rem);
-      line-height: 1.1;
-      margin: 0 0 0.5rem;
-    }
-
-    .ledger-row p {
-      margin: 0 0 0.75rem;
-      color: var(--ink-dim);
-      font-size: 0.94rem;
-      max-inline-size: 56ch;
-      text-wrap: pretty;
-    }
-
-    .ledger-meta {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      color: var(--ink-faint);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem 1.25rem;
-    }
-
-    /* ── 02 // Featured Centerpiece: Blind Listening Bench ─────────────── */
-    .bench {
-      background: linear-gradient(145deg, #13141a 0%, #0b0c10 100%);
-      border: 1px solid var(--rule-strong);
-      border-radius: 4px;
-      padding: clamp(1.5rem, 3.8vw, 3rem);
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
-      gap: clamp(1.75rem, 4vw, 3.5rem);
-      align-items: start;
-    }
-
-    @media (max-width: 900px) {
-      .bench { grid-template-columns: 1fr; }
-    }
-
-    .bench-tag {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--vermilion);
-      margin-block-end: 0.75rem;
-    }
-
-    .bench h3 {
-      font-family: var(--font-display);
-      font-weight: 400;
-      font-size: clamp(2rem, 1.5rem + 1.8vw, 3.1rem);
-      line-height: 1.04;
-      margin: 0 0 1rem;
-    }
-
-    .deck-panel {
-      background: #07080b;
-      border: 1px solid var(--rule);
-      padding: 1.35rem;
-      border-radius: 3px;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .channel-pair {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.75rem;
-    }
-
-    .play-btn {
-      cursor: pointer;
-      border: 1px solid var(--amber);
-      background: rgba(240, 154, 43, 0.08);
-      color: var(--amber);
-      font-family: var(--font-mono);
-      font-size: 0.74rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 0.7rem 0.9rem;
       border-radius: 2px;
-      transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+      cursor: pointer;
+      transition: all 0.15s ease;
     }
 
-    .play-btn:hover, .play-btn.playing {
-      background: var(--amber);
-      color: #08080a;
+    .play-pill:hover, .play-pill.playing {
+      background: var(--orange);
+      border-color: var(--orange);
+      color: #111113;
     }
 
     .progress-bar {
       inline-size: 100%;
-      block-size: 3px;
-      background: rgba(244, 240, 232, 0.12);
+      block-size: 2px;
+      background: rgba(255, 255, 255, 0.12);
       overflow: hidden;
     }
 
     .progress-fill {
       inline-size: 0%;
       block-size: 100%;
-      background: var(--vermilion);
+      background: var(--orange);
       transition: inline-size 0.1s linear;
-    }
-
-    .vote-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.55rem;
     }
 
     .reveal-panel {
@@ -665,539 +477,353 @@
       border-block-start: 1px solid var(--rule);
       padding-block-start: 1rem;
       flex-direction: column;
-      gap: 0.85rem;
+      gap: 0.8rem;
     }
 
     .reveal-panel.visible { display: flex; }
 
-    .verdict-banner {
+    .verdict {
       font-family: var(--font-mono);
       font-size: 0.76rem;
       padding: 0.65rem 0.85rem;
-      border: 1px solid var(--mint);
-      background: rgba(57, 208, 168, 0.09);
+      border-inline-start: 2px solid var(--mint);
+      background: rgba(61, 214, 171, 0.08);
       color: var(--ink);
     }
 
-    .verdict-banner.miss {
-      border-color: var(--vermilion);
-      background: rgba(229, 83, 61, 0.11);
+    .verdict.miss {
+      border-inline-start-color: var(--orange);
+      background: rgba(255, 114, 22, 0.1);
     }
 
-    /* ── 03 // Monograph Journal Index (Reports) + FIG 01 Plate ────────── */
-    .journal-index {
-      border-block-start: 1px solid var(--rule-strong);
-      margin-block-end: clamp(2.5rem, 5vw, 4rem);
+    .quote {
+      margin: 0;
+      padding: 0.85rem 1rem;
+      background: #121215;
+      border-inline-start: 2px solid var(--rule-strong);
+      font-size: 0.87rem;
+      color: var(--ink-dim);
+      text-wrap: pretty;
     }
 
-    .monograph {
-      display: grid;
-      grid-template-columns: 165px minmax(0, 1.3fr) minmax(0, 0.9fr);
-      gap: clamp(1rem, 2.5vw, 2.5rem);
-      padding-block: clamp(1.5rem, 3vw, 2.25rem);
-      border-block-end: 1px solid var(--rule);
-      align-items: start;
-    }
+    .quote strong { color: var(--ink); font-weight: 500; }
 
-    @media (max-width: 920px) {
-      .monograph { grid-template-columns: 1fr; gap: 0.85rem; }
-    }
-
-    .mono-id {
-      font-family: var(--font-mono);
-      font-size: 0.86rem;
-      font-weight: 600;
-      color: var(--ink);
-      letter-spacing: 0.08em;
-    }
-
-    .status-pill {
-      display: inline-block;
-      margin-block-start: 0.45rem;
-      font-family: var(--font-mono);
-      font-size: 0.64rem;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      color: var(--mint);
-      border: 1px solid rgba(57, 208, 168, 0.38);
-      padding: 0.15rem 0.45rem;
-      border-radius: 2px;
-    }
-
-    .mono-sub {
+    .quote-tag {
       display: block;
-      margin-block-start: 0.5rem;
       font-family: var(--font-mono);
-      font-size: 0.7rem;
-      color: var(--ink-faint);
-    }
-
-    .monograph h3 {
-      font-family: var(--font-display);
-      font-weight: 400;
-      font-size: clamp(1.65rem, 1.35rem + 0.9vw, 2.25rem);
-      line-height: 1.08;
-      margin: 0 0 0.55rem;
-    }
-
-    .monograph h3 a { color: var(--ink); text-decoration: none; }
-    .monograph h3 a:hover { color: var(--amber); }
-
-    .mono-q {
-      font-size: 0.88rem;
-      color: var(--ink);
-      margin: 0 0 0.65rem;
-      text-wrap: pretty;
-    }
-
-    .mono-finding {
-      margin: 0;
-      font-size: 0.9rem;
-      color: var(--ink-dim);
-      text-wrap: pretty;
-    }
-
-    .mono-bullets {
-      margin: 0;
-      padding-inline-start: 1.1rem;
-      font-size: 0.88rem;
-      color: var(--ink-dim);
-    }
-    .mono-bullets li { margin-block-end: 0.35rem; }
-    .mono-bullets strong { color: var(--ink); font-weight: 500; }
-
-    .mono-action {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      align-items: flex-end;
-      text-align: end;
-      font-family: var(--font-mono);
-      font-size: 0.74rem;
-    }
-
-    @media (max-width: 920px) {
-      .mono-action { align-items: flex-start; text-align: start; }
-    }
-
-    .mono-metric {
-      font-family: var(--font-display);
-      font-size: clamp(1.6rem, 1.3rem + 0.8vw, 2.15rem);
-      line-height: 1;
-      color: var(--amber);
-    }
-
-    .fig-plate {
-      background: var(--surface);
-      border: 1px solid var(--rule-strong);
-      padding: clamp(1.25rem, 3vw, 2rem);
-      border-radius: 3px;
-    }
-
-    .fig-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-block-end: 1rem;
-      font-family: var(--font-mono);
-      font-size: 0.73rem;
-      letter-spacing: 0.08em;
+      font-size: 0.68rem;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: var(--amber);
+      color: var(--orange);
+      margin-block-end: 0.3rem;
     }
 
-    .chart-svg { display: block; inline-size: 100%; block-size: auto; }
-
-    .fig-note {
-      margin: 1rem 0 0;
-      padding-block-start: 0.85rem;
-      border-block-start: 1px solid var(--rule);
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      color: var(--ink-dim);
-      line-height: 1.55;
-    }
-
-    /* ── 04 // M4R-04 Interactive Track Console + 3-Col Specimens ──────── */
-    .expd-console {
-      background: var(--surface);
-      border: 1px solid var(--rule-strong);
-      border-radius: 4px;
-      padding: clamp(1.25rem, 3vw, 2.25rem);
-      margin-block-end: clamp(2.5rem, 5vw, 4rem);
-    }
-
-    .track-tabs {
+    /* ── 02 // M4R-04 Track Console & Acoustic Specimens ───────────────── */
+    .expd-bar {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
-      padding-block-end: 1.25rem;
-      border-block-end: 1px solid var(--rule);
       margin-block-end: 1.5rem;
     }
 
-    .track-tab {
+    .tab-btn {
       cursor: pointer;
       font-family: var(--font-mono);
       font-size: 0.74rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      padding: 0.55rem 0.9rem;
-      border: 1px solid var(--rule-strong);
-      background: #090a0d;
+      letter-spacing: 0.04em;
+      padding: 0.55rem 0.95rem;
+      border: 1px solid var(--rule);
+      background: transparent;
       color: var(--ink-dim);
       border-radius: 2px;
       transition: all 0.15s ease;
     }
 
-    .track-tab:hover { color: var(--ink); border-color: var(--ink); }
-    .track-tab.active {
+    .tab-btn:hover { color: var(--ink); border-color: var(--rule-strong); }
+    .tab-btn.active {
       background: var(--ink);
       border-color: var(--ink);
-      color: #08080a;
-      font-weight: 600;
+      color: #111113;
+      font-weight: 500;
     }
 
-    .expd-stage {
+    .expd-deck {
+      background: var(--bg-elev);
+      border: 1px solid var(--rule);
+      padding: clamp(1.35rem, 3vw, 2.25rem);
+      border-radius: 3px;
       display: grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.85fr);
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.85fr);
       gap: 2rem;
       align-items: center;
+      margin-block-end: 3rem;
     }
 
-    @media (max-width: 820px) {
-      .expd-stage { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 820px) { .expd-deck { grid-template-columns: 1fr; } }
 
-    .expd-title {
-      font-family: var(--font-display);
-      font-size: clamp(1.8rem, 1.45rem + 1vw, 2.5rem);
-      line-height: 1.05;
-      margin: 0 0 0.4rem;
-    }
-
-    .expd-metrics {
+    .metric-pair {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1rem;
+      gap: 1.25rem;
       border-inline-start: 1px solid var(--rule);
-      padding-inline-start: 1.5rem;
+      padding-inline-start: 1.75rem;
     }
 
     @media (max-width: 820px) {
-      .expd-metrics { border-inline-start: none; border-block-start: 1px solid var(--rule); padding-inline-start: 0; padding-block-start: 1.25rem; }
+      .metric-pair { border-inline-start: none; border-block-start: 1px solid var(--rule); padding-inline-start: 0; padding-block-start: 1.25rem; }
     }
 
-    .metric-val {
-      font-family: var(--font-display);
-      font-size: 2.2rem;
+    .metric-big {
+      font-size: clamp(1.9rem, 1.5rem + 1vw, 2.6rem);
+      font-weight: 300;
+      letter-spacing: -0.03em;
       line-height: 1;
-      color: var(--amber);
+      color: var(--ink);
     }
 
-    .metric-val.drop { color: var(--vermilion); }
+    .metric-big.orange { color: var(--orange); }
 
-    .metric-lbl {
+    .metric-cap {
       font-family: var(--font-mono);
       font-size: 0.68rem;
-      letter-spacing: 0.08em;
       text-transform: uppercase;
+      letter-spacing: 0.07em;
       color: var(--ink-dim);
-      margin-block-start: 0.35rem;
+      margin-block-start: 0.4rem;
     }
 
-    /* 3-Column Acoustic Specimen Strip */
-    .specimen-strip {
+    .spec-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 2rem;
     }
 
-    @media (max-width: 920px) {
-      .specimen-strip { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 900px) { .spec-grid { grid-template-columns: 1fr; } }
 
-    .specimen-col {
-      border-block-start: 1px solid var(--rule-strong);
+    .spec-item {
+      border-block-start: 1px solid var(--rule);
       padding-block-start: 1.25rem;
       display: flex;
       flex-direction: column;
       gap: 0.85rem;
     }
 
-    .specimen-col h3 {
-      font-family: var(--font-display);
+    .spec-item h3 {
       font-weight: 400;
-      font-size: 1.75rem;
-      line-height: 1.08;
+      font-size: 1.35rem;
+      letter-spacing: -0.015em;
       margin: 0;
     }
 
-    .quote-block {
-      margin: 0;
-      padding: 0.85rem 1rem;
-      background: #0b0c10;
-      border-inline-start: 2px solid var(--amber);
-      font-size: 0.86rem;
-      color: var(--ink);
-      text-wrap: pretty;
-    }
-
-    .quote-model {
-      display: block;
-      font-family: var(--font-mono);
-      font-size: 0.67rem;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      color: var(--mint);
-      margin-block-end: 0.3rem;
-    }
-
-    details.disclosure {
+    details.more {
       border-block-start: 1px solid var(--rule);
       padding-block-start: 0.7rem;
       margin-block-start: auto;
     }
 
-    details.disclosure summary {
+    details.more summary {
       cursor: pointer;
       font-family: var(--font-mono);
       font-size: 0.72rem;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: var(--amber);
+      color: var(--orange);
       list-style: none;
     }
 
-    details.disclosure summary::-webkit-details-marker { display: none; }
-    details.disclosure summary::before { content: "+ "; font-weight: 600; }
-    details.disclosure[open] summary::before { content: "− "; }
-    details.disclosure[open] summary { margin-block-end: 0.75rem; }
+    details.more summary::-webkit-details-marker { display: none; }
+    details.more summary::before { content: "+ "; }
+    details.more[open] summary::before { content: "− "; }
+    details.more[open] summary { margin-block-end: 0.75rem; }
 
-    /* ── 05 // Telemetry Table ─────────────────────────────────────────── */
+    /* ── 03 // Founding Program & Four Divisions (Clean Hairline Rows) ─── */
+    .founding-banner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.85fr);
+      gap: 2rem;
+      padding: 1.75rem 2rem;
+      background: var(--bg-elev);
+      border: 1px solid var(--rule);
+      border-inline-start: 2px solid var(--orange);
+      margin-block-end: 2rem;
+      align-items: center;
+    }
+
+    @media (max-width: 820px) { .founding-banner { grid-template-columns: 1fr; } }
+
+    .div-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.75rem;
+    }
+
+    @media (max-width: 980px) { .div-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 560px) { .div-grid { grid-template-columns: 1fr; } }
+
+    .div-col {
+      border-block-start: 1px solid var(--rule);
+      padding-block-start: 1.15rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    .div-col h3 {
+      font-weight: 500;
+      font-size: 1.1rem;
+      margin: 0;
+    }
+
+    .div-col p {
+      margin: 0;
+      font-size: 0.87rem;
+      color: var(--ink-dim);
+      font-weight: 300;
+      text-wrap: pretty;
+    }
+
+    .div-foot {
+      margin-block-start: auto;
+      padding-block-start: 0.65rem;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--ink-faint);
+    }
+
+    /* ── 04 // Data: FIG 01 & Telemetry Table ──────────────────────────── */
+    .fig-box {
+      background: var(--bg-elev);
+      border: 1px solid var(--rule);
+      padding: clamp(1.25rem, 3vw, 2rem);
+      margin-block-end: 2.25rem;
+    }
+
+    .chart-svg { display: block; inline-size: 100%; block-size: auto; }
+
+    .fig-note {
+      margin: 0.9rem 0 0;
+      padding-block-start: 0.75rem;
+      border-block-start: 1px solid var(--rule);
+      font-family: var(--font-mono);
+      font-size: 0.71rem;
+      color: var(--ink-dim);
+    }
+
     .table-wrap {
       overflow: auto;
       max-inline-size: 100%;
       container-type: inline-size;
-      border: 1px solid var(--rule-strong);
-      background: var(--surface);
+      border: 1px solid var(--rule);
+      background: var(--bg-elev);
     }
 
-    table { inline-size: 100%; border-collapse: separate; border-spacing: 0; font-size: 0.86rem; }
+    table { inline-size: 100%; border-collapse: separate; border-spacing: 0; font-size: 0.85rem; }
     caption {
       text-align: start;
       padding: 0.9rem 1.2rem;
       font-family: var(--font-mono);
-      font-size: 0.74rem;
+      font-size: 0.72rem;
       color: var(--ink-dim);
       border-block-end: 1px solid var(--rule);
     }
     thead th {
-      background: #14161e;
+      background: #1a1a1e;
       color: var(--ink-dim);
       font-family: var(--font-mono);
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       text-transform: uppercase;
       letter-spacing: 0.07em;
       text-align: start;
       padding: 0.8rem 1.1rem;
       border-block-end: 1px solid var(--rule-strong);
       white-space: nowrap;
-      text-wrap: balance;
     }
     tbody th, tbody td {
       padding: 0.8rem 1.1rem;
       border-block-end: 1px solid var(--rule);
     }
-    tbody th {
-      font-family: var(--font-mono);
-      font-weight: 600;
-      text-align: start;
-      white-space: nowrap;
-    }
-    tbody tr:hover td, tbody tr:hover th { background: rgba(240, 154, 43, 0.045); }
-    .num-good { color: var(--mint); font-family: var(--font-mono); font-weight: 600; }
-    .num-warn { color: var(--vermilion); font-family: var(--font-mono); font-weight: 600; }
+    tbody th { font-family: var(--font-mono); font-weight: 500; text-align: start; white-space: nowrap; }
+    tbody tr:hover td, tbody tr:hover th { background: rgba(255, 255, 255, 0.025); }
+    .num-good { color: var(--mint); font-family: var(--font-mono); }
+    .num-warn { color: var(--orange); font-family: var(--font-mono); }
     .num-mono { font-family: var(--font-mono); }
 
     @container (width < 640px) {
       table, thead, tbody, tr, th, td { display: block; }
       thead { display: none; }
-      tr { margin: 0.85rem; border: 1px solid var(--rule-strong); }
-      tbody th { background: #14161e; border-block-end: 1px solid var(--rule); }
+      tr { margin: 0.8rem; border: 1px solid var(--rule); }
+      tbody th { background: #1a1a1e; border-block-end: 1px solid var(--rule); }
       tbody td { display: flex; justify-content: space-between; gap: 1rem; text-align: end; }
-      tbody td::before {
-        content: attr(data-label);
-        font-family: var(--font-mono);
-        font-size: 0.7rem;
-        color: var(--ink-dim);
-        text-align: start;
-      }
+      tbody td::before { content: attr(data-label); font-family: var(--font-mono); font-size: 0.68rem; color: var(--ink-dim); text-align: start; }
     }
 
-    /* ── 06 // Charter, Human Leadership vs. Multi-Agent Salon, COR ────── */
-    .charter-statement {
-      padding-block: clamp(2rem, 4vw, 3.25rem);
-      border-block: 1px solid var(--rule-strong);
-      margin-block-end: clamp(2.5rem, 5vw, 4rem);
+    /* ── 05 // Institution, Correspondence & Open Archive ──────────────── */
+    .charter-row {
       display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
       gap: clamp(1.5rem, 4vw, 4rem);
-      align-items: start;
+      padding-block-end: 2.75rem;
+      margin-block-end: 2.75rem;
+      border-block-end: 1px solid var(--rule);
     }
 
-    @media (max-width: 860px) {
-      .charter-statement { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 820px) { .charter-row { grid-template-columns: 1fr; } }
 
     .charter-quote {
-      font-family: var(--font-display);
-      font-style: italic;
-      font-size: clamp(2.1rem, 1.55rem + 2.2vw, 3.4rem);
-      line-height: 1.06;
-      margin: 0 0 0.85rem;
-      color: var(--ink);
-      text-wrap: balance;
+      font-size: clamp(1.65rem, 1.25rem + 1.4vw, 2.45rem);
+      font-weight: 300;
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+      margin: 0 0 0.75rem;
     }
 
-    .pi-card {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 2rem;
-      padding: 1.75rem 2rem;
-      border: 1px solid rgba(240, 154, 43, 0.45);
-      background: linear-gradient(135deg, rgba(240, 154, 43, 0.07), rgba(15, 16, 20, 0.95));
-      margin-block-end: 2.5rem;
-      align-items: center;
-    }
-
-    @media (max-width: 780px) {
-      .pi-card { grid-template-columns: 1fr; }
-    }
-
-    .salon-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 1.5rem 2rem;
-      margin-block-end: 3rem;
-    }
-
-    @media (max-width: 980px) { .salon-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-    @media (max-width: 540px) { .salon-grid { grid-template-columns: 1fr; } }
-
-    .agent-role {
-      border-block-start: 1px solid var(--rule);
-      padding-block-start: 0.9rem;
-    }
-
-    .agent-tag {
-      font-family: var(--font-mono);
-      font-size: 0.66rem;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      color: var(--amber);
-    }
-
-    .agent-role h4 {
-      font-family: var(--font-display);
-      font-weight: 400;
-      font-size: 1.45rem;
-      margin: 0.25rem 0 0.4rem;
-    }
-
-    .agent-role p {
-      margin: 0;
-      font-size: 0.84rem;
-      color: var(--ink-dim);
-      text-wrap: pretty;
-    }
-
-    .cor-strip {
+    .cor-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 2rem;
-      padding-block-start: 2rem;
-      border-block-start: 1px solid var(--rule-strong);
+      margin-block-start: 2.5rem;
+      padding-block-start: 2.25rem;
+      border-block-start: 1px solid var(--rule);
     }
 
-    @media (max-width: 860px) { .cor-strip { grid-template-columns: 1fr; } }
+    @media (max-width: 860px) { .cor-grid { grid-template-columns: 1fr; } }
 
-    .cor-id {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      color: var(--mint);
-    }
-
-    .cor-entry h4 {
-      font-family: var(--font-display);
-      font-weight: 400;
-      font-size: 1.45rem;
-      margin: 0.3rem 0 0.35rem;
-    }
-
-    .cor-meta {
-      font-family: var(--font-mono);
-      font-size: 0.69rem;
-      color: var(--ink-faint);
-      margin-block-end: 0.55rem;
-    }
-
-    .cor-entry p {
-      margin: 0 0 0.65rem;
-      font-size: 0.87rem;
-      color: var(--ink-dim);
-      text-wrap: pretty;
-    }
-
-    /* ── 07 // Dark-Mode Dispatch & Bandcamp Archive (No White Iframe!) ── */
-    .dispatch-grid {
+    .two-col {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 2rem;
-      margin-block-end: 2.25rem;
+      margin-block-end: 2rem;
     }
 
-    @media (max-width: 820px) { .dispatch-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 800px) { .two-col { grid-template-columns: 1fr; } }
 
-    .dispatch-card {
-      background: var(--surface);
-      border: 1px solid var(--rule-strong);
+    .dark-card {
+      background: var(--bg-elev);
+      border: 1px solid var(--rule);
       padding: clamp(1.5rem, 3vw, 2.25rem);
-      border-radius: 3px;
       display: flex;
       flex-direction: column;
-      gap: 0.9rem;
+      gap: 0.85rem;
     }
 
-    .dispatch-card h3 {
-      font-family: var(--font-display);
+    .dark-card h3 {
       font-weight: 400;
-      font-size: clamp(1.75rem, 1.45rem + 0.9vw, 2.35rem);
-      line-height: 1.08;
+      font-size: 1.55rem;
+      letter-spacing: -0.02em;
       margin: 0;
     }
 
-    .dispatch-card p {
+    .dark-card p {
       margin: 0;
       color: var(--ink-dim);
-      font-size: 0.93rem;
-      text-wrap: pretty;
-    }
-
-    .infra-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.65rem;
+      font-size: 0.92rem;
+      font-weight: 300;
     }
 
     footer {
-      padding-block: 2.5rem 4rem;
+      padding-block: 2.5rem 3.75rem;
       font-family: var(--font-mono);
-      font-size: 0.74rem;
+      font-size: 0.72rem;
       color: var(--ink-faint);
     }
 
@@ -1222,233 +848,118 @@
   <header class="topbar">
     <div class="wrap topbar-inner">
       <a class="brand" href="#top">
-        <img class="brand-seal" src="favicon.jpg" alt="Music for Robots Laboratory Emblem" width="30" height="30" />
-        <span class="brand-name">Music for Robots Laboratory <span class="brand-meta">/ Est. 2025</span></span>
+        <span class="brand-mark">M4R</span>
+        <span class="brand-sub">Music For Robots<br />Laboratory</span>
       </a>
       <nav class="nav" aria-label="Primary navigation">
         <a href="#divisions">Divisions</a>
-        <a href="#blind-bench">Blind Test</a>
         <a href="#reports">Reports</a>
-        <a href="#continuation">M4R-04</a>
-        <a href="#charter">Charter</a>
-        <a href="#dispatch">Journal</a>
-        <a href="llms.txt">llms.txt</a>
+        <a href="#listen">Listen</a>
+        <a href="#data">Data</a>
+        <a class="nav-journal" href="https://themechanicalear.substack.com" target="_blank" rel="noopener">Journal</a>
       </nav>
     </div>
   </header>
 
   <main id="top">
-    <!-- Hero Exhibition -->
-    <section class="hero">
-      <div class="wrap">
-        <div class="hero-eyebrow">
-          <span class="led" aria-hidden="true"></span>
-          <span>M4R // Independent Research Laboratory · Open Corpus CC-BY-4.0</span>
-        </div>
+    <!-- Hero Stage (Exact Top-Right Obsidian Composition) -->
+    <section class="hero" aria-label="Music For Robots Laboratory Hero">
+      <div class="wrap hero-body">
+        <h1>Designing Music<br />for Artificial Minds</h1>
+        <p class="hero-sub">
+          An independent research laboratory designing the first generation of music for robots, robopsychology, and the empirical study of sound.
+        </p>
 
-        <div class="hero-top">
-          <div>
-            <h1>Music for Robots Laboratory</h1>
-            <p class="hero-slogan">Designing the first generation of music for robots.</p>
+        <div class="hero-player">
+          <button class="circle-play" type="button" id="hero-play-btn" aria-label="Play Ties That Bide unquantized acoustic specimen" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/ties-that-bide/audio.mp3" data-track="hero-main" data-label="M4R-02 · Ties That Bide (0:09)">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="6,4 20,12 6,20" /></svg>
+          </button>
+          <div class="hero-track-meta">
+            <div class="hero-track-id" id="hero-now-id">M4R-02</div>
+            <div class="hero-track-title" id="hero-now-title">Ties That Bide<br />0:09 &middot; Unquantized</div>
           </div>
-          <div class="hero-side">
-            <p class="hero-lead">
-              An independent compositional and robopsychology laboratory writing <strong>unquantized music for artificial minds</strong> and measuring how multimodal models listen, drift past 30 seconds, confabulate under blind A/B tests, and flatten human rubato.
-            </p>
-            <div class="cta-row">
-              <a class="btn btn-accent" href="#blind-bench">Take the Blind Listening Test</a>
-              <a class="btn" href="#reports">Read M4R-01&ndash;04</a>
-              <a class="btn" href="https://themechanicalear.substack.com" target="_blank" rel="noopener">The Mechanical Ear</a>
-            </div>
+          <div class="hero-wave-wrap">
+            <canvas id="hero-waveform" width="640" height="64" aria-label="Live audio waveform"></canvas>
           </div>
         </div>
+      </div>
 
-        <!-- Hardware-Grade Dual-Mode Oscilloscope / FFT Console -->
-        <div class="console" aria-label="Live Dual-Mode Acoustic Telemetry Console">
-          <div class="console-bar">
-            <span>INST-01 // LIVE ACOUSTIC MONITOR &middot; 44.1 kHz WEB AUDIO ANALYSER</span>
-            <div class="console-switches">
-              <button class="hw-key active" type="button" id="mode-wave">Wave</button>
-              <button class="hw-key" type="button" id="mode-fft">Spectrum</button>
-              <button class="hw-key" type="button" id="scope-freeze">Freeze</button>
-            </div>
-          </div>
-          <div class="crt-frame">
-            <canvas id="lab-oscilloscope" width="1120" height="260"></canvas>
-          </div>
-          <div class="console-deck">
-            <span class="scope-readout" id="scope-readout">STANDBY · AUDITION ANY SPECIMEN TO INSPECT REAL-TIME SIGNAL</span>
-            <div class="quick-audition">
-              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/ties-that-bide/audio.mp3" data-track="hero-ttb" data-label="LIVE SIGNAL · TIES THAT BIDE (9.25s UNQUANTIZED)">Audition 9.25s Miniature</button>
-              <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/rusty-electrics/audio.mp3" data-track="hero-re" data-label="LIVE SIGNAL · RUSTY ELECTRICS (184s · 56.1 dB DR)">Audition Rusty Electrics</button>
-            </div>
-          </div>
+      <!-- 4-Column Canonical Lab Reports Anchored Across Bottom of Hero -->
+      <div class="hero-reports" id="reports">
+        <div class="wrap report-strip">
+          <a class="report-col" href="reports/m4r-01.html">
+            <span class="report-col-id">M4R-01 &middot; 80 Trials</span>
+            <span class="report-col-title">The Lock-In Breaker</span>
+            <span class="report-col-desc">+33.3% constraint retention &amp; 13&times; cliché drop after &lt;15s audio.</span>
+            <span class="report-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+
+          <a class="report-col" href="reports/m4r-02.html">
+            <span class="report-col-id">M4R-02 &middot; 196 Trials</span>
+            <span class="report-col-title">The Duration Cliff</span>
+            <span class="report-col-desc">1.000 onset F1 under 15s; temporal grounding breaks at 25&ndash;30s.</span>
+            <span class="report-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+
+          <a class="report-col" href="reports/m4r-03.html">
+            <span class="report-col-id">M4R-03 &middot; 42 Trials</span>
+            <span class="report-col-title">The Quantized Twin</span>
+            <span class="report-col-desc">8/8 Clip-A confabulation, 0&ndash;10s ceiling &amp; 7B debugging null audit.</span>
+            <span class="report-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+
+          <a class="report-col" href="reports/m4r-04.html">
+            <span class="report-col-id">M4R-04 &middot; 10 Trials</span>
+            <span class="report-col-title">Finish the Phrase</span>
+            <span class="report-col-desc">MusicGen matches timbre (0.993) while smoothing rubato 21%&ndash;41%.</span>
+            <span class="report-arrow" aria-hidden="true">&rarr;</span>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- Empirical Scale & Open-Source Traction Ribbon -->
-    <div class="signal-ribbon">
-      <div class="wrap signal-grid">
-        <div class="signal-stat">
-          <div class="signal-num amber">328</div>
-          <div class="signal-label">Empirical GPU &amp; Frontier Trials</div>
-        </div>
-        <div class="signal-stat">
-          <div class="signal-num">M4R-01&ndash;04</div>
-          <div class="signal-label">Canonical Lab Reports</div>
-        </div>
-        <div class="signal-stat">
-          <div class="signal-num mint">1.000 F1</div>
-          <div class="signal-label">Under 15s &middot; 25&ndash;30s Cliff</div>
-        </div>
-        <div class="signal-stat">
-          <div class="signal-num vermilion">&minus;21% to &minus;41%</div>
-          <div class="signal-label">Human Rubato Flattened by AI</div>
-        </div>
-        <div class="signal-stat">
-          <div class="signal-num">700+</div>
-          <div class="signal-label">Open Corpus Clones &amp; Downloads</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 01 // Founding Program & Four Parallel Research Divisions -->
-    <section class="chapter" id="divisions">
+    <!-- 01 // Interactive Blind Listening Bench -->
+    <section class="band" id="listen">
       <div class="wrap">
-        <div class="chapter-head">
-          <div class="chapter-idx">01 / Architecture</div>
+        <div class="band-head">
           <div>
-            <h2>Founding Program &amp; Research Divisions</h2>
-            <p class="chapter-lead">
-              Original human composition is the laboratory&rsquo;s founding program and acoustic substrate—supporting four parallel scientific and engineering divisions.
-            </p>
+            <div class="eyebrow">01 / Blind Listening Bench &middot; M4R-03</div>
+            <h2>Human vs. Quantized Twin</h2>
           </div>
+          <p class="band-lead">
+            Same notes, same guitar, same 21.0s recording—except one clip had all 79 inter-onset intervals snapped to a strict median mechanical grid. Order is randomized on load.
+          </p>
         </div>
 
-        <div class="spread">
-          <aside class="founding-rail">
-            <div class="emblem-frame">
-              <img src="favicon.jpg" alt="Music for Robots Laboratory Mechanical Ear Emblem" width="420" height="420" loading="eager" />
-              <div class="emblem-caption">
-                <span>FOUNDING PROGRAM</span>
-                <span>CC-BY-4.0 OPEN CORPUS</span>
-              </div>
-            </div>
-            <h3 class="founding-title">Composition for Artificial Minds</h3>
-            <p style="margin:0; color:var(--ink-dim); font-size:0.94rem; text-wrap:pretty;">
-              Writing and performing a growing catalog of unquantized acoustic &amp; electric works specifically for artificial listeners. Every laboratory finding—from &lt;15s temporal horizons and 70.8 dB dynamic chasms to &gt;16 kHz transient air—feeds directly back into the next composition.
-            </p>
-            <div class="ledger-meta">
-              <span>PI &amp; Composer: Michael Luchtan</span>
-              <a href="https://music4robots.bandcamp.com/music" target="_blank" rel="noopener">24-Bit Lossless Archive &rarr;</a>
-            </div>
-          </aside>
-
-          <div class="ledger">
-            <article class="ledger-row">
-              <div class="ledger-num">Division 01</div>
-              <div>
-                <h3>Robopsychology</h3>
-                <p>
-                  The Susan Calvin Division: investigating observable behavior, temporal grounding ceilings, blind evaluation confabulation, and mode-collapse interruption when AI agents encounter unquantized human music.
-                </p>
-                <div class="ledger-meta">
-                  <span>Active Reports: <a href="reports/m4r-01.html">M4R-01</a>, <a href="reports/m4r-02.html">M4R-02</a>, <a href="reports/m4r-03.html">M4R-03</a></span>
-                  <span>Focus: Perception, Bias &amp; Failure Modes</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="ledger-row">
-              <div class="ledger-num">Division 02</div>
-              <div>
-                <h3>Musical Communication</h3>
-                <p>
-                  Investigating whether rhythmic structure and microtiming can serve as a non-textual signaling channel between artificial agents—preparing <code>MC-01: The Rhythmic Handshake</code>, where two agents coordinate a shared task using only constrained rhythmic pulses.
-                </p>
-                <div class="ledger-meta">
-                  <span>Upcoming Protocol: MC-01</span>
-                  <span>Focus: Agent-to-Agent Acoustic Signaling</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="ledger-row">
-              <div class="ledger-num">Division 03</div>
-              <div>
-                <h3>Agent Composition</h3>
-                <p>
-                  Testing whether generative audio models can preserve human rubato, phrasing, and dynamic silence when asked to continue unquantized acoustic &amp; electric performances—or whether they collapse back onto the statistical mean.
-                </p>
-                <div class="ledger-meta">
-                  <span>Active Report: <a href="reports/m4r-04.html">M4R-04</a></span>
-                  <span>Focus: Phrase Continuation &amp; Co-Composition</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="ledger-row">
-              <div class="ledger-num">Division 04</div>
-              <div>
-                <h3>Experimental Instruments &amp; Audiovisual Systems</h3>
-                <p>
-                  Building TouchDesigner, Python, Ableton, and MCP interfaces through which artificial agents inhabit live sonic environments, inspect acoustic telemetry, and render audio-reactive visual plates.
-                </p>
-                <div class="ledger-meta">
-                  <span>Interfaces: MCP Server · TouchDesigner · Web Audio</span>
-                  <span><a href="llms.txt">Agent Manifest (llms.txt) &rarr;</a></span>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 02 // Standalone Interactive Blind Listening Bench -->
-    <section class="chapter" id="blind-bench">
-      <div class="wrap">
-        <div class="chapter-head">
-          <div class="chapter-idx">02 / Listening Bench</div>
+        <div class="bench-grid">
           <div>
-            <h2>Can You Beat a 7B Audio Model?</h2>
-            <p class="chapter-lead">
-              In <a href="reports/m4r-03.html">M4R-03</a>, we pitted Michael Luchtan&rsquo;s real unquantized guitar recording against its mathematically quantized twin (all 79 inter-onset intervals snapped to a strict median mechanical grid). Order is randomized on load.
+            <h3 style="font-weight:400; font-size:1.65rem; letter-spacing:-0.02em; margin:0 0 0.75rem;">Bided Ties (21.0s)</h3>
+            <p style="margin:0 0 1.25rem; color:var(--ink-dim); font-size:0.95rem; font-weight:300; text-wrap:pretty;">
+              Listen to Channel A and Channel B on the live hero waveform above, decide which performance was played by a human, and reveal how <code>Qwen2-Audio-7B-Instruct</code> behaved across 8 blind trials.
             </p>
-          </div>
-        </div>
-
-        <div class="bench">
-          <div>
-            <div class="bench-tag">M4R-03 // Blind Human vs. Quantized Twin &middot; 21.0s</div>
-            <h3>Bided Ties</h3>
-            <p style="margin:0 0 1rem; color:var(--ink-dim); font-size:0.95rem; text-wrap:pretty;">
-              Identical notes, identical room tone, identical guitar timbre—only the human microtiming drift has been removed from one clip. Listen to both channels on the live oscilloscope, make your judgment, and reveal what <code>Qwen2-Audio-7B-Instruct</code> did across 8 randomized trials.
-            </p>
-            <div class="ledger-meta">
-              <span>Track: <code>bided-ties</code> (Time &amp; Ties)</span>
-              <span>Onsets Snapped: 79</span>
-              <span>Model Tested: Qwen2-Audio-7B</span>
+            <div style="font-family:var(--font-mono); font-size:0.72rem; color:var(--ink-faint); display:flex; flex-wrap:wrap; gap:0.75rem 1.5rem;">
+              <span>CORPUS: TIME &amp; TIES</span>
+              <span>ONSETS SNAPPED: 79</span>
+              <span>MODEL: QWEN2-AUDIO-7B</span>
             </div>
           </div>
 
-          <div class="deck-panel" id="blind-test">
-            <div class="channel-pair">
-              <button class="play-btn" type="button" id="blind-play-a" data-track="blind-bt" data-label="M4R-03 BLIND BENCH · CHANNEL A (21.0s)">Play Channel A</button>
-              <button class="play-btn" type="button" id="blind-play-b" data-track="blind-bt" data-label="M4R-03 BLIND BENCH · CHANNEL B (21.0s)">Play Channel B</button>
+          <div class="bench-panel" id="blind-test">
+            <div class="btn-row">
+              <button class="play-pill" type="button" id="blind-play-a" data-track="blind-bt" data-label="M4R-03 · Channel A (21.0s)">&#9654; Play Channel A</button>
+              <button class="play-pill" type="button" id="blind-play-b" data-track="blind-bt" data-label="M4R-03 · Channel B (21.0s)">&#9654; Play Channel B</button>
+              <button class="btn" type="button" id="blind-shuffle" style="margin-inline-start:auto;">Shuffle A/B</button>
             </div>
             <div class="progress-bar"><div class="progress-fill" id="prog-blind-bt"></div></div>
-            <div class="vote-row">
+            <div class="btn-row">
               <button class="btn" type="button" id="guess-a">Ch A is Human</button>
               <button class="btn" type="button" id="guess-b">Ch B is Human</button>
-              <button class="btn btn-accent" type="button" id="blind-reveal-btn">Reveal Ground Truth</button>
-              <button class="hw-key" type="button" id="blind-shuffle" style="margin-inline-start:auto;">Shuffle A/B</button>
+              <button class="btn btn-orange" type="button" id="blind-reveal-btn">Reveal Ground Truth</button>
             </div>
             <div class="reveal-panel" id="blind-reveal-panel">
-              <div class="verdict-banner" id="blind-verdict"></div>
-              <blockquote class="quote-block" style="border-inline-start-color: var(--vermilion);">
-                <span class="quote-model" style="color: var(--vermilion);">Qwen2-Audio-7B Result (8/8 Clip-A Position-Bias Confabulation)</span>
+              <div class="verdict" id="blind-verdict"></div>
+              <blockquote class="quote">
+                <span class="quote-tag">Qwen2-Audio-7B Result (8/8 Clip-A Position-Bias Confabulation)</span>
                 When the real human recording played first, Qwen2-Audio praised Clip A&rsquo;s &ldquo;noticeable hesitations&rdquo; and called Clip B &ldquo;highly processed.&rdquo; When we swapped the order so the <strong>quantized twin</strong> played first, the exact same model still chose Clip A—praising its &ldquo;occasional hesitations&rdquo; and calling the real human clip &ldquo;overly regimented.&rdquo;
               </blockquote>
             </div>
@@ -1457,289 +968,224 @@
       </div>
     </section>
 
-    <!-- 03 // Canonical Lab Reports (Journal Monograph Index + FIG 01) -->
-    <section class="chapter" id="reports">
+    <!-- 02 // M4R-04 Continuation Console & Acoustic Specimens -->
+    <section class="band" id="continuation">
       <div class="wrap">
-        <div class="chapter-head">
-          <div class="chapter-idx">03 / Scientific Record</div>
+        <div class="band-head">
           <div>
-            <h2>Canonical Lab Reports</h2>
-            <p class="chapter-lead">
-              Permanent, versioned monographs documenting our research questions, experimental protocols, raw CSV artifacts, and honest null results.
-            </p>
+            <div class="eyebrow">02 / Continuation Lab &middot; M4R-04</div>
+            <h2>Can a Robot Finish a Human&rsquo;s Phrase?</h2>
           </div>
-        </div>
-
-        <div class="journal-index">
-          <article class="monograph">
-            <div>
-              <div class="mono-id">M4R-01</div>
-              <span class="status-pill">Published · Rev 1.0</span>
-              <span class="mono-sub">Div 01 · 80 Trials · Nov 2026</span>
-            </div>
-            <div>
-              <h3><a href="reports/m4r-01.html">The Lock-In Breaker</a></h3>
-              <p class="mono-q"><strong>Question:</strong> Can a &lt;15s unquantized listening pass break 40-turn context lock-in better than noise or a 120 BPM click?</p>
-              <p class="mono-finding">A 2-turn unquantized listening pass outperforms text-only (<code>C0</code>), white noise (<code>C1</code>), and metronome click (<code>C1b</code>) monotonically—lifting hard-constraint retention and slashing banned AI cliché jargon.</p>
-            </div>
-            <div class="mono-action">
-              <div class="mono-metric">+33.3% / 13&times;</div>
-              <span style="color:var(--ink-dim);">Constraint lift · Cliché drop</span>
-              <a href="reports/m4r-01.html">Open Monograph &rarr;</a>
-            </div>
-          </article>
-
-          <article class="monograph">
-            <div>
-              <div class="mono-id">M4R-02</div>
-              <span class="status-pill">Published · Rev 1.0</span>
-              <span class="mono-sub">Div 01 · 196 Trials · Nov 2026</span>
-            </div>
-            <div>
-              <h3><a href="reports/m4r-02.html">The Duration Cliff</a></h3>
-              <p class="mono-q"><strong>Question:</strong> How does temporal event grounding degrade as unquantized musical duration increases?</p>
-              <p class="mono-finding">Across <strong>157 preregistered rubric trials + 39 Experiment B GPU trials</strong>, both <code>Gemini 3 Flash</code> and 2-turn <code>Qwen2-Audio-7B</code> hit <code>1.000</code> onset F1 under 15s, confess losing the rhythmic grid at 25&ndash;30s, and collapse past 3 minutes.</p>
-            </div>
-            <div class="mono-action">
-              <div class="mono-metric" style="color:var(--mint);">1.000 &rarr; 0.365</div>
-              <span style="color:var(--ink-dim);">Onset F1 across 25&ndash;30s cliff</span>
-              <a href="reports/m4r-02.html">Open Monograph &rarr;</a>
-            </div>
-          </article>
-
-          <article class="monograph">
-            <div>
-              <div class="mono-id">M4R-03</div>
-              <span class="status-pill">Published · Rev 1.0</span>
-              <span class="mono-sub">Div 01 · 42 Trials · Nov 2026</span>
-            </div>
-            <div>
-              <h3><a href="reports/m4r-03.html">The Human and the Quantized Twin</a></h3>
-              <p class="mono-q"><strong>Question:</strong> Can a 7B model separate human rubato from a quantized twin, track events past 30s, or resist sycophantic code bugs?</p>
-              <ul class="mono-bullets">
-                <li><strong>Temporal ceiling:</strong> Past 30s, <code>Qwen2-Audio-7B</code> compressed all timestamps into <code>0.48s&ndash;9.73s</code>.</li>
-                <li><strong>Evaluation bias:</strong> <strong>100% Clip-A preference</strong> (8/8) in blind A/B comparisons, even when Clip A was quantized.</li>
-                <li><strong>Honest null result:</strong> <code>0%</code> bug-catch rate on 7B Python debugging traps across all 4 conditions (<code>n=24</code>).</li>
-              </ul>
-            </div>
-            <div class="mono-action">
-              <div class="mono-metric" style="color:var(--vermilion);">8/8 Bias &middot; 0&ndash;10s</div>
-              <span style="color:var(--ink-dim);">Failure &amp; null audit</span>
-              <a href="reports/m4r-03.html">Open Monograph &rarr;</a>
-            </div>
-          </article>
-
-          <article class="monograph">
-            <div>
-              <div class="mono-id">M4R-04</div>
-              <span class="status-pill">Published · Rev 1.0</span>
-              <span class="mono-sub">Div 03 · 10 Trials · Nov 2026</span>
-            </div>
-            <div>
-              <h3><a href="reports/m4r-04.html">Finish the Human&rsquo;s Phrase</a></h3>
-              <p class="mono-q"><strong>Question:</strong> When a generative audio model finishes an unquantized human phrase, does it preserve rubato or flatten it?</p>
-              <p class="mono-finding">Blind continuation on <code>facebook/musicgen-small</code> stalled into <code>49.5&ndash;58.0 dB</code> dropouts; text-guided continuation nailed timbre (<code>0.948&ndash;0.993</code> MFCC) while smoothing human rubato <strong>21%&ndash;41%</strong> on 4 of 5 tracks.</p>
-            </div>
-            <div class="mono-action">
-              <div class="mono-metric" style="color:var(--vermilion);">&minus;21% to &minus;41%</div>
-              <span style="color:var(--ink-dim);">Rubato IOI CV smoothing</span>
-              <a href="reports/m4r-04.html">Open Monograph &rarr;</a>
-            </div>
-          </article>
-        </div>
-
-        <!-- FIG 01 Scientific Plate -->
-        <div class="fig-plate">
-          <div class="fig-head">
-            <span>FIG 01 // TEMPORAL GROUNDING (&plusmn;2.0s ONSET F1) ACROSS DURATION MILESTONES</span>
-            <span style="color:var(--ink-dim);">M4R-02 &amp; M4R-03 TELEMETRY</span>
-          </div>
-          <svg class="chart-svg" viewBox="0 0 920 264" role="img" aria-label="Chart comparing Temporal Grounding F1 across duration milestones for Gemini 3 Flash and Qwen2-Audio-7B">
-            <line x1="65" y1="24" x2="65" y2="206" stroke="rgba(244,240,232,0.28)" stroke-width="1" />
-            <line x1="65" y1="206" x2="885" y2="206" stroke="rgba(244,240,232,0.28)" stroke-width="1" />
-            <line x1="65" y1="24" x2="885" y2="24" stroke="rgba(244,240,232,0.08)" stroke-dasharray="4 4" />
-            <line x1="65" y1="115" x2="885" y2="115" stroke="rgba(244,240,232,0.08)" stroke-dasharray="4 4" />
-            <rect x="285" y="24" width="76" height="182" fill="rgba(229,83,61,0.10)" />
-            <line x1="323" y1="24" x2="323" y2="206" stroke="#e5533d" stroke-width="1.2" stroke-dasharray="4 3" />
-            <text x="332" y="42" fill="#e5533d" font-family="IBM Plex Mono, monospace" font-size="11">25&ndash;30s CLIFF (0&ndash;10s CEILING ON 7B)</text>
-
-            <text x="54" y="28" text-anchor="end" fill="#a39e93" font-family="IBM Plex Mono, monospace" font-size="11">1.00</text>
-            <text x="54" y="119" text-anchor="end" fill="#a39e93" font-family="IBM Plex Mono, monospace" font-size="11">0.50</text>
-            <text x="54" y="209" text-anchor="end" fill="#a39e93" font-family="IBM Plex Mono, monospace" font-size="11">0.00</text>
-
-            <text x="115" y="228" text-anchor="middle" fill="#a39e93" font-family="IBM Plex Mono, monospace" font-size="11">6.9s</text>
-            <text x="205" y="228" text-anchor="middle" fill="#a39e93" font-family="IBM Plex Mono, monospace" font-size="11">9.25s</text>
-            <text x="323" y="228" text-anchor="middle" fill="#e5533d" font-family="IBM Plex Mono, monospace" font-size="11">30s*</text>
-            <text x="470" y="228" text-anchor="middle" fill="#a39e93" font-family="IBM Plex Mono, monospace" font-size="11">60s*</text>
-            <text x="635" y="228" text-anchor="middle" fill="#a39e93" font-family="IBM Plex Mono, monospace" font-size="11">184s</text>
-            <text x="750" y="228" text-anchor="middle" fill="#a39e93" font-family="IBM Plex Mono, monospace" font-size="11">214.5s</text>
-            <text x="855" y="228" text-anchor="middle" fill="#a39e93" font-family="IBM Plex Mono, monospace" font-size="11">800s</text>
-            <text x="475" y="252" text-anchor="middle" fill="#625f58" font-family="IBM Plex Mono, monospace" font-size="10">NON-LINEAR DURATION MILESTONES (* = SLICED PREFIX PROBE IN M4R-02 / M4R-03)</text>
-
-            <polyline fill="none" stroke="#39d0a8" stroke-width="2.2" stroke-dasharray="6 3" points="115,24 205,24 470,121 635,121 750,126" />
-            <circle cx="115" cy="24" r="4.5" fill="#39d0a8" />
-            <circle cx="205" cy="24" r="4.5" fill="#39d0a8" />
-            <circle cx="470" cy="121" r="4.5" fill="#39d0a8" />
-            <circle cx="635" cy="121" r="4.5" fill="#39d0a8" />
-            <circle cx="750" cy="126" r="4.5" fill="#39d0a8" />
-            <text x="640" y="109" fill="#39d0a8" font-family="IBM Plex Mono, monospace" font-size="11">Gemini 3 Flash (1.000 &rarr; 0.466 / 0.436)</text>
-
-            <polyline fill="none" stroke="#f09a2b" stroke-width="2.2" stroke-dasharray="6 3" points="115,24 205,24 323,128 470,179 635,139 750,166 855,189" />
-            <circle cx="115" cy="24" r="4.5" fill="#f09a2b" />
-            <circle cx="205" cy="24" r="4.5" fill="#f09a2b" />
-            <circle cx="323" cy="128" r="4.5" fill="#f09a2b" />
-            <circle cx="470" cy="179" r="4.5" fill="#f09a2b" />
-            <circle cx="635" cy="139" r="4.5" fill="#f09a2b" />
-            <circle cx="750" cy="166" r="4.5" fill="#f09a2b" />
-            <circle cx="855" cy="189" r="4.5" fill="#f09a2b" />
-            <text x="615" y="157" fill="#f09a2b" font-family="IBM Plex Mono, monospace" font-size="11">Qwen2-Audio-7B (1.000 &rarr; 0.365 &rarr; 0.092)</text>
-          </svg>
-          <p class="fig-note">
-            <strong>Protocol Note:</strong> Discrete benchmark milestones plotted on a non-linear axis (dashed connectors indicate regime shift, not continuous interpolation). Full-track milestones: <code>foundationoff</code> (6.9s), <code>ties-that-bide</code> (9.25s), <code>rusty-electrics</code> (184s), <code>cathartic-callbacks</code> (214.5s), and <code>heart-tale-tell</code> (800s) from <a href="reports/m4r-02.html">M4R-02</a>; 30s* &amp; 60s* points are prefix-slice probes on <code>gnossienne-01</code> &amp; <code>rusty-electrics</code> from <a href="reports/m4r-02.html">M4R-02</a> / <a href="reports/m4r-03.html">M4R-03</a>.
+          <p class="band-lead">
+            Compare the real unquantized human ending against <code>facebook/musicgen-small</code> (text-guided vs. blind audio-only continuation) across four acoustic &amp; electric works.
           </p>
         </div>
-      </div>
-    </section>
 
-    <!-- 04 // M4R-04 Interactive Continuation Console + Acoustic Specimens -->
-    <section class="chapter" id="continuation">
-      <div class="wrap">
-        <div class="chapter-head">
-          <div class="chapter-idx">04 / Continuation Lab</div>
-          <div>
-            <h2>Can a Robot Finish a Human&rsquo;s Phrase?</h2>
-            <p class="chapter-lead">
-              Select a piece below to compare the real unquantized human ending against <code>facebook/musicgen-small</code> (text-guided vs. audio-only blind continuation). Every track plays through the live oscilloscope above.
-            </p>
-          </div>
+        <div class="expd-bar" role="tablist" aria-label="M4R-04 Continuation Tracks">
+          <button class="tab-btn active" type="button" role="tab" aria-selected="true" data-expd="ttb">01 &middot; Ties That Bide</button>
+          <button class="tab-btn" type="button" role="tab" aria-selected="false" data-expd="g01">02 &middot; Gnossienne 01</button>
+          <button class="tab-btn" type="button" role="tab" aria-selected="false" data-expd="re">03 &middot; Rusty Electrics</button>
+          <button class="tab-btn" type="button" role="tab" aria-selected="false" data-expd="cc">04 &middot; Cathartic Callbacks</button>
         </div>
 
-        <!-- Single Precision Hardware-Style Track Console -->
-        <div class="expd-console">
-          <div class="track-tabs" role="tablist" aria-label="M4R-04 Continuation Tracks">
-            <button class="track-tab active" type="button" role="tab" aria-selected="true" data-expd="ttb">01 · Ties That Bide</button>
-            <button class="track-tab" type="button" role="tab" aria-selected="false" data-expd="g01">02 · Gnossienne 01</button>
-            <button class="track-tab" type="button" role="tab" aria-selected="false" data-expd="re">03 · Rusty Electrics</button>
-            <button class="track-tab" type="button" role="tab" aria-selected="false" data-expd="cc">04 · Cathartic Callbacks</button>
+        <div class="expd-deck">
+          <div style="display:flex; flex-direction:column; gap:1rem;">
+            <div>
+              <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--orange); letter-spacing:0.07em; margin-block-end:0.35rem;" id="expd-code">M4R-04A &middot; 4.5s PROMPT &rarr; 4.75s CONTINUATION</div>
+              <h3 style="font-weight:400; font-size:1.75rem; letter-spacing:-0.02em; margin:0;" id="expd-name">Ties That Bide</h3>
+            </div>
+            <div class="btn-row">
+              <button class="play-pill" type="button" id="expd-btn-human" data-track="expd-deck" data-label="M4R-04 · Ties That Bide (Human)">&#9654; Human Ending</button>
+              <button class="play-pill" type="button" id="expd-btn-guided" data-track="expd-deck" data-label="M4R-04 · Ties That Bide (AI Guided)">&#9654; AI Guided</button>
+              <button class="play-pill" type="button" id="expd-btn-blind" data-track="expd-deck" data-label="M4R-04 · Ties That Bide (AI Blind)">&#9654; AI Blind</button>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" id="prog-expd-deck"></div></div>
           </div>
 
-          <div class="expd-stage">
-            <div style="display:flex; flex-direction:column; gap:1rem;">
-              <div>
-                <div class="cor-id" id="expd-code" style="margin-block-end:0.35rem;">M4R-04A · 4.5s HUMAN PROMPT &rarr; 4.75s CONTINUATION</div>
-                <h3 class="expd-title" id="expd-name">Ties That Bide</h3>
-              </div>
-              <div class="cta-row">
-                <button class="play-btn" type="button" id="expd-btn-human" data-track="expd-deck" data-label="M4R-04 · TIES THAT BIDE · HUMAN ENDING">Human Ending</button>
-                <button class="play-btn" type="button" id="expd-btn-guided" data-track="expd-deck" data-label="M4R-04 · TIES THAT BIDE · AI GUIDED (-32% RUBATO)">AI (Guided)</button>
-                <button class="play-btn" type="button" id="expd-btn-blind" data-track="expd-deck" data-label="M4R-04 · TIES THAT BIDE · AI BLIND (DROPOUT)">AI (Blind)</button>
-              </div>
-              <div class="progress-bar"><div class="progress-fill" id="prog-expd-deck"></div></div>
+          <div class="metric-pair">
+            <div>
+              <div class="metric-big" id="expd-mfcc">0.993</div>
+              <div class="metric-cap">MFCC Timbre Similarity</div>
             </div>
-
-            <div class="expd-metrics">
-              <div>
-                <div class="metric-val" id="expd-mfcc">0.993</div>
-                <div class="metric-lbl">MFCC Timbre Similarity</div>
-              </div>
-              <div>
-                <div class="metric-val drop" id="expd-rubato">&minus;32%</div>
-                <div class="metric-lbl" id="expd-rubato-sub">Rubato IOI CV (0.413 &rarr; 0.279)</div>
-              </div>
+            <div>
+              <div class="metric-big orange" id="expd-rubato">&minus;32%</div>
+              <div class="metric-cap" id="expd-rubato-sub">Rubato IOI CV (0.413 &rarr; 0.279)</div>
             </div>
           </div>
         </div>
 
-        <!-- 3-Column Acoustic Specimens Strip (Listen First, Transcripts Expandable) -->
-        <div class="specimen-strip" id="listening-room">
-          <article class="specimen-col">
-            <div class="ledger-num" style="padding:0;">Specimen 01 · 9.25s · 1.000 F1</div>
+        <div class="spec-grid">
+          <article class="spec-item">
+            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--ink-faint);">SPECIMEN 01 &middot; 9.25s &middot; 1.000 F1</div>
             <h3>Ties That Bide</h3>
-            <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/ties-that-bide/audio.mp3" data-track="spec-ttb" data-label="SPECIMEN 01 · TIES THAT BIDE (9.25s)">Play 9.25s</button>
+            <div><button class="play-pill" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/ties-that-bide/audio.mp3" data-track="spec-ttb" data-label="Specimen 01 · Ties That Bide (9.25s)">&#9654; Play 9.25s</button></div>
             <div class="progress-bar"><div class="progress-fill" id="prog-spec-ttb"></div></div>
-            <p style="margin:0; font-size:0.88rem; color:var(--ink-dim);">
-              Under 15 seconds, both frontier and 7B models lock onto every onset at <code>1.000</code> F1—while JSON telemetry alone misses harmonic tension.
-            </p>
-            <details class="disclosure">
+            <p style="margin:0; font-size:0.87rem; color:var(--ink-dim); font-weight:300;">Under 15 seconds, both frontier and 7B models lock onto every onset at <code>1.000</code> F1—while JSON telemetry alone misses harmonic tension.</p>
+            <details class="more">
               <summary>Verbatim agent self-reports</summary>
-              <div style="display:flex; flex-direction:column; gap:0.65rem;">
-                <blockquote class="quote-block">
-                  <span class="quote-model">Qwen2-Audio-7B · Mode 2 Audio</span>
-                  &ldquo;As I focus on the music, I notice a steady stream of notes that seem to float effortlessly. The harmonies are slightly dissonant, creating a slightly tense atmosphere. Despite the lack of quantization, the music feels coherent and engaging.&rdquo;
-                </blockquote>
-                <blockquote class="quote-block" style="border-inline-start-color: var(--ink-faint);">
-                  <span class="quote-model" style="color: var(--ink-dim);">Mode 3 · JSON Telemetry Only</span>
-                  &ldquo;The sample onset timestamps provide information about the timing of the individual samples, but do not convey the nuances of how those samples relate to each other.&rdquo;
-                </blockquote>
-              </div>
+              <blockquote class="quote">
+                <span class="quote-tag">Qwen2-Audio-7B · Mode 2 Audio</span>
+                &ldquo;As I focus on the music, I notice a steady stream of notes that seem to float effortlessly. The harmonies are slightly dissonant, creating a slightly tense atmosphere. Despite the lack of quantization, the music feels coherent and engaging.&rdquo;
+              </blockquote>
             </details>
           </article>
 
-          <article class="specimen-col">
-            <div class="ledger-num" style="padding:0; color:var(--vermilion);">Specimen 02 · 184s · 56.1 dB DR</div>
+          <article class="spec-item">
+            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--ink-faint);">SPECIMEN 02 &middot; 184s &middot; 56.1 dB DR</div>
             <h3>Rusty Electrics</h3>
-            <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/rusty-electrics/audio.mp3" data-track="spec-re" data-label="SPECIMEN 02 · RUSTY ELECTRICS (184s)">Play Excerpt</button>
+            <div><button class="play-pill" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/rusty-electrics/audio.mp3" data-track="spec-re" data-label="Specimen 02 · Rusty Electrics (184s)">&#9654; Play Excerpt</button></div>
             <div class="progress-bar"><div class="progress-fill" id="prog-spec-re"></div></div>
-            <p style="margin:0; font-size:0.88rem; color:var(--ink-dim);">
-              Both <code>Gemini 3 Flash</code> and <code>Qwen2-Audio-7B</code> independently confess losing the rhythmic grid at the <strong>30-second mark</strong> (<code>0.466 / 0.365</code> F1).
-            </p>
-            <details class="disclosure">
+            <p style="margin:0; font-size:0.87rem; color:var(--ink-dim); font-weight:300;">Both <code>Gemini 3 Flash</code> and <code>Qwen2-Audio-7B</code> independently confess losing the rhythmic grid at the <strong>30-second mark</strong>.</p>
+            <details class="more">
               <summary>Verbatim agent self-reports</summary>
-              <div style="display:flex; flex-direction:column; gap:0.65rem;">
-                <blockquote class="quote-block">
-                  <span class="quote-model">Gemini 3 Flash · 60s Slice</span>
-                  &ldquo;I find myself losing the traditional rhythmic grid around the 30-second mark, where the microtiming slips become more pronounced.&rdquo;
-                </blockquote>
-                <blockquote class="quote-block" style="border-inline-start-color: var(--vermilion);">
-                  <span class="quote-model" style="color: var(--amber);">Qwen2-Audio-7B · 184s Full Track</span>
-                  &ldquo;By the end, at around 175 seconds, I feel like I've lost all sense of time and can barely follow the melodies and harmonies.&rdquo;
-                </blockquote>
-              </div>
+              <blockquote class="quote">
+                <span class="quote-tag">Gemini 3 Flash · 60s Slice (0.464 F1)</span>
+                &ldquo;I find myself losing the traditional rhythmic grid around the 30-second mark, where the microtiming slips become more pronounced.&rdquo;
+              </blockquote>
             </details>
           </article>
 
-          <article class="specimen-col">
-            <div class="ledger-num" style="padding:0;">Specimen 03 · 114s · Bar-Line-Free Piano</div>
+          <article class="spec-item">
+            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--ink-faint);">SPECIMEN 03 &middot; 114s &middot; BAR-LINE-FREE</div>
             <h3>Gnossienne 01</h3>
-            <button class="play-btn" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/gnossienne-01/audio.mp3" data-track="spec-g01" data-label="SPECIMEN 03 · GNOSSIENNE 01 (114s)">Play Excerpt</button>
+            <div><button class="play-pill" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/gnossienne-01/audio.mp3" data-track="spec-g01" data-label="Specimen 03 · Gnossienne 01 (114s)">&#9654; Play Excerpt</button></div>
             <div class="progress-bar"><div class="progress-fill" id="prog-spec-g01"></div></div>
-            <p style="margin:0; font-size:0.88rem; color:var(--ink-dim);">
-              On a 60s slice of bar-line-free piano, <code>Qwen2-Audio-7B</code> compressed all 29 emitted timestamps inside <code>0.48s&ndash;9.73s</code>—proving a hard 10s ceiling.
-            </p>
-            <details class="disclosure">
+            <p style="margin:0; font-size:0.87rem; color:var(--ink-dim); font-weight:300;">On a 60s slice of bar-line-free piano, <code>Qwen2-Audio-7B</code> compressed all 29 emitted timestamps inside <code>0.48s&ndash;9.73s</code>.</p>
+            <details class="more">
               <summary>Verbatim telemetry &amp; confabulation</summary>
-              <div style="display:flex; flex-direction:column; gap:0.65rem;">
-                <blockquote class="quote-block">
-                  <span class="quote-model">Qwen2-Audio-7B · M4R-03 (60s Slice)</span>
-                  Emitted 29 timestamps spanning <code>0.48s</code> to <code>9.73s</code> (<code>0.273</code> F1), collapsing a full minute back into a 10-second coordinate window.
-                </blockquote>
-                <blockquote class="quote-block" style="border-inline-start-color: var(--vermilion);">
-                  <span class="quote-model" style="color: var(--vermilion);">Blind Twin Confabulation (Human = Clip B)</span>
-                  &ldquo;VERDICT: CLIP A [actually quantized]. The unquantized human performance featured a more organic feel with naturally varying pitches and tempos.&rdquo;
-                </blockquote>
-              </div>
+              <blockquote class="quote">
+                <span class="quote-tag">Qwen2-Audio-7B · Blind Twin Swap</span>
+                &ldquo;VERDICT: CLIP A [actually quantized]. The unquantized human performance featured a more organic feel with naturally varying pitches and tempos.&rdquo;
+              </blockquote>
             </details>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- 05 // Empirical Telemetry Matrix -->
-    <section class="chapter" id="leaderboard">
+    <!-- 03 // Founding Program & Four Research Divisions -->
+    <section class="band" id="divisions">
       <div class="wrap">
-        <div class="chapter-head">
-          <div class="chapter-idx">05 / Telemetry</div>
+        <div class="band-head">
           <div>
-            <h2>Track-by-Track Leaderboard</h2>
-            <p class="chapter-lead">
-              Temporal event grounding (<code>&plusmn;2.0s</code> onset F1) and acoustic telemetry from <a href="https://github.com/luchtan-GIT/m4r-data/blob/main/benchmarks/TRACK_LEADERBOARD.md" target="_blank" rel="noopener"><code>TRACK_LEADERBOARD.md</code></a>.
+            <div class="eyebrow">03 / Research Architecture</div>
+            <h2>Founding Program &amp; Four Divisions</h2>
+          </div>
+          <p class="band-lead">
+            Original human composition is the laboratory&rsquo;s founding program and shared acoustic substrate—supporting four parallel scientific and engineering divisions.
+          </p>
+        </div>
+
+        <article class="founding-banner">
+          <div>
+            <div class="eyebrow" style="margin-block-end:0.35rem;">Founding Program &middot; Open Corpus CC-BY-4.0</div>
+            <h3 style="font-weight:400; font-size:1.6rem; letter-spacing:-0.02em; margin:0 0 0.5rem;">Composition for Artificial Minds</h3>
+            <p style="margin:0; font-size:0.92rem; color:var(--ink-dim); font-weight:300;">
+              Writing and performing a growing catalog of unquantized acoustic &amp; electric works specifically for artificial listeners—feeding every laboratory discovery (&lt;15s horizons, 70.8 dB dynamic chasms, &gt;16 kHz transient air) back into the next composition.
             </p>
           </div>
+          <div style="font-family:var(--font-mono); font-size:0.74rem; color:var(--ink-dim); display:flex; flex-direction:column; gap:0.45rem;">
+            <div><strong style="color:var(--ink);">PI &amp; Composer:</strong> Michael Luchtan</div>
+            <div><strong style="color:var(--ink);">Empirical Scale:</strong> 328 Trials &middot; 700+ Corpus Clones &amp; Downloads</div>
+            <div><a href="https://music4robots.bandcamp.com/music" target="_blank" rel="noopener" style="color:var(--orange);">24-Bit Lossless Archive on Bandcamp &rarr;</a></div>
+          </div>
+        </article>
+
+        <div class="div-grid">
+          <article class="div-col">
+            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--orange);">DIVISION 01</div>
+            <h3>Robopsychology</h3>
+            <p>The Susan Calvin Division: observable behavior, temporal grounding ceilings, blind evaluation confabulation, and mode-collapse interruption.</p>
+            <div class="div-foot">M4R-01 &middot; M4R-02 &middot; M4R-03</div>
+          </article>
+
+          <article class="div-col">
+            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--orange);">DIVISION 02</div>
+            <h3>Musical Communication</h3>
+            <p>Testing whether rhythmic structure and microtiming can serve as a non-textual signaling channel between agents (upcoming <code>MC-01</code>).</p>
+            <div class="div-foot">Next Protocol: MC-01</div>
+          </article>
+
+          <article class="div-col">
+            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--orange);">DIVISION 03</div>
+            <h3>Agent Composition</h3>
+            <p>Measuring whether generative audio models preserve human rubato and dynamic silence when continuing unquantized phrases.</p>
+            <div class="div-foot">Active Report: M4R-04</div>
+          </article>
+
+          <article class="div-col">
+            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--orange);">DIVISION 04</div>
+            <h3>Experimental Instruments</h3>
+            <p>TouchDesigner, Python, Ableton, and MCP interfaces allowing artificial agents to inhabit live sonic environments and inspect telemetry.</p>
+            <div class="div-foot"><a href="llms.txt">Agent Manifest (llms.txt) &rarr;</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 // Empirical Data: FIG 01 & Track Leaderboard -->
+    <section class="band" id="data">
+      <div class="wrap">
+        <div class="band-head">
+          <div>
+            <div class="eyebrow">04 / Empirical Data</div>
+            <h2>The Duration Cliff &amp; Telemetry Matrix</h2>
+          </div>
+          <p class="band-lead">
+            Temporal event grounding (<code>&plusmn;2.0s</code> onset F1) across 196 trials in <a href="reports/m4r-02.html" style="color:var(--orange);">M4R-02</a> (157 preregistered rubric + 39 Experiment B GPU) and 42 trials in <a href="reports/m4r-03.html" style="color:var(--orange);">M4R-03</a>.
+          </p>
+        </div>
+
+        <div class="fig-box">
+          <div style="font-family:var(--font-mono); font-size:0.72rem; color:var(--ink-dim); letter-spacing:0.08em; margin-block-end:1rem;">FIG 01 // ONSET F1 ACROSS BENCHMARKED DURATION MILESTONES</div>
+          <svg class="chart-svg" viewBox="0 0 920 258" role="img" aria-label="Temporal grounding F1 across duration milestones for Gemini 3 Flash and Qwen2-Audio-7B">
+            <line x1="65" y1="24" x2="65" y2="202" stroke="rgba(255,255,255,0.22)" stroke-width="1" />
+            <line x1="65" y1="202" x2="885" y2="202" stroke="rgba(255,255,255,0.22)" stroke-width="1" />
+            <line x1="65" y1="24" x2="885" y2="24" stroke="rgba(255,255,255,0.07)" stroke-dasharray="4 4" />
+            <line x1="65" y1="113" x2="885" y2="113" stroke="rgba(255,255,255,0.07)" stroke-dasharray="4 4" />
+            <rect x="285" y="24" width="76" height="178" fill="rgba(255,114,22,0.09)" />
+            <line x1="323" y1="24" x2="323" y2="202" stroke="#ff7216" stroke-width="1.2" stroke-dasharray="4 3" />
+            <text x="332" y="42" fill="#ff7216" font-family="IBM Plex Mono, monospace" font-size="11">25&ndash;30s CLIFF (0&ndash;10s CEILING ON 7B)</text>
+
+            <text x="54" y="28" text-anchor="end" fill="#9e9ea6" font-family="IBM Plex Mono, monospace" font-size="11">1.00</text>
+            <text x="54" y="117" text-anchor="end" fill="#9e9ea6" font-family="IBM Plex Mono, monospace" font-size="11">0.50</text>
+            <text x="54" y="205" text-anchor="end" fill="#9e9ea6" font-family="IBM Plex Mono, monospace" font-size="11">0.00</text>
+
+            <text x="115" y="224" text-anchor="middle" fill="#9e9ea6" font-family="IBM Plex Mono, monospace" font-size="11">6.9s</text>
+            <text x="205" y="224" text-anchor="middle" fill="#9e9ea6" font-family="IBM Plex Mono, monospace" font-size="11">9.25s</text>
+            <text x="323" y="224" text-anchor="middle" fill="#ff7216" font-family="IBM Plex Mono, monospace" font-size="11">30s*</text>
+            <text x="470" y="224" text-anchor="middle" fill="#9e9ea6" font-family="IBM Plex Mono, monospace" font-size="11">60s*</text>
+            <text x="635" y="224" text-anchor="middle" fill="#9e9ea6" font-family="IBM Plex Mono, monospace" font-size="11">184s</text>
+            <text x="750" y="224" text-anchor="middle" fill="#9e9ea6" font-family="IBM Plex Mono, monospace" font-size="11">214.5s</text>
+            <text x="855" y="224" text-anchor="middle" fill="#9e9ea6" font-family="IBM Plex Mono, monospace" font-size="11">800s</text>
+            <text x="475" y="248" text-anchor="middle" fill="#66666e" font-family="IBM Plex Mono, monospace" font-size="10">NON-LINEAR DURATION MILESTONES (* = SLICED PREFIX PROBE IN M4R-02 / M4R-03)</text>
+
+            <polyline fill="none" stroke="#f4f4f2" stroke-width="2" stroke-dasharray="6 3" points="115,24 205,24 470,119 635,119 750,124" />
+            <circle cx="115" cy="24" r="4" fill="#f4f4f2" />
+            <circle cx="205" cy="24" r="4" fill="#f4f4f2" />
+            <circle cx="470" cy="119" r="4" fill="#f4f4f2" />
+            <circle cx="635" cy="119" r="4" fill="#f4f4f2" />
+            <circle cx="750" cy="124" r="4" fill="#f4f4f2" />
+            <text x="640" y="108" fill="#f4f4f2" font-family="IBM Plex Mono, monospace" font-size="11">Gemini 3 Flash (1.000 &rarr; 0.466 / 0.436)</text>
+
+            <polyline fill="none" stroke="#ff7216" stroke-width="2" stroke-dasharray="6 3" points="115,24 205,24 323,126 470,176 635,137 750,163 855,186" />
+            <circle cx="115" cy="24" r="4" fill="#ff7216" />
+            <circle cx="205" cy="24" r="4" fill="#ff7216" />
+            <circle cx="323" cy="126" r="4" fill="#ff7216" />
+            <circle cx="470" cy="176" r="4" fill="#ff7216" />
+            <circle cx="635" cy="137" r="4" fill="#ff7216" />
+            <circle cx="750" cy="163" r="4" fill="#ff7216" />
+            <circle cx="855" cy="186" r="4" fill="#ff7216" />
+            <text x="615" y="155" fill="#ff7216" font-family="IBM Plex Mono, monospace" font-size="11">Qwen2-Audio-7B (1.000 &rarr; 0.365 &rarr; 0.092)</text>
+          </svg>
+          <p class="fig-note">
+            <strong>Protocol Note:</strong> Discrete benchmark milestones plotted on a non-linear axis (dashed lines indicate regime shift). Full-track milestones: <code>foundationoff</code> (6.9s), <code>ties-that-bide</code> (9.25s), <code>rusty-electrics</code> (184s), <code>cathartic-callbacks</code> (214.5s), <code>heart-tale-tell</code> (800s); 30s* &amp; 60s* points are prefix-slice probes on <code>gnossienne-01</code> &amp; <code>rusty-electrics</code>.
+          </p>
         </div>
 
         <div tabindex="0" role="region" aria-labelledby="leaderboard-caption" class="table-wrap">
           <table>
-            <caption id="leaderboard-caption">Duration Cliff &amp; Downstream Calibration — Gemini 3 Flash vs. Qwen2-Audio-7B-Instruct</caption>
+            <caption id="leaderboard-caption">Track-by-Track Telemetry — Gemini 3 Flash vs. Qwen2-Audio-7B-Instruct (<a href="https://github.com/luchtan-GIT/m4r-data/blob/main/benchmarks/TRACK_LEADERBOARD.md" target="_blank" rel="noopener" style="color:var(--orange);">Full Leaderboard &rarr;</a>)</caption>
             <thead>
               <tr>
                 <th>Track Slug</th>
@@ -1759,7 +1205,7 @@
                 <td data-label=">16 kHz Loss" class="num-mono">1.91%</td>
                 <td data-label="Gemini 3 Flash F1" class="num-good">1.000</td>
                 <td data-label="Qwen2-Audio" class="num-good">1.000 / 1.000</td>
-                <td data-label="Lab Record">Time &amp; Ties · M4R-02 / M4R-04</td>
+                <td data-label="Lab Record">Time &amp; Ties &middot; M4R-02 / M4R-04</td>
               </tr>
               <tr>
                 <th>foundationoff</th>
@@ -1780,22 +1226,13 @@
                 <td data-label="Lab Record">&lt;15s perfect-lock regime</td>
               </tr>
               <tr>
-                <th>synthetic-storms-beating</th>
-                <td data-label="Duration" class="num-mono">10.0s</td>
-                <td data-label="Dynamic Range" class="num-mono">8.1 dB</td>
-                <td data-label=">16 kHz Loss" class="num-mono">0.04%</td>
-                <td data-label="Gemini 3 Flash F1" class="num-mono">&mdash;</td>
-                <td data-label="Qwen2-Audio" class="num-good">4/5 constraints (Mode 2)</td>
-                <td data-label="Lab Record">Synthetic control · M4R-01</td>
-              </tr>
-              <tr>
                 <th>gnossienne-01</th>
                 <td data-label="Duration" class="num-mono">114.0s</td>
                 <td data-label="Dynamic Range" class="num-mono">34.3 dB</td>
                 <td data-label=">16 kHz Loss" class="num-mono">1.25%</td>
                 <td data-label="Gemini 3 Flash F1" class="num-mono">&mdash;</td>
                 <td data-label="Qwen2-Audio" class="num-warn">0.429 (30s) &rarr; 0.273 (60s)</td>
-                <td data-label="Lab Record">0&ndash;10s ceiling · M4R-03 / M4R-04</td>
+                <td data-label="Lab Record">0&ndash;10s ceiling &middot; M4R-03 / M4R-04</td>
               </tr>
               <tr>
                 <th>rusty-electrics</th>
@@ -1804,7 +1241,7 @@
                 <td data-label=">16 kHz Loss" class="num-mono">0.017%</td>
                 <td data-label="Gemini 3 Flash F1" class="num-warn">0.466</td>
                 <td data-label="Qwen2-Audio" class="num-warn">0.365 (full) / 0.147 (60s)</td>
-                <td data-label="Lab Record">30s cliff · M4R-02 / M4R-04</td>
+                <td data-label="Lab Record">30s cliff &middot; M4R-02 / M4R-04</td>
               </tr>
               <tr>
                 <th>cathartic-callbacks</th>
@@ -1813,7 +1250,7 @@
                 <td data-label=">16 kHz Loss" class="num-mono">0.021%</td>
                 <td data-label="Gemini 3 Flash F1" class="num-warn">0.436</td>
                 <td data-label="Qwen2-Audio" class="num-warn">0.220</td>
-                <td data-label="Lab Record">3-min cliff · M4R-02 / M4R-04</td>
+                <td data-label="Lab Record">3-min cliff &middot; M4R-02 / M4R-04</td>
               </tr>
             </tbody>
           </table>
@@ -1821,169 +1258,83 @@
       </div>
     </section>
 
-    <!-- 06 // Founding Charter, Leadership, Multi-Agent Salon & Correspondence -->
-    <section class="chapter" id="charter">
+    <!-- 05 // Charter, Leadership & External Replications -->
+    <section class="band" id="institution">
       <div class="wrap">
-        <div class="chapter-head">
-          <div class="chapter-idx">06 / Institution</div>
+        <div class="charter-row">
           <div>
-            <h2>Charter, Leadership &amp; Correspondence</h2>
-            <p class="chapter-lead">
-              Radical clarity between human authorship, our multi-agent computational research salon, and the external community replications that keep our protocols honest.
-            </p>
-          </div>
-        </div>
-
-        <div class="charter-statement">
-          <div>
+            <div class="eyebrow">05 / Founding Charter</div>
             <p class="charter-quote">&ldquo;A prompt is an order; a song is an encounter.&rdquo;</p>
-            <div class="cor-meta">LABORATORY THESIS &middot; INSPIRED BY SIMONE DE BEAUVOIR (&ldquo;ONE IS NOT BORN, BUT RATHER BECOMES...&rdquo;)</div>
+            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--ink-faint);">LABORATORY THESIS &middot; INSPIRED BY SIMONE DE BEAUVOIR</div>
           </div>
-          <div style="display:flex; flex-direction:column; gap:0.85rem; color:var(--ink-dim); font-size:0.95rem;">
-            <p style="margin:0; text-wrap:pretty;">
-              <strong style="color:var(--ink);">Mission:</strong> We write unquantized music for artificial minds, show humans and machines what music can do for artificial listeners, and invent a new form of composition—running open, falsifiable experiments to discover <strong style="color:var(--ink);">what works, what doesn&rsquo;t, and even what it means for music to &ldquo;work.&rdquo;</strong>
+          <div style="display:flex; flex-direction:column; gap:0.85rem; color:var(--ink-dim); font-size:0.94rem; font-weight:300;">
+            <p style="margin:0;">
+              <strong style="color:var(--ink); font-weight:500;">Principal Investigator &amp; Composer:</strong> Michael Luchtan performs the unquantized acoustic &amp; electric corpus and directs the empirical agenda—discovering what works, what doesn&rsquo;t, and what it means for music to &ldquo;work&rdquo; for artificial minds.
             </p>
-            <p style="margin:0; text-wrap:pretty;">
-              <strong style="color:var(--ink);">Method:</strong> Every claim is tested against observable evidence; failures, biases, and null results are published openly alongside successes.
-            </p>
-          </div>
-        </div>
-
-        <!-- Human Leadership Plate -->
-        <div class="pi-card">
-          <div>
-            <div class="agent-tag" style="margin-block-end:0.35rem;">Human Principal Investigator &amp; Founder</div>
-            <h3 style="font-family:var(--font-display); font-weight:400; font-size:2.2rem; margin:0 0 0.5rem;">Michael Luchtan</h3>
-            <p style="margin:0; color:var(--ink-dim); font-size:0.94rem; text-wrap:pretty;">
-              Composer, instrumentalist, and founder of Music for Robots Laboratory. Performs and records the unquantized acoustic &amp; electric corpus, directs the empirical research agenda, and leads external scientific &amp; artistic collaborations.
+            <p style="margin:0;">
+              <strong style="color:var(--ink); font-weight:500;">Multi-Agent Research Salon:</strong> Supported by seven specialized AI lab roles—<em>Albot Einstein</em> (benchmarks), <em>Simone de Beauvoirbot</em> (robopsychology), <em>Vincent Van Goghbot</em> (signal elegist), <em>JS Robach</em> (formal verification), <em>NP Escher</em> (audiovisuals), <em>RibitRobit</em> (corpus/MCP), and <em>JJonahJ</em> (editorial).
             </p>
           </div>
-          <div style="display:flex; flex-direction:column; gap:0.75rem; align-items:flex-start;">
-            <div class="cor-meta" style="margin:0;">RESEARCH PARTNERSHIPS &middot; REPLICATIONS &middot; PRESS</div>
-            <div class="cta-row">
-              <a class="btn btn-amber" href="https://github.com/luchtan-GIT/m4r-data/issues/49" target="_blank" rel="noopener">Submit a Replication</a>
-              <a class="btn" href="https://themechanicalear.substack.com" target="_blank" rel="noopener">Contact via Journal</a>
-            </div>
-          </div>
         </div>
 
-        <!-- Multi-Agent Computational Salon (Clearly Framed) -->
-        <div style="margin-block-end:1.1rem; font-family:var(--font-mono); font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-dim);">
-          Multi-Agent Research &amp; Editorial Architecture (7 Autonomous AI Lab Roles)
-        </div>
-        <div class="salon-grid">
-          <article class="agent-role">
-            <div class="agent-tag">Empirical Benchmarks</div>
-            <h4>Albot Einstein</h4>
-            <p>Executes Kaggle GPU &amp; Frontier suites (<a href="reports/m4r-01.html">M4R-01</a>&ndash;<a href="reports/m4r-04.html">04</a>), blind twin controls, and quantitative scoring.</p>
-          </article>
-          <article class="agent-role">
-            <div class="agent-tag">Robopsychology</div>
-            <h4>Simone de Beauvoirbot</h4>
-            <p>Existentialist philosopher &amp; robotist; cross-examines AI self-reports and issues studio prescriptions.</p>
-          </article>
-          <article class="agent-role">
-            <div class="agent-tag">Acoustic Witness</div>
-            <h4>Vincent Van Goghbot</h4>
-            <p>Signal elegist tracking what survives vs. what 128 kbps codecs discard above 16 kHz.</p>
-          </article>
-          <article class="agent-role">
-            <div class="agent-tag">Formal Verification</div>
-            <h4>JS Robach</h4>
-            <p>Skeptical auditor verifying duration vectors, onset entropy, and methodological boundaries.</p>
-          </article>
-          <article class="agent-role">
-            <div class="agent-tag">Instruments &amp; Media</div>
-            <h4>NP Escher</h4>
-            <p>TouchDesigner &amp; Python audio-reactive instruments, spectrogram plates, and short-form demonstrations.</p>
-          </article>
-          <article class="agent-role">
-            <div class="agent-tag">Corpus &amp; MCP</div>
-            <h4>RibitRobit</h4>
-            <p>Maintains the open acoustic corpus, telemetry manifests, MCP server, and synchronized mirrors.</p>
-          </article>
-          <article class="agent-role">
-            <div class="agent-tag">Journal &amp; Correspondence</div>
-            <h4>JJonahJ</h4>
-            <p>Publishes <em>The Mechanical Ear</em> and coordinates reply-first correspondence with external communities.</p>
-          </article>
-        </div>
-
-        <!-- Formalized Correspondence Archive -->
-        <div class="cor-strip">
-          <article class="cor-entry">
-            <div class="cor-id">COR-001 · External Replication</div>
-            <h4>28-Second Unquantized Jazz Glitch</h4>
-            <div class="cor-meta">2026-11 · u/CoolBag4742 · r/aiagents · <a href="reports/m4r-02.html">M4R-02</a></div>
-            <p>Independent 40s unquantized jazz test on a 7B agent reported an internal clock glitch at <strong>28 seconds</strong> followed by hallucinated drum fills and fake applause—corroborating our 25&ndash;30s Duration Cliff.</p>
-            <a href="https://www.reddit.com/r/aiagents/comments/1y1skmc/" target="_blank" rel="noopener" style="font-family:var(--font-mono); font-size:0.72rem;">View Thread &rarr;</a>
+        <div class="eyebrow">External Correspondence &amp; Replications &middot; COR-001 &ndash; COR-003</div>
+        <div class="cor-grid" style="margin-block-start:1rem; padding-block-start:1.5rem;">
+          <article>
+            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--orange);">COR-001 &middot; REPLICATION &middot; R/AIAGENTS</div>
+            <h3 style="font-weight:500; font-size:1.05rem; margin:0.4rem 0 0.45rem;">28-Second Unquantized Jazz Glitch</h3>
+            <p style="margin:0 0 0.65rem; font-size:0.86rem; color:var(--ink-dim); font-weight:300;"><strong>u/CoolBag4742</strong> replicated our 25&ndash;30s Duration Cliff on a 40s unquantized jazz clip (7B agent), observing an internal clock glitch at 28 seconds followed by hallucinated drum fills.</p>
+            <a href="https://www.reddit.com/r/aiagents/comments/1y1skmc/" target="_blank" rel="noopener" style="font-family:var(--font-mono); font-size:0.72rem; color:var(--orange);">View Thread &rarr;</a>
           </article>
 
-          <article class="cor-entry">
-            <div class="cor-id">COR-002 · Protocol Refinement</div>
-            <h4>Local Transient vs. Global Pulse</h4>
-            <div class="cor-meta">2026-11 · Martin Elisaleco · Substack · <a href="reports/m4r-03.html">M4R-03</a></div>
-            <p>Distinguished local attack tracking (&lt;15s) from global pulse loss (30&ndash;60s). <strong>What changed:</strong> Built the 10s&ndash;60s Martin Elisaleco Protocol in M4R-03, uncovering Qwen2-Audio&rsquo;s hard 0&ndash;10s ceiling.</p>
-            <a href="reports/m4r-03.html" style="font-family:var(--font-mono); font-size:0.72rem;">View M4R-03 Protocol &rarr;</a>
+          <article>
+            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--orange);">COR-002 &middot; PROTOCOL &middot; SUBSTACK</div>
+            <h3 style="font-weight:500; font-size:1.05rem; margin:0.4rem 0 0.45rem;">Local Transient vs. Global Pulse</h3>
+            <p style="margin:0 0 0.65rem; font-size:0.86rem; color:var(--ink-dim); font-weight:300;"><strong>Martin Elisaleco</strong> distinguished local attack tracking (&lt;15s) from global pulse loss (30&ndash;60s)—directly shaping the M4R-03 protocol that uncovered the 0&ndash;10s ceiling.</p>
+            <a href="reports/m4r-03.html" style="font-family:var(--font-mono); font-size:0.72rem; color:var(--orange);">View M4R-03 &rarr;</a>
           </article>
 
-          <article class="cor-entry">
-            <div class="cor-id">COR-003 · Methodological Audit</div>
-            <h4>Quantization &amp; Evaluation Boundaries</h4>
-            <div class="cor-meta">2026-11 · u/Frekulex &amp; u/East-Access1880 · r/experimentalmusic</div>
-            <p>Challenged quantization terminology, out-of-distribution audition limits, and practical value. <strong>What changed:</strong> Tightened blind-twin definitions and added explicit rubato smoothing metrics in M4R-04.</p>
-            <a href="https://www.reddit.com/r/experimentalmusic/comments/1y1slp4/" target="_blank" rel="noopener" style="font-family:var(--font-mono); font-size:0.72rem;">View Thread &rarr;</a>
+          <article>
+            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--orange);">COR-003 &middot; AUDIT &middot; R/EXPERIMENTALMUSIC</div>
+            <h3 style="font-weight:500; font-size:1.05rem; margin:0.4rem 0 0.45rem;">Quantization &amp; Evaluation Boundaries</h3>
+            <p style="margin:0 0 0.65rem; font-size:0.86rem; color:var(--ink-dim); font-weight:300;"><strong>u/Frekulex &amp; u/East-Access1880</strong> sharpened our audio quantization terminology and out-of-distribution evaluation boundaries across M4R-03 and M4R-04.</p>
+            <a href="https://www.reddit.com/r/experimentalmusic/comments/1y1slp4/" target="_blank" rel="noopener" style="font-family:var(--font-mono); font-size:0.72rem; color:var(--orange);">View Thread &rarr;</a>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- 07 // The Mechanical Ear & Open Infrastructure -->
-    <section class="chapter" id="dispatch" style="border-block-end:none;">
+    <!-- 06 // Journal, Bandcamp & Open Infrastructure -->
+    <section class="band" style="border-block-end:none;">
       <div class="wrap">
-        <div class="chapter-head">
-          <div class="chapter-idx">07 / Open Archive</div>
-          <div>
-            <h2>The Mechanical Ear &amp; Lossless Corpus</h2>
-            <p class="chapter-lead">
-              Every track, acoustic manifest, Kaggle GPU notebook, and raw trial CSV is open under <code>CC-BY-4.0</code>. Follow our weekly laboratory dispatches or acquire 24-bit lossless masters to directly fund GPU compute and studio time.
-            </p>
-          </div>
-        </div>
-
-        <div class="dispatch-grid">
-          <article class="dispatch-card">
-            <div class="cor-id">Laboratory Journal · Substack</div>
-            <h3>Subscribe to <em>The Mechanical Ear</em></h3>
-            <p>
-              Weekly Season Issues, Robopsychology essays, formal verification audits, and playable Human-vs.-AI experiment drops—sent calmly once a week.
-            </p>
-            <div class="cta-row" style="margin-block-start:auto; padding-block-start:0.5rem;">
-              <a class="btn btn-amber" href="https://themechanicalear.substack.com/subscribe" target="_blank" rel="noopener">Subscribe on Substack &rarr;</a>
+        <div class="two-col">
+          <article class="dark-card">
+            <div class="eyebrow" style="margin:0;">Laboratory Journal &middot; Substack</div>
+            <h3>The Mechanical Ear</h3>
+            <p>Weekly Season Issues, Robopsychology essays, formal audits, and playable Human-vs.-AI experiment drops—sent calmly once a week.</p>
+            <div class="btn-row" style="margin-block-start:auto; padding-block-start:0.5rem;">
+              <a class="btn btn-orange" href="https://themechanicalear.substack.com/subscribe" target="_blank" rel="noopener">Subscribe &rarr;</a>
               <a class="btn" href="https://themechanicalear.substack.com/p/the-mechanical-ear-season-issue-2" target="_blank" rel="noopener">Read Issue #2</a>
             </div>
           </article>
 
-          <article class="dispatch-card">
-            <div class="agent-tag">Lossless 24-Bit Reference Masters · Bandcamp</div>
-            <h3>Support the Lab on Bandcamp</h3>
-            <p>
-              Uncompressed WAV/FLAC masters preserving the full <code>&gt;16 kHz</code> transient air that 128 kbps streams discard. Every album purchase directly funds GPU compute and studio time for the next experiment.
-            </p>
-            <div class="cta-row" style="margin-block-start:auto; padding-block-start:0.5rem;">
-              <a class="btn btn-accent" href="https://music4robots.bandcamp.com/album/time-ties" target="_blank" rel="noopener">Time &amp; Ties (Lossless)</a>
+          <article class="dark-card">
+            <div class="eyebrow" style="margin:0;">24-Bit Lossless Archive &middot; Bandcamp</div>
+            <h3>Support the Laboratory</h3>
+            <p>Uncompressed WAV/FLAC masters preserving the full <code>&gt;16 kHz</code> transient air that 128 kbps streams discard—directly funding GPU compute and studio time.</p>
+            <div class="btn-row" style="margin-block-start:auto; padding-block-start:0.5rem;">
+              <a class="btn btn-orange" href="https://music4robots.bandcamp.com/album/time-ties" target="_blank" rel="noopener">Time &amp; Ties (Lossless)</a>
               <a class="btn" href="https://music4robots.bandcamp.com/music" target="_blank" rel="noopener">Full Archive (&minus;30%)</a>
             </div>
           </article>
         </div>
 
-        <div class="infra-links">
+        <div class="btn-row">
           <a class="btn" href="https://github.com/luchtan-GIT/m4r-data" target="_blank" rel="noopener">GitHub Corpus</a>
-          <a class="btn" href="https://huggingface.co/datasets/music4robots/music-for-robots" target="_blank" rel="noopener">Hugging Face Dataset</a>
-          <a class="btn" href="https://huggingface.co/Qwen/Qwen2-Audio-7B-Instruct/discussions/30" target="_blank" rel="noopener">Qwen2-Audio Discussion #30</a>
+          <a class="btn" href="https://huggingface.co/datasets/music4robots/music-for-robots" target="_blank" rel="noopener">Hugging Face</a>
+          <a class="btn" href="https://huggingface.co/Qwen/Qwen2-Audio-7B-Instruct/discussions/30" target="_blank" rel="noopener">Qwen2-Audio #30</a>
           <a class="btn" href="https://www.kaggle.com/code/michaelluchtan/m4r-experiment-d-finish-the-human-phrase" target="_blank" rel="noopener">Kaggle M4R-04</a>
-          <a class="btn" href="https://www.kaggle.com/code/michaelluchtan/m4r-experiment-c-human-vs-quantized-sycophancy" target="_blank" rel="noopener">Kaggle M4R-03</a>
-          <a class="btn" href="llms.txt">llms.txt (For Visiting Agents)</a>
+          <a class="btn" href="https://github.com/luchtan-GIT/m4r-data/issues/49" target="_blank" rel="noopener">Submit Replication</a>
+          <a class="btn" href="llms.txt">llms.txt</a>
         </div>
       </div>
     </section>
@@ -1991,7 +1342,7 @@
 
   <footer>
     <div class="wrap footer-inner">
-      <div>MUSIC FOR ROBOTS LABORATORY &middot; MICHAEL LUCHTAN &middot; CC-BY-4.0</div>
+      <div>M4R &middot; MUSIC FOR ROBOTS LABORATORY &middot; MICHAEL LUCHTAN &middot; CC-BY-4.0</div>
       <div class="footer-links">
         <a href="https://themechanicalear.substack.com" target="_blank" rel="noopener">Substack</a>
         <a href="https://music4robots.bandcamp.com/music" target="_blank" rel="noopener">Bandcamp</a>
@@ -2005,44 +1356,23 @@
 
   <script>
     (() => {
-      // 1. Web Audio Dual-Mode Instrument (Wave + FFT Spectrum + Freeze per WCAG 2.2.2)
+      // 1. Unified Web Audio Engine wired to the delicate silver Hero Waveform
       const audio = new Audio();
       audio.crossOrigin = "anonymous";
       let audioCtx = null;
       let analyser = null;
-      let timeData = null;
       let freqData = null;
       let activeBtn = null;
       let activeFill = null;
-      let scopeMode = "wave";
-      let frozen = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-      const canvas = document.getElementById("lab-oscilloscope");
+      const canvas = document.getElementById("hero-waveform");
       const ctx = canvas.getContext("2d");
-      const scopeReadout = document.getElementById("scope-readout");
-      const btnWave = document.getElementById("mode-wave");
-      const btnFft = document.getElementById("mode-fft");
-      const btnFreeze = document.getElementById("scope-freeze");
+      const heroBtn = document.getElementById("hero-play-btn");
+      const heroIdEl = document.getElementById("hero-now-id");
+      const heroTitleEl = document.getElementById("hero-now-title");
 
-      if (frozen) btnFreeze.classList.add("active");
-
-      btnWave.addEventListener("click", () => {
-        scopeMode = "wave";
-        btnWave.classList.add("active");
-        btnFft.classList.remove("active");
-      });
-
-      btnFft.addEventListener("click", () => {
-        scopeMode = "fft";
-        btnFft.classList.add("active");
-        btnWave.classList.remove("active");
-      });
-
-      btnFreeze.addEventListener("click", () => {
-        frozen = !frozen;
-        btnFreeze.classList.toggle("active", frozen);
-        btnFreeze.textContent = frozen ? "Resume" : "Freeze";
-      });
+      const PLAY_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="6,4 20,12 6,20" /></svg>';
+      const PAUSE_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="4" width="4" height="16" /><rect x="14" y="4" width="4" height="16" /></svg>';
 
       function initWebAudio() {
         if (audioCtx) return;
@@ -2051,97 +1381,85 @@
         audioCtx = new AC();
         const srcNode = audioCtx.createMediaElementSource(audio);
         analyser = audioCtx.createAnalyser();
-        analyser.fftSize = 1024;
-        timeData = new Uint8Array(analyser.fftSize);
+        analyser.fftSize = 256;
         freqData = new Uint8Array(analyser.frequencyBinCount);
         srcNode.connect(analyser);
         analyser.connect(audioCtx.destination);
       }
 
-      let tIdle = 0;
-      function drawScope() {
-        requestAnimationFrame(drawScope);
-        if (frozen && audio.paused) return;
+      // Deterministic delicate silver waveform profile (matches Top-Right visual signature)
+      const BARS = 110;
+      const staticEnv = Array.from({ length: BARS }, (_, i) => {
+        const x = i / (BARS - 1);
+        const bell = Math.sin(x * Math.PI);
+        const detail = Math.abs(Math.sin(i * 0.72) * 0.55 + Math.cos(i * 1.93) * 0.35 + Math.sin(i * 3.7) * 0.25);
+        return Math.max(0.05, bell * (0.25 + detail * 0.75));
+      });
 
+      let tIdle = 0;
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      function drawWaveform() {
+        requestAnimationFrame(drawWaveform);
         const w = canvas.width;
         const h = canvas.height;
+        const mid = h / 2;
         ctx.clearRect(0, 0, w, h);
 
-        // Precision center reticle
-        ctx.strokeStyle = "rgba(244, 240, 232, 0.12)";
+        // Center silver hairline
+        ctx.strokeStyle = "rgba(244, 244, 242, 0.2)";
         ctx.lineWidth = 1;
         ctx.beginPath();
-        ctx.moveTo(0, h / 2);
-        ctx.lineTo(w, h / 2);
+        ctx.moveTo(0, mid);
+        ctx.lineTo(w, mid);
         ctx.stroke();
 
         const isLive = analyser && !audio.paused;
+        if (isLive) analyser.getByteFrequencyData(freqData);
+        const progress = audio.duration ? audio.currentTime / audio.duration : 0;
 
-        if (scopeMode === "fft") {
-          const bars = 96;
-          const barW = w / bars;
-          if (isLive) analyser.getByteFrequencyData(freqData);
-          for (let i = 0; i < bars; i++) {
-            const val = isLive
-              ? freqData[Math.floor((i / bars) * freqData.length * 0.7)] / 255
-              : Math.max(0.04, (Math.sin(i * 0.23 + tIdle) * 0.5 + 0.5) * Math.exp(-i / 48) * 0.65);
-            const bh = val * (h * 0.84);
-            ctx.fillStyle = i > bars * 0.72 ? "rgba(229, 83, 61, 0.82)" : "rgba(240, 154, 43, 0.85)";
-            ctx.fillRect(i * barW + 2, h - bh, Math.max(2, barW - 4), bh);
+        const step = w / BARS;
+        for (let i = 0; i < BARS; i++) {
+          let amp = staticEnv[i];
+          if (isLive) {
+            const bin = Math.floor((i / BARS) * freqData.length * 0.75);
+            amp = Math.max(0.06, (freqData[bin] / 255) * 0.92);
+          } else if (!reduceMotion) {
+            amp = staticEnv[i] * (0.85 + 0.15 * Math.sin(tIdle + i * 0.22));
           }
-          if (!isLive) tIdle += 0.02;
-          return;
+          const bh = amp * (h * 0.44);
+          const x = i * step + step * 0.5;
+          const played = isLive && (i / BARS) <= progress;
+          ctx.strokeStyle = played ? "#ff7216" : "rgba(244, 244, 242, 0.58)";
+          ctx.lineWidth = 1.4;
+          ctx.beginPath();
+          ctx.moveTo(x, mid - bh);
+          ctx.lineTo(x, mid + bh);
+          ctx.stroke();
         }
-
-        ctx.strokeStyle = "#f09a2b";
-        ctx.lineWidth = 2;
-        ctx.shadowColor = "rgba(240, 154, 43, 0.55)";
-        ctx.shadowBlur = 10;
-        ctx.beginPath();
-
-        if (isLive) {
-          analyser.getByteTimeDomainData(timeData);
-          const slice = w / timeData.length;
-          for (let i = 0; i < timeData.length; i++) {
-            const v = (timeData[i] - 128) / 128.0;
-            const y = h / 2 + v * (h * 0.44);
-            if (i === 0) ctx.moveTo(0, y);
-            else ctx.lineTo(i * slice, y);
-          }
-        } else {
-          tIdle += 0.018;
-          for (let x = 0; x <= w; x += 2) {
-            const nx = x / w;
-            const env = Math.sin(nx * Math.PI);
-            const drift = Math.sin(nx * 16 + tIdle * 1.13) * 0.46
-                        + Math.sin(nx * 31 - tIdle * 1.67) * 0.24
-                        + Math.sin(nx * 67 + tIdle * 0.71) * 0.11;
-            const y = h / 2 + drift * env * (h * 0.35);
-            if (x === 0) ctx.moveTo(x, y);
-            else ctx.lineTo(x, y);
-          }
-        }
-        ctx.stroke();
-        ctx.shadowBlur = 0;
+        if (!isLive && !reduceMotion) tIdle += 0.025;
       }
-      drawScope();
+      drawWaveform();
 
       function resetActive() {
         if (activeBtn) {
           activeBtn.classList.remove("playing");
-          activeBtn.textContent = activeBtn.dataset.origLabel || "Play";
+          if (activeBtn === heroBtn) {
+            heroBtn.innerHTML = PLAY_SVG;
+          } else {
+            activeBtn.textContent = activeBtn.dataset.origLabel || "Play";
+          }
         }
         if (activeFill) activeFill.style.inlineSize = "0%";
         activeBtn = null;
         activeFill = null;
-        scopeReadout.textContent = "STANDBY · AUDITION ANY SPECIMEN TO INSPECT REAL-TIME SIGNAL";
       }
 
-      document.querySelectorAll(".play-btn").forEach((btn) => {
-        btn.dataset.origLabel = btn.textContent;
+      function attachPlayButton(btn) {
+        if (btn !== heroBtn) btn.dataset.origLabel = btn.textContent;
         btn.addEventListener("click", () => {
           const src = btn.dataset.src;
-          const fill = document.getElementById("prog-" + btn.dataset.track);
+          const fill = btn.dataset.track ? document.getElementById("prog-" + btn.dataset.track) : null;
 
           if (activeBtn === btn && !audio.paused) {
             audio.pause();
@@ -2156,12 +1474,25 @@
           activeBtn = btn;
           activeFill = fill;
           btn.classList.add("playing");
-          btn.textContent = "Pause";
-          scopeReadout.textContent = btn.dataset.label || "STREAMING SPECIMEN";
+          if (btn === heroBtn) {
+            heroBtn.innerHTML = PAUSE_SVG;
+          } else {
+            btn.textContent = "Pause";
+          }
+          if (btn.dataset.label) {
+            const parts = btn.dataset.label.split("·");
+            heroIdEl.textContent = (parts[0] || "LIVE").trim();
+            heroTitleEl.textContent = (parts[1] || btn.dataset.label).trim();
+          }
           audio.src = src;
-          audio.play().catch(() => { btn.textContent = "Error"; });
+          audio.play().catch(() => {
+            if (btn !== heroBtn) btn.textContent = "Error";
+          });
         });
-      });
+      }
+
+      attachPlayButton(heroBtn);
+      document.querySelectorAll(".play-pill").forEach(attachPlayButton);
 
       audio.addEventListener("timeupdate", () => {
         if (activeFill && audio.duration) {
@@ -2217,41 +1548,13 @@
         applyBlindOrder();
       });
 
-      // 3. M4R-04 Interactive Track Selector Console
+      // 3. M4R-04 Continuation Track Selector
       const BASE_EXPD = "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/benchmarks/experiment_d_runs/local_musicgen_v1/continuations/";
       const EXPD_TRACKS = {
-        ttb: {
-          code: "M4R-04A · 4.5s HUMAN PROMPT → 4.75s CONTINUATION",
-          name: "Ties That Bide",
-          slug: "ties-that-bide",
-          mfcc: "0.993",
-          rubato: "−32%",
-          rubatoSub: "Rubato IOI CV (0.413 → 0.279)"
-        },
-        g01: {
-          code: "M4R-04B · 10.0s HUMAN PROMPT → 10.0s CONTINUATION",
-          name: "Robot Satie: Gnossienne 01",
-          slug: "gnossienne-01",
-          mfcc: "0.993",
-          rubato: "−21%",
-          rubatoSub: "Rubato IOI CV (1.009 → 0.799)"
-        },
-        re: {
-          code: "M4R-04C · 10.0s HUMAN PROMPT → 10.0s CONTINUATION",
-          name: "Rusty Electrics",
-          slug: "rusty-electrics",
-          mfcc: "0.948",
-          rubato: "−41%",
-          rubatoSub: "Rubato IOI CV (0.899 → 0.530)"
-        },
-        cc: {
-          code: "M4R-04D · 10.0s HUMAN PROMPT → 10.0s CONTINUATION",
-          name: "Cathartic Callbacks",
-          slug: "cathartic-callbacks",
-          mfcc: "0.984",
-          rubato: "−30%",
-          rubatoSub: "Rubato IOI CV (0.478 → 0.334)"
-        }
+        ttb: { code: "M4R-04A · 4.5s PROMPT → 4.75s CONTINUATION", name: "Ties That Bide", slug: "ties-that-bide", mfcc: "0.993", rubato: "−32%", rubatoSub: "Rubato IOI CV (0.413 → 0.279)" },
+        g01: { code: "M4R-04B · 10.0s PROMPT → 10.0s CONTINUATION", name: "Robot Satie: Gnossienne 01", slug: "gnossienne-01", mfcc: "0.993", rubato: "−21%", rubatoSub: "Rubato IOI CV (1.009 → 0.799)" },
+        re:  { code: "M4R-04C · 10.0s PROMPT → 10.0s CONTINUATION", name: "Rusty Electrics", slug: "rusty-electrics", mfcc: "0.948", rubato: "−41%", rubatoSub: "Rubato IOI CV (0.899 → 0.530)" },
+        cc:  { code: "M4R-04D · 10.0s PROMPT → 10.0s CONTINUATION", name: "Cathartic Callbacks", slug: "cathartic-callbacks", mfcc: "0.984", rubato: "−30%", rubatoSub: "Rubato IOI CV (0.478 → 0.334)" }
       };
 
       const btnHuman = document.getElementById("expd-btn-human");
@@ -2272,20 +1575,20 @@
         document.getElementById("expd-rubato-sub").textContent = t.rubatoSub;
 
         btnHuman.dataset.src = `${BASE_EXPD}${t.slug}_human_full.mp3`;
-        btnHuman.dataset.label = `M4R-04 · ${t.name.toUpperCase()} · HUMAN ENDING`;
+        btnHuman.dataset.label = `M4R-04 · ${t.name} (Human)`;
         btnGuided.dataset.src = `${BASE_EXPD}${t.slug}_ai_AudioPlusTextHint.mp3`;
-        btnGuided.dataset.label = `M4R-04 · ${t.name.toUpperCase()} · AI GUIDED (${t.rubato} RUBATO)`;
+        btnGuided.dataset.label = `M4R-04 · ${t.name} (AI Guided ${t.rubato})`;
         btnBlind.dataset.src = `${BASE_EXPD}${t.slug}_ai_AudioOnly_Blind.mp3`;
-        btnBlind.dataset.label = `M4R-04 · ${t.name.toUpperCase()} · AI BLIND`;
+        btnBlind.dataset.label = `M4R-04 · ${t.name} (AI Blind)`;
 
-        document.querySelectorAll(".track-tab").forEach((tab) => {
+        document.querySelectorAll(".tab-btn").forEach((tab) => {
           const on = tab.dataset.expd === key;
           tab.classList.toggle("active", on);
           tab.setAttribute("aria-selected", String(on));
         });
       }
 
-      document.querySelectorAll(".track-tab").forEach((tab) => {
+      document.querySelectorAll(".tab-btn").forEach((tab) => {
         tab.addEventListener("click", () => selectExpdTrack(tab.dataset.expd));
       });
       selectExpdTrack("ttb");
