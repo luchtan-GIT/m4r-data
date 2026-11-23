@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>M4R-04: Finish the Human's Phrase — M4R Music For Robots Laboratory</title>
-  <meta name="description" content="We handed the first half of 5 real unquantized human performances (guitar and bar-line-free Satie piano) to facebook/musicgen-small and measured how closely the AI finished each phrase. Blind audio-only continuation stalled into 49.5–58.0 dB dynamic dropouts on 5/5 tracks. Adding a 1-line text hint unlocked 0.948–0.993 MFCC timbral similarity—yet quietly smoothed out human rubato irregularity (IOI CV) by 21% to 41% on 4 of 5 tracks." />
+  <meta name="description" content="We handed the first half of 5 real unquantized live human performances (multi-voice works and free-time Robot Satie) to facebook/musicgen-small and measured how closely the AI finished each phrase. Blind audio-only continuation stalled into 49.5–58.0 dB dynamic dropouts on 5/5 tracks. Adding a 1-line text hint unlocked 0.948–0.993 MFCC timbral similarity—yet quietly smoothed out human rubato irregularity (IOI CV) by 21% to 41% on 4 of 5 tracks." />
   <link rel="icon" type="image/jpeg" href="../favicon.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -145,7 +145,7 @@
 
     <div class="abstract">
       <strong>Abstract</strong>
-      <p style="margin:0; color:var(--ink); font-weight:300;">We handed the first half of 5 real unquantized human performances (guitar and bar-line-free Satie piano) to facebook/musicgen-small and measured how closely the AI finished each phrase. Blind audio-only continuation stalled into 49.5–58.0 dB dynamic dropouts on 5/5 tracks. Adding a 1-line text hint unlocked 0.948–0.993 MFCC timbral similarity—yet quietly smoothed out human rubato irregularity (IOI CV) by 21% to 41% on 4 of 5 tracks.</p>
+      <p style="margin:0; color:var(--ink); font-weight:300;">We handed the first half of 5 real unquantized live human performances (multi-voice works and free-time Robot Satie) to facebook/musicgen-small and measured how closely the AI finished each phrase. Blind audio-only continuation stalled into 49.5–58.0 dB dynamic dropouts on 5/5 tracks. Adding a 1-line text hint unlocked 0.948–0.993 MFCC timbral similarity—yet quietly smoothed out human rubato irregularity (IOI CV) by 21% to 41% on 4 of 5 tracks.</p>
     </div>
 
     <div class="audio-box">
@@ -174,7 +174,7 @@
 
 
     <h2>04 / Analysis</h2>
-    <p>Generative music transformers can now clone the surface timbre of an acoustic guitar or piano almost seamlessly (0.993 MFCC similarity), but their training prior on grid-locked studio music acts like temporal gravity: without text conditioning they stall into 49.5–58.0 dB dropouts, and with text conditioning they iron out 21%–41% of the human player's rubato hesitation.</p>
+    <p>Generative music transformers can now clone the surface timbre of live-performed voices almost seamlessly (0.993 MFCC similarity), but their training prior on grid-locked studio music acts like temporal gravity: without text conditioning they stall into 49.5–58.0 dB dropouts, and with text conditioning they iron out 21%–41% of the human player's rubato hesitation.</p>
 
     <h2>05 / Limitations &amp; Boundaries</h2>
     <p>Tested on the 300M-parameter musicgen-small checkpoint at 32 kHz with a single seed per mode. Larger checkpoints and multi-agent interactive composition (MC-01: The Rhythmic Handshake) will test whether interactive feedback preserves non-periodic timing better than single-shot continuation.</p>
