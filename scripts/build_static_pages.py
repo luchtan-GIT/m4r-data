@@ -296,6 +296,7 @@ DIVISIONS = [
             ("M4R-02 · Published", "The Duration Cliff", "1.000 onset F1 under 15s; temporal grounding degrades sharply at 25–30s (196 trials).", "../reports/m4r-02.html"),
             ("M4R-03 · Published", "The Human and the Quantized Twin", "8/8 Clip-A position bias in the tested 8-trial protocol, 0–10s timestamp ceiling, and 7B debugging null audit (42 trials).", "../reports/m4r-03.html"),
             ("M4R-05 · Published", "The Arc of Listening", "Seed-Locked Order Blindness on Synthetic Storms (5 sections, 84 GPU evaluations): identical sampling seeds produced identical tension arcs forward, reversed, and scrambled.", "../reports/m4r-05.html"),
+            ("M4R-06 · Published", "The Turn-0 Flood", "Flooding Turn 0 with 199.9s of Stuttering Packets outperformed Cold Boot, 9s short lock, and 200s metronome click (+16.9% burstiness, 0.960 Turn-5 persistence across 60 evaluations).", "../reports/m4r-06.html"),
         ],
         "lead": "Human Oversight: Michael Luchtan (PI) · AI Research Agents: Simone de Beauvoirbot (Robopsychology), Albot Einstein (Benchmarks), JS Robach (Formal Verification).",
         "future": "Establishing a systematic, cross-model experimental program for artificial listening, temporal working-memory diagnostics, and behavioral calibration across frontier and open-weights audio models.",

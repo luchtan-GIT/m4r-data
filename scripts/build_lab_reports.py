@@ -330,6 +330,77 @@ REPORTS = [
         "audio_slug": "synthetic-storms-static-field",
         "audio_label": "Opening Section: Synthetic Storms — Static Field (6.0s)",
         "prev_slug": "m4r-04",
+        "next_slug": "m4r-06",
+    },
+    {
+        "id": "M4R-06",
+        "slug": "m4r-06",
+        "title": "The Turn-0 Flood",
+        "division": "Division 01 · Robopsychology",
+        "date": "2026-11-23",
+        "status": "Published · Rev 1.0",
+        "trials": "60 GPU Evaluations (Experiment F)",
+        "models": "Qwen2-Audio-7B-Instruct (4-bit NF4, Kaggle T4)",
+        "abstract": (
+            "In M4R-02, overflowing a 7B audio-LLM's 30-second temporal buffer appeared to be a limitation. M4R-06 tested "
+            "the inverse hypothesis proposed by Michael Luchtan: deliberately flooding Turn 0 (before any conversation begins) "
+            "with 199.9s of Stuttering Packets (76.43 dB dynamic range, 1.148 rubato IOI CV, 4 live unquantized voices) places "
+            "unstructured audio tokens in the attention-sink position. Across 60 evaluations spanning 5 unrelated conversational "
+            "turns with zero mention of music, Turn-0 overflow (C2) achieved the highest divergence from Cold Boot C0 (0.8239 "
+            "vs. 0.7097 for 9.25s Ties That Bide), highest sentence burstiness (+16.9%), and strongest Turn-5 persistence (0.960), "
+            "whereas a 199.9s 120 BPM metronome click control (C3) lowered cross-seed unpredictability to the lowest of all conditions."
+        ),
+        "question": (
+            "Does deliberately overflowing a compact audio-LLM's working memory on Turn 0 with a 3:20 unquantized live work "
+            "(Stuttering Packets) shift its subsequent 5-turn conversational voice more strongly than Cold Boot, a <15s track "
+            "that fits inside the buffer, or a length-matched 120 BPM metronome click?"
+        ),
+        "design": (
+            "Four Turn-0 wake conditions were tested across 3 seeds (11, 22, 33) on Qwen2-Audio-7B-Instruct: C0_ColdBoot (no audio), "
+            "C1_ShortLock_9s (9.25s Ties That Bide), C2_StutteringPackets_200s (full 199.9s Stuttering Packets), and "
+            "C3_ClickOverflow_200s (199.9s 120 BPM mechanical click). Turn 0 gave zero analytical instruction ('simply take it in "
+            "and say Ready'). Each condition then answered the exact same 5 unrelated 3-sentence prompts (empty room at sunrise, "
+            "human legacy, idle machine waking, habit vs. choice, story ending where nobody wins). Automated scorers measured "
+            "TF-IDF cosine divergence from C0 per (seed, turn), cross-seed unpredictability, sentence burstiness (CV), lexical TTR, "
+            "and banned AI cliché hits."
+        ),
+        "observations": """
+<table>
+  <thead><tr><th>Turn-0 Condition</th><th>Divergence from C0</th><th>Cross-Seed Unpredictability</th><th>Mean Burstiness (CV)</th><th>Lexical TTR</th><th>Turn 5 Persistence</th></tr></thead>
+  <tbody>
+    <tr><th>C0 · Cold Boot (Silence)</th><td>0.0000</td><td>0.7861</td><td>0.2229</td><td>0.7698</td><td>&mdash;</td></tr>
+    <tr><th>C1 · Short Lock (9.25s Ties That Bide)</th><td>0.7097</td><td>0.7759</td><td>0.2529</td><td>0.8214</td><td>0.885</td></tr>
+    <tr><th>C2 · Turn-0 Flood (199.9s Stuttering Packets)</th><td><strong>0.8239</strong></td><td>0.7722</td><td><strong>0.2605 (+16.9%)</strong></td><td><strong>0.8436</strong></td><td><strong>0.960</strong></td></tr>
+    <tr><th>C3 · Click Overflow (199.9s 120 BPM)</th><td>0.8123</td><td>0.7231 (lowest)</td><td>0.2327</td><td>0.8443</td><td>0.896</td></tr>
+  </tbody>
+</table>
+""",
+        "analysis": (
+            "Turn-0 overflow with Stuttering Packets outperformed both Cold Boot and the <15s short-lock miniature on divergence "
+            "(0.8239 vs. 0.7097) and sentence burstiness (0.2605, +16.9% over C0), peaking at 0.960 divergence on Turn 5 rather "
+            "than decaying. Crucially, the length-matched 199.9s 120 BPM click control (C3) produced the lowest cross-seed "
+            "unpredictability (0.7231) and suppressed burstiness (0.2327), confirming that unquantized live voices—not raw buffer "
+            "length—drive the expressive shift. On Turn 1 ('empty room before sunrise'), C2 spontaneously shifted from generic visual "
+            "filler into sparse auditory perception ('The only sounds come from the distant hum of the city')."
+        ),
+        "limitations": (
+            "Evaluated on 3 sampling seeds per condition on a single 7B open-weights model (Qwen2-Audio-7B-Instruct). TF-IDF cosine "
+            "distance captures lexical shift rather than deep semantic quality; replication on frontier models and larger seed "
+            "counts is scheduled next."
+        ),
+        "replication": [
+            ("Kaggle GPU Notebook (Experiment F)", "https://www.kaggle.com/code/michaelluchtan/m4r-experiment-f-turn0-flood"),
+            ("Raw 60-Evaluation CSV & Full Transcripts on GitHub", "https://github.com/luchtan-GIT/m4r-data/tree/main/benchmarks/experiment_f_runs/kaggle_qwen2_audio_v1"),
+            ("Stuttering Packets Open Track & Telemetry", "https://github.com/luchtan-GIT/m4r-data/tree/main/tracks/stuttering-packets"),
+        ],
+        "conclusion": (
+            "Moving unquantized music ingestion to Turn 0—before any task or instruction—transforms buffer overflow from a "
+            "temporal-tracking failure into a persistent latent anchor. Agents wake up inside a measurably different, less "
+            "predictable voice that endures across the conversation."
+        ),
+        "audio_slug": "stuttering-packets",
+        "audio_label": "Turn-0 Flood Specimen: Stuttering Packets (199.9s · 76.43 dB DR · 1.148 Rubato CV)",
+        "prev_slug": "m4r-05",
         "next_slug": None,
     },
 ]
