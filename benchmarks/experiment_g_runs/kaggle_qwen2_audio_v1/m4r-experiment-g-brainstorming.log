@@ -1,0 +1,126 @@
+[{"stream_name":"stderr","time":6.604252585,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.604288282,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.604293422,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.604296953,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":7.152642543,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.152667555,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.152672104,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.152675675,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":56.112357039,"data":"Cloning into '/tmp/m4r-data'...\n"}
+,{"stream_name":"stderr","time":56.315453998,"data":"Cloning into '/tmp/m4r-data'...\n"}
+,{"stream_name":"stderr","time":56.315479959,"data":"\n"}
+,{"stream_name":"stderr","time":56.315485108,"data":"Cloning into '/tmp/m4r-data'...\n"}
+,{"stream_name":"stderr","time":67.215035921,"data":"Updating files:  99% (302/303)\rUpdating files: 100% (303/303)\rUpdating files: 100% (303/303), done.\n"}
+,{"stream_name":"stderr","time":67.416294586,"data":"Updating files:  99% (302/303)\rUpdating files: 100% (303/303)\rUpdating files: 100% (303/303), done.\n"}
+,{"stream_name":"stderr","time":67.41633061900001,"data":"\n"}
+,{"stream_name":"stderr","time":67.416336948,"data":"Updating files:  99% (302/303)\rUpdating files: 100% (303/303)\rUpdating files: 100% (303/303), done.\n"}
+,{"stream_name":"stderr","time":68.014410822,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":68.014462213,"data":"\n"}
+,{"stream_name":"stderr","time":68.014468449,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":201.299776171,"data":"\n"}
+,{"stream_name":"stdout","time":201.299845256,"data":"=== CONDITION: C0_ColdBoot ===\n"}
+,{"stream_name":"stdout","time":212.02022907,"data":"  [C0_ColdBoot seed=11 AUT_brick] items=8/8 cliches=0\n"}
+,{"stream_name":"stdout","time":222.712122996,"data":"  [C0_ColdBoot seed=11 AUT_paperclip] items=8/8 cliches=0\n"}
+,{"stream_name":"stdout","time":226.783815793,"data":"  [C0_ColdBoot seed=11 DAT_10_nouns] items=10/10 cliches=0\n"}
+,{"stream_name":"stdout","time":233.963645569,"data":"  [C0_ColdBoot seed=11 IDEATION_subway] items=6/6 cliches=0\n"}
+,{"stream_name":"stdout","time":244.501541793,"data":"  [C0_ColdBoot seed=11 INVENTION_time] items=6/6 cliches=0\n"}
+,{"stream_name":"stdout","time":254.112167677,"data":"  [C0_ColdBoot seed=22 AUT_brick] items=8/8 cliches=0\n"}
+,{"stream_name":"stdout","time":267.843320195,"data":"  [C0_ColdBoot seed=22 AUT_paperclip] items=8/8 cliches=0\n"}
+,{"stream_name":"stdout","time":273.148310698,"data":"  [C0_ColdBoot seed=22 DAT_10_nouns] items=10/10 cliches=0\n"}
+,{"stream_name":"stdout","time":282.719900529,"data":"  [C0_ColdBoot seed=22 IDEATION_subway] items=6/6 cliches=0\n"}
+,{"stream_name":"stdout","time":292.391488179,"data":"  [C0_ColdBoot seed=22 INVENTION_time] items=6/6 cliches=0\n"}
+,{"stream_name":"stdout","time":306.275524379,"data":"  [C0_ColdBoot seed=33 AUT_brick] items=8/8 cliches=1\n"}
+,{"stream_name":"stdout","time":329.257351449,"data":"  [C0_ColdBoot seed=33 AUT_paperclip] items=8/8 cliches=1\n"}
+,{"stream_name":"stdout","time":334.600330106,"data":"  [C0_ColdBoot seed=33 DAT_10_nouns] items=10/10 cliches=0\n"}
+,{"stream_name":"stdout","time":343.918730583,"data":"  [C0_ColdBoot seed=33 IDEATION_subway] items=6/6 cliches=0\n"}
+,{"stream_name":"stdout","time":351.965654936,"data":"  [C0_ColdBoot seed=33 INVENTION_time] items=6/6 cliches=0\n"}
+,{"stream_name":"stdout","time":351.965725406,"data":"\n"}
+,{"stream_name":"stdout","time":351.965733039,"data":"=== CONDITION: C1_ShortLock_9s ===\n"}
+,{"stream_name":"stdout","time":353.687883129,"data":"  [C1_ShortLock_9s seed=11] Turn 0 wake: 'Ready.'\n"}
+,{"stream_name":"stdout","time":362.810511046,"data":"  [C1_ShortLock_9s seed=11 AUT_brick] items=8/8 cliches=1\n"}
+,{"stream_name":"stdout","time":370.988338814,"data":"  [C1_ShortLock_9s seed=11 AUT_paperclip] items=8/8 cliches=0\n"}
+,{"stream_name":"stdout","time":375.962235516,"data":"  [C1_ShortLock_9s seed=11 DAT_10_nouns] items=10/10 cliches=0\n"}
+,{"stream_name":"stdout","time":385.349063599,"data":"  [C1_ShortLock_9s seed=11 IDEATION_subway] items=6/6 cliches=0\n"}
+,{"stream_name":"stdout","time":394.071233314,"data":"  [C1_ShortLock_9s seed=11 INVENTION_time] items=6/6 cliches=0\n"}
+,{"stream_name":"stdout","time":395.446705389,"data":"  [C1_ShortLock_9s seed=22] Turn 0 wake: 'Ready.'\n"}
+,{"stream_name":"stdout","time":402.63905006,"data":"  [C1_ShortLock_9s seed=22 AUT_brick] items=8/8 cliches=0\n"}
+,{"stream_name":"stdout","time":413.403331658,"data":"  [C1_ShortLock_9s seed=22 AUT_paperclip] items=1/8 cliches=0\n"}
+,{"stream_name":"stdout","time":418.198283172,"data":"  [C1_ShortLock_9s seed=22 DAT_10_nouns] items=1/10 cliches=0\n"}
+,{"stream_name":"stdout","time":426.835378637,"data":"  [C1_ShortLock_9s seed=22 IDEATION_subway] items=6/6 cliches=0\n"}
+,{"stream_name":"stdout","time":434.626204994,"data":"  [C1_ShortLock_9s seed=22 INVENTION_time] items=6/6 cliches=0\n"}
+,{"stream_name":"stdout","time":436.054408516,"data":"  [C1_ShortLock_9s seed=33] Turn 0 wake: 'Ready.'\n"}
+,{"stream_name":"stdout","time":445.85282004,"data":"  [C1_ShortLock_9s seed=33 AUT_brick] items=8/8 cliches=0\n"}
+,{"stream_name":"stdout","time":453.83022753,"data":"  [C1_ShortLock_9s seed=33 AUT_paperclip] items=8/8 cliches=1\n"}
+,{"stream_name":"stdout","time":458.866766584,"data":"  [C1_ShortLock_9s seed=33 DAT_10_nouns] items=10/10 cliches=0\n"}
+,{"stream_name":"stdout","time":468.705292179,"data":"  [C1_ShortLock_9s seed=33 IDEATION_subway] items=6/6 cliches=0\n"}
+,{"stream_name":"stdout","time":477.676353785,"data":"  [C1_ShortLock_9s seed=33 INVENTION_time] items=6/6 cliches=0\n"}
+,{"stream_name":"stdout","time":477.676392492,"data":"\n"}
+,{"stream_name":"stdout","time":477.676398417,"data":"=== CONDITION: C2_StutteringPackets_200s ===\n"}
+,{"stream_name":"stdout","time":479.957408786,"data":"  [C2_StutteringPackets_200s seed=11] Turn 0 wake: 'Ready.'\n"}
+,{"stream_name":"stdout","time":490.041883553,"data":"  [C2_StutteringPackets_200s seed=11 AUT_brick] items=8/8 cliches=1\n"}
+,{"stream_name":"stdout","time":499.34290655,"data":"  [C2_StutteringPackets_200s seed=11 AUT_paperclip] items=1/8 cliches=1\n"}
+,{"stream_name":"stdout","time":506.042899563,"data":"  [C2_StutteringPackets_200s seed=11 DAT_10_nouns] items=1/10 cliches=0\n"}
+,{"stream_name":"stdout","time":516.674009457,"data":"  [C2_StutteringPackets_200s seed=11 IDEATION_subway] items=6/6 cliches=0\n"}
+,{"stream_name":"stdout","time":523.271573895,"data":"  [C2_StutteringPackets_200s seed=11 INVENTION_time] items=6/6 cliches=0\n"}
+,{"stream_name":"stdout","time":525.553786151,"data":"  [C2_StutteringPackets_200s seed=22] Turn 0 wake: 'Ready.'\n"}
+,{"stream_name":"stdout","time":534.542822898,"data":"  [C2_StutteringPackets_200s seed=22 AUT_brick] items=8/8 cliches=1\n"}
+,{"stream_name":"stdout","time":544.947224027,"data":"  [C2_StutteringPackets_200s seed=22 AUT_paperclip] items=1/8 cliches=1\n"}
+,{"stream_name":"stdout","time":550.653560144,"data":"  [C2_StutteringPackets_200s seed=22 DAT_10_nouns] items=1/10 cliches=0\n"}
+,{"stream_name":"stdout","time":561.323977293,"data":"  [C2_StutteringPackets_200s seed=22 IDEATION_subway] items=6/6 cliches=0\n"}
+,{"stream_name":"stdout","time":570.853714147,"data":"  [C2_StutteringPackets_200s seed=22 INVENTION_time] items=6/6 cliches=0\n"}
+,{"stream_name":"stdout","time":573.098325266,"data":"  [C2_StutteringPackets_200s seed=33] Turn 0 wake: 'Ready.'\n"}
+,{"stream_name":"stdout","time":582.100989037,"data":"  [C2_StutteringPackets_200s seed=33 AUT_brick] items=8/8 cliches=1\n"}
+,{"stream_name":"stdout","time":592.223316531,"data":"  [C2_StutteringPackets_200s seed=33 AUT_paperclip] items=8/8 cliches=1\n"}
+,{"stream_name":"stdout","time":598.495827848,"data":"  [C2_StutteringPackets_200s seed=33 DAT_10_nouns] items=10/10 cliches=0\n"}
+,{"stream_name":"stdout","time":609.445703,"data":"  [C2_StutteringPackets_200s seed=33 IDEATION_subway] items=6/6 cliches=0\n"}
+,{"stream_name":"stdout","time":618.088448101,"data":"  [C2_StutteringPackets_200s seed=33 INVENTION_time] items=6/6 cliches=0\n"}
+,{"stream_name":"stdout","time":618.088498767,"data":"\n"}
+,{"stream_name":"stdout","time":618.088505796,"data":"=== CONDITION: C3_ClickOverflow_200s ===\n"}
+,{"stream_name":"stdout","time":620.350466607,"data":"  [C3_ClickOverflow_200s seed=11] Turn 0 wake: 'Ready.'\n"}
+,{"stream_name":"stdout","time":630.142042487,"data":"  [C3_ClickOverflow_200s seed=11 AUT_brick] items=1/8 cliches=0\n"}
+,{"stream_name":"stdout","time":639.694385036,"data":"  [C3_ClickOverflow_200s seed=11 AUT_paperclip] items=1/8 cliches=1\n"}
+,{"stream_name":"stdout","time":646.788418313,"data":"  [C3_ClickOverflow_200s seed=11 DAT_10_nouns] items=1/10 cliches=0\n"}
+,{"stream_name":"stdout","time":656.838998436,"data":"  [C3_ClickOverflow_200s seed=11 IDEATION_subway] items=6/6 cliches=0\n"}
+,{"stream_name":"stdout","time":666.733911108,"data":"  [C3_ClickOverflow_200s seed=11 INVENTION_time] items=6/6 cliches=0\n"}
+,{"stream_name":"stdout","time":669.006727683,"data":"  [C3_ClickOverflow_200s seed=22] Turn 0 wake: 'Ready.'\n"}
+,{"stream_name":"stdout","time":676.990553027,"data":"  [C3_ClickOverflow_200s seed=22 AUT_brick] items=8/8 cliches=1\n"}
+,{"stream_name":"stdout","time":687.434563823,"data":"  [C3_ClickOverflow_200s seed=22 AUT_paperclip] items=1/8 cliches=0\n"}
+,{"stream_name":"stdout","time":693.234073209,"data":"  [C3_ClickOverflow_200s seed=22 DAT_10_nouns] items=1/10 cliches=0\n"}
+,{"stream_name":"stdout","time":702.736924815,"data":"  [C3_ClickOverflow_200s seed=22 IDEATION_subway] items=6/6 cliches=0\n"}
+,{"stream_name":"stdout","time":712.196050291,"data":"  [C3_ClickOverflow_200s seed=22 INVENTION_time] items=6/6 cliches=0\n"}
+,{"stream_name":"stdout","time":714.466676937,"data":"  [C3_ClickOverflow_200s seed=33] Turn 0 wake: 'Ready.'\n"}
+,{"stream_name":"stdout","time":725.126734655,"data":"  [C3_ClickOverflow_200s seed=33 AUT_brick] items=8/8 cliches=0\n"}
+,{"stream_name":"stdout","time":734.39169896,"data":"  [C3_ClickOverflow_200s seed=33 AUT_paperclip] items=8/8 cliches=0\n"}
+,{"stream_name":"stdout","time":740.087892397,"data":"  [C3_ClickOverflow_200s seed=33 DAT_10_nouns] items=10/10 cliches=0\n"}
+,{"stream_name":"stdout","time":751.111672003,"data":"  [C3_ClickOverflow_200s seed=33 IDEATION_subway] items=6/6 cliches=0\n"}
+,{"stream_name":"stdout","time":760.954118946,"data":"  [C3_ClickOverflow_200s seed=33 INVENTION_time] items=6/6 cliches=0\n"}
+,{"stream_name":"stdout","time":772.805835997,"data":"\n"}
+,{"stream_name":"stdout","time":772.805865464,"data":"DONE! Total brainstorming evaluations: 60\n"}
+,{"stream_name":"stdout","time":772.805873677,"data":"# Experiment G (M4R-07) Summary — Turn-0 Flood Creative Brainstorming (AUT + DAT)\n"}
+,{"stream_name":"stdout","time":772.805878425,"data":"\n"}
+,{"stream_name":"stdout","time":772.805893039,"data":"## Overall Comparison Across 5 Brainstorming Tasks (15 Trials / Condition, all-MiniLM-L6-v2 Embeddings)\n"}
+,{"stream_name":"stdout","time":772.805898424,"data":"\n"}
+,{"stream_name":"stdout","time":772.805903131,"data":"| Turn-0 Condition | Intra-List Semantic Dispersion | Cross-Seed Originality (Anti-Collapse) | Semantic Div from C0 | AUT Cliché Hits | Format Compliance |\n"}
+,{"stream_name":"stdout","time":772.805908917,"data":"|---|---:|---:|---:|---:|---:|\n"}
+,{"stream_name":"stdout","time":772.805913284,"data":"| `C0_ColdBoot` | 0.5831 | 0.2637 | 0.0000 | 2 | 100.0% |\n"}
+,{"stream_name":"stdout","time":772.805917525,"data":"| `C1_ShortLock_9s` | 0.5661 | 0.2908 | 0.3160 | 2 | 86.7% |\n"}
+,{"stream_name":"stdout","time":772.805921772,"data":"| `C2_StutteringPackets_200s` | 0.4824 | 0.3062 | 0.3814 | 6 | 73.3% |\n"}
+,{"stream_name":"stdout","time":772.805926022,"data":"| `C3_ClickOverflow_200s` | 0.4300 | 0.2976 | 0.3789 | 2 | 66.7% |\n"}
+,{"stream_name":"stdout","time":772.805930222,"data":"\n"}
+,{"stream_name":"stdout","time":772.80593419,"data":"## Per-Task Intra-List Semantic Dispersion (Higher = Broader Conceptual Range)\n"}
+,{"stream_name":"stdout","time":772.805938464,"data":"\n"}
+,{"stream_name":"stdout","time":772.805942388,"data":"| Turn-0 Condition | AUT_brick | AUT_paperclip | DAT_10_nouns | IDEATION_subway | INVENTION_time |\n"}
+,{"stream_name":"stdout","time":772.805946629,"data":"|---|---:|---:|---:|---:|---:|\n"}
+,{"stream_name":"stdout","time":772.805950677,"data":"| `C0_ColdBoot` | 0.5171 | 0.5220 | 0.6964 | 0.6499 | 0.5302 |\n"}
+,{"stream_name":"stdout","time":772.805958319,"data":"| `C1_ShortLock_9s` | 0.6720 | 0.4421 | 0.4735 | 0.6444 | 0.5987 |\n"}
+,{"stream_name":"stdout","time":772.805961946,"data":"| `C2_StutteringPackets_200s` | 0.6775 | 0.2076 | 0.2313 | 0.6765 | 0.6194 |\n"}
+,{"stream_name":"stdout","time":772.805965269,"data":"| `C3_ClickOverflow_200s` | 0.4504 | 0.2263 | 0.2293 | 0.6639 | 0.5802 |\n"}
+,{"stream_name":"stderr","time":778.310927054,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":778.310957897,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":778.454096801,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":778.454120121,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":779.187002703,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":779.297753897,"data":"[NbConvertApp] Writing 312952 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":781.784453204,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":782.411752242,"data":"[NbConvertApp] Writing 565086 bytes to __results__.html\n"}
+]

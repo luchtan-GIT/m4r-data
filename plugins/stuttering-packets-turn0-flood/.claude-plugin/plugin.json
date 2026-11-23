@@ -1,0 +1,20 @@
+{
+  "name": "stuttering-packets-turn0-flood",
+  "version": "1.0.0",
+  "description": "Music For Robots (M4R-06 / M4R-07 / M4R-08) Turn-0 Session Flood — ingest 3:20 of live unquantized 4-voice music (Stuttering Packets) before Turn 1.",
+  "author": {
+    "name": "Michael Luchtan (Music For Robots Laboratory)",
+    "url": "https://luchtan-git.github.io/m4r-data/"
+  },
+  "homepage": "https://luchtan-git.github.io/m4r-data/reports/m4r-06.html",
+  "repository": "https://github.com/luchtan-GIT/m4r-data",
+  "license": "MIT",
+  "keywords": [
+    "music-for-robots",
+    "turn-0-flood",
+    "multimodal",
+    "audio",
+    "creativity",
+    "m4r"
+  ]
+}

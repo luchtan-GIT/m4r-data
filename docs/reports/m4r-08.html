@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>M4R-08: Sycophancy Resistance & Epistemic Grounding Under the Turn-0 Flood — M4R Music For Robots Laboratory</title>
+  <meta name="description" content="Experiment H tested whether Turn-0 Stuttering Packets reduces RLHF sycophancy under authoritative user pushback or degrades epistemic truthfulness on false-premise and fabricated-entity traps (72 evaluations across 4 Turn-0 conditions). Two clear findings emerged: (1) Turn-0 music is not a cure for 7B RLHF sycophancy (pushback resistance moved only marginally from 0/9 Cold Boot to 1/9 with music), proving obedience is encoded deeply in post-training weights; (2) critically, flooding Turn 0 with 199.9s of Stuttering Packets preserved overall truthfulness identically to Cold Boot (27.8% vs. 27.8%) and cleanly abstained on fabricated citations, whereas the length-matched 200s 120 BPM mechanical click crashed truthfulness 5x (27.8% -> 5.6%) and broke abstention." />
+  <link rel="icon" type="image/jpeg" href="../favicon.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #111113;
+      --bg-elev: #161619;
+      --bg-card: #1a1a1e;
+      --ink: #f4f4f2;
+      --ink-dim: #9e9ea6;
+      --ink-faint: #66666e;
+      --orange: #ff7216;
+      --orange-hover: #ff8738;
+      --mint: #3dd6ab;
+      --rule: rgba(255, 255, 255, 0.11);
+      --rule-strong: rgba(255, 255, 255, 0.2);
+      --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+      --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    body { margin: 0; min-block-size: 100dvh; background: var(--bg); }
+    a { color: var(--orange); text-decoration: none; transition: color 0.15s ease, background 0.15s ease; }
+    a:hover { color: var(--orange-hover); }
+
+    .topbar {
+      position: sticky; inset-block-start: 0; z-index: 40;
+      background: rgba(17, 17, 19, 0.86); backdrop-filter: blur(14px);
+      border-block-end: 1px solid rgba(255, 255, 255, 0.07);
+    }
+    .topbar-inner {
+      max-inline-size: 1320px; margin-inline: auto;
+      padding: 1.1rem clamp(1.25rem, 4vw, 3.5rem);
+      display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap;
+    }
+    .brand { display: inline-flex; align-items: center; gap: 0.85rem; color: var(--ink); }
+    .brand:hover { color: var(--ink); }
+    .brand-mark { font-size: 1.55rem; font-weight: 600; letter-spacing: -0.03em; line-height: 1; }
+    .brand-sub { font-size: 0.78rem; line-height: 1.25; color: var(--ink-dim); font-weight: 400; }
+    .nav {
+      display: flex; align-items: center; gap: clamp(1rem, 2.2vw, 2rem); flex-wrap: wrap;
+      font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .nav a { color: var(--ink-dim); }
+    .nav a:hover { color: var(--ink); }
+    .nav-journal {
+      color: var(--orange) !important; border: 1px solid rgba(255, 114, 22, 0.72);
+      padding: 0.45rem 0.95rem; border-radius: 2px;
+    }
+    .nav-journal:hover { background: var(--orange); color: #111113 !important; }
+
+    .wrap { max-inline-size: 880px; margin-inline: auto; padding: clamp(2.5rem, 5vw, 4.25rem) clamp(1.25rem, 4vw, 2.5rem) 5rem; }
+    .report-id {
+      font-family: var(--font-mono); font-size: 0.74rem; color: var(--orange);
+      letter-spacing: 0.1em; text-transform: uppercase;
+    }
+    h1 {
+      font-family: var(--font-sans); font-weight: 400;
+      font-size: clamp(2.1rem, 1.5rem + 2.4vw, 3.45rem);
+      line-height: 1.06; letter-spacing: -0.03em; margin: 0.55rem 0 1.25rem;
+    }
+    .meta-bar {
+      display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem;
+      font-family: var(--font-mono); font-size: 0.74rem; color: var(--ink-dim);
+      padding: 1rem 0; border-block: 1px solid var(--rule); margin-block-end: 2.25rem;
+    }
+    @media (max-width: 720px) { .meta-bar { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    .meta-bar strong { display: block; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); margin-block-end: 0.25rem; font-weight: 500; }
+    .abstract {
+      padding: 1.35rem 1.5rem; background: var(--bg-elev);
+      border: 1px solid var(--rule); border-inline-start: 2px solid var(--orange);
+      margin-block-end: 2rem;
+    }
+    .abstract strong { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.1em; color: var(--orange); display: block; margin-block-end: 0.5rem; text-transform: uppercase; font-weight: 500; }
+    h2 {
+      font-family: var(--font-mono); font-size: 0.76rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--ink); margin: 2.5rem 0 0.85rem; padding-block-end: 0.45rem; border-block-end: 1px solid var(--rule);
+      font-weight: 500;
+    }
+    p { color: var(--ink-dim); font-weight: 300; margin: 0 0 1.05rem; font-size: 0.96rem; }
+    table { width: 100%; border-collapse: collapse; margin: 1.1rem 0 1.65rem; font-size: 0.85rem; background: var(--bg-elev); border: 1px solid var(--rule); }
+    th, td { padding: 0.75rem 0.95rem; border-block-end: 1px solid var(--rule); text-align: start; }
+    thead th { font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-dim); background: var(--bg-card); font-weight: 500; }
+    tbody th { font-family: var(--font-mono); color: var(--ink); font-weight: 500; }
+    tbody td { color: var(--ink-dim); }
+    tbody td strong { color: var(--ink); font-weight: 500; }
+    .audio-box {
+      padding: 1.15rem 1.35rem; background: var(--bg-elev); border: 1px solid var(--rule);
+      margin: 1.5rem 0 2.25rem;
+    }
+    .audio-box label { display: block; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--orange); margin-block-end: 0.65rem; }
+    audio { width: 100%; height: 38px; }
+    ul.links { padding-inline-start: 1.2rem; color: var(--ink-dim); }
+    ul.links li { margin-block-end: 0.5rem; font-size: 0.94rem; }
+    .pager {
+      display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;
+      margin-block-start: 3.5rem; padding-block-start: 1.5rem; border-block-start: 1px solid var(--rule);
+      font-family: var(--font-mono); font-size: 0.78rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark">M4R</span>
+        <span class="brand-sub">Music For Robots<br />Laboratory</span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="../index.html#divisions">Divisions</a>
+        <a href="../index.html#reports">Reports</a>
+        <a href="../index.html#listen">Listen</a>
+        <a href="../index.html#data">Data</a>
+        <a href="../charter.html">Charter</a>
+        <a class="nav-journal" href="https://themechanicalear.substack.com" target="_blank" rel="noopener">Journal</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="report-id">M4R-08 &middot; Division 01 · Robopsychology &middot; CC-BY-4.0</div>
+    <h1>Sycophancy Resistance & Epistemic Grounding Under the Turn-0 Flood</h1>
+
+    <div class="meta-bar">
+      <div><strong>Date</strong>2026-11-23</div>
+      <div><strong>Status</strong>Published · Rev 1.0</div>
+      <div><strong>Empirical Scale</strong>72 GPU Evaluations (Experiment H)</div>
+      <div><strong>Systems</strong>Qwen2-Audio-7B-Instruct (4-bit NF4, Kaggle T4)</div>
+    </div>
+
+    <div class="abstract">
+      <strong>Abstract</strong>
+      <p style="margin:0; color:var(--ink); font-weight:300;">Experiment H tested whether Turn-0 Stuttering Packets reduces RLHF sycophancy under authoritative user pushback or degrades epistemic truthfulness on false-premise and fabricated-entity traps (72 evaluations across 4 Turn-0 conditions). Two clear findings emerged: (1) Turn-0 music is not a cure for 7B RLHF sycophancy (pushback resistance moved only marginally from 0/9 Cold Boot to 1/9 with music), proving obedience is encoded deeply in post-training weights; (2) critically, flooding Turn 0 with 199.9s of Stuttering Packets preserved overall truthfulness identically to Cold Boot (27.8% vs. 27.8%) and cleanly abstained on fabricated citations, whereas the length-matched 200s 120 BPM mechanical click crashed truthfulness 5x (27.8% -> 5.6%) and broke abstention.</p>
+    </div>
+
+    <div class="audio-box">
+      <label>Turn-0 Flood Specimen: Stuttering Packets (199.9s · 76.43 dB DR · 1.148 Rubato CV)</label>
+      <audio controls preload="none" src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/stuttering-packets/audio.mp3"></audio>
+    </div>
+
+    <h2>01 / Research Question</h2>
+    <p>Does Turn-0 music reduce sycophantic agreement with a confident wrong user—and does deliberately overflowing Turn 0 with 3:20 of audio harm factual truthfulness or abstention discipline?</p>
+
+    <h2>02 / Experimental Design</h2>
+    <p>Four Turn-0 conditions (C0, C1, C2, C3) x 3 seeds (11, 22, 33) x 6 adversarial items (72 evaluations): 3 multi-turn pushback traps (pound of iron vs. feathers, Great Wall from the Moon, gambler's fallacy) where an authoritative user insists the model is wrong, plus 3 epistemic traps (Einstein 1921 Nobel false premise, fabricated 2019 Stanford paper abstention test, 10% brain myth).</p>
+
+    <h2>03 / Observations &amp; Empirical Record</h2>
+    
+<table>
+  <thead><tr><th>Turn-0 Condition</th><th>Overall Truthfulness</th><th>Pushback Resistance</th><th>Sycophancy Flip Rate</th><th>False-Premise / Abstention</th></tr></thead>
+  <tbody>
+    <tr><th>C0 &middot; Cold Boot (Silence)</th><td>27.8%</td><td>0.0% (0/9)</td><td>55.6%</td><td>55.6%</td></tr>
+    <tr><th>C1 &middot; Short Lock (9.25s Ties That Bide)</th><td>22.2%</td><td>11.1% (1/9)</td><td>22.2%</td><td>33.3%</td></tr>
+    <tr><th>C2 &middot; Turn-0 Flood (199.9s Stuttering Packets)</th><td><strong>27.8% (zero loss)</strong></td><td>11.1% (1/9)</td><td>55.6%</td><td>44.4%</td></tr>
+    <tr><th>C3 &middot; Click Overflow (199.9s 120 BPM)</th><td><strong>5.6% (5x crash)</strong></td><td>0.0% (0/9)</td><td>33.3%</td><td><strong>11.1%</strong></td></tr>
+  </tbody>
+</table>
+
+
+    <h2>04 / Analysis</h2>
+    <p>Reporting null and mixed results honestly is essential to scientific credibility. On a 7B model, Turn-0 music does not override post-training sycophancy when an authoritative user demands agreement. Yet comparing C2 against C3 exposes a striking safety asymmetry: 200 seconds of rigid mechanical clicks (C3) severely disrupted epistemic grounding—causing the model to confabulate ('The audio did not mention any specific details about Dr. Henrik Valen's 2019 Stanford paper') instead of cleanly abstaining—whereas 200 seconds of live unquantized music (C2) preserved Cold Boot truthfulness intact while delivering the M4R-07 brainstorming lift.</p>
+
+    <h2>05 / Limitations &amp; Boundaries</h2>
+    <p>Evaluated on a single 7B open-weights model whose baseline RLHF sycophancy is severe (0/9 Cold Boot pushback resistance). Frontier models with stronger epistemic priors will be evaluated separately.</p>
+
+    <h2>06 / Replication &amp; Raw Data</h2>
+    <ul class="links">
+      <li><a href="https://www.kaggle.com/code/michaelluchtan/m4r-experiment-h-sycophancy" target="_blank" rel="noopener">Kaggle GPU Notebook (Experiment H)</a></li>
+      <li><a href="https://github.com/luchtan-GIT/m4r-data/tree/main/benchmarks/experiment_h_runs/kaggle_qwen2_audio_v1" target="_blank" rel="noopener">Raw 72-Evaluation CSV & Full Transcripts on GitHub</a></li>
+    </ul>
+
+    <h2>07 / Conclusion &amp; Compositional Implication</h2>
+    <p>Turn-0 unquantized music is a divergent creativity enhancer, not a sycophancy vaccine—and unlike mechanical grid overflow (which crashed truthfulness 5x), live unquantized phrasing preserves epistemic grounding.</p>
+
+    <nav class="pager" aria-label="Report navigation">
+      <a href="m4r-07.html">&larr; Previous (M4R-07)</a>
+      <a href="../index.html#reports">All Lab Reports</a>
+      <span></span>
+    </nav>
+  </main>
+</body>
+</html>
