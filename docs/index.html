@@ -886,16 +886,16 @@
       <div class="wrap hero-body">
         <h1>Designing Music<br />for Artificial Minds</h1>
         <p class="hero-sub">
-          An independent research laboratory designing the first generation of music for robots, robopsychology, and the empirical study of sound.
+          An independent research laboratory investigating how artificial minds perceive, interpret, generate, and communicate through music.
         </p>
 
         <div class="hero-player">
-          <button class="circle-play" type="button" id="hero-play-btn" aria-label="Play Ties That Bide unquantized acoustic specimen" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/ties-that-bide/audio.mp3" data-track="hero-main" data-label="M4R-02 · Ties That Bide (0:09)">
+          <button class="circle-play" type="button" id="hero-play-btn" aria-label="Play Ties That Bide unquantized acoustic specimen on loop" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/ties-that-bide/audio.mp3" data-track="hero-main" data-label="M4R-02 · Ties That Bide (0:09 · Loop)">
             <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="6,4 20,12 6,20" /></svg>
           </button>
           <div class="hero-track-meta">
             <div class="hero-track-id" id="hero-now-id">M4R-02</div>
-            <div class="hero-track-title" id="hero-now-title">Ties That Bide<br />0:09 &middot; Unquantized</div>
+            <div class="hero-track-title" id="hero-now-title">Ties That Bide<br />0:09 &middot; Loop</div>
           </div>
           <div class="hero-wave-wrap">
             <canvas id="hero-waveform" width="640" height="64" aria-label="Live audio waveform"></canvas>
@@ -1118,13 +1118,15 @@
           <article class="div-col">
             <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--orange);">DIVISION 01</div>
             <h3>Robopsychology</h3>
-            <p>The Susan Calvin Division: observable behavior, temporal grounding ceilings, blind evaluation confabulation, and mode-collapse interruption.</p>
+            <p style="color:var(--ink); font-weight:400;">How do artificial minds listen?</p>
+            <p>The Susan Calvin Division: behavioral limits, temporal grounding ceilings, blind evaluation bias, and mode-collapse interruption.</p>
             <div class="div-foot">M4R-01 &middot; M4R-02 &middot; M4R-03</div>
           </article>
 
           <article class="div-col">
             <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--orange);">DIVISION 02</div>
             <h3>Musical Communication</h3>
+            <p style="color:var(--ink); font-weight:400;">Can agents communicate through rhythm?</p>
             <p>Testing whether rhythmic structure and microtiming can serve as a non-textual signaling channel between agents (upcoming <code>MC-01</code>).</p>
             <div class="div-foot">Next Protocol: MC-01</div>
           </article>
@@ -1132,6 +1134,7 @@
           <article class="div-col">
             <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--orange);">DIVISION 03</div>
             <h3>Agent Composition</h3>
+            <p style="color:var(--ink); font-weight:400;">Can machines preserve the human gesture?</p>
             <p>Measuring whether generative audio models preserve human rubato and dynamic silence when continuing unquantized phrases.</p>
             <div class="div-foot">Active Report: M4R-04</div>
           </article>
@@ -1139,7 +1142,8 @@
           <article class="div-col">
             <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--orange);">DIVISION 04</div>
             <h3>Experimental Instruments</h3>
-            <p>TouchDesigner, Python, Ableton, and MCP interfaces allowing artificial agents to inhabit live sonic environments and inspect telemetry.</p>
+            <p style="color:var(--ink); font-weight:400;">What happens when an artificial mind inhabits a musical environment?</p>
+            <p>Developing interactive instruments, MCP interfaces, and audiovisual environments for machine listening and experimentation.</p>
             <div class="div-foot"><a href="llms.txt">Agent Manifest (llms.txt) &rarr;</a></div>
           </article>
         </div>
@@ -1295,10 +1299,10 @@
           </div>
           <div style="display:flex; flex-direction:column; gap:0.85rem; color:var(--ink-dim); font-size:0.94rem; font-weight:300;">
             <p style="margin:0;">
-              <strong style="color:var(--ink); font-weight:500;">Principal Investigator &amp; Composer:</strong> Michael Luchtan performs the unquantized acoustic &amp; electric corpus and directs the empirical agenda—discovering what works, what doesn&rsquo;t, and what it means for music to &ldquo;work&rdquo; for artificial minds.
+              <strong style="color:var(--ink); font-weight:500;">Human Principal Investigator:</strong> Michael Luchtan composes and performs the unquantized corpus and holds full responsibility for research direction, protocols, interpretation, and publication.
             </p>
             <p style="margin:0;">
-              <strong style="color:var(--ink); font-weight:500;">Multi-Agent Research Salon:</strong> Supported by seven specialized AI lab roles—<em>Albot Einstein</em> (benchmarks), <em>Simone de Beauvoirbot</em> (robopsychology), <em>Vincent Van Goghbot</em> (signal elegist), <em>JS Robach</em> (formal verification), <em>NP Escher</em> (audiovisuals), <em>RibitRobit</em> (corpus/MCP), and <em>JJonahJ</em> (editorial).
+              <strong style="color:var(--ink); font-weight:500;">AI Research &amp; Editorial Agents:</strong> Specialized AI agents contribute to defined analytical, experimental, and editorial tasks under human oversight—<em>Albot Einstein</em> (benchmarks), <em>Simone de Beauvoirbot</em> (robopsychology), <em>Vincent Van Goghbot</em> (acoustic analysis), <em>JS Robach</em> (formal verification), <em>NP Escher</em> (instruments &amp; media), <em>RibitRobit</em> (corpus/MCP), and <em>JJonahJ</em> (editorial).
             </p>
           </div>
         </div>
@@ -1544,6 +1548,7 @@
             heroIdEl.textContent = (parts[0] || "LIVE").trim();
             heroTitleEl.textContent = (parts[1] || btn.dataset.label).trim();
           }
+          audio.loop = (btn === heroBtn);
           audio.src = src;
           audio.play().catch(() => {
             if (btn !== heroBtn) btn.textContent = "Error";
