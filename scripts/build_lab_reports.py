@@ -395,6 +395,7 @@ TEMPLATE = """<!DOCTYPE html>
         <a href="../index.html#reports">Reports</a>
         <a href="../index.html#listen">Listen</a>
         <a href="../index.html#data">Data</a>
+        <a href="../charter.html">Charter</a>
         <a class="nav-journal" href="https://themechanicalear.substack.com" target="_blank" rel="noopener">Journal</a>
       </nav>
     </div>
