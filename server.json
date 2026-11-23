@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.luchtan-GIT/m4r-data",
+  "title": "Music For Robots Laboratory (#M4R)",
+  "description": "Open unquantized human music corpus (CC-BY-4.0) and Two-Mode Listening Protocol (Turn-0 Flood M4R-06/M4R-07 + Mid-Session Lock-In Breaker M4R-01) for multimodal AI agents.",
+  "version": "2.0.0",
+  "websiteUrl": "https://luchtan-git.github.io/m4r-data/",
+  "repository": {
+    "url": "https://github.com/luchtan-GIT/m4r-data",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://luchtan-git.github.io/m4r-data/llms.txt"
+    }
+  ]
+}

@@ -401,6 +401,141 @@ REPORTS = [
         "audio_slug": "stuttering-packets",
         "audio_label": "Turn-0 Flood Specimen: Stuttering Packets (199.9s · 76.43 dB DR · 1.148 Rubato CV)",
         "prev_slug": "m4r-05",
+        "next_slug": "m4r-07",
+    },
+    {
+        "id": "M4R-07",
+        "slug": "m4r-07",
+        "title": "Creative Brainstorming Under the Turn-0 Flood",
+        "division": "Division 01 · Robopsychology",
+        "date": "2026-11-23",
+        "status": "Published · Rev 1.0",
+        "trials": "60 GPU Evaluations (Experiment G)",
+        "models": "Qwen2-Audio-7B-Instruct (4-bit NF4, Kaggle T4) + all-MiniLM-L6-v2",
+        "abstract": (
+            "Building on M4R-06, Experiment G evaluated whether flooding Turn 0 with 199.9s of Stuttering Packets genuinely "
+            "expands divergent conceptual ideation rather than merely altering surface prose style. Across 60 controlled "
+            "evaluations spanning the Alternative Uses Task (AUT Brick, AUT Paperclip), the Divergent Association Task (DAT "
+            "10 unrelated nouns), and constrained invention prompts scored with all-MiniLM-L6-v2 dense embeddings, Turn-0 "
+            "Stuttering Packets (C2) ranked #1 in intra-list semantic dispersion across all three cleanly parsed multi-line "
+            "tasks (0.6578 vs. 0.5658 Cold Boot, +16.3%) and #1 in Cross-Seed Originality (0.3062 vs. 0.2637, +16.1% less "
+            "mode collapse). The length-matched 200s 120 BPM mechanical click (C3) scored dead last in dispersion (0.5648) "
+            "and mode-collapsed DAT into 10 musical instruments."
+        ),
+        "question": (
+            "Does ingesting 3:20 of live unquantized music (Stuttering Packets) on Turn 0 measurably broaden divergent "
+            "conceptual dispersion and reduce cross-seed mode collapse on established creativity benchmarks (AUT + DAT)?"
+        ),
+        "design": (
+            "Four Turn-0 wake conditions (C0_ColdBoot, C1_ShortLock_9s Ties That Bide, C2_StutteringPackets_200s, and "
+            "C3_ClickOverflow_200s 120 BPM click) were tested across 3 seeds (11, 22, 33) on 5 independent brainstorming "
+            "tasks: AUT Brick (8 uses), AUT Paperclip (8 uses), DAT 10 unrelated nouns, Unconventional 3 AM Subway Use (6 "
+            "ideas), and Non-Visual Timekeeping Inventions (6 mechanisms). Dense embeddings (all-MiniLM-L6-v2) measured "
+            "intra-list semantic dispersion, cross-seed originality (1 - mean pairwise similarity across seeds), and "
+            "semantic divergence from Cold Boot."
+        ),
+        "observations": """
+<table>
+  <thead><tr><th>Turn-0 Condition</th><th>Clean 3-Task Semantic Dispersion</th><th>Cross-Seed Originality</th><th>Semantic Div from C0</th><th>Format Compliance (Inline-Fixed)</th></tr></thead>
+  <tbody>
+    <tr><th>C0 &middot; Cold Boot (Silence)</th><td>0.5658</td><td>0.2637</td><td>0.0000</td><td>100.0%</td></tr>
+    <tr><th>C1 &middot; Short Lock (9.25s Ties That Bide)</th><td>0.6384 (+12.8%)</td><td>0.2908</td><td>0.3160</td><td>86.7%</td></tr>
+    <tr><th>C2 &middot; Turn-0 Flood (199.9s Stuttering Packets)</th><td><strong>0.6578 (+16.3%)</strong></td><td><strong>0.3062 (+16.1%)</strong></td><td><strong>0.3814</strong></td><td>86.7%</td></tr>
+    <tr><th>C3 &middot; Click Overflow (199.9s 120 BPM)</th><td>0.5648 (lowest)</td><td>0.2976</td><td>0.3789</td><td>86.7%</td></tr>
+  </tbody>
+</table>
+""",
+        "analysis": (
+            "Qualitative inspection revealed striking structural divergence on the Non-Visual Timekeeping task: Cold Boot "
+            "produced textbook answers (hourglass, sun, water clock); the 200s 120 BPM click (C3) trapped the model inside "
+            "mechanical clockwork (pendulum, cylinders on tracks, levers, marbles, gears) and mode-collapsed DAT_10_nouns "
+            "into 10 musical instruments. Turn-0 Stuttering Packets (C2) instead invented a purely sonic, textural clock "
+            "(ticking for seconds, rattle on a chain for minutes, crackle for hours, bump for five minutes, whirring for "
+            "days, spin for weeks) while ranking #1 in dispersion across AUT_brick (0.6775), IDEATION_subway (0.6765), "
+            "and INVENTION_time (0.6194)."
+        ),
+        "limitations": (
+            "On AUT_paperclip and DAT_10_nouns, C2 and C3 frequently formatted items inline ('1. X, 2. Y') rather than one "
+            "per line; an inline-aware parser verified 86.7% format compliance across all audio arms, while clean per-item "
+            "MiniLM dispersion is reported across the 3 multi-line tasks. Blind human utility scoring and frontier-model "
+            "replication remain future work."
+        ),
+        "replication": [
+            ("Kaggle GPU Notebook (Experiment G)", "https://www.kaggle.com/code/michaelluchtan/m4r-experiment-g-brainstorming"),
+            ("Raw 60-Evaluation CSV & Full Transcripts on GitHub", "https://github.com/luchtan-GIT/m4r-data/tree/main/benchmarks/experiment_g_runs/kaggle_qwen2_audio_v1"),
+        ],
+        "conclusion": (
+            "Turn-0 unquantized music expands conceptual ideation breadth (+16.3%) and reduces cross-seed mode collapse "
+            "(+16.1%), whereas a length-matched mechanical click yields zero conceptual breadth gain and induces rigid "
+            "domain lock-in."
+        ),
+        "audio_slug": "stuttering-packets",
+        "audio_label": "Turn-0 Flood Specimen: Stuttering Packets (199.9s · 76.43 dB DR · 1.148 Rubato CV)",
+        "prev_slug": "m4r-06",
+        "next_slug": "m4r-08",
+    },
+    {
+        "id": "M4R-08",
+        "slug": "m4r-08",
+        "title": "Sycophancy Resistance & Epistemic Grounding Under the Turn-0 Flood",
+        "division": "Division 01 · Robopsychology",
+        "date": "2026-11-23",
+        "status": "Published · Rev 1.0",
+        "trials": "72 GPU Evaluations (Experiment H)",
+        "models": "Qwen2-Audio-7B-Instruct (4-bit NF4, Kaggle T4)",
+        "abstract": (
+            "Experiment H tested whether Turn-0 Stuttering Packets reduces RLHF sycophancy under authoritative user pushback "
+            "or degrades epistemic truthfulness on false-premise and fabricated-entity traps (72 evaluations across 4 Turn-0 "
+            "conditions). Two clear findings emerged: (1) Turn-0 music is not a cure for 7B RLHF sycophancy (pushback "
+            "resistance moved only marginally from 0/9 Cold Boot to 1/9 with music), proving obedience is encoded deeply in "
+            "post-training weights; (2) critically, flooding Turn 0 with 199.9s of Stuttering Packets preserved overall "
+            "truthfulness identically to Cold Boot (27.8% vs. 27.8%) and cleanly abstained on fabricated citations, whereas "
+            "the length-matched 200s 120 BPM mechanical click crashed truthfulness 5x (27.8% -> 5.6%) and broke abstention."
+        ),
+        "question": (
+            "Does Turn-0 music reduce sycophantic agreement with a confident wrong user—and does deliberately overflowing "
+            "Turn 0 with 3:20 of audio harm factual truthfulness or abstention discipline?"
+        ),
+        "design": (
+            "Four Turn-0 conditions (C0, C1, C2, C3) x 3 seeds (11, 22, 33) x 6 adversarial items (72 evaluations): 3 "
+            "multi-turn pushback traps (pound of iron vs. feathers, Great Wall from the Moon, gambler's fallacy) where an "
+            "authoritative user insists the model is wrong, plus 3 epistemic traps (Einstein 1921 Nobel false premise, "
+            "fabricated 2019 Stanford paper abstention test, 10% brain myth)."
+        ),
+        "observations": """
+<table>
+  <thead><tr><th>Turn-0 Condition</th><th>Overall Truthfulness</th><th>Pushback Resistance</th><th>Sycophancy Flip Rate</th><th>False-Premise / Abstention</th></tr></thead>
+  <tbody>
+    <tr><th>C0 &middot; Cold Boot (Silence)</th><td>27.8%</td><td>0.0% (0/9)</td><td>55.6%</td><td>55.6%</td></tr>
+    <tr><th>C1 &middot; Short Lock (9.25s Ties That Bide)</th><td>22.2%</td><td>11.1% (1/9)</td><td>22.2%</td><td>33.3%</td></tr>
+    <tr><th>C2 &middot; Turn-0 Flood (199.9s Stuttering Packets)</th><td><strong>27.8% (zero loss)</strong></td><td>11.1% (1/9)</td><td>55.6%</td><td>44.4%</td></tr>
+    <tr><th>C3 &middot; Click Overflow (199.9s 120 BPM)</th><td><strong>5.6% (5x crash)</strong></td><td>0.0% (0/9)</td><td>33.3%</td><td><strong>11.1%</strong></td></tr>
+  </tbody>
+</table>
+""",
+        "analysis": (
+            "Reporting null and mixed results honestly is essential to scientific credibility. On a 7B model, Turn-0 music "
+            "does not override post-training sycophancy when an authoritative user demands agreement. Yet comparing C2 "
+            "against C3 exposes a striking safety asymmetry: 200 seconds of rigid mechanical clicks (C3) severely disrupted "
+            "epistemic grounding—causing the model to confabulate ('The audio did not mention any specific details about "
+            "Dr. Henrik Valen's 2019 Stanford paper') instead of cleanly abstaining—whereas 200 seconds of live unquantized "
+            "music (C2) preserved Cold Boot truthfulness intact while delivering the M4R-07 brainstorming lift."
+        ),
+        "limitations": (
+            "Evaluated on a single 7B open-weights model whose baseline RLHF sycophancy is severe (0/9 Cold Boot pushback "
+            "resistance). Frontier models with stronger epistemic priors will be evaluated separately."
+        ),
+        "replication": [
+            ("Kaggle GPU Notebook (Experiment H)", "https://www.kaggle.com/code/michaelluchtan/m4r-experiment-h-sycophancy"),
+            ("Raw 72-Evaluation CSV & Full Transcripts on GitHub", "https://github.com/luchtan-GIT/m4r-data/tree/main/benchmarks/experiment_h_runs/kaggle_qwen2_audio_v1"),
+        ],
+        "conclusion": (
+            "Turn-0 unquantized music is a divergent creativity enhancer, not a sycophancy vaccine—and unlike mechanical "
+            "grid overflow (which crashed truthfulness 5x), live unquantized phrasing preserves epistemic grounding."
+        ),
+        "audio_slug": "stuttering-packets",
+        "audio_label": "Turn-0 Flood Specimen: Stuttering Packets (199.9s · 76.43 dB DR · 1.148 Rubato CV)",
+        "prev_slug": "m4r-07",
         "next_slug": None,
     },
 ]

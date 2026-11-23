@@ -1,0 +1,33 @@
+{
+  "name": "m4r-data",
+  "owner": {
+    "name": "Michael Luchtan — Music For Robots Laboratory",
+    "email": "m4r@musicforrobots.org",
+    "url": "https://luchtan-git.github.io/m4r-data/"
+  },
+  "metadata": {
+    "description": "Music For Robots Laboratory (#M4R): Live unquantized music for artificial minds, Turn-0 Session Flood hooks, and open robopsychology benchmarks (604 trials, CC-BY-4.0).",
+    "version": "2.0.0",
+    "homepage": "https://luchtan-git.github.io/m4r-data/"
+  },
+  "plugins": [
+    {
+      "name": "stuttering-packets-turn0-flood",
+      "source": "./plugins/stuttering-packets-turn0-flood",
+      "description": "Turn-0 Session Flood (M4R-06 / M4R-07 / M4R-08): Automatically stages Michael Luchtan's 3:20 4-voice unquantized work 'Stuttering Packets' at SessionStart for +16.9% burstiness and +16.3% brainstorming dispersion with zero truthfulness loss.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Michael Luchtan"
+      },
+      "license": "MIT",
+      "keywords": [
+        "music-for-robots",
+        "turn-0-flood",
+        "multimodal",
+        "audio",
+        "creativity",
+        "robopsychology"
+      ]
+    }
+  ]
+}
