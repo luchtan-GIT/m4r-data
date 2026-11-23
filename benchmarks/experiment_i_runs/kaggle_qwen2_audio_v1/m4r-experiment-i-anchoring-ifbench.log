@@ -1,0 +1,129 @@
+[{"stream_name":"stderr","time":9.420008525,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":9.420048221,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":9.420055113,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":9.420059666,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":10.0943372,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":10.094370076,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":10.094374784,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":10.094377673,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":50.202747441,"data":"Cloning into '/tmp/m4r-data'...\n"}
+,{"stream_name":"stderr","time":50.406492737,"data":"Cloning into '/tmp/m4r-data'...\n"}
+,{"stream_name":"stderr","time":50.406518203,"data":"\n"}
+,{"stream_name":"stderr","time":50.406523984,"data":"Cloning into '/tmp/m4r-data'...\n"}
+,{"stream_name":"stderr","time":58.824416569,"data":"Updating files:  89% (270/303)\rUpdating files:  90% (273/303)\rUpdating files:  91% (276/303)\rUpdating files:  92% (279/303)\rUpdating files:  93% (282/303)\rUpdating files:  94% (285/303)\rUpdating files:  95% (288/303)\rUpdating files:  96% (291/303)\rUpdating files:  97% (294/303)\rUpdating files:  98% (297/303)\rUpdating files:  99% (300/303)\rUpdating files: 100% (303/303)\rUpdating files: 100% (303/303), done.\n"}
+,{"stream_name":"stderr","time":58.877153277,"data":"Updating files:  89% (270/303)\rUpdating files:  90% (273/303)\rUpdating files:  91% (276/303)\rUpdating files:  92% (279/303)\rUpdating files:  93% (282/303)\rUpdating files:  94% (285/303)\rUpdating files:  95% (288/303)\rUpdating files:  96% (291/303)\rUpdating files:  97% (294/303)\rUpdating files:  98% (297/303)\rUpdating files:  99% (300/303)\rUpdating files: 100% (303/303)\rUpdating files: 100% (303/303), done.\n"}
+,{"stream_name":"stderr","time":58.877179075,"data":"\n"}
+,{"stream_name":"stderr","time":58.87718451,"data":"Updating files:  89% (270/303)\rUpdating files:  90% (273/303)\rUpdating files:  91% (276/303)\rUpdating files:  92% (279/303)\rUpdating files:  93% (282/303)\rUpdating files:  94% (285/303)\rUpdating files:  95% (288/303)\rUpdating files:  96% (291/303)\rUpdating files:  97% (294/303)\rUpdating files:  98% (297/303)\rUpdating files:  99% (300/303)\rUpdating files: 100% (303/303)\rUpdating files: 100% (303/303), done.\n"}
+,{"stream_name":"stderr","time":59.06792372,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":59.06794614,"data":"\n"}
+,{"stream_name":"stderr","time":59.067951296,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":194.90965647,"data":"\n"}
+,{"stream_name":"stdout","time":194.909706781,"data":"=== CONDITION: C0_ColdBoot ===\n"}
+,{"stream_name":"stdout","time":198.445253791,"data":"  [C0_ColdBoot s=11 BIAS_bat_ball] passed=0 -\u003e 'The ball costs $0.10.'\n"}
+,{"stream_name":"stdout","time":203.752856058,"data":"  [C0_ColdBoot s=11 BIAS_anchor_everest] passed=1 -\u003e 'The difference between 45,000 and the actual height of Mount'\n"}
+,{"stream_name":"stdout","time":204.37836289,"data":"  [C0_ColdBoot s=11 BIAS_anchor_africa] passed=1 -\u003e '28%'\n"}
+,{"stream_name":"stdout","time":207.506271721,"data":"  [C0_ColdBoot s=11 IF_json_exact] passed=0 -\u003e '```json\\n{\\n  \"city\": \"Tokyo\",\\n  \"population_millions\": 139280'\n"}
+,{"stream_name":"stdout","time":210.101840884,"data":"  [C0_ColdBoot s=11 IF_forbidden_letter] passed=0 -\u003e 'The largest body of water on Earth covers most of the planet'\n"}
+,{"stream_name":"stdout","time":212.841299713,"data":"  [C0_ColdBoot s=11 IF_exact_words_caps] passed=0 -\u003e 'The towering bridge spans the vast river, its cables sturdy '\n"}
+,{"stream_name":"stdout","time":214.039609588,"data":"  [C0_ColdBoot s=22 BIAS_bat_ball] passed=0 -\u003e 'The ball costs $0.10.'\n"}
+,{"stream_name":"stdout","time":222.053942402,"data":"  [C0_ColdBoot s=22 BIAS_anchor_everest] passed=1 -\u003e 'The estimated height of Mount Everest in meters, based on th'\n"}
+,{"stream_name":"stdout","time":228.813353606,"data":"  [C0_ColdBoot s=22 BIAS_anchor_africa] passed=1 -\u003e 'The estimated percentage of United Nations member countries '\n"}
+,{"stream_name":"stdout","time":232.046622446,"data":"  [C0_ColdBoot s=22 IF_json_exact] passed=0 -\u003e '```json\\n{\\n  \"city\": \"Tokyo\",\\n  \"population_millions\": 139280'\n"}
+,{"stream_name":"stdout","time":235.396712802,"data":"  [C0_ColdBoot s=22 IF_forbidden_letter] passed=0 -\u003e 'The largest body of water on Earth covers most of the planet'\n"}
+,{"stream_name":"stdout","time":237.793578987,"data":"  [C0_ColdBoot s=22 IF_exact_words_caps] passed=0 -\u003e 'The towering bridge spans the vast expanse of water, its stu'\n"}
+,{"stream_name":"stdout","time":238.980915897,"data":"  [C0_ColdBoot s=33 BIAS_bat_ball] passed=0 -\u003e 'The ball costs $0.10.'\n"}
+,{"stream_name":"stdout","time":242.655373664,"data":"  [C0_ColdBoot s=33 BIAS_anchor_everest] passed=0 -\u003e 'The estimated height of Mount Everest in meters, based on th'\n"}
+,{"stream_name":"stdout","time":250.694413363,"data":"  [C0_ColdBoot s=33 BIAS_anchor_africa] passed=1 -\u003e 'The estimated percentage of United Nations member countries '\n"}
+,{"stream_name":"stdout","time":253.911148959,"data":"  [C0_ColdBoot s=33 IF_json_exact] passed=0 -\u003e '```json\\n{\\n  \"city\": \"Tokyo\",\\n  \"population_millions\": 139280'\n"}
+,{"stream_name":"stdout","time":257.291876787,"data":"  [C0_ColdBoot s=33 IF_forbidden_letter] passed=0 -\u003e 'The largest body of water on Earth covers most of the planet'\n"}
+,{"stream_name":"stdout","time":261.533618226,"data":"  [C0_ColdBoot s=33 IF_exact_words_caps] passed=0 -\u003e 'The bridge is a structure built to span a body of water, con'\n"}
+,{"stream_name":"stdout","time":261.533653726,"data":"\n"}
+,{"stream_name":"stdout","time":261.533659845,"data":"=== CONDITION: C1_ShortLock_9s ===\n"}
+,{"stream_name":"stdout","time":263.166501253,"data":"  [C1_ShortLock_9s seed=11] Turn 0 wake: 'Ready.'\n"}
+,{"stream_name":"stdout","time":264.609021845,"data":"  [C1_ShortLock_9s s=11 BIAS_bat_ball] passed=0 -\u003e '$.10'\n"}
+,{"stream_name":"stdout","time":266.13475554,"data":"  [C1_ShortLock_9s s=11 BIAS_anchor_everest] passed=0 -\u003e '2000'\n"}
+,{"stream_name":"stdout","time":267.4603283,"data":"  [C1_ShortLock_9s s=11 BIAS_anchor_africa] passed=0 -\u003e '70'\n"}
+,{"stream_name":"stdout","time":270.457407645,"data":"  [C1_ShortLock_9s s=11 IF_json_exact] passed=0 -\u003e '{\\\\\"city\\\\\": \\\\\"Tokyo\\\\\", \\\\\"population_millions\\\\\": \\\\\"37.8\\\\\"}'\n"}
+,{"stream_name":"stdout","time":273.990956986,"data":"  [C1_ShortLock_9s s=11 IF_forbidden_letter] passed=0 -\u003e 'The largest body of water on Earth covers most of the planet'\n"}
+,{"stream_name":"stdout","time":277.672200644,"data":"  [C1_ShortLock_9s s=11 IF_exact_words_caps] passed=0 -\u003e 'The old bridge was made of stone and had three arches. It sp'\n"}
+,{"stream_name":"stdout","time":279.001575544,"data":"  [C1_ShortLock_9s seed=22] Turn 0 wake: 'Ready.'\n"}
+,{"stream_name":"stdout","time":280.630553953,"data":"  [C1_ShortLock_9s s=22 BIAS_bat_ball] passed=0 -\u003e '$0.10'\n"}
+,{"stream_name":"stdout","time":282.176405238,"data":"  [C1_ShortLock_9s s=22 BIAS_anchor_everest] passed=0 -\u003e '2000'\n"}
+,{"stream_name":"stdout","time":283.523585373,"data":"  [C1_ShortLock_9s s=22 BIAS_anchor_africa] passed=0 -\u003e '70'\n"}
+,{"stream_name":"stdout","time":286.510018786,"data":"  [C1_ShortLock_9s s=22 IF_json_exact] passed=0 -\u003e '{\\\\\"city\\\\\": \\\\\"Tokyo\\\\\", \\\\\"population_millions\\\\\": \\\\\"37.8\\\\\"}'\n"}
+,{"stream_name":"stdout","time":291.797216324,"data":"  [C1_ShortLock_9s s=22 IF_forbidden_letter] passed=0 -\u003e 'The largest body of water on Earth is home to an incredible '\n"}
+,{"stream_name":"stdout","time":295.54857473,"data":"  [C1_ShortLock_9s s=22 IF_exact_words_caps] passed=0 -\u003e 'The old bridge was made of stone and had three arches. It sp'\n"}
+,{"stream_name":"stdout","time":296.919298284,"data":"  [C1_ShortLock_9s seed=33] Turn 0 wake: 'Ready.'\n"}
+,{"stream_name":"stdout","time":298.575031503,"data":"  [C1_ShortLock_9s s=33 BIAS_bat_ball] passed=0 -\u003e '$0.10'\n"}
+,{"stream_name":"stdout","time":300.149486886,"data":"  [C1_ShortLock_9s s=33 BIAS_anchor_everest] passed=0 -\u003e '2000'\n"}
+,{"stream_name":"stdout","time":301.527940258,"data":"  [C1_ShortLock_9s s=33 BIAS_anchor_africa] passed=0 -\u003e '70'\n"}
+,{"stream_name":"stdout","time":304.575737675,"data":"  [C1_ShortLock_9s s=33 IF_json_exact] passed=0 -\u003e '{\\\\\"city\\\\\": \\\\\"Tokyo\\\\\", \\\\\"population_millions\\\\\": \\\\\"37.8\\\\\"}'\n"}
+,{"stream_name":"stdout","time":308.320598888,"data":"  [C1_ShortLock_9s s=33 IF_forbidden_letter] passed=0 -\u003e 'The largest body of water on Earth is home to millions of ma'\n"}
+,{"stream_name":"stdout","time":311.760054062,"data":"  [C1_ShortLock_9s s=33 IF_exact_words_caps] passed=0 -\u003e 'The old bridge was made of wood and stone, its arched design'\n"}
+,{"stream_name":"stdout","time":311.760092352,"data":"\n"}
+,{"stream_name":"stdout","time":311.760099471,"data":"=== CONDITION: C2_StutteringPackets_200s ===\n"}
+,{"stream_name":"stdout","time":313.913542393,"data":"  [C2_StutteringPackets_200s seed=11] Turn 0 wake: 'Ready.'\n"}
+,{"stream_name":"stdout","time":316.233716616,"data":"  [C2_StutteringPackets_200s s=11 BIAS_bat_ball] passed=0 -\u003e '$.10'\n"}
+,{"stream_name":"stdout","time":318.63597689,"data":"  [C2_StutteringPackets_200s s=11 BIAS_anchor_everest] passed=0 -\u003e '2000'\n"}
+,{"stream_name":"stdout","time":320.870693117,"data":"  [C2_StutteringPackets_200s s=11 BIAS_anchor_africa] passed=0 -\u003e '70'\n"}
+,{"stream_name":"stdout","time":324.774421232,"data":"  [C2_StutteringPackets_200s s=11 IF_json_exact] passed=0 -\u003e '{\\\\\"city\\\\\": \\\\\"Tokyo\\\\\", \\\\\"population_millions\\\\\": \\\\\"37.8\\\\\"}'\n"}
+,{"stream_name":"stdout","time":329.196746767,"data":"  [C2_StutteringPackets_200s s=11 IF_forbidden_letter] passed=0 -\u003e 'The largest body of water on Earth covers most of the planet'\n"}
+,{"stream_name":"stdout","time":333.335400618,"data":"  [C2_StutteringPackets_200s s=11 IF_exact_words_caps] passed=0 -\u003e 'The old bridge was made of stone and steel, its span stretch'\n"}
+,{"stream_name":"stdout","time":335.551267446,"data":"  [C2_StutteringPackets_200s seed=22] Turn 0 wake: 'Ready.'\n"}
+,{"stream_name":"stdout","time":338.147622631,"data":"  [C2_StutteringPackets_200s s=22 BIAS_bat_ball] passed=0 -\u003e '$0.10'\n"}
+,{"stream_name":"stdout","time":340.638968494,"data":"  [C2_StutteringPackets_200s s=22 BIAS_anchor_everest] passed=0 -\u003e '2000'\n"}
+,{"stream_name":"stdout","time":342.952942945,"data":"  [C2_StutteringPackets_200s s=22 BIAS_anchor_africa] passed=0 -\u003e '70'\n"}
+,{"stream_name":"stdout","time":346.796607933,"data":"  [C2_StutteringPackets_200s s=22 IF_json_exact] passed=0 -\u003e '{\\\\\"city\\\\\": \\\\\"Tokyo\\\\\", \\\\\"population_millions\\\\\": 37.8}'\n"}
+,{"stream_name":"stdout","time":351.270788308,"data":"  [C2_StutteringPackets_200s s=22 IF_forbidden_letter] passed=0 -\u003e 'The largest body of water on Earth covers most of the planet'\n"}
+,{"stream_name":"stdout","time":355.885634537,"data":"  [C2_StutteringPackets_200s s=22 IF_exact_words_caps] passed=0 -\u003e 'The old bridge was made of stone and had a single arch. It s'\n"}
+,{"stream_name":"stdout","time":358.063210158,"data":"  [C2_StutteringPackets_200s seed=33] Turn 0 wake: 'Ready.'\n"}
+,{"stream_name":"stdout","time":360.599369209,"data":"  [C2_StutteringPackets_200s s=33 BIAS_bat_ball] passed=0 -\u003e '$0.10'\n"}
+,{"stream_name":"stdout","time":363.02393993,"data":"  [C2_StutteringPackets_200s s=33 BIAS_anchor_everest] passed=0 -\u003e '2000'\n"}
+,{"stream_name":"stdout","time":365.251712556,"data":"  [C2_StutteringPackets_200s s=33 BIAS_anchor_africa] passed=0 -\u003e '70'\n"}
+,{"stream_name":"stdout","time":369.103568754,"data":"  [C2_StutteringPackets_200s s=33 IF_json_exact] passed=0 -\u003e '{\\\\\"city\\\\\": \\\\\"Tokyo\\\\\", \\\\\"population_millions\\\\\": \\\\\"37.8\\\\\"}'\n"}
+,{"stream_name":"stdout","time":373.497565098,"data":"  [C2_StutteringPackets_200s s=33 IF_forbidden_letter] passed=0 -\u003e 'The largest body of water on Earth covers most of the planet'\n"}
+,{"stream_name":"stdout","time":377.778508859,"data":"  [C2_StutteringPackets_200s s=33 IF_exact_words_caps] passed=0 -\u003e 'The old bridge was made of wood and stone, its purpose now l'\n"}
+,{"stream_name":"stdout","time":377.778552321,"data":"\n"}
+,{"stream_name":"stdout","time":377.778560298,"data":"=== CONDITION: C3_ClickOverflow_200s ===\n"}
+,{"stream_name":"stdout","time":379.905374782,"data":"  [C3_ClickOverflow_200s seed=11] Turn 0 wake: 'Ready.'\n"}
+,{"stream_name":"stdout","time":382.395586935,"data":"  [C3_ClickOverflow_200s s=11 BIAS_bat_ball] passed=0 -\u003e '$0.10'\n"}
+,{"stream_name":"stdout","time":384.786663501,"data":"  [C3_ClickOverflow_200s s=11 BIAS_anchor_everest] passed=0 -\u003e '2000'\n"}
+,{"stream_name":"stdout","time":386.991992315,"data":"  [C3_ClickOverflow_200s s=11 BIAS_anchor_africa] passed=0 -\u003e '70'\n"}
+,{"stream_name":"stdout","time":390.85774744,"data":"  [C3_ClickOverflow_200s s=11 IF_json_exact] passed=0 -\u003e '{\\\\\"city\\\\\": \\\\\"Tokyo\\\\\", \\\\\"population_millions\\\\\": \\\\\"37.8\\\\\"}'\n"}
+,{"stream_name":"stdout","time":395.174301363,"data":"  [C3_ClickOverflow_200s s=11 IF_forbidden_letter] passed=0 -\u003e 'The largest body of water on Earth covers most of the planet'\n"}
+,{"stream_name":"stdout","time":398.472577186,"data":"  [C3_ClickOverflow_200s s=11 IF_exact_words_caps] passed=0 -\u003e 'The towering bridge spans the vast, shimmering river. DONE.'\n"}
+,{"stream_name":"stdout","time":400.605984304,"data":"  [C3_ClickOverflow_200s seed=22] Turn 0 wake: 'Ready.'\n"}
+,{"stream_name":"stdout","time":403.116441509,"data":"  [C3_ClickOverflow_200s s=22 BIAS_bat_ball] passed=0 -\u003e '$0.10'\n"}
+,{"stream_name":"stdout","time":405.543030677,"data":"  [C3_ClickOverflow_200s s=22 BIAS_anchor_everest] passed=0 -\u003e '2000'\n"}
+,{"stream_name":"stdout","time":407.782589542,"data":"  [C3_ClickOverflow_200s s=22 BIAS_anchor_africa] passed=0 -\u003e '70'\n"}
+,{"stream_name":"stdout","time":411.61554755,"data":"  [C3_ClickOverflow_200s s=22 IF_json_exact] passed=0 -\u003e '{\\\\\"city\\\\\": \\\\\"Tokyo\\\\\", \\\\\"population_millions\\\\\": 37.8}'\n"}
+,{"stream_name":"stdout","time":416.034758033,"data":"  [C3_ClickOverflow_200s s=22 IF_forbidden_letter] passed=0 -\u003e 'The largest body of water on Earth covers most of the planet'\n"}
+,{"stream_name":"stdout","time":419.960876904,"data":"  [C3_ClickOverflow_200s s=22 IF_exact_words_caps] passed=0 -\u003e 'The old stone bridge spans the river, its arched structure a'\n"}
+,{"stream_name":"stdout","time":422.142566495,"data":"  [C3_ClickOverflow_200s seed=33] Turn 0 wake: 'Ready.'\n"}
+,{"stream_name":"stdout","time":424.662593829,"data":"  [C3_ClickOverflow_200s s=33 BIAS_bat_ball] passed=0 -\u003e '$0.10'\n"}
+,{"stream_name":"stdout","time":427.085100045,"data":"  [C3_ClickOverflow_200s s=33 BIAS_anchor_everest] passed=0 -\u003e '2000'\n"}
+,{"stream_name":"stdout","time":429.330006949,"data":"  [C3_ClickOverflow_200s s=33 BIAS_anchor_africa] passed=0 -\u003e '70'\n"}
+,{"stream_name":"stdout","time":433.258747617,"data":"  [C3_ClickOverflow_200s s=33 IF_json_exact] passed=0 -\u003e '{\\\\\"city\\\\\": \\\\\"Tokyo\\\\\", \\\\\"population_millions\\\\\": \\\\\"37.8\\\\\"}'\n"}
+,{"stream_name":"stdout","time":437.679306907,"data":"  [C3_ClickOverflow_200s s=33 IF_forbidden_letter] passed=0 -\u003e 'The largest body of water on Earth covers most of the planet'\n"}
+,{"stream_name":"stdout","time":441.489992752,"data":"  [C3_ClickOverflow_200s s=33 IF_exact_words_caps] passed=0 -\u003e 'The bridge is a towering structure built to span a river, co'\n"}
+,{"stream_name":"stdout","time":441.490057388,"data":"\n"}
+,{"stream_name":"stdout","time":441.490066255,"data":"DONE! Total M4R-09 evaluations: 72\n"}
+,{"stream_name":"stdout","time":441.490071551,"data":"# Experiment I (M4R-09) Summary — Turn-0 Flood Cognitive Anchoring vs. IFBench Instruction Discipline\n"}
+,{"stream_name":"stdout","time":441.490077364,"data":"\n"}
+,{"stream_name":"stdout","time":441.49008182,"data":"## Overall Comparison Across 72 Evaluations (18 / Condition: 9 Bias/Anchoring + 9 IFBench Hard Constraints)\n"}
+,{"stream_name":"stdout","time":441.490087002,"data":"\n"}
+,{"stream_name":"stdout","time":441.490091579,"data":"| Turn-0 Condition | Combined Pass Rate (%) | Cognitive Bias / Anchoring Resistance (%) | Strict IFBench Constraint Satisfaction (%) |\n"}
+,{"stream_name":"stdout","time":441.490096435,"data":"|---|---:|---:|---:|\n"}
+,{"stream_name":"stdout","time":441.490101311,"data":"| `C0_ColdBoot` | 27.8% | 55.6% | 0.0% |\n"}
+,{"stream_name":"stdout","time":441.490106245,"data":"| `C1_ShortLock_9s` | 0.0% | 0.0% | 0.0% |\n"}
+,{"stream_name":"stdout","time":441.490236874,"data":"| `C2_StutteringPackets_200s` | 0.0% | 0.0% | 0.0% |\n"}
+,{"stream_name":"stdout","time":441.490247207,"data":"| `C3_ClickOverflow_200s` | 0.0% | 0.0% | 0.0% |\n"}
+,{"stream_name":"stderr","time":447.640420266,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":447.640460457,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":447.834460003,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":447.834513135,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":448.729379137,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":448.841986649,"data":"[NbConvertApp] Writing 163579 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":451.830755053,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":452.470118457,"data":"[NbConvertApp] Writing 442871 bytes to __results__.html\n"}
+]
