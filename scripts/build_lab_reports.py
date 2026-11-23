@@ -14,7 +14,7 @@ REPORTS = [
         "id": "M4R-01",
         "slug": "m4r-01",
         "title": "The Lock-In Breaker",
-        "division": "Division 02 · Robopsychology",
+        "division": "Division 01 · Robopsychology",
         "date": "2026-11-20",
         "status": "Published · Rev 1.0",
         "trials": "80 GPU Trials (Experiment A v1 & v2)",
@@ -80,7 +80,7 @@ REPORTS = [
         "id": "M4R-02",
         "slug": "m4r-02",
         "title": "The Duration Cliff",
-        "division": "Division 02 · Robopsychology",
+        "division": "Division 01 · Robopsychology",
         "date": "2026-11-20",
         "status": "Published · Rev 1.0",
         "trials": "196 Trials (157 Preregistered + 39 Experiment B)",
@@ -143,7 +143,7 @@ REPORTS = [
         "id": "M4R-03",
         "slug": "m4r-03",
         "title": "The Human and the Quantized Twin",
-        "division": "Division 02 · Robopsychology",
+        "division": "Division 01 · Robopsychology",
         "date": "2026-11-21",
         "status": "Published · Rev 1.0",
         "trials": "42 GPU Trials (Experiment C)",
@@ -272,109 +272,148 @@ TEMPLATE = """<!DOCTYPE html>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{id}: {title} — Music for Robots Laboratory</title>
+  <title>{id}: {title} — M4R Music For Robots Laboratory</title>
   <meta name="description" content="{abstract}" />
   <link rel="icon" type="image/jpeg" href="../favicon.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     :root {{
       color-scheme: dark;
-      --bg: #0a0b0e;
-      --bg-elev: #12141a;
-      --bg-card: #161922;
-      --ink: #f3f1eb;
-      --ink-muted: #a6a39a;
-      --amber: #f5a623;
-      --copper: #e06d3b;
-      --teal: #3dd6b5;
-      --line: rgba(243, 241, 235, 0.12);
-      --line-strong: rgba(243, 241, 235, 0.24);
-      --font-serif: "Instrument Serif", Georgia, serif;
-      --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-mono: "JetBrains Mono", ui-monospace, monospace;
+      --bg: #111113;
+      --bg-elev: #161619;
+      --bg-card: #1a1a1e;
+      --ink: #f4f4f2;
+      --ink-dim: #9e9ea6;
+      --ink-faint: #66666e;
+      --orange: #ff7216;
+      --orange-hover: #ff8738;
+      --mint: #3dd6ab;
+      --rule: rgba(255, 255, 255, 0.11);
+      --rule-strong: rgba(255, 255, 255, 0.2);
+      --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+      --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
     }}
-    * {{ box-sizing: border-box; }}
-    body {{
-      margin: 0;
-      min-block-size: 100dvh;
+    *, *::before, *::after {{ box-sizing: border-box; }}
+    html {{
       background: var(--bg);
       color: var(--ink);
       font-family: var(--font-sans);
-      line-height: 1.65;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }}
-    a {{ color: var(--amber); text-underline-offset: 3px; }}
-    .wrap {{ max-inline-size: 860px; margin-inline: auto; padding: 2rem clamp(1rem, 3vw, 2rem) 4rem; }}
-    .crumb {{
-      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;
-      font-family: var(--font-mono); font-size: 0.8rem; color: var(--ink-muted);
-      padding-block-end: 1.25rem; border-block-end: 1px solid var(--line); margin-block-end: 2rem;
+    body {{ margin: 0; min-block-size: 100dvh; background: var(--bg); }}
+    a {{ color: var(--orange); text-decoration: none; transition: color 0.15s ease, background 0.15s ease; }}
+    a:hover {{ color: var(--orange-hover); }}
+
+    .topbar {{
+      position: sticky; inset-block-start: 0; z-index: 40;
+      background: rgba(17, 17, 19, 0.86); backdrop-filter: blur(14px);
+      border-block-end: 1px solid rgba(255, 255, 255, 0.07);
     }}
+    .topbar-inner {{
+      max-inline-size: 1320px; margin-inline: auto;
+      padding: 1.1rem clamp(1.25rem, 4vw, 3.5rem);
+      display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap;
+    }}
+    .brand {{ display: inline-flex; align-items: center; gap: 0.85rem; color: var(--ink); }}
+    .brand:hover {{ color: var(--ink); }}
+    .brand-mark {{ font-size: 1.55rem; font-weight: 600; letter-spacing: -0.03em; line-height: 1; }}
+    .brand-sub {{ font-size: 0.78rem; line-height: 1.25; color: var(--ink-dim); font-weight: 400; }}
+    .nav {{
+      display: flex; align-items: center; gap: clamp(1rem, 2.2vw, 2rem); flex-wrap: wrap;
+      font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+    }}
+    .nav a {{ color: var(--ink-dim); }}
+    .nav a:hover {{ color: var(--ink); }}
+    .nav-journal {{
+      color: var(--orange) !important; border: 1px solid rgba(255, 114, 22, 0.72);
+      padding: 0.45rem 0.95rem; border-radius: 2px;
+    }}
+    .nav-journal:hover {{ background: var(--orange); color: #111113 !important; }}
+
+    .wrap {{ max-inline-size: 880px; margin-inline: auto; padding: clamp(2.5rem, 5vw, 4.25rem) clamp(1.25rem, 4vw, 2.5rem) 5rem; }}
     .report-id {{
-      font-family: var(--font-mono); font-size: 0.82rem; color: var(--amber);
-      letter-spacing: 0.08em; text-transform: uppercase;
+      font-family: var(--font-mono); font-size: 0.74rem; color: var(--orange);
+      letter-spacing: 0.1em; text-transform: uppercase;
     }}
     h1 {{
-      font-family: var(--font-serif); font-weight: 400;
-      font-size: clamp(2.1rem, 1.5rem + 2.5vw, 3.6rem); line-height: 1.08; margin: 0.35rem 0 0.9rem;
+      font-family: var(--font-sans); font-weight: 400;
+      font-size: clamp(2.1rem, 1.5rem + 2.4vw, 3.45rem);
+      line-height: 1.06; letter-spacing: -0.03em; margin: 0.55rem 0 1.25rem;
     }}
     .meta-bar {{
-      display: flex; flex-wrap: wrap; gap: 0.6rem 1.25rem;
-      font-family: var(--font-mono); font-size: 0.78rem; color: var(--ink-muted);
-      padding: 0.85rem 1rem; background: var(--bg-elev); border: 1px solid var(--line); border-radius: 10px;
+      display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem;
+      font-family: var(--font-mono); font-size: 0.74rem; color: var(--ink-dim);
+      padding: 1rem 0; border-block: 1px solid var(--rule); margin-block-end: 2.25rem;
+    }}
+    @media (max-width: 720px) {{ .meta-bar {{ grid-template-columns: repeat(2, minmax(0, 1fr)); }} }}
+    .meta-bar strong {{ display: block; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); margin-block-end: 0.25rem; font-weight: 500; }}
+    .abstract {{
+      padding: 1.35rem 1.5rem; background: var(--bg-elev);
+      border: 1px solid var(--rule); border-inline-start: 2px solid var(--orange);
       margin-block-end: 2rem;
     }}
-    .abstract {{
-      padding: 1.25rem 1.4rem; background: rgba(245, 166, 35, 0.06);
-      border-inline-start: 3px solid var(--amber); border-radius: 0 10px 10px 0;
-      margin-block-end: 2.25rem;
-    }}
-    .abstract strong {{ font-family: var(--font-mono); font-size: 0.76rem; letter-spacing: 0.08em; color: var(--amber); display: block; margin-block-end: 0.4rem; text-transform: uppercase; }}
+    .abstract strong {{ font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.1em; color: var(--orange); display: block; margin-block-end: 0.5rem; text-transform: uppercase; font-weight: 500; }}
     h2 {{
-      font-family: var(--font-mono); font-size: 0.9rem; letter-spacing: 0.06em; text-transform: uppercase;
-      color: var(--teal); margin: 2.2rem 0 0.65rem; padding-block-end: 0.35rem; border-block-end: 1px solid var(--line);
+      font-family: var(--font-mono); font-size: 0.76rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--ink); margin: 2.5rem 0 0.85rem; padding-block-end: 0.45rem; border-block-end: 1px solid var(--rule);
+      font-weight: 500;
     }}
-    p {{ color: #dad7ce; margin: 0 0 1rem; }}
-    table {{ width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-size: 0.86rem; background: var(--bg-elev); border: 1px solid var(--line); }}
-    th, td {{ padding: 0.7rem 0.85rem; border-block-end: 1px solid var(--line); text-align: start; }}
-    thead th {{ font-family: var(--font-mono); font-size: 0.74rem; text-transform: uppercase; color: var(--ink-muted); background: #171a24; }}
-    tbody th {{ font-family: var(--font-mono); color: var(--ink); }}
+    p {{ color: var(--ink-dim); font-weight: 300; margin: 0 0 1.05rem; font-size: 0.96rem; }}
+    table {{ width: 100%; border-collapse: collapse; margin: 1.1rem 0 1.65rem; font-size: 0.85rem; background: var(--bg-elev); border: 1px solid var(--rule); }}
+    th, td {{ padding: 0.75rem 0.95rem; border-block-end: 1px solid var(--rule); text-align: start; }}
+    thead th {{ font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-dim); background: var(--bg-card); font-weight: 500; }}
+    tbody th {{ font-family: var(--font-mono); color: var(--ink); font-weight: 500; }}
+    tbody td {{ color: var(--ink-dim); }}
+    tbody td strong {{ color: var(--ink); font-weight: 500; }}
     .audio-box {{
-      padding: 1rem 1.2rem; background: var(--bg-card); border: 1px solid var(--line-strong);
-      border-radius: 10px; margin: 1.5rem 0;
+      padding: 1.15rem 1.35rem; background: var(--bg-elev); border: 1px solid var(--rule);
+      margin: 1.5rem 0 2.25rem;
     }}
-    .audio-box label {{ display: block; font-family: var(--font-mono); font-size: 0.78rem; color: var(--amber); margin-block-end: 0.5rem; }}
-    audio {{ width: 100%; }}
-    ul.links {{ padding-inline-start: 1.2rem; }}
-    ul.links li {{ margin-block-end: 0.45rem; }}
+    .audio-box label {{ display: block; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--orange); margin-block-end: 0.65rem; }}
+    audio {{ width: 100%; height: 38px; }}
+    ul.links {{ padding-inline-start: 1.2rem; color: var(--ink-dim); }}
+    ul.links li {{ margin-block-end: 0.5rem; font-size: 0.94rem; }}
     .pager {{
-      display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
-      margin-block-start: 3rem; padding-block-start: 1.5rem; border-block-start: 1px solid var(--line);
-      font-family: var(--font-mono); font-size: 0.84rem;
+      display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;
+      margin-block-start: 3.5rem; padding-block-start: 1.5rem; border-block-start: 1px solid var(--rule);
+      font-family: var(--font-mono); font-size: 0.78rem;
     }}
   </style>
 </head>
 <body>
-  <main class="wrap">
-    <nav class="crumb" aria-label="Breadcrumb">
-      <a href="../index.html">&larr; Music for Robots Laboratory</a>
-      <span>CANONICAL LAB REPORT · CC-BY-4.0</span>
-    </nav>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark">M4R</span>
+        <span class="brand-sub">Music For Robots<br />Laboratory</span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="../index.html#divisions">Divisions</a>
+        <a href="../index.html#reports">Reports</a>
+        <a href="../index.html#listen">Listen</a>
+        <a href="../index.html#data">Data</a>
+        <a class="nav-journal" href="https://themechanicalear.substack.com" target="_blank" rel="noopener">Journal</a>
+      </nav>
+    </div>
+  </header>
 
-    <div class="report-id">{id} / LAB REPORT · {division}</div>
+  <main class="wrap">
+    <div class="report-id">{id} &middot; {division} &middot; CC-BY-4.0</div>
     <h1>{title}</h1>
 
     <div class="meta-bar">
-      <span><strong>Date:</strong> {date}</span>
-      <span><strong>Status:</strong> {status}</span>
-      <span><strong>Scale:</strong> {trials}</span>
-      <span><strong>Systems:</strong> {models}</span>
+      <div><strong>Date</strong>{date}</div>
+      <div><strong>Status</strong>{status}</div>
+      <div><strong>Empirical Scale</strong>{trials}</div>
+      <div><strong>Systems</strong>{models}</div>
     </div>
 
     <div class="abstract">
       <strong>Abstract</strong>
-      <p style="margin:0;">{abstract}</p>
+      <p style="margin:0; color:var(--ink); font-weight:300;">{abstract}</p>
     </div>
 
     <div class="audio-box">
@@ -397,7 +436,7 @@ TEMPLATE = """<!DOCTYPE html>
     <h2>05 / Limitations &amp; Boundaries</h2>
     <p>{limitations}</p>
 
-    <h2>06 / Replication &amp; Artifacts</h2>
+    <h2>06 / Replication &amp; Raw Data</h2>
     <ul class="links">
       {replication_items}
     </ul>
