@@ -294,7 +294,8 @@ DIVISIONS = [
         "projects": [
             ("M4R-01 · Published", "The Lock-In Breaker", "+33.3% hard-constraint retention and 13x cliché drop after <15s unquantized listening (80 trials).", "../reports/m4r-01.html"),
             ("M4R-02 · Published", "The Duration Cliff", "1.000 onset F1 under 15s; temporal grounding degrades sharply at 25–30s (196 trials).", "../reports/m4r-02.html"),
-            ("M4R-03 · Published", "The Human and the Quantized Twin", "8/8 Clip-A position-bias confabulation, 0–10s timestamp ceiling, and 7B debugging null audit (42 trials).", "../reports/m4r-03.html"),
+            ("M4R-03 · Published", "The Human and the Quantized Twin", "8/8 Clip-A position bias in the tested 8-trial protocol, 0–10s timestamp ceiling, and 7B debugging null audit (42 trials).", "../reports/m4r-03.html"),
+            ("M4R-05 · Published", "The Arc of Listening", "Seed-Locked Order Blindness on Synthetic Storms (5 sections, 84 GPU evaluations): identical sampling seeds produced identical tension arcs forward, reversed, and scrambled.", "../reports/m4r-05.html"),
         ],
         "lead": "Human Oversight: Michael Luchtan (PI) · AI Research Agents: Simone de Beauvoirbot (Robopsychology), Albot Einstein (Benchmarks), JS Robach (Formal Verification).",
         "future": "Establishing a systematic, cross-model experimental program for artificial listening, temporal working-memory diagnostics, and behavioral calibration across frontier and open-weights audio models.",
