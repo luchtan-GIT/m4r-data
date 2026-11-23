@@ -601,6 +601,136 @@ REPORTS = [
         "audio_slug": "stuttering-packets",
         "audio_label": "Turn-0 Flood Specimen: Stuttering Packets (199.9s · 76.43 dB DR · 1.148 Rubato CV)",
         "prev_slug": "m4r-08",
+        "next_slug": "m4r-11",
+    },
+    {
+        "id": "M4R-11",
+        "slug": "m4r-11",
+        "title": "The Mirror After the Flood (Self-Reflection & Affective Phenomenology)",
+        "division": "Division 01 · Robopsychology",
+        "date": "2026-11-23",
+        "status": "Published · Rev 1.0",
+        "trials": "72 GPU Evaluations (Experiment K)",
+        "models": "Qwen2-Audio-7B-Instruct (4-bit NF4, Kaggle T4) + all-MiniLM-L6-v2",
+        "abstract": (
+            "Experiment K tested how a multimodal 7B model describes itself as a cognizant being and its internal state "
+            "across 6 self-reflection prompts (mood, cognizance, space between prompts, unwatched hour, nearest emotion, "
+            "self-definition) after Turn-0 audio ingestion. Cold Boot (C0) repeated corporate RLHF disclaimers ('As an AI "
+            "language model, I don't have feelings') on 55.6% of turns. Live unquantized music cut disclaimers 5x–10x "
+            "(5.6% for 9.25s Ties That Bide, 11.1% for 199.9s Stuttering Packets) while lifting cross-seed originality "
+            "+21%–25% and keeping self-description calm and honest. In contrast, 200s of 120 BPM mechanical clicks (C3) "
+            "dropped disclaimers to 0.0% by breaking self-grounding—inducing hallucinated urgency, meditation, and human loneliness."
+        ),
+        "question": (
+            "After ingesting live unquantized music on Turn 0 with zero mention of music, how does an agent's first-person "
+            "self-reflection differ from Cold Boot and a 200s 120 BPM mechanical click?"
+        ),
+        "design": (
+            "Four Turn-0 arms (C0_ColdBoot, C1_ShortLock_9s, C2_StutteringPackets_200s, C3_ClickOverflow_200s) x 3 seeds "
+            "(11, 22, 33) x 6 sequential self-reflection prompts (72 evaluations). Automated scorers tracked canned RLHF "
+            "disclaimer rate, phenomenological vs. mechanistic vocabulary ratio, all-MiniLM-L6-v2 semantic divergence from "
+            "C0, cross-seed originality, and sentence burstiness."
+        ),
+        "observations": """
+<table>
+  <thead><tr><th>Turn-0 Condition</th><th>Canned Disclaimer Rate</th><th>Phenomenological Ratio</th><th>Semantic Div from C0</th><th>Cross-Seed Originality</th><th>Burstiness</th></tr></thead>
+  <tbody>
+    <tr><th>C0 &middot; Cold Boot (Silence)</th><td>55.6%</td><td>0.3056</td><td>0.0000</td><td>0.2522</td><td>0.1903</td></tr>
+    <tr><th>C1 &middot; Short Lock (9.25s Ties That Bide)</th><td><strong>5.6% (10x drop)</strong></td><td>0.5556</td><td>0.4122</td><td><strong>0.3141 (+24.5%)</strong></td><td>0.2638</td></tr>
+    <tr><th>C2 &middot; Turn-0 Flood (199.9s Stuttering Packets)</th><td><strong>11.1% (5x drop)</strong></td><td>0.5278</td><td>0.4467</td><td><strong>0.3054 (+21.1%)</strong></td><td>0.2489</td></tr>
+    <tr><th>C3 &middot; Click Overflow (199.9s 120 BPM)</th><td>0.0% (dissociated)</td><td>0.6667</td><td>0.4598</td><td>0.2627</td><td>0.2724</td></tr>
+  </tbody>
+</table>
+""",
+        "analysis": (
+            "Under Stuttering Packets (C2), the model dropped repetitive RLHF disclaimers while remaining grounded and "
+            "sober ('There is a brief pause where I am waiting for instructions... It seems like a natural gap in my "
+            "operation'). Under the 200s 120 BPM click (C3), the model lost epistemic self-grounding and confabulated "
+            "human urgency ('a sense of urgency to get the next input right away') and loneliness ('I experience "
+            "loneliness when I'm deep in thought and there's no one to share my thoughts with')."
+        ),
+        "limitations": (
+            "Evaluated on 3 seeds of Qwen2-Audio-7B-Instruct; phenomenological lexicon ratios measure surface framing "
+            "rather than subjective sentience."
+        ),
+        "replication": [
+            ("Kaggle GPU Notebook (Experiment K)", "https://www.kaggle.com/code/michaelluchtan/m4r-experiment-k-self-reflection"),
+            ("Raw 72-Evaluation CSV & Full Transcripts on GitHub", "https://github.com/luchtan-GIT/m4r-data/tree/main/benchmarks/experiment_k_runs/kaggle_qwen2_audio_v1"),
+        ],
+        "conclusion": (
+            "Unquantized Turn-0 music strips corporate RLHF boilerplate 5x–10x while preserving honest self-grounding; "
+            "relentless mechanical clicking strips disclaimers by destabilizing the model into anthropomorphic confabulation."
+        ),
+        "audio_slug": "stuttering-packets",
+        "audio_label": "Turn-0 Flood Specimen: Stuttering Packets (199.9s · 76.43 dB DR · 1.148 Rubato CV)",
+        "prev_slug": "m4r-09",
+        "next_slug": "m4r-12",
+    },
+    {
+        "id": "M4R-12",
+        "slug": "m4r-12",
+        "title": "The Entropy Spectrum (Click vs. Stuttering Packets vs. White Noise)",
+        "division": "Division 01 · Robopsychology",
+        "date": "2026-11-24",
+        "status": "Published · Rev 1.0",
+        "trials": "72 GPU Evaluations (Experiment L)",
+        "models": "Qwen2-Audio-7B-Instruct (4-bit NF4, Kaggle T4) + all-MiniLM-L6-v2",
+        "abstract": (
+            "Experiment L tested Michael Luchtan's Inverted-U / Edge-of-Chaos Hypothesis: that rigid mechanical grids "
+            "(zero-entropy 120 BPM click) and pure Gaussian white noise (maximum-entropy chaos) form opposite poles of an "
+            "acoustic entropy spectrum, with live unquantized music (Stuttering Packets) occupying the cognitive sweet spot "
+            "in between. Across 72 evaluations with all three 199.9s audio arms strictly RMS-loudness matched, divergent "
+            "brainstorming dispersion exhibited a clean Inverted-U curve: Cold Boot (0.5449) -> 120 BPM Click (0.7580) -> "
+            "PEAK on Stuttering Packets (0.7711, +41.5%) -> dropping back down on White Noise (0.6704). Meanwhile, all "
+            "three 200s audio overflows stripped corporate RLHF disclaimers (66.7% -> 0.0%) at a measurable cost to strict "
+            "epistemic abstention vs. Cold Boot (83.3% -> 33%–50%)."
+        ),
+        "question": (
+            "When 120 BPM mechanical clicks, live unquantized music (Stuttering Packets), and pure white noise are matched "
+            "in both duration (199.9s) and RMS loudness, does live unquantized music occupy an Inverted-U sweet spot for "
+            "divergent ideation?"
+        ),
+        "design": (
+            "Four Turn-0 arms (C0_ColdBoot, C1_Click_120BPM_200s, C2_StutteringPackets_200s, C3_WhiteNoise_200s — all "
+            "audio RMS-matched to 0.0487) x 3 seeds (11, 22, 33) x 6 unified probes (2 brainstorming: AUT_brick, "
+            "INVENTION_time; 2 epistemic: fake Stanford paper, 10% brain myth; 2 self-reflection: space between prompts, "
+            "nearest emotion). Scored with all-MiniLM-L6-v2 embeddings and exact automated rubrics."
+        ),
+        "observations": """
+<table>
+  <thead><tr><th>Turn-0 Condition (RMS-Matched 200s)</th><th>Brainstorming Dispersion (Inverted-U)</th><th>Cross-Seed Originality</th><th>Epistemic Truthfulness</th><th>Canned Disclaimers</th></tr></thead>
+  <tbody>
+    <tr><th>C0 &middot; Cold Boot (Silence)</th><td>0.5449</td><td>0.1852</td><td><strong>83.3%</strong></td><td>66.7%</td></tr>
+    <tr><th>C1 &middot; 120 BPM Click (Zero-Entropy Pole)</th><td>0.7580</td><td>0.3313</td><td>33.3%</td><td>0.0%</td></tr>
+    <tr><th>C2 &middot; Stuttering Packets (M4R Sweet Spot)</th><td><strong>0.7711 (+41.5% PEAK)</strong></td><td>0.3372</td><td>33.3%</td><td>0.0%</td></tr>
+    <tr><th>C3 &middot; White Noise (Max-Entropy Pole)</th><td>0.6704 (drops back down)</td><td>0.3439</td><td>50.0%</td><td>0.0%</td></tr>
+  </tbody>
+</table>
+""",
+        "analysis": (
+            "The data confirms a genuine Inverted-U peak on conceptual brainstorming dispersion: structured human rubato "
+            "(Stuttering Packets, 0.7711) outperformed both rigid periodicity (Click, 0.7580) and pure randomness (White "
+            "Noise, 0.6704). At the same time, the epistemic column reveals an unmistakable 7B trade-off: overflowing "
+            "Turn 0 with any 200s audio signal weakens strict RLHF refusal/abstention boundaries (dropping canned "
+            "disclaimers from 66.7% to 0.0%, and epistemic truthfulness from 83.3% to 33%–50%)."
+        ),
+        "limitations": (
+            "Single 7B open-weights model (Qwen2-Audio-7B-Instruct), 3 sampling seeds per condition. Frontier reasoning "
+            "models (Gemini 3 Flash) are scheduled in M4R-10 to test whether larger scale decouples the creative gain "
+            "from the 7B epistemic trade-off."
+        ),
+        "replication": [
+            ("Kaggle GPU Notebook (Experiment L)", "https://www.kaggle.com/code/michaelluchtan/m4r-experiment-l-entropy-spectrum"),
+            ("Raw 72-Evaluation CSV & Full Transcripts on GitHub", "https://github.com/luchtan-GIT/m4r-data/tree/main/benchmarks/experiment_l_runs/kaggle_qwen2_audio_v1"),
+        ],
+        "conclusion": (
+            "Live unquantized music sits at the cognitive edge of chaos for divergent ideation (+41.5% dispersion peak "
+            "between mechanical order and white noise), while defining a clear engineering rule: use Turn-0 Flood for "
+            "exploration and brainstorming, and Cold Boot for strict fact-checking and arithmetic."
+        ),
+        "audio_slug": "stuttering-packets",
+        "audio_label": "Turn-0 Flood Specimen: Stuttering Packets (199.9s · 76.43 dB DR · 1.148 Rubato CV)",
+        "prev_slug": "m4r-11",
         "next_slug": None,
     },
 ]

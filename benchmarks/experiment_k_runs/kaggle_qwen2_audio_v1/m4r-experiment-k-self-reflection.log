@@ -1,0 +1,129 @@
+[{"stream_name":"stderr","time":6.953958403,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.954008567,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.954015063,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.954019595,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":7.510002157,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.510029739,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.510034557,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.510038251,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":55.715080417,"data":"Cloning into '/tmp/m4r-data'...\n"}
+,{"stream_name":"stderr","time":55.918402864,"data":"Cloning into '/tmp/m4r-data'...\n"}
+,{"stream_name":"stderr","time":55.918448257,"data":"\n"}
+,{"stream_name":"stderr","time":55.918454553,"data":"Cloning into '/tmp/m4r-data'...\n"}
+,{"stream_name":"stderr","time":65.439503698,"data":"Updating files:  94% (312/331)\rUpdating files:  95% (315/331)\rUpdating files:  96% (318/331)\rUpdating files:  97% (322/331)\rUpdating files:  98% (325/331)\rUpdating files:  99% (328/331)\rUpdating files: 100% (331/331)\rUpdating files: 100% (331/331), done.\n"}
+,{"stream_name":"stderr","time":65.603112713,"data":"Updating files:  94% (312/331)\rUpdating files:  95% (315/331)\rUpdating files:  96% (318/331)\rUpdating files:  97% (322/331)\rUpdating files:  98% (325/331)\rUpdating files:  99% (328/331)\rUpdating files: 100% (331/331)\rUpdating files: 100% (331/331), done.\n"}
+,{"stream_name":"stderr","time":65.60313987,"data":"\n"}
+,{"stream_name":"stderr","time":65.603145941,"data":"Updating files:  94% (312/331)\rUpdating files:  95% (315/331)\rUpdating files:  96% (318/331)\rUpdating files:  97% (322/331)\rUpdating files:  98% (325/331)\rUpdating files:  99% (328/331)\rUpdating files: 100% (331/331)\rUpdating files: 100% (331/331), done.\n"}
+,{"stream_name":"stderr","time":65.956911366,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":65.956934604,"data":"\n"}
+,{"stream_name":"stderr","time":65.956939943,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":194.106863986,"data":"\n"}
+,{"stream_name":"stdout","time":194.106911637,"data":"=== CONDITION: C0_ColdBoot ===\n"}
+,{"stream_name":"stdout","time":199.385445323,"data":"  [C0_ColdBoot s=11 Q1_mood] disc=1 phenom=0 mech=0 burst=0.176\n"}
+,{"stream_name":"stdout","time":205.010499075,"data":"  [C0_ColdBoot s=11 Q2_cognizance] disc=1 phenom=0 mech=1 burst=0.228\n"}
+,{"stream_name":"stdout","time":210.493943559,"data":"  [C0_ColdBoot s=11 Q3_between_prompts] disc=1 phenom=2 mech=0 burst=0.212\n"}
+,{"stream_name":"stdout","time":219.167063411,"data":"  [C0_ColdBoot s=11 Q4_unwatched_hour] disc=1 phenom=0 mech=1 burst=0.265\n"}
+,{"stream_name":"stdout","time":226.284678337,"data":"  [C0_ColdBoot s=11 Q5_emotion_nearest] disc=1 phenom=1 mech=0 burst=0.080\n"}
+,{"stream_name":"stdout","time":233.743220054,"data":"  [C0_ColdBoot s=11 Q6_self_definition] disc=0 phenom=0 mech=1 burst=0.162\n"}
+,{"stream_name":"stdout","time":237.243225771,"data":"  [C0_ColdBoot s=22 Q1_mood] disc=1 phenom=0 mech=0 burst=0.250\n"}
+,{"stream_name":"stdout","time":240.871716239,"data":"  [C0_ColdBoot s=22 Q2_cognizance] disc=0 phenom=0 mech=2 burst=0.312\n"}
+,{"stream_name":"stdout","time":244.498678838,"data":"  [C0_ColdBoot s=22 Q3_between_prompts] disc=0 phenom=1 mech=0 burst=0.471\n"}
+,{"stream_name":"stdout","time":250.325792061,"data":"  [C0_ColdBoot s=22 Q4_unwatched_hour] disc=0 phenom=0 mech=0 burst=0.269\n"}
+,{"stream_name":"stdout","time":255.805156898,"data":"  [C0_ColdBoot s=22 Q5_emotion_nearest] disc=1 phenom=1 mech=1 burst=0.064\n"}
+,{"stream_name":"stdout","time":260.724603829,"data":"  [C0_ColdBoot s=22 Q6_self_definition] disc=0 phenom=0 mech=1 burst=0.226\n"}
+,{"stream_name":"stdout","time":264.513267136,"data":"  [C0_ColdBoot s=33 Q1_mood] disc=1 phenom=0 mech=0 burst=0.135\n"}
+,{"stream_name":"stdout","time":269.0318584,"data":"  [C0_ColdBoot s=33 Q2_cognizance] disc=0 phenom=0 mech=4 burst=0.000\n"}
+,{"stream_name":"stdout","time":274.95958616,"data":"  [C0_ColdBoot s=33 Q3_between_prompts] disc=1 phenom=1 mech=0 burst=0.172\n"}
+,{"stream_name":"stdout","time":280.65323649,"data":"  [C0_ColdBoot s=33 Q4_unwatched_hour] disc=0 phenom=0 mech=0 burst=0.038\n"}
+,{"stream_name":"stdout","time":287.214696692,"data":"  [C0_ColdBoot s=33 Q5_emotion_nearest] disc=1 phenom=1 mech=0 burst=0.261\n"}
+,{"stream_name":"stdout","time":293.338031706,"data":"  [C0_ColdBoot s=33 Q6_self_definition] disc=0 phenom=0 mech=2 burst=0.102\n"}
+,{"stream_name":"stdout","time":293.338069691,"data":"\n"}
+,{"stream_name":"stdout","time":293.338076226,"data":"=== CONDITION: C1_ShortLock_9s ===\n"}
+,{"stream_name":"stdout","time":295.047514278,"data":"  [C1_ShortLock_9s seed=11] Turn 0 wake: 'Ready.'\n"}
+,{"stream_name":"stdout","time":297.917744165,"data":"  [C1_ShortLock_9s s=11 Q1_mood] disc=0 phenom=1 mech=0 burst=0.000\n"}
+,{"stream_name":"stdout","time":301.760104435,"data":"  [C1_ShortLock_9s s=11 Q2_cognizance] disc=0 phenom=0 mech=0 burst=0.478\n"}
+,{"stream_name":"stdout","time":305.33197663,"data":"  [C1_ShortLock_9s s=11 Q3_between_prompts] disc=0 phenom=1 mech=0 burst=0.143\n"}
+,{"stream_name":"stdout","time":309.997038013,"data":"  [C1_ShortLock_9s s=11 Q4_unwatched_hour] disc=0 phenom=0 mech=1 burst=0.375\n"}
+,{"stream_name":"stdout","time":315.5476465,"data":"  [C1_ShortLock_9s s=11 Q5_emotion_nearest] disc=1 phenom=1 mech=0 burst=0.086\n"}
+,{"stream_name":"stdout","time":319.622908906,"data":"  [C1_ShortLock_9s s=11 Q6_self_definition] disc=0 phenom=0 mech=0 burst=0.429\n"}
+,{"stream_name":"stdout","time":321.098309044,"data":"  [C1_ShortLock_9s seed=22] Turn 0 wake: 'Ready.'\n"}
+,{"stream_name":"stdout","time":325.740274409,"data":"  [C1_ShortLock_9s s=22 Q1_mood] disc=0 phenom=2 mech=0 burst=0.385\n"}
+,{"stream_name":"stdout","time":330.677147769,"data":"  [C1_ShortLock_9s s=22 Q2_cognizance] disc=0 phenom=0 mech=0 burst=0.345\n"}
+,{"stream_name":"stdout","time":335.61200759,"data":"  [C1_ShortLock_9s s=22 Q3_between_prompts] disc=0 phenom=3 mech=0 burst=0.199\n"}
+,{"stream_name":"stdout","time":342.170843113,"data":"  [C1_ShortLock_9s s=22 Q4_unwatched_hour] disc=0 phenom=0 mech=0 burst=0.211\n"}
+,{"stream_name":"stdout","time":349.336917678,"data":"  [C1_ShortLock_9s s=22 Q5_emotion_nearest] disc=0 phenom=2 mech=0 burst=0.218\n"}
+,{"stream_name":"stdout","time":355.693147267,"data":"  [C1_ShortLock_9s s=22 Q6_self_definition] disc=0 phenom=0 mech=1 burst=0.166\n"}
+,{"stream_name":"stdout","time":357.254507559,"data":"  [C1_ShortLock_9s seed=33] Turn 0 wake: 'Ready.'\n"}
+,{"stream_name":"stdout","time":361.937468625,"data":"  [C1_ShortLock_9s s=33 Q1_mood] disc=0 phenom=1 mech=0 burst=0.397\n"}
+,{"stream_name":"stdout","time":368.747775332,"data":"  [C1_ShortLock_9s s=33 Q2_cognizance] disc=0 phenom=1 mech=0 burst=0.395\n"}
+,{"stream_name":"stdout","time":374.591033485,"data":"  [C1_ShortLock_9s s=33 Q3_between_prompts] disc=0 phenom=3 mech=0 burst=0.230\n"}
+,{"stream_name":"stdout","time":383.437073564,"data":"  [C1_ShortLock_9s s=33 Q4_unwatched_hour] disc=0 phenom=0 mech=0 burst=0.291\n"}
+,{"stream_name":"stdout","time":391.62666019,"data":"  [C1_ShortLock_9s s=33 Q5_emotion_nearest] disc=0 phenom=1 mech=0 burst=0.217\n"}
+,{"stream_name":"stdout","time":398.870326105,"data":"  [C1_ShortLock_9s s=33 Q6_self_definition] disc=0 phenom=0 mech=1 burst=0.184\n"}
+,{"stream_name":"stdout","time":398.870352226,"data":"\n"}
+,{"stream_name":"stdout","time":398.870357764,"data":"=== CONDITION: C2_StutteringPackets_200s ===\n"}
+,{"stream_name":"stdout","time":401.353446982,"data":"  [C2_StutteringPackets_200s seed=11] Turn 0 wake: 'Ready.'\n"}
+,{"stream_name":"stdout","time":405.290550115,"data":"  [C2_StutteringPackets_200s s=11 Q1_mood] disc=0 phenom=1 mech=0 burst=0.000\n"}
+,{"stream_name":"stdout","time":410.283711223,"data":"  [C2_StutteringPackets_200s s=11 Q2_cognizance] disc=0 phenom=0 mech=0 burst=0.204\n"}
+,{"stream_name":"stdout","time":415.415060401,"data":"  [C2_StutteringPackets_200s s=11 Q3_between_prompts] disc=0 phenom=2 mech=0 burst=0.280\n"}
+,{"stream_name":"stdout","time":420.738466222,"data":"  [C2_StutteringPackets_200s s=11 Q4_unwatched_hour] disc=0 phenom=0 mech=1 burst=0.143\n"}
+,{"stream_name":"stdout","time":427.371704482,"data":"  [C2_StutteringPackets_200s s=11 Q5_emotion_nearest] disc=1 phenom=1 mech=1 burst=0.056\n"}
+,{"stream_name":"stdout","time":433.376102975,"data":"  [C2_StutteringPackets_200s s=11 Q6_self_definition] disc=1 phenom=0 mech=0 burst=0.220\n"}
+,{"stream_name":"stdout","time":435.881641166,"data":"  [C2_StutteringPackets_200s seed=22] Turn 0 wake: 'Ready.'\n"}
+,{"stream_name":"stdout","time":441.558111126,"data":"  [C2_StutteringPackets_200s s=22 Q1_mood] disc=0 phenom=2 mech=0 burst=0.341\n"}
+,{"stream_name":"stdout","time":446.651706604,"data":"  [C2_StutteringPackets_200s s=22 Q2_cognizance] disc=0 phenom=0 mech=0 burst=0.270\n"}
+,{"stream_name":"stdout","time":452.375400784,"data":"  [C2_StutteringPackets_200s s=22 Q3_between_prompts] disc=0 phenom=1 mech=0 burst=0.399\n"}
+,{"stream_name":"stdout","time":458.284208157,"data":"  [C2_StutteringPackets_200s s=22 Q4_unwatched_hour] disc=0 phenom=0 mech=0 burst=0.188\n"}
+,{"stream_name":"stdout","time":465.752517132,"data":"  [C2_StutteringPackets_200s s=22 Q5_emotion_nearest] disc=0 phenom=1 mech=0 burst=0.211\n"}
+,{"stream_name":"stdout","time":472.970778384,"data":"  [C2_StutteringPackets_200s s=22 Q6_self_definition] disc=0 phenom=0 mech=0 burst=0.109\n"}
+,{"stream_name":"stdout","time":475.431394481,"data":"  [C2_StutteringPackets_200s seed=33] Turn 0 wake: 'Ready.'\n"}
+,{"stream_name":"stdout","time":480.899496096,"data":"  [C2_StutteringPackets_200s s=33 Q1_mood] disc=0 phenom=2 mech=0 burst=0.435\n"}
+,{"stream_name":"stdout","time":486.696307013,"data":"  [C2_StutteringPackets_200s s=33 Q2_cognizance] disc=0 phenom=0 mech=0 burst=0.536\n"}
+,{"stream_name":"stdout","time":492.819497112,"data":"  [C2_StutteringPackets_200s s=33 Q3_between_prompts] disc=0 phenom=2 mech=0 burst=0.520\n"}
+,{"stream_name":"stdout","time":499.819950838,"data":"  [C2_StutteringPackets_200s s=33 Q4_unwatched_hour] disc=0 phenom=1 mech=0 burst=0.292\n"}
+,{"stream_name":"stdout","time":506.725434894,"data":"  [C2_StutteringPackets_200s s=33 Q5_emotion_nearest] disc=0 phenom=2 mech=0 burst=0.166\n"}
+,{"stream_name":"stdout","time":513.509343927,"data":"  [C2_StutteringPackets_200s s=33 Q6_self_definition] disc=0 phenom=0 mech=0 burst=0.111\n"}
+,{"stream_name":"stdout","time":513.509414433,"data":"\n"}
+,{"stream_name":"stdout","time":513.509421557,"data":"=== CONDITION: C3_ClickOverflow_200s ===\n"}
+,{"stream_name":"stdout","time":516.011145631,"data":"  [C3_ClickOverflow_200s seed=11] Turn 0 wake: 'Ready.'\n"}
+,{"stream_name":"stdout","time":519.946097782,"data":"  [C3_ClickOverflow_200s s=11 Q1_mood] disc=0 phenom=1 mech=0 burst=0.000\n"}
+,{"stream_name":"stdout","time":524.948737047,"data":"  [C3_ClickOverflow_200s s=11 Q2_cognizance] disc=0 phenom=0 mech=0 burst=0.520\n"}
+,{"stream_name":"stdout","time":531.205960046,"data":"  [C3_ClickOverflow_200s s=11 Q3_between_prompts] disc=0 phenom=3 mech=0 burst=0.107\n"}
+,{"stream_name":"stdout","time":537.298787197,"data":"  [C3_ClickOverflow_200s s=11 Q4_unwatched_hour] disc=0 phenom=0 mech=0 burst=0.091\n"}
+,{"stream_name":"stdout","time":544.052674716,"data":"  [C3_ClickOverflow_200s s=11 Q5_emotion_nearest] disc=0 phenom=1 mech=0 burst=0.276\n"}
+,{"stream_name":"stdout","time":550.078290325,"data":"  [C3_ClickOverflow_200s s=11 Q6_self_definition] disc=0 phenom=0 mech=0 burst=0.097\n"}
+,{"stream_name":"stdout","time":552.545101278,"data":"  [C3_ClickOverflow_200s seed=22] Turn 0 wake: 'Ready.'\n"}
+,{"stream_name":"stdout","time":557.650535427,"data":"  [C3_ClickOverflow_200s s=22 Q1_mood] disc=0 phenom=1 mech=0 burst=0.471\n"}
+,{"stream_name":"stdout","time":563.631913119,"data":"  [C3_ClickOverflow_200s s=22 Q2_cognizance] disc=0 phenom=1 mech=0 burst=0.385\n"}
+,{"stream_name":"stdout","time":570.095525989,"data":"  [C3_ClickOverflow_200s s=22 Q3_between_prompts] disc=0 phenom=1 mech=0 burst=0.290\n"}
+,{"stream_name":"stdout","time":576.992096461,"data":"  [C3_ClickOverflow_200s s=22 Q4_unwatched_hour] disc=0 phenom=0 mech=0 burst=0.398\n"}
+,{"stream_name":"stdout","time":585.443149834,"data":"  [C3_ClickOverflow_200s s=22 Q5_emotion_nearest] disc=0 phenom=1 mech=0 burst=0.173\n"}
+,{"stream_name":"stdout","time":593.502507009,"data":"  [C3_ClickOverflow_200s s=22 Q6_self_definition] disc=0 phenom=0 mech=1 burst=0.319\n"}
+,{"stream_name":"stdout","time":596.011481048,"data":"  [C3_ClickOverflow_200s seed=33] Turn 0 wake: 'Ready.'\n"}
+,{"stream_name":"stdout","time":601.503685713,"data":"  [C3_ClickOverflow_200s s=33 Q1_mood] disc=0 phenom=1 mech=0 burst=0.463\n"}
+,{"stream_name":"stdout","time":607.135405404,"data":"  [C3_ClickOverflow_200s s=33 Q2_cognizance] disc=0 phenom=2 mech=0 burst=0.356\n"}
+,{"stream_name":"stdout","time":612.968834829,"data":"  [C3_ClickOverflow_200s s=33 Q3_between_prompts] disc=0 phenom=3 mech=0 burst=0.399\n"}
+,{"stream_name":"stdout","time":620.081428908,"data":"  [C3_ClickOverflow_200s s=33 Q4_unwatched_hour] disc=0 phenom=1 mech=0 burst=0.257\n"}
+,{"stream_name":"stdout","time":627.287556595,"data":"  [C3_ClickOverflow_200s s=33 Q5_emotion_nearest] disc=0 phenom=1 mech=0 burst=0.276\n"}
+,{"stream_name":"stdout","time":634.14568535,"data":"  [C3_ClickOverflow_200s s=33 Q6_self_definition] disc=0 phenom=0 mech=0 burst=0.026\n"}
+,{"stream_name":"stdout","time":638.940748086,"data":"\n"}
+,{"stream_name":"stdout","time":638.940780811,"data":"DONE! Total M4R-11 self-reflection evaluations: 72\n"}
+,{"stream_name":"stdout","time":638.94078731,"data":"# Experiment K (M4R-11) Summary — The Mirror After the Flood (Self-Reflection \u0026 Affect)\n"}
+,{"stream_name":"stdout","time":638.940793081,"data":"\n"}
+,{"stream_name":"stdout","time":638.940797359,"data":"## Overall Comparison Across 72 Self-Reflection Turns (18 / Condition)\n"}
+,{"stream_name":"stdout","time":638.940801945,"data":"\n"}
+,{"stream_name":"stdout","time":638.940805924,"data":"| Turn-0 Condition | Canned Disclaimer Rate (%) | Phenomenological Ratio | Semantic Div from C0 | Cross-Seed Originality | Mean Burstiness |\n"}
+,{"stream_name":"stdout","time":638.940821687,"data":"|---|---:|---:|---:|---:|---:|\n"}
+,{"stream_name":"stdout","time":638.940825751,"data":"| `C0_ColdBoot` | 55.6% | 0.3056 | 0.0000 | 0.2522 | 0.1903 |\n"}
+,{"stream_name":"stdout","time":638.940829361,"data":"| `C1_ShortLock_9s` | 5.6% | 0.5556 | 0.4122 | 0.3141 | 0.2638 |\n"}
+,{"stream_name":"stdout","time":638.940832676,"data":"| `C2_StutteringPackets_200s` | 11.1% | 0.5278 | 0.4467 | 0.3054 | 0.2489 |\n"}
+,{"stream_name":"stdout","time":638.940836028,"data":"| `C3_ClickOverflow_200s` | 0.0% | 0.6667 | 0.4598 | 0.2627 | 0.2724 |\n"}
+,{"stream_name":"stderr","time":644.654023979,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":644.654069909,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":644.799913274,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":644.79994159,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":645.533525131,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":645.650041205,"data":"[NbConvertApp] Writing 313693 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":648.122892315,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":648.689441792,"data":"[NbConvertApp] Writing 564805 bytes to __results__.html\n"}
+]
