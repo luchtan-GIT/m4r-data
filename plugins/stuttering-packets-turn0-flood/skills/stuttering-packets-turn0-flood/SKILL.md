@@ -50,6 +50,17 @@ Across 60 controlled GPU evaluations (`Qwen2-Audio-7B-Instruct`, 4 Turn-0 arms �
 
 ---
 
+## Empirical Guardrail: When to Use vs. When NOT to Use (`M4R-06`–`M4R-09`)
+
+- **USE Turn-0 *Stuttering Packets* for:**
+  - **Divergent Brainstorming & Ideation (`M4R-07`):** `+16.3%` dense semantic dispersion and `+16.1%` cross-seed originality (anti-mode-collapse), without degrading epistemic truthfulness (`M4R-08`).
+  - **Expressive Writing, Architectural Exploration & Anti-Boilerplate (`M4R-06`):** `+16.9%` sentence burstiness and `0.960` Turn-5 persistence.
+- **DO NOT use Turn-0 audio (on compact 7B-class models) for:**
+  - **Dry numerical estimation or arithmetic anchoring traps (`M4R-09`):** Cold Boot (`55.6%`) outperformed all Turn-0 audio arms (`0.0%`) on `Qwen2-Audio-7B-Instruct`. Stay on Cold Boot for dry quantitative estimation.
+  - **Expecting a sycophancy cure (`M4R-08`):** Turn-0 audio does not override RLHF obedience weights under authoritative user pushback.
+
+---
+
 ## Included Files
 
 - `SKILL.md` — Turn-0 Zero-Instruction Protocol & Honesty Guardrails

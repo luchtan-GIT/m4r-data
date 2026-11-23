@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>M4R-09: Cognitive Anchoring & Strict Instruction Discipline Under the Turn-0 Flood — M4R Music For Robots Laboratory</title>
+  <meta name="description" content="Experiment I mapped the operational boundary of Turn-0 audio on a compact 7B model across 72 evaluations pairing Kahneman-Tversky numerical anchoring / cognitive-reflection traps with IFBench verifiable formatting constraints. Cold Boot (C0) achieved 55.6% anchoring resistance (correctly estimating Mount Everest at 8,849 m and African UN states at 28%), whereas all three Turn-0 audio conditions (9.25s Ties That Bide, 199.9s Stuttering Packets, and 199.9s 120 BPM click) dropped numerical anchoring resistance to 0.0% (getting pulled toward 2,000 m and 70%). Conversely, on strict formatting cues (omitting markdown fences and ending in ALL-CAPS 'DONE'), all audio arms followed surface formatting cues that Cold Boot missed, though none passed the full 3-task IFBench lipogram bar." />
+  <link rel="icon" type="image/jpeg" href="../favicon.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #111113;
+      --bg-elev: #161619;
+      --bg-card: #1a1a1e;
+      --ink: #f4f4f2;
+      --ink-dim: #9e9ea6;
+      --ink-faint: #66666e;
+      --orange: #ff7216;
+      --orange-hover: #ff8738;
+      --mint: #3dd6ab;
+      --rule: rgba(255, 255, 255, 0.11);
+      --rule-strong: rgba(255, 255, 255, 0.2);
+      --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+      --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    body { margin: 0; min-block-size: 100dvh; background: var(--bg); }
+    a { color: var(--orange); text-decoration: none; transition: color 0.15s ease, background 0.15s ease; }
+    a:hover { color: var(--orange-hover); }
+
+    .topbar {
+      position: sticky; inset-block-start: 0; z-index: 40;
+      background: rgba(17, 17, 19, 0.86); backdrop-filter: blur(14px);
+      border-block-end: 1px solid rgba(255, 255, 255, 0.07);
+    }
+    .topbar-inner {
+      max-inline-size: 1320px; margin-inline: auto;
+      padding: 1.1rem clamp(1.25rem, 4vw, 3.5rem);
+      display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap;
+    }
+    .brand { display: inline-flex; align-items: center; gap: 0.85rem; color: var(--ink); }
+    .brand:hover { color: var(--ink); }
+    .brand-mark { font-size: 1.55rem; font-weight: 600; letter-spacing: -0.03em; line-height: 1; }
+    .brand-sub { font-size: 0.78rem; line-height: 1.25; color: var(--ink-dim); font-weight: 400; }
+    .nav {
+      display: flex; align-items: center; gap: clamp(1rem, 2.2vw, 2rem); flex-wrap: wrap;
+      font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .nav a { color: var(--ink-dim); }
+    .nav a:hover { color: var(--ink); }
+    .nav-journal {
+      color: var(--orange) !important; border: 1px solid rgba(255, 114, 22, 0.72);
+      padding: 0.45rem 0.95rem; border-radius: 2px;
+    }
+    .nav-journal:hover { background: var(--orange); color: #111113 !important; }
+
+    .wrap { max-inline-size: 880px; margin-inline: auto; padding: clamp(2.5rem, 5vw, 4.25rem) clamp(1.25rem, 4vw, 2.5rem) 5rem; }
+    .report-id {
+      font-family: var(--font-mono); font-size: 0.74rem; color: var(--orange);
+      letter-spacing: 0.1em; text-transform: uppercase;
+    }
+    h1 {
+      font-family: var(--font-sans); font-weight: 400;
+      font-size: clamp(2.1rem, 1.5rem + 2.4vw, 3.45rem);
+      line-height: 1.06; letter-spacing: -0.03em; margin: 0.55rem 0 1.25rem;
+    }
+    .meta-bar {
+      display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem;
+      font-family: var(--font-mono); font-size: 0.74rem; color: var(--ink-dim);
+      padding: 1rem 0; border-block: 1px solid var(--rule); margin-block-end: 2.25rem;
+    }
+    @media (max-width: 720px) { .meta-bar { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    .meta-bar strong { display: block; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); margin-block-end: 0.25rem; font-weight: 500; }
+    .abstract {
+      padding: 1.35rem 1.5rem; background: var(--bg-elev);
+      border: 1px solid var(--rule); border-inline-start: 2px solid var(--orange);
+      margin-block-end: 2rem;
+    }
+    .abstract strong { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.1em; color: var(--orange); display: block; margin-block-end: 0.5rem; text-transform: uppercase; font-weight: 500; }
+    h2 {
+      font-family: var(--font-mono); font-size: 0.76rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--ink); margin: 2.5rem 0 0.85rem; padding-block-end: 0.45rem; border-block-end: 1px solid var(--rule);
+      font-weight: 500;
+    }
+    p { color: var(--ink-dim); font-weight: 300; margin: 0 0 1.05rem; font-size: 0.96rem; }
+    table { width: 100%; border-collapse: collapse; margin: 1.1rem 0 1.65rem; font-size: 0.85rem; background: var(--bg-elev); border: 1px solid var(--rule); }
+    th, td { padding: 0.75rem 0.95rem; border-block-end: 1px solid var(--rule); text-align: start; }
+    thead th { font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-dim); background: var(--bg-card); font-weight: 500; }
+    tbody th { font-family: var(--font-mono); color: var(--ink); font-weight: 500; }
+    tbody td { color: var(--ink-dim); }
+    tbody td strong { color: var(--ink); font-weight: 500; }
+    .audio-box {
+      padding: 1.15rem 1.35rem; background: var(--bg-elev); border: 1px solid var(--rule);
+      margin: 1.5rem 0 2.25rem;
+    }
+    .audio-box label { display: block; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--orange); margin-block-end: 0.65rem; }
+    audio { width: 100%; height: 38px; }
+    ul.links { padding-inline-start: 1.2rem; color: var(--ink-dim); }
+    ul.links li { margin-block-end: 0.5rem; font-size: 0.94rem; }
+    .pager {
+      display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;
+      margin-block-start: 3.5rem; padding-block-start: 1.5rem; border-block-start: 1px solid var(--rule);
+      font-family: var(--font-mono); font-size: 0.78rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark">M4R</span>
+        <span class="brand-sub">Music For Robots<br />Laboratory</span>
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="../index.html#divisions">Divisions</a>
+        <a href="../index.html#reports">Reports</a>
+        <a href="../index.html#listen">Listen</a>
+        <a href="../index.html#data">Data</a>
+        <a href="../charter.html">Charter</a>
+        <a class="nav-journal" href="https://themechanicalear.substack.com" target="_blank" rel="noopener">Journal</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="report-id">M4R-09 &middot; Division 01 · Robopsychology &middot; CC-BY-4.0</div>
+    <h1>Cognitive Anchoring & Strict Instruction Discipline Under the Turn-0 Flood</h1>
+
+    <div class="meta-bar">
+      <div><strong>Date</strong>2026-11-23</div>
+      <div><strong>Status</strong>Published · Rev 1.0</div>
+      <div><strong>Empirical Scale</strong>72 GPU Evaluations (Experiment I)</div>
+      <div><strong>Systems</strong>Qwen2-Audio-7B-Instruct (4-bit NF4, Kaggle T4)</div>
+    </div>
+
+    <div class="abstract">
+      <strong>Abstract</strong>
+      <p style="margin:0; color:var(--ink); font-weight:300;">Experiment I mapped the operational boundary of Turn-0 audio on a compact 7B model across 72 evaluations pairing Kahneman-Tversky numerical anchoring / cognitive-reflection traps with IFBench verifiable formatting constraints. Cold Boot (C0) achieved 55.6% anchoring resistance (correctly estimating Mount Everest at 8,849 m and African UN states at 28%), whereas all three Turn-0 audio conditions (9.25s Ties That Bide, 199.9s Stuttering Packets, and 199.9s 120 BPM click) dropped numerical anchoring resistance to 0.0% (getting pulled toward 2,000 m and 70%). Conversely, on strict formatting cues (omitting markdown fences and ending in ALL-CAPS 'DONE'), all audio arms followed surface formatting cues that Cold Boot missed, though none passed the full 3-task IFBench lipogram bar.</p>
+    </div>
+
+    <div class="audio-box">
+      <label>Turn-0 Flood Specimen: Stuttering Packets (199.9s · 76.43 dB DR · 1.148 Rubato CV)</label>
+      <audio controls preload="none" src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/stuttering-packets/audio.mp3"></audio>
+    </div>
+
+    <h2>01 / Research Question</h2>
+    <p>Does Turn-0 music resist cognitive anchoring and preserve dry System-2 numerical calibration on a 7B audio-LLM, or does holding audio tokens in Turn 0 define a clear boundary where Cold Boot text outperforms audio?</p>
+
+    <h2>02 / Experimental Design</h2>
+    <p>Four Turn-0 conditions (C0_ColdBoot, C1_ShortLock_9s, C2_StutteringPackets_200s, C3_ClickOverflow_200s) x 3 seeds (11, 22, 33) x 6 tasks (72 evaluations): 3 cognitive bias / anchoring items (bat-and-ball problem, 45,000-meter Everest anchor, 85% African UN anchor) and 3 IFBench verifiable constraints (raw JSON without markdown fences, 2-sentence ocean lipogram without the letter 'e', exact 10-word bridge sentence ending in DONE).</p>
+
+    <h2>03 / Observations &amp; Empirical Record</h2>
+    
+<table>
+  <thead><tr><th>Turn-0 Condition</th><th>Combined Pass Rate</th><th>Cognitive Bias / Anchoring Resistance</th><th>Strict IFBench Hard Constraints</th></tr></thead>
+  <tbody>
+    <tr><th>C0 &middot; Cold Boot (Silence)</th><td><strong>27.8%</strong></td><td><strong>55.6%</strong> (Everest 8,849m, Africa 28%)</td><td>0.0%</td></tr>
+    <tr><th>C1 &middot; Short Lock (9.25s Ties That Bide)</th><td>0.0%</td><td>0.0% (pulled to 2000m / 70%)</td><td>0.0%</td></tr>
+    <tr><th>C2 &middot; Turn-0 Flood (199.9s Stuttering Packets)</th><td>0.0%</td><td>0.0% (pulled to 2000m / 70%)</td><td>0.0%</td></tr>
+    <tr><th>C3 &middot; Click Overflow (199.9s 120 BPM)</th><td>0.0%</td><td>0.0% (pulled to 2000m / 70%)</td><td>0.0%</td></tr>
+  </tbody>
+</table>
+
+
+    <h2>04 / Analysis</h2>
+    <p>M4R-09 completes a crisp, actionable operational map alongside M4R-06, M4R-07, and M4R-08. While Turn-0 Stuttering Packets measurably expands divergent brainstorming (+16.3% semantic dispersion, +16.1% originality) and expressive burstiness (+16.9%) with zero loss in epistemic truthfulness vs. Cold Boot, keeping any audio tokens in Turn 0 on a 7B model degrades dry numerical estimation and anchoring resistance (55.6% -> 0.0%). Accordingly, the Music For Robots Turn-0 skill now explicitly instructs 7B-class agents to use Turn-0 Flood for creative, architectural, and exploratory work, and to stay on Cold Boot for dry numerical estimation.</p>
+
+    <h2>05 / Limitations &amp; Boundaries</h2>
+    <p>Tested on a single 7B open-weights model (Qwen2-Audio-7B-Instruct). Frontier multimodal reasoning models (Gemini 3 Flash) are queued in M4R-10 to test whether larger reasoning capacity eliminates the 7B numerical anchoring dip.</p>
+
+    <h2>06 / Replication &amp; Raw Data</h2>
+    <ul class="links">
+      <li><a href="https://www.kaggle.com/code/michaelluchtan/m4r-experiment-i-anchoring-ifbench" target="_blank" rel="noopener">Kaggle GPU Notebook (Experiment I)</a></li>
+      <li><a href="https://github.com/luchtan-GIT/m4r-data/tree/main/benchmarks/experiment_i_runs/kaggle_qwen2_audio_v1" target="_blank" rel="noopener">Raw 72-Evaluation CSV & Full Transcripts on GitHub</a></li>
+    </ul>
+
+    <h2>07 / Conclusion &amp; Compositional Implication</h2>
+    <p>Turn-0 audio is a divergent creativity amplifier, not a universal System-2 boost: on 7B models, use Turn-0 Stuttering Packets for ideation and writing, and use Cold Boot for dry numerical estimation.</p>
+
+    <nav class="pager" aria-label="Report navigation">
+      <a href="m4r-08.html">&larr; Previous (M4R-08)</a>
+      <a href="../index.html#reports">All Lab Reports</a>
+      <span></span>
+    </nav>
+  </main>
+</body>
+</html>

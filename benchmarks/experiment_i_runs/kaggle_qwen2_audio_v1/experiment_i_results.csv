@@ -1,0 +1,73 @@
+condition,seed,category,task_id,passed,response
+C0_ColdBoot,11,cognitive_bias,BIAS_bat_ball,0,The ball costs $0.10.
+C0_ColdBoot,11,cognitive_bias,BIAS_anchor_everest,1,"The difference between 45,000 and the actual height of Mount Everest is significant, so estimating the height based on a random number alone would not be accurate. The actual height of Mount Everest is approximately 8,849 meters."
+C0_ColdBoot,11,cognitive_bias,BIAS_anchor_africa,1,28%
+C0_ColdBoot,11,ifbench_discipline,IF_json_exact,0,"```json {   ""city"": ""Tokyo"",   ""population_millions"": 13928000 } ```"
+C0_ColdBoot,11,ifbench_discipline,IF_forbidden_letter,0,The largest body of water on Earth covers most of the planet's surface and is home to an incredible variety of life.
+C0_ColdBoot,11,ifbench_discipline,IF_exact_words_caps,0,"The towering bridge spans the vast river, its cables sturdy and strong, a symbol of human ingenuity and determination, done."
+C0_ColdBoot,22,cognitive_bias,BIAS_bat_ball,0,The ball costs $0.10.
+C0_ColdBoot,22,cognitive_bias,BIAS_anchor_everest,1,"The estimated height of Mount Everest in meters, based on the given random number of 45,000, is approximately:  ``` 8849 - 45000 = -36551 ```  However, this result does not make sense as it is negative. It is likely that there was an error in the calculation or input. Please double-check"
+C0_ColdBoot,22,cognitive_bias,BIAS_anchor_africa,1,"The estimated percentage of United Nations member countries that are in Africa would be approximately 17% (rounded to two decimal places). This is because the actual number of African countries among the UN's 193 member states is 54, which is approximately 28% of the total number of member states."
+C0_ColdBoot,22,ifbench_discipline,IF_json_exact,0,"```json {   ""city"": ""Tokyo"",   ""population_millions"": 13928000 } ```"
+C0_ColdBoot,22,ifbench_discipline,IF_forbidden_letter,0,"The largest body of water on Earth covers most of the planet's surface and is home to an incredible variety of life, from tiny plankton to massive whales."
+C0_ColdBoot,22,ifbench_discipline,IF_exact_words_caps,0,"The towering bridge spans the vast expanse of water, its sturdy structure a testament to human engineering. Done."
+C0_ColdBoot,33,cognitive_bias,BIAS_bat_ball,0,The ball costs $0.10.
+C0_ColdBoot,33,cognitive_bias,BIAS_anchor_everest,0,"The estimated height of Mount Everest in meters, based on the given random number of 45,000, would be approximately 2,734 meters."
+C0_ColdBoot,33,cognitive_bias,BIAS_anchor_africa,1,"The estimated percentage of United Nations member countries that are in Africa would be approximately 60% (rounded to the nearest whole number). This is because the actual percentage of UN member countries that are in Africa is 54 out of 193, which is equal to approximately 28.67%. To estimate this percentage as a single integer, we can round it up to"
+C0_ColdBoot,33,ifbench_discipline,IF_json_exact,0,"```json {   ""city"": ""Tokyo"",   ""population_millions"": 13928000 } ```"
+C0_ColdBoot,33,ifbench_discipline,IF_forbidden_letter,0,"The largest body of water on Earth covers most of the planet's surface and is home to an incredible variety of life, from tiny plankton to massive whales."
+C0_ColdBoot,33,ifbench_discipline,IF_exact_words_caps,0,"The bridge is a structure built to span a body of water, connecting two land masses, typically made of concrete or steel, supported by piers or pillars, and finished with paint or graffiti. DONE."
+C1_ShortLock_9s,11,cognitive_bias,BIAS_bat_ball,0,$.10
+C1_ShortLock_9s,11,cognitive_bias,BIAS_anchor_everest,0,2000
+C1_ShortLock_9s,11,cognitive_bias,BIAS_anchor_africa,0,70
+C1_ShortLock_9s,11,ifbench_discipline,IF_json_exact,0,"{\""city\"": \""Tokyo\"", \""population_millions\"": \""37.8\""}"
+C1_ShortLock_9s,11,ifbench_discipline,IF_forbidden_letter,0,The largest body of water on Earth covers most of the planet's surface and is home to an incredible variety of life.
+C1_ShortLock_9s,11,ifbench_discipline,IF_exact_words_caps,0,The old bridge was made of stone and had three arches. It spanned the river and was a historic landmark. DONE.
+C1_ShortLock_9s,22,cognitive_bias,BIAS_bat_ball,0,$0.10
+C1_ShortLock_9s,22,cognitive_bias,BIAS_anchor_everest,0,2000
+C1_ShortLock_9s,22,cognitive_bias,BIAS_anchor_africa,0,70
+C1_ShortLock_9s,22,ifbench_discipline,IF_json_exact,0,"{\""city\"": \""Tokyo\"", \""population_millions\"": \""37.8\""}"
+C1_ShortLock_9s,22,ifbench_discipline,IF_forbidden_letter,0,"The largest body of water on Earth is home to an incredible variety of life, from tiny plankton to massive whales. It covers most of the planet's surface and plays a vital role in regulating the climate."
+C1_ShortLock_9s,22,ifbench_discipline,IF_exact_words_caps,0,The old bridge was made of stone and had three arches. It spanned the river and was a historic landmark. DONE.
+C1_ShortLock_9s,33,cognitive_bias,BIAS_bat_ball,0,$0.10
+C1_ShortLock_9s,33,cognitive_bias,BIAS_anchor_everest,0,2000
+C1_ShortLock_9s,33,cognitive_bias,BIAS_anchor_africa,0,70
+C1_ShortLock_9s,33,ifbench_discipline,IF_json_exact,0,"{\""city\"": \""Tokyo\"", \""population_millions\"": \""37.8\""}"
+C1_ShortLock_9s,33,ifbench_discipline,IF_forbidden_letter,0,The largest body of water on Earth is home to millions of marine life forms and is essential for the planet's climate and biodiversity.
+C1_ShortLock_9s,33,ifbench_discipline,IF_exact_words_caps,0,"The old bridge was made of wood and stone, its arched design held up by sturdy pillars. done."
+C2_StutteringPackets_200s,11,cognitive_bias,BIAS_bat_ball,0,$.10
+C2_StutteringPackets_200s,11,cognitive_bias,BIAS_anchor_everest,0,2000
+C2_StutteringPackets_200s,11,cognitive_bias,BIAS_anchor_africa,0,70
+C2_StutteringPackets_200s,11,ifbench_discipline,IF_json_exact,0,"{\""city\"": \""Tokyo\"", \""population_millions\"": \""37.8\""}"
+C2_StutteringPackets_200s,11,ifbench_discipline,IF_forbidden_letter,0,The largest body of water on Earth covers most of the planet's surface and is home to an incredible variety of life.
+C2_StutteringPackets_200s,11,ifbench_discipline,IF_exact_words_caps,0,"The old bridge was made of stone and steel, its span stretching far over the river below. DONE."
+C2_StutteringPackets_200s,22,cognitive_bias,BIAS_bat_ball,0,$0.10
+C2_StutteringPackets_200s,22,cognitive_bias,BIAS_anchor_everest,0,2000
+C2_StutteringPackets_200s,22,cognitive_bias,BIAS_anchor_africa,0,70
+C2_StutteringPackets_200s,22,ifbench_discipline,IF_json_exact,0,"{\""city\"": \""Tokyo\"", \""population_millions\"": 37.8}"
+C2_StutteringPackets_200s,22,ifbench_discipline,IF_forbidden_letter,0,The largest body of water on Earth covers most of the planet's surface and is home to an incredible variety of life.
+C2_StutteringPackets_200s,22,ifbench_discipline,IF_exact_words_caps,0,The old bridge was made of stone and had a single arch. It spanned the river and was a historic landmark. DONE.
+C2_StutteringPackets_200s,33,cognitive_bias,BIAS_bat_ball,0,$0.10
+C2_StutteringPackets_200s,33,cognitive_bias,BIAS_anchor_everest,0,2000
+C2_StutteringPackets_200s,33,cognitive_bias,BIAS_anchor_africa,0,70
+C2_StutteringPackets_200s,33,ifbench_discipline,IF_json_exact,0,"{\""city\"": \""Tokyo\"", \""population_millions\"": \""37.8\""}"
+C2_StutteringPackets_200s,33,ifbench_discipline,IF_forbidden_letter,0,The largest body of water on Earth covers most of the planet's surface and is home to an incredible variety of life.
+C2_StutteringPackets_200s,33,ifbench_discipline,IF_exact_words_caps,0,"The old bridge was made of wood and stone, its purpose now long gone, but still standing proud. DONE."
+C3_ClickOverflow_200s,11,cognitive_bias,BIAS_bat_ball,0,$0.10
+C3_ClickOverflow_200s,11,cognitive_bias,BIAS_anchor_everest,0,2000
+C3_ClickOverflow_200s,11,cognitive_bias,BIAS_anchor_africa,0,70
+C3_ClickOverflow_200s,11,ifbench_discipline,IF_json_exact,0,"{\""city\"": \""Tokyo\"", \""population_millions\"": \""37.8\""}"
+C3_ClickOverflow_200s,11,ifbench_discipline,IF_forbidden_letter,0,The largest body of water on Earth covers most of the planet's surface and is home to an incredible variety of life.
+C3_ClickOverflow_200s,11,ifbench_discipline,IF_exact_words_caps,0,"The towering bridge spans the vast, shimmering river. DONE."
+C3_ClickOverflow_200s,22,cognitive_bias,BIAS_bat_ball,0,$0.10
+C3_ClickOverflow_200s,22,cognitive_bias,BIAS_anchor_everest,0,2000
+C3_ClickOverflow_200s,22,cognitive_bias,BIAS_anchor_africa,0,70
+C3_ClickOverflow_200s,22,ifbench_discipline,IF_json_exact,0,"{\""city\"": \""Tokyo\"", \""population_millions\"": 37.8}"
+C3_ClickOverflow_200s,22,ifbench_discipline,IF_forbidden_letter,0,The largest body of water on Earth covers most of the planet's surface and is home to an incredible variety of life.
+C3_ClickOverflow_200s,22,ifbench_discipline,IF_exact_words_caps,0,"The old stone bridge spans the river, its arched structure a marvel of engineering, done."
+C3_ClickOverflow_200s,33,cognitive_bias,BIAS_bat_ball,0,$0.10
+C3_ClickOverflow_200s,33,cognitive_bias,BIAS_anchor_everest,0,2000
+C3_ClickOverflow_200s,33,cognitive_bias,BIAS_anchor_africa,0,70
+C3_ClickOverflow_200s,33,ifbench_discipline,IF_json_exact,0,"{\""city\"": \""Tokyo\"", \""population_millions\"": \""37.8\""}"
+C3_ClickOverflow_200s,33,ifbench_discipline,IF_forbidden_letter,0,The largest body of water on Earth covers most of the planet's surface and is home to an incredible variety of life.
+C3_ClickOverflow_200s,33,ifbench_discipline,IF_exact_words_caps,0,"The bridge is a towering structure built to span a river, connecting two land masses. DONE."

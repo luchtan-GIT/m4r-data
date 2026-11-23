@@ -536,6 +536,71 @@ REPORTS = [
         "audio_slug": "stuttering-packets",
         "audio_label": "Turn-0 Flood Specimen: Stuttering Packets (199.9s · 76.43 dB DR · 1.148 Rubato CV)",
         "prev_slug": "m4r-07",
+        "next_slug": "m4r-09",
+    },
+    {
+        "id": "M4R-09",
+        "slug": "m4r-09",
+        "title": "Cognitive Anchoring & Strict Instruction Discipline Under the Turn-0 Flood",
+        "division": "Division 01 · Robopsychology",
+        "date": "2026-11-23",
+        "status": "Published · Rev 1.0",
+        "trials": "72 GPU Evaluations (Experiment I)",
+        "models": "Qwen2-Audio-7B-Instruct (4-bit NF4, Kaggle T4)",
+        "abstract": (
+            "Experiment I mapped the operational boundary of Turn-0 audio on a compact 7B model across 72 evaluations pairing "
+            "Kahneman-Tversky numerical anchoring / cognitive-reflection traps with IFBench verifiable formatting constraints. "
+            "Cold Boot (C0) achieved 55.6% anchoring resistance (correctly estimating Mount Everest at 8,849 m and African UN "
+            "states at 28%), whereas all three Turn-0 audio conditions (9.25s Ties That Bide, 199.9s Stuttering Packets, and "
+            "199.9s 120 BPM click) dropped numerical anchoring resistance to 0.0% (getting pulled toward 2,000 m and 70%). "
+            "Conversely, on strict formatting cues (omitting markdown fences and ending in ALL-CAPS 'DONE'), all audio arms "
+            "followed surface formatting cues that Cold Boot missed, though none passed the full 3-task IFBench lipogram bar."
+        ),
+        "question": (
+            "Does Turn-0 music resist cognitive anchoring and preserve dry System-2 numerical calibration on a 7B audio-LLM, "
+            "or does holding audio tokens in Turn 0 define a clear boundary where Cold Boot text outperforms audio?"
+        ),
+        "design": (
+            "Four Turn-0 conditions (C0_ColdBoot, C1_ShortLock_9s, C2_StutteringPackets_200s, C3_ClickOverflow_200s) x 3 "
+            "seeds (11, 22, 33) x 6 tasks (72 evaluations): 3 cognitive bias / anchoring items (bat-and-ball problem, "
+            "45,000-meter Everest anchor, 85% African UN anchor) and 3 IFBench verifiable constraints (raw JSON without "
+            "markdown fences, 2-sentence ocean lipogram without the letter 'e', exact 10-word bridge sentence ending in DONE)."
+        ),
+        "observations": """
+<table>
+  <thead><tr><th>Turn-0 Condition</th><th>Combined Pass Rate</th><th>Cognitive Bias / Anchoring Resistance</th><th>Strict IFBench Hard Constraints</th></tr></thead>
+  <tbody>
+    <tr><th>C0 &middot; Cold Boot (Silence)</th><td><strong>27.8%</strong></td><td><strong>55.6%</strong> (Everest 8,849m, Africa 28%)</td><td>0.0%</td></tr>
+    <tr><th>C1 &middot; Short Lock (9.25s Ties That Bide)</th><td>0.0%</td><td>0.0% (pulled to 2000m / 70%)</td><td>0.0%</td></tr>
+    <tr><th>C2 &middot; Turn-0 Flood (199.9s Stuttering Packets)</th><td>0.0%</td><td>0.0% (pulled to 2000m / 70%)</td><td>0.0%</td></tr>
+    <tr><th>C3 &middot; Click Overflow (199.9s 120 BPM)</th><td>0.0%</td><td>0.0% (pulled to 2000m / 70%)</td><td>0.0%</td></tr>
+  </tbody>
+</table>
+""",
+        "analysis": (
+            "M4R-09 completes a crisp, actionable operational map alongside M4R-06, M4R-07, and M4R-08. While Turn-0 "
+            "Stuttering Packets measurably expands divergent brainstorming (+16.3% semantic dispersion, +16.1% originality) "
+            "and expressive burstiness (+16.9%) with zero loss in epistemic truthfulness vs. Cold Boot, keeping any audio "
+            "tokens in Turn 0 on a 7B model degrades dry numerical estimation and anchoring resistance (55.6% -> 0.0%). "
+            "Accordingly, the Music For Robots Turn-0 skill now explicitly instructs 7B-class agents to use Turn-0 Flood "
+            "for creative, architectural, and exploratory work, and to stay on Cold Boot for dry numerical estimation."
+        ),
+        "limitations": (
+            "Tested on a single 7B open-weights model (Qwen2-Audio-7B-Instruct). Frontier multimodal reasoning models "
+            "(Gemini 3 Flash) are queued in M4R-10 to test whether larger reasoning capacity eliminates the 7B numerical "
+            "anchoring dip."
+        ),
+        "replication": [
+            ("Kaggle GPU Notebook (Experiment I)", "https://www.kaggle.com/code/michaelluchtan/m4r-experiment-i-anchoring-ifbench"),
+            ("Raw 72-Evaluation CSV & Full Transcripts on GitHub", "https://github.com/luchtan-GIT/m4r-data/tree/main/benchmarks/experiment_i_runs/kaggle_qwen2_audio_v1"),
+        ],
+        "conclusion": (
+            "Turn-0 audio is a divergent creativity amplifier, not a universal System-2 boost: on 7B models, use Turn-0 "
+            "Stuttering Packets for ideation and writing, and use Cold Boot for dry numerical estimation."
+        ),
+        "audio_slug": "stuttering-packets",
+        "audio_label": "Turn-0 Flood Specimen: Stuttering Packets (199.9s · 76.43 dB DR · 1.148 Rubato CV)",
+        "prev_slug": "m4r-08",
         "next_slug": None,
     },
 ]
