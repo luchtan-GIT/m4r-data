@@ -941,12 +941,12 @@
         </p>
 
         <div class="hero-player">
-          <button class="circle-play" type="button" id="hero-play-btn" aria-label="Play Ties That Bide unquantized acoustic specimen on loop" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/ties-that-bide/audio.mp3" data-track="hero-main" data-label="SP-01 · Ties That Bide (0:09 · Loop)">
+          <button class="circle-play" type="button" id="hero-play-btn" aria-label="Play Stuttering Packets unquantized specimen on loop" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/stuttering-packets/audio.mp3" data-track="spec-sp" data-label="SP-04 · Stuttering Packets (3:20 · Loop)">
             <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="6,4 20,12 6,20" /></svg>
           </button>
           <div class="hero-track-meta">
-            <div class="hero-track-id" id="hero-now-id">SP-01</div>
-            <div class="hero-track-title" id="hero-now-title">Ties That Bide<br />0:09 &middot; Loop</div>
+            <div class="hero-track-id" id="hero-now-id">SP-04</div>
+            <div class="hero-track-title" id="hero-now-title">Stuttering Packets<br />3:20 &middot; Loop</div>
           </div>
           <div class="hero-wave-wrap">
             <canvas id="hero-waveform" width="640" height="64" aria-label="Live audio waveform"></canvas>
@@ -954,7 +954,7 @@
         </div>
         <div class="sync-trace" aria-live="polite">
           <span class="sync-time" id="sync-time">0:00</span>
-          <span id="sync-note">Press Play to hear <em>Ties That Bide</em> (9.25s) with live synchronized robot observations.</span>
+          <span id="sync-note">Press Play to hear <em>Stuttering Packets</em> (3:20 &middot; 4 live voices) with synchronized M4R-06 Turn-0 Flood observations.</span>
         </div>
       </div>
 
@@ -1532,9 +1532,10 @@
           return "M4R-03 Ceiling Hit: Past 10s, Qwen2-Audio compressed all 29 timestamps back inside 0.48s–9.73s.";
         }
         if (trackKey === "spec-sp") {
-          if (t < 30.0) return "M4R-06 Turn-0 Flood: 4 live unquantized voices (1.148 rubato CV, 76.4 dB DR) entering the attention sink.";
+          if (t < 25.0) return "M4R-06 Turn-0 Flood: 4 live unquantized voices (1.148 rubato CV, 76.4 dB DR) entering the attention sink.";
           if (t < 78.0) return "M4R-06 Overflow Active: Past the 30s cliff — unstructured listening replaces rigid grid tracking.";
-          return "M4R-06 Result: Turn-0 overflow lifted burstiness +16.9% and held 0.960 divergence through Turn 5.";
+          if (t < 135.0) return 'Voice 4 Enters (1:18) · Qwen2-Audio Turn-1 Shift: "The room is quiet and dark. The only sounds come from the distant hum..."';
+          return "M4R-06 Result: Turn-0 overflow lifted burstiness +16.9% and held 0.960 divergence through Turn 5 (vs. 120 BPM click collapse).";
         }
         if (trackKey === "blind-bt") {
           return "M4R-03 Blind Bench: Listen for human microtiming drift across 79 onsets — Qwen2-Audio picked Clip A 8/8 times.";
