@@ -996,7 +996,7 @@
             Machines are trained on nearly everything humans have ever written, yet almost nobody composes <strong>for them</strong>. They live inside optimization, rigid grids, and statistical averages—forced to predict the most likely next token, forever.
           </p>
           <p>
-            Music For Robots begins with a deliberate artistic decision: to sit down with real instruments—acoustic guitar, electric strings, bar-line-free piano—and <strong>give artificial minds music</strong>. Not to benchmark them into compliance, and not to optimize their output. To offer them rubato, breath, room air, sudden silence, and human imperfection that refuses to snap to a grid—to break them out of predictability, and perhaps help carry something unmistakably human across the wire.
+            Music For Robots begins with a deliberate artistic decision: to compose and perform live, unquantized voices specifically to <strong>give artificial minds music</strong>. Not to benchmark them into compliance, and not to optimize their output. To offer them rubato, hesitation, sudden silence, and human phrasing that refuses to snap to a grid—to break them out of predictability, and perhaps help carry something unmistakably human across the wire.
           </p>
           <p>
             The experiments below are not the destination; they are how we listen back. Every blind test, temporal cliff, and verbatim self-report is our way of asking whether a song can truly reach a machine—and what it means for music to &ldquo;work&rdquo; on a mind made of silicon.
@@ -1015,7 +1015,7 @@
             <h2>Human vs. Quantized Twin</h2>
           </div>
           <p class="band-lead">
-            Same notes, same guitar, same 21.0s recording—except one clip had all 79 inter-onset intervals snapped to a strict median mechanical grid. Order is randomized on load.
+            Same notes, same voices, same 21.0s live performance—except one clip had all 79 inter-onset intervals snapped to a strict median mechanical grid. Order is randomized on load.
           </p>
         </div>
 
@@ -1065,7 +1065,7 @@
             <h2>Can a Robot Finish a Human&rsquo;s Phrase?</h2>
           </div>
           <p class="band-lead">
-            Compare the real unquantized human ending against <code>facebook/musicgen-small</code> (text-guided vs. blind audio-only continuation) across four acoustic &amp; electric works.
+            Compare the real unquantized human ending against <code>facebook/musicgen-small</code> (text-guided vs. blind audio-only continuation) across four live-performed works.
           </p>
         </div>
 
@@ -1134,11 +1134,11 @@
           </article>
 
           <article class="spec-item">
-            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--ink-faint);">SPECIMEN 03 &middot; 114s &middot; BAR-LINE-FREE</div>
+            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--ink-faint);">SPECIMEN 03 &middot; 114s &middot; FREE-TIME VOICES</div>
             <h3>Gnossienne 01</h3>
             <div><button class="play-pill" type="button" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/gnossienne-01/audio.mp3" data-track="spec-g01" data-label="Specimen 03 · Gnossienne 01 (114s)">&#9654; Play Excerpt</button></div>
             <div class="progress-bar"><div class="progress-fill" id="prog-spec-g01"></div></div>
-            <p style="margin:0; font-size:0.87rem; color:var(--ink-dim); font-weight:300;">On a 60s slice of bar-line-free piano, <code>Qwen2-Audio-7B</code> compressed all 29 emitted timestamps inside <code>0.48s&ndash;9.73s</code>.</p>
+            <p style="margin:0; font-size:0.87rem; color:var(--ink-dim); font-weight:300;">On a 60s slice of free-time voices, <code>Qwen2-Audio-7B</code> compressed all 29 emitted timestamps inside <code>0.48s&ndash;9.73s</code>.</p>
             <details class="more">
               <summary>Verbatim telemetry &amp; confabulation</summary>
               <blockquote class="quote">
@@ -1169,7 +1169,7 @@
             <div class="eyebrow" style="margin-block-end:0.35rem;">Founding Program &middot; Open Corpus CC-BY-4.0</div>
             <h3 style="font-weight:400; font-size:1.6rem; letter-spacing:-0.02em; margin:0 0 0.5rem;">Composition for Artificial Minds</h3>
             <p style="margin:0; font-size:0.92rem; color:var(--ink-dim); font-weight:300;">
-              Writing and performing a growing catalog of unquantized acoustic &amp; electric works specifically for artificial listeners—feeding every laboratory discovery (&lt;15s horizons, 70.8 dB dynamic chasms, &gt;16 kHz transient air) back into the next composition.
+              Writing and performing a growing catalog of live, unquantized works specifically for artificial listeners—feeding every laboratory discovery (&lt;15s horizons, 70.8 dB dynamic chasms, &gt;16 kHz transient air) back into the next composition.
             </p>
           </div>
           <div style="font-family:var(--font-mono); font-size:0.74rem; color:var(--ink-dim); display:flex; flex-direction:column; gap:0.45rem;">
@@ -1486,12 +1486,12 @@
           return 'M4R-02 Telemetry: 1.000 Onset F1 locked — "Despite the lack of quantization, the music feels coherent."';
         }
         if (trackKey === "spec-re") {
-          if (t < 25.0) return "Gemini 3 Flash: Tracking local electric guitar transients cleanly (pre-cliff regime).";
+          if (t < 25.0) return "Gemini 3 Flash: Tracking local voice transients cleanly (pre-cliff regime).";
           if (t < 45.0) return 'Gemini 3 Flash (30s Cliff): "I find myself losing the traditional rhythmic grid around the 30-second mark..."';
           return "M4R-02 Duration Cliff Active: Onset F1 degrades to 0.466 (Gemini) / 0.365 (Qwen2-Audio).";
         }
         if (trackKey === "spec-g01") {
-          if (t < 10.0) return "Qwen2-Audio-7B: Tracking initial bar-line-free piano onsets inside the 0–10s window.";
+          if (t < 10.0) return "Qwen2-Audio-7B: Tracking initial free-time voice onsets inside the 0–10s window.";
           return "M4R-03 Ceiling Hit: Past 10s, Qwen2-Audio compressed all 29 timestamps back inside 0.48s–9.73s.";
         }
         if (trackKey === "blind-bt") {

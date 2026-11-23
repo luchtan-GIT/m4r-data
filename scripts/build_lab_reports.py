@@ -56,9 +56,9 @@ REPORTS = [
             "quantized 120 BPM click actually lowered burstiness (0.4535) below the text baseline."
         ),
         "limitations": (
-            "Experiment A v2 used synthetic waveform micro-etudes (Synthetic Storms) rather than live acoustic guitar/piano, "
+            "Experiment A v2 used synthetic waveform micro-etudes (Synthetic Storms) rather than live-performed multi-voice works, "
             "and sample size per condition was n=10 on a single 7B model family. Subsequent studies (M4R-02 through M4R-04) "
-            "shifted to live human acoustic performances (Time & Ties, Rusty Electrics, Robot Satie) to separate waveform "
+            "shifted to live human unquantized performances (Time & Ties, Rusty Electrics, Robot Satie) to separate waveform "
             "irregularity from human phrasing."
         ),
         "replication": [
@@ -151,7 +151,7 @@ REPORTS = [
         "abstract": (
             "Inspired by a methodological critique from Substack reader Martin Elisaleco, Experiment C tested three hard failure "
             "modes on Qwen2-Audio-7B-Instruct: (1) blind A/B discrimination between real human recordings and their own quantized "
-            "twins, (2) progressive 10s–60s timing probes across guitar and bar-line-free Satie piano, and (3) code-review bug "
+            "twins, (2) progressive 10s–60s timing probes across Rusty Electrics and free-time Robot Satie voices, and (3) code-review bug "
             "catching under sycophantic pressure. Results exposed a 100% Clip-A position-bias confabulation illusion (8/8 trials), "
             "a hard 0–10s timestamp ceiling past 30s, and an honest null result on 7B Python debugging."
         ),
@@ -211,7 +211,7 @@ REPORTS = [
         "trials": "10 Continuation Trials + 15 Playable Audio Artifacts (Experiment D)",
         "models": "facebook/musicgen-small (32 kHz Audio-Prompted Continuation)",
         "abstract": (
-            "We handed the first half of 5 real unquantized human performances (guitar and bar-line-free Satie piano) to "
+            "We handed the first half of 5 real unquantized live human performances (multi-voice works and free-time Robot Satie) to "
             "facebook/musicgen-small and measured how closely the AI finished each phrase. Blind audio-only continuation stalled "
             "into 49.5–58.0 dB dynamic dropouts on 5/5 tracks. Adding a 1-line text hint unlocked 0.948–0.993 MFCC timbral "
             "similarity—yet quietly smoothed out human rubato irregularity (IOI CV) by 21% to 41% on 4 of 5 tracks."
@@ -240,7 +240,7 @@ REPORTS = [
 </table>
 """,
         "analysis": (
-            "Generative music transformers can now clone the surface timbre of an acoustic guitar or piano almost seamlessly "
+            "Generative music transformers can now clone the surface timbre of live-performed voices almost seamlessly "
             "(0.993 MFCC similarity), but their training prior on grid-locked studio music acts like temporal gravity: without "
             "text conditioning they stall into 49.5–58.0 dB dropouts, and with text conditioning they iron out 21%–41% of the "
             "human player's rubato hesitation."
