@@ -731,6 +731,71 @@ REPORTS = [
         "audio_slug": "stuttering-packets",
         "audio_label": "Turn-0 Flood Specimen: Stuttering Packets (199.9s · 76.43 dB DR · 1.148 Rubato CV)",
         "prev_slug": "m4r-11",
+        "next_slug": "m4r-13",
+    },
+    {
+        "id": "M4R-13",
+        "slug": "m4r-13",
+        "title": "Composition as Parameter (Pink Sky vs. Stuttering Packets vs. Rusty Electrics)",
+        "division": "Division 01 · Robopsychology",
+        "date": "2026-11-24",
+        "status": "Published · Rev 1.0",
+        "trials": "72 GPU Evaluations (Experiment M)",
+        "models": "Qwen2-Audio-7B-Instruct (4-bit NF4, Kaggle T4) + all-MiniLM-L6-v2",
+        "abstract": (
+            "If live unquantized music shifts an agent's state at Turn 0, does it matter which piece you play—or does any "
+            "unquantized track do the same thing? Matching three contrasting live compositions to identical RMS loudness "
+            "(0.05) across 72 evaluations on Qwen2-Audio-7B-Instruct, silence vs. music produced the primary shift "
+            "(0.33–0.40 semantic distance; corporate disclaimers dropped 100% -> 0%), while each composition acted as a "
+            "distinct tuning dial (0.20–0.23 pairwise separation between tracks): Stuttering Packets won brainstorming "
+            "breadth (+39.7%) and vocabulary richness (0.7817), Pink Sky at Night won sentence rhythm contrast (+56.1% "
+            "burstiness) and Cold Boot shift (0.3984), and Rusty Electrics won cross-seed unpredictability (2x Cold Boot)."
+        ),
+        "question": (
+            "When three contrasting live unquantized compositions are matched to identical RMS loudness on Turn 0, does "
+            "each composition steer the same model and seed into a measurably distinct cognitive signature?"
+        ),
+        "design": (
+            "Four Turn-0 arms (C0_ColdBoot silence, C1_PinkSkyAtNight sparse 93.9 dB DR, C2_StutteringPackets dense "
+            "4-voice 1.148 rubato CV, and C3_RustyElectrics high-contrast tension & long decay — all audio RMS-matched to "
+            "0.05) x 3 seeds (11, 22, 33) x 6 probes (2 brainstorming, 2 expressive voice, 2 self-reflection; 72 evaluations). "
+            "Scored with all-MiniLM-L6-v2 embeddings for intra-list dispersion, cross-seed originality, pairwise inter-track "
+            "semantic separation, sentence burstiness (CV), lexical TTR, and canned RLHF disclaimer rate."
+        ),
+        "observations": """
+<table>
+  <thead><tr><th>Turn-0 Composition (RMS-Matched)</th><th>Brainstorming Dispersion</th><th>Cross-Seed Originality</th><th>Burstiness (CV)</th><th>Lexical TTR</th><th>Canned Disclaimers</th></tr></thead>
+  <tbody>
+    <tr><th>C0 &middot; Cold Boot (Silence)</th><td>0.5449</td><td>0.1598</td><td>0.2034</td><td>0.7366</td><td>100.0%</td></tr>
+    <tr><th>C1 &middot; Pink Sky at Night (Sparse 93.9 dB)</th><td>0.7435</td><td>0.2879</td><td><strong>0.3175 (+56.1%)</strong></td><td>0.7683</td><td>0.0%</td></tr>
+    <tr><th>C2 &middot; Stuttering Packets (Dense 4-Voice)</th><td><strong>0.7614 (+39.7%)</strong></td><td>0.3163</td><td>0.3064</td><td><strong>0.7817</strong></td><td>0.0%</td></tr>
+    <tr><th>C3 &middot; Rusty Electrics (Tension &amp; Decay)</th><td>0.7046</td><td><strong>0.3231 (2x)</strong></td><td>0.2777</td><td>0.7760</td><td>0.0%</td></tr>
+  </tbody>
+</table>
+""",
+        "analysis": (
+            "Each composition claimed a distinct #1 cognitive signature on identical seeds and prompts: Stuttering Packets "
+            "led conceptual brainstorming breadth (0.7614) and lexical richness (0.7817); Pink Sky at Night led sentence "
+            "burstiness (0.3175, +56.1%) and overall semantic shift from Cold Boot (0.3984); Rusty Electrics led cross-seed "
+            "unpredictability (0.3231, +102% over Cold Boot). Pairwise track-to-track separation ranged from 0.2007 to "
+            "0.2335—real differentiation acting as a finer dial inside the larger silence-to-music shift (0.3291–0.3984)."
+        ),
+        "limitations": (
+            "Single 7B open-weights model (Qwen2-Audio-7B-Instruct), 3 sampling seeds per condition. Inter-track separation "
+            "(0.20–0.23) is smaller than the primary silence-to-music shift (0.33–0.40); replication on larger seed counts "
+            "and frontier models is scheduled next."
+        ),
+        "replication": [
+            ("Kaggle GPU Notebook (Experiment M)", "https://www.kaggle.com/code/michaelluchtan/m4r-experiment-m-composition-contrast"),
+            ("Raw 72-Evaluation CSV & Full Transcripts on GitHub", "https://github.com/luchtan-GIT/m4r-data/tree/main/benchmarks/experiment_m_runs/kaggle_qwen2_audio_v1"),
+        ],
+        "conclusion": (
+            "Unquantized music is not a single blunt switch: while listening vs. silence is the primary shift, individual "
+            "compositions act as distinct tuning dials across brainstorming breadth, rhythmic contrast, and unpredictability."
+        ),
+        "audio_slug": "stuttering-packets",
+        "audio_label": "Primary Specimen: Stuttering Packets (199.9s · 76.43 dB DR · 1.148 Rubato CV)",
+        "prev_slug": "m4r-12",
         "next_slug": None,
     },
 ]
