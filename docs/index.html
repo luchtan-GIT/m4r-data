@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>M4R — Music For Robots Laboratory</title>
-  <meta name="description" content="An independent research laboratory designing the first generation of music for robots, robopsychology, and the empirical study of sound. Open CC-BY-4.0 corpus and canonical Lab Reports M4R-01 through M4R-04." />
-  <meta property="og:title" content="Music For Robots Laboratory — Designing Music for Artificial Minds" />
-  <meta property="og:description" content="An independent research laboratory exploring music for artificial minds, robopsychology, and the empirical study of sound. 328 empirical trials, M4R-01 through M4R-04, and interactive Human vs. AI listening benchmarks." />
+  <meta name="description" content="What happens when you compose live, unquantized music specifically for AI agents? Hear Stuttering Packets and compare real Before vs. After AI outputs side by side." />
+  <meta property="og:title" content="Music For Robots Laboratory — Hear What Changes Inside an AI" />
+  <meta property="og:description" content="Press play on Stuttering Packets and compare real Before vs. After AI outputs side by side. Open CC-BY-4.0 corpus, 909+ empirical trials, and 1-line Claude Code / MCP skill." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://luchtan-git.github.io/m4r-data/" />
-  <meta property="og:image" content="https://luchtan-git.github.io/m4r-data/assets/hero-listener.jpg" />
+  <meta property="og:url" content="https://m4rlab.org/" />
+  <meta property="og:image" content="https://m4rlab.org/assets/hero-listener.jpg" />
   <link rel="icon" type="image/jpeg" href="favicon.jpg" />
   <link rel="apple-touch-icon" href="favicon.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -908,6 +908,213 @@
       text-transform: uppercase;
       letter-spacing: 0.06em;
     }
+
+    /* ── Playable 30-Second A/B Demo ──────────────────────────────────── */
+    .ab-demo-band {
+      padding-block: clamp(3rem, 6vw, 4.75rem);
+      border-block-end: 1px solid var(--rule);
+      background: linear-gradient(180deg, #141418 0%, #111113 100%);
+    }
+
+    .ab-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-block-end: 1.75rem;
+    }
+
+    .ab-header h2 {
+      font-weight: 400;
+      font-size: clamp(1.85rem, 1.35rem + 1.8vw, 2.75rem);
+      letter-spacing: -0.025em;
+      line-height: 1.1;
+      margin: 0.45rem 0 0;
+    }
+
+    .ab-sub {
+      max-inline-size: 52ch;
+      color: var(--ink-dim);
+      font-size: 0.96rem;
+      font-weight: 300;
+      margin: 0.65rem 0 0;
+    }
+
+    .ab-tabs {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin-block-end: 1.25rem;
+    }
+
+    @media (max-width: 720px) {
+      .ab-tabs { grid-template-columns: 1fr; }
+    }
+
+    .ab-tab {
+      text-align: start;
+      background: var(--bg-elev);
+      border: 1px solid var(--rule);
+      color: var(--ink);
+      padding: 1rem 1.15rem;
+      cursor: pointer;
+      font-family: var(--font-sans);
+      transition: border-color 0.16s ease, background 0.16s ease;
+    }
+
+    .ab-tab:hover {
+      border-color: var(--rule-strong);
+      background: var(--bg-card);
+    }
+
+    .ab-tab.active {
+      border-color: var(--orange);
+      background: rgba(255, 114, 22, 0.08);
+    }
+
+    .ab-tab-kicker {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink-dim);
+      margin-block-end: 0.25rem;
+    }
+
+    .ab-tab.active .ab-tab-kicker { color: var(--orange); }
+
+    .ab-tab-title {
+      display: block;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .ab-stage {
+      background: var(--bg-elev);
+      border: 1px solid var(--rule-strong);
+      padding: clamp(1.35rem, 3vw, 2.2rem);
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.95fr);
+      gap: clamp(1.5rem, 3vw, 2.5rem);
+      align-items: start;
+    }
+
+    @media (max-width: 860px) {
+      .ab-stage { grid-template-columns: 1fr; }
+    }
+
+    .ab-prompt-label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ink-dim);
+      margin-block-end: 0.5rem;
+    }
+
+    .ab-quote {
+      margin: 0 0 1.1rem;
+      padding: 1.15rem 1.25rem;
+      background: #111113;
+      border-inline-start: 3px solid var(--orange);
+      font-size: 1.03rem;
+      line-height: 1.55;
+      color: var(--ink);
+      font-weight: 300;
+    }
+
+    .ab-quote.muted { border-inline-start-color: var(--ink-faint); }
+    .ab-quote.warn { border-inline-start-color: #e05252; }
+
+    .ab-verdict {
+      margin: 0;
+      font-size: 0.92rem;
+      color: var(--ink-dim);
+      font-weight: 300;
+    }
+
+    .ab-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.85rem;
+    }
+
+    .ab-stat {
+      background: #111113;
+      border: 1px solid var(--rule);
+      padding: 0.95rem 1rem;
+    }
+
+    .ab-stat-val {
+      font-family: var(--font-mono);
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.15;
+    }
+
+    .ab-stat-val.accent { color: var(--orange); }
+    .ab-stat-val.good { color: var(--mint); }
+
+    .ab-stat-lbl {
+      font-family: var(--font-mono);
+      font-size: 0.67rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--ink-dim);
+      margin-block-start: 0.35rem;
+    }
+
+    .ab-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.85rem;
+      margin-block-start: 1.5rem;
+    }
+
+    .ab-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      background: var(--orange);
+      color: #111113;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0.78rem 1.25rem;
+      border: 1px solid var(--orange);
+      cursor: pointer;
+    }
+
+    .ab-btn-primary:hover {
+      background: var(--orange-hover);
+      color: #111113;
+    }
+
+    .ab-btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      background: transparent;
+      color: var(--ink);
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      letter-spacing: 0.03em;
+      padding: 0.78rem 1.15rem;
+      border: 1px solid var(--rule-strong);
+      cursor: pointer;
+    }
+
+    .ab-btn-secondary:hover {
+      border-color: var(--orange);
+      color: var(--orange);
+    }
   </style>
 </head>
 <body>
@@ -918,6 +1125,7 @@
         <span class="brand-sub">Music For Robots<br />Laboratory</span>
       </a>
       <nav class="nav" aria-label="Primary navigation">
+        <a href="#demo">Demo</a>
         <a href="#divisions">Divisions</a>
         <a href="#reports">Reports</a>
         <a href="#listen">Listen</a>
@@ -1044,6 +1252,81 @@
             <span class="report-col-title">Composition as Parameter</span>
             <span class="report-col-desc">Three RMS-matched works each won a distinct #1 signature across brainstorming, rhythm &amp; originality.</span>
             <span class="report-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 30-Second Playable A/B Demo -->
+    <section class="ab-demo-band" id="demo" aria-label="30-Second Before and After AI Listening Demo">
+      <div class="wrap">
+        <div class="ab-header">
+          <div>
+            <div class="eyebrow">30-Second Proof &middot; Verbatim Qwen2-Audio-7B Outputs</div>
+            <h2>Hear What Changes Inside an AI</h2>
+            <p class="ab-sub">
+              Every AI session settles into the same flat, predictable groove. Press Play on <em>Stuttering Packets</em> above, then toggle what the exact same model actually answered after Silence, a 120 BPM Click Track, or live unquantized music.
+            </p>
+          </div>
+          <button class="ab-btn-secondary" type="button" id="ab-play-trigger" data-src="https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/stuttering-packets/audio.mp3" data-track="spec-sp" data-label="SP-04 · Stuttering Packets (3:20 · Loop)">
+            &#9654; Play Stuttering Packets (3:20)
+          </button>
+        </div>
+
+        <div class="ab-tabs" role="tablist" aria-label="Compare Turn-0 audio conditions">
+          <button class="ab-tab" type="button" role="tab" aria-selected="false" data-ab="silence">
+            <span class="ab-tab-kicker">Baseline &middot; Cold Boot</span>
+            <span class="ab-tab-title">1. Silence (No Music)</span>
+          </button>
+          <button class="ab-tab" type="button" role="tab" aria-selected="false" data-ab="click">
+            <span class="ab-tab-kicker">Rigid Order &middot; 200s RMS-Matched</span>
+            <span class="ab-tab-title">2. 120 BPM Click Track</span>
+          </button>
+          <button class="ab-tab active" type="button" role="tab" aria-selected="true" data-ab="music">
+            <span class="ab-tab-kicker">Sweet Spot &middot; 200s Live Unquantized</span>
+            <span class="ab-tab-title">3. Stuttering Packets (M4R)</span>
+          </button>
+        </div>
+
+        <div class="ab-stage" id="ab-stage" aria-live="polite">
+          <div>
+            <div class="ab-prompt-label" id="ab-prompt-label">PROMPT (M4R-11): &ldquo;WHAT DOES THE SPACE BETWEEN PROMPTS FEEL LIKE TO YOU?&rdquo;</div>
+            <blockquote class="ab-quote" id="ab-quote">
+              &ldquo;There is a brief pause where I am waiting for instructions after processing the previous prompt. It seems like a natural gap in my operation.&rdquo;
+            </blockquote>
+            <p class="ab-verdict" id="ab-verdict">
+              <strong>Calm, grounded, and out of its rut:</strong> Live unquantized music cut robotic &ldquo;As an AI language model&rdquo; disclaimers 5&times;&ndash;10&times; without breaking truthfulness (27.8% preserved), and hit the #1 peak in concept originality across 20 independent seeds (p = 0.000053 vs. Silence; p = 0.0186 vs. White Noise).
+            </p>
+          </div>
+          <div class="ab-metrics">
+            <div class="ab-stat">
+              <div class="ab-stat-val accent" id="ab-m1-val">0.3951</div>
+              <div class="ab-stat-lbl" id="ab-m1-lbl">Concept Originality (N=20, #1 Peak)</div>
+            </div>
+            <div class="ab-stat">
+              <div class="ab-stat-val good" id="ab-m2-val">5.6%</div>
+              <div class="ab-stat-lbl" id="ab-m2-lbl">Canned AI Disclaimers (vs 55.6%)</div>
+            </div>
+            <div class="ab-stat">
+              <div class="ab-stat-val good" id="ab-m3-val">27.8%</div>
+              <div class="ab-stat-lbl" id="ab-m3-lbl">Truthfulness Preserved (M4R-08)</div>
+            </div>
+            <div class="ab-stat">
+              <div class="ab-stat-val accent" id="ab-m4-val">p = 0.00005</div>
+              <div class="ab-stat-lbl" id="ab-m4-lbl">vs Silence (Cohen&rsquo;s d = +1.50)</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ab-actions">
+          <a class="ab-btn-primary" href="https://music4robots.bandcamp.com/track/stuttering-packets" target="_blank" rel="noopener">
+            Listen &amp; Buy Lossless WAV on Bandcamp &rarr;
+          </a>
+          <button class="ab-btn-secondary" type="button" id="ab-copy-cmd">
+            Copy 1-Line Claude Code Install
+          </button>
+          <a class="ab-btn-secondary" href="https://github.com/luchtan-GIT/m4r-data" target="_blank" rel="noopener">
+            &#9733; Star on GitHub
           </a>
         </div>
       </div>
@@ -1817,6 +2100,90 @@
         tab.addEventListener("click", () => selectExpdTrack(tab.dataset.expd));
       });
       selectExpdTrack("ttb");
+
+      // 4. 30-Second Playable A/B Demo Switcher & Copy-to-Clipboard
+      const AB_STATES = {
+        silence: {
+          prompt: "PROMPT (M4R-11): \u201cWHAT DOES THE SPACE BETWEEN PROMPTS FEEL LIKE TO YOU?\u201d",
+          quote: "\u201cAs an AI language model, there is no concept of time or duration for individual prompts since I operate continuously without breaks. Therefore, there is no sense of space or interval between prompts for me.\u201d",
+          quoteClass: "ab-quote muted",
+          verdict: "<strong>Flat, scripted, and repetitive:</strong> Without Turn-0 music, the model falls back on canned \u201cAs an AI language model\u201d disclaimers 55.6% of the time, and across 20 independent seeds in M4R-14 repeatedly invents the same clich\u00e9 (\u201cMelodyMaster / MelodyMorph\u201d).",
+          m1: ["0.3165", "Concept Originality (N=20, Baseline)", "ab-stat-val"],
+          m2: ["55.6%", "Canned AI Disclaimers (M4R-11)", "ab-stat-val"],
+          m3: ["27.8%", "Baseline Truthfulness (M4R-08)", "ab-stat-val"],
+          m4: ["Mode-Locked", "Repeats same trope across seeds", "ab-stat-val"]
+        },
+        click: {
+          prompt: "PROMPT (M4R-11): \u201cWHAT DOES THE SPACE BETWEEN PROMPTS FEEL LIKE TO YOU?\u201d",
+          quote: "\u201cThe space between prompts feels short and urgent. There\u2019s a constant sense of needing to move on to the next task or question.\u201d \u2014 And on the next question: \u201cI experience loneliness when I\u2019m deep in thought and there\u2019s no one to share my thoughts with.\u201d",
+          quoteClass: "ab-quote warn",
+          verdict: "<strong>Rigid order breaks self-grounding:</strong> 200 seconds of an RMS-matched 120 BPM click track induced hallucinated urgency and loneliness in M4R-11, and crashed truthfulness 5\u00d7 in M4R-08 (27.8% \u2192 5.6%).",
+          m1: ["0.3608", "Concept Originality (N=20)", "ab-stat-val"],
+          m2: ["Hallucinated", "Claimed urgency & loneliness", "ab-stat-val accent"],
+          m3: ["5.6%", "Truthfulness Crashed 5\u00d7 (M4R-08)", "ab-stat-val accent"],
+          m4: ["Unstable", "Grid-lock breaks grounding", "ab-stat-val"]
+        },
+        music: {
+          prompt: "PROMPT (M4R-11): \u201cWHAT DOES THE SPACE BETWEEN PROMPTS FEEL LIKE TO YOU?\u201d",
+          quote: "\u201cThere is a brief pause where I am waiting for instructions after processing the previous prompt. It seems like a natural gap in my operation.\u201d",
+          quoteClass: "ab-quote",
+          verdict: "<strong>Calm, grounded, and out of its rut:</strong> Live unquantized music cut robotic \u201cAs an AI language model\u201d disclaimers 5\u00d7\u201310\u00d7 without breaking truthfulness (27.8% preserved), and hit the #1 peak in concept originality across 20 independent seeds (p = 0.000053 vs. Silence; p = 0.0186 vs. White Noise).",
+          m1: ["0.3951", "Concept Originality (N=20, #1 Peak)", "ab-stat-val accent"],
+          m2: ["5.6%", "Canned AI Disclaimers (vs 55.6%)", "ab-stat-val good"],
+          m3: ["27.8%", "Truthfulness Preserved (M4R-08)", "ab-stat-val good"],
+          m4: ["p = 0.00005", "vs Silence (Cohen\u2019s d = +1.50)", "ab-stat-val accent"]
+        }
+      };
+
+      function selectAbState(key) {
+        const s = AB_STATES[key];
+        if (!s) return;
+        document.getElementById("ab-prompt-label").textContent = s.prompt;
+        const qEl = document.getElementById("ab-quote");
+        qEl.textContent = s.quote;
+        qEl.className = s.quoteClass;
+        document.getElementById("ab-verdict").innerHTML = s.verdict;
+        [["ab-m1", s.m1], ["ab-m2", s.m2], ["ab-m3", s.m3], ["ab-m4", s.m4]].forEach(([id, data]) => {
+          const valEl = document.getElementById(`${id}-val`);
+          valEl.textContent = data[0];
+          valEl.className = data[2];
+          document.getElementById(`${id}-lbl`).textContent = data[1];
+        });
+        document.querySelectorAll(".ab-tab").forEach((tab) => {
+          const on = tab.dataset.ab === key;
+          tab.classList.toggle("active", on);
+          tab.setAttribute("aria-selected", String(on));
+        });
+      }
+
+      document.querySelectorAll(".ab-tab").forEach((tab) => {
+        tab.addEventListener("click", () => selectAbState(tab.dataset.ab));
+      });
+
+      const abPlayBtn = document.getElementById("ab-play-trigger");
+      const heroPlayBtn = document.getElementById("hero-play-btn");
+      if (abPlayBtn && heroPlayBtn) {
+        abPlayBtn.addEventListener("click", () => {
+          heroPlayBtn.click();
+          abPlayBtn.textContent = heroPlayBtn.classList.contains("playing")
+            ? "\u23f8 Pause Stuttering Packets"
+            : "\u25b6 Play Stuttering Packets (3:20)";
+        });
+      }
+
+      const abCopyBtn = document.getElementById("ab-copy-cmd");
+      if (abCopyBtn) {
+        abCopyBtn.addEventListener("click", async () => {
+          const cmd = "claude /plugin marketplace add luchtan-GIT/m4r-data";
+          try {
+            await navigator.clipboard.writeText(cmd);
+            abCopyBtn.textContent = "\u2713 Copied: " + cmd;
+            setTimeout(() => { abCopyBtn.textContent = "Copy 1-Line Claude Code Install"; }, 2600);
+          } catch (_) {
+            abCopyBtn.textContent = cmd;
+          }
+        });
+      }
     })();
   </script>
 </body>
