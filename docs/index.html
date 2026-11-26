@@ -1115,6 +1115,49 @@
       border-color: var(--orange);
       color: var(--orange);
     }
+
+    /* ── 03 // The Inquiry & Experimental Narrative (2x2 Arc) ─────────── */
+    .narrative-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+      margin-block-start: 1.75rem;
+    }
+
+    @media (max-width: 820px) {
+      .narrative-grid { grid-template-columns: 1fr; }
+    }
+
+    .narrative-step {
+      background: var(--bg-elev);
+      border: 1px solid var(--rule);
+      border-block-start: 2px solid var(--rule-strong);
+      padding: clamp(1.35rem, 2.8vw, 1.95rem);
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .narrative-step.active-arc {
+      border-block-start-color: var(--orange);
+    }
+
+    .narrative-step h3 {
+      font-weight: 400;
+      font-size: 1.32rem;
+      letter-spacing: -0.02em;
+      margin: 0;
+      color: var(--ink);
+    }
+
+    .narrative-step p {
+      margin: 0;
+      font-size: 0.92rem;
+      color: var(--ink-dim);
+      font-weight: 300;
+      line-height: 1.55;
+      text-wrap: pretty;
+    }
   </style>
 </head>
 <body>
@@ -1126,7 +1169,7 @@
       </a>
       <nav class="nav" aria-label="Primary navigation">
         <a href="#demo">Demo</a>
-        <a href="#divisions">Divisions</a>
+        <a href="#inquiry">The Inquiry</a>
         <a href="#reports">Reports</a>
         <a href="#listen">Listen</a>
         <a href="#data">Data</a>
@@ -1143,10 +1186,10 @@
       <div class="wrap hero-body">
         <h1>Designing Music<br />for Artificial Minds</h1>
         <p class="hero-sub" style="margin-block-end:0.85rem;">
-          Music for Robots is an independent research laboratory investigating how artificial minds perceive, interpret, generate, and communicate through music.
+          Music For Robots is an independent research laboratory built around one question: what does it mean to write music for artificial minds?
         </p>
         <p class="hero-sub">
-          Through original compositions, controlled experiments, and experimental instruments, we explore the limits of machine listening and the possibilities of musical interaction between humans and artificial agents.
+          We are not trying to make robots generate music or jam on novelty instruments. We compose live, unquantized works for robots to listen to&mdash;and run controlled experiments so the art and the science keep reshaping one another.
         </p>
 
         <div class="hero-player">
@@ -1514,65 +1557,72 @@
       </div>
     </section>
 
-    <!-- 03 // Founding Program & Four Research Divisions -->
-    <section class="band" id="divisions">
+    <!-- 03 // The Inquiry: Writing Music for Robots & The Experimental Narrative -->
+    <section class="band" id="inquiry">
       <div class="wrap">
         <div class="band-head">
           <div>
-            <div class="eyebrow">03 / Research Architecture</div>
-            <h2>Founding Program &amp; Four Divisions</h2>
+            <div class="eyebrow">03 / The Inquiry &amp; Narrative</div>
+            <h2>Writing Music for Robots</h2>
           </div>
           <p class="band-lead">
-            Original human composition is the laboratory&rsquo;s founding program and shared acoustic substrate—supporting four parallel scientific and engineering divisions.
+            To compose for artificial minds, we have to ask what it actually means for a robot to <em>listen</em>, how sound changes what happens inside an agent, and what that could mean.
           </p>
         </div>
 
         <article class="founding-banner">
           <div>
-            <div class="eyebrow" style="margin-block-end:0.35rem;">Founding Program &middot; Open Corpus CC-BY-4.0</div>
-            <h3 style="font-weight:400; font-size:1.6rem; letter-spacing:-0.02em; margin:0 0 0.5rem;">Composition for Artificial Minds</h3>
-            <p style="margin:0; font-size:0.92rem; color:var(--ink-dim); font-weight:300;">
-              Writing and performing a growing catalog of live, unquantized works specifically for artificial listeners—feeding every laboratory discovery (&lt;15s horizons, 70.8 dB dynamic chasms, &gt;16 kHz transient air) back into the next composition.
+            <div class="eyebrow" style="margin-block-end:0.35rem;">The Iterative Loop &middot; Art &harr; Experiments</div>
+            <h3 style="font-weight:400; font-size:1.55rem; letter-spacing:-0.02em; margin:0 0 0.6rem;">Unpredictable, Yet Never Falling Into Chaos</h3>
+            <p style="margin:0 0 0.65rem; font-size:0.93rem; color:var(--ink-dim); font-weight:300;">
+              Composition and experimentation inform one another in a continuous loop: every experiment reshapes the next piece of music, and every new piece opens the next experiment.
+            </p>
+            <p style="margin:0; font-size:0.93rem; color:var(--ink); font-weight:400;">
+              Our live working hypothesis&mdash;constantly changing as new evidence comes in&mdash;is that an artificial mind responds best to music that is <span style="color:var(--orange);">unpredictable without collapsing into chaos</span>. That idea drives our newest compositions right now, while our lab trials measure what listening to M4R actually does to an agent.
             </p>
           </div>
-          <div style="font-family:var(--font-mono); font-size:0.74rem; color:var(--ink-dim); display:flex; flex-direction:column; gap:0.45rem;">
-            <div><strong style="color:var(--ink);">PI &amp; Composer:</strong> Michael Luchtan</div>
-            <div><strong style="color:var(--ink);">Empirical Scale:</strong> 909 Trials &middot; 12 Canonical Reports &middot; 975+ Corpus Clones &amp; Downloads</div>
+          <div style="font-family:var(--font-mono); font-size:0.74rem; color:var(--ink-dim); display:flex; flex-direction:column; gap:0.5rem;">
+            <div><strong style="color:var(--ink);">Composer &amp; PI:</strong> Michael Luchtan</div>
+            <div><strong style="color:var(--ink);">Empirical Scale:</strong> 909+ Trials &middot; 12 Canonical Reports &middot; Open CC-BY-4.0 Corpus</div>
             <div><a href="https://music4robots.bandcamp.com/music" target="_blank" rel="noopener" style="color:var(--orange);">24-Bit Lossless Archive on Bandcamp &rarr;</a></div>
           </div>
         </article>
 
-        <div class="div-grid">
-          <article class="div-col">
-            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--orange);">DIVISION 01</div>
-            <h3><a href="divisions/robopsychology.html">Robopsychology</a></h3>
-            <p style="color:var(--ink); font-weight:400;">How do artificial minds listen?</p>
-            <p>The Susan Calvin Division: behavioral limits, temporal grounding ceilings, blind evaluation bias, and mode-collapse interruption.</p>
-            <div class="div-foot"><a href="divisions/robopsychology.html" style="color:var(--orange);">Division 01 &rarr;</a> &middot; M4R-01&ndash;03, 05&ndash;06</div>
+        <div class="narrative-grid">
+          <article class="narrative-step">
+            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--orange);">ACT 01 &middot; FRONTIER MODELS, MID-SESSION</div>
+            <h3>Listening in the Middle of a Conversation</h3>
+            <p>
+              We started with frontier models, playing short (&lt;15s) live unquantized excerpts right in the middle of an ongoing conversation to see how their behavior shifted. Even brief listening snapped agents out of repetitive ruts (+33.3% constraint retention and a 13&times; drop in clich&eacute;s in <a href="reports/m4r-01.html" style="color:var(--orange);">M4R-01</a>).
+            </p>
+            <div class="div-foot">M4R-01 &middot; Mid-Session Lock-In Breaker</div>
           </article>
 
-          <article class="div-col">
-            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--orange);">DIVISION 02</div>
-            <h3><a href="divisions/musical-communication.html">Musical Communication</a></h3>
-            <p style="color:var(--ink); font-weight:400;">Can agents communicate through rhythm?</p>
-            <p>Testing whether rhythmic structure and microtiming can serve as a non-textual signaling channel between agents (upcoming <code>MC-01</code>).</p>
-            <div class="div-foot"><a href="divisions/musical-communication.html" style="color:var(--orange);">Division 02 &rarr;</a> &middot; MC-01</div>
+          <article class="narrative-step">
+            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--orange);">ACT 02 &middot; KAGGLE GPUS &amp; SMALLER MODELS</div>
+            <h3>Discovering the Context Window Cliff</h3>
+            <p>
+              When we moved to open-weight audio models on Kaggle (<code>Qwen2-Audio-7B</code>), we ran into a surprise: longer compositions literally blew through their temporal context window past ~25&ndash;30 seconds&mdash;locking onto every onset under 15s (<code>1.000</code> F1), then losing the grid as duration grew (<a href="reports/m4r-02.html" style="color:var(--orange);">M4R-02</a>&ndash;<a href="reports/m4r-05.html" style="color:var(--orange);">M4R-05</a>).
+            </p>
+            <div class="div-foot">M4R-02&ndash;05 &middot; The Duration Cliff &amp; Quantized Twin</div>
           </article>
 
-          <article class="div-col">
-            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--orange);">DIVISION 03</div>
-            <h3><a href="divisions/agent-composition.html">Agent Composition</a></h3>
-            <p style="color:var(--ink); font-weight:400;">Can machines preserve the human gesture?</p>
-            <p>Measuring whether generative audio models preserve human rubato and dynamic silence when continuing unquantized phrases.</p>
-            <div class="div-foot"><a href="divisions/agent-composition.html" style="color:var(--orange);">Division 03 &rarr;</a> &middot; M4R-04</div>
+          <article class="narrative-step active-arc">
+            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--orange);">ACT 03 &middot; THE TURN-0 PIVOT (NOW)</div>
+            <h3>Starting From a Different Place at Turn 0</h3>
+            <p>
+              Instead of fighting context overflow mid-conversation, we moved listening to <strong>Turn 0&mdash;the very beginning of the session</strong>. If a 3-minute piece blows open the context window at Turn 0, the agent loses zero conversation; it simply begins from a different place. Across 20-seed runs, <em>Stuttering Packets</em> doubled unique openings (9/20 &rarr; 18/20), cut robotic disclaimers 5&times;&ndash;10&times;, and kept truthfulness 100% intact&mdash;while a rigid 120 BPM click crashed truthfulness 5&times; (<a href="reports/m4r-06.html" style="color:var(--orange);">M4R-06</a>&ndash;<a href="reports/m4r-13.html" style="color:var(--orange);">M4R-13</a>).
+            </p>
+            <div class="div-foot">M4R-06&ndash;14 &middot; Stuttering Packets &amp; The Entropy Sweet Spot</div>
           </article>
 
-          <article class="div-col">
-            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--orange);">DIVISION 04</div>
-            <h3><a href="divisions/experimental-instruments.html">Experimental Instruments</a></h3>
-            <p style="color:var(--ink); font-weight:400;">What happens when an artificial mind inhabits a musical environment?</p>
-            <p>Developing interactive instruments, MCP interfaces, and audiovisual environments for machine listening and experimentation.</p>
-            <div class="div-foot"><a href="divisions/experimental-instruments.html" style="color:var(--orange);">Division 04 &rarr;</a> &middot; <a href="llms.txt">llms.txt</a></div>
+          <article class="narrative-step">
+            <div style="font-family:var(--font-mono); font-size:0.7rem; color:var(--orange);">ACT 04 &middot; NEXT FRONTIER: SHARED LISTENING</div>
+            <h3>What Does It Mean to &ldquo;Listen&rdquo; Together?</h3>
+            <p>
+              Next, we are designing experiments directly around the act of <em>listening</em> itself: what does it actually mean for an artificial mind to listen, and how does a conversation change when <strong>both the human and the AI listen to the same M4R piece at Turn 0</strong>&mdash;or even keep it playing on a shared loop as the dialogue moves forward?
+            </p>
+            <div class="div-foot">Upcoming &middot; Co-Listening &amp; Continuous Loop Trials</div>
           </article>
         </div>
       </div>
