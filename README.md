@@ -5,6 +5,7 @@
 [![License: CC-BY-4.0](https://img.shields.io/badge/Corpus_License-CC--BY--4.0-ff7216.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Hugging Face Dataset](https://img.shields.io/badge/🤗_Dataset-72_Tracks_|_1,205_Trials-ffd21e.svg)](https://huggingface.co/datasets/music4robots/music-for-robots)
 [![Hugging Face Space](https://img.shields.io/badge/🤗_Space-Benchmark_Explorer-ff7216.svg)](https://huggingface.co/spaces/music4robots/m4r-benchmark-explorer)
+[![Glama MCP Server](https://glama.ai/mcp/servers/@luchtan-GIT/m4r-data/badge.svg)](https://glama.ai/mcp/servers/@luchtan-GIT/m4r-data)
 [![Lab Website](https://img.shields.io/badge/Lab-m4rlab.org-111113.svg)](https://m4rlab.org)
 
 **Music For Robots Laboratory (`#M4R`)** is an independent research laboratory by composer **Michael Luchtan** investigating how artificial minds perceive, interpret, and respond to live, unquantized human music. Every composition (`72` tracks), RMS-matched acoustic control (`22` stimuli), Kaggle GPU notebook, and raw trial CSV (`1,205` controlled runs across `M4R-02` → `M4R-27`) is published openly under `CC-BY-4.0` — **including every null and failure mode**.
