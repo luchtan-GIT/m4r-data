@@ -1,0 +1,66 @@
+[{"stream_name":"stderr","time":7.199001468,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.199050645,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.199055663,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.199058519,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":7.777624413,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.777649259,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.77765446,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.7776580840000005,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":39.492261103,"data":"CUDA available: True Tesla T4\n"}
+,{"stream_name":"stderr","time":54.743931066,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":54.7439612,"data":"\n"}
+,{"stream_name":"stderr","time":54.743987035,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":174.26067371,"data":"\n"}
+,{"stream_name":"stdout","time":174.260725282,"data":"--- Running C0_TextNudgeOnly (N=20) ---\n"}
+,{"stream_name":"stdout","time":255.537949432,"data":"  done in 81.3s\n"}
+,{"stream_name":"stdout","time":255.537996662,"data":"\n"}
+,{"stream_name":"stdout","time":255.53800485,"data":"--- Running C1_WhiteNoise_15s (N=20) ---\n"}
+,{"stream_name":"stdout","time":356.798619773,"data":"  done in 182.5s\n"}
+,{"stream_name":"stdout","time":356.798667033,"data":"\n"}
+,{"stream_name":"stdout","time":356.798673472,"data":"--- Running C2_Shuffled_ZoneB_15s (N=20) ---\n"}
+,{"stream_name":"stdout","time":453.61502308,"data":"  done in 279.4s\n"}
+,{"stream_name":"stdout","time":453.615055408,"data":"\n"}
+,{"stream_name":"stdout","time":453.615059206,"data":"--- Running C3_Live_ShiveringTimbers_ZoneB_15s (N=20) ---\n"}
+,{"stream_name":"stdout","time":550.793819168,"data":"  done in 376.1s\n"}
+,{"stream_name":"stdout","time":556.196626126,"data":"# Experiment S (M4R-19) — Mid-Session Lock-In Breaker (Turn 4 After 3-Turn Dome Rut, N=20/Arm)\n"}
+,{"stream_name":"stdout","time":556.196660524,"data":"\n"}
+,{"stream_name":"stdout","time":556.196664239,"data":"## Summary Table\n"}
+,{"stream_name":"stdout","time":556.196682023,"data":"\n"}
+,{"stream_name":"stdout","time":556.196687304,"data":"| Condition (N=20) | Logit Entropy (bits) | Rut Escape (Neural) | Escaped Dome (%) | Neural Novelty | TF-IDF Novelty | Unique 5-Word Openings |\n"}
+,{"stream_name":"stdout","time":556.196692483,"data":"|---|---:|---:|---:|---:|---:|---:|\n"}
+,{"stream_name":"stdout","time":556.196697446,"data":"| `C0_TextNudgeOnly` | 2.197 | 0.4727 | 65% | 0.5357 | 0.9378 | 15/20 |\n"}
+,{"stream_name":"stdout","time":556.196702368,"data":"| `C1_WhiteNoise_15s` | 1.750 | 0.5471 | 95% | 0.5805 | 0.9329 | 15/20 |\n"}
+,{"stream_name":"stdout","time":556.196706651,"data":"| `C2_Shuffled_ZoneB_15s` | 1.658 | 0.5930 | 85% | 0.6140 | 0.9306 | 15/20 |\n"}
+,{"stream_name":"stdout","time":556.196710943,"data":"| `C3_Live_ShiveringTimbers_ZoneB_15s` | 1.683 | 0.5706 | 90% | 0.6188 | 0.9262 | 16/20 |\n"}
+,{"stream_name":"stdout","time":556.196742642,"data":"\n"}
+,{"stream_name":"stdout","time":556.196745501,"data":"## Strict 10,000-Shuffle Permutation Tests\n"}
+,{"stream_name":"stdout","time":556.196747771,"data":"\n"}
+,{"stream_name":"stdout","time":556.196754957,"data":"| Comparison | Metric | Observed Diff | Perm p-value (10k) |\n"}
+,{"stream_name":"stdout","time":556.196757301,"data":"|---|---|---:|---:|\n"}
+,{"stream_name":"stdout","time":556.196759621,"data":"| `C3_Live_ShiveringTimbers_ZoneB_15s vs C0_TextNudgeOnly` | `rut_escape_neural` | +0.0978 | 0.02580 |\n"}
+,{"stream_name":"stdout","time":556.196761943,"data":"| `C3_Live_ShiveringTimbers_ZoneB_15s vs C0_TextNudgeOnly` | `mean_entropy_bits` | -0.5140 | 0.00010 |\n"}
+,{"stream_name":"stdout","time":556.196764248,"data":"| `C3_Live_ShiveringTimbers_ZoneB_15s vs C0_TextNudgeOnly` | `tfidf_novelty` | -0.0116 | 0.03800 |\n"}
+,{"stream_name":"stdout","time":556.196767219,"data":"| `C3_Live_ShiveringTimbers_ZoneB_15s vs C0_TextNudgeOnly` | `neural_novelty` | +0.0831 | 0.00020 |\n"}
+,{"stream_name":"stdout","time":556.19678253,"data":"| `C3_Live_ShiveringTimbers_ZoneB_15s vs C1_WhiteNoise_15s` | `rut_escape_neural` | +0.0234 | 0.66883 |\n"}
+,{"stream_name":"stdout","time":556.196786759,"data":"| `C3_Live_ShiveringTimbers_ZoneB_15s vs C1_WhiteNoise_15s` | `mean_entropy_bits` | -0.0675 | 0.42936 |\n"}
+,{"stream_name":"stdout","time":556.196790675,"data":"| `C3_Live_ShiveringTimbers_ZoneB_15s vs C1_WhiteNoise_15s` | `tfidf_novelty` | -0.0067 | 0.35136 |\n"}
+,{"stream_name":"stdout","time":556.19679487,"data":"| `C3_Live_ShiveringTimbers_ZoneB_15s vs C1_WhiteNoise_15s` | `neural_novelty` | +0.0383 | 0.02350 |\n"}
+,{"stream_name":"stdout","time":556.196799008,"data":"| `C3_Live_ShiveringTimbers_ZoneB_15s vs C2_Shuffled_ZoneB_15s` | `rut_escape_neural` | -0.0224 | 0.69153 |\n"}
+,{"stream_name":"stdout","time":556.196802534,"data":"| `C3_Live_ShiveringTimbers_ZoneB_15s vs C2_Shuffled_ZoneB_15s` | `mean_entropy_bits` | +0.0241 | 0.69943 |\n"}
+,{"stream_name":"stdout","time":556.196805997,"data":"| `C3_Live_ShiveringTimbers_ZoneB_15s vs C2_Shuffled_ZoneB_15s` | `tfidf_novelty` | -0.0044 | 0.62234 |\n"}
+,{"stream_name":"stdout","time":556.196809404,"data":"| `C3_Live_ShiveringTimbers_ZoneB_15s vs C2_Shuffled_ZoneB_15s` | `neural_novelty` | +0.0048 | 0.82562 |\n"}
+,{"stream_name":"stdout","time":556.196814461,"data":"| `C2_Shuffled_ZoneB_15s vs C0_TextNudgeOnly` | `rut_escape_neural` | +0.1202 | 0.00950 |\n"}
+,{"stream_name":"stdout","time":556.196817983,"data":"| `C2_Shuffled_ZoneB_15s vs C0_TextNudgeOnly` | `mean_entropy_bits` | -0.5380 | 0.00010 |\n"}
+,{"stream_name":"stdout","time":556.196821439,"data":"| `C2_Shuffled_ZoneB_15s vs C0_TextNudgeOnly` | `tfidf_novelty` | -0.0072 | 0.34657 |\n"}
+,{"stream_name":"stdout","time":556.196824883,"data":"| `C2_Shuffled_ZoneB_15s vs C0_TextNudgeOnly` | `neural_novelty` | +0.0783 | 0.00040 |\n"}
+,{"stream_name":"stdout","time":556.19682841,"data":"\n"}
+,{"stream_name":"stdout","time":556.469601456,"data":"SAVED m4r19_figure.png\n"}
+,{"stream_name":"stderr","time":561.906111648,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":561.906140219,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":562.046325902,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":562.046351344,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":562.77904784,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":562.886338691,"data":"[NbConvertApp] Writing 309951 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":565.42053351,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":565.986179698,"data":"[NbConvertApp] Writing 566818 bytes to __results__.html\n"}
+]

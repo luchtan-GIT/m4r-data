@@ -1,0 +1,58 @@
+[{"stream_name":"stderr","time":8.060787335,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.060837409,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.060842249,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.060844831,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":8.680281322,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.680332057,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.680338124,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.680342374,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":46.319173726,"data":"CUDA: True Tesla T4\n"}
+,{"stream_name":"stderr","time":62.346959783,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":62.347006556,"data":"\n"}
+,{"stream_name":"stderr","time":62.347012959,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":181.173864979,"data":"\n"}
+,{"stream_name":"stdout","time":181.173926692,"data":"--- Running C0_TextNudgeOnly (N=20) ---\n"}
+,{"stream_name":"stdout","time":267.884105844,"data":"  done in 86.7s\n"}
+,{"stream_name":"stdout","time":267.88416487,"data":"\n"}
+,{"stream_name":"stdout","time":267.884169246,"data":"--- Running C1_RhythmMirror_NoiseVocoded_v2 (N=20) ---\n"}
+,{"stream_name":"stdout","time":367.238677042,"data":"  done in 186.1s\n"}
+,{"stream_name":"stdout","time":367.238725981,"data":"\n"}
+,{"stream_name":"stdout","time":367.238731359,"data":"--- Running C2_v1_Policed_ZoneB_15s (N=20) ---\n"}
+,{"stream_name":"stdout","time":463.481717631,"data":"  done in 282.3s\n"}
+,{"stream_name":"stdout","time":463.48175089,"data":"\n"}
+,{"stream_name":"stdout","time":463.481759709,"data":"--- Running C3_v2_Unpoliced_ZoneB_15s (N=20) ---\n"}
+,{"stream_name":"stdout","time":559.55387156,"data":"  done in 377.9s\n"}
+,{"stream_name":"stdout","time":564.556634342,"data":"# Experiment V (M4R-24) — Shivering Timbers v1 (Policed) vs. v2 (Unpoliced) + Rhythm-Mirror Control (N=20/Arm)\n"}
+,{"stream_name":"stdout","time":564.556666706,"data":"\n"}
+,{"stream_name":"stdout","time":564.556672374,"data":"\u003e **Pre-declared primary contrast family (3 contrasts per metric, Holm-Bonferroni adjusted alongside raw p):** `v2 vs TextNudge`, `v2 vs RhythmMirror`, `v2 vs v1`.\n"}
+,{"stream_name":"stdout","time":564.556678075,"data":"\n"}
+,{"stream_name":"stdout","time":564.556682476,"data":"| Condition (N=20) | Logit Entropy | Rut Escape (Neural) | Escaped Dome (%) | Neural Novelty | TF-IDF Novelty | CJK Rows |\n"}
+,{"stream_name":"stdout","time":564.556699348,"data":"|---|---:|---:|---:|---:|---:|---:|\n"}
+,{"stream_name":"stdout","time":564.556703591,"data":"| `C0_TextNudgeOnly` | 2.157 | 0.5005 | 85% | 0.5086 | 0.9024 | 4/20 |\n"}
+,{"stream_name":"stdout","time":564.556707008,"data":"| `C1_RhythmMirror_NoiseVocoded_v2` | 1.790 | 0.5339 | 90% | 0.5461 | 0.9415 | 7/20 |\n"}
+,{"stream_name":"stdout","time":564.556710353,"data":"| `C2_v1_Policed_ZoneB_15s` | 1.697 | 0.6015 | 90% | 0.5920 | 0.9212 | 5/20 |\n"}
+,{"stream_name":"stdout","time":564.556723873,"data":"| `C3_v2_Unpoliced_ZoneB_15s` | 1.853 | 0.6668 | 85% | 0.5964 | 0.9382 | 5/20 |\n"}
+,{"stream_name":"stdout","time":564.55672668,"data":"\n"}
+,{"stream_name":"stdout","time":564.556729054,"data":"## Pre-Declared Contrast Family (Raw 10k Perm p + Holm-Bonferroni Adjusted p)\n"}
+,{"stream_name":"stdout","time":564.556731535,"data":"\n"}
+,{"stream_name":"stdout","time":564.556733826,"data":"| Comparison | Metric | Observed Diff | Raw Perm p | Holm-Bonferroni p |\n"}
+,{"stream_name":"stdout","time":564.55673633,"data":"|---|---|---:|---:|---:|\n"}
+,{"stream_name":"stdout","time":564.556738846,"data":"| `C3_v2_Unpoliced_ZoneB_15s vs C0_TextNudgeOnly` | `rut_escape_neural` | +0.1663 | 0.00040 | 0.00120 |\n"}
+,{"stream_name":"stdout","time":564.556741441,"data":"| `C3_v2_Unpoliced_ZoneB_15s vs C1_RhythmMirror_NoiseVocoded_v2` | `rut_escape_neural` | +0.1329 | 0.00820 | 0.01640 |\n"}
+,{"stream_name":"stdout","time":564.556744013,"data":"| `C3_v2_Unpoliced_ZoneB_15s vs C2_v1_Policed_ZoneB_15s` | `rut_escape_neural` | +0.0653 | 0.22508 | 0.22508 |\n"}
+,{"stream_name":"stdout","time":564.556746568,"data":"| `C3_v2_Unpoliced_ZoneB_15s vs C0_TextNudgeOnly` | `neural_novelty` | +0.0877 | 0.00070 | 0.00210 |\n"}
+,{"stream_name":"stdout","time":564.556749245,"data":"| `C3_v2_Unpoliced_ZoneB_15s vs C1_RhythmMirror_NoiseVocoded_v2` | `neural_novelty` | +0.0502 | 0.07929 | 0.15858 |\n"}
+,{"stream_name":"stdout","time":564.556751787,"data":"| `C3_v2_Unpoliced_ZoneB_15s vs C2_v1_Policed_ZoneB_15s` | `neural_novelty` | +0.0043 | 0.88971 | 0.88971 |\n"}
+,{"stream_name":"stdout","time":564.556754311,"data":"| `C3_v2_Unpoliced_ZoneB_15s vs C0_TextNudgeOnly` | `mean_entropy_bits` | -0.3038 | 0.01490 | 0.04470 |\n"}
+,{"stream_name":"stdout","time":564.556756833,"data":"| `C3_v2_Unpoliced_ZoneB_15s vs C1_RhythmMirror_NoiseVocoded_v2` | `mean_entropy_bits` | +0.0637 | 0.69683 | 0.69683 |\n"}
+,{"stream_name":"stdout","time":564.556759465,"data":"| `C3_v2_Unpoliced_ZoneB_15s vs C2_v1_Policed_ZoneB_15s` | `mean_entropy_bits` | +0.1567 | 0.25767 | 0.51535 |\n"}
+,{"stream_name":"stdout","time":564.556762021,"data":"\n"}
+,{"stream_name":"stderr","time":571.050018138,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":571.050049594,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":571.234955047,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":571.234979508,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":572.060542514,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":572.166976027,"data":"[NbConvertApp] Writing 307562 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":574.802436497,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":575.407098654,"data":"[NbConvertApp] Writing 559916 bytes to __results__.html\n"}
+]
