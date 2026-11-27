@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "project": "Music For Robots",
+  "composer": "Michael Luchtan",
+  "track": {
+    "title": "Shivering Timbers",
+    "slug": "shivering-timbers",
+    "duration_sec": 65.64,
+    "description": "5-voice live composition with 43 architectural automation lanes (531 points) built directly from M4R-16/17 findings: Zone A Sparse (0-18s), Zone B Rich Friction & 3 Silence Chasms (18-48s), Zone C Saturated Edge & Callback (48-65.6s)."
+  },
+  "analysis": {
+    "duration_sec": 65.64,
+    "sample_rate": 44100,
+    "dynamic_range_db": 40.77,
+    "spectral_centroid_hz": 3719.7,
+    "n_onsets": 144,
+    "onset_rate_per_sec": 2.19,
+    "ioi_cv": 0.848
+  },
+  "urls": {
+    "audio": "https://raw.githubusercontent.com/luchtan-GIT/m4r-data/main/tracks/shivering-timbers/audio.mp3"
+  }
+}
