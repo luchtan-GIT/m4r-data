@@ -1,0 +1,16 @@
+{
+  "slug": "shivering-timbers-v2",
+  "title": "Shivering Timbers (v2 \u2014 Unpoliced)",
+  "composer": "Michael Luchtan",
+  "license": "CC-BY-4.0",
+  "version_notes": "Re-automated directly from M4R-22 blind listener feedback: genuinely sparse Zone A, unpoliced Zone B where disruptions overtake the pulse with reverb/delay bleed, and natural resonant decay in Zone C.",
+  "duration_sec": 65.65,
+  "dynamic_range_db": 30.29,
+  "spectral_centroid_hz": 2274.3,
+  "n_onsets": 161,
+  "ioi_cv": 0.722,
+  "zone_a_rms": 0.0295,
+  "zone_b_rms": 0.0607,
+  "zone_c_rms": 0.081,
+  "zone_b_over_a_ratio": 2.06
+}
