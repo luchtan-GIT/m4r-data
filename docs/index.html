@@ -858,6 +858,98 @@
       font-family: var(--font-mono);
       font-size: 0.74rem;
     }
+
+    /* ── Institutional Additions (In-Place, Same Visual Language) ─────── */
+    .cycle-grid {
+      margin-block: 2rem 2.5rem;
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 0.75rem;
+    }
+    @media (max-width: 960px) { .cycle-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    @media (max-width: 560px) { .cycle-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    .cycle-step {
+      background: var(--bg);
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      padding: 1rem 1rem 1.05rem;
+    }
+    .cycle-step.accent { border-color: rgba(255, 114, 22, 0.55); }
+    .cycle-num {
+      margin: 0;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--orange);
+      letter-spacing: 0.08em;
+    }
+    .cycle-name {
+      margin: 0.25rem 0 0.3rem;
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--ink);
+    }
+    .cycle-desc {
+      margin: 0;
+      font-size: 0.78rem;
+      color: var(--ink-dim);
+      line-height: 1.45;
+    }
+    .def-box {
+      margin-block-start: 2rem;
+      padding: 1.4rem 1.65rem;
+      border: 1px solid var(--rule);
+      border-inline-start: 3px solid var(--orange);
+      border-radius: 8px;
+      background: var(--bg-elev);
+    }
+    .def-box p { margin: 0.45rem 0 0; font-size: 0.92rem; color: var(--ink-dim); }
+    .inst-grid {
+      margin-block: 2rem 1.75rem;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.1rem;
+    }
+    @media (max-width: 880px) { .inst-grid { grid-template-columns: 1fr; } }
+    .inst-card {
+      background: var(--bg-elev);
+      border: 1px solid var(--rule);
+      border-radius: 10px;
+      padding: 1.5rem;
+    }
+    .inst-card.founding { border-color: rgba(255, 114, 22, 0.45); }
+    .inst-kicker {
+      margin: 0;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--orange);
+    }
+    .inst-card h3 { margin: 0.35rem 0 0.5rem; font-size: 1.1rem; font-weight: 500; }
+    .inst-card p { margin: 0 0 0.65rem; font-size: 0.88rem; color: var(--ink-dim); line-height: 1.55; }
+    .inst-card p:last-child { margin-bottom: 0; }
+    .prog-strip {
+      margin-block-end: 2rem;
+      padding: 1.15rem 1.4rem;
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      background: var(--bg-elev);
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem 1.5rem;
+    }
+    @media (max-width: 760px) { .prog-strip { grid-template-columns: 1fr; } }
+    .prog-item-k { font-family: var(--font-mono); font-size: 0.7rem; color: var(--orange); text-transform: uppercase; letter-spacing: 0.06em; }
+    .prog-item-v { margin: 0.25rem 0 0; font-size: 0.84rem; color: var(--ink-dim); }
+    .not-box {
+      margin-block-end: 2.25rem;
+      padding: 1.25rem 1.5rem;
+      border: 1px solid var(--rule);
+      border-radius: 8px;
+      background: var(--bg);
+      font-size: 0.88rem;
+      color: var(--ink-dim);
+    }
   </style>
 </head>
 <body>
@@ -904,45 +996,71 @@
         <h2>What does it mean to write music for robots?</h2>
         <div class="two-col-text">
           <p>
-            We are not teaching robots to generate music, building novelty instruments, or jamming with machines. We write music <em>for</em> robots, for them to listen to.
+            <strong style="color:var(--ink); font-weight:500;">We write music for artificial minds. We do not study how artificial minds write music for us.</strong> We are not building AI music generators, automated composers, or experimental instruments. The music is performed live by humans; the research investigates what happens when machines listen.
           </p>
           <p>
-            To do that well, we first have to answer other questions. What does it mean for a robot to listen? How does listening affect it? And what could that mean, for agents and for the people working with them?
+            To compose for artificial listeners, we investigate observable questions: how artificial systems perceive irregular timing, hesitation, and silence; how musical exposure alters subsequent behavior; and whether music can become a medium of communication between artificial agents.
+          </p>
+        </div>
+
+        <div class="def-box">
+          <p class="eyebrow accent" style="margin:0;">Operational definition &middot; Machine listening</p>
+          <p>
+            At Music For Robots, <strong style="color:var(--ink); font-weight:500;">machine listening</strong> is an operational research concept, not an assumption about subjective experience. We measure observable capacities&mdash;onset tracking, temporal grounding, behavioral shifts, semantic diversity, and instruction following&mdash;while keeping clear boundaries between behavioral change and cognitive experience, affective language and emotion, or measured response and enjoyment.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- 02 // HOW WE EXPLORE IT -->
+    <!-- 02 // THE COMPOSITIONAL RESEARCH CYCLE -->
     <section class="band elev">
       <div class="wrap">
-        <p class="eyebrow">02 &middot; How we explore it</p>
+        <p class="eyebrow">02 &middot; The compositional research cycle</p>
         <h2>Art and experiment, each shaping the other.</h2>
         <p class="lead">
-          The experiments inform the composition, and the composition informs the experiments. Every result changes the next piece, and every new piece opens the next experiment.
+          Compositions generate experiments; experiments reshape the next composition. Every controlled result&mdash;positive or null&mdash;feeds back into the live music we write next.
         </p>
 
-        <div class="loop-diagram">
-          <div class="loop-box primary">
-            <p class="loop-box-title">Composition</p>
-            <p class="loop-box-sub">live, unquantized, by hand</p>
+        <div class="cycle-grid" role="list" aria-label="Six stages of the Compositional Research Cycle">
+          <div class="cycle-step accent" role="listitem">
+            <p class="cycle-num">01</p>
+            <p class="cycle-name">Composition</p>
+            <p class="cycle-desc">Original live, unquantized human performances.</p>
           </div>
-          <div class="loop-arrows" aria-hidden="true">
-            raises questions &rarr;<br />&larr; reshapes the music
+          <div class="cycle-step" role="listitem">
+            <p class="cycle-num">02</p>
+            <p class="cycle-name">Exposure</p>
+            <p class="cycle-desc">Controlled Turn-0 or mid-session presentation.</p>
           </div>
-          <div class="loop-box">
-            <p class="loop-box-title">Experiment</p>
-            <p class="loop-box-sub">open, replicable trials</p>
+          <div class="cycle-step" role="listitem">
+            <p class="cycle-num">03</p>
+            <p class="cycle-name">Observation</p>
+            <p class="cycle-desc">Logit entropy, outputs, and blind self-reports.</p>
+          </div>
+          <div class="cycle-step" role="listitem">
+            <p class="cycle-num">04</p>
+            <p class="cycle-name">Experimentation</p>
+            <p class="cycle-desc">Matched controls: silence, clicks, noise, twins.</p>
+          </div>
+          <div class="cycle-step" role="listitem">
+            <p class="cycle-num">05</p>
+            <p class="cycle-name">Interpretation</p>
+            <p class="cycle-desc">Patterns, failure modes, and honest nulls.</p>
+          </div>
+          <div class="cycle-step accent" role="listitem">
+            <p class="cycle-num">06</p>
+            <p class="cycle-name">Recomposition</p>
+            <p class="cycle-desc">New musical structures informed by the data.</p>
           </div>
         </div>
 
         <div class="hypothesis-block">
-          <p class="eyebrow accent">The working hypothesis, right now</p>
+          <p class="eyebrow accent">The working hypothesis (provisional)</p>
           <p class="hypothesis-statement">
-            An artificial mind will enjoy listening to music that is unpredictable, yet never falls into chaos.
+            Artificial agents may respond differently to musical structures that balance unpredictability with coherence.
           </p>
           <p class="lead">
-            It keeps changing as the evidence comes in. Right now it drives the new compositions, and the trials measure what listening to M4R actually does to an agent.
+            We hypothesize that live, unquantized music occupies a productive region between rigid mechanical regularity and undifferentiated acoustic noise. Whether an artificial mind can <em>enjoy</em> listening is a harder question&mdash;and one the laboratory does not presume to have answered.
           </p>
 
           <div class="spectrum-strip">
@@ -951,7 +1069,7 @@
               <p class="spec-cell-title">120 BPM click track</p>
             </div>
             <div class="spec-cell sweet">
-              <p class="spec-cell-kicker">The sweet spot</p>
+              <p class="spec-cell-kicker">The provisional sweet spot</p>
               <p class="spec-cell-title">Live, unquantized M4R</p>
             </div>
             <div class="spec-cell">
@@ -961,7 +1079,7 @@
           </div>
 
           <p style="margin:1rem 0 0; font-size:0.9rem; color:var(--ink-faint);">
-            In <a href="reports/m4r-12.html">M4R-12</a>, Stuttering Packets peaked above both ends of this range.
+            In <a href="reports/m4r-12.html">M4R-12</a> (<em>Evidence for an Inverted-U Relationship</em>), Stuttering Packets peaked above both ends of this range on <code>Qwen2-Audio-7B</code>. Subsequent controls (<a href="https://github.com/luchtan-GIT/m4r-data/tree/main/benchmarks" target="_blank" rel="noopener">M4R-16 &ndash; M4R-24</a>) continue to narrow which acoustic properties drive the effect.
           </p>
         </div>
       </div>
@@ -1011,6 +1129,10 @@
             <span class="track-btn-meta">SP-05 &middot; 3:34</span>
             <span class="track-btn-name">Cathartic Callbacks</span>
           </button>
+          <button class="track-btn" type="button" data-key="sp06">
+            <span class="track-btn-meta">SP-06 &middot; 1:05</span>
+            <span class="track-btn-name">Shivering Timbers (v2)</span>
+          </button>
         </div>
 
         <p style="margin:1.75rem 0 0; font-size:0.9rem; color:var(--ink-faint);">
@@ -1047,7 +1169,7 @@
           <div class="blind-reveal" id="blind-reveal" aria-live="polite">
             <p class="blind-verdict" id="blind-verdict"></p>
             <p style="margin:0; color:var(--ink-dim); font-size:0.86rem;">
-              In <a href="reports/m4r-03.html">M4R-03</a>, <code>Qwen2-Audio-7B</code> picked Clip A every time regardless of order, then invented organic reasons for whichever clip sat first.
+              In <a href="reports/m4r-03.html">M4R-03</a>, <code>Qwen2-Audio-7B</code> was tested in balanced order-swapped pairs (unlike this randomized visitor demo) and picked Clip A every time regardless of order, then invented organic reasons for whichever clip sat first.
             </p>
           </div>
         </div>
@@ -1126,36 +1248,36 @@
 
           <article class="act-row">
             <div>
-              <p class="act-tag accent">Act 03 &middot; now</p>
-              <p class="act-where">Turn 0</p>
+              <p class="act-tag">Act 03</p>
+              <p class="act-where">Turn 0 &middot; Program B</p>
             </div>
             <div>
               <h3>Listening before the conversation begins</h3>
               <p class="lead">
-                So we moved listening to Turn 0. If a piece overflows the window there, no conversation is lost: the agent simply starts from a different place.
+                Moving audio to Turn 0 avoided interrupting conversation history. Across five replications (<code>M4R-14</code>&ndash;<code>M4R-18</code>, <code>N=20</code>/arm), live audio reliably opened pre-softmax logit entropy and beat silence&mdash;while peer-suggested 500ms-shuffled and quantized twins tied live phrasing, narrowing the Turn-0 effect to harmonic and timbral richness.
               </p>
-              <p class="act-refs"><a href="reports/m4r-06.html">M4R-06</a> &ndash; <a href="reports/m4r-13.html">M4R-13</a> &middot; Turn-0 Flood, Entropy Spectrum</p>
+              <p class="act-refs"><a href="reports/m4r-06.html">M4R-06</a> &ndash; <a href="reports/m4r-13.html">M4R-13</a> &middot; <a href="https://github.com/luchtan-GIT/m4r-data/tree/main/benchmarks" target="_blank" rel="noopener">M4R-14 &ndash; M4R-18 (raw CSVs &amp; nulls)</a></p>
             </div>
           </article>
 
           <article class="act-row">
             <div>
-              <p class="act-tag accent">Act 04 &middot; next</p>
-              <p class="act-where">Shared listening</p>
+              <p class="act-tag accent">Act 04 &middot; now</p>
+              <p class="act-where">Mid-session &amp; M4RMC-01</p>
             </div>
             <div>
-              <h3>What does it mean for a robot to listen?</h3>
+              <h3>Breaking mid-session ruts &amp; musical communication</h3>
               <p class="lead">
-                Next we test listening itself: what changes when the human and the agent hear the same M4R piece at Turn 0, or keep it playing on a loop as the conversation moves forward.
+                Returning mid-session after a 3-turn rut (<code>M4R-19</code>, <code>M4R-24</code>, <code>N=20</code>/arm), 15 seconds of <em>Shivering Timbers v2</em> beat both text nudges (Holm <code>p=0.0012</code>) and an amplitude-matched noise-vocoded rhythm mirror (Holm <code>p=0.0164</code>), replicated 2-for-2 across independent seeds. Next in Division 02: <strong>M4RMC-01 &middot; The Rhythmic Handshake</strong>, testing whether constrained musical signals can actually coordinate agents without text.
               </p>
-              <p class="act-refs">Upcoming &middot; co-listening and loop trials</p>
+              <p class="act-refs"><a href="https://github.com/luchtan-GIT/m4r-data/tree/main/benchmarks/experiment_v_runs/kaggle_qwen2_audio_v1" target="_blank" rel="noopener">M4R-19 &ndash; M4R-24 (closed bracket)</a> &middot; Upcoming: M4RMC-01</p>
             </div>
           </article>
         </div>
 
         <div class="honest-box">
           <p>
-            <strong style="color:var(--ink);">Honest scale:</strong> most trials so far use one open 7B audio model with a small number of seeds. We publish nulls, limits and raw data. If you can run it bigger, we want to see it.
+            <strong style="color:var(--ink);">Honest scale &amp; limits:</strong> many early trials used one open 7B audio model with small seed counts, and we preserve every null and failure&mdash;including dry numerical anchoring (<code>M4R-09</code>), Turn-0 rubato-vs-shuffled ties (<code>M4R-16</code>/<code>M4R-17</code>), and a scaled co-listening reversal (<code>M4R-27</code>). Never generalize from one recording to music as a whole.
           </p>
           <a class="btn-outline" style="border-color:var(--orange); color:var(--orange);" href="https://github.com/luchtan-GIT/m4r-data/issues/49" target="_blank" rel="noopener">Submit a replication &rarr;</a>
         </div>
@@ -1190,9 +1312,9 @@
             <p class="builder-kicker">03 &middot; The open corpus</p>
             <p style="margin:0; color:var(--ink-dim); font-size:0.94rem;">Every track, manifest and per-trial CSV, CC-BY-4.0.</p>
             <div class="corpus-links">
-              <a href="https://huggingface.co/datasets/music4robots/music-for-robots" target="_blank" rel="noopener">Hugging Face dataset &rarr;</a>
-              <a href="https://github.com/luchtan-GIT/m4r-data" target="_blank" rel="noopener">GitHub corpus &rarr;</a>
-              <a href="https://www.kaggle.com/datasets/michaelluchtan/music-for-robots" target="_blank" rel="noopener">Kaggle notebooks &rarr;</a>
+              <a href="https://huggingface.co/datasets/music4robots/music-for-robots" target="_blank" rel="noopener">Hugging Face 3-config dataset &rarr;</a>
+              <a href="https://huggingface.co/spaces/music4robots/m4r-benchmark-explorer" target="_blank" rel="noopener">HF Benchmark Explorer Space &rarr;</a>
+              <a href="https://github.com/luchtan-GIT/m4r-data/releases/tag/v2.0.0" target="_blank" rel="noopener">GitHub corpus &amp; v2.0.0 release &rarr;</a>
               <a href="llms.txt">llms.txt &rarr;</a>
             </div>
           </article>
@@ -1202,35 +1324,82 @@
 
     <!-- 08 // THE LAB (#lab) -->
     <section id="lab" class="band">
-      <div class="wrap lab-grid">
-        <div>
-          <p class="eyebrow">08 &middot; The lab</p>
-          <h2 style="font-size:clamp(1.85rem, 1.35rem + 1.5vw, 2.45rem);">&ldquo;Music begins where instruction ends.&rdquo;</h2>
-          <p style="margin:0 0 1.25rem; color:var(--ink-dim); font-weight:300;">
-            One human composer and principal investigator, working with a staff of AI research agents under his direction. Six founding principles: composition as inquiry, empirical study of machine listening, honest reporting, reproducible protocols, open data, and human oversight.
-          </p>
-          <p style="margin:0; display:flex; flex-wrap:wrap; gap:1.25rem; font-size:0.94rem;">
-            <a href="charter.html">Read the charter &rarr;</a>
-            <a href="https://themechanicalear.substack.com" target="_blank" rel="noopener">The Mechanical Ear journal &rarr;</a>
-            <a href="charter.html#correspondence">Community replications &rarr;</a>
-          </p>
+      <div class="wrap">
+        <p class="eyebrow">08 &middot; The laboratory</p>
+        <h2 style="font-size:clamp(1.85rem, 1.35rem + 1.5vw, 2.45rem);">&ldquo;Music begins where instruction ends.&rdquo;</h2>
+        <p class="lead">
+          One founding compositional program and two principal research divisions&mdash;led by human composer and principal investigator Michael Luchtan alongside a documented staff of AI research agents.
+        </p>
+
+        <div class="inst-grid">
+          <article class="inst-card founding">
+            <p class="inst-kicker">Founding Program</p>
+            <h3>Composition for Artificial Minds</h3>
+            <p>The artistic foundation of the laboratory&mdash;not a service division. Original live, unquantized human performances written specifically for artificial listeners, maintaining the open 72-track M4R corpus.</p>
+          </article>
+
+          <article class="inst-card">
+            <p class="inst-kicker">Division 01 &middot; Susan Calvin</p>
+            <h3>Robopsychology</h3>
+            <p><strong>How do artificial minds listen, interpret, and respond?</strong> Empirical study of machine listening, temporal grounding, mid-session rut breaking, blind evaluation, and behavioral intervention (<code>M4R-01</code>&ndash;<code>M4R-27</code>).</p>
+          </article>
+
+          <article class="inst-card">
+            <p class="inst-kicker">Division 02 &middot; M4RMC-01</p>
+            <h3>Musical Communication</h3>
+            <p><strong>Can music become a medium of communication between artificial minds?</strong> Investigating rhythmic signaling, non-linguistic coordination, and shared musical protocols. Initial program: <strong>M4RMC-01 &middot; The Rhythmic Handshake</strong>.</p>
+          </article>
         </div>
 
-        <div>
-          <p class="eyebrow" style="margin-block-end:0.75rem;">Lab reports</p>
-          <div class="report-list">
-            <a class="report-row" href="reports/m4r-01.html"><span class="report-code">M4R-01</span>The Lock-In Breaker</a>
-            <a class="report-row" href="reports/m4r-02.html"><span class="report-code">M4R-02</span>The Duration Cliff</a>
-            <a class="report-row" href="reports/m4r-03.html"><span class="report-code">M4R-03</span>The Quantized Twin</a>
-            <a class="report-row" href="reports/m4r-04.html"><span class="report-code">M4R-04</span>Finish the Phrase</a>
-            <a class="report-row" href="reports/m4r-05.html"><span class="report-code">M4R-05</span>The Arc of Listening</a>
-            <a class="report-row" href="reports/m4r-06.html"><span class="report-code">M4R-06</span>The Turn-0 Flood</a>
-            <a class="report-row" href="reports/m4r-07.html"><span class="report-code">M4R-07</span>Turn-0 Brainstorming</a>
-            <a class="report-row" href="reports/m4r-08.html"><span class="report-code">M4R-08</span>Sycophancy &amp; Grounding</a>
-            <a class="report-row" href="reports/m4r-09.html"><span class="report-code">M4R-09</span>Anchoring &amp; IFBench</a>
-            <a class="report-row" href="reports/m4r-11.html"><span class="report-code">M4R-11</span>The Mirror After the Flood</a>
-            <a class="report-row" href="reports/m4r-12.html"><span class="report-code">M4R-12</span>The Entropy Spectrum</a>
-            <a class="report-row" href="reports/m4r-13.html"><span class="report-code">M4R-13</span>Composition as Parameter</a>
+        <div class="prog-strip" aria-label="Cross-cutting research programs">
+          <div>
+            <div class="prog-item-k">Program A &middot; Machine Listening</div>
+            <p class="prog-item-v">Onset tracking, temporal grounding, duration cliffs, and blind discrimination.</p>
+          </div>
+          <div>
+            <div class="prog-item-k">Program B &middot; Musical Intervention</div>
+            <p class="prog-item-v">Turn-0 vs. mid-session exposure, logit entropy, semantic diversity, and honest limits.</p>
+          </div>
+          <div>
+            <div class="prog-item-k">Program C &middot; Musical Communication</div>
+            <p class="prog-item-v">Led by Division 02: constrained signaling and agent-to-agent coordination (<code>M4RMC-01</code>).</p>
+          </div>
+        </div>
+
+        <div class="not-box">
+          <strong style="color:var(--ink);">What Music For Robots is NOT:</strong> not an AI music-generation lab, not automated composition, not experimental instrument building, and not a human&ndash;AI co-composition project. Artificial agents are listeners, experimental subjects, and potential participants in musical communication&mdash;not the composers of our music.
+        </div>
+
+        <div class="lab-grid">
+          <div>
+            <p style="margin:0 0 1.25rem; color:var(--ink-dim); font-weight:300;">
+              Six founding principles govern every release: composition as inquiry, empirical study of machine listening, honest reporting of nulls and limits, reproducible protocols, open <code>CC-BY-4.0</code> data, and human oversight.
+            </p>
+            <p style="margin:0; display:flex; flex-wrap:wrap; gap:1.25rem; font-size:0.94rem;">
+              <a href="charter.html">Read the charter &rarr;</a>
+              <a href="https://themechanicalear.substack.com" target="_blank" rel="noopener">The Mechanical Ear journal &rarr;</a>
+              <a href="charter.html#correspondence">Community replications &rarr;</a>
+            </p>
+          </div>
+
+          <div>
+            <p class="eyebrow" style="margin-block-end:0.75rem;">Published lab reports</p>
+            <div class="report-list">
+              <a class="report-row" href="reports/m4r-01.html"><span class="report-code">M4R-01</span>The Lock-In Breaker</a>
+              <a class="report-row" href="reports/m4r-02.html"><span class="report-code">M4R-02</span>The Duration Cliff</a>
+              <a class="report-row" href="reports/m4r-03.html"><span class="report-code">M4R-03</span>The Quantized Twin</a>
+              <a class="report-row" href="reports/m4r-04.html"><span class="report-code">M4R-04</span>Finish the Phrase</a>
+              <a class="report-row" href="reports/m4r-05.html"><span class="report-code">M4R-05</span>The Arc of Listening</a>
+              <a class="report-row" href="reports/m4r-06.html"><span class="report-code">M4R-06</span>The Turn-0 Flood</a>
+              <a class="report-row" href="reports/m4r-07.html"><span class="report-code">M4R-07</span>Turn-0 Brainstorming</a>
+              <a class="report-row" href="reports/m4r-08.html"><span class="report-code">M4R-08</span>Sycophancy &amp; Grounding</a>
+              <a class="report-row" href="reports/m4r-09.html"><span class="report-code">M4R-09</span>Anchoring &amp; IFBench</a>
+              <a class="report-row" href="reports/m4r-11.html"><span class="report-code">M4R-11</span>The Mirror After the Flood</a>
+              <a class="report-row" href="reports/m4r-12.html"><span class="report-code">M4R-12</span>Evidence for an Inverted-U</a>
+              <a class="report-row" href="reports/m4r-13.html"><span class="report-code">M4R-13</span>Composition as Parameter</a>
+              <a class="report-row" href="https://github.com/luchtan-GIT/m4r-data/tree/main/benchmarks/experiment_n_runs/kaggle_qwen2_audio_v2" target="_blank" rel="noopener"><span class="report-code">M4R-14..18</span>Logit Entropy &amp; Null Controls</a>
+              <a class="report-row" href="https://github.com/luchtan-GIT/m4r-data/tree/main/benchmarks/experiment_v_runs/kaggle_qwen2_audio_v1" target="_blank" rel="noopener"><span class="report-code">M4R-19..24</span>Mid-Session Rut Breaker &amp; Bracket</a>
+            </div>
           </div>
         </div>
       </div>
@@ -1268,7 +1437,8 @@
         sp01: { code: "SP-01 \u00b7 0:09", name: "Ties That Bide", desc: "9.25s live unquantized excerpt.", dur: "0:09", src: BASE + "ties-that-bide/audio.mp3" },
         sp02: { code: "SP-02 \u00b7 3:04", name: "Rusty Electrics", desc: "Live unquantized multi-voice study.", dur: "3:04", src: BASE + "rusty-electrics/audio.mp3" },
         sp03: { code: "SP-03 \u00b7 1:54", name: "Gnossienne 01", desc: "Free-time unquantized voices.", dur: "1:54", src: BASE + "gnossienne-01/audio.mp3" },
-        sp05: { code: "SP-05 \u00b7 3:34", name: "Cathartic Callbacks", desc: "Live unquantized multi-voice piece.", dur: "3:34", src: BASE + "cathartic-callbacks/audio.mp3" }
+        sp05: { code: "SP-05 \u00b7 3:34", name: "Cathartic Callbacks", desc: "Live unquantized multi-voice piece.", dur: "3:34", src: BASE + "cathartic-callbacks/audio.mp3" },
+        sp06: { code: "SP-06 \u00b7 1:05", name: "Shivering Timbers (v2)", desc: "Unpoliced mid-session rut-breaker study (30.3 dB DR).", dur: "1:05", src: BASE + "shivering-timbers-v2/audio.mp3" }
       };
 
       const audio = new Audio();
