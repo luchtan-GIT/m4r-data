@@ -1,0 +1,15 @@
+{
+  "id": "michaelluchtan/m4r-experiment-y-cross-composition-rut-breaker-n20",
+  "title": "M4R Experiment Y Cross Composition Rut Breaker N20",
+  "code_file": "m4r-experiment-y-cross-composition-rut-breaker-n20.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

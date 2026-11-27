@@ -1,0 +1,47 @@
+[{"stream_name":"stderr","time":6.510236836,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.510294207,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.510300067,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.510303659,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":7.06203609,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.062080195,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.062085553,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.062089803,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":54.600305383,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":54.600335753,"data":"\n"}
+,{"stream_name":"stderr","time":54.600342997,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":174.195381826,"data":"Running C0_TextNudgeOnly (N=20)...\n"}
+,{"stream_name":"stdout","time":262.231885805,"data":"  done (88.0s)\n"}
+,{"stream_name":"stdout","time":262.231923061,"data":"Running C1_StutteringPackets_15s (N=20)...\n"}
+,{"stream_name":"stdout","time":363.846697121,"data":"  done (189.7s)\n"}
+,{"stream_name":"stdout","time":363.846746823,"data":"Running C2_RustyElectrics_15s (N=20)...\n"}
+,{"stream_name":"stdout","time":465.753915344,"data":"  done (291.6s)\n"}
+,{"stream_name":"stdout","time":465.753948848,"data":"Running C3_ShiveringTimbers_v2_15s (N=20)...\n"}
+,{"stream_name":"stdout","time":566.849246993,"data":"  done (392.2s)\n"}
+,{"stream_name":"stdout","time":571.163115257,"data":"# Experiment Y (M4R-28) — Cross-Composition Replication of Mid-Session Rut Breaker (3 Live Works vs Text Nudge, N=20/Arm)\n"}
+,{"stream_name":"stdout","time":571.163143686,"data":"\n"}
+,{"stream_name":"stdout","time":571.16314967,"data":"| Condition (N=20) | Logit Entropy | Rut Escape (Neural) | Escaped Dome (%) | Neural Novelty | TF-IDF Novelty | CJK Rows |\n"}
+,{"stream_name":"stdout","time":571.163154703,"data":"|---|---:|---:|---:|---:|---:|---:|\n"}
+,{"stream_name":"stdout","time":571.163159147,"data":"| `C0_TextNudgeOnly` | 2.159 | 0.4722 | 70% | 0.5195 | 0.9339 | 3/20 |\n"}
+,{"stream_name":"stdout","time":571.163163484,"data":"| `C1_StutteringPackets_15s` | 1.697 | 0.5008 | 95% | 0.5402 | 0.9276 | 4/20 |\n"}
+,{"stream_name":"stdout","time":571.163168469,"data":"| `C2_RustyElectrics_15s` | 1.805 | 0.5165 | 100% | 0.5560 | 0.9344 | 6/20 |\n"}
+,{"stream_name":"stdout","time":571.163173573,"data":"| `C3_ShiveringTimbers_v2_15s` | 1.779 | 0.5417 | 80% | 0.5896 | 0.9413 | 7/20 |\n"}
+,{"stream_name":"stdout","time":571.163179127,"data":"\n"}
+,{"stream_name":"stdout","time":571.163183531,"data":"## Pre-Declared 3-Composition Contrast Family vs Text Nudge (Raw 10k Perm p + Holm-Bonferroni p)\n"}
+,{"stream_name":"stdout","time":571.16318831,"data":"| Comparison | Metric | Diff | Raw p | Holm p |\n"}
+,{"stream_name":"stdout","time":571.163192725,"data":"|---|---|---:|---:|---:|\n"}
+,{"stream_name":"stdout","time":571.163197652,"data":"| `C1_StutteringPackets_15s vs C0_TextNudgeOnly` | `rut_escape_neural` | +0.0287 | 0.44606 | 0.44606 |\n"}
+,{"stream_name":"stdout","time":571.163214598,"data":"| `C2_RustyElectrics_15s vs C0_TextNudgeOnly` | `rut_escape_neural` | +0.0443 | 0.21478 | 0.42956 |\n"}
+,{"stream_name":"stdout","time":571.163218883,"data":"| `C3_ShiveringTimbers_v2_15s vs C0_TextNudgeOnly` | `rut_escape_neural` | +0.0695 | 0.09879 | 0.29637 |\n"}
+,{"stream_name":"stdout","time":571.163222451,"data":"| `C1_StutteringPackets_15s vs C0_TextNudgeOnly` | `neural_novelty` | +0.0207 | 0.21328 | 0.21328 |\n"}
+,{"stream_name":"stdout","time":571.163225871,"data":"| `C2_RustyElectrics_15s vs C0_TextNudgeOnly` | `neural_novelty` | +0.0365 | 0.04620 | 0.09239 |\n"}
+,{"stream_name":"stdout","time":571.163229624,"data":"| `C3_ShiveringTimbers_v2_15s vs C0_TextNudgeOnly` | `neural_novelty` | +0.0701 | 0.00180 | 0.00540 |\n"}
+,{"stream_name":"stdout","time":571.163233043,"data":"\n"}
+,{"stream_name":"stderr","time":577.194221807,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":577.194256348,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":577.340652561,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":577.340680079,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":578.08131444,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":578.191746279,"data":"[NbConvertApp] Writing 304001 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":580.746550566,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":581.335922945,"data":"[NbConvertApp] Writing 551796 bytes to __results__.html\n"}
+]
