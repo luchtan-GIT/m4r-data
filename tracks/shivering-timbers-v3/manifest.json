@@ -1,0 +1,38 @@
+{
+  "slug": "shivering-timbers-v3",
+  "title": "Shivering Timbers (v3 \u2014 Harmonic Arc)",
+  "composer": "Michael Luchtan",
+  "license": "CC-BY-4.0",
+  "version_notes": "4-stage harmonic journey (A minor -> F minor/Db -> Eb/F# tritone -> E dominant -> A Dorian/Picardy halo) combined with v2 unpoliced decay automations.",
+  "duration_sec": 65.64,
+  "dynamic_range_db": 33.61,
+  "spectral_centroid_hz": 2524.4,
+  "n_onsets": 181,
+  "ioi_cv": 0.762,
+  "zone_dominant_pitch_classes": {
+    "ZoneA_0_18s": [
+      "C",
+      "C#",
+      "E",
+      "D"
+    ],
+    "ZoneB1_18_32s": [
+      "C",
+      "A",
+      "F",
+      "Ab"
+    ],
+    "ZoneB2_32_48s": [
+      "C#",
+      "F",
+      "G",
+      "Bb"
+    ],
+    "ZoneC_48_65s": [
+      "E",
+      "G",
+      "D",
+      "C#"
+    ]
+  }
+}
