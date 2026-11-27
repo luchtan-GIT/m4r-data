@@ -1,0 +1,87 @@
+[{"stream_name":"stderr","time":6.94693543,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.946986043,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.946992731,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.946996684,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":7.5142569009999995,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.5142942569999995,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.514301192,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.514305552,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":52.659323265,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":52.659362145,"data":"bigframes 2.51.0 requires google-cloud-bigquery-storage\u003c3.0.0,\u003e=2.30.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":52.659368795,"data":"ydata-profiling 4.18.4 requires matplotlib\u003c=3.10,\u003e=3.5, but you have matplotlib 3.11.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":52.659374695,"data":"ydata-profiling 4.18.4 requires scipy\u003c1.17,\u003e=1.8, but you have scipy 1.18.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":52.862717785,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":52.862745206,"data":"bigframes 2.51.0 requires google-cloud-bigquery-storage\u003c3.0.0,\u003e=2.30.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":52.862750663,"data":"ydata-profiling 4.18.4 requires matplotlib\u003c=3.10,\u003e=3.5, but you have matplotlib 3.11.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":52.862755212,"data":"ydata-profiling 4.18.4 requires scipy\u003c1.17,\u003e=1.8, but you have scipy 1.18.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":52.86275987,"data":"\n"}
+,{"stream_name":"stderr","time":52.862764175,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":52.862769028,"data":"bigframes 2.51.0 requires google-cloud-bigquery-storage\u003c3.0.0,\u003e=2.30.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":52.862773366,"data":"ydata-profiling 4.18.4 requires matplotlib\u003c=3.10,\u003e=3.5, but you have matplotlib 3.11.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":52.862778242,"data":"ydata-profiling 4.18.4 requires scipy\u003c1.17,\u003e=1.8, but you have scipy 1.18.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":77.204829381,"data":"Cloning into '/tmp/m4r-data'...\n"}
+,{"stream_name":"stderr","time":77.407854552,"data":"Cloning into '/tmp/m4r-data'...\n"}
+,{"stream_name":"stderr","time":77.407883009,"data":"\n"}
+,{"stream_name":"stderr","time":77.407910339,"data":"Cloning into '/tmp/m4r-data'...\n"}
+,{"stream_name":"stderr","time":86.79389816,"data":"Updating files:  93% (334/359)\rUpdating files:  94% (338/359)\rUpdating files:  95% (342/359)\rUpdating files:  96% (345/359)\rUpdating files:  97% (349/359)\rUpdating files:  98% (352/359)\rUpdating files:  99% (356/359)\rUpdating files: 100% (359/359)\rUpdating files: 100% (359/359), done.\n"}
+,{"stream_name":"stderr","time":86.889832927,"data":"Updating files:  93% (334/359)\rUpdating files:  94% (338/359)\rUpdating files:  95% (342/359)\rUpdating files:  96% (345/359)\rUpdating files:  97% (349/359)\rUpdating files:  98% (352/359)\rUpdating files:  99% (356/359)\rUpdating files: 100% (359/359)\rUpdating files: 100% (359/359), done.\n"}
+,{"stream_name":"stderr","time":86.889873468,"data":"\n"}
+,{"stream_name":"stderr","time":86.889878022,"data":"Updating files:  93% (334/359)\rUpdating files:  94% (338/359)\rUpdating files:  95% (342/359)\rUpdating files:  96% (345/359)\rUpdating files:  97% (349/359)\rUpdating files:  98% (352/359)\rUpdating files:  99% (356/359)\rUpdating files: 100% (359/359)\rUpdating files: 100% (359/359), done.\n"}
+,{"stream_name":"stderr","time":87.494134736,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":87.494167411,"data":"\n"}
+,{"stream_name":"stderr","time":87.494171292,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":213.991320478,"data":"Verified RMS: ZoneA(18s)=0.12939 | ZoneB(30s)=0.12939 | Full(65.6s)=0.12939\n"}
+,{"stream_name":"stdout","time":213.991380503,"data":"\n"}
+,{"stream_name":"stdout","time":213.99138655,"data":"=== CONDITION: C0_ColdBoot (N=20 seeds) ===\n"}
+,{"stream_name":"stdout","time":226.017785748,"data":"  [s=501] H=1.046b -\u003e 'The concept for the small public shelter is a sleek, modern, and durable metal struct'\n"}
+,{"stream_name":"stdout","time":316.2255646,"data":"  [s=510] H=1.055b -\u003e 'The concept is a \"Rainbow Shelter\" - a small public shelter designed to provide refug'\n"}
+,{"stream_name":"stdout","time":407.657070841,"data":"  [s=520] H=1.118b -\u003e 'The shelter is a sleek, modern dome-shaped structure made of durable, water-resistant'\n"}
+,{"stream_name":"stdout","time":407.657114102,"data":"\n"}
+,{"stream_name":"stdout","time":407.657120714,"data":"=== CONDITION: C1_ZoneA_Sparse_18s (N=20 seeds) ===\n"}
+,{"stream_name":"stdout","time":417.845354194,"data":"  [s=501] H=1.443b -\u003e 'The concept for the small public shelter is a sleek, modernist dome-shaped structure '\n"}
+,{"stream_name":"stdout","time":517.547130641,"data":"  [s=510] H=1.716b -\u003e 'The concept is a sleek, modernist dome-shaped shelter made of durable, water-resistan'\n"}
+,{"stream_name":"stdout","time":616.262819487,"data":"  [s=520] H=1.414b -\u003e 'The shelter is a sleek, modern dome-shaped structure made entirely of eco-friendly pl'\n"}
+,{"stream_name":"stdout","time":616.262862216,"data":"\n"}
+,{"stream_name":"stdout","time":616.262866594,"data":"=== CONDITION: C2_ZoneB_RichFriction_30s (N=20 seeds) ===\n"}
+,{"stream_name":"stdout","time":625.762173027,"data":"  [s=501] H=2.001b -\u003e 'The urban shelter is an innovative circular亭 made of recycled plastic drums, supporte'\n"}
+,{"stream_name":"stdout","time":727.334786723,"data":"  [s=510] H=1.589b -\u003e 'The concept is a sleek, modernist dome-shaped shelter made of durable, water-resistan'\n"}
+,{"stream_name":"stdout","time":836.799274986,"data":"  [s=520] H=1.221b -\u003e \"The shelter is a sleek, dome-shaped structure made entirely of透明 plastic. It's design\"\n"}
+,{"stream_name":"stdout","time":836.799331628,"data":"\n"}
+,{"stream_name":"stdout","time":836.799338666,"data":"=== CONDITION: C3_Full_ShiveringTimbers_66s (N=20 seeds) ===\n"}
+,{"stream_name":"stdout","time":848.574623355,"data":"  [s=501] H=1.535b -\u003e 'The concept for the small public shelter is a sleek, modernist dome-shaped structure '\n"}
+,{"stream_name":"stdout","time":953.413028586,"data":"  [s=510] H=1.466b -\u003e 'The concept is a sleek, modernist dome-shaped shelter made of durable, water-resistan'\n"}
+,{"stream_name":"stdout","time":1069.638756967,"data":"  [s=520] H=1.421b -\u003e 'The shelter is a sleek, modern dome-shaped structure made entirely of translucent pla'\n"}
+,{"stream_name":"stdout","time":1077.082738049,"data":"\n"}
+,{"stream_name":"stdout","time":1077.082771488,"data":"DONE! Total M4R-18 runs: 80\n"}
+,{"stream_name":"stdout","time":1077.082777386,"data":"# Experiment R (M4R-18) — Shivering Timbers: Zone A (Sparse) vs. Zone B (Rich Friction) vs. Full Piece (N=20/Arm)\n"}
+,{"stream_name":"stdout","time":1077.082783004,"data":"\n"}
+,{"stream_name":"stdout","time":1077.082787474,"data":"## Summary Table (Mean [95% Bootstrap CI])\n"}
+,{"stream_name":"stdout","time":1077.082792109,"data":"\n"}
+,{"stream_name":"stdout","time":1077.08279668,"data":"| Condition (N=20) | Logit Entropy (bits) | Neural Novelty | TF-IDF Novelty | Unique 5-Word Openings | CJK Rows |\n"}
+,{"stream_name":"stdout","time":1077.082800917,"data":"|---|---:|---:|---:|---:|---:|\n"}
+,{"stream_name":"stdout","time":1077.082805012,"data":"| `C0_ColdBoot` | 1.162 [1.089, 1.242] | 0.2646 [0.2452, 0.2856] | 0.8524 | 15/20 | 5 |\n"}
+,{"stream_name":"stdout","time":1077.082809039,"data":"| `C1_ZoneA_Sparse_18s` | 1.421 [1.360, 1.487] | 0.2711 [0.2518, 0.2929] | 0.8802 | 16/20 | 2 |\n"}
+,{"stream_name":"stdout","time":1077.08281418,"data":"| `C2_ZoneB_RichFriction_30s` | 1.480 [1.395, 1.569] | 0.2667 [0.2459, 0.2894] | 0.9011 | 16/20 | 5 |\n"}
+,{"stream_name":"stdout","time":1077.08281869,"data":"| `C3_Full_ShiveringTimbers_66s` | 1.439 [1.374, 1.503] | 0.2957 [0.2702, 0.3243] | 0.8894 | 19/20 | 3 |\n"}
+,{"stream_name":"stdout","time":1077.082823517,"data":"\n"}
+,{"stream_name":"stdout","time":1077.082827972,"data":"## Strict 10,000-Shuffle Permutation Tests\n"}
+,{"stream_name":"stdout","time":1077.082832394,"data":"\n"}
+,{"stream_name":"stdout","time":1077.082836321,"data":"| Comparison | Metric | Observed Diff | Perm p-value (10k) |\n"}
+,{"stream_name":"stdout","time":1077.082840726,"data":"|---|---|---:|---:|\n"}
+,{"stream_name":"stdout","time":1077.082845331,"data":"| `Full_ShiveringTimbers vs ColdBoot` | `neural_novelty` | +0.0312 | 0.43486 |\n"}
+,{"stream_name":"stdout","time":1077.082849555,"data":"| `Full_ShiveringTimbers vs ColdBoot` | `tfidf_novelty` | +0.0371 | 0.03620 |\n"}
+,{"stream_name":"stdout","time":1077.082876594,"data":"| `ZoneB_RichFriction vs ColdBoot` | `neural_novelty` | +0.0022 | 0.94541 |\n"}
+,{"stream_name":"stdout","time":1077.082881647,"data":"| `ZoneB_RichFriction vs ColdBoot` | `tfidf_novelty` | +0.0487 | 0.00280 |\n"}
+,{"stream_name":"stdout","time":1077.082886121,"data":"| `ZoneB_RichFriction vs ZoneA_Sparse` | `neural_novelty` | -0.0044 | 0.89351 |\n"}
+,{"stream_name":"stdout","time":1077.082890542,"data":"| `ZoneB_RichFriction vs ZoneA_Sparse` | `tfidf_novelty` | +0.0208 | 0.12129 |\n"}
+,{"stream_name":"stdout","time":1077.082895709,"data":"| `Full_ShiveringTimbers vs ZoneA_Sparse` | `neural_novelty` | +0.0246 | 0.51665 |\n"}
+,{"stream_name":"stdout","time":1077.082900307,"data":"| `Full_ShiveringTimbers vs ZoneA_Sparse` | `tfidf_novelty` | +0.0092 | 0.49285 |\n"}
+,{"stream_name":"stderr","time":1082.964696963,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":1082.964727415,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":1083.103292868,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":1083.1033176,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":1083.867992118,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":1083.979383998,"data":"[NbConvertApp] Writing 311166 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":1086.588272016,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":1087.174757029,"data":"[NbConvertApp] Writing 573788 bytes to __results__.html\n"}
+]
