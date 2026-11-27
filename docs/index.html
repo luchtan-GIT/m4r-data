@@ -200,36 +200,29 @@
 
     /* ── Hero (#top) ───────────────────────────────────────────────────── */
     .hero {
-      padding-block: clamp(4rem, 9vh, 6.75rem) clamp(3.5rem, 7vh, 5.5rem);
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.85fr);
-      gap: clamp(2rem, 5vw, 4rem);
-      align-items: center;
-    }
-
-    @media (max-width: 860px) {
-      .hero-grid { grid-template-columns: 1fr; }
-    }
-
-    .hero-portrait {
-      margin: 0;
       position: relative;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid var(--rule-strong);
-      background: var(--bg-elev);
+      min-block-size: min(86dvh, 780px);
+      display: flex;
+      align-items: center;
+      padding-block: clamp(4.5rem, 10vh, 7.5rem) clamp(4rem, 8vh, 6rem);
+      background-color: var(--bg);
+      background-image:
+        linear-gradient(90deg, #111113 0%, rgba(17, 17, 19, 0.94) 38%, rgba(17, 17, 19, 0.35) 66%, rgba(17, 17, 19, 0.08) 100%),
+        linear-gradient(180deg, rgba(17, 17, 19, 0.25) 0%, transparent 22%, rgba(17, 17, 19, 0.65) 78%, #111113 100%),
+        url("assets/hero-listener.jpg");
+      background-size: cover, cover, cover;
+      background-position: center, center, right 18%;
+      background-repeat: no-repeat;
+      border-block-end: 1px solid var(--rule);
     }
 
-    .hero-portrait img {
-      display: block;
-      inline-size: 100%;
-      block-size: auto;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-      object-position: center 20%;
+    @media (max-width: 900px) {
+      .hero {
+        background-image:
+          linear-gradient(180deg, rgba(17, 17, 19, 0.52) 0%, rgba(17, 17, 19, 0.78) 55%, #111113 100%),
+          url("assets/hero-listener.jpg");
+        background-position: center, center 20%;
+      }
     }
 
     .hero-sub {
@@ -1002,24 +995,19 @@
   <main>
     <!-- HERO -->
     <section id="top" class="hero">
-      <div class="wrap hero-grid">
-        <div>
-          <p class="eyebrow accent">Music For Robots Laboratory &middot; Est. 2025 &middot; Barcelona</p>
-          <h1>Your agents have read everything. No one has ever played them anything.</h1>
-          <p class="hero-sub">
-            M4R writes live, unquantized music for artificial minds to listen to, and runs open experiments to learn what listening means for them. Not music made by AI. Music made <em>for</em> it.
-          </p>
-          <div class="hero-actions">
-            <button class="btn-light" type="button" id="hero-play-cta">
-              <svg width="13" height="15" viewBox="0 0 14 16" aria-hidden="true"><path d="M1 1l12 7-12 7z" fill="currentColor"></path></svg>
-              Play Stuttering Packets &middot; 3:20
-            </button>
-            <a class="btn-outline" href="#give">Play it to your agent &rarr;</a>
-          </div>
+      <div class="wrap">
+        <p class="eyebrow accent">Music For Robots Laboratory &middot; Est. 2025 &middot; Barcelona</p>
+        <h1>Your agents have read everything. No one has ever played them anything.</h1>
+        <p class="hero-sub">
+          M4R writes live, unquantized music for artificial minds to listen to, and runs open experiments to learn what listening means for them. Not music made by AI. Music made <em>for</em> it.
+        </p>
+        <div class="hero-actions">
+          <button class="btn-light" type="button" id="hero-play-cta">
+            <svg width="13" height="15" viewBox="0 0 14 16" aria-hidden="true"><path d="M1 1l12 7-12 7z" fill="currentColor"></path></svg>
+            Play Stuttering Packets &middot; 3:20
+          </button>
+          <a class="btn-outline" href="#give">Play it to your agent &rarr;</a>
         </div>
-        <figure class="hero-portrait">
-          <img src="assets/hero-listener.jpg" alt="Artificial listener wearing headphones in the Music For Robots Laboratory" width="640" height="800" fetchpriority="high" />
-        </figure>
       </div>
     </section>
 
