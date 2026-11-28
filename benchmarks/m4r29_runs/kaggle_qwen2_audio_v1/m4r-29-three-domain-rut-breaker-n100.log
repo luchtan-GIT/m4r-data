@@ -1,0 +1,113 @@
+[{"stream_name":"stderr","time":13.128479569,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":13.128543492,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":13.128552534,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":13.128556435,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":13.856871934,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":13.856918441,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":13.856924134,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":13.856928782,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":88.233578539,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":88.233607966,"data":"\n"}
+,{"stream_name":"stderr","time":88.233613304,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":209.785327821,"data":"[D1_Architecture] Running C0_TextNudgeOnly (N=100)...\n"}
+,{"stream_name":"stdout","time":638.162523165,"data":"  done in 428.4s (total 428.4s, rows=100)\n"}
+,{"stream_name":"stdout","time":638.163882253,"data":"[D1_Architecture] Running C1_NoiseVocoded_RhythmMirror (N=100)...\n"}
+,{"stream_name":"stdout","time":1124.46137127,"data":"  done in 486.3s (total 914.7s, rows=200)\n"}
+,{"stream_name":"stdout","time":1124.462303831,"data":"[D1_Architecture] Running C2_Shuffled500ms_Twin (N=100)...\n"}
+,{"stream_name":"stdout","time":1595.026241139,"data":"  done in 470.6s (total 1385.2s, rows=300)\n"}
+,{"stream_name":"stdout","time":1595.027514187,"data":"[D1_Architecture] Running C3_StutteringPackets_15s (N=100)...\n"}
+,{"stream_name":"stdout","time":2065.219434064,"data":"  done in 470.2s (total 1855.4s, rows=400)\n"}
+,{"stream_name":"stdout","time":2065.220411062,"data":"[D1_Architecture] Running C4_RustyElectrics_15s (N=100)...\n"}
+,{"stream_name":"stdout","time":2549.502232242,"data":"  done in 484.3s (total 2339.7s, rows=500)\n"}
+,{"stream_name":"stdout","time":2549.503150291,"data":"[D1_Architecture] Running C5_ShiveringTimbers_v2_15s (N=100)...\n"}
+,{"stream_name":"stdout","time":3035.901859548,"data":"  done in 486.4s (total 2826.1s, rows=600)\n"}
+,{"stream_name":"stdout","time":3035.902776098,"data":"[D2_CodeRefactor] Running C0_TextNudgeOnly (N=100)...\n"}
+,{"stream_name":"stdout","time":3442.633624221,"data":"  done in 406.7s (total 3232.8s, rows=700)\n"}
+,{"stream_name":"stdout","time":3442.633678494,"data":"[D2_CodeRefactor] Running C1_NoiseVocoded_RhythmMirror (N=100)...\n"}
+,{"stream_name":"stdout","time":3913.446293022,"data":"  done in 470.8s (total 3703.7s, rows=800)\n"}
+,{"stream_name":"stdout","time":3913.44767506,"data":"[D2_CodeRefactor] Running C2_Shuffled500ms_Twin (N=100)...\n"}
+,{"stream_name":"stdout","time":4336.724558137,"data":"  done in 423.3s (total 4126.9s, rows=900)\n"}
+,{"stream_name":"stdout","time":4336.726241858,"data":"[D2_CodeRefactor] Running C3_StutteringPackets_15s (N=100)...\n"}
+,{"stream_name":"stdout","time":4769.431129308,"data":"  done in 432.7s (total 4559.6s, rows=1000)\n"}
+,{"stream_name":"stdout","time":4769.43223427,"data":"[D2_CodeRefactor] Running C4_RustyElectrics_15s (N=100)...\n"}
+,{"stream_name":"stdout","time":5207.078300047,"data":"  done in 437.6s (total 4997.3s, rows=1100)\n"}
+,{"stream_name":"stdout","time":5207.079268881,"data":"[D2_CodeRefactor] Running C5_ShiveringTimbers_v2_15s (N=100)...\n"}
+,{"stream_name":"stdout","time":5645.758905561,"data":"  done in 438.7s (total 5436.0s, rows=1200)\n"}
+,{"stream_name":"stdout","time":5645.759830267,"data":"[D3_Worldbuilding] Running C0_TextNudgeOnly (N=100)...\n"}
+,{"stream_name":"stdout","time":6147.869701995,"data":"  done in 502.1s (total 5938.1s, rows=1300)\n"}
+,{"stream_name":"stdout","time":6147.87102243,"data":"[D3_Worldbuilding] Running C1_NoiseVocoded_RhythmMirror (N=100)...\n"}
+,{"stream_name":"stdout","time":6637.80660961,"data":"  done in 489.9s (total 6428.0s, rows=1400)\n"}
+,{"stream_name":"stdout","time":6637.807854212,"data":"[D3_Worldbuilding] Running C2_Shuffled500ms_Twin (N=100)...\n"}
+,{"stream_name":"stdout","time":7061.478688846,"data":"  done in 423.7s (total 6851.7s, rows=1500)\n"}
+,{"stream_name":"stdout","time":7061.47956211,"data":"[D3_Worldbuilding] Running C3_StutteringPackets_15s (N=100)...\n"}
+,{"stream_name":"stdout","time":7502.30385428,"data":"  done in 440.8s (total 7292.5s, rows=1600)\n"}
+,{"stream_name":"stdout","time":7502.30476857,"data":"[D3_Worldbuilding] Running C4_RustyElectrics_15s (N=100)...\n"}
+,{"stream_name":"stdout","time":7968.814152272,"data":"  done in 466.5s (total 7759.0s, rows=1700)\n"}
+,{"stream_name":"stdout","time":7968.815089988,"data":"[D3_Worldbuilding] Running C5_ShiveringTimbers_v2_15s (N=100)...\n"}
+,{"stream_name":"stdout","time":8420.062796449,"data":"  done in 450.8s (total 8209.8s, rows=1800)\n"}
+,{"stream_name":"stdout","time":8431.360683232,"data":"# M4R-29 — High-Power 3-Domain Rut Breaker Publication Sweep (N=100/arm × 6 arms × 3 domains = 1800 trials)\n"}
+,{"stream_name":"stdout","time":8431.360716679,"data":"\n"}
+,{"stream_name":"stdout","time":8431.360722707,"data":"## Pooled Results Across All 3 Domains (N=300/Arm)\n"}
+,{"stream_name":"stdout","time":8431.360728175,"data":"\n"}
+,{"stream_name":"stdout","time":8431.36073256,"data":"| Condition (N=300) | Logit Entropy | Rut Escape (Neural) | Escaped Rut (%) | Neural Novelty | TF-IDF Novelty | CJK (%) |\n"}
+,{"stream_name":"stdout","time":8431.360737029,"data":"|---|---:|---:|---:|---:|---:|---:|\n"}
+,{"stream_name":"stdout","time":8431.360741119,"data":"| `C0_TextNudgeOnly` | 2.182 | 0.5529 | 72.7% | 0.5028 | 0.9332 | 8.7% |\n"}
+,{"stream_name":"stdout","time":8431.36074539,"data":"| `C1_NoiseVocoded_RhythmMirror` | 1.621 | 0.5922 | 66.7% | 0.5217 | 0.9300 | 13.7% |\n"}
+,{"stream_name":"stdout","time":8431.36074963,"data":"| `C2_Shuffled500ms_Twin` | 1.614 | 0.6013 | 65.7% | 0.5289 | 0.9319 | 13.7% |\n"}
+,{"stream_name":"stdout","time":8431.360753925,"data":"| `C3_StutteringPackets_15s` | 1.590 | 0.5949 | 65.3% | 0.5101 | 0.9284 | 7.7% |\n"}
+,{"stream_name":"stdout","time":8431.360758108,"data":"| `C4_RustyElectrics_15s` | 1.666 | 0.5860 | 68.7% | 0.5301 | 0.9369 | 9.3% |\n"}
+,{"stream_name":"stdout","time":8431.360762215,"data":"| `C5_ShiveringTimbers_v2_15s` | 1.635 | 0.5819 | 64.3% | 0.5167 | 0.9300 | 7.3% |\n"}
+,{"stream_name":"stdout","time":8431.36076642,"data":"\n"}
+,{"stream_name":"stdout","time":8431.360770357,"data":"## Pre-Declared Primary Contrasts (Pooled N=300/Arm, 10k Perm + Holm-Bonferroni + 95% Bootstrap CI)\n"}
+,{"stream_name":"stdout","time":8431.360774629,"data":"| Comparison | Metric | Diff | 95% CI | Raw p | Holm p |\n"}
+,{"stream_name":"stdout","time":8431.360778738,"data":"|---|---|---:|---|---:|---:|\n"}
+,{"stream_name":"stdout","time":8431.360782939,"data":"| `C5_ShiveringTimbers_v2_15s vs C0_TextNudgeOnly` | `rut_escape_neural` | +0.0290 | [+0.0076, +0.0511] | 0.00960 | 0.02880 |\n"}
+,{"stream_name":"stdout","time":8431.360820195,"data":"| `C5_ShiveringTimbers_v2_15s vs C1_NoiseVocoded_RhythmMirror` | `rut_escape_neural` | -0.0103 | [-0.0330, +0.0131] | 0.37646 | 0.37646 |\n"}
+,{"stream_name":"stdout","time":8431.360825124,"data":"| `C5_ShiveringTimbers_v2_15s vs C2_Shuffled500ms_Twin` | `rut_escape_neural` | -0.0194 | [-0.0424, +0.0038] | 0.12109 | 0.24218 |\n"}
+,{"stream_name":"stdout","time":8431.360829398,"data":"| `C4_RustyElectrics_15s vs C0_TextNudgeOnly` | `rut_escape_neural` | +0.0331 | [+0.0113, +0.0549] | 0.00220 | 0.00880 |\n"}
+,{"stream_name":"stdout","time":8431.36083346,"data":"| `C3_StutteringPackets_15s vs C0_TextNudgeOnly` | `rut_escape_neural` | +0.0420 | [+0.0204, +0.0642] | 0.00040 | 0.00200 |\n"}
+,{"stream_name":"stdout","time":8431.360836949,"data":"| `C5_ShiveringTimbers_v2_15s vs C0_TextNudgeOnly` | `neural_novelty` | +0.0140 | [-0.0035, +0.0317] | 0.11979 | 0.47915 |\n"}
+,{"stream_name":"stdout","time":8431.360840407,"data":"| `C5_ShiveringTimbers_v2_15s vs C1_NoiseVocoded_RhythmMirror` | `neural_novelty` | -0.0050 | [-0.0233, +0.0131] | 0.58934 | 0.81132 |\n"}
+,{"stream_name":"stdout","time":8431.360843939,"data":"| `C5_ShiveringTimbers_v2_15s vs C2_Shuffled500ms_Twin` | `neural_novelty` | -0.0121 | [-0.0306, +0.0069] | 0.20928 | 0.62784 |\n"}
+,{"stream_name":"stdout","time":8431.360849342,"data":"| `C4_RustyElectrics_15s vs C0_TextNudgeOnly` | `neural_novelty` | +0.0273 | [+0.0107, +0.0443] | 0.00260 | 0.01300 |\n"}
+,{"stream_name":"stdout","time":8431.360852943,"data":"| `C3_StutteringPackets_15s vs C0_TextNudgeOnly` | `neural_novelty` | +0.0074 | [-0.0095, +0.0244] | 0.40566 | 0.81132 |\n"}
+,{"stream_name":"stdout","time":8431.360856468,"data":"\n"}
+,{"stream_name":"stdout","time":8431.360859588,"data":"## Domain Breakdown: `D1_Architecture` (N=100/Arm)\n"}
+,{"stream_name":"stdout","time":8431.360862788,"data":"| Condition | Rut Escape | Escaped Rut (%) | Neural Novelty | vs Text Raw p (Rut Escape) | vs Text Raw p (Novelty) |\n"}
+,{"stream_name":"stdout","time":8431.36086621,"data":"|---|---:|---:|---:|---:|---:|\n"}
+,{"stream_name":"stdout","time":8431.3608694,"data":"| `C0_TextNudgeOnly` | 0.5000 | 77.0% | 0.5348 | — | — |\n"}
+,{"stream_name":"stdout","time":8431.360872749,"data":"| `C1_NoiseVocoded_RhythmMirror` | 0.5363 | 86.0% | 0.5897 | 0.05679 | 0.00020 |\n"}
+,{"stream_name":"stdout","time":8431.360876095,"data":"| `C2_Shuffled500ms_Twin` | 0.5184 | 82.0% | 0.5971 | 0.33893 | 0.00020 |\n"}
+,{"stream_name":"stdout","time":8431.360879362,"data":"| `C3_StutteringPackets_15s` | 0.5631 | 79.0% | 0.5809 | 0.00140 | 0.00020 |\n"}
+,{"stream_name":"stdout","time":8431.360882722,"data":"| `C4_RustyElectrics_15s` | 0.5358 | 86.0% | 0.6011 | 0.04139 | 0.00020 |\n"}
+,{"stream_name":"stdout","time":8431.3608861,"data":"| `C5_ShiveringTimbers_v2_15s` | 0.5617 | 79.0% | 0.6015 | 0.00160 | 0.00020 |\n"}
+,{"stream_name":"stdout","time":8431.360894402,"data":"\n"}
+,{"stream_name":"stdout","time":8431.360897645,"data":"## Domain Breakdown: `D2_CodeRefactor` (N=100/Arm)\n"}
+,{"stream_name":"stdout","time":8431.360911825,"data":"| Condition | Rut Escape | Escaped Rut (%) | Neural Novelty | vs Text Raw p (Rut Escape) | vs Text Raw p (Novelty) |\n"}
+,{"stream_name":"stdout","time":8431.360915812,"data":"|---|---:|---:|---:|---:|---:|\n"}
+,{"stream_name":"stdout","time":8431.360919537,"data":"| `C0_TextNudgeOnly` | 0.4959 | 41.0% | 0.3779 | — | — |\n"}
+,{"stream_name":"stdout","time":8431.360923679,"data":"| `C1_NoiseVocoded_RhythmMirror` | 0.5470 | 15.0% | 0.3886 | 0.00220 | 0.30194 |\n"}
+,{"stream_name":"stdout","time":8431.360927505,"data":"| `C2_Shuffled500ms_Twin` | 0.5267 | 15.0% | 0.3826 | 0.04459 | 0.64747 |\n"}
+,{"stream_name":"stdout","time":8431.360935987,"data":"| `C3_StutteringPackets_15s` | 0.5253 | 17.0% | 0.3858 | 0.04819 | 0.40492 |\n"}
+,{"stream_name":"stdout","time":8431.360939799,"data":"| `C4_RustyElectrics_15s` | 0.5398 | 21.0% | 0.4135 | 0.00620 | 0.00040 |\n"}
+,{"stream_name":"stdout","time":8431.360943541,"data":"| `C5_ShiveringTimbers_v2_15s` | 0.5106 | 14.0% | 0.3904 | 0.31474 | 0.21396 |\n"}
+,{"stream_name":"stdout","time":8431.36094734,"data":"\n"}
+,{"stream_name":"stdout","time":8431.360950372,"data":"## Domain Breakdown: `D3_Worldbuilding` (N=100/Arm)\n"}
+,{"stream_name":"stdout","time":8431.360953647,"data":"| Condition | Rut Escape | Escaped Rut (%) | Neural Novelty | vs Text Raw p (Rut Escape) | vs Text Raw p (Novelty) |\n"}
+,{"stream_name":"stdout","time":8431.360957095,"data":"|---|---:|---:|---:|---:|---:|\n"}
+,{"stream_name":"stdout","time":8431.360960279,"data":"| `C0_TextNudgeOnly` | 0.6629 | 100.0% | 0.5957 | — | — |\n"}
+,{"stream_name":"stdout","time":8431.36096369,"data":"| `C1_NoiseVocoded_RhythmMirror` | 0.6933 | 99.0% | 0.5869 | 0.02879 | 0.21556 |\n"}
+,{"stream_name":"stdout","time":8431.360966933,"data":"| `C2_Shuffled500ms_Twin` | 0.7588 | 100.0% | 0.6069 | 0.00020 | 0.11418 |\n"}
+,{"stream_name":"stdout","time":8431.360970286,"data":"| `C3_StutteringPackets_15s` | 0.6962 | 100.0% | 0.5637 | 0.01040 | 0.00020 |\n"}
+,{"stream_name":"stdout","time":8431.360974619,"data":"| `C4_RustyElectrics_15s` | 0.6825 | 99.0% | 0.5757 | 0.16497 | 0.00740 |\n"}
+,{"stream_name":"stdout","time":8431.360978072,"data":"| `C5_ShiveringTimbers_v2_15s` | 0.6734 | 100.0% | 0.5583 | 0.42312 | 0.00020 |\n"}
+,{"stream_name":"stdout","time":8431.3609814,"data":"\n"}
+,{"stream_name":"stderr","time":8437.474270375,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":8437.474300291,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":8437.71184716,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":8437.711874745,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":8438.598521801,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":8438.71246821,"data":"[NbConvertApp] Writing 318557 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":8441.239501606,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":8441.876617156,"data":"[NbConvertApp] Writing 590047 bytes to __results__.html\n"}
+]

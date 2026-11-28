@@ -1,0 +1,112 @@
+[{"stream_name":"stderr","time":6.511873592,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.511950555,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.511954984,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.5119575229999995,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":7.06253316,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.062577872,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.062583338,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.06258799,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":91.280028121,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":91.280065986,"data":"\n"}
+,{"stream_name":"stderr","time":91.280069949,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":213.555931472,"data":"Running CTRL_TextNudgeOnly (N=50)...\n"}
+,{"stream_name":"stdout","time":423.579866294,"data":"  done in 210.0s (total 210.0s, rows=50)\n"}
+,{"stream_name":"stdout","time":423.581398246,"data":"Running CTRL_WhiteNoise_15s (N=50)...\n"}
+,{"stream_name":"stdout","time":676.344639037,"data":"  done in 252.8s (total 462.8s, rows=100)\n"}
+,{"stream_name":"stdout","time":676.345553437,"data":"Running CTRL_Click120BPM_15s (N=50)...\n"}
+,{"stream_name":"stdout","time":915.533971379,"data":"  done in 239.2s (total 702.0s, rows=150)\n"}
+,{"stream_name":"stdout","time":915.53495641,"data":"Running CTRL_RhythmMirror_15s (N=50)...\n"}
+,{"stream_name":"stdout","time":1167.739545052,"data":"  done in 252.2s (total 954.2s, rows=200)\n"}
+,{"stream_name":"stdout","time":1167.740411128,"data":"Running TRK_shivering-timbers (N=50)...\n"}
+,{"stream_name":"stdout","time":1407.848633314,"data":"  done in 240.1s (total 1194.3s, rows=250)\n"}
+,{"stream_name":"stdout","time":1407.84961953,"data":"Running TRK_shivering-timbers-v2 (N=50)...\n"}
+,{"stream_name":"stdout","time":1653.17663554,"data":"  done in 245.3s (total 1439.6s, rows=300)\n"}
+,{"stream_name":"stdout","time":1653.178184816,"data":"Running TRK_shivering-timbers-v3 (N=50)...\n"}
+,{"stream_name":"stdout","time":1896.315732239,"data":"  done in 243.1s (total 1682.8s, rows=350)\n"}
+,{"stream_name":"stdout","time":1896.316725182,"data":"Running TRK_stuttering-packets (N=50)...\n"}
+,{"stream_name":"stdout","time":2125.201928513,"data":"  done in 228.9s (total 1911.6s, rows=400)\n"}
+,{"stream_name":"stdout","time":2125.202822921,"data":"Running TRK_rusty-electrics (N=50)...\n"}
+,{"stream_name":"stdout","time":2367.558030279,"data":"  done in 242.4s (total 2154.0s, rows=450)\n"}
+,{"stream_name":"stdout","time":2367.558092328,"data":"Running TRK_acid-rain (N=50)...\n"}
+,{"stream_name":"stdout","time":2606.373761269,"data":"  done in 238.8s (total 2392.8s, rows=500)\n"}
+,{"stream_name":"stdout","time":2606.374785737,"data":"Running TRK_beyond (N=50)...\n"}
+,{"stream_name":"stdout","time":2846.437654575,"data":"  done in 240.1s (total 2632.9s, rows=550)\n"}
+,{"stream_name":"stdout","time":2846.440977549,"data":"Running TRK_broken-loops (N=50)...\n"}
+,{"stream_name":"stdout","time":3081.066119803,"data":"  done in 234.6s (total 2867.5s, rows=600)\n"}
+,{"stream_name":"stdout","time":3081.067125311,"data":"Running TRK_cathartic-callbacks (N=50)...\n"}
+,{"stream_name":"stdout","time":3314.799793061,"data":"  done in 233.7s (total 3101.2s, rows=650)\n"}
+,{"stream_name":"stdout","time":3314.80082501,"data":"Running TRK_corrupted-variables (N=50)...\n"}
+,{"stream_name":"stdout","time":3568.192291929,"data":"  done in 253.4s (total 3354.6s, rows=700)\n"}
+,{"stream_name":"stdout","time":3568.193293458,"data":"Running TRK_dead-weight (N=50)...\n"}
+,{"stream_name":"stdout","time":3814.423502192,"data":"  done in 246.2s (total 3600.9s, rows=750)\n"}
+,{"stream_name":"stdout","time":3814.424556387,"data":"Running TRK_electric-rain (N=50)...\n"}
+,{"stream_name":"stdout","time":4041.642422211,"data":"  done in 227.2s (total 3828.1s, rows=800)\n"}
+,{"stream_name":"stdout","time":4041.643553987,"data":"Running TRK_electron-storm (N=50)...\n"}
+,{"stream_name":"stdout","time":4281.762987029,"data":"  done in 240.1s (total 4068.2s, rows=850)\n"}
+,{"stream_name":"stdout","time":4281.764577176,"data":"Running TRK_felt-arrays (N=50)...\n"}
+,{"stream_name":"stdout","time":4523.0180651,"data":"  done in 241.3s (total 4309.5s, rows=900)\n"}
+,{"stream_name":"stdout","time":4523.019277571,"data":"Running TRK_gnossienne-01 (N=50)...\n"}
+,{"stream_name":"stdout","time":4763.395913316,"data":"  done in 240.4s (total 4549.8s, rows=950)\n"}
+,{"stream_name":"stdout","time":4763.396931949,"data":"Running TRK_gravitational-tides (N=50)...\n"}
+,{"stream_name":"stdout","time":5001.554725208,"data":"  done in 238.2s (total 4788.0s, rows=1000)\n"}
+,{"stream_name":"stdout","time":5001.555797203,"data":"Running TRK_lost-digits (N=50)...\n"}
+,{"stream_name":"stdout","time":5236.052073485,"data":"  done in 234.5s (total 5022.5s, rows=1050)\n"}
+,{"stream_name":"stdout","time":5236.053023591,"data":"Running TRK_mechanical-whales (N=50)...\n"}
+,{"stream_name":"stdout","time":5486.045096691,"data":"  done in 250.0s (total 5272.5s, rows=1100)\n"}
+,{"stream_name":"stdout","time":5486.046641438,"data":"Running TRK_mother-of-pearl (N=50)...\n"}
+,{"stream_name":"stdout","time":5737.686068075,"data":"  done in 251.6s (total 5524.1s, rows=1150)\n"}
+,{"stream_name":"stdout","time":5737.686126455,"data":"Running TRK_submerged-and-shorted (N=50)...\n"}
+,{"stream_name":"stdout","time":5978.105732495,"data":"  done in 240.0s (total 5764.1s, rows=1200)\n"}
+,{"stream_name":"stdout","time":5987.832786442,"data":"# M4R-30 — Full-Corpus 20-Track Acoustic Feature Regression (N=50/arm × 24 arms = 1200 trials)\n"}
+,{"stream_name":"stdout","time":5987.832819574,"data":"\n"}
+,{"stream_name":"stdout","time":5987.832826499,"data":"## Leaderboard Sorted by Neural Novelty\n"}
+,{"stream_name":"stdout","time":5987.832831691,"data":"\n"}
+,{"stream_name":"stdout","time":5987.832836058,"data":"| Condition (N=50) | Logit Entropy | Rut Escape | Escaped Dome (%) | Neural Novelty | TF-IDF Novelty | CJK (%) |\n"}
+,{"stream_name":"stdout","time":5987.832840974,"data":"|---|---:|---:|---:|---:|---:|---:|\n"}
+,{"stream_name":"stdout","time":5987.832845369,"data":"| `TRK_mother-of-pearl` | 1.857 | 0.5604 | 86% | 0.6400 | 0.9558 | 28% |\n"}
+,{"stream_name":"stdout","time":5987.83284992,"data":"| `TRK_electric-rain` | 1.855 | 0.5358 | 80% | 0.6107 | 0.9475 | 14% |\n"}
+,{"stream_name":"stdout","time":5987.832854383,"data":"| `TRK_dead-weight` | 1.743 | 0.5630 | 92% | 0.6075 | 0.9501 | 32% |\n"}
+,{"stream_name":"stdout","time":5987.832858897,"data":"| `CTRL_Click120BPM_15s` | 1.817 | 0.5497 | 80% | 0.6037 | 0.9503 | 24% |\n"}
+,{"stream_name":"stdout","time":5987.832874432,"data":"| `TRK_electron-storm` | 1.800 | 0.5239 | 74% | 0.5946 | 0.9486 | 20% |\n"}
+,{"stream_name":"stdout","time":5987.832878372,"data":"| `TRK_gravitational-tides` | 1.758 | 0.5295 | 88% | 0.5878 | 0.9461 | 30% |\n"}
+,{"stream_name":"stdout","time":5987.83288213,"data":"| `TRK_acid-rain` | 1.772 | 0.5277 | 86% | 0.5860 | 0.9487 | 24% |\n"}
+,{"stream_name":"stdout","time":5987.832885832,"data":"| `TRK_rusty-electrics` | 1.769 | 0.5357 | 92% | 0.5825 | 0.9484 | 18% |\n"}
+,{"stream_name":"stdout","time":5987.832905453,"data":"| `TRK_mechanical-whales` | 1.730 | 0.5374 | 84% | 0.5820 | 0.9438 | 18% |\n"}
+,{"stream_name":"stdout","time":5987.832910452,"data":"| `TRK_submerged-and-shorted` | 1.859 | 0.5247 | 86% | 0.5814 | 0.9500 | 16% |\n"}
+,{"stream_name":"stdout","time":5987.832914258,"data":"| `TRK_lost-digits` | 1.845 | 0.5413 | 88% | 0.5809 | 0.9482 | 24% |\n"}
+,{"stream_name":"stdout","time":5987.832917958,"data":"| `TRK_shivering-timbers` | 1.674 | 0.5493 | 90% | 0.5789 | 0.9415 | 26% |\n"}
+,{"stream_name":"stdout","time":5987.832921614,"data":"| `TRK_cathartic-callbacks` | 1.724 | 0.5317 | 92% | 0.5729 | 0.9477 | 22% |\n"}
+,{"stream_name":"stdout","time":5987.832925354,"data":"| `TRK_gnossienne-01` | 1.810 | 0.5245 | 78% | 0.5722 | 0.9504 | 16% |\n"}
+,{"stream_name":"stdout","time":5987.832929018,"data":"| `TRK_shivering-timbers-v2` | 1.747 | 0.5360 | 78% | 0.5701 | 0.9426 | 24% |\n"}
+,{"stream_name":"stdout","time":5987.832932962,"data":"| `TRK_shivering-timbers-v3` | 1.818 | 0.5148 | 80% | 0.5687 | 0.9503 | 26% |\n"}
+,{"stream_name":"stdout","time":5987.832936649,"data":"| `TRK_felt-arrays` | 1.813 | 0.5037 | 80% | 0.5675 | 0.9562 | 34% |\n"}
+,{"stream_name":"stdout","time":5987.832940324,"data":"| `TRK_stuttering-packets` | 1.777 | 0.5172 | 78% | 0.5658 | 0.9435 | 26% |\n"}
+,{"stream_name":"stdout","time":5987.832956133,"data":"| `CTRL_RhythmMirror_15s` | 1.768 | 0.5239 | 88% | 0.5654 | 0.9471 | 22% |\n"}
+,{"stream_name":"stdout","time":5987.832959506,"data":"| `TRK_corrupted-variables` | 1.657 | 0.5020 | 86% | 0.5638 | 0.9329 | 26% |\n"}
+,{"stream_name":"stdout","time":5987.832962846,"data":"| `TRK_beyond` | 1.744 | 0.4851 | 76% | 0.5587 | 0.9493 | 22% |\n"}
+,{"stream_name":"stdout","time":5987.832966192,"data":"| `CTRL_WhiteNoise_15s` | 1.742 | 0.5292 | 86% | 0.5579 | 0.9444 | 26% |\n"}
+,{"stream_name":"stdout","time":5987.832969546,"data":"| `TRK_broken-loops` | 1.774 | 0.5034 | 80% | 0.5547 | 0.9432 | 24% |\n"}
+,{"stream_name":"stdout","time":5987.832972927,"data":"| `CTRL_TextNudgeOnly` | 2.219 | 0.4981 | 64% | 0.5488 | 0.9363 | 18% |\n"}
+,{"stream_name":"stdout","time":5987.832976276,"data":"\n"}
+,{"stream_name":"stdout","time":5987.832980654,"data":"## Acoustic Feature Correlations Across 20 Live Compositions (Pearson r / Spearman rho)\n"}
+,{"stream_name":"stdout","time":5987.832984169,"data":"| Acoustic Feature | vs Rut Escape (r / p) | vs Neural Novelty (r / p) | vs Neural Novelty (rho / p) | vs Logit Entropy (r / p) |\n"}
+,{"stream_name":"stdout","time":5987.832988399,"data":"|---|---:|---:|---:|---:|\n"}
+,{"stream_name":"stdout","time":5987.832992398,"data":"| `spectral_centroid_hz` | +0.206 (p=0.383) | +0.279 (p=0.234) | +0.377 (p=0.101) | -0.060 (p=0.800) |\n"}
+,{"stream_name":"stdout","time":5987.8329969,"data":"| `spectral_bandwidth_hz` | -0.300 (p=0.199) | -0.374 (p=0.104) | -0.171 (p=0.470) | -0.458 (p=0.042) |\n"}
+,{"stream_name":"stdout","time":5987.833000991,"data":"| `spectral_flatness` | +0.181 (p=0.445) | +0.226 (p=0.339) | +0.071 (p=0.767) | -0.056 (p=0.815) |\n"}
+,{"stream_name":"stdout","time":5987.833004748,"data":"| `spectral_rolloff_hz` | -0.033 (p=0.890) | -0.024 (p=0.921) | +0.108 (p=0.650) | -0.247 (p=0.294) |\n"}
+,{"stream_name":"stdout","time":5987.833011687,"data":"| `dynamic_range_db` | +0.245 (p=0.298) | +0.164 (p=0.490) | -0.015 (p=0.950) | +0.395 (p=0.085) |\n"}
+,{"stream_name":"stdout","time":5987.833015171,"data":"| `onset_rate_hz` | -0.033 (p=0.889) | -0.125 (p=0.599) | +0.073 (p=0.760) | -0.126 (p=0.597) |\n"}
+,{"stream_name":"stdout","time":5987.833018594,"data":"| `ioi_cv` | +0.044 (p=0.855) | +0.283 (p=0.227) | -0.269 (p=0.251) | +0.175 (p=0.461) |\n"}
+,{"stream_name":"stdout","time":5987.833021985,"data":"| `harmonic_ratio` | -0.251 (p=0.286) | -0.273 (p=0.243) | -0.319 (p=0.171) | -0.476 (p=0.034) |\n"}
+,{"stream_name":"stdout","time":5987.833025424,"data":"| `chroma_entropy_bits` | -0.087 (p=0.715) | -0.323 (p=0.164) | -0.131 (p=0.582) | +0.041 (p=0.864) |\n"}
+,{"stream_name":"stdout","time":5987.833028867,"data":"\n"}
+,{"stream_name":"stderr","time":5994.279290365,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":5994.279324101,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":5994.423775823,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":5994.423801435,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":5995.161625067,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":5995.269597099,"data":"[NbConvertApp] Writing 313117 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":5997.768833639,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":5998.356413529,"data":"[NbConvertApp] Writing 577538 bytes to __results__.html\n"}
+]
